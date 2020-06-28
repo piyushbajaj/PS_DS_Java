@@ -1,5 +1,18 @@
 package TechboostJune2020.LinkedList;
 
+/*
+Q2. Addition of Linked List (carry forward)
+5->6->7->1->2->NULL
+6->3->5->9->NULL
+Output:
+6->3->0->7->1->NULL
+
+Pseudo Code:
+1. Reverse both linked list
+2. Then start adding with sum and carry, till we reach to the end of list.
+ */
+
+
 public class AdditionOfTwoLL {
     Node head;
 
@@ -44,10 +57,6 @@ public class AdditionOfTwoLL {
         Nd = prev;
         return Nd;
     }
-
-
-    //Pseduo Code:
-
 
     //T.C: O(N), if n > m, or O(M), if m > n
     //S.C: O(1)
@@ -120,8 +129,6 @@ public class AdditionOfTwoLL {
         System.out.print("List1: ");
         list1.printList(head1);
 
-        Node temp1 = list1.reverse(head1);
-
         head1 = list1.reverse(head1);
         System.out.print("Reverse List1: ");
         list1.printList(head1);
@@ -137,7 +144,6 @@ public class AdditionOfTwoLL {
         head2 = list2.reverse(head2);
         System.out.print("Reverse List2: ");
         list2.printList(head2);
-
 
         Node output = list_result.additionOfLL(head1, head2);
 
