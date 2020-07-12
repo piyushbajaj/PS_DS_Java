@@ -15,6 +15,7 @@ public class ReverseLL {
 
     public void printList(Node temp){
         Node Nd = temp;
+
         if(Nd == null)
             return;
 
