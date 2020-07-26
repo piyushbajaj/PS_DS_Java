@@ -43,6 +43,7 @@ public class Travsersal {
         System.out.print(node.data + " ");
     }
 
+
     public static void main(String[] args) {
         Travsersal travsersal = new Travsersal();
         travsersal.root = new TreeNode(1);
@@ -50,6 +51,8 @@ public class Travsersal {
         travsersal.root.right = new TreeNode(3);
         travsersal.root.left.left = new TreeNode(4);
         travsersal.root.left.right = new TreeNode(5);
+        travsersal.root.right.left = new TreeNode(6);
+        travsersal.root.right.right = new TreeNode(7);
 
         System.out.print("InOrder Traversal: ");
         travsersal.inOrderTraversal_recursive(travsersal.root);
