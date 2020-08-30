@@ -1,6 +1,6 @@
-package TechboostJune2020.Tree.BinaryTree;
+package TechboostJune2020.BinaryTree;
 
-public class Travsersal {
+public class RecursiveTraversal {
 
     TreeNode root;
 
@@ -45,25 +45,25 @@ public class Travsersal {
 
 
     public static void main(String[] args) {
-        Travsersal travsersal = new Travsersal();
-        travsersal.root = new TreeNode(1);
-        travsersal.root.left = new TreeNode(2);
-        travsersal.root.right = new TreeNode(3);
-        travsersal.root.left.left = new TreeNode(4);
-        travsersal.root.left.right = new TreeNode(5);
-        travsersal.root.right.left = new TreeNode(6);
-        travsersal.root.right.right = new TreeNode(7);
+        RecursiveTraversal recursiveTraversal = new RecursiveTraversal();
+        recursiveTraversal.root = new TreeNode(1);
+        recursiveTraversal.root.left = new TreeNode(2);
+        recursiveTraversal.root.right = new TreeNode(3);
+        recursiveTraversal.root.left.left = new TreeNode(4);
+        recursiveTraversal.root.left.right = new TreeNode(5);
+        recursiveTraversal.root.right.left = new TreeNode(6);
+        recursiveTraversal.root.right.right = new TreeNode(7);
 
         System.out.print("InOrder Traversal: ");
-        travsersal.inOrderTraversal_recursive(travsersal.root);
+        recursiveTraversal.inOrderTraversal_recursive(recursiveTraversal.root);
 
         System.out.println();
         System.out.print("PreOrder Traversal: ");
-        travsersal.preOrderTraversal_recursive(travsersal.root);
+        recursiveTraversal.preOrderTraversal_recursive(recursiveTraversal.root);
 
         System.out.println();
         System.out.print("PostOrder Traversal: ");
-        travsersal.postOrderTraversal_recursive(travsersal.root);
+        recursiveTraversal.postOrderTraversal_recursive(recursiveTraversal.root);
     }
 
 }

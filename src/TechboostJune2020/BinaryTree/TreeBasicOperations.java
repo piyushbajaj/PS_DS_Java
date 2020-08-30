@@ -1,4 +1,4 @@
-package TechboostJune2020.Tree.BinaryTree;
+package TechboostJune2020.BinaryTree;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -102,7 +102,7 @@ public class TreeBasicOperations {
         int height = heightOfBT(node);
 
         for(int h = 1; h <= height; h++ ) {
-            levelOrderTraversal(node, h);
+            levelOrderTraversal_spiral(node, h);
         }
     }
 
@@ -123,6 +123,32 @@ public class TreeBasicOperations {
             levelOrderTraversal(node.right, level -1);
         }
     }
+
+    // T.C: O(N)
+    // S.C: O(Width of BT)
+    public void levelOrderTraversal_spiral(BTNode node, int level) {
+        // Base Check
+        if (node == null)
+            return;
+
+        // Printing Current Data
+        if (level == 1) {
+            System.out.print(node.data + " ");
+        }
+        else if (level % 2 == 0) {
+            levelOrderTraversal_spiral(node.left, level -1);
+            levelOrderTraversal_spiral(node.right, level -1);
+        }
+        else if (level % 2 != 0) {
+            levelOrderTraversal_spiral(node.right, level -1);
+            levelOrderTraversal_spiral(node.left, level -1);
+        }
+    }
+
+
+
+
+
 
     public static void main(String[] args) {
         TreeBasicOperations treeBasicOperations = new TreeBasicOperations();

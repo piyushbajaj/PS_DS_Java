@@ -1,4 +1,4 @@
-package Sorting;
+package TechboostJune2020.Sorting;
 
 /**
  * Created by piyush.bajaj on 07/01/17.
