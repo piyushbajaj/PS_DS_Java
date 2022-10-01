@@ -9,12 +9,11 @@ import java.util.Stack;
 public class DFS {
 
     //For adding random vertices
-    public Vertex vertexList[];
-    private int V; //Number of vertices
+    public Vertex[] vertexList;
+    private final int V; //Number of vertices
     //Array of lists for Adjacency list representation
-    private LinkedList<Integer> adjList[];
+    private final LinkedList<Integer>[] adjList;
     private int vertexCount;
-
 
     public DFS(int vertices) {
         V = vertices;
@@ -49,12 +48,10 @@ public class DFS {
     }
 
     public void DFS_fun() {
-        //mark all the vertex as FALSE
-
 
         for (int i = 0; i < V; i++) {
-            if (vertexList[i].visited == false)
-                DFS_Utility(i, vertexList[i].visited);
+            if (!vertexList[i].visited)
+                DFS_Utility(i);
         }
 
         //reset flags
@@ -63,7 +60,7 @@ public class DFS {
         }
     }
 
-    public void DFS_Utility(int v, boolean visited) {
+    public void DFS_Utility(int v) {
 
         //mark the first node as visited
         vertexList[v].visited = true;
@@ -73,22 +70,17 @@ public class DFS {
 
         while (!stk.isEmpty()) {
             int temp = nextElement(stk.pop());
-            //if()
             if (temp != -1) {
-//                stk.pop();
-//            else
                 vertexList[temp].visited = true;
                 System.out.print(vertexList[temp].label + " ");
                 stk.push(temp);
-
             }
-
         }
     }
 
     public int nextElement(int v) {
         for (int i = 0; i < V; i++)
-            if (adjList[v].contains(i) && vertexList[i].visited == false)
+            if (adjList[v].contains(i) && !vertexList[i].visited)
                 return i;
         return -1;
     }
@@ -112,15 +104,14 @@ public class DFS {
 //        g.addEdge(3, 3);
 
 
-        g.addVertices(10);
-        g.addVertices(20);
-        g.addVertices(30);
-        g.addVertices(40);
-        g.addVertices(50);
-        g.addVertices(60);
-
-        g.addVertices(70);
-        g.addVertices(80);
+        g.addVertices(10);//0
+        g.addVertices(20);//1
+        g.addVertices(30);//2
+        g.addVertices(40);//3
+        g.addVertices(50);//4
+        g.addVertices(60);//5
+        g.addVertices(70);//6
+        g.addVertices(80);//7
 
         g.addEdge(0, 1);
         g.addEdge(1, 2);

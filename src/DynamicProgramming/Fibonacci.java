@@ -32,7 +32,7 @@ public class Fibonacci {
 
     public static void main(String[] args) {
         Fibonacci fb = new Fibonacci();
-        int key = 20;
+        int key = 5;
 
 
         int[] arr = new int[1000];

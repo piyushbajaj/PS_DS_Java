@@ -67,14 +67,22 @@ public class ShortestPathUnweight {
         vertexList[vertexCount++] = new Vertex(ver);
     }
 
+    // Directional
     public void addEdge(int u, int v){
         adjList[u].add(v);
     }
 
+    // Bi-Directional
+    public void addEdge_bidirectional(int u, int v){
+        adjList[u].add(v);
+        adjList[v].add(u);
+    }
 
-    public void UnweightedShortest(int s){
+
+
+    public void UnweightedShortest(int s, int d){
         Queue<Integer> queue = new LinkedList<>();
-        int v, w;
+        int v;
         queue.add(s);
 
         for(int i = 0; i < V; i++){
@@ -97,6 +105,15 @@ public class ShortestPathUnweight {
                 }
             }
         }
+
+//        int k = d;
+//        System.out.print(vertexList[d].label + " -> ");
+//        while (Path[k] != '-') {
+//            System.out.print(Path[k] + " -> ");
+//            k = Path[Path[k]];
+//        }
+
+
     }
 
     public void printGraph(){
@@ -127,7 +144,7 @@ public class ShortestPathUnweight {
         SW.addEdge(4, 6);
         SW.addEdge(6, 5);
 
-        SW.UnweightedShortest(0);
+        SW.UnweightedShortest(0, 6);
 
         SW.printGraph();
     }

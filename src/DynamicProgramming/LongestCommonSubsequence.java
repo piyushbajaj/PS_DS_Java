@@ -56,6 +56,7 @@ public class LongestCommonSubsequence {
     public int lcs_CMS(char[] c1, char[] c2){
         int n1 = c1.length;
         int n2 = c2.length;
+        int result = 0;
 
         int[][] mat = new int[n2+1][n1+1];
 
@@ -71,7 +72,24 @@ public class LongestCommonSubsequence {
                 }
             }
         }
-        return mat[n2][n1];
+        result = mat[n2][n1];
+        char[] output = new char[result];
+        int cnt = result-1;
+
+        for(int i = n2-1; i >= 0; i--){
+            for(int j =n1-1; j >= 0; j--){
+                if( c1[j] == c2[i] ) {
+                    output[cnt--] = c2[i];
+                    break;
+                }
+            }
+        }
+
+        for(char c: output)
+            System.out.print(c);
+
+        System.out.println();
+        return result;
     }
 
     //Using DP
@@ -136,8 +154,8 @@ public class LongestCommonSubsequence {
 //        String s2 = "ACBCF";
 
         //By Tushar Video
-        //System.out.println(LC.lcs_CMS(s1.toCharArray(), s2.toCharArray()));
+        System.out.println(LC.lcs_CMS(s1.toCharArray(), s2.toCharArray()));
 
-        System.out.println(LC.lcs_common(s1, s2));
+//        System.out.println(LC.lcs_common(s1, s2));
     }
 }

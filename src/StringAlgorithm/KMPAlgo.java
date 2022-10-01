@@ -27,7 +27,7 @@ public class KMPAlgo {
     }
 
     public int KMP(char[] text, char[] pattern){
-        int i =1, j =0;
+        int i =0, j =0;
         prefixTable(pattern);
         int n = text.length;
         int m = pattern.length;

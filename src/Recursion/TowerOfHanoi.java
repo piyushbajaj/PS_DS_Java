@@ -2,9 +2,9 @@ package Recursion;
 
 /**
  * Created by piyush.bajaj on 13/03/16.
- Suppose there are three towers here: A(Source), B(Auxillary), C(Destination).
- The ultimate goal is to move all the disk from tower A to C
-*/
+ * Suppose there are three towers here: A(Source), B(Auxillary), C(Destination).
+ * The ultimate goal is to move all the disk from tower A to C
+ */
 /*
 public class TowerOfHanoi {
     public static void main(String args[]) {
@@ -51,6 +51,6 @@ public class TowerOfHanoi {
         //Scanner scanner = new Scanner(System.in);
         //int discs = scanner.nextInt();
 
-     towersOfHanoi.solve(3, "A", "B", "C");
+        towersOfHanoi.solve(3, "A", "B", "C");
     }
 }

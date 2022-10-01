@@ -8,12 +8,12 @@ import java.util.Scanner;
 public class DoublyLinkList {
     Node head;
 
-    static class Node{
+    static class Node {
         int data;
         Node next;
         Node prev;
 
-        Node(int d){
+        Node(int d) {
             data = d;
             next = null;
             prev = null;
@@ -22,10 +22,10 @@ public class DoublyLinkList {
 
     //Add a node at the front
 
-    public void InsertNodeFront(int value){
+    public void InsertNodeFront(int value) {
         Node temp = new Node(value);
 
-        if(head==null)
+        if (head == null)
             return;
         temp.next = head;
         temp.prev = null;
@@ -33,15 +33,15 @@ public class DoublyLinkList {
         head = temp;
     }
 
-    public void printList(){
+    public void printList() {
         Node n = head;
-        while(n!=null){
+        while (n != null) {
             System.out.println(n.data + " ");
-            n=n.next;
+            n = n.next;
         }
     }
 
-    public void push(int new_data){
+    public void push(int new_data) {
         //Declare a new node & assign a value
         Node new_node = new Node(new_data);
         //Now point next of new_node to Head
@@ -52,13 +52,13 @@ public class DoublyLinkList {
         head = new_node;
     }
 
-    public void InsertNodeAfter(Node Nd, int value){
+    public void InsertNodeAfter(Node Nd, int value) {
         Node temp = new Node(value);
         Node tp = head;
 
-        if(head==null)
+        if (head == null)
             return;
-        while(tp!=Nd){
+        while (tp != Nd) {
             tp = tp.next;
         }
         temp.next = tp.next;
@@ -67,14 +67,14 @@ public class DoublyLinkList {
         temp.next.prev = temp;
     }
 
-    public void InsertNodeBefore(Node Nd, int value){
+    public void InsertNodeBefore(Node Nd, int value) {
         Node temp = new Node(value);
         Node tp = head;
 
-        if(head==null)
+        if (head == null)
             return;
 
-        while(tp.next!=Nd){
+        while (tp.next != Nd) {
             tp = tp.next;
         }
         temp.next = tp.next;
@@ -83,13 +83,13 @@ public class DoublyLinkList {
         temp.next.prev = temp;
     }
 
-    public void InsertNodeAtEnd(int value){
+    public void InsertNodeAtEnd(int value) {
         Node temp = new Node(value);
         Node tp = head;
 
-        if(head==null)
+        if (head == null)
             return;
-        while(tp.next!=null){
+        while (tp.next != null) {
             tp = tp.next;
         }
         tp.next = temp;
@@ -97,41 +97,41 @@ public class DoublyLinkList {
         temp.next = null;
     }
 
-    public void DeleteHeadNode(){
+    public void DeleteHeadNode() {
         //LinkedList.Node tp = head;
-        if(head==null)
+        if (head == null)
             return;
         head = head.next;
         head.prev = null;
     }
 
-    public void DeleteMiddleNode(Node del){
+    public void DeleteMiddleNode(Node del) {
         //LinkedList.Node tp = head;
-        if(head==null)
+        if (head == null)
             return;
-        if(del.next!=null){
+        if (del.next != null) {
             del.next.prev = del.prev;
             del.prev.next = del.next;
         }
     }
 
-    public void DeleteEndNode(){
+    public void DeleteEndNode() {
         Node tp = head;
-        if(head==null)
+        if (head == null)
             return;
-        while(tp.next!=null){
+        while (tp.next != null) {
             tp = tp.next;
         }
         tp.prev.next = null;
     }
 
-    public void reverseLinkList(){
+    public void reverseLinkList() {
         //LinkedList.Node tp = head;
         Node prev = null;
         Node current = head;
         Node next = null;
 
-        while(current!=null){
+        while (current != null) {
             next = current.next;
             current.next = prev;
             current.prev = next;
@@ -144,7 +144,7 @@ public class DoublyLinkList {
     public static void main(String[] args) {
         DoublyLinkList doubly = new DoublyLinkList();
         Scanner s = new Scanner(System.in);
-        int n =0;
+        int n = 0;
 
         doubly.head = new Node(0);
         doubly.push(1);

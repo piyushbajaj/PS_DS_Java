@@ -13,24 +13,23 @@ public class DoublyLL {
         Node prev;
     }
 
-    static Node SortedInsert(Node head,int data) {
+    static Node SortedInsert(Node head, int data) {
         Node temp = new Node();
         temp.data = data;
-        if(head == null){
+        if (head == null) {
             head = temp;
             return head;
         }
 
         Node p = head;
 
-        while(p.next!=null){
-            if(data < head.data){
+        while (p.next != null) {
+            if (data < head.data) {
                 temp.next = head;
                 head.prev = temp;
                 head = temp;
                 return head;
-            }
-            else if( data > p.data && data < p.next.data){
+            } else if (data > p.data && data < p.next.data) {
                 Node q = p.next;
                 p.next = temp;
                 temp.prev = p;
@@ -41,7 +40,7 @@ public class DoublyLL {
 
         }
 
-        if(p.next == null){
+        if (p.next == null) {
             p.next = temp;
             temp.prev = p;
             return head;

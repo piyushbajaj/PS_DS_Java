@@ -35,11 +35,11 @@ public class    knapsack_problem {
 //        int[] benefit = {3, 7, 2, 9};
 //        int max_weight = 10;
         //kp.knapsack(weight, benefit, max_weight);
-        //int[] weight = {1, 3, 4, 5};
-        int[] weight = {20, 19};
-        //int[] benefit = {1, 4, 5, 7};
-        int[] benefit = {24, 20};
-        int max_weight = 50;
+        int[] weight = {1, 3, 4, 5};
+//        int[] weight = {20, 19};
+        int[] benefit = {1, 4, 5, 7};
+//        int[] benefit = {24, 20};
+        int max_weight = 7;
         System.out.println(kp.knapsack_prac(weight, benefit, max_weight));
         //System.out.println(kp.knapSack_g4g(max_weight, weight, benefit, weight.length ));
     }

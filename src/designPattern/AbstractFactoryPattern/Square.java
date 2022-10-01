@@ -6,7 +6,7 @@ package designPattern.AbstractFactoryPattern;
  */
 public class Square implements Shape {
     @Override
-    public void draw(){
+    public void draw() {
         System.out.println("Inside Square::draw() method.");
     }
 }

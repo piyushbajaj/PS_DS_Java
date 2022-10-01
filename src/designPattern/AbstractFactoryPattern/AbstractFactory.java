@@ -6,5 +6,6 @@ package designPattern.AbstractFactoryPattern;
  */
 public abstract class AbstractFactory {
     abstract Color getColor(String str);
+
     abstract Shape getShape(String str);
 }

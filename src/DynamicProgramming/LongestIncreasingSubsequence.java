@@ -147,6 +147,9 @@ public class LongestIncreasingSubsequence {
 
     }
 
+
+
+
     public int LIS_g4g_easiest(int[] arr){
         int n = arr.length;
         int[] lis = new int[n];
@@ -156,7 +159,7 @@ public class LongestIncreasingSubsequence {
 
         for(int i = 1; i < n; i++){
             for(int j = 0; j < i; j++){
-                if(arr[i] > arr[j] && lis[i] < lis[j] + 1){
+                if( arr[j] < arr[i]  && lis[i] < lis[j] + 1){
                     lis[i] = lis[j] + 1;
                 }
             }
@@ -183,15 +186,15 @@ public class LongestIncreasingSubsequence {
         for(int i = 0; i < n; i++ )
             R[i] = -1;
 
-        int len = 0;
+        int j = 0;
         T[0] = 0;
         int index = -1;
 
         for(int i = 1; i < n; i++){
-            if(arr[i] > arr[T[len]]){
-                len++;
-                T[len] = i;
-                R[T[len]] = T[len-1];
+            if(arr[T[j]] < arr[i]){
+                j++;
+                T[j] = i;
+                R[T[j]] = T[j-1];
 
             }
             else if(arr[i] < arr[T[0]])
@@ -203,7 +206,7 @@ public class LongestIncreasingSubsequence {
             }
         }
 
-        return len;
+        return j;
 
     }
 
@@ -250,7 +253,7 @@ public class LongestIncreasingSubsequence {
 
         //System.out.println(LI.longestSubs_easy(arr));
 
-        System.out.println(LI.longestSubs_tushar(arr));
+//        System.out.println(LI.longestSubs_tushar(arr));
 
         System.out.println(LI.LIS_g4g_easiest(arr));
     }

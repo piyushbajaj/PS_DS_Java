@@ -31,8 +31,6 @@ public class HeapSortAlgo {
     }
 
     public void heapify(int i, int n, int[] arr){
-
-
         int l = left(i);
         int r = right(i);
         int large = i;

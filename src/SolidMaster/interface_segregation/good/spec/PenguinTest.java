@@ -1,7 +1,7 @@
 package SolidMaster.interface_segregation.good.spec.PenguinTest;
 
 import SolidMaster.interface_segregation.good.src.Penguin;
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import static org.junit.Assert.assertEquals;
 

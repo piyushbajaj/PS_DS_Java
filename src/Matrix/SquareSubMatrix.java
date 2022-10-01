@@ -13,17 +13,21 @@ public class SquareSubMatrix {
         int row = mat.length;
         int col = mat[0].length;
         int[][] table = new int[row][col];
+
+        System.out.println(table[0][0] + " " + table[1][0]);
+
         //int count = 1;
         int max = 0;
-        for(int i = 0; i < mat.length; i++){
+        for(int i = 0; i < row; i++){
 
-            for(int j = 0; j < mat[i].length; j++){
+            for(int j = 0; j < col; j++){
                 if(i == 0 || j == 0)
                     table[i][j] = mat[i][j];
                 else if(mat[i][j] == 0)
                     table[i][j] = 0;
                 else{
                     table[i][j] = minFunc(table[i - 1][j], table[i][j - 1], table[i - 1][j - 1]) + 1;
+
                     if(table[i][j] > max)
                         max = table[i][j];
                 }

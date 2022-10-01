@@ -12,64 +12,64 @@ public class Graph_Prob {
     int V;
     LinkedList<Integer> adjList[];
     Vertex vertexList[];
-    int vertexCount= 0;
+    int vertexCount = 0;
 
-    public class Vertex{
+    public class Vertex {
         public char label;
         public boolean visited;
 
-        public Vertex(char lab){
+        public Vertex(char lab) {
             label = lab;
             visited = false;
         }
     }
 
-    Graph_Prob(int v){
+    Graph_Prob(int v) {
         this.V = v;
         adjList = new LinkedList[V];
         vertexList = new Vertex[V];
 
-        for(int i = 0; i < V; i++){
+        for (int i = 0; i < V; i++) {
             adjList[i] = new LinkedList();
         }
     }
 
-    public void addEdge(int i, int j){
+    public void addEdge(int i, int j) {
         adjList[i].add(j);
         adjList[j].add(i);
     }
 
-    public void addVertex(char i){
+    public void addVertex(char i) {
         vertexList[vertexCount++] = new Vertex(i);
     }
 
-    public void BFS(){
+    public void BFS() {
 
-        for(int i = 0; i < V; i++){
-            if(vertexList[i].visited == false)
+        for (int i = 0; i < V; i++) {
+            if (vertexList[i].visited == false)
                 BFS_util(i, vertexList[i].visited);
         }
 
-        for(int i = 0; i < V; i++){
+        for (int i = 0; i < V; i++) {
             vertexList[i].visited = false;
         }
     }
 
-    public void BFS_util(int ver, boolean visited){
+    public void BFS_util(int ver, boolean visited) {
 
         Queue<Integer> queue = new LinkedList<>();
         queue.add(ver);
         vertexList[ver].visited = true;
 
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             int temp = queue.remove();
             System.out.print(vertexList[temp].label + " ");
 
             Iterator<Integer> integerIterator = adjList[temp].listIterator();
 
-            while (integerIterator.hasNext()){
+            while (integerIterator.hasNext()) {
                 int n = integerIterator.next();
-                if(!vertexList[n].visited){
+                if (!vertexList[n].visited) {
                     vertexList[n].visited = true;
                     queue.add(n);
                 }
@@ -77,30 +77,30 @@ public class Graph_Prob {
         }
     }
 
-    public void DFS(){
-        for(int i = 0; i < V; i++){
-            if(vertexList[i].visited == false){
+    public void DFS() {
+        for (int i = 0; i < V; i++) {
+            if (!vertexList[i].visited) {
                 DFS_Util(i, vertexList[i].visited);
             }
         }
 
-        for(int i = 0; i < V; i++){
+        for (int i = 0; i < V; i++) {
             vertexList[i].visited = false;
         }
     }
 
-    public void DFS_Util(int ver, boolean visited){
+    public void DFS_Util(int ver, boolean visited) {
         Stack<Integer> stack = new Stack<>();
         stack.push(ver);
         vertexList[ver].visited = true;
         System.out.print(vertexList[ver].label + " ");
 
-        while (!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             int temp = stack.pop();
 
             temp = nextElement(temp);
 
-            if(temp != -1){
+            if (temp != -1) {
                 System.out.print(vertexList[temp].label + " ");
                 vertexList[temp].visited = true;
                 stack.push(temp);
@@ -108,14 +108,13 @@ public class Graph_Prob {
         }
     }
 
-    public int nextElement(int v){
-        for(int i = 0; i < V; i++){
-            if(adjList[v].contains(i) && vertexList[i].visited == false)
+    public int nextElement(int v) {
+        for (int i = 0; i < V; i++) {
+            if (adjList[v].contains(i) && !vertexList[i].visited)
                 return i;
         }
         return -1;
     }
-
 
 
     public static void main(String[] args) {

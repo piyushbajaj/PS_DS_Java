@@ -12,45 +12,44 @@ public class ListNode {
 //        this.data=data;
 //    }
 
-    public ListNode(int data){
-        this.data=data;
-    }
-
-    public ListNode(int data, ListNode next){
-        this.data = data;
-        this.next=next;
-    }
-
-    public void setData(int data){
+    public ListNode(int data) {
         this.data = data;
     }
 
-    public int getData(){
-        return data;
-    }
-
-    public void setNext(ListNode next){
+    public ListNode(int data, ListNode next) {
+        this.data = data;
         this.next = next;
     }
 
-    public ListNode getNext(){
+    public void setData(int data) {
+        this.data = data;
+    }
+
+    public int getData() {
+        return data;
+    }
+
+    public void setNext(ListNode next) {
+        this.next = next;
+    }
+
+    public ListNode getNext() {
 //        this.next = null;
         return this.next;
     }
 
     //ListLength takes linked list as an input and counts the number of nodes in the list
 
-    public int ListLength(ListNode headNode){
+    public int ListLength(ListNode headNode) {
         int length = 0;
         ListNode currentNode = headNode;
-        while(currentNode != null){
+        while (currentNode != null) {
             length++;
             currentNode.getNext();
         }
 
         return length;
     }
-
 
 
 //    public static void main(String[] args) {

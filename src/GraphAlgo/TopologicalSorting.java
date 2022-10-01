@@ -16,59 +16,59 @@ public class TopologicalSorting {
     private int vertexCount;
     Stack<Integer> stk = new Stack<>();
 
-    public TopologicalSorting(int v){
+    public TopologicalSorting(int v) {
         this.V = v;
         vertexCount = 0;
         adjList = new LinkedList[V];
         vertexList = new Vertex[V];
-        for(int i = 0; i < V; i++){
+        for (int i = 0; i < V; i++) {
             adjList[i] = new LinkedList<>();
         }
     }
 
-    public class Vertex{
+    public class Vertex {
         private int label;
         private boolean visited;
 
-        public Vertex(int lab){
+        public Vertex(int lab) {
             label = lab;
             visited = false;
         }
     }
 
-    public void addVertex(int ver){
+    public void addVertex(int ver) {
         vertexList[vertexCount++] = new Vertex(ver);
     }
 
-    public void addEdge(int u, int v){
+    public void addEdge(int u, int v) {
         adjList[u].add(v);
     }
 
-    public void topologicalSort_Util(int ver){
+    public void topologicalSort_Util(int ver) {
         vertexList[ver].visited = true;
 
         Iterator<Integer> itr = adjList[ver].iterator();
-        while (itr.hasNext()){
+        while (itr.hasNext()) {
             int i = itr.next();
-            if(!vertexList[i].visited)
+            if (!vertexList[i].visited)
                 topologicalSort_Util(i);
         }
         stk.push(ver);
 
     }
 
-    public void topologicalSort(){
+    public void topologicalSort() {
 
-        for(int i = 0; i < V; i++){
-            if(vertexList[i].visited == false)
+        for (int i = 0; i < V; i++) {
+            if (!vertexList[i].visited)
                 topologicalSort_Util(i);
         }
 
-        while (!stk.isEmpty()){
+        while (!stk.isEmpty()) {
             System.out.print(vertexList[stk.pop()].label + " ");
         }
 
-        for(int i = 0; i < V; i++){
+        for (int i = 0; i < V; i++) {
             vertexList[i].visited = false;
         }
     }

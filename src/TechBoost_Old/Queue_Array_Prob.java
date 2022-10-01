@@ -27,10 +27,7 @@ public class Queue_Array_Prob {
             else
                 r = -1;
         }
-
-
         A[++r] = x;
-
     }
 
     int dequeue(){

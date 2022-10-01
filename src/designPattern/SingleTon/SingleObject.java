@@ -12,10 +12,11 @@ public class SingleObject {
     //make the constructor private so that this class cannot be
     //instantiated
 
-    private SingleObject(){}
+    private SingleObject() {
+    }
 
     //Get the only object available
-    public static SingleObject getObject(){
+    public static SingleObject getObject() {
         return SO;
     }
 
@@ -23,7 +24,7 @@ public class SingleObject {
 //        return SO1;
 //    }
 
-    public void message(){
+    public void message() {
         System.out.println("Hello World");
     }
 }

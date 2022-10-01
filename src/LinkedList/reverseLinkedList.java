@@ -52,7 +52,7 @@ public class reverseLinkedList {
     //Using Recursion
 
     public void reverse_Recursive(Node node) {
-        if(node.next!=null)
+        if (node.next != null)
             reverse_Recursive(node.next);
         System.out.println("Reverse Linked List using recusrsion is: " + node.data);
     }
@@ -90,17 +90,17 @@ public class reverseLinkedList {
 
         list1.printList(list1.reverseKthNode(list1.head, 4));
 
-        for(int i = 1; i < 10; i = i*2){
+        for (int i = 1; i < 10; i = i * 2) {
             System.out.println(i);
         }
     }
 
-    public Node reverse_prac(Node key){
+    public Node reverse_prac(Node key) {
         Node prev = null;
         Node current = key;
         Node next = null;
 
-        while (current!=null){
+        while (current != null) {
             next = current.next;
             current.next = prev;
             prev = current;
@@ -110,11 +110,11 @@ public class reverseLinkedList {
         return prev;
     }
 
-    public Node reverseKthNode(Node key, int k){
-        int count=1;
+    public Node reverseKthNode(Node key, int k) {
+        int count = 1;
         head = key;
-        Node prev= key, next = null;
-        while (count<k && key.next!=null){
+        Node prev = key, next = null;
+        while (count < k && key.next != null) {
             //prev = key;
             key = key.next;
             count++;
@@ -123,7 +123,7 @@ public class reverseLinkedList {
         key.next = null;
         Node temp = reverse_prac(prev);
 
-        while (temp.next!=null){
+        while (temp.next != null) {
             temp = temp.next;
         }
 
@@ -131,7 +131,7 @@ public class reverseLinkedList {
 
         count = 0;
         Node prev1 = null;
-        while (count<k && next!=null){
+        while (count < k && next != null) {
             //prev = key;
             prev1 = next;
             next = next.next;
@@ -139,7 +139,7 @@ public class reverseLinkedList {
         }
         //next = next.next;
 
-        if(next!=null){
+        if (next != null) {
             prev1.next = reverseKthNode(next, k);
         }
 

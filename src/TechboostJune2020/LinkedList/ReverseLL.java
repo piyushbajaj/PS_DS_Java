@@ -3,23 +3,23 @@ package TechboostJune2020.LinkedList;
 public class ReverseLL {
     Node head;
 
-    static class Node{
+    static class Node {
         Node next;
         int data;
 
-        Node(int data){
+        Node(int data) {
             this.data = data;
             this.next = null;
         }
     }
 
-    public void printList(Node temp){
+    public void printList(Node temp) {
         Node Nd = temp;
 
-        if(Nd == null)
+        if (Nd == null)
             return;
 
-        while (Nd!=null) {
+        while (Nd != null) {
             System.out.print(Nd.data + "-> ");
             Nd = Nd.next;
         }
@@ -28,15 +28,15 @@ public class ReverseLL {
 
     }
 
-    public Node reverse(Node Nd){
-        if(Nd == null)
+    public Node reverse(Node Nd) {
+        if (Nd == null)
             return null;
 
         Node prev = null;
         Node curr = Nd;
         Node next = null;
 
-        while (curr!=null) {
+        while (curr != null) {
             next = curr.next;
             curr.next = prev;
             prev = curr;
@@ -45,7 +45,6 @@ public class ReverseLL {
         Nd = prev;
         return Nd;
     }
-
 
 
     public static void main(String[] args) {

@@ -13,18 +13,18 @@ public class LongestPalindromicSubsequence {
             mat[i][i] = 1;
         }
 
-        for(int i = 0; i < n-1; i++){
-            if(str.charAt(i) == str.charAt(i+1)){
-                mat[i][i+1] = 2;
-            }
-            else {
-                mat[i][i+1] = Math.max(mat[i][i], mat[i+1][i+1]);
-            }
-        }
+//        for(int i = 0; i < n-1; i++){
+//            if(str.charAt(i) == str.charAt(i+1)){
+//                mat[i][i+1] = 2;
+//            }
+//            else {
+//                mat[i][i+1] = Math.max(mat[i][i], mat[i+1][i+1]);
+//            }
+//        }
 
 
         int j = 0, max = Integer.MIN_VALUE;
-        for(int k = 3; k <= n; k++){
+        for(int k = 2; k <= n; k++){
             for(int i = 0; i < n - k + 1; i++){
                 j = i + k -1;
                 if(str.charAt(i) == str.charAt(j)){
@@ -44,7 +44,7 @@ public class LongestPalindromicSubsequence {
 
     public static void main(String[] args) {
         LongestPalindromicSubsequence ls = new LongestPalindromicSubsequence();
-        String str = "LPASPAL";
+        String str = "BBABCBCAB";
         System.out.println(ls.longest_seq(str));
     }
 }
