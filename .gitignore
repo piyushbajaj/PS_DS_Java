@@ -1,4 +1,4 @@
 .idea
 out
-JavaRepo.iml
+*.iml
 .DS_Store
