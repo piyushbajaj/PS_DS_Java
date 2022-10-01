@@ -51,6 +51,31 @@ public class P12_RightViewOfBT {
         return result;
     }
 
+    /**
+     * TC: O(N)
+     * SC: O(N)
+     *
+     * @param curr
+     * @return
+     */
+    public List<Integer> rightViewOfBT_recursive(TreeNode curr) {
+        if (curr == null) return Collections.emptyList();
+
+        List<Integer> arr = new ArrayList<>();
+        rightViewOfBT_util_recursive(curr, arr, 0);
+        return arr;
+    }
+
+    public void rightViewOfBT_util_recursive(TreeNode curr, List<Integer> arrList, int count) {
+        if (curr != null) {
+            if (arrList.size() == count) {
+                arrList.add(curr.data);
+            }
+            rightViewOfBT_util_recursive(curr.right, arrList, count + 1);
+            rightViewOfBT_util_recursive(curr.left, arrList, count + 1);
+        }
+    }
+
     public static void main(String[] args) {
         P12_RightViewOfBT p12_rightViewOfBT = new P12_RightViewOfBT();
 
@@ -63,5 +88,7 @@ public class P12_RightViewOfBT {
         root.right.right = new TreeNode(7);
 
         System.out.println(p12_rightViewOfBT.rightViewOfBT_iterative(root));
+
+        System.out.println(p12_rightViewOfBT.rightViewOfBT_recursive(root));
     }
 }

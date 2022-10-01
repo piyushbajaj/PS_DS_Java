@@ -48,8 +48,32 @@ public class P11_LeftViewOfBT {
                 }
             }
         }
-
         return result;
+    }
+
+    /**
+     * TC: O(N)
+     * SC: O(N)
+     *
+     * @param curr
+     * @return
+     */
+    public List<Integer> leftViewOfBT_recursive(TreeNode curr) {
+        if (curr == null) return Collections.emptyList();
+
+        List<Integer> arr = new ArrayList<>();
+        leftViewOfBT_util_recursive(curr, arr, 0);
+        return arr;
+    }
+
+    public void leftViewOfBT_util_recursive(TreeNode curr, List<Integer> arrList, int count) {
+        if (curr != null) {
+            if (arrList.size() == count) {
+                arrList.add(curr.data);
+            }
+            leftViewOfBT_util_recursive(curr.left, arrList, count + 1);
+            leftViewOfBT_util_recursive(curr.right, arrList, count + 1);
+        }
     }
 
     public static void main(String[] args) {
@@ -64,5 +88,7 @@ public class P11_LeftViewOfBT {
         root.right.right = new TreeNode(7);
 
         System.out.println(p11_leftViewOfBT.leftViewOfBT_iterative(root));
+
+        System.out.println(p11_leftViewOfBT.leftViewOfBT_recursive(root));
     }
 }

@@ -10,7 +10,7 @@ import TakeUForward.S13_BinaryTrees.S13_1_Traversals.TreeNode;
 public class P4_MaxSumInBT {
 
     /**
-     * Approach:
+     * Approach (Post-Order Traversal):
      * 1. At each step find recursively its left max and right max path
      * 2. In the maxi, store the sum of curr.data + lMax + rMax
      * 3. Return the curr.data + Math.max(lMax, rMax)
