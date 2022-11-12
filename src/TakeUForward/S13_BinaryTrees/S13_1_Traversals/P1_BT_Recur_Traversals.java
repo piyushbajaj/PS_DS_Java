@@ -21,7 +21,7 @@ public class P1_BT_Recur_Traversals {
      * @param curr
      * @return
      */
-    public List<Integer> levelOrderTraversal_recur(TreeNode curr) {
+    public static List<Integer> levelOrderTraversal_recur(TreeNode curr) {
         List<Integer> arrList = new ArrayList<>();
 
         int heightOfBT = BaseTreeNode.heightOfTree_recur(curr);
@@ -33,7 +33,22 @@ public class P1_BT_Recur_Traversals {
         return arrList;
     }
 
-    private void levelOrderTraversal_recur_util(TreeNode curr, int level, List<Integer> arrList) {
+    public static List<List<Integer>> levelOrderTraversal_list_recur(TreeNode curr) {
+
+        int heightOfBT = BaseTreeNode.heightOfTree_recur(curr);
+
+        List<List<Integer>> arrArrList = new ArrayList<>();
+
+        for (int i = 1; i <= heightOfBT; i++) {
+            List<Integer> arrList = new ArrayList<>();
+            levelOrderTraversal_recur_util(curr, i, arrList);
+            arrArrList.add(arrList);
+        }
+
+        return arrArrList;
+    }
+
+    private static void levelOrderTraversal_recur_util(TreeNode curr, int level, List<Integer> arrList) {
         if (curr != null) {
             if (level == 1) {
                 arrList.add(curr.data);
@@ -57,13 +72,13 @@ public class P1_BT_Recur_Traversals {
      * @param curr
      * @return
      */
-    public List<Integer> preOrder_recur(TreeNode curr) {
+    public static List<Integer> preOrder_recur(TreeNode curr) {
         List<Integer> arrList = new ArrayList<>();
         preOrder_recur_util(curr, arrList);
         return arrList;
     }
 
-    private void preOrder_recur_util(TreeNode curr, List<Integer> arrList) {
+    private static void preOrder_recur_util(TreeNode curr, List<Integer> arrList) {
         if (curr != null) {
             arrList.add(curr.data);
             preOrder_recur_util(curr.left, arrList);
@@ -85,13 +100,13 @@ public class P1_BT_Recur_Traversals {
      * @param curr
      * @return
      */
-    public List<Integer> inOrder_recur(TreeNode curr) {
+    public static List<Integer> inOrder_recur(TreeNode curr) {
         List<Integer> arrList = new ArrayList<>();
         inOrder_recur_util(curr, arrList);
         return arrList;
     }
 
-    private void inOrder_recur_util(TreeNode curr, List<Integer> arrList) {
+    private static void inOrder_recur_util(TreeNode curr, List<Integer> arrList) {
         if (curr != null) {
             inOrder_recur_util(curr.left, arrList);
             arrList.add(curr.data);
@@ -113,13 +128,13 @@ public class P1_BT_Recur_Traversals {
      * @param curr
      * @return
      */
-    public List<Integer> postOrder_recur(TreeNode curr) {
+    public static List<Integer> postOrder_recur(TreeNode curr) {
         List<Integer> arrList = new ArrayList<>();
         postOrder_recur_util(curr, arrList);
         return arrList;
     }
 
-    private void postOrder_recur_util(TreeNode curr, List<Integer> arrList) {
+    private static void postOrder_recur_util(TreeNode curr, List<Integer> arrList) {
         if (curr != null) {
             postOrder_recur_util(curr.left, arrList);
             postOrder_recur_util(curr.right, arrList);
@@ -128,8 +143,6 @@ public class P1_BT_Recur_Traversals {
     }
 
     public static void main(String[] args) {
-        P1_BT_Recur_Traversals p1_bt_traversals = new P1_BT_Recur_Traversals();
-
         TreeNode root = new TreeNode(4);
         root.left = new TreeNode(2);
         root.right = new TreeNode(6);
@@ -138,13 +151,13 @@ public class P1_BT_Recur_Traversals {
         root.right.left = new TreeNode(5);
         root.right.right = new TreeNode(7);
 
-        System.out.println("Pre-Order traversal: " + p1_bt_traversals.preOrder_recur(root));
+        System.out.println("Pre-Order traversal: " + preOrder_recur(root));
 
-        System.out.println("In-Order traversal: " + p1_bt_traversals.inOrder_recur(root));
+        System.out.println("In-Order traversal: " + inOrder_recur(root));
 
-        System.out.println("Post-Order traversal: " + p1_bt_traversals.postOrder_recur(root));
+        System.out.println("Post-Order traversal: " + postOrder_recur(root));
 
-        System.out.println("Level-Order traversal: " + p1_bt_traversals.levelOrderTraversal_recur(root));
+        System.out.println("Level-Order traversal: " + levelOrderTraversal_recur(root));
 
     }
 }

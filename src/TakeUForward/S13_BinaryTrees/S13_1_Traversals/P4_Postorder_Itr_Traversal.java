@@ -19,7 +19,9 @@ public class P4_Postorder_Itr_Traversal {
      * @return
      */
     public List<Integer> postOrder_iterative(TreeNode curr) {
-        if (curr == null) return null;
+        if (curr == null) {
+            return null;
+        }
 
         // Store previous node
         TreeNode prevNode = null;

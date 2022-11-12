@@ -22,8 +22,9 @@ public class P3_MergeKSortedLists {
     }
 
 
-    // Implements Comparator interface for min-heap.
+    // Implements Comparator interface for min-heap, for sorted
     static class PqComparator implements Comparator<Pair> {
+        @Override
         public int compare(Pair pair1, Pair pair2) {
             if (pair1.first < pair2.first) {
                 return -1;
@@ -110,10 +111,10 @@ public class P3_MergeKSortedLists {
         P3_MergeKSortedLists p3_mergeKSortedLists = new P3_MergeKSortedLists();
         int K = 4;
         int[][] arr = {
-                {1, 2, 3, 4},
-                {2, 2, 3, 4},
-                {5, 5, 6, 6},
-                {7, 8, 9, 9}};
+            {1, 2, 3, 4},
+            {2, 2, 3, 4},
+            {5, 5, 6, 6},
+            {7, 8, 9, 9}};
 
         System.out.println(p3_mergeKSortedLists.mergeKArrays(arr, K));
 

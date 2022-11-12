@@ -49,8 +49,9 @@ public class InsertionSort {
 
         for (int i = 1; i < n; i++) {
             for (int j = 0; j < i; j++) {
-                if (arr[j] > arr[i])
+                if (arr[j] > arr[i]) {
                     swap(arr, i, j);
+                }
             }
         }
     }
