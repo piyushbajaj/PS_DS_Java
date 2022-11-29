@@ -3,7 +3,7 @@ package TakeUForward.S1_LearnBasics.S1_3_BasicMaths;
 /**
  * Created by bajajp on 17 Sep, 2022
  * <p>
- * Link: https://takeuforward.org/data-structure/find-gcd-of-two-numbers/
+ * Link: <a href="https://takeuforward.org/data-structure/find-gcd-of-two-numbers/">...</a>
  * <p>
  * Problem Statement: Find gcd of two numbers.
  * <p>

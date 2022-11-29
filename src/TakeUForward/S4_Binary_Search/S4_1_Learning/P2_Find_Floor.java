@@ -1,7 +1,5 @@
 package TakeUForward.S4_Binary_Search.S4_1_Learning;
 
-import OnlineTest.microsoft_online_test.P2;
-
 /**
  * Project: DS_Algo
  * Package: TakeUForward.S4_Binary_Search.S4_1_Learning
@@ -39,6 +37,6 @@ public class P2_Find_Floor {
         long[] arr = {1, 2, 8, 10, 11, 12, 19};
 
 
-        System.out.println(p2_find_floor.findFloor(arr, arr.length, 0));
+        System.out.println(p2_find_floor.findFloor(arr, arr.length, 3));
     }
 }

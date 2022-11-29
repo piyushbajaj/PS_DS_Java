@@ -80,7 +80,7 @@ public class P12_SubArraySumEqualsK {
     }
 
     public static void main(String[] args) {
-        System.out.println(subarraySum(new int[]{7, 1, 6, 0}, 7));
-        System.out.println(subarraySum(new int[]{2, 3, 5, 1, 9}, 10));
+        System.out.println(subarraySum(new int[] {7, 1, 6, 0}, 7));
+        System.out.println(subarraySum(new int[] {2, 3, 5, 1, 9}, 10));
     }
 }

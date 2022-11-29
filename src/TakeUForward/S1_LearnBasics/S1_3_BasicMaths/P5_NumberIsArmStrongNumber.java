@@ -3,7 +3,7 @@ package TakeUForward.S1_LearnBasics.S1_3_BasicMaths;
 /**
  * Created by bajajp on 17 Sep, 2022
  * <p>
- * Link: https://takeuforward.org/maths/check-if-a-number-is-armstrong-number-or-not/
+ * Link: <a href="https://takeuforward.org/maths/check-if-a-number-is-armstrong-number-or-not/">...</a>
  * <p>
  * Problem Statement: Given a number, check if it is Armstrong Number or Not.
  * <p>
