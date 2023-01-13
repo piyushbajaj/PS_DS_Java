@@ -46,6 +46,9 @@ public class P6_Minimum_Insertions_Convert_String {
     }
 
     public static void main(String[] args) {
+        P6_Minimum_Insertions_Convert_String p6_minimum_insertions_convert_string =
+            new P6_Minimum_Insertions_Convert_String();
 
+        System.out.println(p6_minimum_insertions_convert_string.minOperations("sea", "eat"));
     }
 }

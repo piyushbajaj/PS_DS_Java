@@ -35,7 +35,9 @@ public class ArrayRotation {
     TC: O(N)
      */
     private static void leftRotate(int[] arr, int d, int n) {
-        if (d <= 0) return;
+        if (d <= 0) {
+            return;
+        }
 
         // If d is bigger than n
         d = d % n;
@@ -50,7 +52,9 @@ public class ArrayRotation {
                 if (r >= n) {
                     r = r - n;
                 }
-                if (r == p) break;
+                if (r == p) {
+                    break;
+                }
 
                 arr[q] = arr[r];
                 q = r;
@@ -70,7 +74,9 @@ public class ArrayRotation {
     SC: O(1)
      */
     public static void leftRotateReverseArray(int[] arr, int d, int n) {
-        if (d <= 0) return;
+        if (d <= 0) {
+            return;
+        }
 
         // If d is bigger than n
         d = d % n;
@@ -91,7 +97,9 @@ public class ArrayRotation {
     }
 
     public static int gcd(int a, int b) {
-        if (b == 0) return a;
+        if (b == 0) {
+            return a;
+        }
         return gcd(b, a % b);
     }
 
@@ -108,6 +116,8 @@ public class ArrayRotation {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7};
 //        reverseArray(arr, 0, arr.length - 1);
+        System.out.println(Arrays.toString(arr));
+        rotate(arr, 3, arr.length);
         System.out.println(Arrays.toString(arr));
 
 //        leftRotate(arr, 8, arr.length);

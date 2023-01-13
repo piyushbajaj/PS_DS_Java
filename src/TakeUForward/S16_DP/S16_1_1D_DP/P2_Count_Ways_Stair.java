@@ -7,8 +7,9 @@ package TakeUForward.S16_DP.S16_1_1D_DP;
  * User: piyushbajaj
  * Date: 11/11/22
  * Time: 9:47 am
- *
- * Link: <a href="https://practice.geeksforgeeks.org/problems/count-ways-to-reach-the-nth-stair-1587115620/1">...</a>
+ * <p>
+ * lc: <a href="https://leetcode.com/problems/climbing-stairs/description/">...</a>
+ * g4g: <a href="https://practice.geeksforgeeks.org/problems/count-ways-to-reach-the-nth-stair-1587115620/1">...</a>
  */
 public class P2_Count_Ways_Stair {
     //Function to count number of ways to reach the nth stair.
@@ -33,7 +34,7 @@ public class P2_Count_Ways_Stair {
     public int countWays_tab(int n) {
         int prev2 = 1;
         int prev = 1;
-        int fib = 0;
+        int fib = prev;
         for (int i = 2; i <= n; i++) {
             fib = prev + prev2;
             prev2 = prev;

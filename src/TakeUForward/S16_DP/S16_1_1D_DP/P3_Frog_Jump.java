@@ -10,7 +10,8 @@ import java.util.Arrays;
  * Date: 11/11/22
  * Time: 2:00 pm
  * <p>
- * Link: <a href="https://www.codingninjas.com/codestudio/problems/frog-jump_3621012">...</a>
+ * ninja: <a href="https://www.codingninjas.com/codestudio/problems/frog-jump_3621012">...</a>
+ * g4g: <a href="https://practice.geeksforgeeks.org/problems/geek-jump/1">...</a>
  */
 public class P3_Frog_Jump {
     /**

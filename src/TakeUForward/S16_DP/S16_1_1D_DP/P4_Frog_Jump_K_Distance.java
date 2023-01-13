@@ -9,6 +9,8 @@ import java.util.Arrays;
  * User: piyushbajaj
  * Date: 11/11/22
  * Time: 5:21 pm
+ * <p>
+ * g4g: <a href="https://practice.geeksforgeeks.org/problems/minimal-cost/1">...</a>
  */
 public class P4_Frog_Jump_K_Distance {
 

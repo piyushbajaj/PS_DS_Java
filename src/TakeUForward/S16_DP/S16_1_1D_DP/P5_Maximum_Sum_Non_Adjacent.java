@@ -8,6 +8,7 @@ package TakeUForward.S16_DP.S16_1_1D_DP;
  * Date: 12/11/22
  * Time: 1:48 pm
  * <p>
+ * lc: <a href="https://practice.geeksforgeeks.org/problems/max-sum-without-adjacents2430/1">...</a>
  * Link: <a href="https://practice.geeksforgeeks.org/problems/stickler-theif-1587115621/1">...</a>
  */
 public class P5_Maximum_Sum_Non_Adjacent {

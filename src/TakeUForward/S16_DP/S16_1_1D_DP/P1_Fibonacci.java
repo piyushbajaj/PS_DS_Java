@@ -52,7 +52,7 @@ public class P1_Fibonacci {
         int prev2 = 0;
         int prev = 1;
 
-        int fib = 0;
+        int fib = prev;
         for (int i = 2; i <= n; i++) {
             fib = prev + prev2;
             prev2 = prev;

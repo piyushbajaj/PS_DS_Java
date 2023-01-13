@@ -1,5 +1,6 @@
 package Blind75.S1_Array;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,6 +11,8 @@ import java.util.Map;
  * User: piyushbajaj
  * Date: 19/11/22
  * Time: 5:19 pm
+ * <p>
+ * Link lc: <a href="https://leetcode.com/problems/two-sum/">...</a>
  */
 public class P1_Two_Sum {
     /**
@@ -37,6 +40,8 @@ public class P1_Two_Sum {
     }
 
     public static void main(String[] args) {
-
+        P1_Two_Sum p1_two_sum = new P1_Two_Sum();
+        int[] arr = {2, 7, 11, 15};
+        System.out.println(Arrays.toString(p1_two_sum.twoSum(arr, 9)));
     }
 }

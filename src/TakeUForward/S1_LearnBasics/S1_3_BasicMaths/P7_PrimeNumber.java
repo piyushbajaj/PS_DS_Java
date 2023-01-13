@@ -8,7 +8,7 @@ package TakeUForward.S1_LearnBasics.S1_3_BasicMaths;
  * Problem Statement: Given a number, check whether it is prime or not. A prime number is a natural number
  * that is only divisible by 1 and by itself.
  * <p>
- * Examples 1 2 3 5 7 11 13 17 19 …
+ * Examples 2 3 5 7 11 13 17 19 …
  */
 public class P7_PrimeNumber {
 
