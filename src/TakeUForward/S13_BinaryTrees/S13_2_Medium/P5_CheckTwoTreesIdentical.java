@@ -16,8 +16,9 @@ public class P5_CheckTwoTreesIdentical {
      * @return
      */
     public boolean checkTwoTrees(TreeNode node1, TreeNode node2) {
-        if (node1 == null && node2 == null)
+        if (node1 == null && node2 == null) {
             return true;
+        }
 
         if (node1 == null || node2 == null) {
             return false;

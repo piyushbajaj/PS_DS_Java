@@ -4,6 +4,9 @@ import TakeUForward.S13_BinaryTrees.S13_1_Traversals.TreeNode;
 
 /**
  * Created by bajajp on 29 Sep, 2022
+ * <p>
+ * lc: <a href="https://leetcode.com/problems/balanced-binary-tree/description/">...</a>
+ * g4g: <a href="https://practice.geeksforgeeks.org/problems/check-for-balanced-tree/1">...</a>
  */
 public class P2_Is_BT_Balanced {
 
@@ -23,19 +26,27 @@ public class P2_Is_BT_Balanced {
      * @return
      */
     public boolean isBTBalanced(TreeNode curr) {
-        if (curr == null) return false;
+        if (curr == null) {
+            return false;
+        }
 
         return isBTBalanced_util(curr) != -1;
     }
 
     public int isBTBalanced_util(TreeNode curr) {
-        if (curr == null) return 0;
+        if (curr == null) {
+            return 0;
+        }
 
         int lHeight = isBTBalanced_util(curr.left);
-        if (lHeight == -1) return -1;
+        if (lHeight == -1) {
+            return -1;
+        }
 
         int rHeight = isBTBalanced_util(curr.right);
-        if (rHeight == -1) return -1;
+        if (rHeight == -1) {
+            return -1;
+        }
 
         int diff = Math.abs(lHeight - rHeight);
         if (diff > 1) {

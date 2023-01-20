@@ -4,6 +4,9 @@ import TakeUForward.S13_BinaryTrees.S13_1_Traversals.TreeNode;
 
 /**
  * Created by bajajp on 29 Sep, 2022
+ * <p>
+ * lc: <a href="https://leetcode.com/problems/diameter-of-binary-tree/description/">...</a>
+ * g4g: <a href="https://practice.geeksforgeeks.org/problems/diameter-of-binary-tree/1">...</a>
  */
 public class P3_DiameterOfBT {
 
@@ -28,12 +31,14 @@ public class P3_DiameterOfBT {
     }
 
     public int diameterOfTree_util(TreeNode curr, int[] diameter) {
-        if (curr == null) return 0;
+        if (curr == null) {
+            return 0;
+        }
 
         int lHeight = diameterOfTree_util(curr.left, diameter);
         int rHeight = diameterOfTree_util(curr.right, diameter);
 
-        diameter[0] = Math.max(diameter[0], lHeight + rHeight);
+        diameter[0] = Math.max(diameter[0], lHeight + rHeight + 1);
 
         return Math.max(lHeight, rHeight) + 1;
     }

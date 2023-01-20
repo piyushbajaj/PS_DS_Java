@@ -1,13 +1,13 @@
 package TakeUForward.S13_BinaryTrees.S13_2_Medium;
 
-import TakeUForward.S13_BinaryTrees.S13_1_Traversals.TreeNode;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
+
+import TakeUForward.S13_BinaryTrees.S13_1_Traversals.TreeNode;
 
 /**
  * Created by bajajp on 29 Sep, 2022
@@ -22,7 +22,9 @@ public class P6_ZigZag_Traversal {
      * @return
      */
     public List<List<Integer>> levelOrderTraversal_spiral_iterative(TreeNode curr) {
-        if (curr == null) return Collections.emptyList();
+        if (curr == null) {
+            return Collections.emptyList();
+        }
 
         List<List<Integer>> result = new ArrayList<>();
 
@@ -77,7 +79,9 @@ public class P6_ZigZag_Traversal {
      * @return
      */
     public List<List<Integer>> levelOrderTraversal_spiral_iterative_better(TreeNode curr) {
-        if (curr == null) return Collections.emptyList();
+        if (curr == null) {
+            return Collections.emptyList();
+        }
 
         List<List<Integer>> result = new ArrayList<>();
 

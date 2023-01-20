@@ -5,7 +5,7 @@ import TakeUForward.S13_BinaryTrees.S13_1_Traversals.TreeNode;
 /**
  * Created by bajajp on 29 Sep, 2022
  * <p>
- * Link: https://takeuforward.org/data-structure/maximum-sum-path-in-binary-tree/
+ * Link: <a href="https://takeuforward.org/data-structure/maximum-sum-path-in-binary-tree/">...</a>
  */
 public class P4_MaxSumInBT {
 
@@ -14,7 +14,7 @@ public class P4_MaxSumInBT {
      * 1. At each step find recursively its left max and right max path
      * 2. In the maxi, store the sum of curr.data + lMax + rMax
      * 3. Return the curr.data + Math.max(lMax, rMax)
-     * <p>
+     * <p
      * TC: O(N)
      * SC: O(H)
      *
@@ -34,26 +34,36 @@ public class P4_MaxSumInBT {
             return 0;
         }
 
-        int lMax = Math.max(0, maximumSumInBT_util(curr.left, maxi));
-        int rMax = Math.max(0, maximumSumInBT_util(curr.right, maxi));
-
-        maxi[0] = Math.max(maxi[0], curr.data + lMax + rMax);
-
-        return curr.data + Math.max(lMax, rMax);
+        int left = Math.max(0, maximumSumInBT_util(curr.left, maxi));
+        int right = Math.max(0, maximumSumInBT_util(curr.right, maxi));
+        maxi[0] = Math.max(maxi[0], left + right + curr.data);
+        return Math.max(left, right) + curr.data;
     }
 
     public static void main(String[] args) {
         P4_MaxSumInBT p4_maxSumInBT = new P4_MaxSumInBT();
 
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-        root.left.left.left = new TreeNode(10);
-        root.left.left.left.left = new TreeNode(11);
+//        TreeNode root = new TreeNode(4);
+//        root.left = new TreeNode(2);
+//        root.right = new TreeNode(6);
+//        root.left.left = new TreeNode(1);
+//        root.left.right = new TreeNode(3);
+//        root.right.left = new TreeNode(5);
+//        root.right.right = new TreeNode(7);
+//        root.left.left.left = new TreeNode(10);
+//        root.left.left.left.left = new TreeNode(11);
+
+//        TreeNode root = new TreeNode(10);
+//        root.left = new TreeNode(2);
+//        root.right = new TreeNode(-25);
+//        root.left.left = new TreeNode(20);
+//        root.left.right = new TreeNode(1);
+//        root.right.left = new TreeNode(3);
+//        root.right.right = new TreeNode(4);
+
+        TreeNode root = new TreeNode(-2);
+        root.left = new TreeNode(-10);
+        root.right = new TreeNode(-90);
 
         System.out.println(p4_maxSumInBT.maximumSumInBT(root));
     }

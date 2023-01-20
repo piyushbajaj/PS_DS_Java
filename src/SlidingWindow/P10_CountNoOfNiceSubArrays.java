@@ -2,7 +2,7 @@ package SlidingWindow;
 
 /**
  * Created by bajajp on 26 Sep, 2022
- * Link: https://leetcode.com/problems/count-number-of-nice-subarrays/
+ * Link: <a href="https://leetcode.com/problems/count-number-of-nice-subarrays/">...</a>
  */
 public class P10_CountNoOfNiceSubArrays {
 
@@ -41,6 +41,6 @@ public class P10_CountNoOfNiceSubArrays {
     }
 
     public static void main(String[] args) {
-        System.out.println(numberOfSubarrays(new int[]{1, 1, 2, 1, 1}, 3));
+        System.out.println(numberOfSubarrays(new int[] {1, 1, 2, 1, 1}, 3));
     }
 }

@@ -1,0 +1,3 @@
+Subclass should extend the capability of parent and not narrow it down
+
+Here MotorCycle subclass is trying to narrow down the capability of parent by throwing such exception

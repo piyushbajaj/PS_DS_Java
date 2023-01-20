@@ -33,6 +33,12 @@ public class P1_BT_Recur_Traversals {
         return arrList;
     }
 
+    /**
+     * Only difference between this and above function is that the output here is List<List<Integer>>
+     *
+     * @param curr
+     * @return
+     */
     public static List<List<Integer>> levelOrderTraversal_list_recur(TreeNode curr) {
 
         int heightOfBT = BaseTreeNode.heightOfTree_recur(curr);
@@ -60,7 +66,7 @@ public class P1_BT_Recur_Traversals {
     }
 
     /**
-     * PreOrder Traversal
+     * PreOrder Traversal: Root, Left, Right
      * TC: O(N)
      * SC: O(N)
      * <p>

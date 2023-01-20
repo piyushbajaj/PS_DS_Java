@@ -18,7 +18,9 @@ public class P3_Inorder_Itr_Traversal {
      * @return
      */
     public List<Integer> inOrder_iterative(TreeNode curr) {
-        if (curr == null) return null;
+        if (curr == null) {
+            return null;
+        }
 
         List<Integer> result = new ArrayList<>();
         Stack<TreeNode> inOrderStack = new Stack<>();

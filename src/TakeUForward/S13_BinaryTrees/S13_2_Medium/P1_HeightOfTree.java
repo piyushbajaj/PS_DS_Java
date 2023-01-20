@@ -1,12 +1,15 @@
 package TakeUForward.S13_BinaryTrees.S13_2_Medium;
 
-import TakeUForward.S13_BinaryTrees.S13_1_Traversals.TreeNode;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
+import TakeUForward.S13_BinaryTrees.S13_1_Traversals.TreeNode;
+
 /**
  * Created by bajajp on 29 Sep, 2022
+ * <p>
+ * lc: <a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/description/">...</a>
+ * g4g: <a href="https://practice.geeksforgeeks.org/problems/height-of-binary-tree/1">...</a>
  */
 public class P1_HeightOfTree {
 
@@ -19,7 +22,9 @@ public class P1_HeightOfTree {
      * @return
      */
     public int height_recur(TreeNode curr) {
-        if (curr == null) return 0;
+        if (curr == null) {
+            return 0;
+        }
 
         int lHeight = height_recur(curr.left);
         int rHeight = height_recur(curr.right);
@@ -37,7 +42,9 @@ public class P1_HeightOfTree {
      * @return
      */
     public int height_iterative(TreeNode curr) {
-        if (curr == null) return 0;
+        if (curr == null) {
+            return 0;
+        }
 
         Queue<TreeNode> heightQueue = new LinkedList<>();
         int height = 0;
