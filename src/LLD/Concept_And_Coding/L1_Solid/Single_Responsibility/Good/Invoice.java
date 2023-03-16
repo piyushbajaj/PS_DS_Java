@@ -1,7 +1,5 @@
 package LLD.Concept_And_Coding.L1_Solid.Single_Responsibility.Good;
 
-import LLD.Concept_And_Coding.L1_Solid.Single_Responsibility.Bad.Marker;
-
 /**
  * Project: DS_Algo
  * Package: LLD.Concept_And_Coding.SOLID.Single_Responsibility.Good

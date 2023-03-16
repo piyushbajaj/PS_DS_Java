@@ -9,7 +9,6 @@ package LLD.Concept_And_Coding.L1_Solid.Liskov_Substitution.Bad;
  * Time: 7:48 pm
  */
 public class MotorCycle implements Bike {
-
     boolean isEngineOn;
     int speed;
 

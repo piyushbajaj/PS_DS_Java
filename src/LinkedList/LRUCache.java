@@ -27,13 +27,13 @@ public class LRUCache {
 
     public void accessPage(int pageNumber) {
         Node pageNode = null;
-        if(pageMap.containsKey(pageNumber)) {
+        if (pageMap.containsKey(pageNumber)) {
             // If page is present in the cache, move the page to the start of list
             pageNode = pageMap.get(pageNumber);
             pageList.movePageToHead(pageNode);
         } else {
             // If the page is not present in the cache, add the page to the cache
-            if(pageList.getCurrSize() == pageList.getSize()) {
+            if (pageList.getCurrSize() == pageList.getSize()) {
                 // If cache is full, we will remove the tail from the cache pageList
                 // Remove it from map too
                 pageMap.remove(pageList.getTail().getPageNumber());
@@ -89,11 +89,11 @@ class DoublyLinkedList {
     }
 
     public void printList() {
-        if(head == null) {
+        if (head == null) {
             return;
         }
         Node tmp = head;
-        while(tmp != null) {
+        while (tmp != null) {
             System.out.print(tmp);
             tmp = tmp.getNext();
         }
@@ -101,12 +101,12 @@ class DoublyLinkedList {
 
     public Node addPageToList(int pageNumber) {
         Node pageNode = new Node(pageNumber);
-        if(head == null) {
+        if (head == null) {
             head = pageNode;
             tail = pageNode;
             currSize = 1;
             return pageNode;
-        } else if(currSize < size) {
+        } else if (currSize < size) {
             currSize++;
         } else {
             tail = tail.getPrev();
@@ -119,11 +119,11 @@ class DoublyLinkedList {
     }
 
     public void movePageToHead(Node pageNode) {
-        if(pageNode == null || pageNode == head) {
+        if (pageNode == null || pageNode == head) {
             return;
         }
 
-        if(pageNode == tail) {
+        if (pageNode == tail) {
             tail = tail.getPrev();
             tail.setNext(null);
         }
@@ -132,7 +132,7 @@ class DoublyLinkedList {
         Node next = pageNode.getNext();
         prev.setNext(next);
 
-        if(next != null) {
+        if (next != null) {
             next.setPrev(prev);
         }
 

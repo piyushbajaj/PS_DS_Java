@@ -11,7 +11,6 @@ public class Bitwise_Class {
      */
 
     //Bitwise unary complement operator (~) Example
-
     public void BitwiseUnaryComplement(int number) {
 
         //example of bitwise unary complement operator (~)
@@ -21,7 +20,6 @@ public class Bitwise_Class {
 
 
     //Bitwise AND operator (&) Example
-
     public void BitwiseAndComplement(int a, int b) {
 
         //example of bitwise unary complement operator (~)
@@ -71,7 +69,6 @@ public class Bitwise_Class {
     }
 
     public static void main(String[] args) {
-
         Bitwise_Class BC = new Bitwise_Class();
         BC.BitwiseUnaryComplement(2);
         BC.BitwiseAndComplement(2, 10);
@@ -80,7 +77,5 @@ public class Bitwise_Class {
         BC.BitwiseLeftShift(8);
         BC.BitwiseRightShift(8);
         BC.BitwiseUnsignedRightShift(8);
-
-
     }
 }

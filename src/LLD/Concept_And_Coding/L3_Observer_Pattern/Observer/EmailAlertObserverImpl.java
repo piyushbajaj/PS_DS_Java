@@ -22,10 +22,11 @@ public class EmailAlertObserverImpl implements NotificationAlertObserver {
 
     @Override
     public void update() {
-        sendEmail(this.emailId, "product is in the stock, hurry up!");
+        sendEmail(this.emailId, "Product is in the stock, hurry up!");
     }
 
     public void sendEmail(String emailId, String msg) {
+        System.out.println(msg);
         System.out.println("Mail sent to: " + emailId);
     }
 }

@@ -3,30 +3,31 @@ package TechBoost_Old;
 /**
  * Created by piyush.bajaj on 26/03/18.
  */
-public class DoublyLinkedList_Prob {
+public class DoublyLinkedList_Prob<Key> {
     Node head;
-    static class Node{
+
+    static class Node {
         Node next;
         Node prev;
         int data;
 
-        Node(int data){
+        Node(int data) {
             this.data = data;
             this.next = null;
             this.prev = null;
         }
     }
 
-    public void createDoublyLinkList(int x){
+    public void createDoublyLinkList(int x) {
         Node p = new Node(x);
-        if(head == null){
+        if (head == null) {
             head = p;
             return;
         }
 
         Node curr = head;
         Node q = null;
-        while (curr.next!=null){
+        while (curr.next != null) {
             q = curr;
             curr = curr.next;
             curr.prev = q;
@@ -37,19 +38,20 @@ public class DoublyLinkedList_Prob {
 
     }
 
-    public void printList(Node p){
+    public void printList(Node p) {
         Node q = null;
-        while (p!=null){
+        while (p != null) {
             System.out.print(p.data + " -> ");
             p = p.next;
-            if(p!=null && p.next == null)
+            if (p != null && p.next == null) {
                 q = p;
+            }
         }
         System.out.print(" NULL");
         System.out.println();
 
         System.out.print("Doubly Linked List in reversed order using previous pointers: ");
-        while (q!=null){
+        while (q != null) {
             System.out.print(q.data + " -> ");
             q = q.prev;
         }
@@ -57,16 +59,17 @@ public class DoublyLinkedList_Prob {
         System.out.println();
     }
 
-    public Node reverse_doublyLinkedList(Node key){
+    public Node reverse_doublyLinkedList(Node key) {
         Node curr = key;
 
-        while (curr!=null){
+        while (curr != null) {
             Node temp = curr.next;
             curr.next = curr.prev;
             curr.prev = temp;
 
-            if(curr.prev == null)
+            if (curr.prev == null) {
                 head = curr;
+            }
             curr = curr.prev;
         }
         return head;

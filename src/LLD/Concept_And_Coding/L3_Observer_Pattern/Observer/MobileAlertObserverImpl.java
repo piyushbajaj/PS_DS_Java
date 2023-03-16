@@ -22,10 +22,11 @@ public class MobileAlertObserverImpl implements NotificationAlertObserver {
 
     @Override
     public void update() {
-        sendMsgOnMobile(this.userName, "product is in stock, hurry up!");
+        sendMsgOnMobile(this.userName, "Product is in stock, hurry up!");
     }
 
     public void sendMsgOnMobile(String userName, String msg) {
+        System.out.println(msg);
         System.out.println("Message sent to: " + userName);
     }
 }

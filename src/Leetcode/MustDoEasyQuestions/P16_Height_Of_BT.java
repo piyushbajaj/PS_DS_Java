@@ -1,6 +1,6 @@
 package Leetcode.MustDoEasyQuestions;
 
-import TakeUForward.S13_BinaryTrees.S13_1_Traversals.TreeNode;
+import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode;
 
 /**
  * Project: DS_Algo
