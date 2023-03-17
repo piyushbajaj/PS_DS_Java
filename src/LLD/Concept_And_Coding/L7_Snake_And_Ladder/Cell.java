@@ -6,9 +6,8 @@ package LLD.Concept_And_Coding.L7_Snake_And_Ladder;
  * <p>
  * User: piyushbajaj
  * Date: 16/03/23
- * Time: 1:36 pm
+ * Time: 5:48 pm
  */
-public class Ladder {
-    int start;
-    int end;
+public class Cell {
+    Jump jump;
 }

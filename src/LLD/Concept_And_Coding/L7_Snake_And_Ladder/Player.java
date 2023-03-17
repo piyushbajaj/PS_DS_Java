@@ -16,6 +16,4 @@ public class Player {
         this.id = id;
         this.currentPosition = currentPosition;
     }
-
-
 }
