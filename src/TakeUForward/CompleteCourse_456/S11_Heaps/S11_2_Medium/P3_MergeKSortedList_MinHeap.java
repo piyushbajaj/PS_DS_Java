@@ -120,7 +120,7 @@ public class P3_MergeKSortedList_MinHeap {
 
     public static void main(String[] args) {
         P3_MergeKSortedList_MinHeap p3_mergeKSortedList_minHeap = new P3_MergeKSortedList_MinHeap();
-        int k = 4;
+        int k = 3;
         int[][] arr = {
                 {1, 2, 3, 4},
                 {2, 2, 3, 4},
