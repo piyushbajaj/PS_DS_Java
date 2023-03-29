@@ -2,7 +2,7 @@ package Array;
 
 import java.util.HashMap;
 
-import javatpoint.Student;
+import Javatpoint.Student;
 
 /**
  * Created by piyush.bajaj on 16/11/16.
