@@ -14,7 +14,7 @@ public class ATMMachine {
     int cashInMachine = 2000;
     boolean correctPinEntered = false;
 
-    public ATMMachine(){
+    public ATMMachine() {
         hasCard = new HasCard(this);
         noCard = new NoCard(this);
         hasPin = new HasPin(this);
@@ -22,48 +22,48 @@ public class ATMMachine {
 
         atmState = noCard;
 
-        if(cashInMachine < 0){
+        if (cashInMachine < 0) {
             atmState = noCash;
         }
     }
 
-    public void setAtmState(ATMState newATMState){
+    public void setAtmState(ATMState newATMState) {
         atmState = newATMState;
     }
 
-    public void setCashInMachine(int newCash){
+    public void setCashInMachine(int newCash) {
         cashInMachine = newCash;
     }
 
-    public void insertCard(){
+    public void insertCard() {
         atmState.insertCard();
     }
 
-    public void ejectCard(){
+    public void ejectCard() {
         atmState.ejectCard();
     }
 
-    public void insertPin(int newPin){
+    public void insertPin(int newPin) {
         atmState.insertPin(newPin);
     }
 
-    public void requestCash(int newCashToWithdraw){
+    public void requestCash(int newCashToWithdraw) {
         atmState.requestCash(newCashToWithdraw);
     }
 
-    public ATMState getHasCard(){
+    public ATMState getHasCard() {
         return hasCard;
     }
 
-    public ATMState getNoCard(){
+    public ATMState getNoCard() {
         return noCard;
     }
 
-    public ATMState getHasPin(){
+    public ATMState getHasPin() {
         return hasPin;
     }
 
-    public ATMState getNoCash(){
+    public ATMState getNoCash() {
         return noCash;
     }
 

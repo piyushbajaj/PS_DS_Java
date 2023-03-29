@@ -13,6 +13,13 @@ import java.util.Arrays;
  */
 public class P2_Bubble_Sort {
 
+    public static void main(String[] args) {
+        P2_Bubble_Sort p2_bubble_sort = new P2_Bubble_Sort();
+        int[] arr = {4, 1, 3, 9, 7};
+        p2_bubble_sort.bubbleSort(arr, arr.length);
+        System.out.println(Arrays.toString(arr));
+    }
+
     /**
      * Approach:
      * 1. Swap the adjacent elements, which is greater
@@ -32,12 +39,5 @@ public class P2_Bubble_Sort {
                 }
             }
         }
-    }
-
-    public static void main(String[] args) {
-        P2_Bubble_Sort p2_bubble_sort = new P2_Bubble_Sort();
-        int[] arr = {4, 1, 3, 9, 7};
-        p2_bubble_sort.bubbleSort(arr, arr.length);
-        System.out.println(Arrays.toString(arr));
     }
 }

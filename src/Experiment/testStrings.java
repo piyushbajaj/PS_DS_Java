@@ -10,8 +10,8 @@ public class testStrings {
 
     public static void main(String[] args) {
         String s3Path = new StringBuilder("BULLSEYE_S3_FOLDER").append(File.separator).append(2022)
-                .append(File.separator).append(10).append(File.separator).append(1234556)
-                .append(".csv").toString();
+            .append(File.separator).append(10).append(File.separator).append(1234556)
+            .append(".csv").toString();
 
         System.out.println(s3Path);
 

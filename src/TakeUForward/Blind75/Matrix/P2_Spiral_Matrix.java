@@ -14,6 +14,12 @@ import java.util.List;
  */
 public class P2_Spiral_Matrix {
 
+    public static void main(String[] args) {
+        P2_Spiral_Matrix p2_spiral_matrix = new P2_Spiral_Matrix();
+        int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        System.out.println(p2_spiral_matrix.spiralOrder(matrix));
+    }
+
     /**
      * TC: O(N*M)
      * SC: O(1)
@@ -64,11 +70,5 @@ public class P2_Spiral_Matrix {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        P2_Spiral_Matrix p2_spiral_matrix = new P2_Spiral_Matrix();
-        int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-        System.out.println(p2_spiral_matrix.spiralOrder(matrix));
     }
 }

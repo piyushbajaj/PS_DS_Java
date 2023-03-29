@@ -50,7 +50,9 @@ public class P4_GCDOfTwoNumbers {
      * @return
      */
     static int gcd1(int num1, int num2) {
-        if (num2 == 0) return num1;
+        if (num2 == 0) {
+            return num1;
+        }
 
         return gcd1(num2, num1 % num2);
     }

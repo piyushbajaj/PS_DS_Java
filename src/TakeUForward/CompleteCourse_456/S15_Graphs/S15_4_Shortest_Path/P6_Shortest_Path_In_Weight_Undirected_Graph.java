@@ -16,13 +16,13 @@ import java.util.PriorityQueue;
  * Link: https://practice.geeksforgeeks.org/problems/shortest-path-in-weighted-undirected-graph/1
  */
 public class P6_Shortest_Path_In_Weight_Undirected_Graph {
-    static class Pair {
-        int distance, toNode;
+    public static void main(String[] args) {
+        P6_Shortest_Path_In_Weight_Undirected_Graph p6_shortest_path_in_weight_undirected_graph =
+            new P6_Shortest_Path_In_Weight_Undirected_Graph();
 
-        Pair(int toNode, int distance) {
-            this.toNode = toNode;
-            this.distance = distance;
-        }
+        int[][] edges = {{1, 2, 2}, {2, 5, 5}, {2, 3, 4}, {1, 4, 1}, {4, 3, 3}, {3, 5, 1}};
+
+        System.out.println(p6_shortest_path_in_weight_undirected_graph.shortestPath(5, 6, edges));
     }
 
     /**
@@ -96,12 +96,12 @@ public class P6_Shortest_Path_In_Weight_Undirected_Graph {
         return result;
     }
 
-    public static void main(String[] args) {
-        P6_Shortest_Path_In_Weight_Undirected_Graph p6_shortest_path_in_weight_undirected_graph =
-            new P6_Shortest_Path_In_Weight_Undirected_Graph();
+    static class Pair {
+        int distance, toNode;
 
-        int[][] edges = {{1, 2, 2}, {2, 5, 5}, {2, 3, 4}, {1, 4, 1}, {4, 3, 3}, {3, 5, 1}};
-
-        System.out.println(p6_shortest_path_in_weight_undirected_graph.shortestPath(5, 6, edges));
+        Pair(int toNode, int distance) {
+            this.toNode = toNode;
+            this.distance = distance;
+        }
     }
 }

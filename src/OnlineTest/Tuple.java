@@ -27,8 +27,9 @@ public class Tuple {
     }
 
     public void setWeight(int weight) {
-        if(weight >= 0 && weight <= 10000)
+        if (weight >= 0 && weight <= 10000) {
             this.weight = weight;
+        }
     }
 
     public int getCost() {
@@ -36,7 +37,8 @@ public class Tuple {
     }
 
     public void setCost(int cost) {
-        if(cost >= 0 && cost <= 100)
-        this.cost = cost;
+        if (cost >= 0 && cost <= 100) {
+            this.cost = cost;
+        }
     }
 }

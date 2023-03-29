@@ -8,11 +8,11 @@ import java.util.Stack;
  */
 public class DFS {
 
-    //For adding random vertices
-    public Vertex[] vertexList;
     private final int V; //Number of vertices
     //Array of lists for Adjacency list representation
     private final LinkedList<Integer>[] adjList;
+    //For adding random vertices
+    public Vertex[] vertexList;
     private int vertexCount;
 
     public DFS(int vertices) {
@@ -24,65 +24,6 @@ public class DFS {
 
         vertexList = new Vertex[V];
         vertexCount = 0;
-    }
-
-    public static class Vertex {
-        public int label;
-        public boolean visited;
-
-        public Vertex(int lab) {
-            label = lab;
-            visited = false;
-        }
-    }
-
-    //static boolean[] visited;
-
-    public void addEdge(int i, int j) {
-        adjList[i].add(j);
-        adjList[j].add(i);
-    }
-
-    public void addVertices(int v) {
-        vertexList[vertexCount++] = new Vertex(v);
-    }
-
-    public void DFS_fun() {
-
-        for (int i = 0; i < V; i++) {
-            if (!vertexList[i].visited)
-                DFS_Utility(i);
-        }
-
-        //reset flags
-        for (int i = 0; i < V; i++) {
-            vertexList[i].visited = false;
-        }
-    }
-
-    public void DFS_Utility(int v) {
-
-        //mark the first node as visited
-        vertexList[v].visited = true;
-        System.out.print(vertexList[v].label + " ");
-        Stack<Integer> stk = new Stack<Integer>();
-        stk.push(v);
-
-        while (!stk.isEmpty()) {
-            int temp = nextElement(stk.pop());
-            if (temp != -1) {
-                vertexList[temp].visited = true;
-                System.out.print(vertexList[temp].label + " ");
-                stk.push(temp);
-            }
-        }
-    }
-
-    public int nextElement(int v) {
-        for (int i = 0; i < V; i++)
-            if (adjList[v].contains(i) && !vertexList[i].visited)
-                return i;
-        return -1;
     }
 
     public static void main(String[] args) {
@@ -126,6 +67,68 @@ public class DFS {
 
         g.DFS_fun();
 
+    }
+
+    //static boolean[] visited;
+
+    public void addEdge(int i, int j) {
+        adjList[i].add(j);
+        adjList[j].add(i);
+    }
+
+    public void addVertices(int v) {
+        vertexList[vertexCount++] = new Vertex(v);
+    }
+
+    public void DFS_fun() {
+
+        for (int i = 0; i < V; i++) {
+            if (!vertexList[i].visited) {
+                DFS_Utility(i);
+            }
+        }
+
+        //reset flags
+        for (int i = 0; i < V; i++) {
+            vertexList[i].visited = false;
+        }
+    }
+
+    public void DFS_Utility(int v) {
+
+        //mark the first node as visited
+        vertexList[v].visited = true;
+        System.out.print(vertexList[v].label + " ");
+        Stack<Integer> stk = new Stack<Integer>();
+        stk.push(v);
+
+        while (!stk.isEmpty()) {
+            int temp = nextElement(stk.pop());
+            if (temp != -1) {
+                vertexList[temp].visited = true;
+                System.out.print(vertexList[temp].label + " ");
+                stk.push(temp);
+            }
+        }
+    }
+
+    public int nextElement(int v) {
+        for (int i = 0; i < V; i++) {
+            if (adjList[v].contains(i) && !vertexList[i].visited) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static class Vertex {
+        public int label;
+        public boolean visited;
+
+        public Vertex(int lab) {
+            label = lab;
+            visited = false;
+        }
     }
 
 

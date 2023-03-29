@@ -10,6 +10,22 @@ public class HeapSort extends MaxHeap_PQ {
         super(capacity);
     }
 
+    public static void main(String[] args) {
+        HeapSort heapSort = new HeapSort(10);
+        Vector<Integer> vector = new Vector<>();
+        vector.add(10);
+        vector.add(9);
+        vector.add(4);
+        vector.add(11);
+        vector.add(15);
+        vector.add(2);
+
+        System.out.println("Before heapsort: " + vector);
+        heapSort.heapSort_algo(vector);
+
+        System.out.println("After heapsort: " + vector);
+    }
+
     /**
      * Use Max- heap for Heap Sort because:
      * 1. In the first step, it will arrange the element as per the max heap
@@ -34,21 +50,5 @@ public class HeapSort extends MaxHeap_PQ {
             swap_custom(vecA, i, 0);
             heapify_down_custom(vecA, 0, i);
         }
-    }
-
-    public static void main(String[] args) {
-        HeapSort heapSort = new HeapSort(10);
-        Vector<Integer> vector = new Vector<>();
-        vector.add(10);
-        vector.add(9);
-        vector.add(4);
-        vector.add(11);
-        vector.add(15);
-        vector.add(2);
-
-        System.out.println("Before heapsort: " + vector);
-        heapSort.heapSort_algo(vector);
-
-        System.out.println("After heapsort: " + vector);
     }
 }

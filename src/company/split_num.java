@@ -4,8 +4,8 @@ package com.company;
  * Created by piyush.bajaj on 12/03/16.
  */
 public class split_num {
-    public static void main(String args[]){
-        int number=123;
+    public static void main(String args[]) {
+        int number = 123;
         int length = String.valueOf(number).length();
         System.out.println(length);
         int[] a;
@@ -14,6 +14,6 @@ public class split_num {
             number = number / 10;
 
         }
-        System.out.println(1%3);
+        System.out.println(1 % 3);
     }
 }

@@ -17,6 +17,19 @@ import TakeUForward.CompleteCourse_456.S15_Graphs.S15_1_Learning.P2_DFS;
  */
 public class P4_Cycle_Detection_Directed_BFS {
 
+    public static void main(String[] args) {
+        P4_Cycle_Detection_Directed_BFS p4_cycle_detection_directed_bfs = new P4_Cycle_Detection_Directed_BFS();
+
+        P2_DFS p2_dfs = new P2_DFS(5);
+        p2_dfs.addEdge(0, 1, P2_DFS.GraphDirection.Directional);
+        p2_dfs.addEdge(1, 2, P2_DFS.GraphDirection.Directional);
+        p2_dfs.addEdge(2, 3, P2_DFS.GraphDirection.Directional);
+        p2_dfs.addEdge(2, 4, P2_DFS.GraphDirection.Directional);
+        p2_dfs.addEdge(3, 1, P2_DFS.GraphDirection.Directional);
+
+        System.out.println(p4_cycle_detection_directed_bfs.isCyclic(6, p2_dfs.adjList));
+    }
+
     public boolean isCyclic(int V, ArrayList<ArrayList<Integer>> adj) {
         ArrayList<Integer> result = new ArrayList<>();
         int[] inDegree = new int[V];
@@ -55,18 +68,5 @@ public class P4_Cycle_Detection_Directed_BFS {
                 }
             }
         }
-    }
-
-    public static void main(String[] args) {
-        P4_Cycle_Detection_Directed_BFS p4_cycle_detection_directed_bfs = new P4_Cycle_Detection_Directed_BFS();
-
-        P2_DFS p2_dfs = new P2_DFS(5);
-        p2_dfs.addEdge(0, 1, P2_DFS.GraphDirection.Directional);
-        p2_dfs.addEdge(1, 2, P2_DFS.GraphDirection.Directional);
-        p2_dfs.addEdge(2, 3, P2_DFS.GraphDirection.Directional);
-        p2_dfs.addEdge(2, 4, P2_DFS.GraphDirection.Directional);
-        p2_dfs.addEdge(3, 1, P2_DFS.GraphDirection.Directional);
-
-        System.out.println(p4_cycle_detection_directed_bfs.isCyclic(6, p2_dfs.adjList));
     }
 }

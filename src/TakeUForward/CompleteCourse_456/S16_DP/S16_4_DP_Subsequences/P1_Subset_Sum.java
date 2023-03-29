@@ -14,6 +14,26 @@ import java.util.Arrays;
  */
 public class P1_Subset_Sum {
 
+    public static void main(String[] args) {
+        P1_Subset_Sum p1_subset_sum = new P1_Subset_Sum();
+        int[] arr = {2, 3, 1, 1};
+        System.out.println(p1_subset_sum.isSubsetSum(arr.length, arr, 5));
+
+        System.out.println(p1_subset_sum.isSubsetSum_mem(arr.length, arr, 5));
+
+        int[] arr2 = {3, 34, 4, 12, 5, 2};
+
+        System.out.println(p1_subset_sum.isSubsetSum_tab(arr2.length, arr2, 9));
+
+        System.out.println(p1_subset_sum.isSubsetSum_tab(arr.length, arr, 5));
+
+        System.out.println(p1_subset_sum.isSubsetSum_tab_better(arr.length, arr, 5));
+
+        int[] arr1 = {1, 5, 11, 5};
+
+        System.out.println(p1_subset_sum.isSubsetSum_recur(arr1.length - 1, 11, arr1));
+    }
+
     /**
      * Recursive solution
      * <p>
@@ -179,25 +199,5 @@ public class P1_Subset_Sum {
             prev = curr;
         }
         return prev[sum];
-    }
-
-    public static void main(String[] args) {
-        P1_Subset_Sum p1_subset_sum = new P1_Subset_Sum();
-        int[] arr = {2, 3, 1, 1};
-        System.out.println(p1_subset_sum.isSubsetSum(arr.length, arr, 5));
-
-        System.out.println(p1_subset_sum.isSubsetSum_mem(arr.length, arr, 5));
-
-        int[] arr2 = {3, 34, 4, 12, 5, 2};
-
-        System.out.println(p1_subset_sum.isSubsetSum_tab(arr2.length, arr2, 9));
-
-        System.out.println(p1_subset_sum.isSubsetSum_tab(arr.length, arr, 5));
-
-        System.out.println(p1_subset_sum.isSubsetSum_tab_better(arr.length, arr, 5));
-
-        int[] arr1 = {1, 5, 11, 5};
-
-        System.out.println(p1_subset_sum.isSubsetSum_recur(arr1.length - 1, 11, arr1));
     }
 }

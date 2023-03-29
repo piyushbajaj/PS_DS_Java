@@ -10,6 +10,7 @@ public class P3_FindPivotIndex {
      * Will using prefix sum to calculate the value of the left array and to the right array
      * TC: O(N)
      * SC: O(1)
+     *
      * @param nums
      * @return
      */
@@ -34,6 +35,6 @@ public class P3_FindPivotIndex {
     }
 
     public static void main(String[] args) {
-        System.out.println(pivotIndex(new int[]{1, 7, 3, 6, 5, 6}));
+        System.out.println(pivotIndex(new int[] {1, 7, 3, 6, 5, 6}));
     }
 }

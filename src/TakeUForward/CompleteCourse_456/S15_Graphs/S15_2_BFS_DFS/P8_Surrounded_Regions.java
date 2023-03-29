@@ -16,6 +16,18 @@ import java.util.Arrays;
  * SC: O(N*M)
  */
 public class P8_Surrounded_Regions {
+    public static void main(String[] args) {
+        char[][] mat = {{'X', 'X', 'X', 'X'},
+            {'X', 'O', 'X', 'X'},
+            {'X', 'O', 'O', 'X'},
+            {'X', 'O', 'X', 'X'},
+            {'X', 'X', 'O', 'O'}};
+
+        P8_Surrounded_Regions p8_surrounded_regions = new P8_Surrounded_Regions();
+        p8_surrounded_regions.solve(mat);
+        System.out.println(Arrays.deepToString(mat));
+    }
+
     public void solve(char[][] board) {
         int row = board.length;
         int col = board[0].length;
@@ -71,19 +83,6 @@ public class P8_Surrounded_Regions {
                 solve_util(board, cantBeConverted, neighbourRow, neighbourCol);
             }
         }
-    }
-
-
-    public static void main(String[] args) {
-        char[][] mat = {{'X', 'X', 'X', 'X'},
-            {'X', 'O', 'X', 'X'},
-            {'X', 'O', 'O', 'X'},
-            {'X', 'O', 'X', 'X'},
-            {'X', 'X', 'O', 'O'}};
-
-        P8_Surrounded_Regions p8_surrounded_regions = new P8_Surrounded_Regions();
-        p8_surrounded_regions.solve(mat);
-        System.out.println(Arrays.deepToString(mat));
     }
 
 

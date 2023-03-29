@@ -17,13 +17,14 @@ import java.util.PriorityQueue;
  */
 public class P11_Number_Of_Ways_Arrive {
 
-    static class Pair {
-        int distance, node;
+    public static void main(String[] args) {
+        List<List<Integer>> edges =
+            Arrays.asList(Arrays.asList(0, 6, 7), Arrays.asList(0, 1, 2), Arrays.asList(1, 2, 3), Arrays.asList(1, 3,
+                    3), Arrays.asList(6, 3, 3), Arrays.asList(3, 5, 1), Arrays.asList(6, 5, 1), Arrays.asList(2, 5, 1),
+                Arrays.asList(0, 4, 5), Arrays.asList(4, 6, 2));
 
-        Pair(int distance, int node) {
-            this.distance = distance;
-            this.node = node;
-        }
+        P11_Number_Of_Ways_Arrive p11_number_of_ways_arrive = new P11_Number_Of_Ways_Arrive();
+        System.out.println(p11_number_of_ways_arrive.countPaths(7, edges));
     }
 
     /**
@@ -83,13 +84,12 @@ public class P11_Number_Of_Ways_Arrive {
         return ways[n - 1] % mod;
     }
 
-    public static void main(String[] args) {
-        List<List<Integer>> edges =
-            Arrays.asList(Arrays.asList(0, 6, 7), Arrays.asList(0, 1, 2), Arrays.asList(1, 2, 3), Arrays.asList(1, 3,
-                    3), Arrays.asList(6, 3, 3), Arrays.asList(3, 5, 1), Arrays.asList(6, 5, 1), Arrays.asList(2, 5, 1),
-                Arrays.asList(0, 4, 5), Arrays.asList(4, 6, 2));
+    static class Pair {
+        int distance, node;
 
-        P11_Number_Of_Ways_Arrive p11_number_of_ways_arrive = new P11_Number_Of_Ways_Arrive();
-        System.out.println(p11_number_of_ways_arrive.countPaths(7, edges));
+        Pair(int distance, int node) {
+            this.distance = distance;
+            this.node = node;
+        }
     }
 }

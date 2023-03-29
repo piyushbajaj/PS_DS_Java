@@ -10,30 +10,6 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  */
 public class P5_CheckTwoTreesIdentical {
 
-    /**
-     * TC: O(N)
-     * SC: O(H)
-     *
-     * @param node1
-     * @param node2
-     * @return
-     */
-    public boolean checkTwoTrees(TreeNode node1, TreeNode node2) {
-        if (node1 == null && node2 == null) {
-            return true;
-        }
-
-        if (node1 == null || node2 == null) {
-            return false;
-        }
-
-        if (node1.data != node2.data) {
-            return false;
-        }
-
-        return checkTwoTrees(node1.left, node2.left) && checkTwoTrees(node1.right, node2.right);
-    }
-
     public static void main(String[] args) {
         P5_CheckTwoTreesIdentical p5_checkTwoTreesIdentical = new P5_CheckTwoTreesIdentical();
 
@@ -58,5 +34,29 @@ public class P5_CheckTwoTreesIdentical {
         root1.left.left.left.left = new TreeNode(11);
 
         System.out.println(p5_checkTwoTreesIdentical.checkTwoTrees(root, root1));
+    }
+
+    /**
+     * TC: O(N)
+     * SC: O(H)
+     *
+     * @param node1
+     * @param node2
+     * @return
+     */
+    public boolean checkTwoTrees(TreeNode node1, TreeNode node2) {
+        if (node1 == null && node2 == null) {
+            return true;
+        }
+
+        if (node1 == null || node2 == null) {
+            return false;
+        }
+
+        if (node1.data != node2.data) {
+            return false;
+        }
+
+        return checkTwoTrees(node1.left, node2.left) && checkTwoTrees(node1.right, node2.right);
     }
 }

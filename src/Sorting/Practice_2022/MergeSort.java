@@ -4,6 +4,13 @@ import java.util.Arrays;
 
 public class MergeSort extends BaseClass {
 
+    public static void main(String[] args) {
+        MergeSort mergeSort = new MergeSort();
+        int[] arr = {6, 4, 2, 1, 3, 5};
+        mergeSort.mergeSort(arr, 0, arr.length - 1);
+        System.out.println(Arrays.toString(arr));
+    }
+
     /**
      * TC: O(N*logN)
      *
@@ -60,12 +67,5 @@ public class MergeSort extends BaseClass {
             k++;
             j++;
         }
-    }
-
-    public static void main(String[] args) {
-        MergeSort mergeSort = new MergeSort();
-        int[] arr = {6, 4, 2, 1, 3, 5};
-        mergeSort.mergeSort(arr, 0, arr.length - 1);
-        System.out.println(Arrays.toString(arr));
     }
 }

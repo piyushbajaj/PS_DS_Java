@@ -8,12 +8,10 @@ import java.util.List;
  * Created by piyush.bajaj on 31/03/18.
  */
 public class NQueenProblem {
-    class Position {
-        int row, col;
-        Position(int row, int col) {
-            this.row = row;
-            this.col = col;
-        }
+    public static void main(String args[]) {
+        NQueenProblem s = new NQueenProblem();
+        Position[] positions = s.solveNQueenOneSolution(6);
+        Arrays.stream(positions).forEach(position -> System.out.println(position.row + " " + position.col));
     }
 
     public Position[] solveNQueenOneSolution(int n) {
@@ -37,7 +35,7 @@ public class NQueenProblem {
             //check if this row and col is not under attack from any previous queen.
             for (int queen = 0; queen < row; queen++) {
                 if (positions[queen].col == col || positions[queen].row - positions[queen].col == row - col ||
-                        positions[queen].row + positions[queen].col == row + col) {
+                    positions[queen].row + positions[queen].col == row + col) {
                     foundSafe = false;
                     break;
                 }
@@ -85,7 +83,8 @@ public class NQueenProblem {
         for (int i = 0; i < n; i++) {
             boolean foundSafe = true;
             for (int j = 0; j < current; j++) {
-                if (positions[j].col == i || positions[j].col - positions[j].row == i - current || positions[j].row + positions[j].col == i + current) {
+                if (positions[j].col == i || positions[j].col - positions[j].row == i - current ||
+                    positions[j].row + positions[j].col == i + current) {
                     foundSafe = false;
                     break;
                 }
@@ -97,9 +96,12 @@ public class NQueenProblem {
         }
     }
 
-    public static void main(String args[]) {
-        NQueenProblem s = new NQueenProblem();
-        Position[] positions = s.solveNQueenOneSolution(6);
-        Arrays.stream(positions).forEach(position -> System.out.println(position.row + " " + position.col));
+    class Position {
+        int row, col;
+
+        Position(int row, int col) {
+            this.row = row;
+            this.col = col;
+        }
     }
 }

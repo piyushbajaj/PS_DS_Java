@@ -15,6 +15,11 @@ import java.util.List;
  */
 public class P1_Pascals_Triangle {
 
+    public static void main(String[] args) {
+        P1_Pascals_Triangle p1_pascals_triangle = new P1_Pascals_Triangle();
+        System.out.println(p1_pascals_triangle.generate(5));
+    }
+
     /**
      * TC: O(Rows * Cols)
      *
@@ -39,10 +44,5 @@ public class P1_Pascals_Triangle {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        P1_Pascals_Triangle p1_pascals_triangle = new P1_Pascals_Triangle();
-        System.out.println(p1_pascals_triangle.generate(5));
     }
 }

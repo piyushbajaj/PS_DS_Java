@@ -22,6 +22,7 @@ public class P1_LargestElementInArray {
     /**
      * TC: O(n)
      * SC: O(1)
+     *
      * @param arr
      * @return
      */
@@ -36,6 +37,6 @@ public class P1_LargestElementInArray {
     }
 
     public static void main(String[] args) {
-        System.out.println(maxElement(new int[]{2, 5, 1, 3, 0}));
+        System.out.println(maxElement(new int[] {2, 5, 1, 3, 0}));
     }
 }

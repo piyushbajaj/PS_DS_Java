@@ -9,6 +9,19 @@ import java.util.Map;
  * Created by bajajp on 04 Sep, 2022
  */
 public class ThreeSortedArrays {
+    public static void main(String[] args) {
+        ThreeSortedArrays sortedArrays = new ThreeSortedArrays();
+        System.out.println(sortedArrays.arraysIntersection(
+            new int[] {1, 2, 3, 4, 5},
+            new int[] {1, 2, 5, 7, 9},
+            new int[] {1, 3, 4, 5, 8}));
+
+        System.out.println(sortedArrays.arraysIntersectionBetter(
+            new int[] {1, 2, 3, 4, 5},
+            new int[] {1, 2, 5, 7, 9},
+            new int[] {1, 3, 4, 5, 8}));
+    }
+
     /**
      * Bruteforce using HashMap
      * TC: O(N)
@@ -76,18 +89,5 @@ public class ThreeSortedArrays {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        ThreeSortedArrays sortedArrays = new ThreeSortedArrays();
-        System.out.println(sortedArrays.arraysIntersection(
-                new int[]{1, 2, 3, 4, 5},
-                new int[]{1, 2, 5, 7, 9},
-                new int[]{1, 3, 4, 5, 8}));
-
-        System.out.println(sortedArrays.arraysIntersectionBetter(
-                new int[]{1, 2, 3, 4, 5},
-                new int[]{1, 2, 5, 7, 9},
-                new int[]{1, 3, 4, 5, 8}));
     }
 }

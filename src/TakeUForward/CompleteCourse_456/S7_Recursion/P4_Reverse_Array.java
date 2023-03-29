@@ -15,6 +15,20 @@ import static Sorting.InsertionSort.swap;
  */
 public class P4_Reverse_Array {
 
+    public static void main(String[] args) {
+        P4_Reverse_Array p4_reverse_array = new P4_Reverse_Array();
+        int[] arr = {1, 2, 3, 4, 5};
+        p4_reverse_array.reverseArr(arr, 0, arr.length - 1);
+        System.out.println(Arrays.toString(arr));
+
+        int[] arr1 = {1, 2, 3, 4, 5};
+        p4_reverse_array.reverseArr_oneVariable(arr1, 0, arr1.length);
+        System.out.println(Arrays.toString(arr1));
+
+        String str = "piyip";
+        System.out.println(p4_reverse_array.isPalindrome(str.toCharArray(), 0, str.length()));
+    }
+
     /**
      * TC: O(N)
      * SC: O(N)
@@ -50,20 +64,5 @@ public class P4_Reverse_Array {
         }
 
         return isPalindrome(arr, i + 1, n);
-    }
-
-
-    public static void main(String[] args) {
-        P4_Reverse_Array p4_reverse_array = new P4_Reverse_Array();
-        int[] arr = {1, 2, 3, 4, 5};
-        p4_reverse_array.reverseArr(arr, 0, arr.length - 1);
-        System.out.println(Arrays.toString(arr));
-
-        int[] arr1 = {1, 2, 3, 4, 5};
-        p4_reverse_array.reverseArr_oneVariable(arr1, 0, arr1.length);
-        System.out.println(Arrays.toString(arr1));
-
-        String str = "piyip";
-        System.out.println(p4_reverse_array.isPalindrome(str.toCharArray(), 0, str.length()));
     }
 }

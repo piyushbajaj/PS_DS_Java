@@ -5,6 +5,12 @@ package StriverSDESheet.Arrays_Part3;
  */
 public class P2_PowerOfNumber {
 
+    public static void main(String[] args) {
+        P2_PowerOfNumber p2_powerOfNumber = new P2_PowerOfNumber();
+        System.out.println(p2_powerOfNumber.power(2, 6));
+        System.out.println(p2_powerOfNumber.power_better(2, 6));
+    }
+
     /**
      * O(n)
      *
@@ -44,11 +50,5 @@ public class P2_PowerOfNumber {
             }
         }
         return pow;
-    }
-
-    public static void main(String[] args) {
-        P2_PowerOfNumber p2_powerOfNumber = new P2_PowerOfNumber();
-        System.out.println(p2_powerOfNumber.power(2, 6));
-        System.out.println(p2_powerOfNumber.power_better(2, 6));
     }
 }

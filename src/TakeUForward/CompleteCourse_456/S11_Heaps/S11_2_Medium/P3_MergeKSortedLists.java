@@ -11,28 +11,20 @@ import java.util.PriorityQueue;
  */
 public class P3_MergeKSortedLists {
 
-    static class Pair {
-        public int first, second, third;
+    public static void main(String[] args) {
+        P3_MergeKSortedLists p3_mergeKSortedLists = new P3_MergeKSortedLists();
+        int K = 4;
+        int[][] arr = {
+            {1, 2, 3, 4},
+            {2, 2, 3, 4},
+            {5, 5, 6, 6},
+            {7, 8, 9, 9}};
 
-        Pair(int first, int second, int third) {
-            this.first = first;
-            this.second = second;
-            this.third = third;
-        }
-    }
+        System.out.println(p3_mergeKSortedLists.mergeKArrays(arr, K));
 
-    // Implements Comparator interface for min-heap, for sorted
-    static class PqComparator implements Comparator<Pair> {
-        @Override
-        public int compare(Pair pair1, Pair pair2) {
-            if (pair1.first < pair2.first) {
-                return -1;
-            }
-            if (pair1.first == pair2.first) {
-                return 0;
-            }
-            return 1;
-        }
+        System.out.println(Arrays.deepToString(arr));
+
+        System.out.println(p3_mergeKSortedLists.mergeKArrays1(arr, K));
     }
 
     /**
@@ -105,19 +97,27 @@ public class P3_MergeKSortedLists {
         return result;
     }
 
-    public static void main(String[] args) {
-        P3_MergeKSortedLists p3_mergeKSortedLists = new P3_MergeKSortedLists();
-        int K = 4;
-        int[][] arr = {
-            {1, 2, 3, 4},
-            {2, 2, 3, 4},
-            {5, 5, 6, 6},
-            {7, 8, 9, 9}};
+    static class Pair {
+        public int first, second, third;
 
-        System.out.println(p3_mergeKSortedLists.mergeKArrays(arr, K));
+        Pair(int first, int second, int third) {
+            this.first = first;
+            this.second = second;
+            this.third = third;
+        }
+    }
 
-        System.out.println(Arrays.deepToString(arr));
-
-        System.out.println(p3_mergeKSortedLists.mergeKArrays1(arr, K));
+    // Implements Comparator interface for min-heap, for sorted
+    static class PqComparator implements Comparator<Pair> {
+        @Override
+        public int compare(Pair pair1, Pair pair2) {
+            if (pair1.first < pair2.first) {
+                return -1;
+            }
+            if (pair1.first == pair2.first) {
+                return 0;
+            }
+            return 1;
+        }
     }
 }

@@ -6,6 +6,13 @@ import java.util.Arrays;
  * Created by bajajp on 27 Sep, 2022
  */
 public class P4_QuickSort {
+    public static void main(String[] args) {
+        P4_QuickSort p4_quickSort = new P4_QuickSort();
+        int[] arr = {12, 3, 5, 7, 4, 19, 26};
+        p4_quickSort.quickSort(arr, 0, arr.length - 1);
+        System.out.println(Arrays.toString(arr));
+    }
+
     public void swap(int[] arr, int a, int b) {
         int temp = arr[a];
         arr[a] = arr[b];
@@ -33,12 +40,5 @@ public class P4_QuickSort {
             quickSort(arr, left, partitionIndex - 1);
             quickSort(arr, partitionIndex + 1, right);
         }
-    }
-
-    public static void main(String[] args) {
-        P4_QuickSort p4_quickSort = new P4_QuickSort();
-        int[] arr = {12, 3, 5, 7, 4, 19, 26};
-        p4_quickSort.quickSort(arr, 0, arr.length - 1);
-        System.out.println(Arrays.toString(arr));
     }
 }

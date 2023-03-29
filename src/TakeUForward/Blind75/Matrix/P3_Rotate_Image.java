@@ -14,6 +14,21 @@ import java.util.Arrays;
  */
 public class P3_Rotate_Image {
 
+    public static void main(String[] args) {
+        P3_Rotate_Image p3_rotate_image = new P3_Rotate_Image();
+        int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+
+        p3_rotate_image.rotate(matrix);
+        System.out.println(Arrays.deepToString(matrix));
+
+        int[][] matrix1 = {{5, 1, 9, 11}, {2, 4, 8, 10}, {13, 3, 6, 7}, {15, 14, 12, 16}};
+//        p3_rotate_image.rotate(matrix1);
+//        System.out.println(Arrays.deepToString(matrix1));
+
+        p3_rotate_image.rotate_better(matrix1);
+        System.out.println(Arrays.deepToString(matrix1));
+    }
+
     /**
      * Approach: We will use layer approach to rotate matrix to clock-wise 90 degree
      * 1. For 1st layer, Rotate all the 4 corner elements, one by one. Once corner is done, then next element unless
@@ -67,20 +82,5 @@ public class P3_Rotate_Image {
                 matrix[i][n - 1 - j] = temp;
             }
         }
-    }
-
-    public static void main(String[] args) {
-        P3_Rotate_Image p3_rotate_image = new P3_Rotate_Image();
-        int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-
-        p3_rotate_image.rotate(matrix);
-        System.out.println(Arrays.deepToString(matrix));
-
-        int[][] matrix1 = {{5, 1, 9, 11}, {2, 4, 8, 10}, {13, 3, 6, 7}, {15, 14, 12, 16}};
-//        p3_rotate_image.rotate(matrix1);
-//        System.out.println(Arrays.deepToString(matrix1));
-
-        p3_rotate_image.rotate_better(matrix1);
-        System.out.println(Arrays.deepToString(matrix1));
     }
 }

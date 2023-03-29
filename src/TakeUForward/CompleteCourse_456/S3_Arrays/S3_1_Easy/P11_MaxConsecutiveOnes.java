@@ -9,6 +9,14 @@ package TakeUForward.CompleteCourse_456.S3_Arrays.S3_1_Easy;
  * Time: 7:23 pm
  */
 public class P11_MaxConsecutiveOnes {
+    public static void main(String[] args) {
+        P11_MaxConsecutiveOnes p11_maxConsecutiveOnes = new P11_MaxConsecutiveOnes();
+
+        int[] arr = {1, 1, 0, 1, 1, 1};
+
+        System.out.println(p11_maxConsecutiveOnes.findMaxConsecutiveOnes(arr));
+    }
+
     public int findMaxConsecutiveOnes(int[] nums) {
         int currMax = 0;
         int maxSoFar = 0;
@@ -23,13 +31,5 @@ public class P11_MaxConsecutiveOnes {
         }
 
         return maxSoFar;
-    }
-
-    public static void main(String[] args) {
-        P11_MaxConsecutiveOnes p11_maxConsecutiveOnes = new P11_MaxConsecutiveOnes();
-
-        int[] arr = {1, 1, 0, 1, 1, 1};
-
-        System.out.println(p11_maxConsecutiveOnes.findMaxConsecutiveOnes(arr));
     }
 }

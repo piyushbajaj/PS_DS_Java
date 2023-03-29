@@ -11,6 +11,14 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_6_DP_Stocks;
  * Link lc: <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/">...</a>
  */
 public class P3_Best_Time_III {
+    public static void main(String[] args) {
+        P3_Best_Time_III p3_best_time_iii = new P3_Best_Time_III();
+        int[] prices = {3, 3, 5, 0, 0, 3, 1, 4};
+        System.out.println(p3_best_time_iii.maxProfit(prices));
+        System.out.println(p3_best_time_iii.maxProfit_mem(prices));
+        System.out.println(p3_best_time_iii.maxProfit_tab(prices));
+    }
+
     /**
      * Recursion
      * TC: O(2^N)
@@ -136,14 +144,5 @@ public class P3_Best_Time_III {
         }
 
         return dp[0][1][2];
-    }
-
-
-    public static void main(String[] args) {
-        P3_Best_Time_III p3_best_time_iii = new P3_Best_Time_III();
-        int[] prices = {3, 3, 5, 0, 0, 3, 1, 4};
-        System.out.println(p3_best_time_iii.maxProfit(prices));
-        System.out.println(p3_best_time_iii.maxProfit_mem(prices));
-        System.out.println(p3_best_time_iii.maxProfit_tab(prices));
     }
 }

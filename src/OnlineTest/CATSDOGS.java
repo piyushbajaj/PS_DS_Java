@@ -5,10 +5,6 @@ import java.util.Scanner;
 
 public class CATSDOGS {
 
-    enum Status {
-        YES, NO
-    }
-
     static ArrayList<Integer> calculatedLegs = new ArrayList<>();
     static ArrayList<Integer> cats = new ArrayList<>();
     static ArrayList<Integer> dogs = new ArrayList<>();
@@ -44,20 +40,23 @@ public class CATSDOGS {
         if (cats == 0 && dogs == 0) {
             if (legs == 0) {
                 System.out.println(Status.YES);
-            } else
+            } else {
                 System.out.println(Status.NO);
+            }
             return;
         } else if (cats == 0) {
             if (no_of_dog_legs == legs) {
                 System.out.println(Status.YES);
-            } else
+            } else {
                 System.out.println(Status.NO);
+            }
             return;
         } else if (dogs == 0) {
             if (no_of_cat_legs == legs) {
                 System.out.println(Status.YES);
-            } else
+            } else {
                 System.out.println(Status.NO);
+            }
             return;
         }
 
@@ -85,5 +84,9 @@ public class CATSDOGS {
         } else {
             System.out.println(Status.NO);
         }
+    }
+
+    enum Status {
+        YES, NO
     }
 }

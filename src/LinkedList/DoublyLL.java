@@ -7,12 +7,6 @@ package LinkedList;
 
 public class DoublyLL {
 
-    static class Node {
-        int data;
-        Node next;
-        Node prev;
-    }
-
     static Node SortedInsert(Node head, int data) {
         Node temp = new Node();
         temp.data = data;
@@ -53,5 +47,11 @@ public class DoublyLL {
         DoublyLL ll = new DoublyLL();
         //SortedInsert(ll)
 
+    }
+
+    static class Node {
+        int data;
+        Node next;
+        Node prev;
     }
 }

@@ -3,8 +3,15 @@ package Sorting.Practice_2022;
 import java.util.Arrays;
 
 public class QuickSort extends BaseClass {
+    public static void main(String[] args) {
+//        int[] arr = {6, 4, 2, 1, 3, 5};
+        int[] arr = {3, 10, 1, 5, 0, 20};
+        QuickSort quickSort = new QuickSort();
+        quickSort.quickSort(arr, 0, arr.length - 1);
+        System.out.println(Arrays.toString(arr));
+    }
+
     /**
-     *
      * @param arr
      * @param start
      * @param end
@@ -40,13 +47,5 @@ public class QuickSort extends BaseClass {
         arr[rightCtr] = pivot;
 
         return rightCtr;
-    }
-
-    public static void main(String[] args) {
-//        int[] arr = {6, 4, 2, 1, 3, 5};
-        int[] arr = {3, 10, 1, 5, 0, 20};
-        QuickSort quickSort = new QuickSort();
-        quickSort.quickSort(arr, 0, arr.length - 1);
-        System.out.println(Arrays.toString(arr));
     }
 }

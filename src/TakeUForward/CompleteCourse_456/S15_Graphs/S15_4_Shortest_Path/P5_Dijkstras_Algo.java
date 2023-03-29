@@ -16,14 +16,41 @@ import java.util.PriorityQueue;
  */
 public class P5_Dijkstras_Algo {
 
-    static class Pair {
-        int distance;
-        int toNode;
+    public static void main(String[] args) {
+        P5_Dijkstras_Algo p5_dijkstras_algo = new P5_Dijkstras_Algo();
 
-        Pair(int distance, int toNode) {
-            this.distance = distance;
-            this.toNode = toNode;
-        }
+        List<List<List<Integer>>> adjList = Arrays.asList(
+            Arrays.asList(
+                Arrays.asList(1, 4),
+                Arrays.asList(2, 4)
+            ),
+            Arrays.asList(
+                Arrays.asList(0, 4),
+                Arrays.asList(2, 2)
+            ),
+            Arrays.asList(
+                Arrays.asList(0, 4),
+                Arrays.asList(1, 2),
+                Arrays.asList(3, 3),
+                Arrays.asList(4, 1),
+                Arrays.asList(5, 6)
+            ),
+            Arrays.asList(
+                Arrays.asList(2, 3),
+                Arrays.asList(5, 2)
+            ),
+            Arrays.asList(
+                Arrays.asList(2, 1),
+                Arrays.asList(5, 3)
+            ),
+            Arrays.asList(
+                Arrays.asList(2, 6),
+                Arrays.asList(3, 2),
+                Arrays.asList(4, 3)
+            )
+        );
+
+        System.out.println(Arrays.toString(p5_dijkstras_algo.dijkstra(6, adjList, 0)));
     }
 
     /**
@@ -70,40 +97,13 @@ public class P5_Dijkstras_Algo {
         return distance;
     }
 
-    public static void main(String[] args) {
-        P5_Dijkstras_Algo p5_dijkstras_algo = new P5_Dijkstras_Algo();
+    static class Pair {
+        int distance;
+        int toNode;
 
-        List<List<List<Integer>>> adjList = Arrays.asList(
-            Arrays.asList(
-                Arrays.asList(1, 4),
-                Arrays.asList(2, 4)
-            ),
-            Arrays.asList(
-                Arrays.asList(0, 4),
-                Arrays.asList(2, 2)
-            ),
-            Arrays.asList(
-                Arrays.asList(0, 4),
-                Arrays.asList(1, 2),
-                Arrays.asList(3, 3),
-                Arrays.asList(4, 1),
-                Arrays.asList(5, 6)
-            ),
-            Arrays.asList(
-                Arrays.asList(2, 3),
-                Arrays.asList(5, 2)
-            ),
-            Arrays.asList(
-                Arrays.asList(2, 1),
-                Arrays.asList(5, 3)
-            ),
-            Arrays.asList(
-                Arrays.asList(2, 6),
-                Arrays.asList(3, 2),
-                Arrays.asList(4, 3)
-            )
-        );
-
-        System.out.println(Arrays.toString(p5_dijkstras_algo.dijkstra(6, adjList, 0)));
+        Pair(int distance, int toNode) {
+            this.distance = distance;
+            this.toNode = toNode;
+        }
     }
 }

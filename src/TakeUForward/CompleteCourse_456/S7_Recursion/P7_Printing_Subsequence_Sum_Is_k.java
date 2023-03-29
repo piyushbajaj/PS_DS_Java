@@ -17,6 +17,17 @@ import java.util.ArrayList;
  */
 public class P7_Printing_Subsequence_Sum_Is_k {
 
+    public static void main(String[] args) {
+        P7_Printing_Subsequence_Sum_Is_k p7_printing_subsequence_sum_is_k = new P7_Printing_Subsequence_Sum_Is_k();
+        int[] arr = {1, 2, 1};
+        int k = 2;
+        ArrayList<Integer> result = new ArrayList<>();
+        p7_printing_subsequence_sum_is_k.subsequence(arr, result, 0, 0, 2);
+        p7_printing_subsequence_sum_is_k.first_subsequence(arr, result, 0, 0, 2);
+        System.out.println(p7_printing_subsequence_sum_is_k.count_subsequence(arr, result, 0, 0, 2));
+
+    }
+
     /**
      * TC: O(2^N)
      *
@@ -94,18 +105,6 @@ public class P7_Printing_Subsequence_Sum_Is_k {
         int right = count_subsequence(arr, result, index + 1, sum, k);
 
         return left + right;
-    }
-
-
-    public static void main(String[] args) {
-        P7_Printing_Subsequence_Sum_Is_k p7_printing_subsequence_sum_is_k = new P7_Printing_Subsequence_Sum_Is_k();
-        int[] arr = {1, 2, 1};
-        int k = 2;
-        ArrayList<Integer> result = new ArrayList<>();
-        p7_printing_subsequence_sum_is_k.subsequence(arr, result, 0, 0, 2);
-        p7_printing_subsequence_sum_is_k.first_subsequence(arr, result, 0, 0, 2);
-        System.out.println(p7_printing_subsequence_sum_is_k.count_subsequence(arr, result, 0, 0, 2));
-
     }
 
 }

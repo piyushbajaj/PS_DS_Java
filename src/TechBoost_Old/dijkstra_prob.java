@@ -16,22 +16,9 @@ public class dijkstra_prob {
     int[] distanceArr;
 
     MinHeap minHeap;
+    PriorityQueue<Integer> pq = new PriorityQueue<>();
 
-    class Vertex{
-        public char label;
-        public boolean visited;
-
-        Vertex(char label){
-            this.label = label;
-            this.visited = false;
-        }
-    }
-
-    class Weight{
-        public int weight;
-    }
-
-    dijkstra_prob(int V){
+    dijkstra_prob(int V) {
         this.V = V;
         adjList = new LinkedList[V];
         vertexList = new Vertex[V];
@@ -40,67 +27,17 @@ public class dijkstra_prob {
         distanceArr = new int[V];
         minHeap = new MinHeap(V);
 
-        for(int i = 0; i < V; i++){
+        for (int i = 0; i < V; i++) {
             adjList[i] = new LinkedList<Integer>();
         }
 
         distanceArr[0] = 0;
         minHeap.insert(0);
-        for(int i = 1; i < V; i++){
+        for (int i = 1; i < V; i++) {
             distanceArr[i] = Integer.MAX_VALUE;
             minHeap.insert(Integer.MAX_VALUE);
         }
 
-    }
-
-    //Single direction Graph
-    public void addEdge(int i, int j, int weight){
-        adjList[i].add(j);
-        weightList[i][j] = weight;
-    }
-
-    public void addVertex(char ver){
-        vertexList[vertexCount++] = new Vertex(ver);
-    }
-
-    PriorityQueue<Integer> pq = new PriorityQueue<>();
-
-    public int getIndex(int val){
-        for(int i = 0; i < V; i++){
-            if(distanceArr[i] == val && vertexList[i].visited == false) {
-                vertexList[i].visited = true;
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    public void calculate(){
-        //minHeap.insert(distanceArr[0]);
-
-        int curr = 0;
-
-        while (minHeap.size > 0){
-            curr = minHeap.extractMin();
-            int index = getIndex(curr);
-            if(index == -1) break;
-            Iterator<Integer> iterator = adjList[index].listIterator();
-
-            while (iterator.hasNext()){
-                int temp = iterator.next();
-                if(distanceArr[temp] > distanceArr[index] + weightList[index][temp]){
-                    distanceArr[temp] = distanceArr[index] + weightList[index][temp];
-                }
-                minHeap.arr[temp] = distanceArr[temp];
-                minHeap.fixDownwards(temp);
-            }
-        }
-    }
-
-    public void print(){
-        for(int i = 0; i < V; i++){
-            System.out.println(vertexList[i].label + ": " + distanceArr[i]);
-        }
     }
 
     public static void main(String[] args) {
@@ -121,5 +58,69 @@ public class dijkstra_prob {
         dp.calculate();
 
         dp.print();
+    }
+
+    //Single direction Graph
+    public void addEdge(int i, int j, int weight) {
+        adjList[i].add(j);
+        weightList[i][j] = weight;
+    }
+
+    public void addVertex(char ver) {
+        vertexList[vertexCount++] = new Vertex(ver);
+    }
+
+    public int getIndex(int val) {
+        for (int i = 0; i < V; i++) {
+            if (distanceArr[i] == val && vertexList[i].visited == false) {
+                vertexList[i].visited = true;
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public void calculate() {
+        //minHeap.insert(distanceArr[0]);
+
+        int curr = 0;
+
+        while (minHeap.size > 0) {
+            curr = minHeap.extractMin();
+            int index = getIndex(curr);
+            if (index == -1) {
+                break;
+            }
+            Iterator<Integer> iterator = adjList[index].listIterator();
+
+            while (iterator.hasNext()) {
+                int temp = iterator.next();
+                if (distanceArr[temp] > distanceArr[index] + weightList[index][temp]) {
+                    distanceArr[temp] = distanceArr[index] + weightList[index][temp];
+                }
+                minHeap.arr[temp] = distanceArr[temp];
+                minHeap.fixDownwards(temp);
+            }
+        }
+    }
+
+    public void print() {
+        for (int i = 0; i < V; i++) {
+            System.out.println(vertexList[i].label + ": " + distanceArr[i]);
+        }
+    }
+
+    class Vertex {
+        public char label;
+        public boolean visited;
+
+        Vertex(char label) {
+            this.label = label;
+            this.visited = false;
+        }
+    }
+
+    class Weight {
+        public int weight;
     }
 }

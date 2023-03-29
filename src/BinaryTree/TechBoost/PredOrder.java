@@ -2,6 +2,7 @@ package BinaryTree.TechBoost;
 
 public class PredOrder {
     BTNode root;
+
     static class BTNode {
         int data;
         BTNode left, right;

@@ -27,6 +27,23 @@ public class ConsistentHash {
         }
     }
 
+    public static void main(String[] args) throws NoSuchAlgorithmException {
+//        MessageDigest md = MessageDigest.getInstance("MD5");
+        MessageDigest m = MessageDigest.getInstance("MD5");
+        List<String> listServers = new ArrayList<>();
+        listServers.add("s1");
+        listServers.add("s2");
+        listServers.add("s3");
+        listServers.add("s4");
+
+        ConsistentHash consistentHash = new ConsistentHash(listServers);
+
+        consistentHash.put("Jim");
+        System.out.println(consistentHash.get("Jim"));
+
+
+    }
+
     public void put(String key) {
         int serverNumber = Integer.parseInt(getMd5(key)) * numberOfServers;
 
@@ -56,7 +73,6 @@ public class ConsistentHash {
         }
     }
 
-
     public String getMd5(String input) {
         try {
 
@@ -82,24 +98,6 @@ public class ConsistentHash {
         catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }
-    }
-
-
-    public static void main(String[] args) throws NoSuchAlgorithmException {
-//        MessageDigest md = MessageDigest.getInstance("MD5");
-        MessageDigest m = MessageDigest.getInstance("MD5");
-        List<String> listServers = new ArrayList<>();
-        listServers.add("s1");
-        listServers.add("s2");
-        listServers.add("s3");
-        listServers.add("s4");
-
-        ConsistentHash consistentHash = new ConsistentHash(listServers);
-
-        consistentHash.put("Jim");
-        System.out.println(consistentHash.get("Jim"));
-
-
     }
 
 }

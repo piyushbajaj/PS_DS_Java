@@ -4,19 +4,8 @@ public class AdditionOfNodes {
 
     Node head;
 
-    static class Node {
-        int data;
-        Node prev, next;
-
-        Node(int data) {
-            this.data = data;
-            this.next = null;
-            this.prev = null;
-        }
-    }
-
     //Adding a Node in Front
-    public void addingNodeInFront (int data) {
+    public void addingNodeInFront(int data) {
         Node newNode = new Node(data);
 
         //Good Practice to write both next & prev node
@@ -31,10 +20,11 @@ public class AdditionOfNodes {
     }
 
     //Adding Node after a given Node
-    public void addingNodeAfterGivenNode (Node nodePrev, int data) {
+    public void addingNodeAfterGivenNode(Node nodePrev, int data) {
         //NULL check
-        if(nodePrev == null)
+        if (nodePrev == null) {
             return;
+        }
 
         Node newNode = new Node(data);
 
@@ -42,7 +32,7 @@ public class AdditionOfNodes {
         nodePrev.next = newNode;
         newNode.prev = nodePrev;
 
-        if(newNode.next!=null){
+        if (newNode.next != null) {
             newNode.next.prev = newNode;
         }
 
@@ -50,12 +40,12 @@ public class AdditionOfNodes {
     }
 
     //Adding node in the end
-    public void addingNodeInTheEnd (int data) {
+    public void addingNodeInTheEnd(int data) {
         Node newNode = new Node(data);
 
         Node end = head;
         //Null check
-        if(head == null) {
+        if (head == null) {
             newNode.prev = null;
             head = newNode;
             return;
@@ -73,6 +63,17 @@ public class AdditionOfNodes {
     //Assignment!
     public void insertNodeBefore(Node nodeNext, int data) {
 
+    }
+
+    static class Node {
+        int data;
+        Node prev, next;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+            this.prev = null;
+        }
     }
 
 

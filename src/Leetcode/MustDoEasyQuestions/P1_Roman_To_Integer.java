@@ -15,6 +15,14 @@ import java.util.HashMap;
  * Problem Type: HashMap, Maths
  */
 public class P1_Roman_To_Integer {
+    public static void main(String[] args) {
+        P1_Roman_To_Integer p1_roman_to_integer = new P1_Roman_To_Integer();
+        System.out.println(p1_roman_to_integer.romanToInt("MCMXCIV"));
+
+        System.out.println(p1_roman_to_integer.romanToInt_better("MCMXCIV"));
+
+    }
+
     public int romanToInt(String s) {
         int n = s.length();
         int i = 0;
@@ -85,7 +93,6 @@ public class P1_Roman_To_Integer {
         return num;
     }
 
-
     public int romanToInt_better(String s) {
         int num = 0;
 
@@ -110,14 +117,5 @@ public class P1_Roman_To_Integer {
         }
 
         return num;
-    }
-
-
-    public static void main(String[] args) {
-        P1_Roman_To_Integer p1_roman_to_integer = new P1_Roman_To_Integer();
-        System.out.println(p1_roman_to_integer.romanToInt("MCMXCIV"));
-
-        System.out.println(p1_roman_to_integer.romanToInt_better("MCMXCIV"));
-
     }
 }

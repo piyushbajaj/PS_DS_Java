@@ -6,7 +6,8 @@ public class BaseHeap {
     public int capacity;    // Size of the Heap
     public int heap_type; // Min Heap or Max Heap
 
-    public BaseHeap() {}
+    public BaseHeap() {
+    }
 
     public BaseHeap(int capacity, int heap_type) {
         this.heap_type = heap_type;
@@ -15,10 +16,38 @@ public class BaseHeap {
         this.array = new int[capacity];
     }
 
+    public static void main(String[] args) {
+        BaseHeap baseHeap = new BaseHeap(5, 1);
+        baseHeap.insert(10);
+        baseHeap.insert(20);
+        baseHeap.insert(30);
+        baseHeap.insert(40);
+        baseHeap.insert(50);
+        baseHeap.printArray();
+        baseHeap.insert(60);
+        baseHeap.printArray();
+
+        System.out.println("Maximum element deleted: " + baseHeap.deleteMax());
+
+        System.out.println("Maximum element deleted: " + baseHeap.deleteMax());
+
+        baseHeap.printArray();
+
+//        baseHeap.destroyHeap();
+//
+//        baseHeap.printArray();
+
+        baseHeap.sort(baseHeap.array);
+
+        baseHeap.printArray();
+    }
+
     // Building Heap from the int array
     public void buildHeap(BaseHeap heap, int[] arr) {
         int n = arr.length;
-        if (heap == null) return;
+        if (heap == null) {
+            return;
+        }
 
         if (n > heap.capacity) {
             resizeHeap();
@@ -31,7 +60,6 @@ public class BaseHeap {
         }
     }
 
-
     public int parent(int i) {
         if (i <= 0 || i >= this.count) {
             return -1;
@@ -40,14 +68,16 @@ public class BaseHeap {
         return (i - 1) / 2;
     }
 
+    // Considering this is max Heap;
+
     public int leftChildren(int i) {
         int left = 2 * i + 1;
-        if (left >= this.count) return -1;
+        if (left >= this.count) {
+            return -1;
+        }
 
         return left;
     }
-
-    // Considering this is max Heap;
 
     public int getMaximum() {
         if (this.count <= 0) {
@@ -57,19 +87,21 @@ public class BaseHeap {
         return this.array[0];
     }
 
-    public int rightChildren(int i) {
-        int right = 2 * i + 2;
-        if (right >= this.count) return -1;
-
-        return right;
-    }
-
     /*
     When we delete the top element (in case of max heap/min heap), we have to use percolateDown() function which will
     heapify from elements from top to bottom.
     When we insert any element, it will be inserted in the last of the array, so we have to use percolateUp() function which will
     heapify elements from bottom to top.
      */
+
+    public int rightChildren(int i) {
+        int right = 2 * i + 2;
+        if (right >= this.count) {
+            return -1;
+        }
+
+        return right;
+    }
 
     // TC: O(logN): Because it goes till the height of the tree only
     public void percolateDown(int i) {
@@ -118,7 +150,9 @@ public class BaseHeap {
 
     //TC: O(log(N))
     public int deleteMax() {
-        if (this.count == 0) return -1;
+        if (this.count == 0) {
+            return -1;
+        }
 
         int max = array[0];
 
@@ -158,42 +192,15 @@ public class BaseHeap {
     }
 
     public void printArray() {
-        for (int i = 0; i < this.count; i++)
+        for (int i = 0; i < this.count; i++) {
             System.out.print(this.array[i] + " ");
+        }
         System.out.println();
     }
 
     public void destroyHeap() {
         this.count = 0;
         this.array = null;
-    }
-
-
-
-    public static void main(String[] args) {
-        BaseHeap baseHeap = new BaseHeap(5, 1);
-        baseHeap.insert(10);
-        baseHeap.insert(20);
-        baseHeap.insert(30);
-        baseHeap.insert(40);
-        baseHeap.insert(50);
-        baseHeap.printArray();
-        baseHeap.insert(60);
-        baseHeap.printArray();
-
-        System.out.println("Maximum element deleted: " + baseHeap.deleteMax());
-
-        System.out.println("Maximum element deleted: " + baseHeap.deleteMax());
-
-        baseHeap.printArray();
-
-//        baseHeap.destroyHeap();
-//
-//        baseHeap.printArray();
-
-        baseHeap.sort(baseHeap.array);
-
-        baseHeap.printArray();
     }
 
 }

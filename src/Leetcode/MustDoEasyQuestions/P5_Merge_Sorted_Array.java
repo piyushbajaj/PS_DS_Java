@@ -15,6 +15,14 @@ import java.util.Arrays;
  */
 public class P5_Merge_Sorted_Array {
 
+    public static void main(String[] args) {
+        P5_Merge_Sorted_Array p5_merge_sorted_array = new P5_Merge_Sorted_Array();
+        int[] num1 = {1, 2, 3, 0, 0, 0};
+        int[] num2 = {2, 5, 6};
+        p5_merge_sorted_array.merge(num1, 3, num2, 3);
+        System.out.println(Arrays.toString(num1));
+    }
+
     /**
      * Start from back
      * TC: O(M+N)
@@ -54,13 +62,5 @@ public class P5_Merge_Sorted_Array {
             n--;
             k--;
         }
-    }
-
-    public static void main(String[] args) {
-        P5_Merge_Sorted_Array p5_merge_sorted_array = new P5_Merge_Sorted_Array();
-        int[] num1 = {1, 2, 3, 0, 0, 0};
-        int[] num2 = {2, 5, 6};
-        p5_merge_sorted_array.merge(num1, 3, num2, 3);
-        System.out.println(Arrays.toString(num1));
     }
 }

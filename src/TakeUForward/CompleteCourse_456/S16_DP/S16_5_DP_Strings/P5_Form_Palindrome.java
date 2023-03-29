@@ -13,6 +13,12 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_5_DP_Strings;
  */
 public class P5_Form_Palindrome {
 
+    public static void main(String[] args) {
+        P5_Form_Palindrome p5_form_palindrome = new P5_Form_Palindrome();
+
+        System.out.println(p5_form_palindrome.countMin("abcaa"));
+    }
+
     /**
      * Approach: N - The Longest Palindromic subsequence
      *
@@ -65,11 +71,5 @@ public class P5_Form_Palindrome {
         }
 
         return new String(charStr);
-    }
-
-    public static void main(String[] args) {
-        P5_Form_Palindrome p5_form_palindrome = new P5_Form_Palindrome();
-
-        System.out.println(p5_form_palindrome.countMin("abcaa"));
     }
 }

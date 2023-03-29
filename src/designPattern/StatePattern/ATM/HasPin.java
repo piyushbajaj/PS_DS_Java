@@ -7,7 +7,7 @@ public class HasPin implements ATMState {
 
     ATMMachine atmMachine;
 
-    HasPin(ATMMachine newAtmMachine){
+    HasPin(ATMMachine newAtmMachine) {
         atmMachine = newAtmMachine;
 
     }
@@ -30,8 +30,8 @@ public class HasPin implements ATMState {
 
     @Override
     public void requestCash(int cashToWithdraw) {
-        if(cashToWithdraw <= atmMachine.cashInMachine){
-            if(cashToWithdraw <= 0){
+        if (cashToWithdraw <= atmMachine.cashInMachine) {
+            if (cashToWithdraw <= 0) {
                 System.out.println("No balance");
                 atmMachine.setAtmState(atmMachine.getNoCash());
             }
@@ -40,8 +40,7 @@ public class HasPin implements ATMState {
             atmMachine.setCashInMachine(atmMachine.cashInMachine - cashToWithdraw);
             System.out.println("Transaction Successful!! So Card Ejected");
             atmMachine.setAtmState(atmMachine.getNoCard());
-        }
-        else {
+        } else {
             System.out.println("Please enter cash amount less than Total Cash Available");
             System.out.println("Card Ejected");
             atmMachine.setAtmState(atmMachine.getNoCard());

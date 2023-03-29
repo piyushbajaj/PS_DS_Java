@@ -13,6 +13,13 @@ import java.util.Arrays;
  */
 public class P4_Merge_Sort {
 
+    public static void main(String[] args) {
+        P4_Merge_Sort p4_merge_sort = new P4_Merge_Sort();
+        int[] arr = {3, 2, 8, 5, 1, 4, 23};
+        p4_merge_sort.merge_sort(arr, 0, arr.length - 1);
+        System.out.println(Arrays.toString(arr));
+    }
+
     /**
      * TC: O(N * log N)
      * SC: O(N)
@@ -69,12 +76,5 @@ public class P4_Merge_Sort {
         while (j < n2) {
             arr[k++] = right[j++];
         }
-    }
-
-    public static void main(String[] args) {
-        P4_Merge_Sort p4_merge_sort = new P4_Merge_Sort();
-        int[] arr = {3, 2, 8, 5, 1, 4, 23};
-        p4_merge_sort.merge_sort(arr, 0, arr.length - 1);
-        System.out.println(Arrays.toString(arr));
     }
 }

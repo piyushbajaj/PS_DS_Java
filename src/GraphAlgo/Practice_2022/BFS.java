@@ -39,6 +39,29 @@ public class BFS extends BaseGraphAdjacencyList {
         super(capacity);
     }
 
+    public static void main(String[] args) {
+        BFS bfs = new BFS(8);
+        bfs.addVertex("A");
+        bfs.addVertex("B");
+        bfs.addVertex("C");
+        bfs.addVertex("D");
+        bfs.addVertex("E");
+        bfs.addVertex("F");
+        bfs.addVertex("H");
+        bfs.addVertex("G");
+
+        bfs.addEdge_biDirectional(0, 1);
+        bfs.addEdge_biDirectional(1, 2);
+        bfs.addEdge_biDirectional(1, 6);
+        bfs.addEdge_biDirectional(2, 3);
+        bfs.addEdge_biDirectional(2, 4);
+        bfs.addEdge_biDirectional(4, 5);
+        bfs.addEdge_biDirectional(4, 7);
+
+        System.out.println(bfs.BFSTraversal());
+
+    }
+
     public ArrayList<String> BFSTraversal() {
         ArrayList<String> bfsList = new ArrayList<>();
 
@@ -78,30 +101,6 @@ public class BFS extends BaseGraphAdjacencyList {
             }
         }
         return bfsList;
-    }
-
-
-    public static void main(String[] args) {
-        BFS bfs = new BFS(8);
-        bfs.addVertex("A");
-        bfs.addVertex("B");
-        bfs.addVertex("C");
-        bfs.addVertex("D");
-        bfs.addVertex("E");
-        bfs.addVertex("F");
-        bfs.addVertex("H");
-        bfs.addVertex("G");
-
-        bfs.addEdge_biDirectional(0, 1);
-        bfs.addEdge_biDirectional(1, 2);
-        bfs.addEdge_biDirectional(1, 6);
-        bfs.addEdge_biDirectional(2, 3);
-        bfs.addEdge_biDirectional(2, 4);
-        bfs.addEdge_biDirectional(4, 5);
-        bfs.addEdge_biDirectional(4, 7);
-
-        System.out.println(bfs.BFSTraversal());
-
     }
 
 

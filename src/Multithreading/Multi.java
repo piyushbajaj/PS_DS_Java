@@ -6,15 +6,7 @@ package Multithreading;
 
 //Java Thread by extending THREAD class
 
-public class Multi extends Thread{
-    public void run(){
-        System.out.println("Thread is RUNNING...");
-
-        //The currentThread() method returns a reference to the currently executing thread object.
-
-        System.out.println(Thread.currentThread().getName());
-    }
-
+public class Multi extends Thread {
     public static void main(String[] args) {
         Multi mt = new Multi();
         //mt.start();
@@ -33,7 +25,14 @@ public class Multi extends Thread{
         System.out.println("Name of thread mt: " + mt.getName());
 
 
+    }
 
+    public void run() {
+        System.out.println("Thread is RUNNING...");
+
+        //The currentThread() method returns a reference to the currently executing thread object.
+
+        System.out.println(Thread.currentThread().getName());
     }
 }
 

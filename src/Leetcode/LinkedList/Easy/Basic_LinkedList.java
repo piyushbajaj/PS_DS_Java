@@ -3,14 +3,32 @@ package Leetcode.LinkedList.Easy;
 public class Basic_LinkedList {
     Node head;
 
-    static class Node {
-        int data;
-        Node next;
+    public static void main(String[] args) {
+        Basic_LinkedList basicLinkedList_ = new Basic_LinkedList();
+        basicLinkedList_.insertNodeInEnd(1);
+        basicLinkedList_.insertNodeInEnd(2);
+        basicLinkedList_.insertNodeInEnd(2);
+        basicLinkedList_.insertNodeInEnd(3);
+        basicLinkedList_.insertNodeInEnd(3);
+        basicLinkedList_.insertNodeInEnd(3);
+        basicLinkedList_.insertNodeInEnd(3);
+        basicLinkedList_.insertNodeInEnd(4);
+        basicLinkedList_.insertNodeInEnd(4);
 
-        public Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
+        basicLinkedList_.printList(basicLinkedList_.head);
+
+        System.out.println("Length of Linked List: " +
+            basicLinkedList_.lengthOfLL(basicLinkedList_.head));
+
+        System.out.println("Length of Linked List in Recursive: " +
+            basicLinkedList_.lengthOfLL_recur(basicLinkedList_.head));
+
+        System.out.println("Middle of Linked List: " +
+            basicLinkedList_.middleLinkedList(basicLinkedList_.head).data);
+
+        basicLinkedList_.removeDuplicates(basicLinkedList_.head);
+
+        basicLinkedList_.printList(basicLinkedList_.head);
     }
 
     public Node printList(Node start) {
@@ -63,8 +81,9 @@ public class Basic_LinkedList {
     }
 
     public Node middleLinkedList(Node ptr) {
-        if (ptr == null)
+        if (ptr == null) {
             return null;
+        }
 
         Node slow = ptr;
         Node fast = ptr.next;
@@ -72,15 +91,17 @@ public class Basic_LinkedList {
             slow = slow.next;
             fast = fast.next.next;
         }
-        if (fast == null)
+        if (fast == null) {
             return slow;
-        else
+        } else {
             return slow.next;
+        }
     }
 
     public void removeDuplicates(Node ptr) {
-        if (ptr == null)
+        if (ptr == null) {
             return;
+        }
 
         Node curr = ptr;
 
@@ -96,32 +117,13 @@ public class Basic_LinkedList {
         }
     }
 
+    static class Node {
+        int data;
+        Node next;
 
-    public static void main(String[] args) {
-        Basic_LinkedList basicLinkedList_ = new Basic_LinkedList();
-        basicLinkedList_.insertNodeInEnd(1);
-        basicLinkedList_.insertNodeInEnd(2);
-        basicLinkedList_.insertNodeInEnd(2);
-        basicLinkedList_.insertNodeInEnd(3);
-        basicLinkedList_.insertNodeInEnd(3);
-        basicLinkedList_.insertNodeInEnd(3);
-        basicLinkedList_.insertNodeInEnd(3);
-        basicLinkedList_.insertNodeInEnd(4);
-        basicLinkedList_.insertNodeInEnd(4);
-
-        basicLinkedList_.printList(basicLinkedList_.head);
-
-        System.out.println("Length of Linked List: " +
-            basicLinkedList_.lengthOfLL(basicLinkedList_.head));
-
-        System.out.println("Length of Linked List in Recursive: " +
-            basicLinkedList_.lengthOfLL_recur(basicLinkedList_.head));
-
-        System.out.println("Middle of Linked List: " +
-            basicLinkedList_.middleLinkedList(basicLinkedList_.head).data);
-
-        basicLinkedList_.removeDuplicates(basicLinkedList_.head);
-
-        basicLinkedList_.printList(basicLinkedList_.head);
+        public Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
     }
 }

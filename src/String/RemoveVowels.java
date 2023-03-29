@@ -7,7 +7,8 @@ public class RemoveVowels {
     public static String removeVowels(String s) {
         int n = s.length();
         for (int i = 0; i < n - 1; i++) {
-            if (s.charAt(i) == 'a' || s.charAt(i) == 'e' || s.charAt(i) == 'i' || s.charAt(i) == 'o' || s.charAt(i) == 'u') {
+            if (s.charAt(i) == 'a' || s.charAt(i) == 'e' || s.charAt(i) == 'i' || s.charAt(i) == 'o' ||
+                s.charAt(i) == 'u') {
                 s = s.substring(0, i).concat(s.substring(i + 1, n));
             }
         }

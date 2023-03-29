@@ -9,6 +9,11 @@ package OnlineTest.Egnyte;
  * Time: 9:15 am
  */
 public class Problem2 {
+    public static void main(String[] args) {
+        Problem2 problem2 = new Problem2();
+        System.out.println(problem2.solution("aaa"));
+    }
+
     public int solution(String S) {
         int n = S.length();
         String str = "";
@@ -32,11 +37,6 @@ public class Problem2 {
 
         return diff == 0 ? -1 : diff;
 
-    }
-
-    public static void main(String[] args) {
-        Problem2 problem2 = new Problem2();
-        System.out.println(problem2.solution("aaa"));
     }
 
 }

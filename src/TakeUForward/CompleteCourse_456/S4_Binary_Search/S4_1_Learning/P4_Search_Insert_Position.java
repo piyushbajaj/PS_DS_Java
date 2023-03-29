@@ -11,6 +11,12 @@ package TakeUForward.CompleteCourse_456.S4_Binary_Search.S4_1_Learning;
  */
 public class P4_Search_Insert_Position {
 
+    public static void main(String[] args) {
+        int[] nums = {1, 3, 5, 6};
+        P4_Search_Insert_Position p4_search_insert_position = new P4_Search_Insert_Position();
+        System.out.println(p4_search_insert_position.searchInsert(nums, 7));
+    }
+
     public int searchInsert(int[] nums, int target) {
         int ceil = -1;
         int n = nums.length;
@@ -34,11 +40,5 @@ public class P4_Search_Insert_Position {
             }
         }
         return ceil;
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {1, 3, 5, 6};
-        P4_Search_Insert_Position p4_search_insert_position = new P4_Search_Insert_Position();
-        System.out.println(p4_search_insert_position.searchInsert(nums, 7));
     }
 }

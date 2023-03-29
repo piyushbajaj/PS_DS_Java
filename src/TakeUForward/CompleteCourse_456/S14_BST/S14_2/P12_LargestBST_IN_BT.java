@@ -23,16 +23,18 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  * SC: O(1)
  */
 public class P12_LargestBST_IN_BT {
-    static class NodeValue {
-        int maxSize;
-        int minNode;
-        int maxNode;
+    public static void main(String[] args) {
+        P12_LargestBST_IN_BT p12_largestBST_in_bt = new P12_LargestBST_IN_BT();
 
-        NodeValue(int maxSize, int minNode, int maxNode) {
-            this.maxSize = maxSize;
-            this.minNode = minNode;
-            this.maxNode = maxNode;
-        }
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        System.out.println(p12_largestBST_in_bt.largestBST(root));
     }
 
     public int largestBST(TreeNode root) {
@@ -64,17 +66,15 @@ public class P12_LargestBST_IN_BT {
             Integer.MAX_VALUE);
     }
 
-    public static void main(String[] args) {
-        P12_LargestBST_IN_BT p12_largestBST_in_bt = new P12_LargestBST_IN_BT();
+    static class NodeValue {
+        int maxSize;
+        int minNode;
+        int maxNode;
 
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        System.out.println(p12_largestBST_in_bt.largestBST(root));
+        NodeValue(int maxSize, int minNode, int maxNode) {
+            this.maxSize = maxSize;
+            this.minNode = minNode;
+            this.maxNode = maxNode;
+        }
     }
 }

@@ -17,46 +17,61 @@ import java.util.Stack;
  */
 public class BT_Doubly_LL_Spiral {
     Node root, head;
-    public static class Node{
-        int data;
-        Node left, right;
 
-        Node(int data){
-            this.data = data;
-            left = right = null;
-        }
-    }
-
-    public BT_Doubly_LL_Spiral(){
+    public BT_Doubly_LL_Spiral() {
         root = null;
     }
 
-    public BT_Doubly_LL_Spiral(int key){
+    public BT_Doubly_LL_Spiral(int key) {
         root = new Node(key);
     }
 
-    public Node convert(Node key){
-        if(key == null)
+    public static void main(String[] args) {
+        BT_Doubly_LL_Spiral BT = new BT_Doubly_LL_Spiral();
+
+        BT.root = new Node(1);
+        BT.root.left = new Node(2);
+        BT.root.right = new Node(3);
+        BT.root.left.left = new Node(4);
+        BT.root.left.right = new Node(5);
+        BT.root.right.left = new Node(6);
+        BT.root.right.right = new Node(7);
+        BT.root.left.left.left = new Node(8);
+        BT.root.left.left.right = new Node(9);
+        BT.root.left.right.left = new Node(10);
+        BT.root.left.right.right = new Node(11);
+        BT.root.right.left.left = new Node(12);
+        BT.root.right.left.right = new Node(13);
+        BT.root.right.right.left = new Node(14);
+        BT.root.right.right.right = new Node(15);
+
+        BT.spiralLevelOrder(BT.root);
+
+        //BT.printList(BT.root);
+
+    }
+
+    public Node convert(Node key) {
+        if (key == null) {
             return null;
+        }
 
 
         return null;
     }
 
 
-
-    void printList(Node node)
-    {
-        while (node != null)
-        {
+    void printList(Node node) {
+        while (node != null) {
             System.out.print(node.data + " ");
             node = node.right;
         }
     }
 
-    public void spiralLevelOrder(Node key){
-        if(key == null)
+    public void spiralLevelOrder(Node key) {
+        if (key == null) {
             return;
+        }
 
         Deque<Node> deque = new LinkedList<>();
         deque.add(key);
@@ -64,35 +79,39 @@ public class BT_Doubly_LL_Spiral {
         Stack<Node> stack = new Stack<>();
         int level = 0;
 
-        while (!deque.isEmpty()){
+        while (!deque.isEmpty()) {
             int NC = deque.size(); //Node Count
 
 
             //Odd Case
-            if(level%2 != 0){
-                while(NC > 0) {
+            if (level % 2 != 0) {
+                while (NC > 0) {
                     Node temp = deque.pollFirst();
                     stack.push(temp);
 
-                    if (temp.left != null)
+                    if (temp.left != null) {
                         deque.addLast(temp.left);
-                    if (temp.right != null)
+                    }
+                    if (temp.right != null) {
                         deque.addLast(temp.right);
+                    }
 
                     NC--;
                 }
             }
 
             //Even Case
-            else{
+            else {
                 while (NC > 0) {
                     Node temp = deque.pollLast();
                     stack.push(temp);
 
-                    if (temp.right != null)
+                    if (temp.right != null) {
                         deque.addFirst(temp.right);
-                    if (temp.left != null)
+                    }
+                    if (temp.left != null) {
                         deque.addFirst(temp.left);
+                    }
 
                     NC--;
                 }
@@ -100,51 +119,37 @@ public class BT_Doubly_LL_Spiral {
             level++;
         }
 
-        while (!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             push(stack.pop());
         }
 
         printList(head);
     }
 
-    public void push(Node key){
-        if(key == null)
+    public void push(Node key) {
+        if (key == null) {
             return;
+        }
 
         key.right = head;
         key.left = null;
 
-        if(head!=null){
+        if (head != null) {
             head.left = key;
-        }
-        else
+        } else {
             head = key;
+        }
 
         head = key;
     }
 
-    public static void main(String[] args) {
-        BT_Doubly_LL_Spiral BT = new BT_Doubly_LL_Spiral();
+    public static class Node {
+        int data;
+        Node left, right;
 
-        BT.root= new Node(1);
-        BT.root.left= new Node(2);
-        BT.root.right= new Node(3);
-        BT.root.left.left= new Node(4);
-        BT.root.left.right= new Node(5);
-        BT.root.right.left= new Node(6);
-        BT.root.right.right= new Node(7);
-        BT.root.left.left.left = new Node(8);
-        BT.root.left.left.right = new Node(9);
-        BT.root.left.right.left = new Node(10);
-        BT.root.left.right.right = new Node(11);
-        BT.root.right.left.left= new Node(12);
-        BT.root.right.left.right= new Node(13);
-        BT.root.right.right.left= new Node(14);
-        BT.root.right.right.right= new Node(15);
-
-        BT.spiralLevelOrder(BT.root);
-
-        //BT.printList(BT.root);
-
+        Node(int data) {
+            this.data = data;
+            left = right = null;
+        }
     }
 }

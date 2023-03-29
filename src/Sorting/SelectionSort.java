@@ -61,8 +61,9 @@ public class SelectionSort {
         for (i = 0; i < a.length; i++) {
             min = i;
             for (j = i + 1; j < a.length; j++) {
-                if (a[j] < a[min])
+                if (a[j] < a[min]) {
                     min = j;
+                }
             }
             //swap min element
             temp = a[min];
@@ -85,7 +86,9 @@ public class SelectionSort {
                 }
             }
             //swap min element
-            if (isSorted) return a;
+            if (isSorted) {
+                return a;
+            }
             temp = a[min];
             a[min] = a[i];
             a[i] = temp;

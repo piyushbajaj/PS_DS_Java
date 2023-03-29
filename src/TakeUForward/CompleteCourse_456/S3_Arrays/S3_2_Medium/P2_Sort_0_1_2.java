@@ -9,11 +9,18 @@ import java.util.Arrays;
  * User: piyushbajaj
  * Date: 25/12/22
  * Time: 10:43 pm
- *
+ * <p>
  * lc: <a href="https://leetcode.com/problems/sort-colors/description/">...</a>
  * g4g: <a href="https://practice.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s4231/1">...</a>
  */
 public class P2_Sort_0_1_2 {
+    public static void main(String[] args) {
+        P2_Sort_0_1_2 p2_sort_0_1_2 = new P2_Sort_0_1_2();
+        int[] nums = {2, 0, 2, 1, 1, 0};
+        p2_sort_0_1_2.sortColors(nums);
+        System.out.println(Arrays.toString(nums));
+    }
+
     /**
      * Approach
      * Dutch National Flag algorithm
@@ -45,12 +52,5 @@ public class P2_Sort_0_1_2 {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
-    }
-
-    public static void main(String[] args) {
-        P2_Sort_0_1_2 p2_sort_0_1_2 = new P2_Sort_0_1_2();
-        int[] nums = {2, 0, 2, 1, 1, 0};
-        p2_sort_0_1_2.sortColors(nums);
-        System.out.println(Arrays.toString(nums));
     }
 }

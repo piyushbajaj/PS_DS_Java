@@ -25,52 +25,6 @@ public class BST {
             root = null;
         }
 
-
-        public Node search(Node root, int key) {
-            //root is null, or key is present at root
-            if (root == null || root.data == key)
-                return root;
-
-            //if value is less than the root
-            if (key < root.data)
-                return search(root.left, key);
-            else
-                return search(root.right, key);
-        }
-
-        //Insertion of a key
-
-        public void insertrec(int key) {
-            root = insert(root, key);
-
-        }
-
-        public Node insert(Node root, int key) {
-            if (root == null) {
-                root = new Node(key);
-                System.out.println("Node inserted in the tree with value: " + key);
-                return root;
-            }
-
-            if (key < root.data)
-                return insert(root.left, key);
-            else if (key > root.data)
-                return insert(root.right, key);
-
-            System.out.println("Same node is already present in the tree once");
-            return root;
-        }
-
-        public void printTree(Node key) {
-            if (key == null)
-                return;
-
-            printTree(key.left);
-            System.out.print(key.data + " ");
-            printTree(key.right);
-        }
-
-
         public static void main(String args[]) {
             BinaryTree BT = new BinaryTree();
             BT.root = new Node(3);
@@ -101,6 +55,54 @@ public class BST {
             BT.insertrec(6);
 
 
+        }
+
+        //Insertion of a key
+
+        public Node search(Node root, int key) {
+            //root is null, or key is present at root
+            if (root == null || root.data == key) {
+                return root;
+            }
+
+            //if value is less than the root
+            if (key < root.data) {
+                return search(root.left, key);
+            } else {
+                return search(root.right, key);
+            }
+        }
+
+        public void insertrec(int key) {
+            root = insert(root, key);
+
+        }
+
+        public Node insert(Node root, int key) {
+            if (root == null) {
+                root = new Node(key);
+                System.out.println("Node inserted in the tree with value: " + key);
+                return root;
+            }
+
+            if (key < root.data) {
+                return insert(root.left, key);
+            } else if (key > root.data) {
+                return insert(root.right, key);
+            }
+
+            System.out.println("Same node is already present in the tree once");
+            return root;
+        }
+
+        public void printTree(Node key) {
+            if (key == null) {
+                return;
+            }
+
+            printTree(key.left);
+            System.out.print(key.data + " ");
+            printTree(key.right);
         }
     }
 }

@@ -11,6 +11,13 @@ import java.util.Objects;
  * Time: 8:27 am
  */
 public class P1_Shortest_Distance_To_Target_String {
+    public static void main(String[] args) {
+        P1_Shortest_Distance_To_Target_String p1_shortest_distance_to_target_string =
+            new P1_Shortest_Distance_To_Target_String();
+        String[] words = {"i", "eat", "leetcode"};
+        System.out.println(p1_shortest_distance_to_target_string.closetTarget(words, "ate", 0));
+    }
+
     public int closetTarget(String[] words, String target, int startIndex) {
         int n = words.length;
 
@@ -45,12 +52,5 @@ public class P1_Shortest_Distance_To_Target_String {
         }
 
         return minCount == (int) 1e9 ? -1 : minCount;
-    }
-
-    public static void main(String[] args) {
-        P1_Shortest_Distance_To_Target_String p1_shortest_distance_to_target_string =
-            new P1_Shortest_Distance_To_Target_String();
-        String[] words = {"i", "eat", "leetcode"};
-        System.out.println(p1_shortest_distance_to_target_string.closetTarget(words, "ate", 0));
     }
 }

@@ -1,13 +1,25 @@
 package TakeUForward.CompleteCourse_456.S11_Heaps.S11_2_Medium;
 
-import TakeUForward.CompleteCourse_456.S11_Heaps.S11_1_Learning.MinHeap_PQ;
-
 import java.util.PriorityQueue;
+
+import TakeUForward.CompleteCourse_456.S11_Heaps.S11_1_Learning.MinHeap_PQ;
 
 /**
  * Created by bajajp on 27 Sep, 2022
  */
 public class P2_KthSmallestElement {
+    public static void main(String[] args) throws Exception {
+        P2_KthSmallestElement p2_kthSmallestElement = new P2_KthSmallestElement();
+
+        int[] arr = {1, 2, 6, 4, 5, 3};
+
+        System.out.println(p2_kthSmallestElement.kthSmallest_minHeap(arr, 3));
+
+        System.out.println(p2_kthSmallestElement.kthSmallest_minHeap_using_inhouse(arr, 3));
+
+        System.out.println(p2_kthSmallestElement.kthSmallest_minHeap_qs(arr, 3));
+    }
+
     public int kthSmallest_minHeap(int[] arr, int k) {
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
 
@@ -77,18 +89,5 @@ public class P2_KthSmallestElement {
         }
         swap(arr, i, right);
         return i;
-    }
-
-
-    public static void main(String[] args) throws Exception {
-        P2_KthSmallestElement p2_kthSmallestElement = new P2_KthSmallestElement();
-
-        int[] arr = {1, 2, 6, 4, 5, 3};
-
-        System.out.println(p2_kthSmallestElement.kthSmallest_minHeap(arr, 3));
-
-        System.out.println(p2_kthSmallestElement.kthSmallest_minHeap_using_inhouse(arr, 3));
-
-        System.out.println(p2_kthSmallestElement.kthSmallest_minHeap_qs(arr, 3));
     }
 }

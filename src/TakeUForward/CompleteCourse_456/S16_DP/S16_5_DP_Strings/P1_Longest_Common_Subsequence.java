@@ -9,6 +9,21 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_5_DP_Strings;
  * Time: 7:12 pm
  */
 public class P1_Longest_Common_Subsequence {
+    public static void main(String[] args) {
+        P1_Longest_Common_Subsequence p1_longest_common_subsequence = new P1_Longest_Common_Subsequence();
+        System.out.println(p1_longest_common_subsequence.longestCommonSubsequence_recur("acd", "ced"));
+
+        System.out.println(p1_longest_common_subsequence.longestCommonSubsequence_recur("ABCDGH", "AEDFHR"));
+
+        System.out.println(p1_longest_common_subsequence.longestCommonSubsequence_mem("ABCDGH", "AEDFHR"));
+
+        System.out.println(p1_longest_common_subsequence.longestCommonSubsequence_mem_better("ABCDGH", "AEDFHR"));
+
+        System.out.println(p1_longest_common_subsequence.longestCommonSubsequence_tab("ABCDGH", "AEDFHR"));
+
+        System.out.println(p1_longest_common_subsequence.longestCommonSubsequence_tab_better("ABCDGH", "AEDFHR"));
+    }
+
     /**
      * Recursion
      * TC: O(2^N * 2^M)
@@ -80,7 +95,6 @@ public class P1_Longest_Common_Subsequence {
         return dp[ind1][ind2] = Math.max(longestCommonSubsequence_mem_util(text1, text2, ind1 - 1, ind2, dp),
             longestCommonSubsequence_mem_util(text1, text2, ind1, ind2 - 1, dp));
     }
-
 
     /**
      * Shifting index by 1 towards right, to cover the base case of (i < 0 || j < 0)
@@ -198,20 +212,5 @@ public class P1_Longest_Common_Subsequence {
             prev = curr;
         }
         return prev[m];
-    }
-
-    public static void main(String[] args) {
-        P1_Longest_Common_Subsequence p1_longest_common_subsequence = new P1_Longest_Common_Subsequence();
-        System.out.println(p1_longest_common_subsequence.longestCommonSubsequence_recur("acd", "ced"));
-
-        System.out.println(p1_longest_common_subsequence.longestCommonSubsequence_recur("ABCDGH", "AEDFHR"));
-
-        System.out.println(p1_longest_common_subsequence.longestCommonSubsequence_mem("ABCDGH", "AEDFHR"));
-
-        System.out.println(p1_longest_common_subsequence.longestCommonSubsequence_mem_better("ABCDGH", "AEDFHR"));
-
-        System.out.println(p1_longest_common_subsequence.longestCommonSubsequence_tab("ABCDGH", "AEDFHR"));
-
-        System.out.println(p1_longest_common_subsequence.longestCommonSubsequence_tab_better("ABCDGH", "AEDFHR"));
     }
 }

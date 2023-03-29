@@ -9,15 +9,17 @@ package designPattern.AbstractFactoryPattern;
 public class ColorFactory extends AbstractFactory {
     @Override
     public Color getColor(String str) {
-        if (str == null)
+        if (str == null) {
             return null;
+        }
 
-        if (str.equalsIgnoreCase("red"))
+        if (str.equalsIgnoreCase("red")) {
             return new Red();
-        else if (str.equalsIgnoreCase("blue"))
+        } else if (str.equalsIgnoreCase("blue")) {
             return new Blue();
-        else if (str.equalsIgnoreCase("green"))
+        } else if (str.equalsIgnoreCase("green")) {
             return new Green();
+        }
 
         return null;
 

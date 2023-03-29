@@ -6,8 +6,8 @@ import java.util.Scanner;
  * Created by piyush.bajaj on 19/11/16.
  */
 public class Permuation {
-    public static void isPermutation(String str1, String str2){
-        if(str1.length() != str2.length()){
+    public static void isPermutation(String str1, String str2) {
+        if (str1.length() != str2.length()) {
             System.out.println("Both strings length are Unequal");
             return;
         }
@@ -16,51 +16,50 @@ public class Permuation {
 
         int n = ch.length;
         char temp;
-        for(int i = 0; i < n; i++){
-            if((i != n-1-i) && i < n/2){
+        for (int i = 0; i < n; i++) {
+            if ((i != n - 1 - i) && i < n / 2) {
                 temp = ch[i];
-                ch[i] = ch[n-1-i];
-                ch[n-1-i] = temp;
+                ch[i] = ch[n - 1 - i];
+                ch[n - 1 - i] = temp;
+            } else {
+                break;
             }
-            else break;
         }
 
         String str3 = String.valueOf(ch);
-        if(str2.equals(str3)) {
+        if (str2.equals(str3)) {
             System.out.println(str1 + " is anagram of " + str2);
             return;
-        }
-        else {
+        } else {
             System.out.println(str1 + " is not an anagram of " + str2);
             return;
         }
     }
 
-    public static String sort(String s){
+    public static String sort(String s) {
         char[] content = s.toCharArray();
         java.util.Arrays.sort(content);
         return new String(content);
     }
 
-    public static void isPermutation_Java(String str1, String str2){
-        if(str1.length() != str2.length()){
+    public static void isPermutation_Java(String str1, String str2) {
+        if (str1.length() != str2.length()) {
             System.out.println("Both strings length are Unequal");
             return;
         }
 
-        if(sort(str1).equals(sort(str2))){
+        if (sort(str1).equals(sort(str2))) {
             System.out.println(str1 + " is anagram of " + str2);
             return;
-        }
-        else {
+        } else {
             System.out.println(str1 + " is not an anagram of " + str2);
             return;
         }
 
     }
 
-    public static void isPermutation_1(String str1, String str2){
-        if(str1.length() != str2.length()){
+    public static void isPermutation_1(String str1, String str2) {
+        if (str1.length() != str2.length()) {
             System.out.println("Both strings length are Unequal");
             return;
         }
@@ -68,13 +67,13 @@ public class Permuation {
         int[] letters = new int[256];
 
         char[] s_array = str1.toCharArray();
-        for(char c: s_array){
+        for (char c : s_array) {
             letters[c]++;
         }
 
         char[] s_array1 = str2.toCharArray();
-        for(char c: s_array1){
-            if(--letters[c] < 0) {
+        for (char c : s_array1) {
+            if (--letters[c] < 0) {
                 System.out.println(str1 + " is not anagram of " + str2);
                 return;
             }

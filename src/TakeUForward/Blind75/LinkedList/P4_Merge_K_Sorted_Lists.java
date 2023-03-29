@@ -12,25 +12,6 @@ import java.util.PriorityQueue;
  * Time: 1:05 pm
  */
 public class P4_Merge_K_Sorted_Lists extends BaseListNode {
-    public ListNode mergeKLists(ListNode[] lists) {
-        PriorityQueue<ListNode> minHeap = new PriorityQueue<>((a, b) -> a.val - b.val);
-
-        minHeap.addAll(Arrays.asList(lists));
-
-        ListNode node = new ListNode(-1);
-        ListNode temp = node;
-
-        while (!minHeap.isEmpty()) {
-            temp.next = minHeap.poll();
-            temp = temp.next;
-            if (temp.next != null) {
-                minHeap.add(temp.next);
-            }
-        }
-
-        return node.next;
-    }
-
     public static void main(String[] args) {
         P4_Merge_K_Sorted_Lists p4_merge_k_sorted_lists = new P4_Merge_K_Sorted_Lists();
         ListNode listNode1 = new ListNode(1);
@@ -48,5 +29,24 @@ public class P4_Merge_K_Sorted_Lists extends BaseListNode {
             listNode3}));
 
 
+    }
+
+    public ListNode mergeKLists(ListNode[] lists) {
+        PriorityQueue<ListNode> minHeap = new PriorityQueue<>((a, b) -> a.val - b.val);
+
+        minHeap.addAll(Arrays.asList(lists));
+
+        ListNode node = new ListNode(-1);
+        ListNode temp = node;
+
+        while (!minHeap.isEmpty()) {
+            temp.next = minHeap.poll();
+            temp = temp.next;
+            if (temp.next != null) {
+                minHeap.add(temp.next);
+            }
+        }
+
+        return node.next;
     }
 }

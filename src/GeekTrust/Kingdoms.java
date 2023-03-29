@@ -9,16 +9,16 @@ import java.util.Map;
 public class Kingdoms {
     Map<String, String> hashMap = new HashMap<String, String>();
 
-    public void addKingdom(String Name, String Emblem){
+    public void addKingdom(String Name, String Emblem) {
         Name = Name.toLowerCase();
         Emblem = Emblem.toLowerCase();
         hashMap.put(Name, Emblem);
     }
 
-    public Map<String, String> allKingdoms(){
+    public Map<String, String> allKingdoms() {
 
         //Put all in lower case
-        hashMap.put( "land", "panda");
+        hashMap.put("land", "panda");
         hashMap.put("water", "octopus");
         hashMap.put("ice", "mammoth");
         hashMap.put("air", "owl");

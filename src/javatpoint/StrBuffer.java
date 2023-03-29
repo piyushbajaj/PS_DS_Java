@@ -37,6 +37,5 @@ public class StrBuffer {
         System.out.println(sb.capacity());//now (22*2)+2=46 i.e (oldcapacity*2)+2
 
 
-
     }
 }

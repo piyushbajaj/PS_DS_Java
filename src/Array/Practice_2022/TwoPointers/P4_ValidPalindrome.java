@@ -4,10 +4,17 @@ package Array.Practice_2022.TwoPointers;
  * Created by bajajp on 10 Sep, 2022
  */
 public class P4_ValidPalindrome {
+    public static void main(String[] args) {
+        P4_ValidPalindrome p4_validPalindrome = new P4_ValidPalindrome();
+        String s = "A man, a plan, a canal: Panama";
+        System.out.println(p4_validPalindrome.isPalindrome(s));
+    }
+
     /**
      * Use filter function to consider only ascii value from 65 to 90, 97 to 122, 48 to 57
      * TC: O(N)
      * SC: O(1)
+     *
      * @param s
      * @return
      */
@@ -49,11 +56,5 @@ public class P4_ValidPalindrome {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        P4_ValidPalindrome p4_validPalindrome = new P4_ValidPalindrome();
-        String s = "A man, a plan, a canal: Panama";
-        System.out.println(p4_validPalindrome.isPalindrome(s));
     }
 }

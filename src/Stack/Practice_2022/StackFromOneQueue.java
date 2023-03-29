@@ -12,6 +12,17 @@ public class StackFromOneQueue {
         this.queueFromLL = new QueueFromLL();
     }
 
+    public static void main(String[] args) {
+        StackFromOneQueue stack = new StackFromOneQueue();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+    }
+
     public void push(int x) {
         queueFromLL.enqueue(x);
     }
@@ -29,16 +40,5 @@ public class StackFromOneQueue {
         }
 
         return queueFromLL.dequeue();
-    }
-
-    public static void main(String[] args) {
-        StackFromOneQueue stack = new StackFromOneQueue();
-        stack.push(1);
-        stack.push(2);
-        stack.push(3);
-        stack.push(4);
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
     }
 }

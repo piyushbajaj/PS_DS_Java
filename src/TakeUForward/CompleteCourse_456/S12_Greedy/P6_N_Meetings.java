@@ -14,27 +14,12 @@ import java.util.Comparator;
  */
 public class P6_N_Meetings {
 
-    static class Meeting {
-        int start, end, meetingNo;
+    public static void main(String[] args) {
+        P6_N_Meetings p6_n_meetings = new P6_N_Meetings();
 
-        Meeting(int start, int end, int meetingNo) {
-            this.start = start;
-            this.end = end;
-            this.meetingNo = meetingNo;
-        }
-    }
+//        System.out.println(p6_n_meetings.maxMeetings(new int[] {1, 3, 0, 5, 8, 5}, new int[] {2, 4, 5, 7, 9, 9}, 6));
 
-    // sort in increasing order
-    static class meetingComparator implements Comparator<Meeting> {
-        @Override
-        public int compare(Meeting o1, Meeting o2) {
-            if (o1.end < o2.end) {
-                return -1;
-            } else if (o1.end > o2.end) {
-                return 1;
-            }
-            return 0;
-        }
+        System.out.println(p6_n_meetings.maxMeetings(new int[] {10, 12, 20}, new int[] {20, 25, 30}, 3));
     }
 
     /**
@@ -66,11 +51,26 @@ public class P6_N_Meetings {
         return meetingCnt;
     }
 
-    public static void main(String[] args) {
-        P6_N_Meetings p6_n_meetings = new P6_N_Meetings();
+    static class Meeting {
+        int start, end, meetingNo;
 
-//        System.out.println(p6_n_meetings.maxMeetings(new int[] {1, 3, 0, 5, 8, 5}, new int[] {2, 4, 5, 7, 9, 9}, 6));
+        Meeting(int start, int end, int meetingNo) {
+            this.start = start;
+            this.end = end;
+            this.meetingNo = meetingNo;
+        }
+    }
 
-        System.out.println(p6_n_meetings.maxMeetings(new int[] {10, 12, 20}, new int[] {20, 25, 30}, 3));
+    // sort in increasing order
+    static class meetingComparator implements Comparator<Meeting> {
+        @Override
+        public int compare(Meeting o1, Meeting o2) {
+            if (o1.end < o2.end) {
+                return -1;
+            } else if (o1.end > o2.end) {
+                return 1;
+            }
+            return 0;
+        }
     }
 }

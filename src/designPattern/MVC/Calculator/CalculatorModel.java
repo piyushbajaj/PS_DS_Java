@@ -7,11 +7,11 @@ public class CalculatorModel {
 
     private int calculationValue;
 
-    public void addTwoNumber(int first, int second){
+    public void addTwoNumber(int first, int second) {
         calculationValue = first + second;
     }
 
-    public int getCalculationValue(){
+    public int getCalculationValue() {
         return calculationValue;
     }
 }

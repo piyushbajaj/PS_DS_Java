@@ -10,6 +10,22 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  */
 public class P3_DiameterOfBT {
 
+    public static void main(String[] args) {
+        P3_DiameterOfBT p3_diameterOfBT = new P3_DiameterOfBT();
+
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+        root.left.left.left = new TreeNode(10);
+        root.left.left.left.left = new TreeNode(11);
+
+        System.out.println(p3_diameterOfBT.diameterOfTree(root));
+    }
+
     /**
      * Approach:
      * 1. Start traversing the tree recursively, and do work in Post Order
@@ -41,21 +57,5 @@ public class P3_DiameterOfBT {
         diameter[0] = Math.max(diameter[0], lHeight + rHeight + 1);
 
         return Math.max(lHeight, rHeight) + 1;
-    }
-
-    public static void main(String[] args) {
-        P3_DiameterOfBT p3_diameterOfBT = new P3_DiameterOfBT();
-
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-        root.left.left.left = new TreeNode(10);
-        root.left.left.left.left = new TreeNode(11);
-
-        System.out.println(p3_diameterOfBT.diameterOfTree(root));
     }
 }

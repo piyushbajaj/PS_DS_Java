@@ -9,8 +9,8 @@ public abstract class Plan {
 
     abstract void getRate();
 
-    public void calculateBill(int units){
-        System.out.println(units*rate);
+    public void calculateBill(int units) {
+        System.out.println(units * rate);
     }
 
 }

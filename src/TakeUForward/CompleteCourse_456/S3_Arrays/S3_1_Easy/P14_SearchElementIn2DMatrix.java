@@ -9,6 +9,15 @@ package TakeUForward.CompleteCourse_456.S3_Arrays.S3_1_Easy;
  * Time: 9:27 am
  */
 public class P14_SearchElementIn2DMatrix {
+    public static void main(String[] args) {
+        P14_SearchElementIn2DMatrix p14_searchElementIn2DMatrix = new P14_SearchElementIn2DMatrix();
+
+        int[][] matrix = {{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 60}};
+
+        System.out.println(p14_searchElementIn2DMatrix.searchMatrix(matrix, 3));
+
+    }
+
     /**
      * Using Binary Search
      * TC: log(M*N)
@@ -38,14 +47,5 @@ public class P14_SearchElementIn2DMatrix {
         }
 
         return false;
-    }
-
-    public static void main(String[] args) {
-        P14_SearchElementIn2DMatrix p14_searchElementIn2DMatrix = new P14_SearchElementIn2DMatrix();
-
-        int[][] matrix = {{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 60}};
-
-        System.out.println(p14_searchElementIn2DMatrix.searchMatrix(matrix, 3));
-
     }
 }

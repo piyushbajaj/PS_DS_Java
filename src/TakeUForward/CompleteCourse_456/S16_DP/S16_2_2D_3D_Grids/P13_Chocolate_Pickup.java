@@ -9,6 +9,17 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_2_2D_3D_Grids;
  * Time: 5:37 pm
  */
 public class P13_Chocolate_Pickup {
+    public static void main(String[] args) {
+        P13_Chocolate_Pickup p13_chocolate_pickup = new P13_Chocolate_Pickup();
+        int[][] grid = {{2, 3, 1, 2}, {3, 4, 2, 2}, {5, 6, 3, 5}};
+
+        System.out.println(p13_chocolate_pickup.maximumChocolates(grid.length, grid[0].length, grid));
+
+        System.out.println(p13_chocolate_pickup.maximumChocolates_mem(grid.length, grid[0].length, grid));
+
+        System.out.println(p13_chocolate_pickup.maximumChocolates_tabulation(grid.length, grid[0].length, grid));
+    }
+
     /**
      * Recursion
      * TC: O(3^N * 3^N)
@@ -159,16 +170,5 @@ public class P13_Chocolate_Pickup {
         }
 
         return dp[0][0][grid[0].length - 1];
-    }
-
-    public static void main(String[] args) {
-        P13_Chocolate_Pickup p13_chocolate_pickup = new P13_Chocolate_Pickup();
-        int[][] grid = {{2, 3, 1, 2}, {3, 4, 2, 2}, {5, 6, 3, 5}};
-
-        System.out.println(p13_chocolate_pickup.maximumChocolates(grid.length, grid[0].length, grid));
-
-        System.out.println(p13_chocolate_pickup.maximumChocolates_mem(grid.length, grid[0].length, grid));
-
-        System.out.println(p13_chocolate_pickup.maximumChocolates_tabulation(grid.length, grid[0].length, grid));
     }
 }

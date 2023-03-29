@@ -12,49 +12,6 @@ public class DFS extends BaseGraphAdjacencyList {
         super(capacity);
     }
 
-    public ArrayList<String> DFSTraversal() {
-        ArrayList<String> dfsList = new ArrayList<>();
-
-        for (int i = 0; i < totalVertices; i++) {
-            if (!vertexList[i].isVisited) {
-                DFSTraversal_Util(i, dfsList);
-            }
-        }
-
-        for (int i = 0; i < totalVertices; i++) {
-            vertexList[i].isVisited = false;
-        }
-
-        return dfsList;
-    }
-
-    private ArrayList<String> DFSTraversal_Util(int source, ArrayList<String> dfsList) {
-        Stack<Integer> stack = new Stack<>();
-        stack.push(source);
-
-        while (!stack.isEmpty()) {
-            int temp = stack.peek();
-            if (!vertexList[temp].isVisited) {
-                vertexList[temp].isVisited = true;
-                dfsList.add(vertexList[temp].label);
-            }
-
-            stack.pop();
-
-            ListIterator<Integer> adjacentVertices = adjList[temp].listIterator();
-
-            while (adjacentVertices.hasPrevious()) {
-                int adjacentVertex = adjacentVertices.previous();
-
-                if (!vertexList[adjacentVertex].isVisited) {
-                    stack.push(adjacentVertex);
-                }
-            }
-
-        }
-        return dfsList;
-    }
-
     public static void main(String[] args) {
 //        DFS dfs = new DFS(8);
 //
@@ -108,6 +65,49 @@ public class DFS extends BaseGraphAdjacencyList {
         dfs1.addEdge_singleDirectional(9, 11);
 
         System.out.println(dfs1.DFSTraversal());
+    }
+
+    public ArrayList<String> DFSTraversal() {
+        ArrayList<String> dfsList = new ArrayList<>();
+
+        for (int i = 0; i < totalVertices; i++) {
+            if (!vertexList[i].isVisited) {
+                DFSTraversal_Util(i, dfsList);
+            }
+        }
+
+        for (int i = 0; i < totalVertices; i++) {
+            vertexList[i].isVisited = false;
+        }
+
+        return dfsList;
+    }
+
+    private ArrayList<String> DFSTraversal_Util(int source, ArrayList<String> dfsList) {
+        Stack<Integer> stack = new Stack<>();
+        stack.push(source);
+
+        while (!stack.isEmpty()) {
+            int temp = stack.peek();
+            if (!vertexList[temp].isVisited) {
+                vertexList[temp].isVisited = true;
+                dfsList.add(vertexList[temp].label);
+            }
+
+            stack.pop();
+
+            ListIterator<Integer> adjacentVertices = adjList[temp].listIterator();
+
+            while (adjacentVertices.hasPrevious()) {
+                int adjacentVertex = adjacentVertices.previous();
+
+                if (!vertexList[adjacentVertex].isVisited) {
+                    stack.push(adjacentVertex);
+                }
+            }
+
+        }
+        return dfsList;
     }
 
 }

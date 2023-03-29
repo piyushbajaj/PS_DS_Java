@@ -13,6 +13,13 @@ import java.util.Arrays;
  * lc: <a href="https://leetcode.com/problems/next-permutation/description/">...</a>
  */
 public class P7_Next_Permutation {
+    public static void main(String[] args) {
+        P7_Next_Permutation p7_next_permutation = new P7_Next_Permutation();
+        int[] nums = {3, 2, 1};
+        p7_next_permutation.nextPermutation(nums);
+        System.out.println(Arrays.toString(nums));
+    }
+
     /**
      * Approach:
      * 1. Traverse from the last, and the one where a[i] < a[i+1], so index1 = i
@@ -75,12 +82,5 @@ public class P7_Next_Permutation {
             start++;
             end--;
         }
-    }
-
-    public static void main(String[] args) {
-        P7_Next_Permutation p7_next_permutation = new P7_Next_Permutation();
-        int[] nums = {3, 2, 1};
-        p7_next_permutation.nextPermutation(nums);
-        System.out.println(Arrays.toString(nums));
     }
 }

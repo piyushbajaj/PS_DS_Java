@@ -15,6 +15,11 @@ import java.util.Set;
  * lc: <a href="https://leetcode.com/problems/find-all-duplicates-in-an-array/">...</a>
  */
 public class P4_Find_All_Duplicates {
+    public static void main(String[] args) {
+        P4_Find_All_Duplicates p4_find_all_duplicates = new P4_Find_All_Duplicates();
+        System.out.println(p4_find_all_duplicates.findDuplicates_better(new int[] {4, 3, 2, 7, 8, 2, 3, 1}));
+    }
+
     /**
      * TC: O(N)
      * SC: O(N)
@@ -54,10 +59,5 @@ public class P4_Find_All_Duplicates {
             }
         }
         return duplicates;
-    }
-
-    public static void main(String[] args) {
-        P4_Find_All_Duplicates p4_find_all_duplicates = new P4_Find_All_Duplicates();
-        System.out.println(p4_find_all_duplicates.findDuplicates_better(new int[] {4, 3, 2, 7, 8, 2, 3, 1}));
     }
 }

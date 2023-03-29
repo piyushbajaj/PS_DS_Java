@@ -13,6 +13,13 @@ import java.util.Map;
  * Time: 8:57 am
  */
 public class P1_Merge_2D_Arrays {
+    public static void main(String[] args) {
+        P1_Merge_2D_Arrays p1_merge_2D_arrays = new P1_Merge_2D_Arrays();
+        System.out.println(Arrays.deepToString(
+            p1_merge_2D_arrays.mergeArrays(new int[][] {{1, 2}, {2, 3}, {4, 5}}, new int[][] {{1, 4},
+                {3, 2}, {4, 1}})));
+    }
+
     public int[][] mergeArrays(int[][] nums1, int[][] nums2) {
         Map<Integer, Integer> result = new HashMap<Integer, Integer>();
 
@@ -52,12 +59,5 @@ public class P1_Merge_2D_Arrays {
         }
 
         return resArr;
-    }
-
-    public static void main(String[] args) {
-        P1_Merge_2D_Arrays p1_merge_2D_arrays = new P1_Merge_2D_Arrays();
-        System.out.println(Arrays.deepToString(
-            p1_merge_2D_arrays.mergeArrays(new int[][] {{1, 2}, {2, 3}, {4, 5}}, new int[][] {{1, 4},
-                {3, 2}, {4, 1}})));
     }
 }

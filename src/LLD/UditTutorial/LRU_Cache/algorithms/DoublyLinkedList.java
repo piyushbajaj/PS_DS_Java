@@ -27,6 +27,16 @@ public class DoublyLinkedList<E> {
         dummyTail.prev = dummyHead;
     }
 
+    public static void main(String[] args) {
+        DoublyLinkedList doublyLinkedList = new DoublyLinkedList<>();
+        doublyLinkedList.addElementAtLast(1);
+        doublyLinkedList.addElementAtLast(2);
+        doublyLinkedList.addElementAtLast(3);
+
+        System.out.println(doublyLinkedList.getLastNode().element);
+
+    }
+
     /**
      * Method to detach a random node from the doubly linked list. The node itself will not be removed from the memory.
      * Just that it will be removed from the list and becomes orphaned.
@@ -87,15 +97,5 @@ public class DoublyLinkedList<E> {
             return null;
         }
         return dummyTail.prev;
-    }
-
-    public static void main(String[] args) {
-        DoublyLinkedList doublyLinkedList = new DoublyLinkedList<>();
-        doublyLinkedList.addElementAtLast(1);
-        doublyLinkedList.addElementAtLast(2);
-        doublyLinkedList.addElementAtLast(3);
-
-        System.out.println(doublyLinkedList.getLastNode().element);
-
     }
 }

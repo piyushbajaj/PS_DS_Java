@@ -9,6 +9,13 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_4_DP_Subsequences;
  * Time: 2:13 pm
  */
 public class P3_Partition_As_Set {
+    public static void main(String[] args) {
+        P3_Partition_As_Set p3_partition_as_set = new P3_Partition_As_Set();
+        int[] arr = {1, 6, 11, 5};
+
+        System.out.println(p3_partition_as_set.minDifference(arr, arr.length));
+    }
+
     public int minDifference(int[] arr, int N) {
         int sum = 0;
 
@@ -55,12 +62,5 @@ public class P3_Partition_As_Set {
         }
 
         return min;
-    }
-
-    public static void main(String[] args) {
-        P3_Partition_As_Set p3_partition_as_set = new P3_Partition_As_Set();
-        int[] arr = {1, 6, 11, 5};
-
-        System.out.println(p3_partition_as_set.minDifference(arr, arr.length));
     }
 }

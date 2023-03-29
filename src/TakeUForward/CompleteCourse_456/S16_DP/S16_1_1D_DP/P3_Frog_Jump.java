@@ -14,6 +14,15 @@ import java.util.Arrays;
  * g4g: <a href="https://practice.geeksforgeeks.org/problems/geek-jump/1">...</a>
  */
 public class P3_Frog_Jump {
+    public static void main(String[] args) {
+        P3_Frog_Jump p3_frog_jump = new P3_Frog_Jump();
+
+        System.out.println(p3_frog_jump.frogJump(3, new int[] {10, 20, 30, 10}));
+        System.out.println(p3_frog_jump.frogJump_mem(3, new int[] {10, 20, 30, 10}));
+        System.out.println(p3_frog_jump.frogJump_tab(3, new int[] {10, 20, 30, 10}));
+        System.out.println(p3_frog_jump.frogJump_tab_improve(3, new int[] {10, 20, 30, 10}));
+    }
+
     /**
      * Recursive Way
      * TC: O(2^N)
@@ -138,14 +147,5 @@ public class P3_Frog_Jump {
         }
 
         return prevFirst;
-    }
-
-    public static void main(String[] args) {
-        P3_Frog_Jump p3_frog_jump = new P3_Frog_Jump();
-
-        System.out.println(p3_frog_jump.frogJump(3, new int[] {10, 20, 30, 10}));
-        System.out.println(p3_frog_jump.frogJump_mem(3, new int[] {10, 20, 30, 10}));
-        System.out.println(p3_frog_jump.frogJump_tab(3, new int[] {10, 20, 30, 10}));
-        System.out.println(p3_frog_jump.frogJump_tab_improve(3, new int[] {10, 20, 30, 10}));
     }
 }

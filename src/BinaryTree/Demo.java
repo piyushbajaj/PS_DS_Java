@@ -3,14 +3,14 @@ package BinaryTree;
 /**
  * Created by piyush.bajaj on 07/12/16.
  */
-import java.util.*;
+
+import java.util.LinkedList;
 
 public class Demo {
     public static void main(String[] args) {
 
         // create a LinkedList.LinkedList
         LinkedList list = new LinkedList();
-
 
 
         // add some elements

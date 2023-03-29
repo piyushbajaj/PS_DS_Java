@@ -12,6 +12,17 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_5_DP_Strings;
  */
 public class P8_Distinct_Subsequences {
 
+    public static void main(String[] args) {
+        P8_Distinct_Subsequences p8_distinct_subsequences = new P8_Distinct_Subsequences();
+        System.out.println(p8_distinct_subsequences.numDistinct("babgbag", "bag"));
+
+        System.out.println(p8_distinct_subsequences.numDistinct_mem("babgbag", "bag"));
+
+        System.out.println(p8_distinct_subsequences.numDistinct_tab("babgbag", "bag"));
+
+        System.out.println(p8_distinct_subsequences.numDistinct_tab_improve("babgbag", "bag"));
+    }
+
     /**
      * Recursion
      * TC: Exponential
@@ -150,16 +161,5 @@ public class P8_Distinct_Subsequences {
         }
 
         return prev[m];
-    }
-
-    public static void main(String[] args) {
-        P8_Distinct_Subsequences p8_distinct_subsequences = new P8_Distinct_Subsequences();
-        System.out.println(p8_distinct_subsequences.numDistinct("babgbag", "bag"));
-
-        System.out.println(p8_distinct_subsequences.numDistinct_mem("babgbag", "bag"));
-
-        System.out.println(p8_distinct_subsequences.numDistinct_tab("babgbag", "bag"));
-
-        System.out.println(p8_distinct_subsequences.numDistinct_tab_improve("babgbag", "bag"));
     }
 }

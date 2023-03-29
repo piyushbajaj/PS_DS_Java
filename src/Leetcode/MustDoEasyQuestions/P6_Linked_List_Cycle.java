@@ -11,14 +11,8 @@ package Leetcode.MustDoEasyQuestions;
  * Pattern: Linked List
  */
 public class P6_Linked_List_Cycle {
-    static class ListNode {
-        int val;
-        ListNode next;
+    public static void main(String[] args) {
 
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
     }
 
     /**
@@ -49,7 +43,13 @@ public class P6_Linked_List_Cycle {
         return false;
     }
 
-    public static void main(String[] args) {
+    static class ListNode {
+        int val;
+        ListNode next;
 
+        ListNode(int x) {
+            val = x;
+            next = null;
+        }
     }
 }

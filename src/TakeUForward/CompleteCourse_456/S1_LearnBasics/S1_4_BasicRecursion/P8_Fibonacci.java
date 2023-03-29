@@ -71,11 +71,14 @@ public class P8_Fibonacci {
     /**
      * TC: O(2^n)
      * SC: O(n)
+     *
      * @param n
      * @return
      */
     static int fibonacci_recur(int n) {
-        if (n == 0 || n == 1) return n;
+        if (n == 0 || n == 1) {
+            return n;
+        }
 
         return fibonacci_recur(n - 1) + fibonacci_recur(n - 2);
     }

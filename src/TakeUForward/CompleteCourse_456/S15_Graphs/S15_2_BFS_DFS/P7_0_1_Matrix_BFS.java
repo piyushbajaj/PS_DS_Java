@@ -18,16 +18,19 @@ import java.util.Queue;
  */
 public class P7_0_1_Matrix_BFS {
 
-    static class Pair {
-        int rowVal;
-        int colVal;
-        int dist;
+    public static void main(String[] args) {
+        P7_0_1_Matrix_BFS p7_0_1_matrix_bfs = new P7_0_1_Matrix_BFS();
+        int[][] grid = {{0, 0, 0},
+            {0, 1, 0},
+            {1, 0, 1}};
 
-        Pair(int rowVal, int colVal, int dist) {
-            this.rowVal = rowVal;
-            this.colVal = colVal;
-            this.dist = dist;
-        }
+        System.out.println(Arrays.deepToString(p7_0_1_matrix_bfs.nearest_1(grid)));
+
+
+        int[][] grid1 = {{0, 0, 0},
+            {0, 1, 0},
+            {1, 1, 1}};
+        System.out.println(Arrays.deepToString(p7_0_1_matrix_bfs.nearest_0(grid1)));
     }
 
     public int[][] nearest_1(int[][] grid) {
@@ -175,18 +178,15 @@ public class P7_0_1_Matrix_BFS {
         }
     }
 
-    public static void main(String[] args) {
-        P7_0_1_Matrix_BFS p7_0_1_matrix_bfs = new P7_0_1_Matrix_BFS();
-        int[][] grid = {{0, 0, 0},
-            {0, 1, 0},
-            {1, 0, 1}};
+    static class Pair {
+        int rowVal;
+        int colVal;
+        int dist;
 
-        System.out.println(Arrays.deepToString(p7_0_1_matrix_bfs.nearest_1(grid)));
-
-
-        int[][] grid1 = {{0, 0, 0},
-            {0, 1, 0},
-            {1, 1, 1}};
-        System.out.println(Arrays.deepToString(p7_0_1_matrix_bfs.nearest_0(grid1)));
+        Pair(int rowVal, int colVal, int dist) {
+            this.rowVal = rowVal;
+            this.colVal = colVal;
+            this.dist = dist;
+        }
     }
 }

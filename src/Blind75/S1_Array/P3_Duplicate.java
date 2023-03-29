@@ -12,6 +12,13 @@ import java.util.Set;
  * Time: 7:47 pm
  */
 public class P3_Duplicate {
+    public static void main(String[] args) {
+        P3_Duplicate p3_duplicate = new P3_Duplicate();
+        int[] nums = {1, 2, 3, 1};
+
+        System.out.println(p3_duplicate.containsDuplicate(nums));
+    }
+
     public boolean containsDuplicate(int[] nums) {
         Set<Integer> hashSet = new HashSet<>();
 
@@ -23,12 +30,5 @@ public class P3_Duplicate {
         }
 
         return false;
-    }
-
-    public static void main(String[] args) {
-        P3_Duplicate p3_duplicate = new P3_Duplicate();
-        int[] nums = {1, 2, 3, 1};
-
-        System.out.println(p3_duplicate.containsDuplicate(nums));
     }
 }

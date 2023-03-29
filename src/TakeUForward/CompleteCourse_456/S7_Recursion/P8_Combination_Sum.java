@@ -14,6 +14,12 @@ import java.util.List;
  */
 public class P8_Combination_Sum {
 
+    public static void main(String[] args) {
+        P8_Combination_Sum p8_combination_sum = new P8_Combination_Sum();
+        int[] arr = {2, 3, 6, 7};
+        System.out.println(p8_combination_sum.combinationSum(arr, 7));
+    }
+
     /**
      * Approach
      * <p>
@@ -50,11 +56,5 @@ public class P8_Combination_Sum {
         }
         // Not pick an element
         combinationSum_util(result, subResult, index + 1, candidates, target);
-    }
-
-    public static void main(String[] args) {
-        P8_Combination_Sum p8_combination_sum = new P8_Combination_Sum();
-        int[] arr = {2, 3, 6, 7};
-        System.out.println(p8_combination_sum.combinationSum(arr, 7));
     }
 }

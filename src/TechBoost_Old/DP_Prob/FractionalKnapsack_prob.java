@@ -17,28 +17,26 @@ public class FractionalKnapsack_prob {
         int maxWeight = 50;
 
 
-
         System.out.println(fp.calculate(weight, value, maxWeight));
     }
 
-    public int calculate(int[] weight, int[] value, int maxWt){
+    public int calculate(int[] weight, int[] value, int maxWt) {
         int n = weight.length;
         ArrayList<Items> arr = new ArrayList<>();
 
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             arr.add(new Items(weight[i], value[i]));
         }
 
         arr.sort(new MyComparator());
 
         int sum = 0;
-        for(int i = 0; i < n; i++){
-            if(arr.get(i).weight <= maxWt){
+        for (int i = 0; i < n; i++) {
+            if (arr.get(i).weight <= maxWt) {
                 sum += arr.get(i).profit;
                 maxWt -= arr.get(i).weight;
-            }
-            else {
-                sum+= (arr.get(i).profit/arr.get(i).weight)*maxWt;
+            } else {
+                sum += (arr.get(i).profit / arr.get(i).weight) * maxWt;
             }
         }
 
@@ -46,11 +44,11 @@ public class FractionalKnapsack_prob {
     }
 
 
-    class Items{
+    class Items {
         int weight;
         int profit;
 
-        Items(int weight, int profit){
+        Items(int weight, int profit) {
             this.weight = weight;
             this.profit = profit;
         }
@@ -60,8 +58,8 @@ public class FractionalKnapsack_prob {
 
         @Override
         public int compare(Items o1, Items o2) {
-            int p1 = o1.profit/o1.weight;
-            int p2 = o2.profit/o2.weight;
+            int p1 = o1.profit / o1.weight;
+            int p2 = o2.profit / o2.weight;
 
             return p2 - p1;
         }

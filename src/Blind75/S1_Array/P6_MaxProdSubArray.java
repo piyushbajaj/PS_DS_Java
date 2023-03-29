@@ -9,6 +9,12 @@ package Blind75.S1_Array;
  * Time: 6:34 pm
  */
 public class P6_MaxProdSubArray {
+    public static void main(String[] args) {
+        P6_MaxProdSubArray p6_maxProdSubArray = new P6_MaxProdSubArray();
+        int[] nums = {-2, 0, -1};
+        System.out.println(p6_maxProdSubArray.maxProduct(nums));
+    }
+
     public int maxProduct(int[] nums) {
         int currMax = nums[0];
         int maxSoFar = nums[0];
@@ -19,11 +25,5 @@ public class P6_MaxProdSubArray {
         }
 
         return maxSoFar;
-    }
-
-    public static void main(String[] args) {
-        P6_MaxProdSubArray p6_maxProdSubArray = new P6_MaxProdSubArray();
-        int[] nums = {-2, 0, -1};
-        System.out.println(p6_maxProdSubArray.maxProduct(nums));
     }
 }

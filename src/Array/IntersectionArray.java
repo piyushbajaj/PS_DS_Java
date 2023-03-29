@@ -21,19 +21,20 @@ public class IntersectionArray {
         HashSet<Integer> hash1 = new HashSet<>();
         HashSet<Integer> hash2 = new HashSet<>();
         HashSet<Integer> hash3 = new HashSet<>();
-        for(int i = 0; i < n1; i++){
+        for (int i = 0; i < n1; i++) {
             hash1.add(nums1[i]);
         }
         int count = 0;
-        for(int i = 0; i < n2; i++){
+        for (int i = 0; i < n2; i++) {
             hash2.add(nums2[i]);
         }
 
         Iterator<Integer> itr = hash2.iterator();
-        while (itr.hasNext()){
+        while (itr.hasNext()) {
             int l = itr.next().intValue();
-            if(hash1.contains(l))
+            if (hash1.contains(l)) {
                 hash3.add(l);
+            }
 
         }
 
@@ -41,7 +42,7 @@ public class IntersectionArray {
         int[] result = new int[hash3.size()];
 
         Iterator<Integer> itr1 = hash3.iterator();
-        while (itr1.hasNext()){
+        while (itr1.hasNext()) {
             result[j] = itr1.next().intValue();
             j++;
 
@@ -55,7 +56,7 @@ public class IntersectionArray {
         int[] b = {1, 1, 3, 4};
         int[] res = (intersection(a, b));
 
-        for(int i =0; i < res.length; i++){
+        for (int i = 0; i < res.length; i++) {
             System.out.println(res[i]);
         }
 

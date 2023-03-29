@@ -22,7 +22,7 @@ public class BinarySearch {
         int n = s.nextInt();
         int[] a = new int[n];
         System.out.println("Input an array one by one");
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             a[i] = s.nextInt();
         }
         System.out.println("Input the number to be matched in an array: ");
@@ -55,15 +55,16 @@ public class BinarySearch {
         System.out.println("Given Array");
         printArray(a);
         System.out.println("Sorting using Merge Sort is ");
-        sort(a, 0, a.length-1);
+        sort(a, 0, a.length - 1);
         printArray(a);
 
     }
 
-    public static int search(int a[], int n, int x){
-        for(int i = 0; i < n; i++){
-            if(a[i]==x)
+    public static int search(int a[], int n, int x) {
+        for (int i = 0; i < n; i++) {
+            if (a[i] == x) {
                 return i;
+            }
         }
         return -1;
         /*
@@ -71,15 +72,15 @@ public class BinarySearch {
          */
     }
 
-    public static int binarySearch(int a[], int left, int right, int x){
-        int mid = left + (right-1)/2;
-        if(a[mid]==x)
+    public static int binarySearch(int a[], int left, int right, int x) {
+        int mid = left + (right - 1) / 2;
+        if (a[mid] == x) {
             return mid;
-        else if(x < a[mid]){
-            return binarySearch(a, left, mid-1, x );
+        } else if (x < a[mid]) {
+            return binarySearch(a, left, mid - 1, x);
+        } else {
+            return binarySearch(a, mid + 1, right, x);
         }
-        else
-            return binarySearch(a, mid+1, right, x);
     }
 
     /*
@@ -89,15 +90,16 @@ public class BinarySearch {
     k = log(n) is the time complexity
      */
 
-    public static int[] selectionSort(int a[]){
+    public static int[] selectionSort(int a[]) {
         int n = a.length;
         int temp;
         //int[] sort = new int[n];
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             int min = i;
-            for(int j=i+1; j < n; j++){
-                if(a[j]< a[min])
-                    min=j;
+            for (int j = i + 1; j < n; j++) {
+                if (a[j] < a[min]) {
+                    min = j;
+                }
             }
             temp = a[i];
             a[i] = a[min];
@@ -111,21 +113,22 @@ public class BinarySearch {
          */
     }
 
-    public static int[] bubbleSort(int a[]){
+    public static int[] bubbleSort(int a[]) {
         int n = a.length;
         boolean swapped;
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             swapped = false;
-            for(int j = 0; j < n-1; j++){
-                if(a[j]> a[j+1]){
-                    int temp = a[j+1];
-                    a[j+1] = a[j];
+            for (int j = 0; j < n - 1; j++) {
+                if (a[j] > a[j + 1]) {
+                    int temp = a[j + 1];
+                    a[j + 1] = a[j];
                     a[j] = temp;
                     swapped = true;
                 }
             }
-            if(swapped==false)
+            if (swapped == false) {
                 break;
+            }
         }
         return a;
         /*
@@ -134,19 +137,19 @@ public class BinarySearch {
     }
 
 
-    public static int[] insertionSort(int b[]){
+    public static int[] insertionSort(int b[]) {
         int n = b.length;
         int key;
 
-        for(int i=1; i < n; i++){
+        for (int i = 1; i < n; i++) {
             key = b[i];
-            int j = i-1;
+            int j = i - 1;
 
-            while(j>=0 && b[j] > key){
-                b[j+1] = b[j];
-                j = j-1;
+            while (j >= 0 && b[j] > key) {
+                b[j + 1] = b[j];
+                j = j - 1;
             }
-            b[j+1] = key;
+            b[j + 1] = key;
         }
 
         return b;
@@ -168,12 +171,12 @@ public class BinarySearch {
 
         /*Copy data to temp arrays*/
 
-        for(int i = 0; i < n1; i++){
-            L[i] = a[l+i];
+        for (int i = 0; i < n1; i++) {
+            L[i] = a[l + i];
         }
 
-        for(int j = 0; j < n2; j++) {
-            R[j] = a[m+ 1 +j];
+        for (int j = 0; j < n2; j++) {
+            R[j] = a[m + 1 + j];
         }
 
         /* Merge the temp arrays */
@@ -185,12 +188,11 @@ public class BinarySearch {
         // Initial indexes of first and second subarrays
 
         // Initial index of merged subarry array
-        while(i < n1 && j < n2){
-            if(L[i] <= R[j]){
+        while (i < n1 && j < n2) {
+            if (L[i] <= R[j]) {
                 a[k] = L[i];
                 i++;
-            }
-            else{
+            } else {
                 a[k] = R[j];
                 j++;
             }
@@ -199,13 +201,13 @@ public class BinarySearch {
 
         //copy rest indexes
 
-        while(i<n1){
+        while (i < n1) {
             a[k] = L[i];
             i++;
             k++;
         }
 
-        while(j<n2){
+        while (j < n2) {
             a[k] = R[j];
             j++;
             k++;
@@ -213,14 +215,13 @@ public class BinarySearch {
     }
 
     //this is a function which breaks arrays into individual numbers
-    public static void sort(int a[], int l, int r)
-    {
-        if(l<r){
-            int m = (l+r)/2;
+    public static void sort(int a[], int l, int r) {
+        if (l < r) {
+            int m = (l + r) / 2;
 
             sort(a, l, m);
 
-            sort(a, m+1, r);
+            sort(a, m + 1, r);
 
             // Merge the sorted halves
             merge(a, l, m, r);
@@ -228,9 +229,9 @@ public class BinarySearch {
 
     }
 
-    public static void printArray(int a[]){
+    public static void printArray(int a[]) {
         int n = a.length;
-        for (int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             System.out.print(a[i] + " ");
         }
     }

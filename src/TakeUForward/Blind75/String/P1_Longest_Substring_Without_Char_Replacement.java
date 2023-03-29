@@ -15,6 +15,12 @@ import java.util.Map;
  */
 public class P1_Longest_Substring_Without_Char_Replacement {
 
+    public static void main(String[] args) {
+        P1_Longest_Substring_Without_Char_Replacement p1_longest_substring_without_char_replacement =
+            new P1_Longest_Substring_Without_Char_Replacement();
+        System.out.println(p1_longest_substring_without_char_replacement.lengthOfLongestSubstring("abcabcbb"));
+    }
+
     /**
      * TC: O(N)
      * SC: O(N)
@@ -38,11 +44,5 @@ public class P1_Longest_Substring_Without_Char_Replacement {
         }
 
         return maxSoFar;
-    }
-
-    public static void main(String[] args) {
-        P1_Longest_Substring_Without_Char_Replacement p1_longest_substring_without_char_replacement =
-            new P1_Longest_Substring_Without_Char_Replacement();
-        System.out.println(p1_longest_substring_without_char_replacement.lengthOfLongestSubstring("abcabcbb"));
     }
 }

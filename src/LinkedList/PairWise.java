@@ -6,39 +6,6 @@ package LinkedList;
 public class PairWise {
     Node head; //head of the list
 
-    /* Linked List LinkedList.Node*/
-    static class Node
-    {
-        int data;
-        Node next;
-
-        //Constructor to create a new node
-        //Next is by default initialized as null
-
-        Node(int d){
-            data = d;
-            next = null;
-        }
-    }
-
-    void printList(Node node) {
-        while (node != null) {
-            System.out.print(node.data + " ");
-            node = node.next;
-        }
-    }
-
-    void pairWiseSwap(){
-        Node Nd = head;
-        int temp = 0;
-        while (Nd!=null && Nd.next!=null){
-            temp = Nd.data;
-            Nd.data = Nd.next.data;
-            Nd.next.data = temp;
-            Nd = Nd.next.next;
-        }
-    }
-
     public static void main(String[] args) {
         PairWise list = new PairWise();
         list.head = new Node(1);
@@ -51,5 +18,37 @@ public class PairWise {
         System.out.println("\n");
         list.pairWiseSwap();
         list.printList(list.head);
+    }
+
+    void printList(Node node) {
+        while (node != null) {
+            System.out.print(node.data + " ");
+            node = node.next;
+        }
+    }
+
+    void pairWiseSwap() {
+        Node Nd = head;
+        int temp = 0;
+        while (Nd != null && Nd.next != null) {
+            temp = Nd.data;
+            Nd.data = Nd.next.data;
+            Nd.next.data = temp;
+            Nd = Nd.next.next;
+        }
+    }
+
+    /* Linked List LinkedList.Node*/
+    static class Node {
+        int data;
+        Node next;
+
+        //Constructor to create a new node
+        //Next is by default initialized as null
+
+        Node(int d) {
+            data = d;
+            next = null;
+        }
     }
 }

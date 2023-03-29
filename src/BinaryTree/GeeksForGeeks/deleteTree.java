@@ -6,65 +6,17 @@ package BinaryTree.GeeksForGeeks;
 public class deleteTree {
     Node root;
 
-    static class Node{
-        Node left, right;
-        int data;
-        Node(int data){
-            this.data = data;
-            this.left = this.right = null;
-        }
-    }
-
-    deleteTree(){
+    deleteTree() {
         root = null;
     }
 
-    deleteTree(int data){
-        if(root == null)
+    deleteTree(int data) {
+        if (root == null) {
             root = new Node(data);
-        else
+        } else {
             new Node(data);
-    }
-
-    public Node deleteTree(Node key){
-        if(key == null)
-            return null;
-
-        key.left = deleteTree(key.left);
-
-        key.right = deleteTree(key.right);
-
-        if(key.left == null && key.right == null) {
-            return null;
         }
-
-        return key;
-
     }
-
-    public Node deleteTree_Recur(Node key){
-        if(key == null)
-            return null;
-
-        deleteTree(key);
-
-        if(key!=null)
-            root = null;
-
-        return key;
-    }
-
-    //InOrder Traversal
-    public void inOrderTraversal_Recur(Node key){
-        if(key == null)
-            return;
-
-        inOrderTraversal_Recur(key.left);
-        System.out.print(key.data + " ");
-        inOrderTraversal_Recur(key.right);
-    }
-
-
 
     public static void main(String[] args) {
         deleteTree bfs = new deleteTree(1);
@@ -83,5 +35,57 @@ public class deleteTree {
 
         bfs.inOrderTraversal_Recur(bfs.root);
 
+    }
+
+    public Node deleteTree(Node key) {
+        if (key == null) {
+            return null;
+        }
+
+        key.left = deleteTree(key.left);
+
+        key.right = deleteTree(key.right);
+
+        if (key.left == null && key.right == null) {
+            return null;
+        }
+
+        return key;
+
+    }
+
+    public Node deleteTree_Recur(Node key) {
+        if (key == null) {
+            return null;
+        }
+
+        deleteTree(key);
+
+        if (key != null) {
+            root = null;
+        }
+
+        return key;
+    }
+
+    //InOrder Traversal
+    public void inOrderTraversal_Recur(Node key) {
+        if (key == null) {
+            return;
+        }
+
+        inOrderTraversal_Recur(key.left);
+        System.out.print(key.data + " ");
+        inOrderTraversal_Recur(key.right);
+    }
+
+    static class Node {
+        Node left, right;
+        int data;
+
+        Node(int data) {
+            this.data = data;
+            this.left = this.right = null;
+        }
     }
 }

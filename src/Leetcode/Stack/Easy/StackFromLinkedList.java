@@ -3,14 +3,19 @@ package Leetcode.Stack.Easy;
 public class StackFromLinkedList {
     Node head;
 
-    static class Node {
-        Node next;
-        int data;
-
-        Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
+    public static void main(String[] args) {
+        StackFromLinkedList stackFromLinkedList = new StackFromLinkedList();
+        stackFromLinkedList.insertNodeInEnd(1);
+        stackFromLinkedList.insertNodeInEnd(2);
+        stackFromLinkedList.insertNodeInEnd(3);
+        stackFromLinkedList.insertNodeInEnd(4);
+        stackFromLinkedList.printList(stackFromLinkedList.head);
+        stackFromLinkedList.push(5);
+        stackFromLinkedList.push(6);
+        stackFromLinkedList.push(7);
+        stackFromLinkedList.printList(stackFromLinkedList.head);
+        System.out.println(stackFromLinkedList.pop());
+        stackFromLinkedList.printList(stackFromLinkedList.head);
     }
 
     public void push(int data) {
@@ -64,18 +69,13 @@ public class StackFromLinkedList {
         return start;
     }
 
-    public static void main(String[] args) {
-        StackFromLinkedList stackFromLinkedList = new StackFromLinkedList();
-        stackFromLinkedList.insertNodeInEnd(1);
-        stackFromLinkedList.insertNodeInEnd(2);
-        stackFromLinkedList.insertNodeInEnd(3);
-        stackFromLinkedList.insertNodeInEnd(4);
-        stackFromLinkedList.printList(stackFromLinkedList.head);
-        stackFromLinkedList.push(5);
-        stackFromLinkedList.push(6);
-        stackFromLinkedList.push(7);
-        stackFromLinkedList.printList(stackFromLinkedList.head);
-        System.out.println(stackFromLinkedList.pop());
-        stackFromLinkedList.printList(stackFromLinkedList.head);
+    static class Node {
+        Node next;
+        int data;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
     }
 }

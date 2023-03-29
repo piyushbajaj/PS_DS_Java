@@ -14,9 +14,9 @@ public class BinarySearch {
 
             if (searchData == arr[mid]) {
                 return mid;
-            } else if (searchData > arr[mid])
+            } else if (searchData > arr[mid]) {
                 return binarySearch_Recursive(arr, searchData, mid + 1, end);
-            else {
+            } else {
                 return binarySearch_Recursive(arr, searchData, start, mid - 1);
             }
         }
@@ -32,9 +32,9 @@ public class BinarySearch {
             int mid = (start + end) / 2;
             if (searchData == arr[mid]) {
                 return mid;
-            } else if (searchData > arr[mid])
+            } else if (searchData > arr[mid]) {
                 start = mid + 1;
-            else {
+            } else {
                 end = mid - 1;
             }
         }
@@ -48,14 +48,16 @@ public class BinarySearch {
 
         while (end - start > 1) {
             int mid = (start + end) / 2;
-            if (arr[mid] > searchData)
+            if (arr[mid] > searchData) {
                 end = mid;
-            else {
+            } else {
                 start = mid;
             }
         }
 
-        if (start == 0) return arr[start];
+        if (start == 0) {
+            return arr[start];
+        }
 //        if (end == arr.length - 1) {
 //            return arr[end];
 //        } else {

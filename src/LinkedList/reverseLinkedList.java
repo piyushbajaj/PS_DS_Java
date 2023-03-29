@@ -5,57 +5,8 @@ package LinkedList;
  */
 public class reverseLinkedList {
 
-    //This a declaration of LinkedList.Node Structure
-    static class Node {
-
-        int data;  //Value
-        Node next; //Next Pointer defined
-
-        Node(int d) {
-            data = d;
-            next = null;
-        }
-    }
-
     //This is a declaration of starting LinkedList.Node
     static Node head;
-
-    /* Function to reverse the linked list */
-    /*
-    Here i am basically using here 3 Nodes, prev(for pointing previous values or old values),
-    current(for pointing to the values present currently), next(for pointing to next values)
-    So here if you see closely you will understand that i am changing the direction of the pointers,
-    so finally prev node will contain all the address for the reverse Nodes.
-     */
-    Node reverse(Node node) {
-        Node prev = null;
-        Node current = node;
-        Node next;
-        while (current != null) {
-            next = current.next;
-            current.next = prev;
-            prev = current;
-            current = next;
-        }
-        node = prev;
-        return node;
-    }
-
-    // prints content of double linked list
-    void printList(Node node) {
-        while (node != null) {
-            System.out.print(node.data + " ");
-            node = node.next;
-        }
-    }
-
-    //Using Recursion
-
-    public void reverse_Recursive(Node node) {
-        if (node.next != null)
-            reverse_Recursive(node.next);
-        System.out.println("Reverse Linked List using recusrsion is: " + node.data);
-    }
 
     public static void main(String[] args) {
         reverseLinkedList list = new reverseLinkedList();
@@ -93,6 +44,44 @@ public class reverseLinkedList {
         for (int i = 1; i < 10; i = i * 2) {
             System.out.println(i);
         }
+    }
+
+    /* Function to reverse the linked list */
+    /*
+    Here i am basically using here 3 Nodes, prev(for pointing previous values or old values),
+    current(for pointing to the values present currently), next(for pointing to next values)
+    So here if you see closely you will understand that i am changing the direction of the pointers,
+    so finally prev node will contain all the address for the reverse Nodes.
+     */
+    Node reverse(Node node) {
+        Node prev = null;
+        Node current = node;
+        Node next;
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        node = prev;
+        return node;
+    }
+
+    // prints content of double linked list
+    void printList(Node node) {
+        while (node != null) {
+            System.out.print(node.data + " ");
+            node = node.next;
+        }
+    }
+
+    //Using Recursion
+
+    public void reverse_Recursive(Node node) {
+        if (node.next != null) {
+            reverse_Recursive(node.next);
+        }
+        System.out.println("Reverse Linked List using recusrsion is: " + node.data);
     }
 
     public Node reverse_prac(Node key) {
@@ -147,5 +136,17 @@ public class reverseLinkedList {
         //temp.next = key;
 
         return key;
+    }
+
+    //This a declaration of LinkedList.Node Structure
+    static class Node {
+
+        int data;  //Value
+        Node next; //Next Pointer defined
+
+        Node(int d) {
+            data = d;
+            next = null;
+        }
     }
 }

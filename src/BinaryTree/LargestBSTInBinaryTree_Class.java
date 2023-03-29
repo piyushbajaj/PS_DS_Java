@@ -56,16 +56,7 @@ package BinaryTree;
  */
 public class LargestBSTInBinaryTree_Class {
     Node root;
-
-    public static class Node {
-        int data;
-        Node left, right;
-
-        Node(int data) {
-            this.data = data;
-            left = right = null;
-        }
-    }
+    private int index = 0;
 
     public LargestBSTInBinaryTree_Class() {
         root = null;
@@ -75,8 +66,23 @@ public class LargestBSTInBinaryTree_Class {
         root = new Node(key);
     }
 
+    public static void main(String[] args) {
+        LargestBSTInBinaryTree_Class BT = new LargestBSTInBinaryTree_Class();
 
-    private int index = 0;
+//        int inorder[]  = {-7,-6,-5,-4,-3,-2,1,2,3,16,6,10,11,12,14};
+//        int preorder[] = {3,-2,-3,-4,-5,-6,-7,1,2,16,10,6,12,11,14};
+
+        int inorder[] = {1, 2, 3, 4, 5, 6, 7};
+        int preorder[] = {4, 2, 1, 3, 6, 5, 7};
+
+        Node Nd = BT.createTree(inorder, preorder);
+        int maxValue = BT.largestBSTVal(Nd);
+
+        System.out.println("Size of largest BST is " + maxValue);
+
+        Runtime.getRuntime().gc();
+
+    }
 
     public Node createTree(int inorder[], int preorder[]) {
         Node result = createTree(inorder, preorder, 0, inorder.length - 1);
@@ -101,20 +107,6 @@ public class LargestBSTInBinaryTree_Class {
         return node;
 
 
-    }
-
-    public static class MinMax {
-        boolean isBST;
-        int size;
-        int min;
-        int max;
-
-        MinMax() {
-            isBST = true;
-            size = 0;
-            min = Integer.MAX_VALUE;
-            max = Integer.MIN_VALUE;
-        }
     }
 
     public int largestBSTVal(Node key) {
@@ -162,22 +154,27 @@ public class LargestBSTInBinaryTree_Class {
         return m;
     }
 
+    public static class Node {
+        int data;
+        Node left, right;
 
-    public static void main(String[] args) {
-        LargestBSTInBinaryTree_Class BT = new LargestBSTInBinaryTree_Class();
+        Node(int data) {
+            this.data = data;
+            left = right = null;
+        }
+    }
 
-//        int inorder[]  = {-7,-6,-5,-4,-3,-2,1,2,3,16,6,10,11,12,14};
-//        int preorder[] = {3,-2,-3,-4,-5,-6,-7,1,2,16,10,6,12,11,14};
+    public static class MinMax {
+        boolean isBST;
+        int size;
+        int min;
+        int max;
 
-        int inorder[] = {1, 2, 3, 4, 5, 6, 7};
-        int preorder[] = {4, 2, 1, 3, 6, 5, 7};
-
-        Node Nd = BT.createTree(inorder, preorder);
-        int maxValue = BT.largestBSTVal(Nd);
-
-        System.out.println("Size of largest BST is " + maxValue);
-
-        Runtime.getRuntime().gc();
-
+        MinMax() {
+            isBST = true;
+            size = 0;
+            min = Integer.MAX_VALUE;
+            max = Integer.MIN_VALUE;
+        }
     }
 }

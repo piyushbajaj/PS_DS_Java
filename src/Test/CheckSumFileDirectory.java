@@ -14,6 +14,10 @@ import java.util.List;
  * Time: 12:54 pm
  */
 public class CheckSumFileDirectory {
+    public static void main(String[] args) {
+
+    }
+
     public void foo(List<File> fileList) {
         // Key: CheckSum String
         // Value: Name of the file
@@ -34,9 +38,5 @@ public class CheckSumFileDirectory {
 
     public String checkSum(File file) {
         return "abc";
-    }
-
-    public static void main(String[] args) {
-
     }
 }

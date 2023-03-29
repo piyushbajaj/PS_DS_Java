@@ -9,6 +9,16 @@ package TakeUForward.Blind75.DynamicProgramming;
  * Time: 5:04 pm
  */
 public class P11_Jump_Game {
+    public static void main(String[] args) {
+        P11_Jump_Game p11_jump_game = new P11_Jump_Game();
+        System.out.println(p11_jump_game.canJump_recur(new int[] {2, 3, 1, 1, 4}));
+        System.out.println(p11_jump_game.canJump_recur(new int[] {3, 2, 1, 0, 4}));
+        System.out.println(p11_jump_game.canJump_mem(new int[] {2, 3, 1, 1, 4}));
+        System.out.println(p11_jump_game.canJump_mem(new int[] {3, 2, 1, 0, 4}));
+        System.out.println(p11_jump_game.canJump_tab(new int[] {2, 3, 1, 1, 4}));
+        System.out.println(p11_jump_game.canJump_tab(new int[] {3, 2, 1, 0, 4}));
+    }
+
     public boolean canJump_recur(int[] nums) {
         int n = nums.length;
         return canJump_recur_util(nums, 0);
@@ -92,15 +102,5 @@ public class P11_Jump_Game {
 
         return dp[0];
 
-    }
-
-    public static void main(String[] args) {
-        P11_Jump_Game p11_jump_game = new P11_Jump_Game();
-        System.out.println(p11_jump_game.canJump_recur(new int[] {2, 3, 1, 1, 4}));
-        System.out.println(p11_jump_game.canJump_recur(new int[] {3, 2, 1, 0, 4}));
-        System.out.println(p11_jump_game.canJump_mem(new int[] {2, 3, 1, 1, 4}));
-        System.out.println(p11_jump_game.canJump_mem(new int[] {3, 2, 1, 0, 4}));
-        System.out.println(p11_jump_game.canJump_tab(new int[] {2, 3, 1, 1, 4}));
-        System.out.println(p11_jump_game.canJump_tab(new int[] {3, 2, 1, 0, 4}));
     }
 }

@@ -10,20 +10,20 @@ public class ChocolateFeast_Prob {
         int val = n;
         int remain = 0;
 
-        if (val >= 0){
-            count+= val/c;
-            val = val/c;
-            remain = val%c;
+        if (val >= 0) {
+            count += val / c;
+            val = val / c;
+            remain = val % c;
 
         }
 
         int k = 0;
         int rem = 0;
-        while (val >= m){
-            k = val/m;
-            rem = val%m;
+        while (val >= m) {
+            k = val / m;
+            rem = val % m;
             val = k + rem;
-            count+=k;
+            count += k;
         }
 
         //count+= val/m;

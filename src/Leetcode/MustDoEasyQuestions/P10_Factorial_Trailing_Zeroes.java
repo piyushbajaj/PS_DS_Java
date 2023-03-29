@@ -15,6 +15,12 @@ package Leetcode.MustDoEasyQuestions;
  */
 public class P10_Factorial_Trailing_Zeroes {
 
+    public static void main(String[] args) {
+        P10_Factorial_Trailing_Zeroes p10_factorial_trailing_zeroes = new P10_Factorial_Trailing_Zeroes();
+        System.out.println(p10_factorial_trailing_zeroes.trailingZeroes(13));
+        System.out.println(p10_factorial_trailing_zeroes.trailingZeroes_better(13));
+    }
+
     /**
      * Approach:
      * Number of 5's means the number of trailing zeroes, as 2 will always be higher in number.
@@ -67,11 +73,5 @@ public class P10_Factorial_Trailing_Zeroes {
         }
 
         return fact;
-    }
-
-    public static void main(String[] args) {
-        P10_Factorial_Trailing_Zeroes p10_factorial_trailing_zeroes = new P10_Factorial_Trailing_Zeroes();
-        System.out.println(p10_factorial_trailing_zeroes.trailingZeroes(13));
-        System.out.println(p10_factorial_trailing_zeroes.trailingZeroes_better(13));
     }
 }

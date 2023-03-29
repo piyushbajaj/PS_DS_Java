@@ -14,6 +14,12 @@ import java.util.Arrays;
  */
 public class P3_Non_Overlapping_Intervals {
 
+    public static void main(String[] args) {
+        P3_Non_Overlapping_Intervals p3_non_overlapping_intervals = new P3_Non_Overlapping_Intervals();
+        System.out.println(p3_non_overlapping_intervals.eraseOverlapIntervals(new int[][] {{1, 2}, {2, 3}, {3, 4}, {1
+            , 3}}));
+    }
+
     /**
      * Approach:
      * 1. Sort the intervals on the basis of interval end time
@@ -36,11 +42,5 @@ public class P3_Non_Overlapping_Intervals {
         }
 
         return intervals.length - count;
-    }
-
-    public static void main(String[] args) {
-        P3_Non_Overlapping_Intervals p3_non_overlapping_intervals = new P3_Non_Overlapping_Intervals();
-        System.out.println(p3_non_overlapping_intervals.eraseOverlapIntervals(new int[][] {{1, 2}, {2, 3}, {3, 4}, {1
-            , 3}}));
     }
 }

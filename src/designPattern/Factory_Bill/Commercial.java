@@ -5,7 +5,7 @@ package designPattern.Factory_Bill;
  */
 public class Commercial extends Plan {
     @Override
-    public void getRate(){
+    public void getRate() {
         rate = 7.50;
     }
 }

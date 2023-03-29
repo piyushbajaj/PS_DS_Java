@@ -13,6 +13,11 @@ import java.util.Arrays;
  * lc: <a href="https://leetcode.com/problems/number-of-longest-increasing-subsequence/description/">...</a>
  */
 public class P7_Number_LIS {
+    public static void main(String[] args) {
+        P7_Number_LIS p7_number_lis = new P7_Number_LIS();
+        System.out.println(p7_number_lis.findNumberOfLIS(new int[] {2, 2, 2, 2, 2}));
+    }
+
     public int findNumberOfLIS(int[] nums) {
         int n = nums.length;
         int[] dp = new int[n];
@@ -43,10 +48,5 @@ public class P7_Number_LIS {
         }
 
         return nos;
-    }
-
-    public static void main(String[] args) {
-        P7_Number_LIS p7_number_lis = new P7_Number_LIS();
-        System.out.println(p7_number_lis.findNumberOfLIS(new int[] {2, 2, 2, 2, 2}));
     }
 }

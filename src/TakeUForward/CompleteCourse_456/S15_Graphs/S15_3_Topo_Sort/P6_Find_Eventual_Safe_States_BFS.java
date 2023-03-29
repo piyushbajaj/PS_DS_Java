@@ -18,6 +18,25 @@ import TakeUForward.CompleteCourse_456.S15_Graphs.S15_1_Learning.P1_BFS;
  * <p>
  */
 public class P6_Find_Eventual_Safe_States_BFS {
+    public static void main(String[] args) {
+        P6_Find_Eventual_Safe_States_BFS p6_find_eventual_safe_states_bfs = new P6_Find_Eventual_Safe_States_BFS();
+
+        P1_BFS p1_bfs = new P1_BFS(7);
+        p1_bfs.addEdge(0, 1, P1_BFS.GraphDirection.Directional);
+        p1_bfs.addEdge(0, 2, P1_BFS.GraphDirection.Directional);
+        p1_bfs.addEdge(1, 2, P1_BFS.GraphDirection.Directional);
+        p1_bfs.addEdge(1, 3, P1_BFS.GraphDirection.Directional);
+        p1_bfs.addEdge(2, 5, P1_BFS.GraphDirection.Directional);
+        p1_bfs.addEdge(3, 0, P1_BFS.GraphDirection.Directional);
+        p1_bfs.addEdge(4, 5, P1_BFS.GraphDirection.Directional);
+
+        System.out.println(p6_find_eventual_safe_states_bfs.eventualSafeNodes(7, p1_bfs.adjList));
+
+        int[][] graph = {{1, 2}, {2, 3}, {5}, {0}, {5}, {}, {}};
+
+        System.out.println(p6_find_eventual_safe_states_bfs.eventualSafeNodes(graph));
+    }
+
     public List<Integer> eventualSafeNodes(int V, ArrayList<ArrayList<Integer>> adj) {
         List<List<Integer>> adjReverse = new ArrayList<>();
         List<Integer> safeNodes = new ArrayList<>();
@@ -119,24 +138,5 @@ public class P6_Find_Eventual_Safe_States_BFS {
         Collections.sort(safeNodes);
         return safeNodes;
 
-    }
-
-    public static void main(String[] args) {
-        P6_Find_Eventual_Safe_States_BFS p6_find_eventual_safe_states_bfs = new P6_Find_Eventual_Safe_States_BFS();
-
-        P1_BFS p1_bfs = new P1_BFS(7);
-        p1_bfs.addEdge(0, 1, P1_BFS.GraphDirection.Directional);
-        p1_bfs.addEdge(0, 2, P1_BFS.GraphDirection.Directional);
-        p1_bfs.addEdge(1, 2, P1_BFS.GraphDirection.Directional);
-        p1_bfs.addEdge(1, 3, P1_BFS.GraphDirection.Directional);
-        p1_bfs.addEdge(2, 5, P1_BFS.GraphDirection.Directional);
-        p1_bfs.addEdge(3, 0, P1_BFS.GraphDirection.Directional);
-        p1_bfs.addEdge(4, 5, P1_BFS.GraphDirection.Directional);
-
-        System.out.println(p6_find_eventual_safe_states_bfs.eventualSafeNodes(7, p1_bfs.adjList));
-
-        int[][] graph = {{1, 2}, {2, 3}, {5}, {0}, {5}, {}, {}};
-
-        System.out.println(p6_find_eventual_safe_states_bfs.eventualSafeNodes(graph));
     }
 }

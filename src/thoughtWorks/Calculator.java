@@ -4,15 +4,12 @@ package thoughtWorks;
 
 /**
  * Hello world!
- *
  */
-public class Calculator
-{
-    public int add(int a,int b){
+public class Calculator {
+    public int add(int a, int b) {
         try {
-            return a+b;
-        }
-        catch (Exception e){
+            return a + b;
+        } catch (Exception e) {
             throw new NotImplementedException();
         }
 
@@ -20,9 +17,8 @@ public class Calculator
 
     public int subtract(int a, int b) {
         try {
-            return a-b;
-        }
-        catch (Exception e){
+            return a - b;
+        } catch (Exception e) {
             throw new NotImplementedException();
         }
     }

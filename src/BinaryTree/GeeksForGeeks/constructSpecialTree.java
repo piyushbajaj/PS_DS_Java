@@ -10,54 +10,19 @@ package BinaryTree.GeeksForGeeks;
  */
 public class constructSpecialTree {
     Node root;
+    //Time Complexity: O(n)
+    int index = 0;
 
-    static class Node{
-        Node left, right;
-        int data;
-        Node(int data){
-            this.data = data;
-            this.left = this.right = null;
-        }
-    }
-
-    constructSpecialTree(){
+    constructSpecialTree() {
         root = null;
     }
 
-    constructSpecialTree(int data){
-        if(root == null)
+    constructSpecialTree(int data) {
+        if (root == null) {
             root = new Node(data);
-        else
+        } else {
             new Node(data);
-    }
-
-
-    //Time Complexity: O(n)
-    int index = 0;
-    public Node constructTree(int[] pre, char[] preLN, int end){
-        if(index == end)
-            return null;
-
-        Node key = new Node(pre[index]);
-        int old_index = index;
-        index++;
-
-        if(preLN[old_index] == 'N'){
-            key.left = constructTree(pre, preLN, end);
-            key.right = constructTree(pre, preLN, end);
         }
-
-        return key;
-
-    }
-
-    public void printTree(Node key){
-        if(key == null)
-            return;
-
-        printTree(key.left);
-        System.out.print(key.data + " ");
-        printTree(key.right);
     }
 
     public static void main(String[] args) {
@@ -67,8 +32,46 @@ public class constructSpecialTree {
 
         char preLN[] = {'N', 'N', 'L', 'L', 'L'};
 
-        ct. root = ct.constructTree(pre, preLN, pre.length);
+        ct.root = ct.constructTree(pre, preLN, pre.length);
 
         ct.printTree(ct.root);
+    }
+
+    public Node constructTree(int[] pre, char[] preLN, int end) {
+        if (index == end) {
+            return null;
+        }
+
+        Node key = new Node(pre[index]);
+        int old_index = index;
+        index++;
+
+        if (preLN[old_index] == 'N') {
+            key.left = constructTree(pre, preLN, end);
+            key.right = constructTree(pre, preLN, end);
+        }
+
+        return key;
+
+    }
+
+    public void printTree(Node key) {
+        if (key == null) {
+            return;
+        }
+
+        printTree(key.left);
+        System.out.print(key.data + " ");
+        printTree(key.right);
+    }
+
+    static class Node {
+        Node left, right;
+        int data;
+
+        Node(int data) {
+            this.data = data;
+            this.left = this.right = null;
+        }
     }
 }

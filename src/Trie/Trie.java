@@ -9,33 +9,42 @@ import java.util.Set;
  * Created by piyush.bajaj on 22/01/17.
  */
 public class Trie {
-    public class TrieNode {
-        HashMap<Character, TrieNode> children;
-        boolean endOfWord;
-
-        public TrieNode(){
-            children = new HashMap<Character, TrieNode>();
-            endOfWord = false;
-        }
-    }
-
     private final TrieNode root;
-
     public ArrayList<String> al;
 
-    public Trie(){
+    public Trie() {
         root = new TrieNode();
+    }
+
+    public static void main(String[] args) {
+        Trie T = new Trie();
+        T.insert("abc");
+        T.insert("abgl");
+        T.insert("cdf");
+        T.insert("abcd");
+        T.insert("lmn");
+
+        String search = "abcd";
+        System.out.println("Can you find word: " + search + "? " + T.search(search));
+
+        //System.out.println(T.root.children);
+
+        //T.printTrie(T);
+
+        T.delete(search);
+
+        System.out.println("Can you find word: " + search + "? " + T.search(search));
     }
 
     //Iterative implementation of insert into TRIE
 
-    public void insert(String word){
+    public void insert(String word) {
         TrieNode current = root;
 
-        for(int i = 0; i < word.length(); i++){
+        for (int i = 0; i < word.length(); i++) {
             char ch = word.charAt(i);
             TrieNode node = current.children.get(ch);
-            if(node == null){
+            if (node == null) {
                 node = new TrieNode();
                 current.children.put(ch, node);
             }
@@ -47,13 +56,13 @@ public class Trie {
         current.endOfWord = true;
     }
 
-    public boolean search(String word){
+    public boolean search(String word) {
         TrieNode current = root;
 
-        for(int i = 0; i < word.length(); i++){
+        for (int i = 0; i < word.length(); i++) {
             char ch = word.charAt(i);
             TrieNode node = current.children.get(ch);
-            if(node == null){
+            if (node == null) {
                 return false;
             }
             current = node;
@@ -61,31 +70,32 @@ public class Trie {
         return current.endOfWord;
     }
 
-    public void delete(String word){
+    public void delete(String word) {
         TrieNode current = root;
 //        int index =0;
 //        while (index < word.length()){
 //
 //        }
 
-        for(int i = 0; i < word.length(); i++){
+        for (int i = 0; i < word.length(); i++) {
             char ch = word.charAt(i);
             TrieNode node = current.children.get(ch);
-            if(node == null){
+            if (node == null) {
                 System.out.println("The word is not found");
                 return;
             }
             current = node;
             //System.out.println(ch + "->");
-            if(current.children.size() == 0) {
+            if (current.children.size() == 0) {
                 current.children.remove(ch);
                 return;
             }
             //System.out.println(current.children.keySet() + "->");
             System.out.println(ch + "->");
         }
-        if(current.children.size() != 0)
+        if (current.children.size() != 0) {
             current.endOfWord = false;
+        }
 
     }
 
@@ -114,12 +124,12 @@ public class Trie {
 //        }
 //    }
 
-    public void printTrie(Trie T){
-        Set<Entry<Character,TrieNode>> hashSet= T.root.children.entrySet();
+    public void printTrie(Trie T) {
+        Set<Entry<Character, TrieNode>> hashSet = T.root.children.entrySet();
 
-        for(Entry entry:hashSet ) {
+        for (Entry entry : hashSet) {
 
-            System.out.println("Key="+entry.getKey()+", Value="+entry.getValue());
+            System.out.println("Key=" + entry.getKey() + ", Value=" + entry.getValue());
         }
 
 //        while (T.root!=null){
@@ -128,28 +138,18 @@ public class Trie {
 
     }
 
-    public void insert_prac(String str){
+    public void insert_prac(String str) {
 
     }
 
-    public static void main(String[] args) {
-        Trie T = new Trie();
-        T.insert("abc");
-        T.insert("abgl");
-        T.insert("cdf");
-        T.insert("abcd");
-        T.insert("lmn");
+    public class TrieNode {
+        HashMap<Character, TrieNode> children;
+        boolean endOfWord;
 
-        String search = "abcd";
-        System.out.println("Can you find word: " + search + "? " + T.search(search));
-
-        //System.out.println(T.root.children);
-
-        //T.printTrie(T);
-
-       T.delete(search);
-
-        System.out.println("Can you find word: " + search + "? " + T.search(search));
+        public TrieNode() {
+            children = new HashMap<Character, TrieNode>();
+            endOfWord = false;
+        }
     }
 
 

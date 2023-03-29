@@ -1,4 +1,5 @@
 package Array;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
@@ -7,7 +8,7 @@ import java.io.InputStreamReader;
  */
 public class Test1 {
     public static void main(String[] args) throws Exception {
-        int t=1;
+        int t = 1;
         System.out.println(t);
         //Scanner n = new Scanner(System.in);
 
@@ -18,7 +19,7 @@ public class Test1 {
         //int b = Integer.parseInt(line);
         //int a = n.nextInt();
         //int b = n.nextInt();
-        System.out.println(a+b);
+        System.out.println(a + b);
     }
 
 

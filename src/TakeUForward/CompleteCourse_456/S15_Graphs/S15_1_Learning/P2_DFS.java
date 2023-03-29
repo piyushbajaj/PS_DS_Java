@@ -20,16 +20,6 @@ public class P2_DFS {
     public final ArrayList<ArrayList<Integer>> adjList;
     public final int capacity;
 
-    public enum GraphType {
-        ZeroBasedIndexing,
-        OneBasedIndexing
-    }
-
-    public enum GraphDirection {
-        Directional,
-        BiDirectional
-    }
-
     public P2_DFS(final int capacity) {
         this.adjList = new ArrayList<>();
         this.capacity = capacity;
@@ -37,6 +27,22 @@ public class P2_DFS {
         for (int i = 0; i <= capacity; i++) {
             this.adjList.add(new ArrayList<Integer>());
         }
+    }
+
+    public static void main(String[] args) {
+        P2_DFS p2_dfs = new P2_DFS(9);
+        p2_dfs.addEdge(1, 2, BiDirectional);
+        p2_dfs.addEdge(1, 6, BiDirectional);
+        p2_dfs.addEdge(2, 3, BiDirectional);
+        p2_dfs.addEdge(2, 4, BiDirectional);
+        p2_dfs.addEdge(4, 5, BiDirectional);
+        p2_dfs.addEdge(6, 7, BiDirectional);
+        p2_dfs.addEdge(6, 9, BiDirectional);
+        p2_dfs.addEdge(7, 8, BiDirectional);
+
+        p2_dfs.printAllEdges(OneBasedIndexing);
+
+        System.out.println(p2_dfs.dfsOfGraph(10, p2_dfs.adjList, 1));
     }
 
     // Add bidirectional edge
@@ -100,19 +106,13 @@ public class P2_DFS {
         }
     }
 
-    public static void main(String[] args) {
-        P2_DFS p2_dfs = new P2_DFS(9);
-        p2_dfs.addEdge(1, 2, BiDirectional);
-        p2_dfs.addEdge(1, 6, BiDirectional);
-        p2_dfs.addEdge(2, 3, BiDirectional);
-        p2_dfs.addEdge(2, 4, BiDirectional);
-        p2_dfs.addEdge(4, 5, BiDirectional);
-        p2_dfs.addEdge(6, 7, BiDirectional);
-        p2_dfs.addEdge(6, 9, BiDirectional);
-        p2_dfs.addEdge(7, 8, BiDirectional);
+    public enum GraphType {
+        ZeroBasedIndexing,
+        OneBasedIndexing
+    }
 
-        p2_dfs.printAllEdges(OneBasedIndexing);
-
-        System.out.println(p2_dfs.dfsOfGraph(10, p2_dfs.adjList, 1));
+    public enum GraphDirection {
+        Directional,
+        BiDirectional
     }
 }

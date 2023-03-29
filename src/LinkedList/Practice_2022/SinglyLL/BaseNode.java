@@ -10,7 +10,8 @@ public class BaseNode {
         Node next;
         int data;
 
-        Node() {}
+        Node() {
+        }
 
         Node(int data) {
             this.data = data;

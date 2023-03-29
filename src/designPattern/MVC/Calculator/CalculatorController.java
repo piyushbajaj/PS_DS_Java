@@ -10,15 +10,15 @@ public class CalculatorController {
     private CalculatorView theView;
     private CalculatorModel theModel;
 
-    public CalculatorController(CalculatorView theView, CalculatorModel theModel){
+    public CalculatorController(CalculatorView theView, CalculatorModel theModel) {
         this.theView = theView;
         this.theModel = theModel;
 
         this.theView.addCalculationListener(new CalculateListener());
     }
 
-    public class CalculateListener implements ActionListener{
-        public void actionPerformed(ActionEvent arg0){
+    public class CalculateListener implements ActionListener {
+        public void actionPerformed(ActionEvent arg0) {
             int first, second = 0;
 
             try {
@@ -28,9 +28,7 @@ public class CalculatorController {
                 theModel.addTwoNumber(first, second);
 
                 theView.setCalcSoltion(theModel.getCalculationValue());
-            }
-
-            catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 theView.displayErrorMessage("You need to enter two integers");
             }
         }

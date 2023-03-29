@@ -14,7 +14,9 @@ public class P2_SquareRoot {
     static int squareRoot(int x) {
         int i = 1;
 
-        if (x == 1 || x == 0) return x;
+        if (x == 1 || x == 0) {
+            return x;
+        }
 
         for (; i < x; i++) {
             int square = i * i;
@@ -34,7 +36,9 @@ public class P2_SquareRoot {
     static int squareRoot1(int x) {
         int low = 2, high = x / 2;
 
-        if (x == 1 || x == 0) return x;
+        if (x == 1 || x == 0) {
+            return x;
+        }
 
         while (low <= high) {
             int mid = (low + high) / 2;

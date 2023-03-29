@@ -6,45 +6,6 @@ package Stack;
 public class QueueImplementation {
     Node first, last;
 
-    static class Node{
-        int data;
-        Node next;
-
-        Node(int d){
-            data = d;
-            next = null;
-        }
-    }
-
-    public void enqueue(int item){
-        if(first==null){
-            last = new Node(item);
-            first = last;
-        }
-        else {
-            last.next = new Node(item);
-            last = last.next;
-        }
-    }
-
-    void displayStack(){
-        Node Nd = first;
-        while (Nd!=null){
-            System.out.print(Nd.data + " -> ");
-            Nd = Nd.next;
-        }
-        System.out.println(" ");
-    }
-
-    public void dequeue(){
-        if(first!=null){
-            int item = first.data;
-            first = first.next;
-            return;
-        }
-        return;
-    }
-
     public static void main(String[] args) {
         QueueImplementation que = new QueueImplementation();
         que.enqueue(3);
@@ -53,5 +14,43 @@ public class QueueImplementation {
         que.displayStack();
         que.dequeue();
         que.displayStack();
+    }
+
+    public void enqueue(int item) {
+        if (first == null) {
+            last = new Node(item);
+            first = last;
+        } else {
+            last.next = new Node(item);
+            last = last.next;
+        }
+    }
+
+    void displayStack() {
+        Node Nd = first;
+        while (Nd != null) {
+            System.out.print(Nd.data + " -> ");
+            Nd = Nd.next;
+        }
+        System.out.println(" ");
+    }
+
+    public void dequeue() {
+        if (first != null) {
+            int item = first.data;
+            first = first.next;
+            return;
+        }
+        return;
+    }
+
+    static class Node {
+        int data;
+        Node next;
+
+        Node(int d) {
+            data = d;
+            next = null;
+        }
     }
 }

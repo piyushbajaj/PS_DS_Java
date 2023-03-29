@@ -10,10 +10,10 @@ public class Prob2 {
         int maxCost = 50;
     }
 
-    public static int cost(int maxCost, int[] bundleQuantity, int[] bundleCost){
+    public static int cost(int maxCost, int[] bundleQuantity, int[] bundleCost) {
         int len = bundleCost.length;
 
-        for(int i = 0; i < len; i++){
+        for (int i = 0; i < len; i++) {
             //if(bundleCost[i])
         }
 

@@ -5,17 +5,16 @@ package Recursion;
  */
 public class sequence {
     public static void main(String[] args) {
-     test(10);
+        test(10);
     }
 
-    public static void test(int n)
-    {
-        if(n==1){
+    public static void test(int n) {
+        if (n == 1) {
+            System.out.println(n);
+        } else {
+            test(n - 1);
             System.out.println(n);
         }
-        else
-        {test(n-1);
-        System.out.println(n);}
     }
 
 }

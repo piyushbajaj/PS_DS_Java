@@ -27,6 +27,6 @@ public class Grokking10_BinarySubarraysWithSum {
     }
 
     public static void main(String[] args) {
-        System.out.println(numSubarraysWithSum(new int[]{1, 0, 1, 0, 1}, 2));
+        System.out.println(numSubarraysWithSum(new int[] {1, 0, 1, 0, 1}, 2));
     }
 }

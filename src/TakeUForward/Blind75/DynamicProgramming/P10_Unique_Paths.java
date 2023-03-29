@@ -12,6 +12,13 @@ package TakeUForward.Blind75.DynamicProgramming;
  */
 public class P10_Unique_Paths {
 
+    public static void main(String[] args) {
+        P10_Unique_Paths p10_unique_paths = new P10_Unique_Paths();
+        System.out.println(p10_unique_paths.uniquePaths_recur(3, 7));
+        System.out.println(p10_unique_paths.uniquePaths_mem(3, 7));
+        System.out.println(p10_unique_paths.uniquePaths_tab(3, 7));
+    }
+
     /**
      * Recursion way
      * TC: O(2^N)
@@ -120,13 +127,5 @@ public class P10_Unique_Paths {
         }
 
         return dp[m - 1][n - 1];
-    }
-
-
-    public static void main(String[] args) {
-        P10_Unique_Paths p10_unique_paths = new P10_Unique_Paths();
-        System.out.println(p10_unique_paths.uniquePaths_recur(3, 7));
-        System.out.println(p10_unique_paths.uniquePaths_mem(3, 7));
-        System.out.println(p10_unique_paths.uniquePaths_tab(3, 7));
     }
 }

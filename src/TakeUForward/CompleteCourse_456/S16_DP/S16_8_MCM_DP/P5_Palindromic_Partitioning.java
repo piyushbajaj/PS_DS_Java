@@ -9,6 +9,13 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_8_MCM_DP;
  * Time: 5:13 pm
  */
 public class P5_Palindromic_Partitioning {
+    public static void main(String[] args) {
+        P5_Palindromic_Partitioning p5_palindromic_partitioning = new P5_Palindromic_Partitioning();
+        System.out.println(p5_palindromic_partitioning.palindromicPartition_recur("ababbbabbababa"));
+        System.out.println(p5_palindromic_partitioning.palindromicPartition_mem("ababbbabbababa"));
+        System.out.println(p5_palindromic_partitioning.palindromicPartition_tab("ababbbabbababa"));
+    }
+
     public int palindromicPartition_recur(String str) {
         int n = str.length();
         return palindromicPartition_recur_util(0, n, str) - 1;
@@ -102,12 +109,5 @@ public class P5_Palindromic_Partitioning {
             dp[i] = minCost;
         }
         return dp[0] - 1;
-    }
-
-    public static void main(String[] args) {
-        P5_Palindromic_Partitioning p5_palindromic_partitioning = new P5_Palindromic_Partitioning();
-        System.out.println(p5_palindromic_partitioning.palindromicPartition_recur("ababbbabbababa"));
-        System.out.println(p5_palindromic_partitioning.palindromicPartition_mem("ababbbabbababa"));
-        System.out.println(p5_palindromic_partitioning.palindromicPartition_tab("ababbbabbababa"));
     }
 }

@@ -4,6 +4,12 @@ import java.util.Arrays;
 
 public class InsertionSort {
 
+    public static void main(String[] args) {
+        InsertionSort insertionSort = new InsertionSort();
+        int[] a = {6, 4, 2, 1, 3, 5};
+        System.out.println(Arrays.toString(insertionSort.insertion(a)));
+    }
+
     // selecting the sorting the element within a group from start
     public int[] insertion(int[] arr) {
         int n = arr.length;
@@ -18,11 +24,5 @@ public class InsertionSort {
         }
 
         return arr;
-    }
-
-    public static void main(String[] args) {
-        InsertionSort insertionSort = new InsertionSort();
-        int[] a = {6, 4, 2, 1, 3, 5};
-        System.out.println(Arrays.toString(insertionSort.insertion(a)));
     }
 }

@@ -10,6 +10,14 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_8_MCM_DP;
  */
 public class P1_MCM {
 
+    public static void main(String[] args) {
+        P1_MCM p1_mcm = new P1_MCM();
+        int[] arr = {10, 20, 30, 40, 50};
+        System.out.println(p1_mcm.matrixMultiplication(arr.length, arr));
+        System.out.println(p1_mcm.matrixMultiplication_mem(arr.length, arr));
+        System.out.println(p1_mcm.matrixMultiplication_tab(arr.length, arr));
+    }
+
     /**
      * Recursion
      * TC: Exponential
@@ -108,13 +116,5 @@ public class P1_MCM {
         }
 
         return dp[1][N - 1];
-    }
-
-    public static void main(String[] args) {
-        P1_MCM p1_mcm = new P1_MCM();
-        int[] arr = {10, 20, 30, 40, 50};
-        System.out.println(p1_mcm.matrixMultiplication(arr.length, arr));
-        System.out.println(p1_mcm.matrixMultiplication_mem(arr.length, arr));
-        System.out.println(p1_mcm.matrixMultiplication_tab(arr.length, arr));
     }
 }

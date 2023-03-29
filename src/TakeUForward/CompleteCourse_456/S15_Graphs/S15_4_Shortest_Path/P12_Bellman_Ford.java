@@ -15,6 +15,15 @@ import java.util.List;
  */
 public class P12_Bellman_Ford {
 
+    public static void main(String[] args) {
+        P12_Bellman_Ford p12_bellman_ford = new P12_Bellman_Ford();
+
+        List<List<Integer>> edges = Arrays.asList(Arrays.asList(0, 1, 5), Arrays.asList(1, 0, 3), Arrays.asList(1
+            , 2, -1), Arrays.asList(2, 0, 1));
+
+        System.out.println(Arrays.toString(p12_bellman_ford.bellman_ford(3, edges, 2)));
+    }
+
     /**
      * TC: O(V*E)
      *
@@ -57,14 +66,5 @@ public class P12_Bellman_Ford {
         }
 
         return dist;
-    }
-
-    public static void main(String[] args) {
-        P12_Bellman_Ford p12_bellman_ford = new P12_Bellman_Ford();
-
-        List<List<Integer>> edges = Arrays.asList(Arrays.asList(0, 1, 5), Arrays.asList(1, 0, 3), Arrays.asList(1
-            , 2, -1), Arrays.asList(2, 0, 1));
-
-        System.out.println(Arrays.toString(p12_bellman_ford.bellman_ford(3, edges, 2)));
     }
 }

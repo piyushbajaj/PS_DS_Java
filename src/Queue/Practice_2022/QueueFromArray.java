@@ -12,6 +12,27 @@ public class QueueFromArray {
         this.capacity = capacity;
     }
 
+    public static void main(String[] args) {
+        QueueFromArray queueFromArray = new QueueFromArray(5);
+        System.out.println(queueFromArray.dequeue());
+        queueFromArray.enqueue(1);
+        System.out.println("Front Item in the queue: " + queueFromArray.front());
+        queueFromArray.enqueue(2);
+        queueFromArray.enqueue(3);
+        queueFromArray.enqueue(4);
+        queueFromArray.enqueue(5);
+        System.out.println("Queue Size: " + queueFromArray.queueSize());
+//        queueFromArray.enqueue(6);
+        System.out.println("Front Item in the queue: " + queueFromArray.front());
+
+        System.out.println(queueFromArray);
+
+        System.out.println("Dequeue Item from the list: " + queueFromArray.dequeue());
+        System.out.println("Dequeue Item from the list: " + queueFromArray.dequeue());
+
+        System.out.println("Front Item in the queue: " + queueFromArray.front());
+    }
+
     public void enqueue(int x) {
         if (rear == capacity - 1) {
             System.out.println("Queue is full");
@@ -46,26 +67,5 @@ public class QueueFromArray {
     @Override
     public String toString() {
         return Arrays.toString(this.queueArray);
-    }
-
-    public static void main(String[] args) {
-        QueueFromArray queueFromArray = new QueueFromArray(5);
-        System.out.println(queueFromArray.dequeue());
-        queueFromArray.enqueue(1);
-        System.out.println("Front Item in the queue: " + queueFromArray.front());
-        queueFromArray.enqueue(2);
-        queueFromArray.enqueue(3);
-        queueFromArray.enqueue(4);
-        queueFromArray.enqueue(5);
-        System.out.println("Queue Size: " + queueFromArray.queueSize());
-//        queueFromArray.enqueue(6);
-        System.out.println("Front Item in the queue: " + queueFromArray.front());
-
-        System.out.println(queueFromArray);
-
-        System.out.println("Dequeue Item from the list: " + queueFromArray.dequeue());
-        System.out.println("Dequeue Item from the list: " + queueFromArray.dequeue());
-
-        System.out.println("Front Item in the queue: " + queueFromArray.front());
     }
 }

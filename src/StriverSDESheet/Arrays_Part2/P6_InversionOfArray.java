@@ -95,6 +95,6 @@ public class P6_InversionOfArray {
         int[] arr = {5, 3, 2, 1, 4};
         System.out.println(countInversions(arr));
         System.out.println(mergeSortPrac(arr, 0, arr.length - 1));
-        System.out.println(3/2);
+        System.out.println(3 / 2);
     }
 }

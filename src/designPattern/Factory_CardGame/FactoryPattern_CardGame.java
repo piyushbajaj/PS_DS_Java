@@ -18,5 +18,4 @@ public class FactoryPattern_CardGame {
     }
 
 
-
 }

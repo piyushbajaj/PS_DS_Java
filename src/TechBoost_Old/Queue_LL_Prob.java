@@ -6,64 +6,6 @@ package TechBoost_Old;
 public class Queue_LL_Prob {
     Node head;
     Node front = head, rear = head;
-    static class Node{
-        Node next;
-        int data;
-
-        Node(int data){
-            this.data = data;
-            this.next = null;
-        }
-    }
-
-    /*
-    This enqueue takes O(N) as Time Complexity
-     */
-    void enqueue(int x){
-        Node p = new Node(x);
-        if(head == null) {
-            head = p;
-            return;
-        }
-        Node temp = head;
-        while (temp.next!=null){
-            temp = temp.next;
-        }
-        temp.next = p;
-    }
-
-    void enqueue_better(int x){
-        Node p = new Node(x);
-        if(head == null) {
-            head = p;
-            front = head;
-            rear = head;
-            return;
-        }
-        rear.next = p;
-        rear = rear.next;
-    }
-
-    int dequeue(){
-        if(head == null)
-            return Integer.MIN_VALUE;
-
-        int temp = head.data;
-        head = head.next;
-        return temp;
-
-    }
-
-    int dequeue_better(){
-        if(head == null)
-            return Integer.MIN_VALUE;
-
-
-        int temp = front.data;
-        front = front.next;
-        return temp;
-
-    }
 
     public static void main(String[] args) {
         Queue_LL_Prob qq = new Queue_LL_Prob();
@@ -80,5 +22,66 @@ public class Queue_LL_Prob {
         qq.enqueue_better(4);
         System.out.println(qq.dequeue_better());
         System.out.println(qq.dequeue_better());
+    }
+
+    /*
+    This enqueue takes O(N) as Time Complexity
+     */
+    void enqueue(int x) {
+        Node p = new Node(x);
+        if (head == null) {
+            head = p;
+            return;
+        }
+        Node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = p;
+    }
+
+    void enqueue_better(int x) {
+        Node p = new Node(x);
+        if (head == null) {
+            head = p;
+            front = head;
+            rear = head;
+            return;
+        }
+        rear.next = p;
+        rear = rear.next;
+    }
+
+    int dequeue() {
+        if (head == null) {
+            return Integer.MIN_VALUE;
+        }
+
+        int temp = head.data;
+        head = head.next;
+        return temp;
+
+    }
+
+    int dequeue_better() {
+        if (head == null) {
+            return Integer.MIN_VALUE;
+        }
+
+
+        int temp = front.data;
+        front = front.next;
+        return temp;
+
+    }
+
+    static class Node {
+        Node next;
+        int data;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
     }
 }

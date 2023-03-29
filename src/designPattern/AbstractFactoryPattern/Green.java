@@ -6,7 +6,7 @@ package designPattern.AbstractFactoryPattern;
  */
 public class Green implements Color {
     @Override
-    public void fill(){
+    public void fill() {
         System.out.println("Inside Green::fill() method.");
     }
 }

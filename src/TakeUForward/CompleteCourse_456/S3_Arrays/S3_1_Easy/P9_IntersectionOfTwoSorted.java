@@ -30,6 +30,6 @@ public class P9_IntersectionOfTwoSorted {
     }
 
     public static void main(String[] args) {
-        System.out.println(getIntersection(new int[]{1, 2, 3, 3, 4, 5, 6, 7}, new int[]{3, 3, 4, 4, 5, 8}));
+        System.out.println(getIntersection(new int[] {1, 2, 3, 3, 4, 5, 6, 7}, new int[] {3, 3, 4, 4, 5, 8}));
     }
 }

@@ -9,7 +9,7 @@ public interface Flys {
 
 //So here will add separate classes
 
-class ItFlys implements Flys{
+class ItFlys implements Flys {
 
     public String fly() {
         return "Flying High";
@@ -17,7 +17,7 @@ class ItFlys implements Flys{
 }
 
 
-class CantFly implements Flys{
+class CantFly implements Flys {
 
     public String fly() {
         return "I cant fly";

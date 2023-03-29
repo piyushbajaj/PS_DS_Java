@@ -10,7 +10,6 @@ import java.util.Scanner;
 public class adhoc1 {
 
 
-
     public static void main(String[] args) {
 
 
@@ -24,10 +23,9 @@ public class adhoc1 {
         for (int i = 0; i < n; i++) {
             int a = s.nextInt();
             int length = String.valueOf(a).length();
-            if(length == 1 || length == 2) {
+            if (length == 1 || length == 2) {
                 number[i] = a;
-            }
-            else {
+            } else {
                 System.out.println("Enter the number of 1 or 2 digit ");
                 number[i] = s.nextInt();
             }
@@ -35,11 +33,12 @@ public class adhoc1 {
         }
 
         System.out.println("Output: ");
-        for(int i = 0; i < n; i++){
-            if(number[i] == 42)
+        for (int i = 0; i < n; i++) {
+            if (number[i] == 42) {
                 break;
-            else
+            } else {
                 System.out.println(number[i]);
+            }
         }
 
 

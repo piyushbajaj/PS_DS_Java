@@ -7,12 +7,21 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_4_DP_Subsequences;
  * User: piyushbajaj
  * Date: 23/11/22
  * Time: 9:16 am
- *
+ * <p>
  * Link: <a href="https://www.codingninjas.com/codestudio/problems/partitions-with-given-difference_3751628">...</a>
  */
 public class P5_Partitions_Given_Diff {
 
     int mod = (int) 1e9 + 7;
+
+    public static void main(String[] args) {
+        P5_Partitions_Given_Diff p5_partitions_given_diff = new P5_Partitions_Given_Diff();
+        int[] arr = {5, 2, 6, 4};
+
+        System.out.println(p5_partitions_given_diff.countPartitions(4, 3, arr));
+
+    }
+
     public int perfectSum_mem(int[] arr, int n, int sum) {
         int[][] dp = new int[n][sum + 1];
 
@@ -68,14 +77,6 @@ public class P5_Partitions_Given_Diff {
             return 0;
         }
 
-        return perfectSum_mem(arr, n, (sum - d) / 2) ;
-    }
-
-    public static void main(String[] args) {
-        P5_Partitions_Given_Diff p5_partitions_given_diff = new P5_Partitions_Given_Diff();
-        int[] arr = {5, 2, 6, 4};
-
-        System.out.println(p5_partitions_given_diff.countPartitions(4, 3, arr));
-
+        return perfectSum_mem(arr, n, (sum - d) / 2);
     }
 }

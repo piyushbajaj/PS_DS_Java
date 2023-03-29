@@ -10,6 +10,22 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  */
 public class P2_Is_BT_Balanced {
 
+    public static void main(String[] args) {
+        P2_Is_BT_Balanced p2_is_bt_balanced = new P2_Is_BT_Balanced();
+
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+        root.left.left.left = new TreeNode(10);
+        root.left.left.left.left = new TreeNode(11);
+
+        System.out.println(p2_is_bt_balanced.isBTBalanced(root));
+    }
+
     /**
      * Approach:
      * 1. Start traversing the tree recursively and do work in Post Order
@@ -54,21 +70,5 @@ public class P2_Is_BT_Balanced {
         }
 
         return Math.max(lHeight, rHeight) + 1;
-    }
-
-    public static void main(String[] args) {
-        P2_Is_BT_Balanced p2_is_bt_balanced = new P2_Is_BT_Balanced();
-
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-        root.left.left.left = new TreeNode(10);
-        root.left.left.left.left = new TreeNode(11);
-
-        System.out.println(p2_is_bt_balanced.isBTBalanced(root));
     }
 }

@@ -15,14 +15,14 @@ public class Grokking1_PairWithTargetSum {
             int sum = arr[l] + arr[r];
 
             if (sum == targetSum) {
-                return new int[]{l, r};
+                return new int[] {l, r};
             } else if (sum < targetSum) {
                 l++;
             } else {
                 r--;
             }
         }
-        return new int[]{-1, -1};
+        return new int[] {-1, -1};
     }
 
     public static void main(String[] args) {

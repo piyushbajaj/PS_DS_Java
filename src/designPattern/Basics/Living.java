@@ -5,23 +5,29 @@ package designPattern.Basics;
  */
 public interface Living {
 
-    public void setName(String newName);
     public String getName();
 
-    public void setWeight(int newWeight);
+    public void setName(String newName);
+
     public int getWeight();
 
-    public void setHeight(int newHeight);
+    public void setWeight(int newWeight);
+
     public int getHeight();
 
-    public void setFavFood(String newFood);
+    public void setHeight(int newHeight);
+
     public int getFavFood();
 
-    public void setSpeed(int newSpeed);
+    public void setFavFood(String newFood);
+
     public int getSpeed();
 
-    public void setSound(String newSound);
+    public void setSpeed(int newSpeed);
+
     public String getSound();
+
+    public void setSound(String newSound);
 
 
 }

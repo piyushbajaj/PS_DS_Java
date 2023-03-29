@@ -14,28 +14,13 @@ import java.util.Comparator;
  */
 public class P10_Job_Sequencing {
 
-    static class Job {
-        int id, profit, deadline;
-
-        Job(int x, int y, int z) {
-            this.id = x;
-            this.deadline = y;
-            this.profit = z;
-        }
-    }
-
-    // Decreasing order
-    static class JobComparator implements Comparator<Job> {
-
-        @Override
-        public int compare(Job o1, Job o2) {
-            if (o1.profit < o2.profit) {
-                return 1;
-            } else if (o1.profit > o2.profit) {
-                return -1;
-            }
-            return 0;
-        }
+    public static void main(String[] args) {
+        P10_Job_Sequencing p10_job_sequencing = new P10_Job_Sequencing();
+        System.out.println(Arrays.toString(p10_job_sequencing.JobScheduling(new Job[] {
+            new Job(1, 2, 100),
+            new Job(2, 1, 19),
+            new Job(3, 2, 27),
+            new Job(4, 1, 25), new Job(5, 1, 15)}, 5)));
     }
 
     //Function to find the maximum profit and the number of jobs done.
@@ -74,12 +59,27 @@ public class P10_Job_Sequencing {
         return new int[] {jobCount, maxProfit};
     }
 
-    public static void main(String[] args) {
-        P10_Job_Sequencing p10_job_sequencing = new P10_Job_Sequencing();
-        System.out.println(Arrays.toString(p10_job_sequencing.JobScheduling(new Job[] {
-            new Job(1, 2, 100),
-            new Job(2, 1, 19),
-            new Job(3, 2, 27),
-            new Job(4, 1, 25), new Job(5, 1, 15)}, 5)));
+    static class Job {
+        int id, profit, deadline;
+
+        Job(int x, int y, int z) {
+            this.id = x;
+            this.deadline = y;
+            this.profit = z;
+        }
+    }
+
+    // Decreasing order
+    static class JobComparator implements Comparator<Job> {
+
+        @Override
+        public int compare(Job o1, Job o2) {
+            if (o1.profit < o2.profit) {
+                return 1;
+            } else if (o1.profit > o2.profit) {
+                return -1;
+            }
+            return 0;
+        }
     }
 }

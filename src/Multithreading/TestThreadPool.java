@@ -21,7 +21,8 @@ public class TestThreadPool {
         The tasks that are running when you call this method continue with their execution,
         but the method doesn’t wait for their finalization.
          */
-        while (!executor.isTerminated()) {   }
+        while (!executor.isTerminated()) {
+        }
         //isTerminated(): This method returns true if you have called the shutdown() or shutdownNow() methods and
         // the executor finishes the process of shutting it down.
 

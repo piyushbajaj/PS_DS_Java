@@ -13,33 +13,23 @@ package TakeUForward.Blind75.Tree;
 public class P12_Trie {
     private static Node root;
 
-    static class Node {
-        Node[] links = new Node[26];
-        boolean flag = false;
-
-        public boolean containsKey(char ch) {
-            return (links[ch - 'a'] != null);
-        }
-
-        public void put(char ch, Node node) {
-            links[ch - 'a'] = node;
-        }
-
-        public Node get(char ch) {
-            return links[ch - 'a'];
-        }
-
-        public void setEnd() {
-            flag = true;
-        }
-
-        public boolean isEnd() {
-            return flag;
-        }
-    }
-
     P12_Trie() {
         root = new Node();
+    }
+
+    public static void main(String[] args) {
+        P12_Trie p12_trie = new P12_Trie();
+        p12_trie.insert("apple");
+        p12_trie.insert("apps");
+        p12_trie.insert("apxl");
+        p12_trie.insert("bac");
+        p12_trie.insert("bat");
+
+        System.out.println("Search 'apps': " + p12_trie.search("apps"));
+        System.out.println("Search 'appl': " + p12_trie.search("appl"));
+
+        System.out.println("Starts With 'ba': " + p12_trie.startsWith("ba"));
+        System.out.println("Starts With 'apd': " + p12_trie.startsWith("apd"));
     }
 
     // TC: O(word length)
@@ -90,18 +80,28 @@ public class P12_Trie {
         return true;
     }
 
-    public static void main(String[] args) {
-        P12_Trie p12_trie = new P12_Trie();
-        p12_trie.insert("apple");
-        p12_trie.insert("apps");
-        p12_trie.insert("apxl");
-        p12_trie.insert("bac");
-        p12_trie.insert("bat");
+    static class Node {
+        Node[] links = new Node[26];
+        boolean flag = false;
 
-        System.out.println("Search 'apps': " + p12_trie.search("apps"));
-        System.out.println("Search 'appl': " + p12_trie.search("appl"));
+        public boolean containsKey(char ch) {
+            return (links[ch - 'a'] != null);
+        }
 
-        System.out.println("Starts With 'ba': " + p12_trie.startsWith("ba"));
-        System.out.println("Starts With 'apd': " + p12_trie.startsWith("apd"));
+        public void put(char ch, Node node) {
+            links[ch - 'a'] = node;
+        }
+
+        public Node get(char ch) {
+            return links[ch - 'a'];
+        }
+
+        public void setEnd() {
+            flag = true;
+        }
+
+        public boolean isEnd() {
+            return flag;
+        }
     }
 }

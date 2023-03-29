@@ -8,32 +8,7 @@ import java.util.Stack;
  * Created by piyush.bajaj on 13/12/16.
  */
 public class ReverseKthInteger {
-    public void reversequeueFirstKth(int k, Queue<Integer> queue){
-        Stack<Integer> stk = new Stack<>();
-
-        for(int i =0; i < k; i++){
-            stk.push(queue.remove());
-        }
-
-        while (!stk.empty())
-            queue.add(stk.pop());
-
-        int n = queue.size() - k;
-
-        for(int i = 0; i < n; i++)
-            queue.add(queue.remove());
-
-    }
-
-    public String displayQueue(Queue<Integer> queue){
-        String s = "[";
-        while (!queue.isEmpty()){
-            s += queue.poll() + ",";
-            //queue = queue.
-        }
-        s += "]";
-        return s;
-    }
+    int count = 1;
 
     public static void main(String[] args) {
         ReverseKthInteger QC = new ReverseKthInteger();
@@ -55,9 +30,37 @@ public class ReverseKthInteger {
 
     }
 
-    int count=1;
-    public void reverse(int key, Queue<Integer> Que){
-        if(!Que.isEmpty() && key != count){
+    public void reversequeueFirstKth(int k, Queue<Integer> queue) {
+        Stack<Integer> stk = new Stack<>();
+
+        for (int i = 0; i < k; i++) {
+            stk.push(queue.remove());
+        }
+
+        while (!stk.empty()) {
+            queue.add(stk.pop());
+        }
+
+        int n = queue.size() - k;
+
+        for (int i = 0; i < n; i++) {
+            queue.add(queue.remove());
+        }
+
+    }
+
+    public String displayQueue(Queue<Integer> queue) {
+        String s = "[";
+        while (!queue.isEmpty()) {
+            s += queue.poll() + ",";
+            //queue = queue.
+        }
+        s += "]";
+        return s;
+    }
+
+    public void reverse(int key, Queue<Integer> Que) {
+        if (!Que.isEmpty() && key != count) {
             int temp = Que.remove();
             count++;
             reverse(key, Que);
@@ -67,8 +70,8 @@ public class ReverseKthInteger {
         }
     }
 
-    public void reverse_util(int temp, Queue<Integer> Que){
-        while(!Que.isEmpty()){
+    public void reverse_util(int temp, Queue<Integer> Que) {
+        while (!Que.isEmpty()) {
             int top = Que.remove();
         }
         Que.add(temp);

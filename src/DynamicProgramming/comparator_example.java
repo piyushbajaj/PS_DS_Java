@@ -12,19 +12,20 @@ class Checker implements Comparator<Player> {
 
     @Override
     public int compare(Player a, Player b) {
-        if(a.score - b.score == 0)
+        if (a.score - b.score == 0) {
             return a.name.compareTo(b.name);
-        else
-            return -1*(a.score - b.score);
+        } else {
+            return -1 * (a.score - b.score);
+        }
     }
 
 }
 
-class Player{
+class Player {
     String name;
     int score;
 
-    Player(String name, int score){
+    Player(String name, int score) {
         this.name = name;
         this.score = score;
     }
@@ -39,13 +40,13 @@ class Solution {
         Player[] player = new Player[n];
         Checker checker = new Checker();
 
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             player[i] = new Player(scan.next(), scan.nextInt());
         }
         scan.close();
 
         Arrays.sort(player, checker);
-        for(int i = 0; i < player.length; i++){
+        for (int i = 0; i < player.length; i++) {
             System.out.printf("%s %s\n", player[i].name, player[i].score);
         }
     }

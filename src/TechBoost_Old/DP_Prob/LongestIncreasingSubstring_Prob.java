@@ -6,7 +6,8 @@ package TechBoost_Old.DP_Prob;
 public class LongestIncreasingSubstring_Prob {
     static int[] cnt;
     static int[] path;
-    public static int LongestIncreasingSubstring(int[] arr){
+
+    public static int LongestIncreasingSubstring(int[] arr) {
         int LLIS = 1;
         int n = arr.length;
         cnt = new int[n];
@@ -15,13 +16,14 @@ public class LongestIncreasingSubstring_Prob {
         int max = 0;
         int prev = -1;
         cnt[0] = 1;
-        for(int i = 1; i < n; i++){
+        for (int i = 1; i < n; i++) {
 
-            for(int j = 0; j < i; j++){
-                if(arr[j] >= arr[i])
+            for (int j = 0; j < i; j++) {
+                if (arr[j] >= arr[i]) {
                     continue;
+                }
 
-                if(max < cnt[j]){
+                if (max < cnt[j]) {
                     max = cnt[j];
                     prev = j;
                 }
@@ -30,23 +32,24 @@ public class LongestIncreasingSubstring_Prob {
             cnt[i] = max + 1;
             path[i] = prev;
 
-            if(LLIS < cnt[i])
+            if (LLIS < cnt[i]) {
                 LLIS = cnt[i];
+            }
         }
         return LLIS;
     }
 
-    public static void printValue(int[] arr){
+    public static void printValue(int[] arr) {
         int n = arr.length;
         int max = -1;
         int i = 0;
-        for(i = 0; i < n; i++){
-            if(max < path[i]){
+        for (i = 0; i < n; i++) {
+            if (max < path[i]) {
                 max = path[i];
                 System.out.print(arr[max] + " ");
             }
         }
-        System.out.print(arr[i-1] + " ");
+        System.out.print(arr[i - 1] + " ");
     }
 
     public static void main(String[] args) {

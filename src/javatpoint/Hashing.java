@@ -16,8 +16,8 @@ public class Hashing {
         hm.put(102, "Vijay");
         hm.put(103, "Rahul");
 
-        for(Map.Entry m:hm.entrySet()){
-            System.out.println(m.getKey()+" "+m.getValue());
+        for (Map.Entry m : hm.entrySet()) {
+            System.out.println(m.getKey() + " " + m.getValue());
         }
 
         Hashtable balance = new Hashtable();
@@ -33,8 +33,8 @@ public class Hashing {
 
         names = balance.keys();
 
-        while(names.hasMoreElements()){
-            str = (String)names.nextElement();
+        while (names.hasMoreElements()) {
+            str = (String) names.nextElement();
             System.out.println(str + ": " + balance.get(str));
         }
 

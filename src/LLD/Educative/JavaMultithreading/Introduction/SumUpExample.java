@@ -9,21 +9,14 @@ package LLD.Educative.JavaMultithreading.Introduction;
  * Time: 12:21 pm
  */
 public class SumUpExample {
+    static long MAX_NUM = Integer.MAX_VALUE;
     long startRange;
     long endRange;
     long counter = 0;
-    static long MAX_NUM = Integer.MAX_VALUE;
 
     public SumUpExample(long startRange, long endRange) {
         this.startRange = startRange;
         this.endRange = endRange;
-    }
-
-    public void add() {
-
-        for (long i = startRange; i <= endRange; i++) {
-            counter += i;
-        }
     }
 
     static public void twoThreads() throws InterruptedException {
@@ -60,12 +53,18 @@ public class SumUpExample {
         System.out.println("Single thread final count = " + s.counter + " took " + (end - start));
     }
 
-
     public static void runTest() throws InterruptedException {
 
         oneThread();
         twoThreads();
 
+    }
+
+    public void add() {
+
+        for (long i = startRange; i <= endRange; i++) {
+            counter += i;
+        }
     }
 }
 

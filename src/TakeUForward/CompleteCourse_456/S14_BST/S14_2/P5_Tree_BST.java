@@ -13,6 +13,20 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  */
 public class P5_Tree_BST {
 
+    public static void main(String[] args) {
+        P5_Tree_BST p5_tree_bst = new P5_Tree_BST();
+
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        System.out.println(p5_tree_bst.checkIsBST(root));
+    }
+
     /**
      * This also covers BST with duplicates
      * <p>
@@ -37,19 +51,5 @@ public class P5_Tree_BST {
         }
 
         return checkIsBST_util(root.left, min, root.data) && checkIsBST_util(root.right, root.data, max);
-    }
-
-    public static void main(String[] args) {
-        P5_Tree_BST p5_tree_bst = new P5_Tree_BST();
-
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        System.out.println(p5_tree_bst.checkIsBST(root));
     }
 }

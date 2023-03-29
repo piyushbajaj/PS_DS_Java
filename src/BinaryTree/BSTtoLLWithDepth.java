@@ -7,68 +7,13 @@ import java.util.LinkedList;
  */
 public class BSTtoLLWithDepth {
     Node root;
-    public static class Node{
-        int data;
-        Node left, right;
 
-        Node(int data){
-            this.data = data;
-            left = right = null;
-        }
-    }
-
-    public BSTtoLLWithDepth(){
+    public BSTtoLLWithDepth() {
         root = null;
     }
 
-    public BSTtoLLWithDepth(int key){
+    public BSTtoLLWithDepth(int key) {
         root = new Node(key);
-    }
-
-    //height
-    int height(Node root)
-    {
-        if (root == null)
-            return 0;
-        else
-        {
-            /* compute  height of each subtree */
-            int lheight = height(root.left);
-            int rheight = height(root.right);
-
-            /* use the larger one */
-            if (lheight > rheight)
-                return(lheight+1);
-            else return(rheight+1);
-        }
-    }
-
-
-    //Like PreOrder Traversal
-    public void treeToListArray(LinkedList[] listArr, Node key, int level){
-        if(key==null)
-            return;
-
-        if(listArr[level]== null){
-            LinkedList<Integer> tempList = new LinkedList<>();
-            tempList.add(key.data);
-            listArr[level] = tempList;
-            level++;
-        }
-        else {
-            listArr[level].add(key.data);
-            level++;
-        }
-        treeToListArray(listArr, key.left, level);
-        treeToListArray(listArr, key.right, level);
-    }
-
-    public void printList(LinkedList[] listArr, int h){
-        for(int i = 0; i < h; i++){
-            System.out.println(listArr[i]);
-        }
-
-
     }
 
     public static void main(String[] args) {
@@ -110,6 +55,62 @@ public class BSTtoLLWithDepth {
         //System.out.println()
 
 
+    }
+
+    //height
+    int height(Node root) {
+        if (root == null) {
+            return 0;
+        } else {
+            /* compute  height of each subtree */
+            int lheight = height(root.left);
+            int rheight = height(root.right);
+
+            /* use the larger one */
+            if (lheight > rheight) {
+                return (lheight + 1);
+            } else {
+                return (rheight + 1);
+            }
+        }
+    }
+
+
+    //Like PreOrder Traversal
+    public void treeToListArray(LinkedList[] listArr, Node key, int level) {
+        if (key == null) {
+            return;
+        }
+
+        if (listArr[level] == null) {
+            LinkedList<Integer> tempList = new LinkedList<>();
+            tempList.add(key.data);
+            listArr[level] = tempList;
+            level++;
+        } else {
+            listArr[level].add(key.data);
+            level++;
+        }
+        treeToListArray(listArr, key.left, level);
+        treeToListArray(listArr, key.right, level);
+    }
+
+    public void printList(LinkedList[] listArr, int h) {
+        for (int i = 0; i < h; i++) {
+            System.out.println(listArr[i]);
+        }
+
+
+    }
+
+    public static class Node {
+        int data;
+        Node left, right;
+
+        Node(int data) {
+            this.data = data;
+            left = right = null;
+        }
     }
 
 }

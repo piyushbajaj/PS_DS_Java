@@ -18,6 +18,20 @@ import TakeUForward.CompleteCourse_456.S15_Graphs.S15_1_Learning.P2_DFS;
  */
 public class P2_Topological_Sort_DFS {
 
+    public static void main(String[] args) {
+        P2_Topological_Sort_DFS p2_topological_sort_dfs = new P2_Topological_Sort_DFS();
+
+        P2_DFS p2_dfs = new P2_DFS(6);
+        p2_dfs.addEdge(5, 0, P2_DFS.GraphDirection.Directional);
+        p2_dfs.addEdge(4, 0, P2_DFS.GraphDirection.Directional);
+        p2_dfs.addEdge(5, 2, P2_DFS.GraphDirection.Directional);
+        p2_dfs.addEdge(2, 3, P2_DFS.GraphDirection.Directional);
+        p2_dfs.addEdge(3, 1, P2_DFS.GraphDirection.Directional);
+        p2_dfs.addEdge(4, 1, P2_DFS.GraphDirection.Directional);
+
+        System.out.println(Arrays.toString(p2_topological_sort_dfs.topoSort(6, p2_dfs.adjList)));
+    }
+
     public int[] topoSort(int V, ArrayList<ArrayList<Integer>> adj) {
         int[] result = new int[V];
         boolean[] isVisited = new boolean[V];
@@ -47,19 +61,5 @@ public class P2_Topological_Sort_DFS {
         }
 
         storeElement.push(vertex);
-    }
-
-    public static void main(String[] args) {
-        P2_Topological_Sort_DFS p2_topological_sort_dfs = new P2_Topological_Sort_DFS();
-
-        P2_DFS p2_dfs = new P2_DFS(6);
-        p2_dfs.addEdge(5, 0, P2_DFS.GraphDirection.Directional);
-        p2_dfs.addEdge(4, 0, P2_DFS.GraphDirection.Directional);
-        p2_dfs.addEdge(5, 2, P2_DFS.GraphDirection.Directional);
-        p2_dfs.addEdge(2, 3, P2_DFS.GraphDirection.Directional);
-        p2_dfs.addEdge(3, 1, P2_DFS.GraphDirection.Directional);
-        p2_dfs.addEdge(4, 1, P2_DFS.GraphDirection.Directional);
-
-        System.out.println(Arrays.toString(p2_topological_sort_dfs.topoSort(6, p2_dfs.adjList)));
     }
 }

@@ -15,16 +15,15 @@ import java.util.Queue;
  */
 public class P3_Rotten_Oranges {
 
-    static class Pair {
-        int first;
-        int second;
-        int distance;
+    public static void main(String[] args) {
+        P3_Rotten_Oranges p3_rotten_oranges = new P3_Rotten_Oranges();
+        int[][] grid = {
+            {2, 1, 1}, {1, 1, 0}, {0, 1, 1}
+        };
 
-        Pair(int first, int second, int distance) {
-            this.first = first;
-            this.second = second;
-            this.distance = distance;
-        }
+        int[][] grid1 = {{2, 1, 1}, {0, 1, 1}, {1, 0, 1}};
+
+        System.out.println(p3_rotten_oranges.orangesRotting(grid));
     }
 
     /**
@@ -91,14 +90,15 @@ public class P3_Rotten_Oranges {
         return maxDistance;
     }
 
-    public static void main(String[] args) {
-        P3_Rotten_Oranges p3_rotten_oranges = new P3_Rotten_Oranges();
-        int[][] grid = {
-            {2, 1, 1}, {1, 1, 0}, {0, 1, 1}
-        };
+    static class Pair {
+        int first;
+        int second;
+        int distance;
 
-        int[][] grid1 = {{2, 1, 1}, {0, 1, 1}, {1, 0, 1}};
-
-        System.out.println(p3_rotten_oranges.orangesRotting(grid));
+        Pair(int first, int second, int distance) {
+            this.first = first;
+            this.second = second;
+            this.distance = distance;
+        }
     }
 }

@@ -14,6 +14,11 @@ import java.util.Stack;
  */
 public class P3_Shortest_Unsorted {
 
+    public static void main(String[] args) {
+        P3_Shortest_Unsorted p3_shortest_unsorted = new P3_Shortest_Unsorted();
+        p3_shortest_unsorted.findUnsortedSubarray(new int[] {2, 6, 4, 8, 10, 9, 15});
+    }
+
     /**
      * TC: O(N)
      * SC: O(N)
@@ -43,10 +48,5 @@ public class P3_Shortest_Unsorted {
         }
 
         return r - l > 0 ? r - l + 1 : 0;
-    }
-
-    public static void main(String[] args) {
-        P3_Shortest_Unsorted p3_shortest_unsorted = new P3_Shortest_Unsorted();
-        p3_shortest_unsorted.findUnsortedSubarray(new int[] {2, 6, 4, 8, 10, 9, 15});
     }
 }

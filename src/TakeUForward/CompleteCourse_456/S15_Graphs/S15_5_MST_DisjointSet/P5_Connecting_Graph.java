@@ -10,6 +10,11 @@ package TakeUForward.CompleteCourse_456.S15_Graphs.S15_5_MST_DisjointSet;
  */
 public class P5_Connecting_Graph {
 
+    public static void main(String[] args) {
+        P5_Connecting_Graph p5_connecting_graph = new P5_Connecting_Graph();
+        System.out.println(p5_connecting_graph.Solve(4, new int[][] {{0, 1}, {0, 2}, {1, 2}}));
+    }
+
     /**
      * Approach:
      * 1. Convert Adjacency Matrix to Adjacent List
@@ -50,10 +55,5 @@ public class P5_Connecting_Graph {
         } else {
             return -1;
         }
-    }
-
-    public static void main(String[] args) {
-        P5_Connecting_Graph p5_connecting_graph = new P5_Connecting_Graph();
-        System.out.println(p5_connecting_graph.Solve(4, new int[][] {{0, 1}, {0, 2}, {1, 2}}));
     }
 }

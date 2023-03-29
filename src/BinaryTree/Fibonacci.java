@@ -5,14 +5,23 @@ package BinaryTree;
  */
 public class Fibonacci {
     private static int count = 0;
-    public int fib_cal(int index){
+
+    public static void main(String[] args) {
+        Fibonacci fb = new Fibonacci();
+        System.out.println(fb.fib_cal(10));
+        System.out.println(count);
+    }
+
+    public int fib_cal(int index) {
         int sum = 0;
         count++;
 
-        if(index <= 0)
+        if (index <= 0) {
             return 0;
-        if(index == 1)
+        }
+        if (index == 1) {
             return 1;
+        }
 
         //int x =
 
@@ -25,18 +34,9 @@ public class Fibonacci {
 //
 //        }
         //int sum = 0;
-            return fib_cal(index-1) + fib_cal(index-2);
+        return fib_cal(index - 1) + fib_cal(index - 2);
 
 
-
-
-
-    }
-
-    public static void main(String[] args) {
-        Fibonacci fb = new Fibonacci();
-        System.out.println(fb.fib_cal(10));
-        System.out.println(count);
     }
 
 }

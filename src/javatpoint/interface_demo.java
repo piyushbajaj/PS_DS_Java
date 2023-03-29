@@ -5,23 +5,28 @@ package javatpoint;
  */
 
 
-    interface Printable{
-        void print();
+interface Printable {
+    void print();
+}
+
+interface Showable {
+    void show();
+}
+
+public class interface_demo implements Printable, Showable {
+
+    public static void main(String args[]) {
+        interface_demo obj = new interface_demo();
+        obj.print();
+        obj.show();
     }
 
-    interface Showable{
-        void show();
+    public void print() {
+        System.out.println("Hello");
     }
 
-    public class interface_demo implements Printable,Showable{
-
-        public void print(){System.out.println("Hello");}
-        public void show(){System.out.println("Welcome");}
-
-        public static void main(String args[]){
-            interface_demo obj = new interface_demo();
-            obj.print();
-            obj.show();
-        }
+    public void show() {
+        System.out.println("Welcome");
     }
+}
 

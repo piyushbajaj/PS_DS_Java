@@ -15,6 +15,11 @@ import java.util.Collections;
  */
 public class P10_Subset_Sum_I {
 
+    public static void main(String[] args) {
+        P10_Subset_Sum_I p10_subset_sum_i = new P10_Subset_Sum_I();
+        System.out.println(p10_subset_sum_i.subsetSums(new ArrayList<>(Arrays.asList(3, 1, 2)), 3));
+    }
+
     /**
      * TC: O(2^N) + Sorting: O(2^N*log(2^N))
      * SC: O(2^N)
@@ -41,11 +46,5 @@ public class P10_Subset_Sum_I {
 
         subsetSums_util(res, arr, index + 1, sum + arr.get(index));
         subsetSums_util(res, arr, index + 1, sum);
-    }
-
-
-    public static void main(String[] args) {
-        P10_Subset_Sum_I p10_subset_sum_i = new P10_Subset_Sum_I();
-        System.out.println(p10_subset_sum_i.subsetSums(new ArrayList<>(Arrays.asList(3, 1, 2)), 3));
     }
 }

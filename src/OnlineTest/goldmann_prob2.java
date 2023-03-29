@@ -5,23 +5,24 @@ package OnlineTest;
  */
 public class goldmann_prob2 {
     static String collapseString(String input) {
-        if(input == "")
+        if (input == "") {
             return "";
+        }
 
         int len = input.length();
         StringBuilder stringBuilder = new StringBuilder();
         int count = 1;
-        for(int i = 0; i < len-1; i++){
-            if(input.charAt(i) == input.charAt(i+1))
+        for (int i = 0; i < len - 1; i++) {
+            if (input.charAt(i) == input.charAt(i + 1)) {
                 count++;
-            else {
+            } else {
                 stringBuilder.append(count);
                 stringBuilder.append(input.charAt(i));
                 count = 1;
             }
         }
         stringBuilder.append(count);
-        stringBuilder.append(input.charAt(len-1));
+        stringBuilder.append(input.charAt(len - 1));
 
         return stringBuilder.toString();
     }

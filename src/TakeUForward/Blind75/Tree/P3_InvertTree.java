@@ -17,6 +17,31 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  * lc: <a href="https://leetcode.com/problems/invert-binary-tree/description/">...</a>
  */
 public class P3_InvertTree {
+    public static void main(String[] args) {
+        TreeNode node = new TreeNode(4);
+        node.left = new TreeNode(2);
+        node.right = new TreeNode(7);
+        node.left.left = new TreeNode(1);
+        node.left.right = new TreeNode(3);
+        node.right.left = new TreeNode(3);
+        node.right.right = new TreeNode(1);
+
+        TreeNode node1 = new TreeNode(4);
+        node1.left = new TreeNode(2);
+        node1.right = new TreeNode(7);
+        node1.left.left = new TreeNode(1);
+        node1.left.right = new TreeNode(3);
+        node1.right.left = new TreeNode(3);
+        node1.right.right = new TreeNode(1);
+
+        P3_InvertTree p3_invertTree = new P3_InvertTree();
+        p3_invertTree.printTree(node);
+        // After inverting the tree
+        p3_invertTree.printTree(p3_invertTree.invertTree(node));
+
+        p3_invertTree.printTree(p3_invertTree.invertTree_it(node1));
+    }
+
     // Recursive Way
     public TreeNode invertTree(TreeNode root) {
         if (root == null) {
@@ -73,30 +98,5 @@ public class P3_InvertTree {
             arrayList.add(node.data);
             printTree(node.right, arrayList);
         }
-    }
-
-    public static void main(String[] args) {
-        TreeNode node = new TreeNode(4);
-        node.left = new TreeNode(2);
-        node.right = new TreeNode(7);
-        node.left.left = new TreeNode(1);
-        node.left.right = new TreeNode(3);
-        node.right.left = new TreeNode(3);
-        node.right.right = new TreeNode(1);
-
-        TreeNode node1 = new TreeNode(4);
-        node1.left = new TreeNode(2);
-        node1.right = new TreeNode(7);
-        node1.left.left = new TreeNode(1);
-        node1.left.right = new TreeNode(3);
-        node1.right.left = new TreeNode(3);
-        node1.right.right = new TreeNode(1);
-
-        P3_InvertTree p3_invertTree = new P3_InvertTree();
-        p3_invertTree.printTree(node);
-        // After inverting the tree
-        p3_invertTree.printTree(p3_invertTree.invertTree(node));
-
-        p3_invertTree.printTree(p3_invertTree.invertTree_it(node1));
     }
 }

@@ -18,6 +18,18 @@ import java.util.List;
 public class P12_Permutation {
 
     /**
+     * Let's optimize the above approach
+     *
+     * @param args
+     */
+
+    public static void main(String[] args) {
+        P12_Permutation p12_permutation = new P12_Permutation();
+        int[] arr = {1, 2, 3};
+        System.out.println(p12_permutation.permute(arr));
+    }
+
+    /**
      * TC: O(N!) * N
      * SC: O(N) + O(N)
      *
@@ -82,17 +94,5 @@ public class P12_Permutation {
                 isOccurred[i] = false;
             }
         }
-    }
-
-    /**
-     * Let's optimize the above approach
-     *
-     * @param args
-     */
-
-    public static void main(String[] args) {
-        P12_Permutation p12_permutation = new P12_Permutation();
-        int[] arr = {1, 2, 3};
-        System.out.println(p12_permutation.permute(arr));
     }
 }

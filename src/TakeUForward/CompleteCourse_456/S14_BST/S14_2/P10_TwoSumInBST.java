@@ -24,6 +24,19 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  */
 public class P10_TwoSumInBST {
 
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        P10_TwoSumInBST p10_twoSumInBST = new P10_TwoSumInBST();
+        System.out.println(p10_twoSumInBST.findTarget(root, 3));
+    }
+
     public boolean findTarget(TreeNode root, int k) {
         P9_BST_Iterator p9_bst_iterator = new P9_BST_Iterator(root);
 
@@ -42,18 +55,5 @@ public class P10_TwoSumInBST {
         }
 
         return false;
-    }
-
-    public static void main(String[] args) {
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        P10_TwoSumInBST p10_twoSumInBST = new P10_TwoSumInBST();
-        System.out.println(p10_twoSumInBST.findTarget(root, 3));
     }
 }

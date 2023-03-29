@@ -7,7 +7,7 @@ public class NoCard implements ATMState {
 
     ATMMachine atmMachine;
 
-    NoCard(ATMMachine newAtmMachine){
+    NoCard(ATMMachine newAtmMachine) {
         atmMachine = newAtmMachine;
 
     }

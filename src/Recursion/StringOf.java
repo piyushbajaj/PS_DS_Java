@@ -5,23 +5,22 @@ package Recursion;
  */
 public class StringOf {
 
-    public static void main(String args[]){
+    public static void main(String args[]) {
         nbits(5);
     }
 
 
-
-    public static void nbits(int n){
+    public static void nbits(int n) {
         int[] A = new int[n];
-        if(n<1)
+        if (n < 1) {
             System.out.println(A);
-        else{
-            A[n-1] = 0;
-            nbits(n-1);
-            A[n-1] = 1;
-            nbits(n-1);
+        } else {
+            A[n - 1] = 0;
+            nbits(n - 1);
+            A[n - 1] = 1;
+            nbits(n - 1);
         }
-        for (int i : A){
+        for (int i : A) {
             System.out.println(i);
         }
     }

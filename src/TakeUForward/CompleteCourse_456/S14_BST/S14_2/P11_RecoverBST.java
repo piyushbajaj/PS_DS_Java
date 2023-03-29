@@ -27,6 +27,20 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  * SC: O(1)
  */
 public class P11_RecoverBST {
+    public static void main(String[] args) {
+        P11_RecoverBST p11_recoverBST = new P11_RecoverBST();
+
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(6);
+        root.right = new TreeNode(2);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        System.out.println(P1_BT_Recur_Traversals.levelOrderTraversal_recur(p11_recoverBST.swapNodes(root)));
+    }
+
     public TreeNode swapNodes(TreeNode root) {
         TreeNode[] node1 = new TreeNode[1];
         TreeNode[] node2 = new TreeNode[1];
@@ -57,19 +71,5 @@ public class P11_RecoverBST {
         swapNodes_util(root.right, prevNode, node1, node2);
 
         return root;
-    }
-
-    public static void main(String[] args) {
-        P11_RecoverBST p11_recoverBST = new P11_RecoverBST();
-
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(6);
-        root.right = new TreeNode(2);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        System.out.println(P1_BT_Recur_Traversals.levelOrderTraversal_recur(p11_recoverBST.swapNodes(root)));
     }
 }

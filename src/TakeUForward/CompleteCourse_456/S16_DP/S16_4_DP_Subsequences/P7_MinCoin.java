@@ -12,6 +12,22 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_4_DP_Subsequences;
  */
 public class P7_MinCoin {
 
+    public static void main(String[] args) {
+        P7_MinCoin p7_minCoin = new P7_MinCoin();
+//        int[] coins = {411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422};
+
+        int[] coins = {1, 2, 5};
+
+//        System.out.println(p7_minCoin.coinChange_recur(coins, 9864));
+
+        System.out.println(p7_minCoin.coinChange_mem(coins, 11));
+
+        System.out.println(p7_minCoin.coinChange_tab(coins, 11));
+
+        System.out.println(p7_minCoin.coinChange_tab_better(coins, 11));
+
+    }
+
     /**
      * Recursion
      * Minimum coin problem, we have to maximize in case it doesn't match
@@ -167,21 +183,5 @@ public class P7_MinCoin {
         }
 
         return prev[amount] == 1e9 ? -1 : prev[amount];
-    }
-
-    public static void main(String[] args) {
-        P7_MinCoin p7_minCoin = new P7_MinCoin();
-//        int[] coins = {411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422};
-
-        int[] coins = {1, 2, 5};
-
-//        System.out.println(p7_minCoin.coinChange_recur(coins, 9864));
-
-        System.out.println(p7_minCoin.coinChange_mem(coins, 11));
-
-        System.out.println(p7_minCoin.coinChange_tab(coins, 11));
-
-        System.out.println(p7_minCoin.coinChange_tab_better(coins, 11));
-
     }
 }

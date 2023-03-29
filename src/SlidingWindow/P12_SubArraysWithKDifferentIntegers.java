@@ -41,7 +41,7 @@ public class P12_SubArraysWithKDifferentIntegers {
     }
 
     public static void main(String[] args) {
-        System.out.println(subarraysWithKDistinct(new int[]{1, 2, 1, 2, 3}, 2));
+        System.out.println(subarraysWithKDistinct(new int[] {1, 2, 1, 2, 3}, 2));
     }
 
 }

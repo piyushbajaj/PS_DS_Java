@@ -3,14 +3,21 @@ package Leetcode.LinkedList.Easy;
 public class Reversal {
     Node head;
 
-    static class Node {
-        int data;
-        Node next;
+    public static void main(String[] args) {
+        Reversal reversal = new Reversal();
+        reversal.insertNodeInEnd(1);
+        reversal.insertNodeInEnd(2);
+        reversal.insertNodeInEnd(3);
+        reversal.insertNodeInEnd(4);
+        reversal.printList(reversal.head);
 
-        Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
+//        reversal.reverseLL_Iterative();
+//        System.out.println("After reversing Linked List: ");
+//        reversal.printList(reversal.head);
+
+        reversal.head = reversal.reverseLL_Recursive(reversal.head);
+        System.out.println("################## After reversing Linked List using Recursive ###################");
+        reversal.printList(reversal.head);
     }
 
     public Node printList(Node start) {
@@ -78,21 +85,13 @@ public class Reversal {
         return rest;
     }
 
+    static class Node {
+        int data;
+        Node next;
 
-    public static void main(String[] args) {
-        Reversal reversal = new Reversal();
-        reversal.insertNodeInEnd(1);
-        reversal.insertNodeInEnd(2);
-        reversal.insertNodeInEnd(3);
-        reversal.insertNodeInEnd(4);
-        reversal.printList(reversal.head);
-
-//        reversal.reverseLL_Iterative();
-//        System.out.println("After reversing Linked List: ");
-//        reversal.printList(reversal.head);
-
-        reversal.head = reversal.reverseLL_Recursive(reversal.head);
-        System.out.println("################## After reversing Linked List using Recursive ###################");
-        reversal.printList(reversal.head);
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
     }
 }

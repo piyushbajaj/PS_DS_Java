@@ -54,19 +54,48 @@ import java.util.Queue;
 public class BFS {
 
     private final int V; //Actual number of vertex
-    private int vertexCount; //Will keep incrementing as vertex gets added
     private final LinkedList<Integer>[] adjList; //To keep list of connections
     private final Vertex[] vertexList; //To keep vertex as a list of array
     private final Queue<Integer> queue;
+    private int vertexCount; //Will keep incrementing as vertex gets added
 
-    public static class Vertex {
-        public char label;
-        public boolean visited;
+    public BFS(int vertex) {
+        V = vertex;
+        vertexCount = 0;
+        vertexList = new Vertex[V];
+        adjList = new LinkedList[V];
+        queue = new LinkedList<>();
 
-        public Vertex(char lab) {
-            label = lab;
-            visited = false;
+        for (int i = 0; i < V; i++) {
+            adjList[i] = new LinkedList<>();
         }
+    }
+
+    public static void main(String[] args) {
+        BFS g = new BFS(8);
+
+        g.addVertices('A');
+        g.addVertices('B');
+        g.addVertices('C');
+        g.addVertices('D');
+        g.addVertices('E');
+        g.addVertices('F');
+        g.addVertices('H');
+        g.addVertices('G');
+
+
+        g.addEdge(0, 1);
+        g.addEdge(1, 2);
+        g.addEdge(1, 6);
+        g.addEdge(2, 3);
+        g.addEdge(2, 4);
+        g.addEdge(4, 5);
+        g.addEdge(4, 6);
+        g.addEdge(4, 7);
+
+        System.out.println("Following is Breadth First Traversal");
+
+        g.BFS_Function();
     }
 
     public void addVertices(char v) {
@@ -81,22 +110,12 @@ public class BFS {
         }
     }
 
-    public BFS(int vertex) {
-        V = vertex;
-        vertexCount = 0;
-        vertexList = new Vertex[V];
-        adjList = new LinkedList[V];
-        queue = new LinkedList<>();
-
-        for (int i = 0; i < V; i++)
-            adjList[i] = new LinkedList<>();
-    }
-
     public void BFS_Function() {
 
         for (int i = 0; i < V; i++) {
-            if (!vertexList[i].visited)
+            if (!vertexList[i].visited) {
                 BFS_Util(i);
+            }
         }
 
         for (int i = 0; i < V; i++) {
@@ -132,37 +151,22 @@ public class BFS {
 
     // T.C: O(V)
     public int nextElement(int v) {
-        for (int i = 0; i < V; i++)
-            if (adjList[v].contains(i) && vertexList[i].visited == false)
+        for (int i = 0; i < V; i++) {
+            if (adjList[v].contains(i) && vertexList[i].visited == false) {
                 return i;
+            }
+        }
         return -1;
     }
 
-    public static void main(String[] args) {
-        BFS g = new BFS(8);
+    public static class Vertex {
+        public char label;
+        public boolean visited;
 
-        g.addVertices('A');
-        g.addVertices('B');
-        g.addVertices('C');
-        g.addVertices('D');
-        g.addVertices('E');
-        g.addVertices('F');
-        g.addVertices('H');
-        g.addVertices('G');
-
-
-        g.addEdge(0, 1);
-        g.addEdge(1, 2);
-        g.addEdge(1, 6);
-        g.addEdge(2, 3);
-        g.addEdge(2, 4);
-        g.addEdge(4, 5);
-        g.addEdge(4, 6);
-        g.addEdge(4, 7);
-
-        System.out.println("Following is Breadth First Traversal");
-
-        g.BFS_Function();
+        public Vertex(char lab) {
+            label = lab;
+            visited = false;
+        }
     }
 
     //public void BFS_Function

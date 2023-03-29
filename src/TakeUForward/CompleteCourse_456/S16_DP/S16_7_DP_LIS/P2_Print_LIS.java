@@ -16,6 +16,11 @@ import java.util.Collections;
  */
 public class P2_Print_LIS {
 
+    public static void main(String[] args) {
+        P2_Print_LIS p2_print_lis = new P2_Print_LIS();
+        System.out.println(p2_print_lis.longestIncreasingSubsequence(6, new int[] {6, 3, 7, 4, 6, 9}));
+    }
+
     public ArrayList<Integer> longestIncreasingSubsequence(int n, int[] nums) {
         int[] dp = new int[n];
         int[] hash = new int[n];
@@ -54,10 +59,5 @@ public class P2_Print_LIS {
         Collections.reverse(temp);
 
         return temp;
-    }
-
-    public static void main(String[] args) {
-        P2_Print_LIS p2_print_lis = new P2_Print_LIS();
-        System.out.println(p2_print_lis.longestIncreasingSubsequence(6, new int[] {6, 3, 7, 4, 6, 9}));
     }
 }

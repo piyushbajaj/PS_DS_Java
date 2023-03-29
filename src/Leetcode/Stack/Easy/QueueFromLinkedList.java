@@ -3,14 +3,20 @@ package Leetcode.Stack.Easy;
 public class QueueFromLinkedList {
     Node head;
 
-    static class Node {
-        Node next;
-        int data;
+    public static void main(String[] args) {
+        QueueFromLinkedList queueFromLinkedList = new QueueFromLinkedList();
 
-        Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
+        queueFromLinkedList.insertNodeInEnd(1);
+        queueFromLinkedList.insertNodeInEnd(2);
+        queueFromLinkedList.insertNodeInEnd(3);
+        queueFromLinkedList.printList(queueFromLinkedList.head);
+        queueFromLinkedList.enqueue(5);
+        queueFromLinkedList.enqueue(6);
+        queueFromLinkedList.enqueue(7);
+        queueFromLinkedList.printList(queueFromLinkedList.head);
+        System.out.println(queueFromLinkedList.dequeue());
+        System.out.println(queueFromLinkedList.dequeue());
+        queueFromLinkedList.printList(queueFromLinkedList.head);
     }
 
     public Node insertNodeInEnd(int data) {
@@ -44,7 +50,7 @@ public class QueueFromLinkedList {
 
     public void enqueue(int data) {
         Node newNode = new Node(data);
-        if(head == null) {
+        if (head == null) {
             head = newNode;
             return;
         }
@@ -64,19 +70,13 @@ public class QueueFromLinkedList {
         return temp.data;
     }
 
-    public static void main(String[] args) {
-        QueueFromLinkedList queueFromLinkedList = new QueueFromLinkedList();
+    static class Node {
+        Node next;
+        int data;
 
-        queueFromLinkedList.insertNodeInEnd(1);
-        queueFromLinkedList.insertNodeInEnd(2);
-        queueFromLinkedList.insertNodeInEnd(3);
-        queueFromLinkedList.printList(queueFromLinkedList.head);
-        queueFromLinkedList.enqueue(5);
-        queueFromLinkedList.enqueue(6);
-        queueFromLinkedList.enqueue(7);
-        queueFromLinkedList.printList(queueFromLinkedList.head);
-        System.out.println(queueFromLinkedList.dequeue());
-        System.out.println(queueFromLinkedList.dequeue());
-        queueFromLinkedList.printList(queueFromLinkedList.head);
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
     }
 }

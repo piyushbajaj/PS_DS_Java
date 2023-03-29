@@ -5,63 +5,13 @@ package BinaryTree;
  */
 public class printAllPath {
     Node root;
-    public static class Node{
-        int data;
-        Node left, right;
 
-        Node(int data){
-            this.data = data;
-            left = right = null;
-        }
-    }
-
-    public printAllPath(){
+    public printAllPath() {
         root = null;
     }
 
-    public printAllPath(int key){
+    public printAllPath(int key) {
         root = new Node(key);
-    }
-
-    public void printPaths(Node key){
-        int size = height(key);
-        int[] path = new int[size];
-        //printPaths(key, path, 0);
-        printPath(key, path, 0);
-    }
-
-    public void printPaths(Node key, int[] path, int pathLen){
-        if(key == null)
-            return;
-        path[pathLen] = key.data;
-        pathLen++;
-
-        if(key.left == null && key.right == null)
-            printArray(path, pathLen);
-        else {
-            printPaths(key.left, path, pathLen);
-            printPaths(key.right, path, pathLen);
-        }
-    }
-
-    public int height(Node key){
-        if(key == null)
-            return 0;
-        int leftcount = height(key.left);
-        int rightcount = height(key.right);
-
-        if(leftcount > rightcount)
-            return leftcount+1;
-        else
-            return rightcount+1;
-    }
-
-    public void printArray(int[] arr, int len){
-
-        for(int i = 0; i < len; i++){
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println();
     }
 
     public static void main(String[] args) {
@@ -94,18 +44,72 @@ public class printAllPath {
         SN.printPaths(SN.root);
     }
 
-    public void printPath(Node key, int[] path, int len){
-        if(key == null)
+    public void printPaths(Node key) {
+        int size = height(key);
+        int[] path = new int[size];
+        //printPaths(key, path, 0);
+        printPath(key, path, 0);
+    }
+
+    public void printPaths(Node key, int[] path, int pathLen) {
+        if (key == null) {
             return;
+        }
+        path[pathLen] = key.data;
+        pathLen++;
+
+        if (key.left == null && key.right == null) {
+            printArray(path, pathLen);
+        } else {
+            printPaths(key.left, path, pathLen);
+            printPaths(key.right, path, pathLen);
+        }
+    }
+
+    public int height(Node key) {
+        if (key == null) {
+            return 0;
+        }
+        int leftcount = height(key.left);
+        int rightcount = height(key.right);
+
+        if (leftcount > rightcount) {
+            return leftcount + 1;
+        } else {
+            return rightcount + 1;
+        }
+    }
+
+    public void printArray(int[] arr, int len) {
+
+        for (int i = 0; i < len; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public void printPath(Node key, int[] path, int len) {
+        if (key == null) {
+            return;
+        }
 
         path[len++] = key.data;
 
-        if(key.left == null && key.right == null){
+        if (key.left == null && key.right == null) {
             printArray(path, len);
-        }
-        else {
+        } else {
             printPath(key.left, path, len);
             printPath(key.right, path, len);
+        }
+    }
+
+    public static class Node {
+        int data;
+        Node left, right;
+
+        Node(int data) {
+            this.data = data;
+            left = right = null;
         }
     }
 }

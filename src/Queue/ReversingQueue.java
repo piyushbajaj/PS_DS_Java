@@ -7,25 +7,6 @@ import java.util.Stack;
  */
 public class ReversingQueue {
 
-    public void reverseQueue(QueueUsingLinkedList Que){
-        Stack<Integer> stk = new Stack<>();
-        while (!Que.isEmpty())
-            stk.push(Que.deque());
-        while (!stk.isEmpty())
-            Que.enqueue(stk.pop());
-
-    }
-
-    //We can also reverse this using just one queue and queue operations
-    public void reverse(QueueUsingLinkedList Que){
-        if(!Que.isEmpty()){
-            int temp = Que.deque();
-            reverse(Que);
-            Que.enqueue(temp);
-
-        }
-    }
-
     public static void main(String[] args) {
         ReversingQueue RQ = new ReversingQueue();
 
@@ -43,5 +24,26 @@ public class ReversingQueue {
         RQ.reverse(Qu);
         System.out.println(Qu.displayQueue());
 
+    }
+
+    public void reverseQueue(QueueUsingLinkedList Que) {
+        Stack<Integer> stk = new Stack<>();
+        while (!Que.isEmpty()) {
+            stk.push(Que.deque());
+        }
+        while (!stk.isEmpty()) {
+            Que.enqueue(stk.pop());
+        }
+
+    }
+
+    //We can also reverse this using just one queue and queue operations
+    public void reverse(QueueUsingLinkedList Que) {
+        if (!Que.isEmpty()) {
+            int temp = Que.deque();
+            reverse(Que);
+            Que.enqueue(temp);
+
+        }
     }
 }

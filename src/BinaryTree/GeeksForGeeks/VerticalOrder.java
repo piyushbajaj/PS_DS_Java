@@ -10,61 +10,16 @@ import java.util.TreeMap;
 public class VerticalOrder {
     Node root;
 
-    static class Node{
-        Node left, right;
-        int data;
-        Node(int data){
-            this.data = data;
-            this.left = this.right = null;
-        }
-    }
-
-    VerticalOrder(){
+    VerticalOrder() {
         root = null;
     }
 
-    VerticalOrder(int data){
-        if(root == null)
+    VerticalOrder(int data) {
+        if (root == null) {
             root = new Node(data);
-        else
+        } else {
             new Node(data);
-    }
-
-    public void printVerticalNodes(Node key){
-        TreeMap<Integer, ArrayList<Integer>> hashMap = new TreeMap<>();
-        printVerticalNodes_util(key, hashMap, 0);
-
-        for(Map.Entry entry: hashMap.entrySet()){
-            System.out.println(entry.getValue());
         }
-
-
-    }
-
-    public TreeMap<Integer, ArrayList<Integer>> printVerticalNodes_util(Node key, TreeMap<Integer, ArrayList<Integer>> hashMap,
-                                                                        int n){
-        if(key == null)
-            return null;
-
-        ArrayList<Integer> arr = hashMap.get(n);
-
-        if(arr == null){
-            arr = new ArrayList<Integer>();
-            arr.add(key.data);
-        }
-        else {
-            arr.add(key.data);
-        }
-
-        hashMap.put(n, arr);
-
-        printVerticalNodes_util(key.left, hashMap, n - 1);
-
-        printVerticalNodes_util(key.right, hashMap, n+1);
-
-        return hashMap;
-
-
     }
 
     public static void main(String[] args) {
@@ -90,10 +45,56 @@ public class VerticalOrder {
         BT.root.right.right.right = new Node(9);
 
 
-
         BT.printVerticalNodes(BT.root);
 
 
+    }
 
+    public void printVerticalNodes(Node key) {
+        TreeMap<Integer, ArrayList<Integer>> hashMap = new TreeMap<>();
+        printVerticalNodes_util(key, hashMap, 0);
+
+        for (Map.Entry entry : hashMap.entrySet()) {
+            System.out.println(entry.getValue());
+        }
+
+
+    }
+
+    public TreeMap<Integer, ArrayList<Integer>> printVerticalNodes_util(Node key,
+                                                                        TreeMap<Integer, ArrayList<Integer>> hashMap,
+                                                                        int n) {
+        if (key == null) {
+            return null;
+        }
+
+        ArrayList<Integer> arr = hashMap.get(n);
+
+        if (arr == null) {
+            arr = new ArrayList<Integer>();
+            arr.add(key.data);
+        } else {
+            arr.add(key.data);
+        }
+
+        hashMap.put(n, arr);
+
+        printVerticalNodes_util(key.left, hashMap, n - 1);
+
+        printVerticalNodes_util(key.right, hashMap, n + 1);
+
+        return hashMap;
+
+
+    }
+
+    static class Node {
+        Node left, right;
+        int data;
+
+        Node(int data) {
+            this.data = data;
+            this.left = this.right = null;
+        }
     }
 }

@@ -5,20 +5,21 @@ package Multithreading;
  */
 class WorkerThread implements Runnable {
     private String message;
-    public WorkerThread(String S){
+
+    public WorkerThread(String S) {
         this.message = S;
     }
 
-    public void run(){
+    public void run() {
         System.out.println(Thread.currentThread().getName() + " (Start) message = " + message);
         process();
         System.out.println(Thread.currentThread().getName() + " (End)");
     }
 
-    public void process(){
+    public void process() {
         try {
             Thread.sleep(2000);
-        } catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }

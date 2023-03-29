@@ -13,15 +13,6 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  */
 public class P6_CountTotalNodesInCompeleteBT {
 
-    public int countNodes(TreeNode curr) {
-        if (curr == null) return 0;
-
-        int lMax = countNodes(curr.left);
-        int rMax = countNodes(curr.right);
-
-        return lMax + rMax + 1;
-    }
-
     public static void main(String[] args) {
         P6_CountTotalNodesInCompeleteBT p6_countTotalNodesInCompeleteBT = new P6_CountTotalNodesInCompeleteBT();
 
@@ -34,5 +25,16 @@ public class P6_CountTotalNodesInCompeleteBT {
         root.right.right = new TreeNode(7);
 
         System.out.println(p6_countTotalNodesInCompeleteBT.countNodes(root));
+    }
+
+    public int countNodes(TreeNode curr) {
+        if (curr == null) {
+            return 0;
+        }
+
+        int lMax = countNodes(curr.left);
+        int rMax = countNodes(curr.right);
+
+        return lMax + rMax + 1;
     }
 }

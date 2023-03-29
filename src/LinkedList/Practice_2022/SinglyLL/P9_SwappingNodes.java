@@ -5,9 +5,25 @@ package LinkedList.Practice_2022.SinglyLL;
  */
 public class P9_SwappingNodes extends CommonUtils {
 
+    public static void main(String[] args) {
+        P9_SwappingNodes swappingNodes = new P9_SwappingNodes();
+        swappingNodes.insert(10, 0);
+        swappingNodes.insert(20, 1);
+        swappingNodes.insert(30, 2);
+        swappingNodes.insert(40, 3);
+        swappingNodes.insert(50, 4);
+
+        swappingNodes.printLL(swappingNodes.head);
+
+        swappingNodes.printLL(swappingNodes.swapNodes(swappingNodes.head, 1));
+
+        ;
+    }
+
     /**
      * TC: O(N)
      * SC: O(1)
+     *
      * @param head
      * @param k
      * @return
@@ -36,20 +52,5 @@ public class P9_SwappingNodes extends CommonUtils {
         }
 
         return head;
-    }
-
-    public static void main(String[] args) {
-        P9_SwappingNodes swappingNodes = new P9_SwappingNodes();
-        swappingNodes.insert(10, 0);
-        swappingNodes.insert(20, 1);
-        swappingNodes.insert(30, 2);
-        swappingNodes.insert(40, 3);
-        swappingNodes.insert(50, 4);
-
-        swappingNodes.printLL(swappingNodes.head);
-
-        swappingNodes.printLL(swappingNodes.swapNodes(swappingNodes.head, 1));
-
-        ;
     }
 }

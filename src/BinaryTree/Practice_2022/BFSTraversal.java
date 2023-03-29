@@ -11,8 +11,34 @@ public class BFSTraversal extends CommonUtils {
     SC: O(N)
      */
 
+    public static void main(String[] args) {
+        BFSTraversal bfsTraversal = new BFSTraversal();
+        bfsTraversal.root = new TreeNode(1);
+        bfsTraversal.root.left = new TreeNode(2);
+        bfsTraversal.root.right = new TreeNode(3);
+        bfsTraversal.root.left.left = new TreeNode(4);
+        bfsTraversal.root.left.right = new TreeNode(5);
+        bfsTraversal.root.right.left = new TreeNode(6);
+        bfsTraversal.root.right.right = new TreeNode(7);
+        bfsTraversal.root.left.left.left = new TreeNode(8);
+        bfsTraversal.root.right.right.right = new TreeNode(9);
+
+        bfsTraversal.levelOrderIterative(bfsTraversal.root);
+        System.out.println();
+        bfsTraversal.levelOrderReverse(bfsTraversal.root);
+        System.out.println();
+        bfsTraversal.levelOrder_recursive(bfsTraversal.root);
+        System.out.println();
+
+        System.out.println(bfsTraversal.levelOrderIterativeArrayList(bfsTraversal.root));
+
+        System.out.println(bfsTraversal.levelOrderIterativeArrayList_reverse(bfsTraversal.root));
+    }
+
     public void levelOrderIterative(TreeNode node) {
-        if (node == null) return;
+        if (node == null) {
+            return;
+        }
 
         Queue<TreeNode> queue = new LinkedList<>();
 
@@ -34,7 +60,9 @@ public class BFSTraversal extends CommonUtils {
         List<List<Integer>> result = new LinkedList<>();
         Queue<TreeNode> queue = new LinkedList<>();
 
-        if (node == null) return result;
+        if (node == null) {
+            return result;
+        }
 
         queue.offer(node);
 
@@ -66,7 +94,9 @@ public class BFSTraversal extends CommonUtils {
 
         Queue<TreeNode> queue = new LinkedList<>();
 
-        if (node == null) return result;
+        if (node == null) {
+            return result;
+        }
 
         queue.offer(node);
 
@@ -104,7 +134,9 @@ public class BFSTraversal extends CommonUtils {
     }
 
     public void levelOrder_recursive_util(TreeNode node, int level) {
-        if (node == null) return;
+        if (node == null) {
+            return;
+        }
 
         if (level == 1) {
             System.out.print(node.data + " ");
@@ -115,7 +147,9 @@ public class BFSTraversal extends CommonUtils {
     }
 
     public void levelOrderReverse(TreeNode node) {
-        if (node == null) return;
+        if (node == null) {
+            return;
+        }
 
         Queue<TreeNode> queue = new LinkedList<>();
         Stack<TreeNode> stack = new Stack<>();
@@ -135,29 +169,5 @@ public class BFSTraversal extends CommonUtils {
         while (!stack.isEmpty()) {
             System.out.print(stack.pop().data + " ");
         }
-    }
-
-    public static void main(String[] args) {
-        BFSTraversal bfsTraversal = new BFSTraversal();
-        bfsTraversal.root = new TreeNode(1);
-        bfsTraversal.root.left = new TreeNode(2);
-        bfsTraversal.root.right = new TreeNode(3);
-        bfsTraversal.root.left.left = new TreeNode(4);
-        bfsTraversal.root.left.right = new TreeNode(5);
-        bfsTraversal.root.right.left = new TreeNode(6);
-        bfsTraversal.root.right.right = new TreeNode(7);
-        bfsTraversal.root.left.left.left = new TreeNode(8);
-        bfsTraversal.root.right.right.right = new TreeNode(9);
-
-        bfsTraversal.levelOrderIterative(bfsTraversal.root);
-        System.out.println();
-        bfsTraversal.levelOrderReverse(bfsTraversal.root);
-        System.out.println();
-        bfsTraversal.levelOrder_recursive(bfsTraversal.root);
-        System.out.println();
-
-        System.out.println(bfsTraversal.levelOrderIterativeArrayList(bfsTraversal.root));
-
-        System.out.println(bfsTraversal.levelOrderIterativeArrayList_reverse(bfsTraversal.root));
     }
 }

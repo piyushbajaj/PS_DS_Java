@@ -7,42 +7,6 @@ public class BT_Same_Tree_Prob {
     BTNode root;
     BTNode root1;
 
-    static class BTNode{
-        BTNode left, right;
-        int data;
-
-        BTNode(int data){
-            this.data = data;
-            left = null;
-            right = null;
-        }
-    }
-
-    public boolean check_sameTree(BTNode N1, BTNode N2){
-        if(N1==null && N2 == null) return true;
-
-        else if(N1!=null && N2==null) return false;
-
-        else if(N1==null && N2!=null) return false;
-
-        else{
-            if(N1.data != N2.data)
-                return false;
-        }
-
-
-        return check_sameTree(N1.left, N2.left) && check_sameTree(N1.right, N2.right);
-    }
-
-    public void printTree(BTNode key){
-        if(key == null)
-            return;
-
-        printTree(key.left);
-        System.out.print(key.data + " ");
-        printTree(key.right);
-    }
-
     public static void main(String[] args) {
         BT_Same_Tree_Prob BT = new BT_Same_Tree_Prob();
         BT.root = new BTNode(2);
@@ -63,6 +27,44 @@ public class BT_Same_Tree_Prob {
         System.out.println();
 
         System.out.println("Check if two BT's are same: " + BT.check_sameTree(BT.root, BT.root1));
+    }
+
+    public boolean check_sameTree(BTNode N1, BTNode N2) {
+        if (N1 == null && N2 == null) {
+            return true;
+        } else if (N1 != null && N2 == null) {
+            return false;
+        } else if (N1 == null && N2 != null) {
+            return false;
+        } else {
+            if (N1.data != N2.data) {
+                return false;
+            }
+        }
+
+
+        return check_sameTree(N1.left, N2.left) && check_sameTree(N1.right, N2.right);
+    }
+
+    public void printTree(BTNode key) {
+        if (key == null) {
+            return;
+        }
+
+        printTree(key.left);
+        System.out.print(key.data + " ");
+        printTree(key.right);
+    }
+
+    static class BTNode {
+        BTNode left, right;
+        int data;
+
+        BTNode(int data) {
+            this.data = data;
+            left = null;
+            right = null;
+        }
     }
 
 }

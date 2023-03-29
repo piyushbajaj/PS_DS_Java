@@ -36,8 +36,9 @@ public class P11_ReplaceSubstringBalancedString {
                         count[countW]++;
                     } else if (count[countE] < balancedCount) {
                         count[countE]++;
-                    } else if (count[countR] < balancedCount)
+                    } else if (count[countR] < balancedCount) {
                         count[countR]++;
+                    }
                     count[countQ]--;
                     counter++;
                 }
@@ -47,8 +48,9 @@ public class P11_ReplaceSubstringBalancedString {
                         count[countQ]++;
                     } else if (count[countE] < balancedCount) {
                         count[countE]++;
-                    } else if (count[countR] < balancedCount)
+                    } else if (count[countR] < balancedCount) {
                         count[countR]++;
+                    }
                     count[countW]--;
                     counter++;
                 }
@@ -58,8 +60,9 @@ public class P11_ReplaceSubstringBalancedString {
                         count[countQ]++;
                     } else if (count[countW] < balancedCount) {
                         count[countW]++;
-                    } else if (count[countR] < balancedCount)
+                    } else if (count[countR] < balancedCount) {
                         count[countR]++;
+                    }
                     count[countE]--;
                     counter++;
                 }
@@ -69,8 +72,9 @@ public class P11_ReplaceSubstringBalancedString {
                         count[countQ]++;
                     } else if (count[countW] < balancedCount) {
                         count[countW]++;
-                    } else if (count[countE] < balancedCount)
+                    } else if (count[countE] < balancedCount) {
                         count[countE]++;
+                    }
                     count[countR]--;
                     counter++;
                 }

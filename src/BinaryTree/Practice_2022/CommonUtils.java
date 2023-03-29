@@ -7,6 +7,74 @@ import java.util.Stack;
 
 public class CommonUtils extends BaseTreeNode {
 
+    public static void main(String[] args) {
+        CommonUtils commonUtils = new CommonUtils();
+//        commonUtils.insertInBT(1);
+//        commonUtils.insertInBT(2);
+//        commonUtils.insertInBT(3);
+//        commonUtils.insertInBT(4);
+//        commonUtils.insertInBT(5);
+//        commonUtils.insertInBT(6);
+//        commonUtils.insertInBT(7);
+//        commonUtils.printBinaryTree_levelOrder(commonUtils.root);
+//        System.out.println();
+
+        commonUtils.root = new TreeNode(1);
+        commonUtils.root.left = new TreeNode(2);
+        commonUtils.root.right = new TreeNode(3);
+//        commonUtils.root.left.left = new TreeNode(4);
+//        commonUtils.root.left.right = new TreeNode(5);
+        commonUtils.root.right.left = new TreeNode(6);
+        commonUtils.root.right.right = new TreeNode(7);
+        commonUtils.printBinaryTree_levelOrder(commonUtils.root);
+        System.out.println();
+
+        System.out.println("Number of nodes: " + commonUtils.countNodes_recursion(commonUtils.root));
+        System.out.println("Number of nodes iteratively: " + commonUtils.countNodes_iterative(commonUtils.root));
+
+        System.out.println("Height of Binary Tree: " + commonUtils.heightBinaryTree(commonUtils.root));
+
+        System.out.println("Height of Binary Tree iteratively using Stack: " +
+            commonUtils.heightBinaryTree_iterative_stack(commonUtils.root));
+
+        System.out.println("Height of Binary Tree iteratively using Queue: " +
+            commonUtils.heightBinaryTree_iterative_queue(commonUtils.root));
+
+        System.out.println("Height of Binary Tree iteratively using Queue better: " +
+            commonUtils.heightBinaryTree_iterative_queue_better(commonUtils.root));
+
+        System.out.println("Largest Element of Binary Tree: " + commonUtils.largestElement(commonUtils.root));
+        System.out.println(
+            "Largest Element Iteratively of Binary Tree: " + commonUtils.largestElementIterative(commonUtils.root));
+        System.out.println("Leaf Nodes in Binary Tree: " + commonUtils.countLeafNodes(commonUtils.root));
+
+        System.out.println(
+            "Leaf Nodes in Binary Tree iteratively: " + commonUtils.countLeafNodes_iterative(commonUtils.root));
+
+        System.out.println(
+            "Half Nodes in Binary Tree iteratively: " + commonUtils.countHalfNodes_iterative(commonUtils.root));
+
+        System.out.println(
+            "Full Nodes in Binary Tree iteratively: " + commonUtils.countFullNodes_iterative(commonUtils.root));
+
+        System.out.println("Search in Binary Tree: " + commonUtils.searchInTheBinaryTreeRecur(commonUtils.root, 0));
+
+        System.out.println("Search in Binary Tree: " + commonUtils.searchInTheBinaryTreeIteration(commonUtils.root, 7));
+
+        commonUtils.insertInBT(10);
+
+        System.out.println(
+            "Half Nodes in Binary Tree iteratively: " + commonUtils.countHalfNodes_iterative(commonUtils.root));
+
+        System.out.print("Print BT with In-Order fashion: ");
+        commonUtils.printBinaryTree_inOrder(commonUtils.root);
+        System.out.println();
+        System.out.print("Print BT with Level-Order fashion: ");
+        commonUtils.printBinaryTree_levelOrder(commonUtils.root);
+        System.out.println();
+        System.out.println("Deepest node in BT is: " + commonUtils.findDeepestNode(commonUtils.root));
+    }
+
     /*
     TC: O(N)
     SC: O(N)
@@ -48,9 +116,10 @@ public class CommonUtils extends BaseTreeNode {
         return count;
     }
 
-
     public int heightBinaryTree(TreeNode node) {
-        if (node == null) return 0;
+        if (node == null) {
+            return 0;
+        }
 
         int heightLeft = heightBinaryTree(node.left);
         int heightRight = heightBinaryTree(node.right);
@@ -59,7 +128,9 @@ public class CommonUtils extends BaseTreeNode {
     }
 
     public int heightBinaryTree_iterative_queue(TreeNode node) {
-        if (node == null) return 0;
+        if (node == null) {
+            return 0;
+        }
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(node);
@@ -88,7 +159,9 @@ public class CommonUtils extends BaseTreeNode {
     }
 
     public int heightBinaryTree_iterative_queue_better(TreeNode node) {
-        if (node == null) return 0;
+        if (node == null) {
+            return 0;
+        }
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(node);
@@ -115,7 +188,9 @@ public class CommonUtils extends BaseTreeNode {
     }
 
     public int heightBinaryTree_iterative_stack(TreeNode node) {
-        if (node == null) return 0;
+        if (node == null) {
+            return 0;
+        }
 
         Stack<TreeNode> stack = new Stack<>();
         stack.push(node);
@@ -148,7 +223,9 @@ public class CommonUtils extends BaseTreeNode {
     }
 
     public int largestElement(TreeNode node) {
-        if (node == null) return Integer.MIN_VALUE;
+        if (node == null) {
+            return Integer.MIN_VALUE;
+        }
 
         int largestLeft = largestElement(node.left);
         int largestRight = largestElement(node.right);
@@ -158,7 +235,9 @@ public class CommonUtils extends BaseTreeNode {
 
     // Doing with the help of Level Order Traversal here.
     public int largestElementIterative(TreeNode node) {
-        if (node == null) return Integer.MIN_VALUE;
+        if (node == null) {
+            return Integer.MIN_VALUE;
+        }
 
         int max = Integer.MIN_VALUE;
 
@@ -185,7 +264,9 @@ public class CommonUtils extends BaseTreeNode {
     }
 
     public int countLeafNodes(TreeNode node) {
-        if (node == null) return 0;
+        if (node == null) {
+            return 0;
+        }
 
         if (node.left == null && node.right == null) {
             return 1;
@@ -198,7 +279,9 @@ public class CommonUtils extends BaseTreeNode {
     }
 
     public int countLeafNodes_iterative(TreeNode node) {
-        if (node == null) return 0;
+        if (node == null) {
+            return 0;
+        }
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(node);
@@ -223,7 +306,9 @@ public class CommonUtils extends BaseTreeNode {
     }
 
     public int countFullNodes_iterative(TreeNode node) {
-        if (node == null) return 0;
+        if (node == null) {
+            return 0;
+        }
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(node);
@@ -248,7 +333,9 @@ public class CommonUtils extends BaseTreeNode {
     }
 
     public int countHalfNodes_iterative(TreeNode node) {
-        if (node == null) return 0;
+        if (node == null) {
+            return 0;
+        }
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(node);
@@ -273,7 +360,9 @@ public class CommonUtils extends BaseTreeNode {
     }
 
     public boolean searchInTheBinaryTreeRecur(TreeNode node, int key) {
-        if (node == null) return false;
+        if (node == null) {
+            return false;
+        }
 
         if (node.data == key) {
             return true;
@@ -283,14 +372,18 @@ public class CommonUtils extends BaseTreeNode {
     }
 
     public boolean searchInTheBinaryTreeIteration(TreeNode node, int key) {
-        if (node == null) return false;
+        if (node == null) {
+            return false;
+        }
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(node);
 
         while (!queue.isEmpty()) {
             TreeNode temp = queue.poll();
-            if (temp.data == key) return true;
+            if (temp.data == key) {
+                return true;
+            }
             if (temp.left != null) {
                 queue.offer(temp.left);
             }
@@ -357,7 +450,9 @@ public class CommonUtils extends BaseTreeNode {
     }
 
     public int findDeepestNode(TreeNode node) {
-        if (node == null) return 0;
+        if (node == null) {
+            return 0;
+        }
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(node);
@@ -379,7 +474,9 @@ public class CommonUtils extends BaseTreeNode {
     }
 
     public void printBinaryTree_inOrder(TreeNode node) {
-        if (node == null) return;
+        if (node == null) {
+            return;
+        }
 
         printBinaryTree_inOrder(node.left);
         System.out.print(node.data + " ");
@@ -390,7 +487,9 @@ public class CommonUtils extends BaseTreeNode {
         List<List<Integer>> result = new LinkedList<>();
         Queue<TreeNode> queue = new LinkedList<>();
 
-        if (node == null) return result;
+        if (node == null) {
+            return result;
+        }
 
         queue.offer(node);
 
@@ -423,66 +522,5 @@ public class CommonUtils extends BaseTreeNode {
         root.left.right = new TreeNode(5);
         root.right.left = new TreeNode(6);
         root.right.right = new TreeNode(7);
-    }
-
-
-    public static void main(String[] args) {
-        CommonUtils commonUtils = new CommonUtils();
-//        commonUtils.insertInBT(1);
-//        commonUtils.insertInBT(2);
-//        commonUtils.insertInBT(3);
-//        commonUtils.insertInBT(4);
-//        commonUtils.insertInBT(5);
-//        commonUtils.insertInBT(6);
-//        commonUtils.insertInBT(7);
-//        commonUtils.printBinaryTree_levelOrder(commonUtils.root);
-//        System.out.println();
-
-        commonUtils.root = new TreeNode(1);
-        commonUtils.root.left = new TreeNode(2);
-        commonUtils.root.right = new TreeNode(3);
-//        commonUtils.root.left.left = new TreeNode(4);
-//        commonUtils.root.left.right = new TreeNode(5);
-        commonUtils.root.right.left = new TreeNode(6);
-        commonUtils.root.right.right = new TreeNode(7);
-        commonUtils.printBinaryTree_levelOrder(commonUtils.root);
-        System.out.println();
-
-        System.out.println("Number of nodes: " + commonUtils.countNodes_recursion(commonUtils.root));
-        System.out.println("Number of nodes iteratively: " + commonUtils.countNodes_iterative(commonUtils.root));
-
-        System.out.println("Height of Binary Tree: " + commonUtils.heightBinaryTree(commonUtils.root));
-
-        System.out.println("Height of Binary Tree iteratively using Stack: " + commonUtils.heightBinaryTree_iterative_stack(commonUtils.root));
-
-        System.out.println("Height of Binary Tree iteratively using Queue: " + commonUtils.heightBinaryTree_iterative_queue(commonUtils.root));
-
-        System.out.println("Height of Binary Tree iteratively using Queue better: " + commonUtils.heightBinaryTree_iterative_queue_better(commonUtils.root));
-
-        System.out.println("Largest Element of Binary Tree: " + commonUtils.largestElement(commonUtils.root));
-        System.out.println("Largest Element Iteratively of Binary Tree: " + commonUtils.largestElementIterative(commonUtils.root));
-        System.out.println("Leaf Nodes in Binary Tree: " + commonUtils.countLeafNodes(commonUtils.root));
-
-        System.out.println("Leaf Nodes in Binary Tree iteratively: " + commonUtils.countLeafNodes_iterative(commonUtils.root));
-
-        System.out.println("Half Nodes in Binary Tree iteratively: " + commonUtils.countHalfNodes_iterative(commonUtils.root));
-
-        System.out.println("Full Nodes in Binary Tree iteratively: " + commonUtils.countFullNodes_iterative(commonUtils.root));
-
-        System.out.println("Search in Binary Tree: " + commonUtils.searchInTheBinaryTreeRecur(commonUtils.root, 0));
-
-        System.out.println("Search in Binary Tree: " + commonUtils.searchInTheBinaryTreeIteration(commonUtils.root, 7));
-
-        commonUtils.insertInBT(10);
-
-        System.out.println("Half Nodes in Binary Tree iteratively: " + commonUtils.countHalfNodes_iterative(commonUtils.root));
-
-        System.out.print("Print BT with In-Order fashion: ");
-        commonUtils.printBinaryTree_inOrder(commonUtils.root);
-        System.out.println();
-        System.out.print("Print BT with Level-Order fashion: ");
-        commonUtils.printBinaryTree_levelOrder(commonUtils.root);
-        System.out.println();
-        System.out.println("Deepest node in BT is: " + commonUtils.findDeepestNode(commonUtils.root));
     }
 }

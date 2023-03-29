@@ -7,19 +7,21 @@ public class Student implements Comparable<Student> {
     int rollno;
     String name;
     int age;
-    Student(int rollno,String name,int age) {
+
+    Student(int rollno, String name, int age) {
         this.rollno = rollno;
         this.name = name;
         this.age = age;
     }
 
-    public int compareTo(Student st){
-        if(age==st.age)
+    public int compareTo(Student st) {
+        if (age == st.age) {
             return (this.name).compareTo(st.name);
-        else if(age>st.age)
+        } else if (age > st.age) {
             return 1;
-        else
+        } else {
             return -1;
+        }
     }
 
 

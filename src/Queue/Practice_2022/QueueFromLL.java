@@ -6,21 +6,31 @@ public class QueueFromLL {
     Node front, rear;
     int size;
 
-    static class Node {
-        Node next;
-        int data;
-
-        Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
-
     public QueueFromLL() {
         this.front = this.rear = null;
         this.size = 0;
     }
 
+    public static void main(String[] args) {
+        QueueFromLL queueFromLL = new QueueFromLL();
+        System.out.println(queueFromLL.isEmpty());
+        queueFromLL.enqueue(1);
+        queueFromLL.enqueue(2);
+        queueFromLL.enqueue(3);
+        queueFromLL.enqueue(4);
+        queueFromLL.enqueue(5);
+
+        System.out.println(queueFromLL);
+
+        System.out.println(queueFromLL.dequeue());
+
+        System.out.println(queueFromLL.dequeue());
+
+        System.out.println(queueFromLL);
+
+        System.out.println(queueFromLL.isEmpty());
+
+    }
 
     public void enqueue(int x) {
         Node newNode = new Node(x);
@@ -71,24 +81,13 @@ public class QueueFromLL {
         return arrayList.toString();
     }
 
-    public static void main(String[] args) {
-        QueueFromLL queueFromLL = new QueueFromLL();
-        System.out.println(queueFromLL.isEmpty());
-        queueFromLL.enqueue(1);
-        queueFromLL.enqueue(2);
-        queueFromLL.enqueue(3);
-        queueFromLL.enqueue(4);
-        queueFromLL.enqueue(5);
+    static class Node {
+        Node next;
+        int data;
 
-        System.out.println(queueFromLL);
-
-        System.out.println(queueFromLL.dequeue());
-
-        System.out.println(queueFromLL.dequeue());
-
-        System.out.println(queueFromLL);
-
-        System.out.println(queueFromLL.isEmpty());
-
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
     }
 }

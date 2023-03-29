@@ -21,6 +21,21 @@ import javafx.util.Pair;
  */
 public class P3_MaxWidthInBT {
 
+    public static void main(String[] args) {
+        P3_MaxWidthInBT p3_maxWidthInBT = new P3_MaxWidthInBT();
+
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+//        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        System.out.println(p3_maxWidthInBT.maxWidth(root));
+        System.out.println(p3_maxWidthInBT.getMaxWidth(root));
+    }
+
     /**
      * Will follow level order traversal for getting maximum width in a tree:
      * 1.
@@ -110,20 +125,5 @@ public class P3_MaxWidthInBT {
         }
 
         return maxWidth;
-    }
-
-    public static void main(String[] args) {
-        P3_MaxWidthInBT p3_maxWidthInBT = new P3_MaxWidthInBT();
-
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-//        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        System.out.println(p3_maxWidthInBT.maxWidth(root));
-        System.out.println(p3_maxWidthInBT.getMaxWidth(root));
     }
 }

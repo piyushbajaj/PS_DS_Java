@@ -13,6 +13,12 @@ import java.util.Set;
  */
 public class P9_Longest_Consecutive_Sequence {
 
+    public static void main(String[] args) {
+        P9_Longest_Consecutive_Sequence p9_longest_consecutive_sequence = new P9_Longest_Consecutive_Sequence();
+        System.out.println(
+            p9_longest_consecutive_sequence.longestConsecutive(new int[] {100, 4, 200, 1, 3, 2}));
+    }
+
     /**
      * TC: O(N)
      * SC: O(1)
@@ -47,11 +53,5 @@ public class P9_Longest_Consecutive_Sequence {
         }
 
         return maxCount;
-    }
-
-    public static void main(String[] args) {
-        P9_Longest_Consecutive_Sequence p9_longest_consecutive_sequence = new P9_Longest_Consecutive_Sequence();
-        System.out.println(
-            p9_longest_consecutive_sequence.longestConsecutive(new int[] {100, 4, 200, 1, 3, 2}));
     }
 }

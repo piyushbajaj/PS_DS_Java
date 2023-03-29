@@ -6,16 +6,19 @@ package TechBoost_Old;
 public class DoublyLinkedList_Prob<Key> {
     Node head;
 
-    static class Node {
-        Node next;
-        Node prev;
-        int data;
+    public static void main(String[] args) {
+        DoublyLinkedList_Prob ll = new DoublyLinkedList_Prob();
+        ll.createDoublyLinkList(1);
+        ll.createDoublyLinkList(2);
+        ll.createDoublyLinkList(3);
+        ll.createDoublyLinkList(4);
+        ll.createDoublyLinkList(5);
 
-        Node(int data) {
-            this.data = data;
-            this.next = null;
-            this.prev = null;
-        }
+        ll.printList(ll.head);
+
+        System.out.println("After reversing Doubly Linked List: ");
+        ll.reverse_doublyLinkedList(ll.head);
+        ll.printList(ll.head);
     }
 
     public void createDoublyLinkList(int x) {
@@ -75,18 +78,15 @@ public class DoublyLinkedList_Prob<Key> {
         return head;
     }
 
-    public static void main(String[] args) {
-        DoublyLinkedList_Prob ll = new DoublyLinkedList_Prob();
-        ll.createDoublyLinkList(1);
-        ll.createDoublyLinkList(2);
-        ll.createDoublyLinkList(3);
-        ll.createDoublyLinkList(4);
-        ll.createDoublyLinkList(5);
+    static class Node {
+        Node next;
+        Node prev;
+        int data;
 
-        ll.printList(ll.head);
-
-        System.out.println("After reversing Doubly Linked List: ");
-        ll.reverse_doublyLinkedList(ll.head);
-        ll.printList(ll.head);
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+            this.prev = null;
+        }
     }
 }

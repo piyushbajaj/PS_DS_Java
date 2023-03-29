@@ -11,6 +11,17 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_4_DP_Subsequences;
  * Link g4g: <a href="https://practice.geeksforgeeks.org/problems/rod-cutting0840/1">...</a>
  */
 public class P11_Rod_Cutting {
+    public static void main(String[] args) {
+        P11_Rod_Cutting p11_rod_cutting = new P11_Rod_Cutting();
+        int[] arr = {1, 5, 8, 9, 10, 17, 17, 20};
+
+        System.out.println(p11_rod_cutting.cutRod_recur(arr, 8));
+
+        System.out.println(p11_rod_cutting.cutRod_mem(arr, 8));
+
+        System.out.println(p11_rod_cutting.cutRod_tab(arr, 8));
+    }
+
     /**
      * Recursion
      * TC: O(2^N)
@@ -107,16 +118,5 @@ public class P11_Rod_Cutting {
         }
 
         return dp[n - 1][n];
-    }
-
-    public static void main(String[] args) {
-        P11_Rod_Cutting p11_rod_cutting = new P11_Rod_Cutting();
-        int[] arr = {1, 5, 8, 9, 10, 17, 17, 20};
-
-        System.out.println(p11_rod_cutting.cutRod_recur(arr, 8));
-
-        System.out.println(p11_rod_cutting.cutRod_mem(arr, 8));
-
-        System.out.println(p11_rod_cutting.cutRod_tab(arr, 8));
     }
 }

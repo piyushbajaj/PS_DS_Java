@@ -1,8 +1,25 @@
 package LinkedList.Practice_2022.SinglyLL;
 
 public class AdjacentNodesLL extends CommonUtils {
+    public static void main(String[] args) {
+        AdjacentNodesLL adjacentNodesLL = new AdjacentNodesLL();
+        adjacentNodesLL.insertInEnd(1);
+        adjacentNodesLL.insertInEnd(2);
+        adjacentNodesLL.insertInEnd(3);
+        adjacentNodesLL.insertInEnd(4);
+        adjacentNodesLL.insertInEnd(5);
+        adjacentNodesLL.insertInEnd(6);
+        adjacentNodesLL.insertInEnd(7);
+        adjacentNodesLL.printLL();
+
+        System.out.println("Exchange of adjacent elements of Linked List");
+        adjacentNodesLL.printLL(adjacentNodesLL.adjacentNode());
+    }
+
     private Node adjacentNode() {
-        if (head == null) return null;
+        if (head == null) {
+            return null;
+        }
 
         Node dummy = new Node(-1);
         dummy.next = head;
@@ -19,20 +36,5 @@ public class AdjacentNodesLL extends CommonUtils {
         }
         head = dummy.next;
         return head;
-    }
-
-    public static void main(String[] args) {
-        AdjacentNodesLL adjacentNodesLL = new AdjacentNodesLL();
-        adjacentNodesLL.insertInEnd(1);
-        adjacentNodesLL.insertInEnd(2);
-        adjacentNodesLL.insertInEnd(3);
-        adjacentNodesLL.insertInEnd(4);
-        adjacentNodesLL.insertInEnd(5);
-        adjacentNodesLL.insertInEnd(6);
-        adjacentNodesLL.insertInEnd(7);
-        adjacentNodesLL.printLL();
-
-        System.out.println("Exchange of adjacent elements of Linked List");
-        adjacentNodesLL.printLL(adjacentNodesLL.adjacentNode());
     }
 }

@@ -5,6 +5,10 @@ package LinkedList.Practice_2022.SinglyLL;
  * Created by bajajp on 30 May, 2022
  */
 public class SplitLL extends CommonUtils {
+    public static void main(String[] args) {
+
+    }
+
     public Node[] splitListToParts(Node head, int k) {
         int n = countNodes(head);
         Node[] resultList = new Node[k];
@@ -32,9 +36,5 @@ public class SplitLL extends CommonUtils {
             }
         }
         return resultList;
-    }
-
-    public static void main(String[] args) {
-
     }
 }

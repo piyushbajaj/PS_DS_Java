@@ -16,13 +16,13 @@ import java.util.Stack;
  */
 public class P1_Shortest_Path_In_DAG {
 
-    static class Pair {
-        int toNode, distance;
+    public static void main(String[] args) {
+        P1_Shortest_Path_In_DAG p1_shortest_path_in_dag = new P1_Shortest_Path_In_DAG();
+        int[][] edges = {{0, 1, 2}, {0, 4, 1}, {4, 5, 4}, {4, 2, 2}, {1, 2, 3}, {2, 3, 6}, {5, 3, 1}};
+        System.out.println(Arrays.toString(p1_shortest_path_in_dag.shortestPath(6, 7, edges)));
 
-        Pair(int toNode, int distance) {
-            this.toNode = toNode;
-            this.distance = distance;
-        }
+        int[][] edges1 = {{0, 1, 2}, {2, 1, 2}, {2, 4, 2}, {1, 4, 8}, {1, 3, 6}};
+        System.out.println(Arrays.toString(p1_shortest_path_in_dag.shortestPath(5, 5, edges1)));
     }
 
     /**
@@ -30,8 +30,9 @@ public class P1_Shortest_Path_In_DAG {
      * 1. Do the topological sort
      * 2. Mark the distance for the 0th element as 0
      * 3. Pop the stack and calculate the distance and keep storing in the distance array
-     *
+     * <p>
      * TC: O(M + N): Topological sort
+     *
      * @param N
      * @param M
      * @param edges
@@ -102,12 +103,12 @@ public class P1_Shortest_Path_In_DAG {
         stack.push(vertex);
     }
 
-    public static void main(String[] args) {
-        P1_Shortest_Path_In_DAG p1_shortest_path_in_dag = new P1_Shortest_Path_In_DAG();
-        int[][] edges = {{0, 1, 2}, {0, 4, 1}, {4, 5, 4}, {4, 2, 2}, {1, 2, 3}, {2, 3, 6}, {5, 3, 1}};
-        System.out.println(Arrays.toString(p1_shortest_path_in_dag.shortestPath(6, 7, edges)));
+    static class Pair {
+        int toNode, distance;
 
-        int[][] edges1 = {{0, 1, 2}, {2, 1, 2}, {2, 4, 2}, {1, 4, 8}, {1, 3, 6}};
-        System.out.println(Arrays.toString(p1_shortest_path_in_dag.shortestPath(5, 5, edges1)));
+        Pair(int toNode, int distance) {
+            this.toNode = toNode;
+            this.distance = distance;
+        }
     }
 }

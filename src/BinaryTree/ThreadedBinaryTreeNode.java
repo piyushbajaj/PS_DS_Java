@@ -11,9 +11,9 @@ public class ThreadedBinaryTreeNode {
     public ThreadedBinaryTreeNode right;
 
 
-    public ThreadedBinaryTreeNode InOrderSuccessor(ThreadedBinaryTreeNode P){
+    public ThreadedBinaryTreeNode InOrderSuccessor(ThreadedBinaryTreeNode P) {
         ThreadedBinaryTreeNode Position;
-        if(P.RTag == 0);
+        if (P.RTag == 0) ;
 
         return left;
     }

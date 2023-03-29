@@ -30,22 +30,22 @@ public class PositiveDiffIndex {
 //        }
 
 
-        int min=A[0],max=A[0],minIndex=0,maxIndex=0;
+        int min = A[0], max = A[0], minIndex = 0, maxIndex = 0;
         int maximumIndex = 0;
-        for(int i=0;i<A.length;i++){
+        for (int i = 0; i < A.length; i++) {
             min = A[i];
-            minIndex=i;
+            minIndex = i;
             boolean isMaxPresent = false;
-            for(int j=i;j<A.length;j++)
-            {
-                if(A[j] > min){
+            for (int j = i; j < A.length; j++) {
+                if (A[j] > min) {
                     max = A[j];
                     maxIndex = j;
                     isMaxPresent = true;
                 }
             }
-            if(maximumIndex < ((maxIndex - minIndex) +1) )
+            if (maximumIndex < ((maxIndex - minIndex) + 1)) {
                 maximumIndex = (maxIndex - minIndex) + 1;
+            }
         }
         return maximumIndex;
 

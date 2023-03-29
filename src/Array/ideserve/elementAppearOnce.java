@@ -7,21 +7,22 @@ import java.util.ArrayList;
  */
 public class elementAppearOnce {
 
-    public static void elementAppearOne(int[] arr){
+    public static void elementAppearOne(int[] arr) {
         ArrayList<String> al = new ArrayList<>();
         int num = 0;
-        for(int i= 0; i < arr.length; i++ ){
+        for (int i = 0; i < arr.length; i++) {
             al.add(Integer.toBinaryString(arr[i]));
             num += Integer.parseInt(Integer.toBinaryString(arr[i]));
         }
 
         String str = Integer.toString(num);
         String newStr = "";
-        for(int i = 0 ; i < str.length(); i++){
-            if((int)str.charAt(i)%3==0){
+        for (int i = 0; i < str.length(); i++) {
+            if ((int) str.charAt(i) % 3 == 0) {
                 newStr += "0";
+            } else {
+                newStr += str.charAt(i) % 3;
             }
-            else newStr += str.charAt(i)%3;
         }
 
         System.out.println(Integer.parseInt(newStr, 2));
@@ -29,7 +30,7 @@ public class elementAppearOnce {
     }
 
     public static void main(String[] args) {
-        int[] arr = { 5, 5, 4, 8, 4, 5, 8, 9, 4, 8};
+        int[] arr = {5, 5, 4, 8, 4, 5, 8, 9, 4, 8};
         elementAppearOne(arr);
     }
 }

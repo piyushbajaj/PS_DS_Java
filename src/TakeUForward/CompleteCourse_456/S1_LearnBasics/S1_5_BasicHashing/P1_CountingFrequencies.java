@@ -26,6 +26,6 @@ public class P1_CountingFrequencies {
     }
 
     public static void main(String[] args) {
-        countFrequencies(new int[]{10, 5, 10, 15, 10, 5});
+        countFrequencies(new int[] {10, 5, 10, 15, 10, 5});
     }
 }

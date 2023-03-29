@@ -11,6 +11,14 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_6_DP_Stocks;
  * Link lc: <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/description/">...</a>
  */
 public class P5_Best_Time_To_Buy_Sell_TransactionFee {
+    public static void main(String[] args) {
+        P5_Best_Time_To_Buy_Sell_TransactionFee p5_best_time_to_buy_sell_transactionFee =
+            new P5_Best_Time_To_Buy_Sell_TransactionFee();
+        int[] prices = {1, 3, 2, 8, 4, 9};
+
+        System.out.println(p5_best_time_to_buy_sell_transactionFee.maxProfit(prices, 2));
+    }
+
     public int maxProfit(int[] prices, int fee) {
         int n = prices.length;
         int[][] dp_profits = new int[n + 2][2];
@@ -41,13 +49,5 @@ public class P5_Best_Time_To_Buy_Sell_TransactionFee {
         }
 
         return dp_profits[0][1];
-    }
-
-    public static void main(String[] args) {
-        P5_Best_Time_To_Buy_Sell_TransactionFee p5_best_time_to_buy_sell_transactionFee =
-            new P5_Best_Time_To_Buy_Sell_TransactionFee();
-        int[] prices = {1, 3, 2, 8, 4, 9};
-
-        System.out.println(p5_best_time_to_buy_sell_transactionFee.maxProfit(prices, 2));
     }
 }

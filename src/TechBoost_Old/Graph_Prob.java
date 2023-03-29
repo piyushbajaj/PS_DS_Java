@@ -14,16 +14,6 @@ public class Graph_Prob {
     Vertex vertexList[];
     int vertexCount = 0;
 
-    public class Vertex {
-        public char label;
-        public boolean visited;
-
-        public Vertex(char lab) {
-            label = lab;
-            visited = false;
-        }
-    }
-
     Graph_Prob(int v) {
         this.V = v;
         adjList = new LinkedList[V];
@@ -32,6 +22,32 @@ public class Graph_Prob {
         for (int i = 0; i < V; i++) {
             adjList[i] = new LinkedList();
         }
+    }
+
+    public static void main(String[] args) {
+        Graph_Prob gp = new Graph_Prob(8);
+        gp.addVertex('A');
+        gp.addVertex('B');
+        gp.addVertex('C');
+        gp.addVertex('D');
+        gp.addVertex('E');
+        gp.addVertex('F');
+        gp.addVertex('H');
+        gp.addVertex('G');
+
+        gp.addEdge(0, 1);
+        gp.addEdge(1, 2);
+        gp.addEdge(1, 6);
+        gp.addEdge(2, 3);
+        gp.addEdge(2, 4);
+        gp.addEdge(4, 5);
+        gp.addEdge(4, 6);
+        gp.addEdge(4, 7);
+
+        gp.BFS();
+
+        System.out.println();
+        gp.DFS();
     }
 
     public void addEdge(int i, int j) {
@@ -46,8 +62,9 @@ public class Graph_Prob {
     public void BFS() {
 
         for (int i = 0; i < V; i++) {
-            if (vertexList[i].visited == false)
+            if (vertexList[i].visited == false) {
                 BFS_util(i, vertexList[i].visited);
+            }
         }
 
         for (int i = 0; i < V; i++) {
@@ -110,36 +127,20 @@ public class Graph_Prob {
 
     public int nextElement(int v) {
         for (int i = 0; i < V; i++) {
-            if (adjList[v].contains(i) && !vertexList[i].visited)
+            if (adjList[v].contains(i) && !vertexList[i].visited) {
                 return i;
+            }
         }
         return -1;
     }
 
+    public class Vertex {
+        public char label;
+        public boolean visited;
 
-    public static void main(String[] args) {
-        Graph_Prob gp = new Graph_Prob(8);
-        gp.addVertex('A');
-        gp.addVertex('B');
-        gp.addVertex('C');
-        gp.addVertex('D');
-        gp.addVertex('E');
-        gp.addVertex('F');
-        gp.addVertex('H');
-        gp.addVertex('G');
-
-        gp.addEdge(0, 1);
-        gp.addEdge(1, 2);
-        gp.addEdge(1, 6);
-        gp.addEdge(2, 3);
-        gp.addEdge(2, 4);
-        gp.addEdge(4, 5);
-        gp.addEdge(4, 6);
-        gp.addEdge(4, 7);
-
-        gp.BFS();
-
-        System.out.println();
-        gp.DFS();
+        public Vertex(char lab) {
+            label = lab;
+            visited = false;
+        }
     }
 }

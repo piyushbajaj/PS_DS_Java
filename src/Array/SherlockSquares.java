@@ -22,22 +22,24 @@ public class SherlockSquares {
         check(3, 9);
     }
 
-    public static void check(int a, int b){
+    public static void check(int a, int b) {
         int count = 0;
         double sq = 0;
 
-         int a_val = (int)Math.ceil(Math.sqrt(a));
+        int a_val = (int) Math.ceil(Math.sqrt(a));
 
         ArrayList<Integer> arr = new ArrayList<>();
         arr.add(1);
         arr.remove(1);
 
 
-        for(int i = a; i <= b; i++){
+        for (int i = a; i <= b; i++) {
             sq = Math.sqrt(i);
-            if(sq%1 == 0)
+            if (sq % 1 == 0)
             //if(((sq == Math.floor(sq)) && !Double.isInfinite(sq)))
+            {
                 count++;
+            }
         }
         System.out.println(count);
     }

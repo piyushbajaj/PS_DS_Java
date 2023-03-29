@@ -5,27 +5,19 @@ package CrackingCoding.LinkedList.Jan_2018;
  */
 public class kthLast_Prob {
     static Node head;
-    static class Node{
-        Node next;
-        int data;
 
-        Node(int data){
-            this.data = data;
-            this.next = null;
-        }
-    }
-
-    public static Node createLL(int[] arr){
+    public static Node createLL(int[] arr) {
         int n = arr.length;
-        if(n == 0) return null;
+        if (n == 0) {
+            return null;
+        }
 
         Node Nd = head;
-        for(int i = 0; i < n; i++){
-            if(head == null){
+        for (int i = 0; i < n; i++) {
+            if (head == null) {
                 Nd = new Node(arr[i]);
                 head = Nd;
-            }
-            else {
+            } else {
                 Nd.next = new Node(arr[i]);
                 Nd = Nd.next;
             }
@@ -34,12 +26,13 @@ public class kthLast_Prob {
         return head;
     }
 
-    public static int getCount(Node Nd){
-        if(Nd == null)
+    public static int getCount(Node Nd) {
+        if (Nd == null) {
             return 0;
+        }
 
         int count = 0;
-        while (Nd!=null){
+        while (Nd != null) {
             count++;
             Nd = Nd.next;
         }
@@ -48,17 +41,16 @@ public class kthLast_Prob {
     }
 
     //Find kth element from the last
-    public static int findKthElement(int index){
+    public static int findKthElement(int index) {
         Node Nd = head;
         int count = getCount(head);
 
-        int diff = count-index;
+        int diff = count - index;
         int cnt = 0;
-        while (Nd!=null){
-            if(cnt == diff){
+        while (Nd != null) {
+            if (cnt == diff) {
                 return Nd.data;
-            }
-            else {
+            } else {
                 Nd = Nd.next;
                 cnt++;
             }
@@ -77,5 +69,15 @@ public class kthLast_Prob {
 
         System.out.println(findKthElement(10));
 
+    }
+
+    static class Node {
+        Node next;
+        int data;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
     }
 }

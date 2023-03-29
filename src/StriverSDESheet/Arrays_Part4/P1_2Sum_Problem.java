@@ -8,6 +8,18 @@ import java.util.Map;
  * Created by bajajp on 10 Sep, 2022
  */
 public class P1_2Sum_Problem {
+    public static void main(String[] args) {
+        P1_2Sum_Problem p1_2Sum_problem = new P1_2Sum_Problem();
+        System.out.println(Arrays.toString(p1_2Sum_problem.pairWithGivenSum(
+            new int[] {2, 7, 11, 15}, 9)));
+
+        System.out.println(Arrays.toString(p1_2Sum_problem.pairWithGivenSum_better(
+            new int[] {2, 7, 11, 15}, 9)));
+
+        System.out.println(Arrays.toString(p1_2Sum_problem.pairWithGivenSum_best(
+            new int[] {2, 7, 11, 15}, 9)));
+    }
+
     /**
      * TC: O(N)
      * SC: O(N)
@@ -21,7 +33,7 @@ public class P1_2Sum_Problem {
 
         for (int i = 0; i < nums.length; i++) {
             if (result.containsKey(target - nums[i])) {
-                return new int[]{i, result.get(target - nums[i])};
+                return new int[] {i, result.get(target - nums[i])};
             } else {
                 result.put(nums[i], i);
             }
@@ -41,7 +53,7 @@ public class P1_2Sum_Problem {
         int i = 0, j = i + 1, n = nums.length;
         while (j < n) {
             if (nums[i] == target - nums[j]) {
-                return new int[]{i, j};
+                return new int[] {i, j};
             }
             j++;
             if (j == n) {
@@ -59,7 +71,7 @@ public class P1_2Sum_Problem {
         while (i < j) {
             int diff = target - nums[j];
             if (nums[i] == diff) {
-                return new int[]{i, j};
+                return new int[] {i, j};
             } else if (nums[i] < diff) {
                 i++;
             } else {
@@ -67,19 +79,6 @@ public class P1_2Sum_Problem {
             }
         }
 
-        return new int[]{0, 0};
-    }
-
-
-    public static void main(String[] args) {
-        P1_2Sum_Problem p1_2Sum_problem = new P1_2Sum_Problem();
-        System.out.println(Arrays.toString(p1_2Sum_problem.pairWithGivenSum(
-                new int[]{2, 7, 11, 15}, 9)));
-
-        System.out.println(Arrays.toString(p1_2Sum_problem.pairWithGivenSum_better(
-                new int[]{2, 7, 11, 15}, 9)));
-
-        System.out.println(Arrays.toString(p1_2Sum_problem.pairWithGivenSum_best(
-                new int[]{2, 7, 11, 15}, 9)));
+        return new int[] {0, 0};
     }
 }

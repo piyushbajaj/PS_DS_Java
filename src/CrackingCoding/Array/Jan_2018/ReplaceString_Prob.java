@@ -9,9 +9,10 @@ public class ReplaceString_Prob {
         replaceString(s);
     }
 
-    public static String replaceString(String str){
-        if(!str.contains(" "))
+    public static String replaceString(String str) {
+        if (!str.contains(" ")) {
             return str;
+        }
 
         int n = str.length();
         char[] arr = new char[n];
@@ -20,33 +21,32 @@ public class ReplaceString_Prob {
 
         //Calculate the last character before BLANK comes
         int index = 0;
-        for(int i = n-1; i >= 0; i--){
-            if(arr[i] == ' ') {
+        for (int i = n - 1; i >= 0; i--) {
+            if (arr[i] == ' ') {
                 //index = i;
                 //break;
-                arr[i] = arr[i-1];
-                arr[i-1] = ' ';
+                arr[i] = arr[i - 1];
+                arr[i - 1] = ' ';
             }
         }
-
 
 
         //String s = str.trim();
 
         //StringBuilder sb = new StringBuilder(s);
 
-        for(int i = 0; i < n; i++){
-            if(arr[i] == ' '){
-               arr =   displaceChar(arr, i+1, index );
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == ' ') {
+                arr = displaceChar(arr, i + 1, index);
             }
         }
 
         return str;
     }
 
-    public static char[] displaceChar(char[] arr, int i, int j){
+    public static char[] displaceChar(char[] arr, int i, int j) {
         char temp = ' ';
-        for(int k = i; k < j; k++){
+        for (int k = i; k < j; k++) {
             temp = arr[k];
             //arr
         }

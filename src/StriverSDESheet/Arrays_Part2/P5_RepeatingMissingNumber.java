@@ -31,7 +31,7 @@ public class P5_RepeatingMissingNumber {
 
         int diff = sum - arrSum;
 
-        return new int[]{slow, slow + diff};
+        return new int[] {slow, slow + diff};
     }
 
     public static void main(String[] args) {

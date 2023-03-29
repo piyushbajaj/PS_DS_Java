@@ -16,6 +16,18 @@ import javafx.util.Pair;
  */
 public class P9_Number_Of_Enclaves_BFS {
 
+    public static void main(String[] args) {
+        P9_Number_Of_Enclaves_DFS p9_number_of_enclaves = new P9_Number_Of_Enclaves_DFS();
+
+        int[][] grid = {
+            {0, 0, 0, 0},
+            {1, 0, 1, 0},
+            {0, 1, 1, 0},
+            {0, 0, 0, 0}};
+
+        System.out.println(p9_number_of_enclaves.numEnclaves(grid));
+    }
+
     public int numEnclaves(int[][] grid) {
         int n = grid.length; // row len
         int m = grid[0].length; // col len
@@ -85,17 +97,5 @@ public class P9_Number_Of_Enclaves_BFS {
 
             }
         }
-    }
-
-    public static void main(String[] args) {
-        P9_Number_Of_Enclaves_DFS p9_number_of_enclaves = new P9_Number_Of_Enclaves_DFS();
-
-        int[][] grid = {
-            {0, 0, 0, 0},
-            {1, 0, 1, 0},
-            {0, 1, 1, 0},
-            {0, 0, 0, 0}};
-
-        System.out.println(p9_number_of_enclaves.numEnclaves(grid));
     }
 }

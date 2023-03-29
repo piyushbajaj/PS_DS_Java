@@ -10,45 +10,13 @@ public class Route_Between_Nodes {
     public int V; //Vertex
     private LinkedList<Integer> adj[];
 
-    public Route_Between_Nodes(int v){
+    public Route_Between_Nodes(int v) {
         V = v;
         adj = new LinkedList[V];
 
-        for(int i =0; i < V; i++){
+        for (int i = 0; i < V; i++) {
             adj[i] = new LinkedList<Integer>();
         }
-    }
-
-    public void addEdge(int u, int v){
-        adj[u].add(v);
-    }
-
-    public void DFS_Route_Bet_Nodes(int x, int y, boolean[] visited){
-        visited[x] = true;
-
-        Iterator<Integer> i = adj[x].listIterator();
-
-        while (i.hasNext()){
-            int n = i.next();
-            if(n==y) {
-                System.out.println("There is a connection between Nodes");
-                System.exit(1);
-            }
-            else if(!visited[n]){
-                DFS_Route_Bet_Nodes(n, y, visited);
-            }
-            //else break;
-        }
-
-       // System.exit(1);
-    }
-
-    public void DFS(int x, int y){
-        boolean[] visited = new boolean[V];
-
-        DFS_Route_Bet_Nodes(x, y, visited);
-
-        System.out.println("There is NO connection between Nodes");
     }
 
     //here we will use depth first search for this
@@ -65,7 +33,38 @@ public class Route_Between_Nodes {
         int x = 5, y = 3;
 
 
-        System.out.println("Is there a route between " + x + " and " + y + ": " );
+        System.out.println("Is there a route between " + x + " and " + y + ": ");
         RB.DFS(x, y);
+    }
+
+    public void addEdge(int u, int v) {
+        adj[u].add(v);
+    }
+
+    public void DFS_Route_Bet_Nodes(int x, int y, boolean[] visited) {
+        visited[x] = true;
+
+        Iterator<Integer> i = adj[x].listIterator();
+
+        while (i.hasNext()) {
+            int n = i.next();
+            if (n == y) {
+                System.out.println("There is a connection between Nodes");
+                System.exit(1);
+            } else if (!visited[n]) {
+                DFS_Route_Bet_Nodes(n, y, visited);
+            }
+            //else break;
+        }
+
+        // System.exit(1);
+    }
+
+    public void DFS(int x, int y) {
+        boolean[] visited = new boolean[V];
+
+        DFS_Route_Bet_Nodes(x, y, visited);
+
+        System.out.println("There is NO connection between Nodes");
     }
 }

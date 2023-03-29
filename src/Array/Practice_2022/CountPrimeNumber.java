@@ -10,8 +10,14 @@ package Array.Practice_2022;
  */
 public class CountPrimeNumber {
 
-    static int totalPrime = 0;
     private static final int MAX_INT = 100000000;
+    static int totalPrime = 0;
+
+    public static void main(String[] args) {
+        CountPrimeNumber countPrimeNumber = new CountPrimeNumber();
+
+        System.out.println(countPrimeNumber.countPrimeNumber(100));
+    }
 
     public boolean checkPrime(int x) {
         for (int i = 2; i <= (int) Math.sqrt(x); i++) {
@@ -30,12 +36,5 @@ public class CountPrimeNumber {
             }
         }
         return count;
-    }
-
-
-    public static void main(String[] args) {
-        CountPrimeNumber countPrimeNumber = new CountPrimeNumber();
-
-        System.out.println(countPrimeNumber.countPrimeNumber(100));
     }
 }

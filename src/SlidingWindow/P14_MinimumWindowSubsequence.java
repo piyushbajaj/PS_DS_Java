@@ -31,7 +31,7 @@ public class P14_MinimumWindowSubsequence {
             hash_map.put(chAtS1, hash_map.getOrDefault(chAtS1, 0) + 1);
 
             if (dict_map.containsKey(chAtS1) && hash_map.getOrDefault(chAtS1, 0)
-                    .equals(dict_map.getOrDefault(chAtS1, 0))) {
+                .equals(dict_map.getOrDefault(chAtS1, 0))) {
                 formed++;
             }
 

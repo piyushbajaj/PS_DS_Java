@@ -10,6 +10,14 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_8_MCM_DP;
  */
 public class P6_Partition_Array_For_Max_Sum {
 
+    public static void main(String[] args) {
+        P6_Partition_Array_For_Max_Sum p6_partition_array_for_max_sum = new P6_Partition_Array_For_Max_Sum();
+        int[] arr = {1, 15, 7, 9, 2, 5, 10};
+        System.out.println(p6_partition_array_for_max_sum.solve_recur(arr.length, 3, arr));
+        System.out.println(p6_partition_array_for_max_sum.solve_mem(arr.length, 3, arr));
+        System.out.println(p6_partition_array_for_max_sum.solve_tab(arr.length, 3, arr));
+    }
+
     /**
      * Same approach like Palindromic Partitioning
      * <p>
@@ -120,13 +128,5 @@ public class P6_Partition_Array_For_Max_Sum {
             dp[i] = maxSum;
         }
         return dp[0];
-    }
-
-    public static void main(String[] args) {
-        P6_Partition_Array_For_Max_Sum p6_partition_array_for_max_sum = new P6_Partition_Array_For_Max_Sum();
-        int[] arr = {1, 15, 7, 9, 2, 5, 10};
-        System.out.println(p6_partition_array_for_max_sum.solve_recur(arr.length, 3, arr));
-        System.out.println(p6_partition_array_for_max_sum.solve_mem(arr.length, 3, arr));
-        System.out.println(p6_partition_array_for_max_sum.solve_tab(arr.length, 3, arr));
     }
 }

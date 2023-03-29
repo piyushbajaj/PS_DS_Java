@@ -11,6 +11,14 @@ package TakeUForward.CompleteCourse_456.S15_Graphs.S15_4_Shortest_Path;
  * Link g4g: <a href="https://practice.geeksforgeeks.org/problems/city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/0">...</a>
  */
 public class P14_City_With_Smallest_Number {
+    public static void main(String[] args) {
+        P14_City_With_Smallest_Number p14_city_with_smallest_number = new P14_City_With_Smallest_Number();
+
+        int[][] edges = {{0, 1, 3}, {1, 2, 1}, {1, 3, 4}, {2, 3, 1}};
+
+        System.out.println(p14_city_with_smallest_number.findCity(4, 4, edges, 4));
+    }
+
     public int findCity(int n, int m, int[][] edges, int distanceThreshold) {
         int[][] matrix = new int[n][n];
 
@@ -59,13 +67,5 @@ public class P14_City_With_Smallest_Number {
         }
 
         return city;
-    }
-
-    public static void main(String[] args) {
-        P14_City_With_Smallest_Number p14_city_with_smallest_number = new P14_City_With_Smallest_Number();
-
-        int[][] edges = {{0, 1, 3}, {1, 2, 1}, {1, 3, 4}, {2, 3, 1}};
-
-        System.out.println(p14_city_with_smallest_number.findCity(4, 4, edges, 4));
     }
 }

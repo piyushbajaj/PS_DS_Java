@@ -4,20 +4,24 @@ package Array;
  * Created by piyush.bajaj on 06/04/17.
  */
 public class power {
-    public int powerRaise(int x, int n, int d){
+    public static void main(String[] args) {
+        power pw = new power();
+        System.out.println(pw.powerRaise(2, 3, 3));
+        System.out.println(pw.power_improved(2, 3, 3));
+    }
+
+    public int powerRaise(int x, int n, int d) {
         int temp = 1;
         long res = 1L;
 
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             temp = x * temp;
         }
 
-        int mod = temp%d;
-
-        return mod;
+        return temp % d;
     }
 
-    public int power_improved(int x, int n, int d){
+    public int power_improved(int x, int n, int d) {
         long a = x;
         long res = 1L;
 
@@ -38,12 +42,5 @@ public class power {
 
         return (int) res;
 
-    }
-
-
-    public static void main(String[] args) {
-        power pw = new power();
-        System.out.println(pw.powerRaise(2, 3, 3));
-        System.out.println(pw.power_improved(2, 3, 3));
     }
 }

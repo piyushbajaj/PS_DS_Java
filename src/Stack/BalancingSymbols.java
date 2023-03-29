@@ -1,7 +1,6 @@
 package Stack;
 
 
-
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,48 +13,31 @@ import java.util.Stack;
  */
 public class BalancingSymbols {
 
-    public boolean isBalance(String s){
-        Stack<Character> ST = new Stack<>();
-        if(s==null || s.length() == 0){
-            System.out.println("String is empty");
-            return false;
-        }
-        for(int i =0; i < s.length(); i++){
-            if(s.charAt(i) == ')'){
-                if(ST.isEmpty())
-                    return false;
-                if(ST.peek() == '(' && !ST.isEmpty())
-                    ST.pop();
-                else
-                    return false;
-            }
-            else if(s.charAt(i) == ']'){
-                if(ST.isEmpty())
-                    return false;
-                if(ST.peek() == '[' && !ST.isEmpty())
-                    ST.pop();
-                else
-                    return false;
-            }
-            else if(s.charAt(i) == '}'){
-                if(ST.isEmpty())
-                    return false;
-                if(ST.peek() == '{' && !ST.isEmpty())
-                    ST.pop();
-                else
-                    return false;
-            }
-            else {
-                if(s.charAt(i) == '(' || s.charAt(i) == '[' || s.charAt(i) == '{')
-                    ST.push(s.charAt(i));
-            }
+    public static void main(String[] args) {
+        BalancingSymbols BS = new BalancingSymbols();
+        String str = "((([((())))))";
+        System.out.println(BS.isBalance(str));
+        //BS.isBalance(str);
+
+        ArrayList<String> arrayList = new ArrayList<>(Arrays.asList(
+            "(",
+            "0",
+            "&&",
+            "1",
+            "&&",
+            "2",
+            ")"));
+        String listString = String.join(" ", arrayList);
+
+        Boolean a = null;
+        Boolean b = null;
+        if (a == b) {
+            System.out.println(true);
         }
 
-        if(ST.isEmpty())
-            return true;
-        else
-            return false;
+        System.out.println(listString);
 
+        System.out.println(arrayList.toString().replaceAll("[,\\[\\]]", ""));
     }
 
 //    public int openBracketCount(ArrayList<String> arrayList) {
@@ -77,6 +59,55 @@ public class BalancingSymbols {
 //
 ////        return count;
 //    }
+
+    public boolean isBalance(String s) {
+        Stack<Character> ST = new Stack<>();
+        if (s == null || s.length() == 0) {
+            System.out.println("String is empty");
+            return false;
+        }
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ')') {
+                if (ST.isEmpty()) {
+                    return false;
+                }
+                if (ST.peek() == '(' && !ST.isEmpty()) {
+                    ST.pop();
+                } else {
+                    return false;
+                }
+            } else if (s.charAt(i) == ']') {
+                if (ST.isEmpty()) {
+                    return false;
+                }
+                if (ST.peek() == '[' && !ST.isEmpty()) {
+                    ST.pop();
+                } else {
+                    return false;
+                }
+            } else if (s.charAt(i) == '}') {
+                if (ST.isEmpty()) {
+                    return false;
+                }
+                if (ST.peek() == '{' && !ST.isEmpty()) {
+                    ST.pop();
+                } else {
+                    return false;
+                }
+            } else {
+                if (s.charAt(i) == '(' || s.charAt(i) == '[' || s.charAt(i) == '{') {
+                    ST.push(s.charAt(i));
+                }
+            }
+        }
+
+        if (ST.isEmpty()) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
 
     public boolean utilFunc(ArrayList<String> arrayList) {
 //        Deque<String> stack = new ArrayDeque<>();
@@ -124,32 +155,5 @@ public class BalancingSymbols {
             }
         }
         return false;
-    }
-
-    public static void main(String[] args) {
-        BalancingSymbols BS = new BalancingSymbols();
-        String str = "((([((())))))";
-        System.out.println(BS.isBalance(str));
-        //BS.isBalance(str);
-
-        ArrayList<String> arrayList = new ArrayList<>(Arrays.asList(
-                "(",
-                "0",
-                "&&",
-                "1",
-                "&&",
-                "2",
-                ")"));
-        String listString = String.join(" ", arrayList);
-
-        Boolean a = null;
-        Boolean b = null;
-        if (a == b) {
-            System.out.println(true);
-        }
-
-        System.out.println(listString);
-
-        System.out.println(arrayList.toString().replaceAll("[,\\[\\]]", ""));
     }
 }

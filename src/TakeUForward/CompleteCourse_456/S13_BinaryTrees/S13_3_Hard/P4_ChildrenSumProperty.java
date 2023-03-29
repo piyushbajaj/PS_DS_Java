@@ -14,6 +14,23 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  */
 public class P4_ChildrenSumProperty {
 
+    public static void main(String[] args) {
+        P4_ChildrenSumProperty p4_childrenSumProperty = new P4_ChildrenSumProperty();
+        P5_Levelorder_Itr_Traversal p5_levelorder_itr_traversal = new P5_Levelorder_Itr_Traversal();
+
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        System.out.println(p5_levelorder_itr_traversal.levelOrderTraversal_iterative(root));
+        p4_childrenSumProperty.childrenSumProperty(root);
+        System.out.println(p5_levelorder_itr_traversal.levelOrderTraversal_iterative(root));
+    }
+
     /**
      * Approach:
      * 1. While going down the tree if curr.data > sum of left and right child, then replace both child with curr.data
@@ -76,22 +93,5 @@ public class P4_ChildrenSumProperty {
 
         return -1;
 
-    }
-
-    public static void main(String[] args) {
-        P4_ChildrenSumProperty p4_childrenSumProperty = new P4_ChildrenSumProperty();
-        P5_Levelorder_Itr_Traversal p5_levelorder_itr_traversal = new P5_Levelorder_Itr_Traversal();
-
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        System.out.println(p5_levelorder_itr_traversal.levelOrderTraversal_iterative(root));
-        p4_childrenSumProperty.childrenSumProperty(root);
-        System.out.println(p5_levelorder_itr_traversal.levelOrderTraversal_iterative(root));
     }
 }

@@ -10,6 +10,11 @@ package TakeUForward.CompleteCourse_456.S7_Recursion;
  * <p>
  */
 public class P2_Pow {
+    public static void main(String[] args) {
+        P2_Pow p2_pow = new P2_Pow();
+        System.out.println(p2_pow.myPow(0.00001, 2147483647));
+    }
+
     public double myPow(double x, int n) {
         if ((long) n >= 0) {
             return myPow_util(x, 1, n, n);
@@ -30,10 +35,5 @@ public class P2_Pow {
             return pow;
         }
         return myPow_neg_util(x, (1 / x) * (pow), n, i + 1);
-    }
-
-    public static void main(String[] args) {
-        P2_Pow p2_pow = new P2_Pow();
-        System.out.println(p2_pow.myPow(0.00001, 2147483647));
     }
 }

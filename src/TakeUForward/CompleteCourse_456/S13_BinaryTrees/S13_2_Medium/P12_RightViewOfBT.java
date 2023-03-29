@@ -14,6 +14,22 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  * lc: <a href="https://leetcode.com/problems/binary-tree-right-side-view/solutions/">...</a>
  */
 public class P12_RightViewOfBT {
+    public static void main(String[] args) {
+        P12_RightViewOfBT p12_rightViewOfBT = new P12_RightViewOfBT();
+
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        System.out.println(p12_rightViewOfBT.rightViewOfBT_iterative(root));
+
+        System.out.println(p12_rightViewOfBT.rightViewOfBT_recursive(root));
+    }
+
     /**
      * Right View Iterative way
      * TC: O(N)
@@ -80,21 +96,5 @@ public class P12_RightViewOfBT {
             rightViewOfBT_util_recursive(curr.right, arrList, count + 1);
             rightViewOfBT_util_recursive(curr.left, arrList, count + 1);
         }
-    }
-
-    public static void main(String[] args) {
-        P12_RightViewOfBT p12_rightViewOfBT = new P12_RightViewOfBT();
-
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        System.out.println(p12_rightViewOfBT.rightViewOfBT_iterative(root));
-
-        System.out.println(p12_rightViewOfBT.rightViewOfBT_recursive(root));
     }
 }

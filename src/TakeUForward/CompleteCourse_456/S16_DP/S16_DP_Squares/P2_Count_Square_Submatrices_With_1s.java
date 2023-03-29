@@ -12,6 +12,13 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_DP_Squares;
  */
 public class P2_Count_Square_Submatrices_With_1s {
 
+    public static void main(String[] args) {
+        P2_Count_Square_Submatrices_With_1s p2_count_square_submatrices_with_1s =
+            new P2_Count_Square_Submatrices_With_1s();
+        int[][] mat = {{0, 1, 1, 1}, {1, 1, 1, 1}, {0, 1, 1, 1}};
+        System.out.println(p2_count_square_submatrices_with_1s.countSquares(3, 4, mat));
+    }
+
     /**
      * TC: O(2*N*M)
      * SC: O(1)
@@ -40,12 +47,5 @@ public class P2_Count_Square_Submatrices_With_1s {
         }
 
         return countOfSquares;
-    }
-
-    public static void main(String[] args) {
-        P2_Count_Square_Submatrices_With_1s p2_count_square_submatrices_with_1s =
-            new P2_Count_Square_Submatrices_With_1s();
-        int[][] mat = {{0, 1, 1, 1}, {1, 1, 1, 1}, {0, 1, 1, 1}};
-        System.out.println(p2_count_square_submatrices_with_1s.countSquares(3, 4, mat));
     }
 }

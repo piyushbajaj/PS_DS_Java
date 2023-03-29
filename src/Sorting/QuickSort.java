@@ -42,6 +42,40 @@ package Sorting;
  */
 public class QuickSort {
 
+    static void arrayMethod(int[] a) {
+        int[] b = new int[5];
+        a = b;
+    }
+
+    ///This is done considering that last element is the pivot
+
+    // All elements lesser than Pivot are moving in left and greater than Pivot are moving right
+    // O(N) time for first time
+
+    public static void main(String[] args) {
+        QuickSort QS = new QuickSort();
+        //int[] arr = {10, 80, 30, 90, 40, 50, 70};
+//        int[] arr = {4, 5, 3, 2, 1, 7, 6};
+        int[] arr = {12, 3, 5, 7, 4, 19, 26};
+        int low = 0;
+        int high = arr.length - 1;
+        System.out.println("Original Array: ");
+        QS.printArray(arr);
+        System.out.println("After applying Quick Sort in an Array: ");
+        QS.quickSort(arr, low, high);
+        QS.printArray(arr);
+
+        int[] arr1 = new int[10];
+        arrayMethod(arr1);
+        System.out.println(arr1.length);
+
+
+//        System.out.println(i[0]);
+
+        // QS.quickSort_prac(arr, low, high);
+        //QS.printArray(arr);
+    }
+
     public int[] quickSort(int[] arr, int low, int high) {
 
         if (low < high) {
@@ -54,11 +88,6 @@ public class QuickSort {
         }
         return arr;
     }
-
-    ///This is done considering that last element is the pivot
-
-    // All elements lesser than Pivot are moving in left and greater than Pivot are moving right
-    // O(N) time for first time
 
     public int partition(int[] arr, int low, int high) {
         int pivot = arr[high];
@@ -87,35 +116,6 @@ public class QuickSort {
             System.out.print(arr[i] + " ");
         }
         System.out.println();
-    }
-
-    static void arrayMethod(int[] a) {
-        int[] b = new int[5];
-        a = b;
-    }
-
-    public static void main(String[] args) {
-        QuickSort QS = new QuickSort();
-        //int[] arr = {10, 80, 30, 90, 40, 50, 70};
-//        int[] arr = {4, 5, 3, 2, 1, 7, 6};
-        int[] arr = {12, 3, 5, 7, 4, 19, 26};
-        int low = 0;
-        int high = arr.length - 1;
-        System.out.println("Original Array: ");
-        QS.printArray(arr);
-        System.out.println("After applying Quick Sort in an Array: ");
-        QS.quickSort(arr, low, high);
-        QS.printArray(arr);
-
-        int[] arr1 = new int[10];
-        arrayMethod(arr1);
-        System.out.println(arr1.length);
-
-
-//        System.out.println(i[0]);
-
-        // QS.quickSort_prac(arr, low, high);
-        //QS.printArray(arr);
     }
 
     //practice

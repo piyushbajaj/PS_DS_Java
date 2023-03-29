@@ -14,6 +14,13 @@ import java.util.Arrays;
  */
 public class P11_Rotate_Array {
 
+    public static void main(String[] args) {
+        P11_Rotate_Array p11_rotate_array = new P11_Rotate_Array();
+        int[] nums = {1, 2, 3, 4, 5, 6, 7};
+        p11_rotate_array.rotate(nums, 3);
+        System.out.println(Arrays.toString(nums));
+    }
+
     /**
      * Rotate array by right for k steps
      * <p>
@@ -48,12 +55,5 @@ public class P11_Rotate_Array {
             start++;
             end--;
         }
-    }
-
-    public static void main(String[] args) {
-        P11_Rotate_Array p11_rotate_array = new P11_Rotate_Array();
-        int[] nums = {1, 2, 3, 4, 5, 6, 7};
-        p11_rotate_array.rotate(nums, 3);
-        System.out.println(Arrays.toString(nums));
     }
 }

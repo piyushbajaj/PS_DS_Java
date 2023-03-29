@@ -17,6 +17,23 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  */
 public class P8_BT_Inorder_Preorder {
 
+    public static void main(String[] args) {
+        P8_BT_Inorder_Preorder p8_bt_inorder_preorder = new P8_BT_Inorder_Preorder();
+        P5_Levelorder_Itr_Traversal p5_levelorder_itr_traversal = new P5_Levelorder_Itr_Traversal();
+
+        int[] preOrder = {4, 2, 1, 3, 6, 5, 7};
+        int[] inOrder = {1, 2, 3, 4, 5, 6, 7};
+
+//        p8_bt_inorder_preorder.constructBT(preOrder, inOrder);
+//        System.out.println(p5_levelorder_itr_traversal.levelOrderTraversal_iterative(
+//            p8_bt_inorder_preorder.constructBT(preOrder, inOrder)));
+
+        System.out.println(p5_levelorder_itr_traversal.levelOrderTraversal_iterative(
+            p8_bt_inorder_preorder.constructBT_map(preOrder, inOrder)));
+
+
+    }
+
     /**
      * Approach:
      * 1. Will go one by one index wise in the pre-order order, and the one that matches with in-order will extract
@@ -94,22 +111,5 @@ public class P8_BT_Inorder_Preorder {
             inOrder, inStart + inOrderIndexDiff + 1, inEnd, inOrderMap);
 
         return curr;
-    }
-
-    public static void main(String[] args) {
-        P8_BT_Inorder_Preorder p8_bt_inorder_preorder = new P8_BT_Inorder_Preorder();
-        P5_Levelorder_Itr_Traversal p5_levelorder_itr_traversal = new P5_Levelorder_Itr_Traversal();
-
-        int[] preOrder = {4, 2, 1, 3, 6, 5, 7};
-        int[] inOrder = {1, 2, 3, 4, 5, 6, 7};
-
-//        p8_bt_inorder_preorder.constructBT(preOrder, inOrder);
-//        System.out.println(p5_levelorder_itr_traversal.levelOrderTraversal_iterative(
-//            p8_bt_inorder_preorder.constructBT(preOrder, inOrder)));
-
-        System.out.println(p5_levelorder_itr_traversal.levelOrderTraversal_iterative(
-            p8_bt_inorder_preorder.constructBT_map(preOrder, inOrder)));
-
-
     }
 }

@@ -20,6 +20,6 @@ public class P2_SumOfAllOddLengthSubArrays {
     }
 
     public static void main(String[] args) {
-        System.out.println(sumOddLengthSubarrays(new int[]{1, 4, 2, 5, 3}));
+        System.out.println(sumOddLengthSubarrays(new int[] {1, 4, 2, 5, 3}));
     }
 }

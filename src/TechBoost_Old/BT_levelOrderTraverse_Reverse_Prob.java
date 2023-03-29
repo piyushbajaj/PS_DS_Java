@@ -12,58 +12,6 @@ import java.util.Stack;
 public class BT_levelOrderTraverse_Reverse_Prob {
     BTNode root;
 
-    static class BTNode{
-        BTNode left, right;
-        int data;
-
-        BTNode(int data){
-            this.data = data;
-            left = null;
-            right = null;
-        }
-    }
-
-    public void printBFS(BTNode key){
-        if(key == null)
-            return;
-
-        Queue<BTNode> queue = new LinkedList<>();
-        queue.add(key);
-
-        while (!queue.isEmpty()){
-            BTNode curr = queue.remove();
-            System.out.print(curr.data + " ");
-            if(curr.left!=null)
-                queue.add(curr.left);
-            if(curr.right!=null)
-                queue.add(curr.right);
-        }
-    }
-
-    public void reverse_BFS(BTNode key){
-        if(key == null)
-            return;
-
-        Queue<BTNode> queue = new LinkedList<>();
-        Stack<BTNode> stack = new Stack<>();
-        queue.add(key);
-
-        while (!queue.isEmpty()){
-            BTNode curr = queue.remove();
-            if(curr.left!=null)
-                queue.add(curr.left);
-            if(curr.right!=null)
-                queue.add(curr.right);
-
-            stack.add(curr);
-        }
-
-        while (!stack.isEmpty()){
-            System.out.print(stack.pop().data + " ");
-        }
-
-    }
-
     public static void main(String[] args) {
         BT_levelOrderTraverse_Reverse_Prob BT = new BT_levelOrderTraverse_Reverse_Prob();
         BT.root = new BTNode(1);
@@ -80,5 +28,63 @@ public class BT_levelOrderTraverse_Reverse_Prob {
         BT.printBFS(BT.root);
         System.out.println("Printing Stack in reverse order: ");
         BT.reverse_BFS(BT.root);
+    }
+
+    public void printBFS(BTNode key) {
+        if (key == null) {
+            return;
+        }
+
+        Queue<BTNode> queue = new LinkedList<>();
+        queue.add(key);
+
+        while (!queue.isEmpty()) {
+            BTNode curr = queue.remove();
+            System.out.print(curr.data + " ");
+            if (curr.left != null) {
+                queue.add(curr.left);
+            }
+            if (curr.right != null) {
+                queue.add(curr.right);
+            }
+        }
+    }
+
+    public void reverse_BFS(BTNode key) {
+        if (key == null) {
+            return;
+        }
+
+        Queue<BTNode> queue = new LinkedList<>();
+        Stack<BTNode> stack = new Stack<>();
+        queue.add(key);
+
+        while (!queue.isEmpty()) {
+            BTNode curr = queue.remove();
+            if (curr.left != null) {
+                queue.add(curr.left);
+            }
+            if (curr.right != null) {
+                queue.add(curr.right);
+            }
+
+            stack.add(curr);
+        }
+
+        while (!stack.isEmpty()) {
+            System.out.print(stack.pop().data + " ");
+        }
+
+    }
+
+    static class BTNode {
+        BTNode left, right;
+        int data;
+
+        BTNode(int data) {
+            this.data = data;
+            left = null;
+            right = null;
+        }
     }
 }

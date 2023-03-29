@@ -14,6 +14,10 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_1_1D_DP;
 public class P2_Count_Ways_Stair {
     //Function to count number of ways to reach the nth stair.
 
+    public static void main(String[] args) {
+
+    }
+
     /**
      * Recursion
      *
@@ -42,9 +46,5 @@ public class P2_Count_Ways_Stair {
         }
 
         return fib;
-    }
-
-    public static void main(String[] args) {
-
     }
 }

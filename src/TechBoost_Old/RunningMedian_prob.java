@@ -12,35 +12,30 @@ public class RunningMedian_prob {
 
     static MaxHeap maxHeap = new MaxHeap(100);
 
-    public static double calculate_median(int value, double median){
+    public static double calculate_median(int value, double median) {
 
-        if(maxHeap.size > minHeap.size){
-            if(value >= median){
+        if (maxHeap.size > minHeap.size) {
+            if (value >= median) {
                 minHeap.insert(value);
-            }
-            else {
+            } else {
                 minHeap.insert(maxHeap.extractMax());
                 maxHeap.insert(value);
             }
-            median = (maxHeap.getMax() + minHeap.getMin())/2;
-        }
-        else if(maxHeap.size < minHeap.size){
-            if(value > median){
+            median = (maxHeap.getMax() + minHeap.getMin()) / 2;
+        } else if (maxHeap.size < minHeap.size) {
+            if (value > median) {
                 //Need to push the top value of minheap to maxHeap
                 maxHeap.insert(minHeap.extractMin());
                 minHeap.insert(value);
-            }
-            else {
+            } else {
                 maxHeap.insert(value);
             }
-            median = ((double) maxHeap.getMax() + (double) minHeap.getMin())/2;
-        }
-        else {
-            if(value >= median){
+            median = ((double) maxHeap.getMax() + (double) minHeap.getMin()) / 2;
+        } else {
+            if (value >= median) {
                 minHeap.insert(value);
                 median = minHeap.getMin();
-            }
-            else {
+            } else {
                 maxHeap.insert(value);
                 median = maxHeap.getMax();
             }
@@ -58,7 +53,7 @@ public class RunningMedian_prob {
 //        maxHeap.insert(10);
 //        System.out.println(maxHeap.getMax());
 
-        for(int i = 0; i < arr.length; i++){
+        for (int i = 0; i < arr.length; i++) {
             median = calculate_median(arr[i], median);
             System.out.println(median);
         }

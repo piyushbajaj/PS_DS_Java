@@ -1,35 +1,43 @@
 package CrackingCoding;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Stack;
 
 /**
  * Created by piyush.bajaj on 24/02/18.
  */
 public class test {
-    int i =1;
+    int i = 1;
+
     {
         i = 2;
     }
 
-    test(){
-        i =3;
-    }
-
-    test(int i){
-        this.i = i;
-    }
     {
         i = 4;
     }
 
-    public void print(){
-        System.out.print(i);
+    test() {
+        i = 3;
     }
 
-    static void doIt(int x, int y, int m){
-        if(x == 5) m = y;
-        else
+    test(int i) {
+        this.i = i;
+    }
+
+    static void doIt(int x, int y, int m) {
+        if (x == 5) {
+            m = y;
+        } else {
             m = x;
+        }
 
 
     }
@@ -40,13 +48,15 @@ public class test {
         int[] result = new int[n];
 
         HashMap<Integer, Integer> hashMap = new HashMap<>();
-        for(int i = 0; i < n;i++){
+        for (int i = 0; i < n; i++) {
             String s = Integer.toBinaryString(elements[i]);
             int strlen = s.length();
 
             int count = 0;
-            for(int j = 0; j < strlen; j++){
-                if(s.charAt(j) == '1') count++;
+            for (int j = 0; j < strlen; j++) {
+                if (s.charAt(j) == '1') {
+                    count++;
+                }
             }
             hashMap.put(elements[i], count);
         }
@@ -56,25 +66,24 @@ public class test {
         Collections.sort(list, new Comparator() {
             public int compare(Object o1, Object o2) {
                 return ((Comparable) ((Map.Entry) (o1)).getValue())
-                        .compareTo(((Map.Entry) (o2)).getValue());
+                    .compareTo(((Map.Entry) (o2)).getValue());
             }
         });
 
         // Here I am copying the sorted list in HashMap
         // using LinkedHashMap to preserve the insertion order
         HashMap sortedHashMap = new LinkedHashMap();
-        int i =0;
-        for (Iterator it = list.iterator(); it.hasNext();) {
+        int i = 0;
+        for (Iterator it = list.iterator(); it.hasNext(); ) {
             Map.Entry entry = (Map.Entry) it.next();
             sortedHashMap.put(entry.getKey(), entry.getValue());
-            result[i++] = (int)entry.getKey();
+            result[i++] = (int) entry.getKey();
         }
         //return sortedHashMap;
 
 
         return result;
     }
-
 
     static int[] balancedOrNot(String[] expressions, int[] maxReplacements) {
         Stack<Character> stack = new Stack<>();
@@ -83,36 +92,32 @@ public class test {
         boolean flag = true;
         int[] result = new int[expressions.length];
 
-        for(int i = 0; i < expressions.length; i++){
-            for(int j = 0; j < expressions[i].length(); j++){
-                if(expressions[i].charAt(j) == '<')
+        for (int i = 0; i < expressions.length; i++) {
+            for (int j = 0; j < expressions[i].length(); j++) {
+                if (expressions[i].charAt(j) == '<') {
                     stack.push('<');
-                else if(expressions[i].charAt(j) == '>'){
-                    if(!stack.isEmpty() && stack.peek() == '<')
+                } else if (expressions[i].charAt(j) == '>') {
+                    if (!stack.isEmpty() && stack.peek() == '<') {
                         stack.pop();
-                    else if(maxReplacements[i] > 0) {
+                    } else if (maxReplacements[i] > 0) {
                         maxReplacements[i]--;
                         continue;
                         //stringBuffer.append('>');
-                    }
-                    else if(maxReplacements[i] <= 0){
+                    } else if (maxReplacements[i] <= 0) {
                         flag = false;
                         break;
                     }
                 }
             }
-            if(flag)
+            if (flag) {
                 result[i] = 1;
-            else
+            } else {
                 result[i] = 0;
+            }
         }
 
         return result;
     }
-
-
-
-    //java.util.List ints = new java.util.List<Integer>();
 
     public static void main(String[] args) {
         String[] expressions = {"<>>>", "<>>>>"};
@@ -192,8 +197,15 @@ public class test {
 ////        }
     }
 
-    public static void badMethod(){
 
+    //java.util.List ints = new java.util.List<Integer>();
+
+    public static void badMethod() {
+
+    }
+
+    public void print() {
+        System.out.print(i);
     }
 
 //    static volatile Map<String, String> m;

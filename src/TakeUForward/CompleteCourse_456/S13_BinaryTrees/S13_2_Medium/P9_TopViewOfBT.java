@@ -15,14 +15,20 @@ import javafx.util.Pair;
  * Created by bajajp on 30 Sep, 2022
  */
 public class P9_TopViewOfBT {
-    static class Tuple {
-        TreeNode key;
-        int distance;
+    public static void main(String[] args) {
+        P9_TopViewOfBT p9_topViewOfBT = new P9_TopViewOfBT();
 
-        Tuple(TreeNode key, int distance) {
-            this.key = key;
-            this.distance = distance;
-        }
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        System.out.println(p9_topViewOfBT.topView(root));
+        System.out.println(p9_topViewOfBT.topView_better(root));
+        System.out.println(p9_topViewOfBT.topView_much_better(root));
     }
 
     /**
@@ -161,19 +167,13 @@ public class P9_TopViewOfBT {
         return result;
     }
 
-    public static void main(String[] args) {
-        P9_TopViewOfBT p9_topViewOfBT = new P9_TopViewOfBT();
+    static class Tuple {
+        TreeNode key;
+        int distance;
 
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        System.out.println(p9_topViewOfBT.topView(root));
-        System.out.println(p9_topViewOfBT.topView_better(root));
-        System.out.println(p9_topViewOfBT.topView_much_better(root));
+        Tuple(TreeNode key, int distance) {
+            this.key = key;
+            this.distance = distance;
+        }
     }
 }

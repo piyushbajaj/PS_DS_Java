@@ -13,6 +13,12 @@ import java.util.Map;
  */
 public class P2_Longest_Repeating_Char_Replacement {
 
+    public static void main(String[] args) {
+        P2_Longest_Repeating_Char_Replacement p2_longest_repeating_char_replacement =
+            new P2_Longest_Repeating_Char_Replacement();
+        System.out.println(p2_longest_repeating_char_replacement.characterReplacement("AABABBA", 1));
+    }
+
     /**
      * @param s
      * @param k
@@ -39,11 +45,5 @@ public class P2_Longest_Repeating_Char_Replacement {
         }
 
         return maxSoFar;
-    }
-
-    public static void main(String[] args) {
-        P2_Longest_Repeating_Char_Replacement p2_longest_repeating_char_replacement =
-            new P2_Longest_Repeating_Char_Replacement();
-        System.out.println(p2_longest_repeating_char_replacement.characterReplacement("AABABBA", 1));
     }
 }

@@ -8,24 +8,28 @@ public class SchoolMarkingSystem {
         int n = marks.length;
         int max = 0, count = 0;
 
-        for(int i = 0; i < n ; i++){
-            if(marks[i] < 0)
+        for (int i = 0; i < n; i++) {
+            if (marks[i] < 0) {
                 return -1;
-            if(marks[i] > max)
+            }
+            if (marks[i] > max) {
                 max = marks[i];
+            }
         }
 
-        int[] cntMarks = new int[max+1];
+        int[] cntMarks = new int[max + 1];
 
-        for(int i = 0; i <n; i++){
+        for (int i = 0; i < n; i++) {
             cntMarks[marks[i]]++;
         }
 
-        for(int i = max; i >=0; i--){
-            if(cntMarks[i]!=0)
+        for (int i = max; i >= 0; i--) {
+            if (cntMarks[i] != 0) {
                 count++;
-            if(count == rank)
+            }
+            if (count == rank) {
                 return i;
+            }
         }
 
         return -1;

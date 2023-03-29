@@ -4,6 +4,13 @@ import java.util.Arrays;
 
 public class InsertionSort extends BaseClass {
 
+    public static void main(String[] args) {
+        InsertionSort insertionSort = new InsertionSort();
+        int[] inputArr = {1, 3, 6, 2, 9, 5, 6};
+        insertionSort.insertionSort(inputArr);
+        System.out.println(Arrays.toString(inputArr));
+    }
+
     /**
      * It keeps sorting the arrays, by swapping
      * TC: O(N^2)
@@ -23,12 +30,5 @@ public class InsertionSort extends BaseClass {
             }
             arr[secondPtr] = temp;
         }
-    }
-
-    public static void main(String[] args) {
-        InsertionSort insertionSort = new InsertionSort();
-        int[] inputArr = {1, 3, 6, 2, 9, 5, 6};
-        insertionSort.insertionSort(inputArr);
-        System.out.println(Arrays.toString(inputArr));
     }
 }

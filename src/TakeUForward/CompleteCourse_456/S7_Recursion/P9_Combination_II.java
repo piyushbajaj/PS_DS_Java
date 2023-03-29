@@ -15,6 +15,12 @@ import java.util.List;
  */
 public class P9_Combination_II {
 
+    public static void main(String[] args) {
+        P9_Combination_II p9_combination_ii = new P9_Combination_II();
+        int[] arr = {10, 1, 2, 7, 6, 1, 5};
+        System.out.println(p9_combination_ii.combinationSum2(arr, 8));
+    }
+
     /**
      * Approach:
      * <p>
@@ -54,11 +60,5 @@ public class P9_Combination_II {
                 break;
             }
         }
-    }
-
-    public static void main(String[] args) {
-        P9_Combination_II p9_combination_ii = new P9_Combination_II();
-        int[] arr = {10, 1, 2, 7, 6, 1, 5};
-        System.out.println(p9_combination_ii.combinationSum2(arr, 8));
     }
 }

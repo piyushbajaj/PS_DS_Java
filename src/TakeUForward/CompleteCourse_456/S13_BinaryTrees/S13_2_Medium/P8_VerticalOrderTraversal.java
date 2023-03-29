@@ -21,6 +21,24 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  */
 public class P8_VerticalOrderTraversal {
 
+    public static void main(String[] args) {
+        P8_VerticalOrderTraversal p8_verticalOrderTraversal = new P8_VerticalOrderTraversal();
+
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(6);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        System.out.println(p8_verticalOrderTraversal.verticalOrderTraversal(root));
+
+        System.out.println(p8_verticalOrderTraversal.verticalOrderTraversal_better(root));
+
+        System.out.println(p8_verticalOrderTraversal.verticalOrderTraversal_improve(root));
+    }
+
     /**
      * The problem in this is everytime
      * arraylist needs to be sorted, hence it won't work out for every use case.
@@ -57,17 +75,6 @@ public class P8_VerticalOrderTraversal {
             }
             verticalOrderTraversal_util(curr.left, verticalOrderMap, distance - 1);
             verticalOrderTraversal_util(curr.right, verticalOrderMap, distance + 1);
-        }
-    }
-
-    static class Tuple {
-        TreeNode key;
-        int distance, level;
-
-        Tuple(TreeNode key, int distance, int level) {
-            this.key = key;
-            this.distance = distance;
-            this.level = level;
         }
     }
 
@@ -134,20 +141,6 @@ public class P8_VerticalOrderTraversal {
 
     }
 
-
-    /**
-     * G4G version: <a href="https://practice.geeksforgeeks.org/problems/print-a-binary-tree-in-vertical-order/0">...</a>
-     */
-    static class Pair {
-        TreeNode node;
-        int distance;
-
-        Pair(TreeNode node, int distance) {
-            this.node = node;
-            this.distance = distance;
-        }
-    }
-
     public List<List<Integer>> verticalOrderTraversal_improve(TreeNode curr) {
         List<List<Integer>> result = new ArrayList<>();
         if (curr == null) {
@@ -195,21 +188,27 @@ public class P8_VerticalOrderTraversal {
         return result;
     }
 
-    public static void main(String[] args) {
-        P8_VerticalOrderTraversal p8_verticalOrderTraversal = new P8_VerticalOrderTraversal();
+    static class Tuple {
+        TreeNode key;
+        int distance, level;
 
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(3);
-        root.left.left = new TreeNode(4);
-        root.left.right = new TreeNode(6);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
+        Tuple(TreeNode key, int distance, int level) {
+            this.key = key;
+            this.distance = distance;
+            this.level = level;
+        }
+    }
 
-        System.out.println(p8_verticalOrderTraversal.verticalOrderTraversal(root));
+    /**
+     * G4G version: <a href="https://practice.geeksforgeeks.org/problems/print-a-binary-tree-in-vertical-order/0">...</a>
+     */
+    static class Pair {
+        TreeNode node;
+        int distance;
 
-        System.out.println(p8_verticalOrderTraversal.verticalOrderTraversal_better(root));
-
-        System.out.println(p8_verticalOrderTraversal.verticalOrderTraversal_improve(root));
+        Pair(TreeNode node, int distance) {
+            this.node = node;
+            this.distance = distance;
+        }
     }
 }

@@ -5,6 +5,26 @@ import java.util.List;
 import java.util.Stack;
 
 public class DFSTraversal extends CommonUtils {
+    public static void main(String[] args) {
+        DFSTraversal dfsTraversal = new DFSTraversal();
+        dfsTraversal.root = new TreeNode(1);
+        dfsTraversal.root.left = new TreeNode(2);
+        dfsTraversal.root.right = new TreeNode(3);
+        dfsTraversal.root.left.left = new TreeNode(4);
+        dfsTraversal.root.left.right = new TreeNode(5);
+        dfsTraversal.root.right.left = new TreeNode(6);
+        dfsTraversal.root.right.right = new TreeNode(7);
+
+        System.out.println("PreOrder Recursion: " + dfsTraversal.preOrderRecur(dfsTraversal.root));
+        System.out.println("PreOrder Iterative: " + dfsTraversal.preOrderIterative(dfsTraversal.root));
+        System.out.println("Inorder Recursion: " + dfsTraversal.inOrderRecur(dfsTraversal.root));
+        System.out.println("Inorder Iterative: " + dfsTraversal.inOrderIterative(dfsTraversal.root));
+        System.out.println("Inorder Iterative Better: " + dfsTraversal.inOrderIterative_better(dfsTraversal.root));
+        System.out.println("PostOrder Recursive: " + dfsTraversal.postOrderRecur(dfsTraversal.root));
+        System.out.println("PostOrder Iterative: " + dfsTraversal.postOrderIterative(dfsTraversal.root));
+        System.out.println("PostOrder Iterative Better: " + dfsTraversal.postOrderIterative_better(dfsTraversal.root));
+    }
+
     /**
      * TC: O(N)
      * SC: O(N)
@@ -30,7 +50,9 @@ public class DFSTraversal extends CommonUtils {
     public List<Integer> preOrderIterative(TreeNode node) {
         List<Integer> res = new ArrayList<>();
 
-        if (node == null) return res;
+        if (node == null) {
+            return res;
+        }
 
         Stack<TreeNode> stack = new Stack<>();
         stack.push(node);
@@ -54,7 +76,9 @@ public class DFSTraversal extends CommonUtils {
      */
     public List<Integer> inOrderRecur(TreeNode node) {
         List<Integer> res = new ArrayList<>();
-        if (node == null) return res;
+        if (node == null) {
+            return res;
+        }
         inOrderRecur_Util(node, res);
         return res;
     }
@@ -145,7 +169,9 @@ public class DFSTraversal extends CommonUtils {
      */
     public List<Integer> postOrderIterative(TreeNode node) {
         List<Integer> res = new ArrayList<>();
-        if (node == null) return res;
+        if (node == null) {
+            return res;
+        }
 
         Stack<TreeNode> stack = new Stack<>();
         TreeNode prev = null, curr = null;
@@ -178,7 +204,9 @@ public class DFSTraversal extends CommonUtils {
         Stack<TreeNode> s2 = new Stack<>();
 
         List<Integer> res = new ArrayList<>();
-        if (node == null) return res;
+        if (node == null) {
+            return res;
+        }
         s1.push(node);
         TreeNode curr = null;
         while (!s1.isEmpty()) {
@@ -196,25 +224,5 @@ public class DFSTraversal extends CommonUtils {
             res.add(s2.pop().data);
         }
         return res;
-    }
-
-    public static void main(String[] args) {
-        DFSTraversal dfsTraversal = new DFSTraversal();
-        dfsTraversal.root = new TreeNode(1);
-        dfsTraversal.root.left = new TreeNode(2);
-        dfsTraversal.root.right = new TreeNode(3);
-        dfsTraversal.root.left.left = new TreeNode(4);
-        dfsTraversal.root.left.right = new TreeNode(5);
-        dfsTraversal.root.right.left = new TreeNode(6);
-        dfsTraversal.root.right.right = new TreeNode(7);
-
-        System.out.println("PreOrder Recursion: " + dfsTraversal.preOrderRecur(dfsTraversal.root));
-        System.out.println("PreOrder Iterative: " + dfsTraversal.preOrderIterative(dfsTraversal.root));
-        System.out.println("Inorder Recursion: " + dfsTraversal.inOrderRecur(dfsTraversal.root));
-        System.out.println("Inorder Iterative: " + dfsTraversal.inOrderIterative(dfsTraversal.root));
-        System.out.println("Inorder Iterative Better: " + dfsTraversal.inOrderIterative_better(dfsTraversal.root));
-        System.out.println("PostOrder Recursive: " + dfsTraversal.postOrderRecur(dfsTraversal.root));
-        System.out.println("PostOrder Iterative: " + dfsTraversal.postOrderIterative(dfsTraversal.root));
-        System.out.println("PostOrder Iterative Better: " + dfsTraversal.postOrderIterative_better(dfsTraversal.root));
     }
 }

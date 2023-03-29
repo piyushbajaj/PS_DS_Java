@@ -12,6 +12,11 @@ package CompanyWise.Foray;
  */
 public class P3_Longest_Common_Substring {
 
+    public static void main(String[] args) {
+        P3_Longest_Common_Substring p3_longest_common_substring = new P3_Longest_Common_Substring();
+        System.out.println(p3_longest_common_substring.longestCommonSubstr("abcd", "abzd", 4, 4));
+    }
+
     /**
      * Tabulation
      * TC: O(N*M)
@@ -36,10 +41,5 @@ public class P3_Longest_Common_Substring {
         }
 
         return max;
-    }
-
-    public static void main(String[] args) {
-        P3_Longest_Common_Substring p3_longest_common_substring = new P3_Longest_Common_Substring();
-        System.out.println(p3_longest_common_substring.longestCommonSubstr("abcd", "abzd", 4, 4));
     }
 }

@@ -11,6 +11,11 @@ package TakeUForward.Blind75.DynamicProgramming;
  * lc: <a href="https://leetcode.com/problems/house-robber-ii/description/">...</a>
  */
 public class P8_House_Robber_II {
+    public static void main(String[] args) {
+        P8_House_Robber_II p8_house_robber_ii = new P8_House_Robber_II();
+        System.out.println(p8_house_robber_ii.rob(new int[] {1, 2, 3, 1}));
+    }
+
     public int rob(int[] nums) {
         P7_House_Robber p7_house_robber = new P7_House_Robber();
 
@@ -30,10 +35,5 @@ public class P8_House_Robber_II {
         int t2 = p7_house_robber.rob_tab(temp);
 
         return Math.max(t1, t2);
-    }
-
-    public static void main(String[] args) {
-        P8_House_Robber_II p8_house_robber_ii = new P8_House_Robber_II();
-        System.out.println(p8_house_robber_ii.rob(new int[] {1, 2, 3, 1}));
     }
 }

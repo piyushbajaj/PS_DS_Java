@@ -10,6 +10,17 @@ public class Bitwise_Class {
     right hand side of operator is how many bits needs to shift
      */
 
+    public static void main(String[] args) {
+        Bitwise_Class BC = new Bitwise_Class();
+        BC.BitwiseUnaryComplement(2);
+        BC.BitwiseAndComplement(2, 10);
+        BC.BitwiseORComplement(2, 4);
+        BC.BitwiseXORComplement(2, 4);
+        BC.BitwiseLeftShift(8);
+        BC.BitwiseRightShift(8);
+        BC.BitwiseUnsignedRightShift(8);
+    }
+
     //Bitwise unary complement operator (~) Example
     public void BitwiseUnaryComplement(int number) {
 
@@ -17,7 +28,6 @@ public class Bitwise_Class {
         System.out.println(" value of number before: " + number);
         System.out.println(" value of number after negation: " + ~number);
     }
-
 
     //Bitwise AND operator (&) Example
     public void BitwiseAndComplement(int a, int b) {
@@ -27,6 +37,11 @@ public class Bitwise_Class {
         System.out.println(" value of number after Bitwise AND Complement: " + (a & b));
     }
 
+    //Bitwise XOR operator (^) Example
+    /*
+    Bitwise XOR operators will return 1 if both bits are different and return 0 if both bits are same.
+     */
+
     //Bitwise OR operator (|) Example
     public void BitwiseORComplement(int a, int b) {
 
@@ -34,11 +49,6 @@ public class Bitwise_Class {
         System.out.println(" value of number before: " + a + " " + b);
         System.out.println(" value of number after Bitwise OR Complement: " + (a | b));
     }
-
-    //Bitwise XOR operator (^) Example
-    /*
-    Bitwise XOR operators will return 1 if both bits are different and return 0 if both bits are same.
-     */
 
     public void BitwiseXORComplement(int a, int b) {
 
@@ -66,16 +76,5 @@ public class Bitwise_Class {
 
         System.out.println(" value of number before: " + number);
         System.out.println(" value of number after Bitwise Unsigned Right Shift: " + (number >>> 1));
-    }
-
-    public static void main(String[] args) {
-        Bitwise_Class BC = new Bitwise_Class();
-        BC.BitwiseUnaryComplement(2);
-        BC.BitwiseAndComplement(2, 10);
-        BC.BitwiseORComplement(2, 4);
-        BC.BitwiseXORComplement(2, 4);
-        BC.BitwiseLeftShift(8);
-        BC.BitwiseRightShift(8);
-        BC.BitwiseUnsignedRightShift(8);
     }
 }

@@ -15,6 +15,11 @@ import java.util.List;
  */
 public class P6_Combination_Sum {
 
+    public static void main(String[] args) {
+        P6_Combination_Sum p6_combination_sum = new P6_Combination_Sum();
+        System.out.println(p6_combination_sum.combinationSum_recur(new int[] {2, 3, 6, 7}, 7));
+    }
+
     /**
      * This is a recursive problem, where we either pick an element or don't pick
      * TC: O(2^N)
@@ -55,10 +60,5 @@ public class P6_Combination_Sum {
 
         // don't pick element
         combinationSum_recur_util(result, subResult, index + 1, target, candidates);
-    }
-
-    public static void main(String[] args) {
-        P6_Combination_Sum p6_combination_sum = new P6_Combination_Sum();
-        System.out.println(p6_combination_sum.combinationSum_recur(new int[] {2, 3, 6, 7}, 7));
     }
 }

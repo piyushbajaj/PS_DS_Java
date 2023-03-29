@@ -13,6 +13,21 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  */
 public class P1_HeightOfTree {
 
+    public static void main(String[] args) {
+        P1_HeightOfTree p1_heightOfTree = new P1_HeightOfTree();
+
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        System.out.println("Calculating Height of Binary Tree Recursively: " + p1_heightOfTree.height_recur(root));
+        System.out.println("Calculating Height of Binary Tree Iteratively: " + p1_heightOfTree.height_iterative(root));
+    }
+
     /**
      * Calculating Height recursively
      * TC: O(N)
@@ -70,20 +85,5 @@ public class P1_HeightOfTree {
                 nodeCount--;
             }
         }
-    }
-
-    public static void main(String[] args) {
-        P1_HeightOfTree p1_heightOfTree = new P1_HeightOfTree();
-
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        System.out.println("Calculating Height of Binary Tree Recursively: " + p1_heightOfTree.height_recur(root));
-        System.out.println("Calculating Height of Binary Tree Iteratively: " + p1_heightOfTree.height_iterative(root));
     }
 }

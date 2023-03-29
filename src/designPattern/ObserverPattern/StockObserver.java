@@ -3,19 +3,17 @@ package designPattern.ObserverPattern;
 /**
  * Created by piyush.bajaj on 12/02/17.
  */
-public class StockObserver implements Observer{
+public class StockObserver implements Observer {
 
+    private static int observerIDTracker = 0;
     private double ibmPrice;
     private double applPrice;
     private double googPrice;
-
-    private static int observerIDTracker = 0;
-
     private int observerID;
 
     private Subject stockGrabber;
 
-    public StockObserver(Subject stockGrabber){
+    public StockObserver(Subject stockGrabber) {
         this.stockGrabber = stockGrabber;
         this.observerID = ++observerIDTracker;
         System.out.println("New Observer " + this.observerID);
@@ -32,7 +30,7 @@ public class StockObserver implements Observer{
         printThePrices();
     }
 
-    public void printThePrices(){
+    public void printThePrices() {
         System.out.println(observerID + "\nIBM: " + ibmPrice + "\nApple: " + applPrice + "\nGoogle: " + googPrice);
     }
 }

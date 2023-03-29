@@ -11,6 +11,12 @@ import java.util.Arrays;
  * Time: 7:50 pm
  */
 public class P4_ProductArray {
+    public static void main(String[] args) {
+        P4_ProductArray p4_productArray = new P4_ProductArray();
+        int[] arr = {-1, 1, 0, -3, 3};
+        System.out.println(Arrays.toString(p4_productArray.productExceptSelf(arr)));
+    }
+
     public int[] productExceptSelf(int[] nums) {
         int n = nums.length;
         int[] left = new int[n];
@@ -32,11 +38,5 @@ public class P4_ProductArray {
         }
 
         return nums;
-    }
-
-    public static void main(String[] args) {
-        P4_ProductArray p4_productArray = new P4_ProductArray();
-        int[] arr = {-1, 1, 0, -3, 3};
-        System.out.println(Arrays.toString(p4_productArray.productExceptSelf(arr)));
     }
 }

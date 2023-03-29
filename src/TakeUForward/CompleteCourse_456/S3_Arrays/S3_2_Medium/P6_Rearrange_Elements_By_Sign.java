@@ -9,6 +9,10 @@ package TakeUForward.CompleteCourse_456.S3_Arrays.S3_2_Medium;
  * Time: 2:50 pm
  */
 public class P6_Rearrange_Elements_By_Sign {
+    public static void main(String[] args) {
+
+    }
+
     public int[] rearrangeArray(int[] nums) {
         int n = nums.length;
 
@@ -31,9 +35,5 @@ public class P6_Rearrange_Elements_By_Sign {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
-    }
-
-    public static void main(String[] args) {
-
     }
 }

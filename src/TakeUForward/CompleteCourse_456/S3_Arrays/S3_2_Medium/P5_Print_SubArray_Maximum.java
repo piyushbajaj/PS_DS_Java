@@ -7,10 +7,15 @@ package TakeUForward.CompleteCourse_456.S3_Arrays.S3_2_Medium;
  * User: piyushbajaj
  * Date: 26/12/22
  * Time: 1:50 pm
- *
+ * <p>
  * g4g: <a href="https://practice.geeksforgeeks.org/problems/max-sum-in-sub-arrays0824/0">...</a>
  */
 public class P5_Print_SubArray_Maximum {
+    public static void main(String[] args) {
+        P5_Print_SubArray_Maximum p5_print_subArray_maximum = new P5_Print_SubArray_Maximum();
+        System.out.println(p5_print_subArray_maximum.pairWithMaxSum(new long[] {4, 3, 1, 5, 6}, 5));
+    }
+
     public long pairWithMaxSum(long arr[], long N) {
 
         long maxSoFar = Integer.MIN_VALUE;
@@ -20,10 +25,5 @@ public class P5_Print_SubArray_Maximum {
         }
 
         return maxSoFar;
-    }
-
-    public static void main(String[] args) {
-        P5_Print_SubArray_Maximum p5_print_subArray_maximum = new P5_Print_SubArray_Maximum();
-        System.out.println(p5_print_subArray_maximum.pairWithMaxSum(new long[] {4, 3, 1, 5, 6}, 5));
     }
 }

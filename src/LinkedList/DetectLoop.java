@@ -8,55 +8,6 @@ import java.util.HashMap;
 public class DetectLoop {
 
     Node head;
-    static class Node
-    {
-        int data;
-        Node next;
-
-        //Constructor to create a new node
-        //Next is by default initialized as null
-
-        Node(int d){
-            data = d;
-            next = null;
-        }
-    }
-
-
-
-    public void checkLoop(){
-        Node slow_p = head;
-        Node fast_p = head;
-        while (slow_p != null && fast_p != null && fast_p.next != null) {
-            slow_p = slow_p.next;
-            fast_p = fast_p.next.next;
-            if (slow_p == fast_p) {
-                System.out.println("Found loop");
-                System.out.println("Found loop at " + slow_p.data);
-                System.exit(1);
-            }
-        }
-        System.out.println("No loop");
-    }
-
-    public void checkLoop_hash(){
-        Node Nd = head;
-
-        HashMap<Integer, Boolean> hash = new HashMap<>();
-        hash.put(Nd.data, true);
-        while(Nd.next!=null){
-            if(hash.containsKey(Nd.next.data)){
-                System.out.println("Found loop");
-                return;
-            }
-            else {
-                hash.put(Nd.next.data, true);
-                Nd = Nd.next;
-            }
-        }
-        System.out.println("No loop");
-    }
-
 
     public static void main(String[] args) {
         DetectLoop llist = new DetectLoop();
@@ -77,21 +28,67 @@ public class DetectLoop {
         //llist.returnNthNode(3);
     }
 
-    public void prac_checkLoop(){
-        if(head == null)
+    public void checkLoop() {
+        Node slow_p = head;
+        Node fast_p = head;
+        while (slow_p != null && fast_p != null && fast_p.next != null) {
+            slow_p = slow_p.next;
+            fast_p = fast_p.next.next;
+            if (slow_p == fast_p) {
+                System.out.println("Found loop");
+                System.out.println("Found loop at " + slow_p.data);
+                System.exit(1);
+            }
+        }
+        System.out.println("No loop");
+    }
+
+    public void checkLoop_hash() {
+        Node Nd = head;
+
+        HashMap<Integer, Boolean> hash = new HashMap<>();
+        hash.put(Nd.data, true);
+        while (Nd.next != null) {
+            if (hash.containsKey(Nd.next.data)) {
+                System.out.println("Found loop");
+                return;
+            } else {
+                hash.put(Nd.next.data, true);
+                Nd = Nd.next;
+            }
+        }
+        System.out.println("No loop");
+    }
+
+    public void prac_checkLoop() {
+        if (head == null) {
             return;
+        }
 
         Node slow_ptr = head;
         Node fast_ptr = head;
 
-        while (slow_ptr!=null && fast_ptr!=null && slow_ptr.next!=null && fast_ptr.next!=null){
+        while (slow_ptr != null && fast_ptr != null && slow_ptr.next != null && fast_ptr.next != null) {
             slow_ptr = slow_ptr.next;
             fast_ptr = fast_ptr.next.next;
 
-            if(slow_ptr.data == fast_ptr.data){
+            if (slow_ptr.data == fast_ptr.data) {
                 System.out.print("We found a loop" + fast_ptr.data);
                 return;
             }
+        }
+    }
+
+    static class Node {
+        int data;
+        Node next;
+
+        //Constructor to create a new node
+        //Next is by default initialized as null
+
+        Node(int d) {
+            data = d;
+            next = null;
         }
     }
 }

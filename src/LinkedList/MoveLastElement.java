@@ -6,19 +6,18 @@ package LinkedList;
 public class MoveLastElement {
     Node head; //head of the list
 
-    /* Linked List LinkedList.Node*/
-    static class Node
-    {
-        int data;
-        Node next;
-
-        //Constructor to create a new node
-        //Next is by default initialized as null
-
-        Node(int d){
-            data = d;
-            next = null;
-        }
+    public static void main(String[] args) {
+        MoveLastElement list = new MoveLastElement();
+        list.head = new Node(1);
+        list.head.next = new Node(2);
+        list.head.next.next = new Node(3);
+        list.head.next.next.next = new Node(4);
+        list.head.next.next.next.next = new Node(5);
+        System.out.println("Original Linked List is: ");
+        list.printList(list.head);
+        System.out.println("\n");
+        list.moveLastElementToFront();
+        list.printList(list.head);
     }
 
     void printList(Node node) {
@@ -28,12 +27,12 @@ public class MoveLastElement {
         }
     }
 
-    void moveLastElementToFront(){
+    void moveLastElementToFront() {
         Node Nd = head;
         Node temp_Nd, tem = null;
-        if(Nd==null)
+        if (Nd == null) {
             return;
-
+        }
 
 
 //        //This swapping is done without Address
@@ -47,7 +46,7 @@ public class MoveLastElement {
 //        head.data = temp;
 
         //This swapping is done with Address
-        while (Nd.next.next != null){
+        while (Nd.next.next != null) {
             Nd = Nd.next;
         }
 
@@ -59,17 +58,17 @@ public class MoveLastElement {
 
     }
 
-    public static void main(String[] args) {
-        MoveLastElement list = new MoveLastElement();
-        list.head = new Node(1);
-        list.head.next = new Node(2);
-        list.head.next.next = new Node(3);
-        list.head.next.next.next = new Node(4);
-        list.head.next.next.next.next = new Node(5);
-        System.out.println("Original Linked List is: ");
-        list.printList(list.head);
-        System.out.println("\n");
-        list.moveLastElementToFront();
-        list.printList(list.head);
+    /* Linked List LinkedList.Node*/
+    static class Node {
+        int data;
+        Node next;
+
+        //Constructor to create a new node
+        //Next is by default initialized as null
+
+        Node(int d) {
+            data = d;
+            next = null;
+        }
     }
 }

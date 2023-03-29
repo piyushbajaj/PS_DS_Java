@@ -33,10 +33,11 @@ public class rotatedArrayClass {
             subArr2[i] = arr[pivot + 1 + i];
         }
 
-        if (key < subArr1[0])
+        if (key < subArr1[0]) {
             binaryLook(subArr2, key, (pivot + 1));
-        else
+        } else {
             binaryLook(subArr1, key, 0);
+        }
 
     }
 
@@ -60,78 +61,14 @@ public class rotatedArrayClass {
         }
     }
 
-    public void rotateArrayByKey(int[] arr, int d, int n) {
-        int[] subArr1 = new int[d];
-        int[] subArr2 = new int[n - d];
-        int N1 = subArr1.length;
-        int N2 = subArr2.length;
-
-        for (int i = 0; i < N1; i++) {
-            subArr1[i] = arr[i];
-        }
-
-        for (int i = 0; i < N2; i++) {
-            subArr2[i] = arr[i + d];
-        }
-
-        for (int i = 0; i < N2; i++) {
-            arr[i] = subArr2[i];
-        }
-
-        for (int i = 0; i < d; i++) {
-            arr[N2] = subArr1[i];
-            N2++;
-        }
-    }
-
-
-    //Rotate one by one. This consume less space.
-    public void leftRotate(int[] arr, int d, int n) {
-        for (int i = 0; i < d; i++)
-            leftRotateByOne(arr, n);
-    }
-
-    public void rightRotate(int[] arr, int d, int n) {
-        for (int i = 0; i < d; i++)
-            rightRotateByOne(arr, n);
-    }
-
-    public void leftRotateByOne(int[] arr, int n) {
-        int i;
-        int temp = arr[0];
-        for (i = 0; i < n - 1; i++) {
-            arr[i] = arr[i + 1];
-        }
-        arr[i] = temp;
-    }
-
-    public void rightRotateByOne(int[] arr, int n) {
-        int i;
-        int temp = arr[n - 1];
-        for (i = n - 1; i > 0; i--) {
-            arr[i] = arr[i - 1];
-        }
-        arr[i] = temp;
-    }
-
-    public void printArray(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println();
-    }
-
-
     public static void main(String[] args) {
         rotatedArrayClass RA = new rotatedArrayClass();
 
-        System.out.println(5%2);
+        System.out.println(5 % 2);
 
         int[] a = {3, 4, 5, 1, 2};
         int key = 1;
         rotatedArray(a, key);
-
-
 
 
         Scanner s = new Scanner(System.in);
@@ -158,5 +95,67 @@ public class rotatedArrayClass {
         RA.printArray(arr);
 
 
+    }
+
+    public void rotateArrayByKey(int[] arr, int d, int n) {
+        int[] subArr1 = new int[d];
+        int[] subArr2 = new int[n - d];
+        int N1 = subArr1.length;
+        int N2 = subArr2.length;
+
+        for (int i = 0; i < N1; i++) {
+            subArr1[i] = arr[i];
+        }
+
+        for (int i = 0; i < N2; i++) {
+            subArr2[i] = arr[i + d];
+        }
+
+        for (int i = 0; i < N2; i++) {
+            arr[i] = subArr2[i];
+        }
+
+        for (int i = 0; i < d; i++) {
+            arr[N2] = subArr1[i];
+            N2++;
+        }
+    }
+
+    //Rotate one by one. This consume less space.
+    public void leftRotate(int[] arr, int d, int n) {
+        for (int i = 0; i < d; i++) {
+            leftRotateByOne(arr, n);
+        }
+    }
+
+    public void rightRotate(int[] arr, int d, int n) {
+        for (int i = 0; i < d; i++) {
+            rightRotateByOne(arr, n);
+        }
+    }
+
+    public void leftRotateByOne(int[] arr, int n) {
+        int i;
+        int temp = arr[0];
+        for (i = 0; i < n - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        arr[i] = temp;
+    }
+
+    public void rightRotateByOne(int[] arr, int n) {
+        int i;
+        int temp = arr[n - 1];
+        for (i = n - 1; i > 0; i--) {
+            arr[i] = arr[i - 1];
+        }
+        arr[i] = temp;
+    }
+
+    public void printArray(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
     }
 }

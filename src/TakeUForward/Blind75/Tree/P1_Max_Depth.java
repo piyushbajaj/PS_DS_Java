@@ -12,18 +12,6 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  * lc: <a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/">...</a>
  */
 public class P1_Max_Depth {
-    public int maxDepth(TreeNode node) {
-        // base here
-        if (node == null) {
-            return 0;
-        }
-
-        int lHeight = maxDepth(node.left);
-        int rHeight = maxDepth(node.right);
-
-        return Math.max(lHeight, rHeight) + 1;
-    }
-
     public static void main(String[] args) {
         P1_Max_Depth p1_max_depth = new P1_Max_Depth();
 
@@ -36,5 +24,17 @@ public class P1_Max_Depth {
         node.right.right = new TreeNode(7);
 
         System.out.println(p1_max_depth.maxDepth(node));
+    }
+
+    public int maxDepth(TreeNode node) {
+        // base here
+        if (node == null) {
+            return 0;
+        }
+
+        int lHeight = maxDepth(node.left);
+        int rHeight = maxDepth(node.right);
+
+        return Math.max(lHeight, rHeight) + 1;
     }
 }

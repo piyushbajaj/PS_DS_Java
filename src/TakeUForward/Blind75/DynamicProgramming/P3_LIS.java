@@ -10,6 +10,15 @@ package TakeUForward.Blind75.DynamicProgramming;
  */
 public class P3_LIS {
 
+    public static void main(String[] args) {
+        P3_LIS p3_lis = new P3_LIS();
+        System.out.println(p3_lis.lengthOfLIS_recur(new int[] {10, 9, 2, 5, 3, 7, 101, 18}));
+
+        System.out.println(p3_lis.lengthOfLIS_mem(new int[] {10, 9, 2, 5, 3, 7, 101, 18}));
+
+        System.out.println(p3_lis.lengthOfLIS_tab(new int[] {10, 9, 2, 5, 3, 7, 101, 18}));
+    }
+
     /**
      * Recursive: Ideally recursive we go from top to bottom, but here in this case we need to go from bottom to top
      * because of LIS
@@ -112,14 +121,5 @@ public class P3_LIS {
 
         // index 0, tells the longest increasing subsequence from length 0 till n
         return dp[0][0];
-    }
-
-    public static void main(String[] args) {
-        P3_LIS p3_lis = new P3_LIS();
-        System.out.println(p3_lis.lengthOfLIS_recur(new int[] {10, 9, 2, 5, 3, 7, 101, 18}));
-
-        System.out.println(p3_lis.lengthOfLIS_mem(new int[] {10, 9, 2, 5, 3, 7, 101, 18}));
-
-        System.out.println(p3_lis.lengthOfLIS_tab(new int[] {10, 9, 2, 5, 3, 7, 101, 18}));
     }
 }

@@ -13,18 +13,8 @@ package Leetcode.MustDoEasyQuestions;
  */
 public class P8_Intersection_Of_Linked_Lists {
 
-    /**
-     * Definition for singly-linked list.
-     */
+    public static void main(String[] args) {
 
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
     }
 
     /**
@@ -86,7 +76,17 @@ public class P8_Intersection_Of_Linked_Lists {
         return null;
     }
 
-    public static void main(String[] args) {
+    /**
+     * Definition for singly-linked list.
+     */
 
+    public static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+            next = null;
+        }
     }
 }

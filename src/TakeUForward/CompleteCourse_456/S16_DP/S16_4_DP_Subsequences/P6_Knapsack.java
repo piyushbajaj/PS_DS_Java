@@ -9,6 +9,23 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_4_DP_Subsequences;
  * Time: 1:01 pm
  */
 public class P6_Knapsack {
+    public static void main(String[] args) {
+        P6_Knapsack p6_knapsack = new P6_Knapsack();
+
+        int N = 3;
+        int W = 4;
+        int[] values = {1, 2, 3};
+        int[] weight = {4, 5, 1};
+
+        System.out.println(p6_knapsack.knapSack(W, weight, values, N));
+
+        System.out.println(p6_knapsack.knapSack_mem(W, weight, values, N));
+
+        System.out.println(p6_knapsack.knapSack_tab(W, weight, values, N));
+
+        System.out.println(p6_knapsack.knapSack_tab_better(W, weight, values, N));
+    }
+
     /**
      * Recursion
      * TC: O(2^N)
@@ -129,7 +146,6 @@ public class P6_Knapsack {
 
     }
 
-
     public int knapSack_tab_better(int W, int[] wt, int[] val, int n) {
         // Stores value for weight previous row
         int[] prev = new int[W + 1];
@@ -155,22 +171,5 @@ public class P6_Knapsack {
         }
 
         return prev[W];
-    }
-
-    public static void main(String[] args) {
-        P6_Knapsack p6_knapsack = new P6_Knapsack();
-
-        int N = 3;
-        int W = 4;
-        int[] values = {1, 2, 3};
-        int[] weight = {4, 5, 1};
-
-        System.out.println(p6_knapsack.knapSack(W, weight, values, N));
-
-        System.out.println(p6_knapsack.knapSack_mem(W, weight, values, N));
-
-        System.out.println(p6_knapsack.knapSack_tab(W, weight, values, N));
-
-        System.out.println(p6_knapsack.knapSack_tab_better(W, weight, values, N));
     }
 }

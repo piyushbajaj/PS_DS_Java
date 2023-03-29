@@ -4,6 +4,16 @@ import java.util.Arrays;
 
 public class HeapSort {
 
+    public static void main(String[] args) {
+//        int[] arr = {10, 11, 34, 9, 5, 13};
+
+        int[] arr = {5, 10, 3, 2, 4, 7};
+
+        HeapSort heapSort = new HeapSort();
+        heapSort.sort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+
     public void swap(int[] arr, int val1, int val2) {
         int temp = arr[val1];
         arr[val1] = arr[val2];
@@ -58,15 +68,5 @@ public class HeapSort {
             swap(arr, 0, i);
             heapify_percolateDown(arr, 0, i);
         }
-    }
-
-    public static void main(String[] args) {
-//        int[] arr = {10, 11, 34, 9, 5, 13};
-
-        int[] arr = {5, 10, 3, 2, 4, 7};
-
-        HeapSort heapSort = new HeapSort();
-        heapSort.sort(arr);
-        System.out.println(Arrays.toString(arr));
     }
 }

@@ -14,6 +14,15 @@ package Leetcode.MustDoEasyQuestions;
  */
 public class P12_House_Robber {
 
+    public static void main(String[] args) {
+        P12_House_Robber p12_house_robber = new P12_House_Robber();
+        int[] nums = {2, 7, 9, 3, 1};
+        System.out.println(p12_house_robber.rob_tab(nums));
+
+        int[] nums1 = {1, 2};
+        System.out.println(p12_house_robber.rob_tab(nums1));
+    }
+
     /**
      * Recursive
      *
@@ -103,15 +112,5 @@ public class P12_House_Robber {
         }
 
         return dp[n - 1];
-    }
-
-
-    public static void main(String[] args) {
-        P12_House_Robber p12_house_robber = new P12_House_Robber();
-        int[] nums = {2, 7, 9, 3, 1};
-        System.out.println(p12_house_robber.rob_tab(nums));
-
-        int[] nums1 = {1, 2};
-        System.out.println(p12_house_robber.rob_tab(nums1));
     }
 }

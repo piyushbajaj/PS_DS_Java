@@ -20,7 +20,9 @@ public class P3_MinimumWindowSubstring {
         int n = t.length();
         int l = 0, r = 0;
 
-        if (m < n) return "";
+        if (m < n) {
+            return "";
+        }
 
         if (s.length() == 0 || t.length() == 0) {
             return "";

@@ -26,6 +26,31 @@ public class P9_BST_Iterator {
         pushAllRight(root);
     }
 
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        P9_BST_Iterator p9_bst_iterator = new P9_BST_Iterator(root);
+        System.out.println("Current Element: " + p9_bst_iterator.next());
+        System.out.println("Current Element: " + p9_bst_iterator.next());
+        System.out.println("Current Element: " + p9_bst_iterator.next());
+        System.out.println("Current Element: " + p9_bst_iterator.next());
+        System.out.println("Current Element: " + p9_bst_iterator.next());
+        System.out.println("Current Element: " + p9_bst_iterator.next());
+        System.out.println("Current Element: " + p9_bst_iterator.next());
+        System.out.println("Current Element: " + p9_bst_iterator.next());
+        System.out.println("Current Element from back: " + p9_bst_iterator.before());
+        System.out.println(p9_bst_iterator.next());
+        System.out.println(p9_bst_iterator.next());
+        System.out.println(p9_bst_iterator.next());
+        System.out.println(p9_bst_iterator.hasNext());
+    }
+
     public int next() {
         TreeNode currNext = null;
         if (!stackLeft.isEmpty()) {
@@ -63,30 +88,5 @@ public class P9_BST_Iterator {
             stackRight.push(root);
             root = root.right;
         }
-    }
-
-    public static void main(String[] args) {
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        P9_BST_Iterator p9_bst_iterator = new P9_BST_Iterator(root);
-        System.out.println("Current Element: " + p9_bst_iterator.next());
-        System.out.println("Current Element: " + p9_bst_iterator.next());
-        System.out.println("Current Element: " + p9_bst_iterator.next());
-        System.out.println("Current Element: " + p9_bst_iterator.next());
-        System.out.println("Current Element: " + p9_bst_iterator.next());
-        System.out.println("Current Element: " + p9_bst_iterator.next());
-        System.out.println("Current Element: " + p9_bst_iterator.next());
-        System.out.println("Current Element: " + p9_bst_iterator.next());
-        System.out.println("Current Element from back: " + p9_bst_iterator.before());
-        System.out.println(p9_bst_iterator.next());
-        System.out.println(p9_bst_iterator.next());
-        System.out.println(p9_bst_iterator.next());
-        System.out.println(p9_bst_iterator.hasNext());
     }
 }

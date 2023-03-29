@@ -12,6 +12,13 @@ package TakeUForward.Blind75.Array;
  */
 public class P7_Find_Min_Sorted_Array {
 
+    public static void main(String[] args) {
+        P7_Find_Min_Sorted_Array p7_find_min_sorted_array = new P7_Find_Min_Sorted_Array();
+        System.out.println(p7_find_min_sorted_array.findMin(new int[] {3, 4, 5, 1, 2}));
+        System.out.println(p7_find_min_sorted_array.findMin(new int[] {4, 5, 6, 7, 0, 1, 2}));
+        System.out.println(p7_find_min_sorted_array.findMin(new int[] {11, 13, 15, 17}));
+    }
+
     /**
      * Use Customized Binary Search over here
      * TC: O(logN)
@@ -48,12 +55,5 @@ public class P7_Find_Min_Sorted_Array {
         }
 
         return -1;
-    }
-
-    public static void main(String[] args) {
-        P7_Find_Min_Sorted_Array p7_find_min_sorted_array = new P7_Find_Min_Sorted_Array();
-        System.out.println(p7_find_min_sorted_array.findMin(new int[] {3, 4, 5, 1, 2}));
-        System.out.println(p7_find_min_sorted_array.findMin(new int[] {4, 5, 6, 7, 0, 1, 2}));
-        System.out.println(p7_find_min_sorted_array.findMin(new int[] {11, 13, 15, 17}));
     }
 }

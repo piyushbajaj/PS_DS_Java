@@ -3,22 +3,22 @@ package Stack;
 //import java.util.Stack;
 
 import java.util.Stack;
-import java.lang.Character;
+
 /**
  * Created by piyush.bajaj on 13/09/16.
  */
 public class StackTest {
 
     // A utility function to check if the given character is operand
-    public static boolean isOperand(char ch){
-        return ((ch>='a' && ch <= 'z') || (ch>='A' && ch <= 'Z'));
+    public static boolean isOperand(char ch) {
+        return ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'));
     }
 
     // A utility function to return precedence of a given operator
     // Higher returned value means higher precedence
 
-    public static int Prec(char ch){
-        switch (ch){
+    public static int Prec(char ch) {
+        switch (ch) {
             case '+':
             case '-':
                 return 1;
@@ -33,7 +33,7 @@ public class StackTest {
 
     // The main function that converts given infix expression to postfix expression.
 
-    public static int infixToPostfix(char c[]){
+    public static int infixToPostfix(char c[]) {
         Stack<Character> s = new Stack<>();
 
         //int n[] = new
@@ -41,42 +41,43 @@ public class StackTest {
         //int i = c.length;
         int k = -1;
 
-        if(c==null || c.length==0)
+        if (c == null || c.length == 0) {
             return -1;
+        }
 
-       // for(char ch:c)
-            for(char ch:c){
-            if(isOperand(ch))
+        // for(char ch:c)
+        for (char ch : c) {
+            if (isOperand(ch)) {
                 c[++k] = ch;
-            else if(ch=='(')
+            } else if (ch == '(') {
                 s.push(ch);
-            else if(ch==')')
-            {
-                while(!s.isEmpty() && s.peek() != '(')
+            } else if (ch == ')') {
+                while (!s.isEmpty() && s.peek() != '(') {
                     c[++k] = s.pop();
-                if(!s.isEmpty() && s.peek() != '(')
+                }
+                if (!s.isEmpty() && s.peek() != '(') {
                     return -1;
-                else{
+                } else {
                     s.pop();
 
                 }
 
-            }
-            else
-            {
-                while(!s.isEmpty() && Prec(ch) <= Prec(s.peek()))
+            } else {
+                while (!s.isEmpty() && Prec(ch) <= Prec(s.peek())) {
                     c[++k] = s.pop();
+                }
                 s.push(ch);
             }
         }
         // pop all the operators from the stack
-        while (!s.isEmpty())
+        while (!s.isEmpty()) {
             c[++k] = s.pop();
+        }
 
-        char char_new[] = new char[k+1];
+        char char_new[] = new char[k + 1];
         //cha = c;
 
-        for(int i = 0; i < char_new.length; i++){
+        for (int i = 0; i < char_new.length; i++) {
             char_new[i] = c[i];
         }
 
@@ -86,17 +87,11 @@ public class StackTest {
     }
 
 
-
-
-
-
-
-
-    public static int PostfixEvaluation(char char_exp[]){
+    public static int PostfixEvaluation(char char_exp[]) {
         Stack<Integer> s = new Stack<>();
         int i = 0;
-        int i1= 0;
-        int i2= 0;
+        int i1 = 0;
+        int i2 = 0;
 
         //Character.g('1');
 
@@ -105,59 +100,56 @@ public class StackTest {
         int[] int_arr = new int[len];
 
 
-
-        for(int a =0; a<len; a++){
-            if((char_exp[a] == '+') || (char_exp[a] == '-') || (char_exp[a] == '*') || (char_exp[a] == '/'))
+        for (int a = 0; a < len; a++) {
+            if ((char_exp[a] == '+') || (char_exp[a] == '-') || (char_exp[a] == '*') || (char_exp[a] == '/')) {
                 int_arr[a] = Character.getDirectionality(char_exp[a]);
-            else
-            int_arr[a] = Character.getNumericValue(char_exp[a]);
+            } else {
+                int_arr[a] = Character.getNumericValue(char_exp[a]);
+            }
         }
 
-        for(int num: char_exp){
-            if(Character.getNumericValue(num) >=0 && Character.getNumericValue(num) <= 9)
+        for (int num : char_exp) {
+            if (Character.getNumericValue(num) >= 0 && Character.getNumericValue(num) <= 9) {
                 s.push(Character.getNumericValue(num));
-            else if(num=='+') {
+            } else if (num == '+') {
                 i1 = s.pop();
                 i2 = s.pop();
-                i = i2+i1;
+                i = i2 + i1;
                 s.push(i);
-            }
-            else if(num=='-') {
+            } else if (num == '-') {
                 i1 = s.pop();
                 i2 = s.pop();
-                i = i2-i1;
+                i = i2 - i1;
                 //i = s.pop() - s.pop();
                 s.push(i);
-            }
-            else if(num=='*') {
+            } else if (num == '*') {
                 i1 = s.pop();
                 i2 = s.pop();
-                i = i2*i1;
+                i = i2 * i1;
                 //i = s.pop() * s.pop();
                 s.push(i);
-            }
-            else if(num=='/') {
+            } else if (num == '/') {
                 i1 = s.pop();
                 i2 = s.pop();
-                i = i2/i1;
+                i = i2 / i1;
                 //i = s.pop() / s.pop();
                 s.push(i);
-            }
-            else
+            } else {
                 return -1;
+            }
         }
         return (s.pop());
     }
 
-    public static void reverseString(char exp[]){
+    public static void reverseString(char exp[]) {
         Stack<Character> s = new Stack<>();
-        int i =0;
+        int i = 0;
 
-        for(char ch: exp){
+        for (char ch : exp) {
             s.push(ch);
         }
 
-        while(!s.isEmpty() && i < exp.length){
+        while (!s.isEmpty() && i < exp.length) {
             exp[i] = s.pop();
             i++;
         }
@@ -207,7 +199,6 @@ public class StackTest {
         String name = "Piyush";
         char[] ch = name.toCharArray();
         reverseString(ch);
-
 
 
     }

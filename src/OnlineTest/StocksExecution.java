@@ -11,7 +11,7 @@ import java.util.HashMap;
 public class StocksExecution {
     public Stocks stocksList[];
 
-    HashMap < String, Stocks > hash = new HashMap < > ();
+    HashMap<String, Stocks> hash = new HashMap<>();
 
     private int stocksCount;
     private int stkCount;
@@ -22,69 +22,6 @@ public class StocksExecution {
 
         stocksCount = 1;
     }
-
-    public class Stocks {
-        public int stockId;
-        public String side;
-
-        public String company_name;
-        public int quantity;
-        public int leftQuantity;
-        public String status;
-
-
-        public Stocks(int stockId, String side, String name, int quantity, int leftQuantity, String status) {
-            this.stockId = stockId;
-            this.side = side;
-            this.company_name = name;
-            this.quantity = quantity;
-            this.leftQuantity = leftQuantity;
-            this.status = status;
-        }
-    }
-
-
-
-    public void addStocks(int stockId, String side, String company, int quantity) {
-
-        if (hash.containsKey(company)) {
-            if (!side.equals(hash.get(company).side)) {
-                int diff = quantity - hash.get(company).leftQuantity;
-                if (diff >= 0) {
-                    stocksList[hash.get(company).stockId] = new Stocks(hash.get(company).stockId, hash.get(company).side,
-                            hash.get(company).company_name, hash.get(company).quantity, 0, "CLOSED");
-                    stocksList[stocksCount++] = new Stocks(stockId, side, company, quantity, diff, "OPEN");
-                    hash.put(company, new Stocks(stockId, side, company, quantity, diff, "OPEN"));
-                } else {
-                    stocksList[hash.get(company).stockId] = new Stocks(hash.get(company).stockId, hash.get(company).side,
-                            hash.get(company).company_name, hash.get(company).quantity, Math.abs(diff), "OPEN");
-                    stocksList[stocksCount++] = new Stocks(stockId, side, company, quantity, 0, "CLOSED");
-                    hash.put(company, new Stocks(hash.get(company).stockId, hash.get(company).side, hash.get(company).company_name,
-                            hash.get(company).quantity, Math.abs(diff), "OPEN"));
-                }
-            } else {
-                stocksList[hash.get(company).stockId] = new Stocks(hash.get(company).stockId, hash.get(company).side,
-                        hash.get(company).company_name, hash.get(company).quantity, 0, "CLOSED");
-                stocksList[stocksCount++] = new Stocks(stockId, side, company, quantity, quantity +
-                        hash.get(company).leftQuantity,
-                        "OPEN");
-                hash.put(company, new Stocks(stockId, side, company, quantity, quantity +
-                        hash.get(company).leftQuantity, "OPEN"));
-            }
-        } else {
-            hash.put(company, new Stocks(stockId, side, company, quantity, quantity, "OPEN"));
-            stocksList[stocksCount++] = new Stocks(stockId, side, company, quantity, quantity, "OPEN");
-        }
-    }
-
-    public void printList() {
-        for (int i = 1; i < stocksCount; i++) {
-            System.out.println("Stock Id: " + stocksList[i].stockId + ", Side: " + stocksList[i].side + ", Company: " + stocksList[i].company_name + ", Quantity: " + stocksList[i].quantity + ", Remaining Quantity: " +
-                    stocksList[i].leftQuantity + ", Status: " + stocksList[i].status);
-        }
-    }
-
-
 
     public static void main(String[] args) {
         //Please specify the number of Stock_Id's here
@@ -115,6 +52,69 @@ public class StocksExecution {
 
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void addStocks(int stockId, String side, String company, int quantity) {
+
+        if (hash.containsKey(company)) {
+            if (!side.equals(hash.get(company).side)) {
+                int diff = quantity - hash.get(company).leftQuantity;
+                if (diff >= 0) {
+                    stocksList[hash.get(company).stockId] =
+                        new Stocks(hash.get(company).stockId, hash.get(company).side,
+                            hash.get(company).company_name, hash.get(company).quantity, 0, "CLOSED");
+                    stocksList[stocksCount++] = new Stocks(stockId, side, company, quantity, diff, "OPEN");
+                    hash.put(company, new Stocks(stockId, side, company, quantity, diff, "OPEN"));
+                } else {
+                    stocksList[hash.get(company).stockId] =
+                        new Stocks(hash.get(company).stockId, hash.get(company).side,
+                            hash.get(company).company_name, hash.get(company).quantity, Math.abs(diff), "OPEN");
+                    stocksList[stocksCount++] = new Stocks(stockId, side, company, quantity, 0, "CLOSED");
+                    hash.put(company,
+                        new Stocks(hash.get(company).stockId, hash.get(company).side, hash.get(company).company_name,
+                            hash.get(company).quantity, Math.abs(diff), "OPEN"));
+                }
+            } else {
+                stocksList[hash.get(company).stockId] = new Stocks(hash.get(company).stockId, hash.get(company).side,
+                    hash.get(company).company_name, hash.get(company).quantity, 0, "CLOSED");
+                stocksList[stocksCount++] = new Stocks(stockId, side, company, quantity, quantity +
+                    hash.get(company).leftQuantity,
+                    "OPEN");
+                hash.put(company, new Stocks(stockId, side, company, quantity, quantity +
+                    hash.get(company).leftQuantity, "OPEN"));
+            }
+        } else {
+            hash.put(company, new Stocks(stockId, side, company, quantity, quantity, "OPEN"));
+            stocksList[stocksCount++] = new Stocks(stockId, side, company, quantity, quantity, "OPEN");
+        }
+    }
+
+    public void printList() {
+        for (int i = 1; i < stocksCount; i++) {
+            System.out.println("Stock Id: " + stocksList[i].stockId + ", Side: " + stocksList[i].side + ", Company: " +
+                stocksList[i].company_name + ", Quantity: " + stocksList[i].quantity + ", Remaining Quantity: " +
+                stocksList[i].leftQuantity + ", Status: " + stocksList[i].status);
+        }
+    }
+
+    public class Stocks {
+        public int stockId;
+        public String side;
+
+        public String company_name;
+        public int quantity;
+        public int leftQuantity;
+        public String status;
+
+
+        public Stocks(int stockId, String side, String name, int quantity, int leftQuantity, String status) {
+            this.stockId = stockId;
+            this.side = side;
+            this.company_name = name;
+            this.quantity = quantity;
+            this.leftQuantity = leftQuantity;
+            this.status = status;
         }
     }
 }

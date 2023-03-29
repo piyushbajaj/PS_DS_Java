@@ -4,30 +4,33 @@ package LinkedList;
  * Created by piyush.bajaj on 07/01/18.
  */
 public class AnagramProb {
-    public static int anagram(String s){
+    public static int anagram(String s) {
         // Complete this function
         int len = s.length();
-        if(len%2!=0) return -1;
+        if (len % 2 != 0) {
+            return -1;
+        }
 
         int[] charArr = new int[26];
 
         String s1 = "", s2 = "";
 
-        s1 = s.substring(0, len/2);
-        s2 = s.substring(len/2, len);
+        s1 = s.substring(0, len / 2);
+        s2 = s.substring(len / 2, len);
 
         int count = 0;
         int j = 0;
-        for(int i = 0; i < len/2; i++){
-            charArr[Integer.valueOf(s1.charAt(i))-97]++;
+        for (int i = 0; i < len / 2; i++) {
+            charArr[Integer.valueOf(s1.charAt(i)) - 97]++;
 
         }
 
-        for(int i = 0; i < len/2; i++){
-            if(charArr[Integer.valueOf(s2.charAt(i))-97] == 0)
+        for (int i = 0; i < len / 2; i++) {
+            if (charArr[Integer.valueOf(s2.charAt(i)) - 97] == 0) {
                 count++;
-            else
-                charArr[Integer.valueOf(s2.charAt(i))-97]--;
+            } else {
+                charArr[Integer.valueOf(s2.charAt(i)) - 97]--;
+            }
         }
 
         return count;

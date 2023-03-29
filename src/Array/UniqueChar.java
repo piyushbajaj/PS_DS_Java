@@ -9,11 +9,11 @@ import java.util.Scanner;
 public class UniqueChar {
 
     //this takes O(n*n)
-    public static boolean isUnique(char[] ch){
+    public static boolean isUnique(char[] ch) {
         int n = ch.length;
-        for(int i = 0; i < n; i++){
-            for(int j = i+1; j < n; j++){
-                if(ch[i] == ch[j]) {
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (ch[i] == ch[j]) {
                     System.out.println("Input string is not unique");
                     return false;
                 }
@@ -23,10 +23,10 @@ public class UniqueChar {
         return true;
     }
 
-    public static boolean isUnique_SortedArray(char[] ch){
+    public static boolean isUnique_SortedArray(char[] ch) {
         int n = ch.length;
-        for(int i = 0; i < n-1; i++){
-            if(ch[i] == ch[i+1]) {
+        for (int i = 0; i < n - 1; i++) {
+            if (ch[i] == ch[i + 1]) {
                 System.out.println("Input string is not unique");
                 return false;
             }
@@ -37,53 +37,52 @@ public class UniqueChar {
 
     //for time O(nlogn), first we need to sort array using merge sort then we can directly use function isUnique_SortedArray
 
-    public static void mergeSort(char[] a, int l, int r){
-        if(l<r){
-            int m = (l+r)/2;
+    public static void mergeSort(char[] a, int l, int r) {
+        if (l < r) {
+            int m = (l + r) / 2;
             mergeSort(a, l, m);
-            mergeSort(a, m+1, r);
+            mergeSort(a, m + 1, r);
             merge(a, l, m, r);
         }
     }
 
-    public static void merge(char[] a, int l, int m, int r){
+    public static void merge(char[] a, int l, int m, int r) {
         int N1 = m - l + 1;
         int N2 = r - m;
 
         char[] L = new char[N1];
         char[] R = new char[N2];
 
-        for(int i =0; i < N1; i++){
-            L[i] = a[l+i];
+        for (int i = 0; i < N1; i++) {
+            L[i] = a[l + i];
         }
 
-        for(int i =0; i < N2; i++){
-            R[i] = a[m + 1 +i];
+        for (int i = 0; i < N2; i++) {
+            R[i] = a[m + 1 + i];
         }
 
-        int i =0, j =0;
+        int i = 0, j = 0;
         int k = l;
 
-        while (i < N1 && j < N2){
-            if(L[i] <= R[j]){
+        while (i < N1 && j < N2) {
+            if (L[i] <= R[j]) {
                 a[k] = L[i];
                 k++;
                 i++;
-            }
-            else{
+            } else {
                 a[k] = R[j];
                 k++;
                 j++;
             }
         }
 
-        while (i < N1){
+        while (i < N1) {
             a[k] = L[i];
             k++;
             i++;
         }
 
-        while (j < N2){
+        while (j < N2) {
             a[k] = R[j];
             k++;
             j++;
@@ -91,16 +90,14 @@ public class UniqueChar {
     }
 
 
-
     //this is with complexity O(n)
-    public static boolean isUnique_hash(char[] ch){
+    public static boolean isUnique_hash(char[] ch) {
         HashMap<Character, Boolean> h = new HashMap<>();
-        for(char c: ch){
-            if(h.containsKey(c)){
+        for (char c : ch) {
+            if (h.containsKey(c)) {
                 System.out.println("Input string is not unique");
                 return false;
-            }
-            else{
+            } else {
                 h.put(c, true);
             }
         }
@@ -110,16 +107,16 @@ public class UniqueChar {
 
     //Cracking the code interview
 
-    public static boolean isUniqueChar2(String str){
-         if(str.length() > 256){
-             System.out.println("String is not unique");
-             return false;
-         }
+    public static boolean isUniqueChar2(String str) {
+        if (str.length() > 256) {
+            System.out.println("String is not unique");
+            return false;
+        }
 
         boolean[] bl = new boolean[256];
-        for(int i = 0; i < str.length(); i++){
+        for (int i = 0; i < str.length(); i++) {
             int val = str.charAt(i);
-            if(bl[val]){
+            if (bl[val]) {
                 System.out.println("String is not unique");
                 return false;
             }
@@ -129,24 +126,24 @@ public class UniqueChar {
         return false;
     }
 
-    public static boolean isUniqueChars(String str){
-        if(str.length() > 256){
+    public static boolean isUniqueChars(String str) {
+        if (str.length() > 256) {
             System.out.println("String is not unique");
             return false;
         }
 
         int checker = 0;
-        for(int i =0; i < str.length(); i++) {
+        for (int i = 0; i < str.length(); i++) {
             int val = str.charAt(i) - 'a';
 
-            if ((checker & (1 << val)) >0)
+            if ((checker & (1 << val)) > 0) {
                 return false;
+            }
 
             checker |= (1 << val);
         }
         return true;
     }
-
 
 
     public static void main(String[] args) {
@@ -163,8 +160,8 @@ public class UniqueChar {
         //isUniqueChar2(str);
         int n = charArray.length;
 
-        int l =0;
-        mergeSort(charArray, l, n-1);
+        int l = 0;
+        mergeSort(charArray, l, n - 1);
 //        for(int i = 0; i < n; i++){
 //            System.out.println(charArray[i]);
 //        }

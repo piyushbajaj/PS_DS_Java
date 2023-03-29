@@ -47,7 +47,9 @@ public class P5_MinNumberOfDaysBouquets {
         int n = bloomDay.length;
 
         // Invalid input
-        if (m * k > n) return -1;
+        if (m * k > n) {
+            return -1;
+        }
 
         Map<Integer, Integer> treeMap = new TreeMap<>();
 

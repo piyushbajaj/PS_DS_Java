@@ -6,6 +6,20 @@ package LinkedList;
 public class StackLinkedList {
 
 
+    public static void main(String[] args) {
+        LinkListStack st = new LinkListStack();
+
+        st.push(50);
+        st.push(70);
+        st.push(190);
+        st.peek();
+        st.displayStack();
+        st.pop();
+        st.displayStack();
+
+
+    }
+
     public static class Node {
         int data;
         Node next;
@@ -15,13 +29,13 @@ public class StackLinkedList {
             this.data = data;
         }
 
-        public void displayNode(){
+        public void displayNode() {
             System.out.println(data);
             System.out.println(" ");
         }
     }
 
-    public static class LinkedList{
+    public static class LinkedList {
         private Node head = null;
 
         public void insertFirst(int data) {
@@ -64,16 +78,16 @@ public class StackLinkedList {
         }
 
         public void popAll() {
-            while(!li.isEmpty()){
+            while (!li.isEmpty()) {
                 li.deleteFirst();
             }
         }
 
         public void pop() {
-                li.deleteFirst();
+            li.deleteFirst();
         }
 
-        public void peek(){
+        public void peek() {
             System.out.println(li.head.data);
         }
 
@@ -81,21 +95,6 @@ public class StackLinkedList {
             System.out.println("  ");
             li.displayList();
         }
-    }
-
-
-        public static void main(String[] args) {
-            LinkListStack st = new LinkListStack();
-
-            st.push(50);
-            st.push(70);
-            st.push(190);
-            st.peek();
-            st.displayStack();
-            st.pop();
-            st.displayStack();
-
-
     }
 }
 

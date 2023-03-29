@@ -15,6 +15,12 @@ import java.util.Stack;
  */
 public class P2_Next_Greater_Element_II {
 
+    public static void main(String[] args) {
+        P2_Next_Greater_Element_II p2_next_greater_element_ii = new P2_Next_Greater_Element_II();
+        int[] arr = {1, 2, 1};
+        System.out.println(Arrays.toString(p2_next_greater_element_ii.nextGreaterElement(3, arr)));
+    }
+
     /**
      * Approach
      * 1. Will iterate i from 2N - 1 to 0
@@ -52,11 +58,5 @@ public class P2_Next_Greater_Element_II {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        P2_Next_Greater_Element_II p2_next_greater_element_ii = new P2_Next_Greater_Element_II();
-        int[] arr = {1, 2, 1};
-        System.out.println(Arrays.toString(p2_next_greater_element_ii.nextGreaterElement(3, arr)));
     }
 }

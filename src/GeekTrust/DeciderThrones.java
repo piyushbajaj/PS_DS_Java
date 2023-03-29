@@ -9,6 +9,8 @@ public interface DeciderThrones {
 
 
     void whoIsRuler();
+
     void allies();
+
     void encrypt(String name, String text, Map<String, String> hashMap);
 }

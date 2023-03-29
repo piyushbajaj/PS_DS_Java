@@ -13,6 +13,12 @@ import java.util.List;
  */
 public class P12_Spiral_Matrix {
 
+    public static void main(String[] args) {
+        P12_Spiral_Matrix p12_spiral_matrix = new P12_Spiral_Matrix();
+        int[][] matrix = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
+        System.out.println(p12_spiral_matrix.spiralOrder(matrix));
+    }
+
     /**
      * Going Spiral way
      * 1. Left to Right
@@ -57,11 +63,5 @@ public class P12_Spiral_Matrix {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        P12_Spiral_Matrix p12_spiral_matrix = new P12_Spiral_Matrix();
-        int[][] matrix = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
-        System.out.println(p12_spiral_matrix.spiralOrder(matrix));
     }
 }

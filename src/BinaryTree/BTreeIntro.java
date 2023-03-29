@@ -5,28 +5,6 @@ package BinaryTree;
  */
 public class BTreeIntro {
 
-    static class Node{
-        int data;
-        Node left, right;
-
-        Node(int data){
-            this.data = data;
-            left = right = null;
-        }
-    }
-
-    static class BinaryTree{
-        Node root;
-
-        BinaryTree(int key){
-            root = new Node(key);
-        }
-
-        BinaryTree(){
-            root = null;
-        }
-    }
-
     public static void main(String[] args) {
         BinaryTree BT = new BinaryTree();
         BT.root = new Node(1);
@@ -57,6 +35,28 @@ public class BTreeIntro {
         System.out.println("Root->left->right of a binary tree is: " + BT.root.left.right.data);
 
 
+    }
+
+    static class Node {
+        int data;
+        Node left, right;
+
+        Node(int data) {
+            this.data = data;
+            left = right = null;
+        }
+    }
+
+    static class BinaryTree {
+        Node root;
+
+        BinaryTree(int key) {
+            root = new Node(key);
+        }
+
+        BinaryTree() {
+            root = null;
+        }
     }
 
 }

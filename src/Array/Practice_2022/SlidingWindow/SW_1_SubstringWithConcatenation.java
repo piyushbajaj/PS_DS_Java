@@ -1,7 +1,5 @@
 package Array.Practice_2022.SlidingWindow;
 
-import BinaryTree.Practice_2022.CommonUtils;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -9,10 +7,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import BinaryTree.Practice_2022.CommonUtils;
+
 /**
  * Created by bajajp on 12 Jun, 2022
  */
 public class SW_1_SubstringWithConcatenation extends CommonUtils {
+    public static void main(String[] args) {
+
+    }
+
     public List<Integer> findSubstring(String s, String[] words) {
         int l = 0, r = 0;
         int n = s.length();
@@ -40,9 +44,5 @@ public class SW_1_SubstringWithConcatenation extends CommonUtils {
         }
 
         return null;
-    }
-
-    public static void main(String[] args) {
-
     }
 }

@@ -11,6 +11,13 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_5_DP_Strings;
  * Link lc: <a href="https://leetcode.com/problems/delete-operation-for-two-strings/">...</a>
  */
 public class P6_Minimum_Insertions_Convert_String {
+    public static void main(String[] args) {
+        P6_Minimum_Insertions_Convert_String p6_minimum_insertions_convert_string =
+            new P6_Minimum_Insertions_Convert_String();
+
+        System.out.println(p6_minimum_insertions_convert_string.minOperations("sea", "eat"));
+    }
+
     public int minOperations(String str1, String str2) {
         int lcsCount = longestCommonSubsequence_tab(str1, str2);
         return (str1.length() - lcsCount) + (str2.length() - lcsCount);
@@ -43,12 +50,5 @@ public class P6_Minimum_Insertions_Convert_String {
             }
         }
         return dp[n][m];
-    }
-
-    public static void main(String[] args) {
-        P6_Minimum_Insertions_Convert_String p6_minimum_insertions_convert_string =
-            new P6_Minimum_Insertions_Convert_String();
-
-        System.out.println(p6_minimum_insertions_convert_string.minOperations("sea", "eat"));
     }
 }

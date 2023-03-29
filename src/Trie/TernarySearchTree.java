@@ -8,122 +8,168 @@ import java.util.Scanner;
  */
 public class TernarySearchTree {
 
-    public static class TSTNode {
-
-        char data;
-        boolean is_End_Of_String;
-        TSTNode left;
-        TSTNode middle;
-        TSTNode right;
-
-        public TSTNode(char data) {
-            this.data = data;
-            this.is_End_Of_String = false;
-            this.left = null;
-            this.middle = null;
-            this.right = null;
-        }
-
-    }
-
-
     private TSTNode root;
     private ArrayList<String> al;
-
     public TernarySearchTree() {
         root = null;
     }
 
-    public boolean isEmpty(){
+    public static void main(String[] args) {
+        TernarySearchTree tst = new TernarySearchTree();
+
+        //TST.InsertInTST(TST, word);
+
+
+        System.out.println("Ternary Search Tree Test\n");
+
+        char ch;
+        /*  Perform tree operations  */
+        do {
+            System.out.println("\nTernary Search Tree Operations\n");
+            System.out.println("1. insert word");
+            System.out.println("2. search word");
+            System.out.println("3. delete word");
+            System.out.println("4. check empty");
+            System.out.println("5. make empty");
+            System.out.println("6. Find length of largest word");
+
+            //Scanner n = new Scanner(System.in);
+            int choice = new Scanner(System.in).nextInt();
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter word to insert");
+                    tst.insert(new Scanner(System.in).next());
+                    break;
+                case 2:
+                    System.out.println("Enter word to search");
+                    System.out.println("Search result : " + tst.search(new Scanner(System.in).next()));
+                    break;
+                case 3:
+                    System.out.println("Enter word to delete");
+                    tst.delete(new Scanner(System.in).next());
+                    break;
+                case 4:
+                    System.out.println("Empty Status : " + tst.isEmpty());
+                    break;
+                case 5:
+                    System.out.println("Ternary Search Tree cleared");
+                    tst.makeEmpty();
+                    break;
+                case 6:
+                    System.out.println("Length of the largest word");
+                default:
+                    System.out.println("Wrong Entry \n ");
+                    break;
+            }
+            System.out.println(tst);
+
+            System.out.println("\nDo you want to continue (Type y or n) \n");
+            ch = new Scanner(System.in).next().charAt(0);
+        } while (ch == 'Y' || ch == 'y');
+
+    }
+
+    public boolean isEmpty() {
         return root == null;
     }
 
-    public void makeEmpty(){
+    public void makeEmpty() {
         root = null;
     }
 
-    public void insert(String word){
+    public void insert(String word) {
         root = insert(root, word.toCharArray(), 0);
     }
 
-    public TSTNode insert(TSTNode key, char[] word, int pos){
-        if(key == null)
+    public TSTNode insert(TSTNode key, char[] word, int pos) {
+        if (key == null) {
             key = new TSTNode(word[pos]);
+        }
 
-        if(word[pos] < key.data)
+        if (word[pos] < key.data) {
             key.left = insert(key.left, word, pos);
-        else if(word[pos] > key.data)
+        } else if (word[pos] > key.data) {
             key.right = insert(key.right, word, pos);
-        else {
-            if(pos + 1 < word.length)
+        } else {
+            if (pos + 1 < word.length) {
                 key.middle = insert(key.middle, word, pos + 1);
-            else
+            } else {
                 key.is_End_Of_String = true;
+            }
         }
         return key;
     }
 
-    public void delete(String word){
+    public void delete(String word) {
         delete(root, word.toCharArray(), 0);
     }
 
-    public void delete(TSTNode key, char[] word, int pos){
-        if(key == null)
+    public void delete(TSTNode key, char[] word, int pos) {
+        if (key == null) {
             return;
+        }
 
-        if(word[pos] < key.data)
+        if (word[pos] < key.data) {
             delete(key.left, word, pos);
-        else if(word[pos] > key.data)
+        } else if (word[pos] > key.data) {
             delete(key.right, word, pos);
-        else {
-            if(pos + 1 == word.length && key.is_End_Of_String)
+        } else {
+            if (pos + 1 == word.length && key.is_End_Of_String) {
                 key.is_End_Of_String = false;
-            else if(pos + 1 < word.length)
+            } else if (pos + 1 < word.length) {
                 delete(key.middle, word, pos + 1);
+            }
         }
     }
 
-    /** function to search for a word **/
+    /**
+     * function to search for a word
+     **/
 
-    public boolean search(String word){
+    public boolean search(String word) {
         return search(root, word.toCharArray(), 0);
     }
 
-    public boolean search(TSTNode key, char[] word, int pos){
-        if(key == null)
+    public boolean search(TSTNode key, char[] word, int pos) {
+        if (key == null) {
             return false;
-        if(word[pos] < key.data)
+        }
+        if (word[pos] < key.data) {
             return search(key.left, word, pos);
-        else if(word[pos] > key.data)
+        } else if (word[pos] > key.data) {
             return search(key.right, word, pos);
-        else {
-            if(pos +1 == word.length && key.is_End_Of_String)
+        } else {
+            if (pos + 1 == word.length && key.is_End_Of_String) {
                 return true;
-            else if(pos +1 == word.length)
+            } else if (pos + 1 == word.length) {
                 return false;
-            else
-                return search(key.middle, word, pos+1);
+            } else {
+                return search(key.middle, word, pos + 1);
+            }
         }
     }
 
 
-    /** function to print tree **/
-    public String toString(){
+    /**
+     * function to print tree
+     **/
+    public String toString() {
         al = new ArrayList<String>();
 
         traverse(root, "");
 
-        return "\nTernary Search Tree : "+ al;
+        return "\nTernary Search Tree : " + al;
     }
 
-    public void traverse(TSTNode key, String str){
-        if(key!=null){
+    public void traverse(TSTNode key, String str) {
+        if (key != null) {
             traverse(key.left, str);
 
             str = str + key.data;
 
-            if(key.is_End_Of_String)
+            if (key.is_End_Of_String) {
                 al.add(str);
+            }
 
             traverse(key.middle, str);
 
@@ -131,8 +177,6 @@ public class TernarySearchTree {
 
         }
     }
-
-
 
 
 //    public TSTNode InsertInTST(TSTNode root, String word){
@@ -175,60 +219,21 @@ public class TernarySearchTree {
 //        }
 //    }
 
-    public static void main(String[] args) {
-        TernarySearchTree tst = new TernarySearchTree();
+    public static class TSTNode {
 
-        //TST.InsertInTST(TST, word);
+        char data;
+        boolean is_End_Of_String;
+        TSTNode left;
+        TSTNode middle;
+        TSTNode right;
 
-
-        System.out.println("Ternary Search Tree Test\n");
-
-        char ch;
-        /*  Perform tree operations  */
-        do
-        {
-            System.out.println("\nTernary Search Tree Operations\n");
-            System.out.println("1. insert word");
-            System.out.println("2. search word");
-            System.out.println("3. delete word");
-            System.out.println("4. check empty");
-            System.out.println("5. make empty");
-            System.out.println("6. Find length of largest word");
-
-            //Scanner n = new Scanner(System.in);
-            int choice = new Scanner(System.in).nextInt();
-            switch (choice)
-            {
-                case 1 :
-                    System.out.println("Enter word to insert");
-                    tst.insert(new Scanner(System.in).next() );
-                    break;
-                case 2 :
-                    System.out.println("Enter word to search");
-                    System.out.println("Search result : "+ tst.search( new Scanner(System.in).next() ));
-                    break;
-                case 3 :
-                    System.out.println("Enter word to delete");
-                    tst.delete( new Scanner(System.in).next() );
-                    break;
-                case 4 :
-                    System.out.println("Empty Status : "+ tst.isEmpty() );
-                    break;
-                case 5 :
-                    System.out.println("Ternary Search Tree cleared");
-                    tst.makeEmpty();
-                    break;
-                case 6 :
-                    System.out.println("Length of the largest word");
-                default :
-                    System.out.println("Wrong Entry \n ");
-                    break;
-            }
-            System.out.println(tst);
-
-            System.out.println("\nDo you want to continue (Type y or n) \n");
-            ch = new Scanner(System.in).next().charAt(0);
-        } while (ch == 'Y'|| ch == 'y');
+        public TSTNode(char data) {
+            this.data = data;
+            this.is_End_Of_String = false;
+            this.left = null;
+            this.middle = null;
+            this.right = null;
+        }
 
     }
 }

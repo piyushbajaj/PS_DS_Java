@@ -14,6 +14,11 @@ import java.util.List;
  */
 public class P13_N_Queen {
 
+    public static void main(String[] args) {
+        P13_N_Queen p13_n_queen = new P13_N_Queen();
+        System.out.println(p13_n_queen.solveNQueens(4));
+    }
+
     /**
      * TC: O(N*N)
      *
@@ -69,10 +74,5 @@ public class P13_N_Queen {
             res.add(new String(board[i]));
         }
         return res;
-    }
-
-    public static void main(String[] args) {
-        P13_N_Queen p13_n_queen = new P13_N_Queen();
-        System.out.println(p13_n_queen.solveNQueens(4));
     }
 }

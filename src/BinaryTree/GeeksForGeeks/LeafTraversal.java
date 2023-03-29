@@ -5,39 +5,18 @@ package BinaryTree.GeeksForGeeks;
  */
 public class LeafTraversal {
     Node root;
+    String str = "";
 
-    static class Node{
-        Node left, right;
-        int data;
-        Node(int data){
-            this.data = data;
-            this.left = this.right = null;
-        }
-    }
-
-    LeafTraversal(){
+    LeafTraversal() {
         root = null;
     }
 
-    LeafTraversal(int data){
-        if(root == null)
+    LeafTraversal(int data) {
+        if (root == null) {
             root = new Node(data);
-        else
+        } else {
             new Node(data);
-    }
-
-    String str = "";
-    public String leafTraversal_same(Node key){
-        if(key == null)
-            return "";
-
-        leafTraversal_same(key.left);
-        leafTraversal_same(key.right);
-
-        if(key.left==null && key.right == null)
-            str += String.valueOf(key.data);
-
-        return str;
+        }
     }
 
     public static void main(String[] args) {
@@ -57,9 +36,35 @@ public class LeafTraversal {
         dfs1.root.right.left = new Node(6);
         dfs1.root.right.right = new Node(78);
 
-        if(dfs.leafTraversal_same(dfs.root).equals(dfs1.leafTraversal_same(dfs1.root)))
+        if (dfs.leafTraversal_same(dfs.root).equals(dfs1.leafTraversal_same(dfs1.root))) {
             System.out.println("Same");
-        else
+        } else {
             System.out.println("Different");
+        }
+    }
+
+    public String leafTraversal_same(Node key) {
+        if (key == null) {
+            return "";
+        }
+
+        leafTraversal_same(key.left);
+        leafTraversal_same(key.right);
+
+        if (key.left == null && key.right == null) {
+            str += String.valueOf(key.data);
+        }
+
+        return str;
+    }
+
+    static class Node {
+        Node left, right;
+        int data;
+
+        Node(int data) {
+            this.data = data;
+            this.left = this.right = null;
+        }
     }
 }

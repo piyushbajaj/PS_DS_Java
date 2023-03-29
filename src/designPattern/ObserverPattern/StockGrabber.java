@@ -14,7 +14,7 @@ public class StockGrabber implements Subject {
     private double applPrice;
     private double googPrice;
 
-    public StockGrabber(){
+    public StockGrabber() {
         observers = new ArrayList<Observer>();
     }
 
@@ -35,22 +35,23 @@ public class StockGrabber implements Subject {
     @Override
     public void notifyObserver() {
 
-        for(Observer observer: observers)
+        for (Observer observer : observers) {
             observer.update(ibmPrice, applPrice, googPrice);
+        }
 
     }
 
-    public void setIbmPrice(double newIBMPrice){
+    public void setIbmPrice(double newIBMPrice) {
         this.ibmPrice = newIBMPrice;
         notifyObserver();
     }
 
-    public void setApplPrice(double newApplPrice){
+    public void setApplPrice(double newApplPrice) {
         this.applPrice = newApplPrice;
         notifyObserver();
     }
 
-    public void setGoogPrice(double newGoogPrice){
+    public void setGoogPrice(double newGoogPrice) {
         this.googPrice = newGoogPrice;
         notifyObserver();
     }

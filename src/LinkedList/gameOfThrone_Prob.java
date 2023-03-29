@@ -5,37 +5,37 @@ package LinkedList;
  */
 public class gameOfThrone_Prob {
 
-    static String gameOfThrones(String s){
+    static String gameOfThrones(String s) {
         // Complete this function
         int[] charArr = new int[26];
         char ch = ' ';
         //if(s.length % 2== 0){
-        for(int i = 0; i < s.length(); i++){
-            if(charArr[s.charAt(i)-97] > 0)
-                charArr[s.charAt(i)-97]--;
-            else
-                charArr[s.charAt(i)-97]++;
+        for (int i = 0; i < s.length(); i++) {
+            if (charArr[s.charAt(i) - 97] > 0) {
+                charArr[s.charAt(i) - 97]--;
+            } else {
+                charArr[s.charAt(i) - 97]++;
+            }
         }
         //}
         int count = 0;
-        if(s.length() % 2== 0){
-            for(int i = 0; i < s.length(); i++){
-                if(charArr[s.charAt(i)-97] > 0)
+        if (s.length() % 2 == 0) {
+            for (int i = 0; i < s.length(); i++) {
+                if (charArr[s.charAt(i) - 97] > 0) {
                     return "NO";
+                }
             }
-        }
-        else{
-            for(int i = 0; i < s.length(); i++){
-                if(charArr[s.charAt(i)-97] > 1)
+        } else {
+            for (int i = 0; i < s.length(); i++) {
+                if (charArr[s.charAt(i) - 97] > 1) {
                     return "NO";
-                else if(charArr[s.charAt(i)-97] == 1){
-                    if(ch == ' ') {
+                } else if (charArr[s.charAt(i) - 97] == 1) {
+                    if (ch == ' ') {
                         ch = s.charAt(i);
                         count++;
-                    }
-                    else if(ch == s.charAt(i))
+                    } else if (ch == s.charAt(i)) {
                         continue;
-                    else {
+                    } else {
                         return "NO";
                     }
 

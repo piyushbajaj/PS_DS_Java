@@ -22,7 +22,7 @@ public class P2 {
 
         for (int i = 0; i < arrayStrFirst.size(); i++) {
             if ((getCountX(arrayStrFirst.get(i)) == getCountY(arrayStrFirst.get(i))) ||
-                    (getCountX(arrayStrSecond.get(i)) == getCountY(arrayStrSecond.get(i)))
+                (getCountX(arrayStrSecond.get(i)) == getCountY(arrayStrSecond.get(i)))
             ) {
                 res++;
             }

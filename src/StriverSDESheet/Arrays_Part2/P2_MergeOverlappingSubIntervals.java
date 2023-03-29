@@ -12,6 +12,7 @@ public class P2_MergeOverlappingSubIntervals {
     /**
      * TC: O(N + NlogN)
      * SC: O(N)
+     *
      * @param intervals
      * @return
      */
@@ -42,10 +43,10 @@ public class P2_MergeOverlappingSubIntervals {
 
     public static void main(String[] args) {
         List<List<Integer>> intervals = Arrays.asList(
-                Arrays.asList(1, 3),
-                Arrays.asList(2, 6),
-                Arrays.asList(8, 10),
-                Arrays.asList(15, 18));
+            Arrays.asList(1, 3),
+            Arrays.asList(2, 6),
+            Arrays.asList(8, 10),
+            Arrays.asList(15, 18));
 
         System.out.println(mergeIntervals(intervals));
     }

@@ -13,7 +13,7 @@ public class sumOfNum_problem {
         int[] a = new int[n];
         int[] b = new int[n];
 
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             a[i] = s.nextInt();
             b[i] = s.nextInt();
 
@@ -25,9 +25,9 @@ public class sumOfNum_problem {
 
     }
 
-    public static void checkSum(int[] a, int[] b, int n){
-        for(int i = 0; i < n; i++){
-            System.out.println(a[i]+b[i]);
+    public static void checkSum(int[] a, int[] b, int n) {
+        for (int i = 0; i < n; i++) {
+            System.out.println(a[i] + b[i]);
         }
 
     }

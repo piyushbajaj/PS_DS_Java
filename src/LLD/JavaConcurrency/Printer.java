@@ -9,12 +9,12 @@ package LLD.JavaConcurrency;
  * Time: 11:26 pm
  */
 public class Printer implements Runnable {
-    private int currentValue;
     private final int step;
     private final State state;
     private final PrinterType currentType;
     private final PrinterType nextType;
     private final int maxValue;
+    private int currentValue;
 
     public Printer(int currentValue, int step, State state, PrinterType currentType, PrinterType nextType,
                    int maxValue) {

@@ -5,41 +5,60 @@ package BinaryTree;
  */
 public class BFS_LCA {
     Node root;
-    public static class Node{
-        int data;
-        Node left, right;
 
-        Node(int data){
-            this.data = data;
-            left = right = null;
-        }
-    }
-
-    public BFS_LCA(){
+    public BFS_LCA() {
         root = null;
     }
 
-    public BFS_LCA(int key){
+    public BFS_LCA(int key) {
         root = new Node(key);
     }
 
-    Node findLCA(Node node, int n1, int n2)
-    {
-        if(node == null)
+    public static void main(String[] args) {
+        BFS_LCA BT = new BFS_LCA(1);
+        System.out.println("Root: " + BT.root.data);
+        BT.root.left = new Node(2);
+        System.out.println("Root (" + BT.root.data + ") -> Left: " + BT.root.left.data);
+        BT.root.right = new Node(3);
+        System.out.println("Root (" + BT.root.data + ") -> Right: " + BT.root.right.data);
+        BT.root.left.left = new Node(4);
+        BT.root.left.left.right = new Node(8);
+        System.out.println(
+            "Root (" + BT.root.data + ") -> Left (" + BT.root.left.data + ") -> Left: " + BT.root.left.left.data);
+        BT.root.left.right = new Node(5);
+        System.out.println(
+            "Root (" + BT.root.data + ") -> Left (" + BT.root.left.data + ") -> Right: " + BT.root.left.right.data);
+        BT.root.right.left = new Node(6);
+        System.out.println(
+            "Root (" + BT.root.data + ") -> Right (" + BT.root.right.data + ")-> Left: " + BT.root.right.left.data);
+        BT.root.right.right = new Node(7);
+        System.out.println(
+            "Root (" + BT.root.data + ") -> Right (" + BT.root.right.data + ") -> Right: " + BT.root.right.right.data);
+
+        System.out.println("LCA is: " + BT.findLCA(BT.root, 4, 7).data);
+
+        System.out.println("LCA is: " + BT.lca_prac(BT.root, 4, 7).data);
+
+    }
+
+    Node findLCA(Node node, int n1, int n2) {
+        if (node == null) {
             return null;
+        }
 
 
-
-        if(node.data ==n1 || node.data == n2)
+        if (node.data == n1 || node.data == n2) {
             return node;
+        }
 
         Node left_lca = findLCA(node.left, n1, n2);
         Node right_lca = findLCA(node.right, n1, n2);
 
-        if(left_lca!=null && right_lca!=null)
+        if (left_lca != null && right_lca != null) {
             return node;
+        }
 
-        return (left_lca!=null)? left_lca: right_lca;
+        return (left_lca != null) ? left_lca : right_lca;
 
 //
 //
@@ -68,48 +87,38 @@ public class BFS_LCA {
     }
 
 
-    public Node lca_prac(Node key, int a, int b){
-        if(key == null)
+    public Node lca_prac(Node key, int a, int b) {
+        if (key == null) {
             return null;
+        }
 
-        if(key.data == a || key.data == b)
+        if (key.data == a || key.data == b) {
             return key;
+        }
 
         Node Llca = lca_prac(key.left, a, b);
         Node Rlca = lca_prac(key.right, a, b);
 
-        if(Llca != null && Rlca != null)
+        if (Llca != null && Rlca != null) {
             return key;
+        }
 
-        if(Llca!=null)
+        if (Llca != null) {
             return Llca;
-
-        else
+        } else {
             return Rlca;
+        }
 
         //return key;
     }
 
-    public static void main(String[] args) {
-        BFS_LCA BT = new BFS_LCA(1);
-        System.out.println("Root: " + BT.root.data);
-        BT.root.left = new Node(2);
-        System.out.println("Root ("+ BT.root.data +") -> Left: " + BT.root.left.data);
-        BT.root.right = new Node(3);
-        System.out.println("Root ("+ BT.root.data +") -> Right: " + BT.root.right.data);
-        BT.root.left.left = new Node(4);
-        BT.root.left.left.right = new Node(8);
-        System.out.println("Root ("+ BT.root.data +") -> Left ("+ BT.root.left.data + ") -> Left: " + BT.root.left.left.data);
-        BT.root.left.right = new Node(5);
-        System.out.println("Root ("+ BT.root.data +") -> Left ("+ BT.root.left.data + ") -> Right: " + BT.root.left.right.data);
-        BT.root.right.left = new Node(6);
-        System.out.println("Root ("+ BT.root.data +") -> Right ("+ BT.root.right.data + ")-> Left: " + BT.root.right.left.data);
-        BT.root.right.right = new Node(7);
-        System.out.println("Root ("+ BT.root.data +") -> Right ("+ BT.root.right.data + ") -> Right: " + BT.root.right.right.data);
+    public static class Node {
+        int data;
+        Node left, right;
 
-        System.out.println("LCA is: " + BT.findLCA(BT.root, 4, 7).data);
-
-        System.out.println("LCA is: " + BT.lca_prac(BT.root, 4, 7).data);
-
+        Node(int data) {
+            this.data = data;
+            left = right = null;
+        }
     }
 }

@@ -18,6 +18,31 @@ import javafx.util.Pair;
  * SC: O(N*M)
  */
 public class P2_Number_Of_Islands_4Directions {
+    public static void main(String[] args) {
+        P2_Number_Of_Islands_4Directions p2_number_of_islands_4Directions = new P2_Number_Of_Islands_4Directions();
+        char[][] grid = {
+            {'1', '1', '1', '1', '0'},
+            {'1', '1', '0', '1', '0'},
+            {'1', '1', '0', '0', '0'},
+            {'0', '0', '0', '0', '0'}};
+
+        char[][] grid1 = {
+            {'0', '1', '1', '0'},
+            {'0', '1', '1', '0'},
+            {'0', '0', '1', '0'},
+            {'0', '0', '0', '0'},
+            {'1', '1', '0', '1'}};
+
+        char[][] grid2 = {
+            {'1', '1', '0', '0', '0'},
+            {'1', '1', '0', '0', '0'},
+            {'0', '0', '1', '0', '0'},
+            {'0', '0', '0', '1', '1'}
+        };
+
+        System.out.println(p2_number_of_islands_4Directions.numIslands(grid2));
+    }
+
     public int numIslands(char[][] grid) {
         int m = grid.length;
         int n = grid[0].length;
@@ -70,30 +95,5 @@ public class P2_Number_Of_Islands_4Directions {
                 }
             }
         }
-    }
-
-    public static void main(String[] args) {
-        P2_Number_Of_Islands_4Directions p2_number_of_islands_4Directions = new P2_Number_Of_Islands_4Directions();
-        char[][] grid = {
-            {'1', '1', '1', '1', '0'},
-            {'1', '1', '0', '1', '0'},
-            {'1', '1', '0', '0', '0'},
-            {'0', '0', '0', '0', '0'}};
-
-        char[][] grid1 = {
-            {'0', '1', '1', '0'},
-            {'0', '1', '1', '0'},
-            {'0', '0', '1', '0'},
-            {'0', '0', '0', '0'},
-            {'1', '1', '0', '1'}};
-
-        char[][] grid2 = {
-            {'1', '1', '0', '0', '0'},
-            {'1', '1', '0', '0', '0'},
-            {'0', '0', '1', '0', '0'},
-            {'0', '0', '0', '1', '1'}
-        };
-
-        System.out.println(p2_number_of_islands_4Directions.numIslands(grid2));
     }
 }

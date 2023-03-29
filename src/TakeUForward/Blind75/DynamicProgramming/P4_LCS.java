@@ -10,6 +10,14 @@ package TakeUForward.Blind75.DynamicProgramming;
  */
 public class P4_LCS {
 
+    public static void main(String[] args) {
+        P4_LCS p4_lcs = new P4_LCS();
+        System.out.println(p4_lcs.longestCommonSubsequence_recur("abcde", "ace"));
+        System.out.println(p4_lcs.longestCommonSubsequence_mem("abcde", "ace"));
+        System.out.println(p4_lcs.longestCommonSubsequence_mem_better("abcde", "ace"));
+        System.out.println(p4_lcs.longestCommonSubsequence_tab("abcde", "ace"));
+    }
+
     /**
      * Recursion
      * TC: Exponential
@@ -150,13 +158,5 @@ public class P4_LCS {
         }
 
         return dp[n][m];
-    }
-
-    public static void main(String[] args) {
-        P4_LCS p4_lcs = new P4_LCS();
-        System.out.println(p4_lcs.longestCommonSubsequence_recur("abcde", "ace"));
-        System.out.println(p4_lcs.longestCommonSubsequence_mem("abcde", "ace"));
-        System.out.println(p4_lcs.longestCommonSubsequence_mem_better("abcde", "ace"));
-        System.out.println(p4_lcs.longestCommonSubsequence_tab("abcde", "ace"));
     }
 }

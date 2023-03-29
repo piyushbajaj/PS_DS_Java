@@ -9,6 +9,11 @@ import java.util.Map;
  * Created by bajajp on 09 Sep, 2022
  */
 public class P4_MajorityElement_N3 {
+    public static void main(String[] args) {
+        P4_MajorityElement_N3 p4_majorityElement_n3 = new P4_MajorityElement_N3();
+        System.out.println(p4_majorityElement_n3.majorityElement_better(new int[] {11, 33, 33, 11, 33, 11}));
+    }
+
     /**
      * TC: O(N)
      * SC: O(N)
@@ -82,10 +87,5 @@ public class P4_MajorityElement_N3 {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        P4_MajorityElement_N3 p4_majorityElement_n3 = new P4_MajorityElement_N3();
-        System.out.println(p4_majorityElement_n3.majorityElement_better(new int[]{11, 33, 33, 11, 33, 11}));
     }
 }

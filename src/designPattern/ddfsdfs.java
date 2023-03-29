@@ -1,5 +1,9 @@
 package designPattern;
 
+interface TestA {
+    String toString();
+}
+
 /**
  * Created by piyush.bajaj on 22/07/17.
  */
@@ -7,7 +11,7 @@ public class ddfsdfs {
     //static final int[] a = {100, 200};
     static int[] a;
 
-    static void init(){
+    static void init() {
         a = new int[3];
         a[0] = 100;
         a[2] = 100;
@@ -16,18 +20,6 @@ public class ddfsdfs {
 
 
     }
-
-
-
-    public void message(){}
-
-//    HashMap m1 = new HashMap();
-//     ("map", "HashMap");
-//    m1.put("schildt", "java2");
-//    m1.put("mathew", "Hyden");
-//    m1.put("schildt", "java2s");
-//    print(m1.keySet());
-//    print(m1.values());
 
     public static void main(String[] args) {
         new ddfsdfs().message();
@@ -39,7 +31,15 @@ public class ddfsdfs {
             }
         });
     }
-}
 
+//    HashMap m1 = new HashMap();
+//     ("map", "HashMap");
+//    m1.put("schildt", "java2");
+//    m1.put("mathew", "Hyden");
+//    m1.put("schildt", "java2s");
+//    print(m1.keySet());
+//    print(m1.values());
 
-interface TestA{String toString();};
+    public void message() {
+    }
+};

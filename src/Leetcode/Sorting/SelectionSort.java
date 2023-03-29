@@ -4,6 +4,14 @@ import java.util.Arrays;
 
 public class SelectionSort {
 
+    public static void main(String[] args) {
+        SelectionSort selectionSort = new SelectionSort();
+        int a[] = {6, 4, 2, 1, 3, 5};
+        System.out.println(Arrays.toString(selectionSort.selection(a)));
+
+        System.out.println(Arrays.toString(a));
+    }
+
     // Validating and swapping the minimum element in the start
     public int[] selection(int[] arr) {
         int n = arr.length;
@@ -25,13 +33,5 @@ public class SelectionSort {
         int temp = arr[p];
         arr[p] = arr[q];
         arr[q] = temp;
-    }
-
-    public static void main(String[] args) {
-        SelectionSort selectionSort = new SelectionSort();
-        int a[] = {6, 4, 2, 1, 3, 5};
-        System.out.println(Arrays.toString(selectionSort.selection(a)));
-
-        System.out.println(Arrays.toString(a));
     }
 }

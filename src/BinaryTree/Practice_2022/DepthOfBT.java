@@ -4,18 +4,25 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class DepthOfBT extends CommonUtils {
-    static class QueueNode {
-        TreeNode node;
-        int depth;
+    public static void main(String[] args) {
+        DepthOfBT depthOfBT = new DepthOfBT();
+        depthOfBT.insertInBT(1);
+        depthOfBT.root.left = new TreeNode(2);
+        depthOfBT.root.right = new TreeNode(3);
+//        depthOfBT.root.left.left = new TreeNode(4);
+//        depthOfBT.root.left.right = new TreeNode(5);
+        depthOfBT.root.right.left = new TreeNode(6);
+        depthOfBT.root.right.right = new TreeNode(7);
 
-        public QueueNode(int depth, TreeNode node) {
-            this.depth = depth;
-            this.node = node;
-        }
+        System.out.println(depthOfBT.minDepthOfBT_recursive(depthOfBT.root));
+        System.out.println(depthOfBT.minDepthOfBT_iterative(depthOfBT.root));
+        System.out.println(depthOfBT.minDepthOfBT_iterative_other(depthOfBT.root));
     }
 
     public int minDepthOfBT_recursive(TreeNode node) {
-        if (node == null) return 0;
+        if (node == null) {
+            return 0;
+        }
 
         int leftDepth = minDepthOfBT_recursive(node.left);
         int rightDepth = minDepthOfBT_recursive(node.right);
@@ -32,7 +39,9 @@ public class DepthOfBT extends CommonUtils {
     }
 
     public int minDepthOfBT_iterative(TreeNode node) {
-        if (node == null) return 0;
+        if (node == null) {
+            return 0;
+        }
 
         Queue<QueueNode> queue = new LinkedList<>();
         queue.offer(new QueueNode(1, node));
@@ -58,7 +67,9 @@ public class DepthOfBT extends CommonUtils {
     }
 
     public int minDepthOfBT_iterative_other(TreeNode node) {
-        if (node == null) return 0;
+        if (node == null) {
+            return 0;
+        }
 
         // End of level is defined with NULL
         Queue<TreeNode> queue = new LinkedList<>();
@@ -90,18 +101,13 @@ public class DepthOfBT extends CommonUtils {
         return count;
     }
 
-    public static void main(String[] args) {
-        DepthOfBT depthOfBT = new DepthOfBT();
-        depthOfBT.insertInBT(1);
-        depthOfBT.root.left = new TreeNode(2);
-        depthOfBT.root.right = new TreeNode(3);
-//        depthOfBT.root.left.left = new TreeNode(4);
-//        depthOfBT.root.left.right = new TreeNode(5);
-        depthOfBT.root.right.left = new TreeNode(6);
-        depthOfBT.root.right.right = new TreeNode(7);
+    static class QueueNode {
+        TreeNode node;
+        int depth;
 
-        System.out.println(depthOfBT.minDepthOfBT_recursive(depthOfBT.root));
-        System.out.println(depthOfBT.minDepthOfBT_iterative(depthOfBT.root));
-        System.out.println(depthOfBT.minDepthOfBT_iterative_other(depthOfBT.root));
+        public QueueNode(int depth, TreeNode node) {
+            this.depth = depth;
+            this.node = node;
+        }
     }
 }

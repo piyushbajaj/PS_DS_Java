@@ -16,6 +16,11 @@ import java.util.Stack;
  */
 public class P2_Valid_Parentheses {
 
+    public static void main(String[] args) {
+        P2_Valid_Parentheses p2_valid_parentheses = new P2_Valid_Parentheses();
+        System.out.println(p2_valid_parentheses.isValid("]"));
+    }
+
     /**
      * TC: O(N)
      * SC: O(N)
@@ -46,11 +51,6 @@ public class P2_Valid_Parentheses {
         }
 
         return stack.isEmpty();
-    }
-
-    public static void main(String[] args) {
-        P2_Valid_Parentheses p2_valid_parentheses = new P2_Valid_Parentheses();
-        System.out.println(p2_valid_parentheses.isValid("]"));
     }
 
 }

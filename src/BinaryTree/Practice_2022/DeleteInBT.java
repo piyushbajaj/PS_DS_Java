@@ -11,8 +11,26 @@ public class DeleteInBT extends CommonUtils {
     3. Replace the node to delete data with the node data
      */
 
+    public static void main(String[] args) {
+        DeleteInBT deleteInBT = new DeleteInBT();
+        deleteInBT.insertInBT(1);
+        deleteInBT.insertInBT(2);
+        deleteInBT.insertInBT(3);
+        deleteInBT.insertInBT(4);
+        deleteInBT.insertInBT(5);
+        deleteInBT.insertInBT(6);
+        deleteInBT.insertInBT(7);
+        deleteInBT.printBinaryTree_levelOrder(deleteInBT.root);
+        System.out.println();
+        deleteInBT.deleteInBT(deleteInBT.root, 3);
+        System.out.println();
+        deleteInBT.printBinaryTree_levelOrder(deleteInBT.root);
+    }
+
     public void deleteInBT(TreeNode node, int key) {
-        if (node == null) return;
+        if (node == null) {
+            return;
+        }
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(node);
@@ -43,7 +61,9 @@ public class DeleteInBT extends CommonUtils {
     }
 
     private void deleteDeepestNode(TreeNode node, TreeNode deleteNode) {
-        if (node == null || deleteNode == null) return;
+        if (node == null || deleteNode == null) {
+            return;
+        }
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(node);
@@ -65,21 +85,5 @@ public class DeleteInBT extends CommonUtils {
                 }
             }
         }
-    }
-
-    public static void main(String[] args) {
-        DeleteInBT deleteInBT = new DeleteInBT();
-        deleteInBT.insertInBT(1);
-        deleteInBT.insertInBT(2);
-        deleteInBT.insertInBT(3);
-        deleteInBT.insertInBT(4);
-        deleteInBT.insertInBT(5);
-        deleteInBT.insertInBT(6);
-        deleteInBT.insertInBT(7);
-        deleteInBT.printBinaryTree_levelOrder(deleteInBT.root);
-        System.out.println();
-        deleteInBT.deleteInBT(deleteInBT.root, 3);
-        System.out.println();
-        deleteInBT.printBinaryTree_levelOrder(deleteInBT.root);
     }
 }

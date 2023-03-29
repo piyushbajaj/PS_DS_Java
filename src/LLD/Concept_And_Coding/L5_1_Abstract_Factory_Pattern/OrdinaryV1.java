@@ -8,7 +8,7 @@ package LLD.Concept_And_Coding.L5_1_Abstract_Factory_Pattern;
  * Date: 16/01/23
  * Time: 11:50 pm
  */
-public class OrdinaryV1 implements Vehicle{
+public class OrdinaryV1 implements Vehicle {
     @Override
     public int average() {
         return 20;

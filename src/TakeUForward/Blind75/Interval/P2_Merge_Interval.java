@@ -15,6 +15,15 @@ import java.util.LinkedList;
  */
 public class P2_Merge_Interval {
 
+    public static void main(String[] args) {
+        P2_Merge_Interval p2_merge_interval = new P2_Merge_Interval();
+        System.out.println(
+            Arrays.deepToString(p2_merge_interval.merge(new int[][] {{1, 3}, {2, 6}, {8, 10}, {15, 18}})));
+
+        System.out.println(
+            Arrays.deepToString(p2_merge_interval.merge(new int[][] {{1, 4}, {4, 5}})));
+    }
+
     /**
      * Approach:
      * 1. Sort the intervals based on the start time
@@ -43,14 +52,5 @@ public class P2_Merge_Interval {
 
         return list.toArray(new int[list.size()][2]);
 
-    }
-
-    public static void main(String[] args) {
-        P2_Merge_Interval p2_merge_interval = new P2_Merge_Interval();
-        System.out.println(
-            Arrays.deepToString(p2_merge_interval.merge(new int[][] {{1, 3}, {2, 6}, {8, 10}, {15, 18}})));
-
-        System.out.println(
-            Arrays.deepToString(p2_merge_interval.merge(new int[][] {{1, 4}, {4, 5}})));
     }
 }

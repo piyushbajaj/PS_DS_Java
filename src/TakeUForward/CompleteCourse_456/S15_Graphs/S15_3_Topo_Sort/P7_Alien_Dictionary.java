@@ -15,6 +15,22 @@ import java.util.Queue;
  * <p>
  */
 public class P7_Alien_Dictionary {
+    public static void main(String[] args) {
+        P7_Alien_Dictionary p7_alien_dictionary = new P7_Alien_Dictionary();
+
+        String[] dict = {"ajcdkalclhkalklkaffagc",
+            "baehilhiadeeleggaddedfakelf",
+            "bajeiicifhlaghjdjjkakfddelckhkkbiag",
+            "didehekfdiibac",
+            "edfkkfjfcacchaiblgbfikhekldejfkfabhbbhbkicfkeadlg",
+            "ejjldh",
+            "flaebkkkaikkebijhllbbalagaje",
+            "ghjbckhidg",
+            "jljee"};
+
+        System.out.println(p7_alien_dictionary.findOrder(dict, 9, 12));
+    }
+
     public String findOrder(String[] dict, int N, int K) {
         List<List<Integer>> adjList = new ArrayList<>();
 
@@ -80,21 +96,5 @@ public class P7_Alien_Dictionary {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        P7_Alien_Dictionary p7_alien_dictionary = new P7_Alien_Dictionary();
-
-        String[] dict = {"ajcdkalclhkalklkaffagc",
-            "baehilhiadeeleggaddedfakelf",
-            "bajeiicifhlaghjdjjkakfddelckhkkbiag",
-            "didehekfdiibac",
-            "edfkkfjfcacchaiblgbfikhekldejfkfabhbbhbkicfkeadlg",
-            "ejjldh",
-            "flaebkkkaikkebijhllbbalagaje",
-            "ghjbckhidg",
-            "jljee"};
-
-        System.out.println(p7_alien_dictionary.findOrder(dict, 9, 12));
     }
 }

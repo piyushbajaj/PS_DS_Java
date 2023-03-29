@@ -11,6 +11,10 @@ package TakeUForward.CompleteCourse_456.S3_Arrays.S3_1_Easy;
  */
 public class P10_Missing_Number_In_Array {
 
+    public static void main(String[] args) {
+
+    }
+
     public int missingNumber(int[] nums) {
         int n = nums.length;
         int sum = 0;
@@ -21,9 +25,5 @@ public class P10_Missing_Number_In_Array {
         int expectedSum = n * (n + 1) / 2;
 
         return expectedSum - sum;
-    }
-
-    public static void main(String[] args) {
-
     }
 }

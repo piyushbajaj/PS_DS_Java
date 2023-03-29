@@ -27,6 +27,8 @@ public class sortedArray {
         } else if (A[index - 1] < A[index - 2]) {
             System.out.println("Un-sorted");
             return;
-        } else isArraySortedOrder(A, index - 1);
+        } else {
+            isArraySortedOrder(A, index - 1);
+        }
     }
 }

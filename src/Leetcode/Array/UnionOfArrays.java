@@ -4,6 +4,14 @@ import java.util.Arrays;
 
 public class UnionOfArrays {
 
+    public static void main(String[] args) {
+        int[] a1 = {1, 2, 3, 4, 5};
+        int[] a2 = {3, 5, 7, 8, 9};
+
+        UnionOfArrays unionOfArrays = new UnionOfArrays();
+        System.out.println(Arrays.toString(unionOfArrays.union(a1, a2)));
+    }
+
     public int[] union(int[] a, int[] b) {
         int aL = a.length;
         int bL = b.length;
@@ -16,8 +24,9 @@ public class UnionOfArrays {
 
         if (aL < bL) {
             k = aL;
-        } else
+        } else {
             k = bL;
+        }
 
         int i, j = 0;
         int m = 0;
@@ -44,13 +53,5 @@ public class UnionOfArrays {
         }
 
         return newArray;
-    }
-
-    public static void main(String[] args) {
-        int[] a1 = {1, 2, 3, 4, 5};
-        int[] a2 = {3, 5, 7, 8, 9};
-
-        UnionOfArrays unionOfArrays = new UnionOfArrays();
-        System.out.println(Arrays.toString(unionOfArrays.union(a1, a2)));
     }
 }

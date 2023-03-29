@@ -12,6 +12,18 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_2_2D_3D_Grids;
  */
 public class P10_Min_Path_Sum {
 
+    public static void main(String[] args) {
+        P10_Min_Path_Sum p10_min_path_sum = new P10_Min_Path_Sum();
+        int[][] grid = {{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
+        System.out.println(p10_min_path_sum.minPathSum(grid));
+
+        System.out.println(p10_min_path_sum.minPathSum_mem(grid));
+
+        System.out.println(p10_min_path_sum.minPathSum_tab(grid));
+
+        System.out.println(p10_min_path_sum.minPathSum_tab_better(grid));
+    }
+
     /**
      * Recursion
      * TC: O(2^(M*N))
@@ -168,17 +180,5 @@ public class P10_Min_Path_Sum {
         }
 
         return prev[m - 1];
-    }
-
-    public static void main(String[] args) {
-        P10_Min_Path_Sum p10_min_path_sum = new P10_Min_Path_Sum();
-        int[][] grid = {{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
-        System.out.println(p10_min_path_sum.minPathSum(grid));
-
-        System.out.println(p10_min_path_sum.minPathSum_mem(grid));
-
-        System.out.println(p10_min_path_sum.minPathSum_tab(grid));
-
-        System.out.println(p10_min_path_sum.minPathSum_tab_better(grid));
     }
 }

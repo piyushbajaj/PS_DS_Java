@@ -14,6 +14,23 @@ import TakeUForward.CompleteCourse_456.S15_Graphs.S15_1_Learning.P2_DFS;
  * <p>
  */
 public class P11_Bipartite_Graph_DFS {
+    public static void main(String[] args) {
+        P2_DFS p2_dfs = new P2_DFS(8);
+        p2_dfs.addEdge(0, 1, P2_DFS.GraphDirection.BiDirectional);
+        p2_dfs.addEdge(1, 2, P2_DFS.GraphDirection.BiDirectional);
+        p2_dfs.addEdge(1, 5, P2_DFS.GraphDirection.BiDirectional);
+        p2_dfs.addEdge(2, 3, P2_DFS.GraphDirection.BiDirectional);
+        p2_dfs.addEdge(5, 4, P2_DFS.GraphDirection.BiDirectional);
+        p2_dfs.addEdge(4, 3, P2_DFS.GraphDirection.BiDirectional);
+        p2_dfs.addEdge(3, 6, P2_DFS.GraphDirection.BiDirectional);
+        p2_dfs.addEdge(6, 7, P2_DFS.GraphDirection.BiDirectional);
+
+        P11_Bipartite_Graph_DFS p11_bipartite_graph = new P11_Bipartite_Graph_DFS();
+        p2_dfs.printAllEdges(P2_DFS.GraphType.ZeroBasedIndexing);
+
+        System.out.println(p11_bipartite_graph.isBipartite(8, p2_dfs.adjList));
+    }
+
     public boolean isBipartite(int V, ArrayList<ArrayList<Integer>> adj) {
         int[] color = new int[V];
 
@@ -44,22 +61,5 @@ public class P11_Bipartite_Graph_DFS {
             }
         }
         return true;
-    }
-
-    public static void main(String[] args) {
-        P2_DFS p2_dfs = new P2_DFS(8);
-        p2_dfs.addEdge(0, 1, P2_DFS.GraphDirection.BiDirectional);
-        p2_dfs.addEdge(1, 2, P2_DFS.GraphDirection.BiDirectional);
-        p2_dfs.addEdge(1, 5, P2_DFS.GraphDirection.BiDirectional);
-        p2_dfs.addEdge(2, 3, P2_DFS.GraphDirection.BiDirectional);
-        p2_dfs.addEdge(5, 4, P2_DFS.GraphDirection.BiDirectional);
-        p2_dfs.addEdge(4, 3, P2_DFS.GraphDirection.BiDirectional);
-        p2_dfs.addEdge(3, 6, P2_DFS.GraphDirection.BiDirectional);
-        p2_dfs.addEdge(6, 7, P2_DFS.GraphDirection.BiDirectional);
-
-        P11_Bipartite_Graph_DFS p11_bipartite_graph = new P11_Bipartite_Graph_DFS();
-        p2_dfs.printAllEdges(P2_DFS.GraphType.ZeroBasedIndexing);
-
-        System.out.println(p11_bipartite_graph.isBipartite(8, p2_dfs.adjList));
     }
 }

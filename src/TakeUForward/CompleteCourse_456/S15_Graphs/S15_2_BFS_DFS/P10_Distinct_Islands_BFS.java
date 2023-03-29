@@ -19,13 +19,21 @@ import java.util.Set;
  */
 public class P10_Distinct_Islands_BFS {
 
-    static class Pair {
-        int rowIndex, colIndex;
+    public static void main(String[] args) {
+        P10_Distinct_Islands_BFS p10_distinct_islands = new P10_Distinct_Islands_BFS();
 
-        Pair(int rowIndex, int colIndex) {
-            this.rowIndex = rowIndex;
-            this.colIndex = colIndex;
-        }
+        int[][] grid = {{1, 1, 0, 0, 0},
+            {1, 1, 0, 0, 0},
+            {0, 0, 0, 1, 1},
+            {0, 0, 0, 1, 1}};
+
+        int[][] grid1 = {{1, 1, 0, 1, 1},
+            {1, 0, 0, 0, 0},
+            {0, 0, 0, 0, 1},
+            {1, 1, 0, 1, 1}};
+
+
+        System.out.println(p10_distinct_islands.countDistinctIslands(grid1));
     }
 
     /**
@@ -90,20 +98,12 @@ public class P10_Distinct_Islands_BFS {
         result.add(new HashMap<>(subResult));
     }
 
-    public static void main(String[] args) {
-        P10_Distinct_Islands_BFS p10_distinct_islands = new P10_Distinct_Islands_BFS();
+    static class Pair {
+        int rowIndex, colIndex;
 
-        int[][] grid = {{1, 1, 0, 0, 0},
-            {1, 1, 0, 0, 0},
-            {0, 0, 0, 1, 1},
-            {0, 0, 0, 1, 1}};
-
-        int[][] grid1 = {{1, 1, 0, 1, 1},
-            {1, 0, 0, 0, 0},
-            {0, 0, 0, 0, 1},
-            {1, 1, 0, 1, 1}};
-
-
-        System.out.println(p10_distinct_islands.countDistinctIslands(grid1));
+        Pair(int rowIndex, int colIndex) {
+            this.rowIndex = rowIndex;
+            this.colIndex = colIndex;
+        }
     }
 }

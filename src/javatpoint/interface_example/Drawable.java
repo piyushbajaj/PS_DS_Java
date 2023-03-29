@@ -22,23 +22,30 @@ package javatpoint.interface_example;
 //    }}
 
 
-
 //Interface declaration: by first user
-interface Drawable{
+interface Drawable {
     void draw();
     //static int cube(int x){return x*x*x;}
     //default void msg(){System.out.println("default method");}
 }
+
 //Implementation: by second user
-class Rectangle implements Drawable{
-    public void draw(){System.out.println("drawing rectangle");}
+class Rectangle implements Drawable {
+    public void draw() {
+        System.out.println("drawing rectangle");
+    }
 }
-class Circle implements Drawable{
-    public void draw(){System.out.println("drawing circle");}
+
+class Circle implements Drawable {
+    public void draw() {
+        System.out.println("drawing circle");
+    }
 }
+
 //Using interface: by third user
-class TestInterface1{
-    public static void main(String args[]){
-        Drawable d=new Circle();//In real scenario, object is provided by method e.g. getDrawable()
+class TestInterface1 {
+    public static void main(String args[]) {
+        Drawable d = new Circle();//In real scenario, object is provided by method e.g. getDrawable()
         d.draw();
-    }}
+    }
+}

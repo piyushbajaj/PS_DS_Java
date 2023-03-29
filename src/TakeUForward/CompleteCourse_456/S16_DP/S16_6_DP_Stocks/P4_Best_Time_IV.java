@@ -9,6 +9,11 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_6_DP_Stocks;
  * Time: 7:18 pm
  */
 public class P4_Best_Time_IV {
+    public static void main(String[] args) {
+        P4_Best_Time_IV p4_best_time_iv = new P4_Best_Time_IV();
+        System.out.println(p4_best_time_iv.maxProfit(2, new int[] {3, 2, 6, 5, 0, 3}));
+    }
+
     public int maxProfit(int k, int[] prices) {
         int n = prices.length;
         // Index, buy, cap
@@ -41,10 +46,5 @@ public class P4_Best_Time_IV {
         }
 
         return dp[0][1][k];
-    }
-
-    public static void main(String[] args) {
-        P4_Best_Time_IV p4_best_time_iv = new P4_Best_Time_IV();
-        System.out.println(p4_best_time_iv.maxProfit(2, new int[] {3, 2, 6, 5, 0, 3}));
     }
 }

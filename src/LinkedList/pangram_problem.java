@@ -7,6 +7,8 @@ import java.util.Scanner;
  * Created by piyush.bajaj on 08/06/18.
  */
 public class pangram_problem {
+    private static final Scanner scanner = new Scanner(System.in);
+
     static String pangrams(String s) {
         int[] charArr = new int[26];
 
@@ -15,9 +17,9 @@ public class pangram_problem {
 
         int n = s.length();
 
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
 
-            if((s.charAt(i) - 97) >= 0 && (s.charAt(i) - 97) < 26){
+            if ((s.charAt(i) - 97) >= 0 && (s.charAt(i) - 97) < 26) {
                 System.out.println(s.charAt(i) - 97);
                 charArr[s.charAt(i) - 97]++;
             }
@@ -27,11 +29,10 @@ public class pangram_problem {
         }
 
 
-
-        for(int i = 0; i < 26; i++){
+        for (int i = 0; i < 26; i++) {
             // if((s.charAt(i) - 97) == ' ')
             //     continue;
-            if(charArr[i] == 0){
+            if (charArr[i] == 0) {
                 result = "not pangram";
                 return result;
             }
@@ -43,11 +44,8 @@ public class pangram_problem {
 
     }
 
-    private static final Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) throws IOException {
         //BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
-
 
 
         String s = "We promptly judged antique ivory buckles for the next prize";

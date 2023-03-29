@@ -18,6 +18,17 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  * lc: <a href="https://leetcode.com/problems/binary-tree-level-order-traversal/description/">...</a>
  */
 public class P5_LevelOrderTraversal {
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(-10);
+        root.left = new TreeNode(9);
+        root.right = new TreeNode(20);
+        root.right.left = new TreeNode(15);
+        root.right.right = new TreeNode(7);
+
+        P5_LevelOrderTraversal p5_levelOrderTraversal = new P5_LevelOrderTraversal();
+        System.out.println(p5_levelOrderTraversal.levelOrder(root));
+    }
+
     /**
      * Iterative Way
      *
@@ -55,16 +66,5 @@ public class P5_LevelOrderTraversal {
             result.add(subResult);
         }
         return result;
-    }
-
-    public static void main(String[] args) {
-        TreeNode root = new TreeNode(-10);
-        root.left = new TreeNode(9);
-        root.right = new TreeNode(20);
-        root.right.left = new TreeNode(15);
-        root.right.right = new TreeNode(7);
-
-        P5_LevelOrderTraversal p5_levelOrderTraversal = new P5_LevelOrderTraversal();
-        System.out.println(p5_levelOrderTraversal.levelOrder(root));
     }
 }

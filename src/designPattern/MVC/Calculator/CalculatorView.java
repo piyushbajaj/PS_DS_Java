@@ -1,6 +1,11 @@
 package designPattern.MVC.Calculator;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 
 /**
@@ -13,7 +18,7 @@ public class CalculatorView extends JFrame {
     private JButton calculateButton = new JButton("Calculate");
     private JTextField calcSol = new JTextField(10);
 
-    public CalculatorView(){
+    public CalculatorView() {
         JPanel calcPanel = new JPanel();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(600, 200);
@@ -27,27 +32,27 @@ public class CalculatorView extends JFrame {
         this.add(calcPanel);
     }
 
-    public int getFirstNumber(){
+    public int getFirstNumber() {
         return Integer.parseInt(first.getText());
     }
 
-    public int getSecondNumber(){
+    public int getSecondNumber() {
         return Integer.parseInt(second.getText());
     }
 
-    public int getCalcSolution(){
+    public int getCalcSolution() {
         return Integer.parseInt(calcSol.getText());
     }
 
-    public void setCalcSoltion(int solution){
+    public void setCalcSoltion(int solution) {
         calcSol.setText(Integer.toString(solution));
     }
 
-    public void addCalculationListener(ActionListener listenForCalcButton){
+    public void addCalculationListener(ActionListener listenForCalcButton) {
         calculateButton.addActionListener(listenForCalcButton);
     }
 
-    public void displayErrorMessage(String errorMessage){
+    public void displayErrorMessage(String errorMessage) {
         JOptionPane.showMessageDialog(this, errorMessage);
     }
 

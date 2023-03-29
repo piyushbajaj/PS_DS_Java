@@ -22,7 +22,6 @@ public class LinkedHashMapExample {
         }
 
 
-
         for (Map.Entry m : linkedHashMap.entrySet()) {
             System.out.println(m.getKey() + " " + m.getValue());
         }

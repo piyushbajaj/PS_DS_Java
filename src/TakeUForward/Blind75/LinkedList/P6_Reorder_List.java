@@ -10,6 +10,19 @@ package TakeUForward.Blind75.LinkedList;
  */
 public class P6_Reorder_List extends BaseListNode {
 
+    public static void main(String[] args) {
+        P6_Reorder_List p6_reorder_list = new P6_Reorder_List();
+        ListNode listNode = new ListNode(1);
+        listNode.next = new ListNode(2);
+        listNode.next.next = new ListNode(3);
+        listNode.next.next.next = new ListNode(4);
+        listNode.next.next.next.next = new ListNode(5);
+        listNode.next.next.next.next.next = new ListNode(6);
+
+        p6_reorder_list.reorderList(listNode);
+        p6_reorder_list.printList(listNode);
+    }
+
     /**
      * Approach:
      * 1. Get the middle node in the linked list
@@ -73,18 +86,5 @@ public class P6_Reorder_List extends BaseListNode {
         }
 
         return prev;
-    }
-
-    public static void main(String[] args) {
-        P6_Reorder_List p6_reorder_list = new P6_Reorder_List();
-        ListNode listNode = new ListNode(1);
-        listNode.next = new ListNode(2);
-        listNode.next.next = new ListNode(3);
-        listNode.next.next.next = new ListNode(4);
-        listNode.next.next.next.next = new ListNode(5);
-        listNode.next.next.next.next.next = new ListNode(6);
-
-        p6_reorder_list.reorderList(listNode);
-        p6_reorder_list.printList(listNode);
     }
 }

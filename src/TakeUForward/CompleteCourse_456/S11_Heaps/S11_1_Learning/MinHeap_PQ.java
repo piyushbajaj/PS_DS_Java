@@ -27,6 +27,51 @@ public class MinHeap_PQ extends BaseHeap_PQ {
         super(capacity);
     }
 
+    public static void main(String[] args) throws Exception {
+        MinHeap_PQ minHeap_pq = new MinHeap_PQ(10);
+
+        // insert three integers
+        minHeap_pq.push(3);
+        minHeap_pq.push(2);
+        minHeap_pq.push(15);
+
+        // print priority queue size
+        System.out.println("Priority queue size is " + minHeap_pq.size());
+
+        // search 2 in priority queue
+        Integer searchKey = 2;
+
+        if (minHeap_pq.contains(searchKey)) {
+            System.out.println("Priority queue contains " + searchKey + "\n");
+        }
+
+        // empty queue
+        minHeap_pq.clear();
+
+        if (minHeap_pq.isEmpty()) {
+            System.out.println("The queue is empty");
+        }
+
+//        System.out.println("\nCalling remove operation on an empty heap");
+//        System.out.println("The element with the highest priority is " + minHeap_pq.poll());
+
+//        System.out.println("\nCalling peek operation on an empty heap");
+//        System.out.println("The element with the highest priority is " + minHeap_pq.peek() +
+//                System.lineSeparator());
+
+        // again insert three integers
+        minHeap_pq.push(5);
+        minHeap_pq.push(4);
+        minHeap_pq.push(45);
+
+        // construct an array containing all elements present in the queue
+        Integer[] I = minHeap_pq.toArray();
+        System.out.println("Printing array: " + Arrays.toString(I));
+
+        System.out.println("\nThe element with the highest priority is " + minHeap_pq.poll());
+        System.out.println("The element with the highest priority is " + minHeap_pq.peek());
+    }
+
     /**
      * Once we insert new element in the end, then we do heapify all the elements upwards the array
      *
@@ -141,51 +186,6 @@ public class MinHeap_PQ extends BaseHeap_PQ {
             System.out.print(poll() + " ");
         }
         System.out.println();
-    }
-
-    public static void main(String[] args) throws Exception {
-        MinHeap_PQ minHeap_pq = new MinHeap_PQ(10);
-
-        // insert three integers
-        minHeap_pq.push(3);
-        minHeap_pq.push(2);
-        minHeap_pq.push(15);
-
-        // print priority queue size
-        System.out.println("Priority queue size is " + minHeap_pq.size());
-
-        // search 2 in priority queue
-        Integer searchKey = 2;
-
-        if (minHeap_pq.contains(searchKey)) {
-            System.out.println("Priority queue contains " + searchKey + "\n");
-        }
-
-        // empty queue
-        minHeap_pq.clear();
-
-        if (minHeap_pq.isEmpty()) {
-            System.out.println("The queue is empty");
-        }
-
-//        System.out.println("\nCalling remove operation on an empty heap");
-//        System.out.println("The element with the highest priority is " + minHeap_pq.poll());
-
-//        System.out.println("\nCalling peek operation on an empty heap");
-//        System.out.println("The element with the highest priority is " + minHeap_pq.peek() +
-//                System.lineSeparator());
-
-        // again insert three integers
-        minHeap_pq.push(5);
-        minHeap_pq.push(4);
-        minHeap_pq.push(45);
-
-        // construct an array containing all elements present in the queue
-        Integer[] I = minHeap_pq.toArray();
-        System.out.println("Printing array: " + Arrays.toString(I));
-
-        System.out.println("\nThe element with the highest priority is " + minHeap_pq.poll());
-        System.out.println("The element with the highest priority is " + minHeap_pq.peek());
     }
 
 }

@@ -16,6 +16,21 @@ import javafx.util.Pair;
  * g4g:<a href="https://practice.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1">...</a>
  */
 public class P10_BottomViewOfBT {
+    public static void main(String[] args) {
+        P10_BottomViewOfBT p10_bottomViewOfBT = new P10_BottomViewOfBT();
+
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        System.out.println(p10_bottomViewOfBT.bottomView_better(root));
+        System.out.println(p10_bottomViewOfBT.bottomView_much_better(root));
+    }
+
     /**
      * Better way to use Pair instead of defining tuple
      * TC: O(nLogN)
@@ -104,20 +119,5 @@ public class P10_BottomViewOfBT {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        P10_BottomViewOfBT p10_bottomViewOfBT = new P10_BottomViewOfBT();
-
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        System.out.println(p10_bottomViewOfBT.bottomView_better(root));
-        System.out.println(p10_bottomViewOfBT.bottomView_much_better(root));
     }
 }

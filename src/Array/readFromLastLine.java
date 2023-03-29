@@ -15,7 +15,7 @@ public class readFromLastLine {
         rf.readFromLast(file);
     }
 
-    public void readFromLast(File file){
+    public void readFromLast(File file) {
         int lines = 0;
         StringBuilder builder = new StringBuilder();
         RandomAccessFile randomAccessFile = null;
@@ -24,13 +24,13 @@ public class readFromLastLine {
             long fileLength = file.length() - 1;
             // Set the pointer at the last of the file
             randomAccessFile.seek(fileLength);
-            for(long pointer = fileLength; pointer >= 0; pointer--){
+            for (long pointer = fileLength; pointer >= 0; pointer--) {
                 randomAccessFile.seek(pointer);
                 char c;
                 // read from the last one char at the time
-                c = (char)randomAccessFile.read();
+                c = (char) randomAccessFile.read();
                 // break when end of the line
-                if(c == '\n'){
+                if (c == '\n') {
                     break;
                 }
                 builder.append(c);
@@ -42,12 +42,11 @@ public class readFromLastLine {
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }finally{
-            if(randomAccessFile != null){
+        } finally {
+            if (randomAccessFile != null) {
                 try {
                     randomAccessFile.close();
                 } catch (IOException e) {

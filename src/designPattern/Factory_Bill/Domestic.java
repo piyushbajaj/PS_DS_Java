@@ -6,7 +6,7 @@ package designPattern.Factory_Bill;
 public class Domestic extends Plan {
 
     @Override
-    public void getRate(){
+    public void getRate() {
         rate = 3.50;
     }
 }

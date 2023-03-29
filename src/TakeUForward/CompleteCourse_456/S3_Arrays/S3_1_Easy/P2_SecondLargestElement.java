@@ -21,7 +21,7 @@ public class P2_SecondLargestElement {
         int n = arr.length;
 
         if (n == 0 || n == 1) {
-            return new int[]{-1, -1};
+            return new int[] {-1, -1};
         }
 
         for (int j : arr) {
@@ -39,10 +39,10 @@ public class P2_SecondLargestElement {
             }
         }
 
-        return new int[]{secondMax, secondMin};
+        return new int[] {secondMax, secondMin};
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(secondLargestElement(new int[]{1, 2, 4, 6, 7, 5})));
+        System.out.println(Arrays.toString(secondLargestElement(new int[] {1, 2, 4, 6, 7, 5})));
     }
 }

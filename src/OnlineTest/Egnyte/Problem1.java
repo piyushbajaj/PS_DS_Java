@@ -11,6 +11,24 @@ import java.util.Arrays;
  * Time: 9:15 am
  */
 public class Problem1 {
+    public static void main(String[] args) {
+        Problem1 problem1 = new Problem1();
+        int[] arr = {15, 20, 9, 11};
+
+        int[] arr1 = {11, 20, 15};
+
+        int[] arr2 = {0, 44, 32, 30, 42, 18, 34, 16, 35};
+
+        int[] arr3 = {9};
+        System.out.println(problem1.solution(arr));
+
+        System.out.println(problem1.solution(arr1));
+
+        System.out.println(problem1.solution(arr2));
+
+        System.out.println(problem1.solution(arr3));
+    }
+
     public int solution(int[] A) {
         int shortestBoard = 0;
         int n = A.length;
@@ -41,23 +59,5 @@ public class Problem1 {
         }
 
         return shortestBoard;
-    }
-
-    public static void main(String[] args) {
-        Problem1 problem1 = new Problem1();
-        int[] arr = {15, 20, 9, 11};
-
-        int[] arr1 = {11, 20, 15};
-
-        int[] arr2 = {0, 44, 32, 30, 42, 18, 34, 16, 35};
-
-        int[] arr3 = {9};
-        System.out.println(problem1.solution(arr));
-
-        System.out.println(problem1.solution(arr1));
-
-        System.out.println(problem1.solution(arr2));
-
-        System.out.println(problem1.solution(arr3));
     }
 }

@@ -7,18 +7,6 @@ package StringAlgorithm;
 
 
 public class BruteForce {
-    public int BruteAlgo(String T, int n, String P, int m){
-        for(int i = 0; i <=n-m; i++){
-            int j = 0;
-            while (j < m && T.charAt(i+j) == P.charAt(j)){
-                j++;
-            }
-            if(j==m)
-                return i;
-        }
-        return -1;
-    }
-
     public static void main(String[] args) {
         BruteForce BF = new BruteForce();
         int[] T = {10, 12, 14, 16, 18, 20};
@@ -29,5 +17,18 @@ public class BruteForce {
 
         System.out.println(BF.BruteAlgo(t1, t1.length(), p1, p1.length()));
 
+    }
+
+    public int BruteAlgo(String T, int n, String P, int m) {
+        for (int i = 0; i <= n - m; i++) {
+            int j = 0;
+            while (j < m && T.charAt(i + j) == P.charAt(j)) {
+                j++;
+            }
+            if (j == m) {
+                return i;
+            }
+        }
+        return -1;
     }
 }

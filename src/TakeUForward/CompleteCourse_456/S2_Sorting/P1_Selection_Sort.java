@@ -13,6 +13,13 @@ import java.util.Arrays;
  */
 public class P1_Selection_Sort {
 
+    public static void main(String[] args) {
+        P1_Selection_Sort p1_selection_sort = new P1_Selection_Sort();
+        int[] arr = {4, 1, 3, 9, 7};
+        p1_selection_sort.selectionSort(arr, arr.length);
+        System.out.println(Arrays.toString(arr));
+    }
+
     /**
      * Approach:
      * 1. Get the minimum the element from the inner loop like from i+1 to n-1
@@ -31,12 +38,5 @@ public class P1_Selection_Sort {
             }
             Utility.swap(arr, i, minIndex);
         }
-    }
-
-    public static void main(String[] args) {
-        P1_Selection_Sort p1_selection_sort = new P1_Selection_Sort();
-        int[] arr = {4, 1, 3, 9, 7};
-        p1_selection_sort.selectionSort(arr, arr.length);
-        System.out.println(Arrays.toString(arr));
     }
 }

@@ -32,9 +32,9 @@ public class P13_MaximumPoints {
     }
 
     public static void main(String[] args) {
-        System.out.println(maxScore(new int[]{1, 2, 3, 4, 5, 6, 1}, 3));
-        System.out.println(maxScore(new int[]{2, 2, 2}, 2));
-        System.out.println(maxScore(new int[]{9, 7, 7, 9, 7, 7, 9}, 7));
-        System.out.println(maxScore(new int[]{1, 79, 80, 1, 1, 1, 200, 1}, 3));
+        System.out.println(maxScore(new int[] {1, 2, 3, 4, 5, 6, 1}, 3));
+        System.out.println(maxScore(new int[] {2, 2, 2}, 2));
+        System.out.println(maxScore(new int[] {9, 7, 7, 9, 7, 7, 9}, 7));
+        System.out.println(maxScore(new int[] {1, 79, 80, 1, 1, 1, 200, 1}, 3));
     }
 }

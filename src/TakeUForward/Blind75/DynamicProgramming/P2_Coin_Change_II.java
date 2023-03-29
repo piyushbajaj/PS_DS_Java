@@ -13,6 +13,17 @@ package TakeUForward.Blind75.DynamicProgramming;
  */
 public class P2_Coin_Change_II {
 
+    public static void main(String[] args) {
+        P2_Coin_Change_II p2_coin_change_ii = new P2_Coin_Change_II();
+        System.out.println(p2_coin_change_ii.change(5, new int[] {1, 2, 5}));
+
+        System.out.println(p2_coin_change_ii.change_mem(5, new int[] {1, 2, 5}));
+
+        System.out.println(p2_coin_change_ii.change_tab(5, new int[] {1, 2, 5}));
+
+        System.out.println(p2_coin_change_ii.change_tab_improve(5, new int[] {1, 2, 5}));
+    }
+
     /**
      * Recursive Approach: Top-Down Approach
      * TC: O(2^N)
@@ -155,16 +166,5 @@ public class P2_Coin_Change_II {
         }
 
         return prev[amount];
-    }
-
-    public static void main(String[] args) {
-        P2_Coin_Change_II p2_coin_change_ii = new P2_Coin_Change_II();
-        System.out.println(p2_coin_change_ii.change(5, new int[] {1, 2, 5}));
-
-        System.out.println(p2_coin_change_ii.change_mem(5, new int[] {1, 2, 5}));
-
-        System.out.println(p2_coin_change_ii.change_tab(5, new int[] {1, 2, 5}));
-
-        System.out.println(p2_coin_change_ii.change_tab_improve(5, new int[] {1, 2, 5}));
     }
 }

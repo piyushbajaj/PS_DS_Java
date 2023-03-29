@@ -14,6 +14,12 @@ package TakeUForward.CompleteCourse_456.S9_Stacks_Queues.S9_3_Monotonic_Stack_Qu
  */
 public class P5_Trapping_Rain_Water {
 
+    public static void main(String[] args) {
+        P5_Trapping_Rain_Water p5_trapping_rain_water = new P5_Trapping_Rain_Water();
+        System.out.println(p5_trapping_rain_water.trappingWater(new int[] {3, 0, 0, 2, 0, 4}, 6));
+        System.out.println(p5_trapping_rain_water.trappingWater_better(new int[] {3, 0, 0, 2, 0, 4}, 6));
+    }
+
     /**
      * Approach 1:
      * 1. For each index get the left highest element, and the right highest element. Get the minimum of both and
@@ -101,11 +107,5 @@ public class P5_Trapping_Rain_Water {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        P5_Trapping_Rain_Water p5_trapping_rain_water = new P5_Trapping_Rain_Water();
-        System.out.println(p5_trapping_rain_water.trappingWater(new int[] {3, 0, 0, 2, 0, 4}, 6));
-        System.out.println(p5_trapping_rain_water.trappingWater_better(new int[] {3, 0, 0, 2, 0, 4}, 6));
     }
 }

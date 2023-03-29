@@ -15,11 +15,14 @@ public class P7_PrimeNumber {
     /**
      * TC: O(N)
      * SC: O(1)
+     *
      * @param n
      * @return
      */
     static boolean isPrime(int n) {
-        if (n <= 0) return false;
+        if (n <= 0) {
+            return false;
+        }
 
         for (int i = 2; i < n; i++) {
             if (n % i == 0) {
@@ -33,6 +36,7 @@ public class P7_PrimeNumber {
      * We can also check if the number is prime or not by going till square root of n
      * TC: O(SquareRoot of N)
      * SC: O(1)
+     *
      * @param N
      * @return
      */

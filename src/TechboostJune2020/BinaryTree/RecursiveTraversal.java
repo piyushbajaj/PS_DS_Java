@@ -4,46 +4,6 @@ public class RecursiveTraversal {
 
     TreeNode root;
 
-    static class TreeNode {
-        int data;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int data) {
-            this.data = data;
-            this.left = this.right = null;
-        }
-    }
-
-    //T.C: O(N)
-    //S.C: O(N)
-    // InOrder Traversal Using Recursive Approach
-    public void inOrderTraversal_recursive (TreeNode node) {
-        if (node == null) return;
-
-        inOrderTraversal_recursive(node.left);
-        System.out.print(node.data + " ");
-        inOrderTraversal_recursive(node.right);
-    }
-
-    // PreOrder Traversal Using Recursive Approach
-    public void preOrderTraversal_recursive (TreeNode node) {
-        if (node == null) return;
-
-        System.out.print(node.data + " ");
-        preOrderTraversal_recursive(node.left);
-        preOrderTraversal_recursive(node.right);
-    }
-
-    public void postOrderTraversal_recursive (TreeNode node) {
-        if(node == null) return;
-
-        postOrderTraversal_recursive(node.left);
-        postOrderTraversal_recursive(node.right);
-        System.out.print(node.data + " ");
-    }
-
-
     public static void main(String[] args) {
         RecursiveTraversal recursiveTraversal = new RecursiveTraversal();
         recursiveTraversal.root = new TreeNode(1);
@@ -64,6 +24,51 @@ public class RecursiveTraversal {
         System.out.println();
         System.out.print("PostOrder Traversal: ");
         recursiveTraversal.postOrderTraversal_recursive(recursiveTraversal.root);
+    }
+
+    //T.C: O(N)
+    //S.C: O(N)
+    // InOrder Traversal Using Recursive Approach
+    public void inOrderTraversal_recursive(TreeNode node) {
+        if (node == null) {
+            return;
+        }
+
+        inOrderTraversal_recursive(node.left);
+        System.out.print(node.data + " ");
+        inOrderTraversal_recursive(node.right);
+    }
+
+    // PreOrder Traversal Using Recursive Approach
+    public void preOrderTraversal_recursive(TreeNode node) {
+        if (node == null) {
+            return;
+        }
+
+        System.out.print(node.data + " ");
+        preOrderTraversal_recursive(node.left);
+        preOrderTraversal_recursive(node.right);
+    }
+
+    public void postOrderTraversal_recursive(TreeNode node) {
+        if (node == null) {
+            return;
+        }
+
+        postOrderTraversal_recursive(node.left);
+        postOrderTraversal_recursive(node.right);
+        System.out.print(node.data + " ");
+    }
+
+    static class TreeNode {
+        int data;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int data) {
+            this.data = data;
+            this.left = this.right = null;
+        }
     }
 
 }

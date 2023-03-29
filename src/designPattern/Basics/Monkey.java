@@ -5,17 +5,12 @@ package designPattern.Basics;
  */
 public class Monkey implements Living {
     @Override
-    public void setName(String newName) {
-
-    }
-
-    @Override
     public String getName() {
         return null;
     }
 
     @Override
-    public void setWeight(int newWeight) {
+    public void setName(String newName) {
 
     }
 
@@ -25,7 +20,7 @@ public class Monkey implements Living {
     }
 
     @Override
-    public void setHeight(int newHeight) {
+    public void setWeight(int newWeight) {
 
     }
 
@@ -35,7 +30,7 @@ public class Monkey implements Living {
     }
 
     @Override
-    public void setFavFood(String newFood) {
+    public void setHeight(int newHeight) {
 
     }
 
@@ -45,7 +40,7 @@ public class Monkey implements Living {
     }
 
     @Override
-    public void setSpeed(int newSpeed) {
+    public void setFavFood(String newFood) {
 
     }
 
@@ -55,12 +50,17 @@ public class Monkey implements Living {
     }
 
     @Override
-    public void setSound(String newSound) {
+    public void setSpeed(int newSpeed) {
 
     }
 
     @Override
     public String getSound() {
         return null;
+    }
+
+    @Override
+    public void setSound(String newSound) {
+
     }
 }

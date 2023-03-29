@@ -17,11 +17,13 @@ public class P5_BinarySubarrayWithSum {
         for (int i = 0; i < n; i++) {
             currsum += nums[i];
 
-            if (currsum == goal)
+            if (currsum == goal) {
                 cnt++;
+            }
 
-            if (prevSum.containsKey(currsum - goal) && (currsum != goal))
+            if (prevSum.containsKey(currsum - goal) && (currsum != goal)) {
                 cnt += prevSum.get(currsum - goal);
+            }
 
             prevSum.put(currsum, prevSum.getOrDefault(currsum, 0) + 1);
         }
@@ -48,7 +50,9 @@ public class P5_BinarySubarrayWithSum {
         int res = 0;
         int l = 0, r = 0, n = A.length;
 
-        if (S < 0) return 0;
+        if (S < 0) {
+            return 0;
+        }
 
         while (r < n) {
             S -= A[r];
@@ -65,9 +69,9 @@ public class P5_BinarySubarrayWithSum {
     }
 
     public static void main(String[] args) {
-        System.out.println(numSubarraysWithSum(new int[]{1, 0, 1, 0, 1}, 2));
-        System.out.println(numSubarraysWithSum(new int[]{0, 0, 0, 0, 0}, 0));
-        System.out.println(numSubarraysWithSum1(new int[]{1, 0, 1, 0, 1}, 2));
-        System.out.println(numSubarraysWithSum1(new int[]{0, 0, 0, 0, 0}, 0));
+        System.out.println(numSubarraysWithSum(new int[] {1, 0, 1, 0, 1}, 2));
+        System.out.println(numSubarraysWithSum(new int[] {0, 0, 0, 0, 0}, 0));
+        System.out.println(numSubarraysWithSum1(new int[] {1, 0, 1, 0, 1}, 2));
+        System.out.println(numSubarraysWithSum1(new int[] {0, 0, 0, 0, 0}, 0));
     }
 }

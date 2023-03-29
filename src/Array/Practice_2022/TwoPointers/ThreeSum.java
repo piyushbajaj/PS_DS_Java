@@ -37,7 +37,7 @@ public class ThreeSum {
 
     public static void main(String[] args) {
 //        System.out.println(threeSum(new int[]{-1, 0, 1, 2, -1, -4}));
-        System.out.println(threeSum(new int[]{-2, 0, 0, 2, 2}));
+        System.out.println(threeSum(new int[] {-2, 0, 0, 2, 2}));
         System.out.println(null + "abc");
     }
 }

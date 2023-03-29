@@ -5,35 +5,13 @@ package BinaryTree;
  */
 public class ExactlyOneChild_Class {
     Node root;
-    public static class Node{
-        int data;
-        Node left, right;
 
-        Node(int data){
-            this.data = data;
-            left = right = null;
-        }
-    }
-
-    public ExactlyOneChild_Class(){
+    public ExactlyOneChild_Class() {
         root = null;
     }
 
-    public ExactlyOneChild_Class(int key){
+    public ExactlyOneChild_Class(int key) {
         root = new Node(key);
-    }
-
-    public boolean isHavingExactlyOneChild(int[] arr){
-        int nextDiff=0;
-        int lastDiff=0;
-        int n = arr.length-1;
-        for(int i = 0; i < n; i++){
-            nextDiff = arr[i] - arr[i+1];
-            lastDiff = arr[i] - arr[n];
-            if(nextDiff*lastDiff < 0)
-                return false;
-        }
-        return true;
     }
 
     public static void main(String[] args) {
@@ -43,5 +21,29 @@ public class ExactlyOneChild_Class {
 
         System.out.println("Does it has exactly one child: " + BT.isHavingExactlyOneChild(pre));
 
+    }
+
+    public boolean isHavingExactlyOneChild(int[] arr) {
+        int nextDiff = 0;
+        int lastDiff = 0;
+        int n = arr.length - 1;
+        for (int i = 0; i < n; i++) {
+            nextDiff = arr[i] - arr[i + 1];
+            lastDiff = arr[i] - arr[n];
+            if (nextDiff * lastDiff < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static class Node {
+        int data;
+        Node left, right;
+
+        Node(int data) {
+            this.data = data;
+            left = right = null;
+        }
     }
 }

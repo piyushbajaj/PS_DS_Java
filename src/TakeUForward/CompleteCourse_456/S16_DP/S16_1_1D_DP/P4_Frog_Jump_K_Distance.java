@@ -14,6 +14,14 @@ import java.util.Arrays;
  */
 public class P4_Frog_Jump_K_Distance {
 
+    public static void main(String[] args) {
+        P4_Frog_Jump_K_Distance p4_frog_jump_k_distance = new P4_Frog_Jump_K_Distance();
+
+        System.out.println(p4_frog_jump_k_distance.frogJump_mem(3, 2, new int[] {10, 20, 30, 10}));
+
+        System.out.println(p4_frog_jump_k_distance.frogJump_tab(3, 2, new int[] {10, 20, 30, 10}));
+    }
+
     /**
      * Memoization
      * TC: O(N*K)
@@ -87,13 +95,5 @@ public class P4_Frog_Jump_K_Distance {
         }
 
         return dp[n];
-    }
-
-    public static void main(String[] args) {
-        P4_Frog_Jump_K_Distance p4_frog_jump_k_distance = new P4_Frog_Jump_K_Distance();
-
-        System.out.println(p4_frog_jump_k_distance.frogJump_mem(3, 2, new int[] {10, 20, 30, 10}));
-
-        System.out.println(p4_frog_jump_k_distance.frogJump_tab(3, 2, new int[] {10, 20, 30, 10}));
     }
 }

@@ -23,6 +23,7 @@ public class P6_PrintAllDivisors {
     /**
      * TC: O(n)
      * SC: O(1)
+     *
      * @param n
      */
     static void printDivisors(int n) {

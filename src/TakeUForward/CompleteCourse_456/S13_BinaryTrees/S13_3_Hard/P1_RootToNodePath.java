@@ -20,6 +20,23 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  */
 public class P1_RootToNodePath {
 
+    public static void main(String[] args) {
+        P1_RootToNodePath p1_rootToNodePath = new P1_RootToNodePath();
+
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        System.out.println(p1_rootToNodePath.printRootToLeafPath(root, 7));
+
+        System.out.println(p1_rootToNodePath.printRootToLeafPath_better(root));
+
+    }
+
     public List<Integer> printRootToLeafPath(TreeNode curr, int key) {
         List<Integer> result = new ArrayList<>();
         if (curr == null) {
@@ -97,22 +114,5 @@ public class P1_RootToNodePath {
 
         printRootToLeafPath_better_util(curr.left, result, new ArrayList<>(subResult));
         printRootToLeafPath_better_util(curr.right, result, new ArrayList<>(subResult));
-    }
-
-    public static void main(String[] args) {
-        P1_RootToNodePath p1_rootToNodePath = new P1_RootToNodePath();
-
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        System.out.println(p1_rootToNodePath.printRootToLeafPath(root, 7));
-
-        System.out.println(p1_rootToNodePath.printRootToLeafPath_better(root));
-
     }
 }

@@ -1,18 +1,18 @@
 package GraphAlgo.Practice_2022;
 
-import lombok.Data;
-
 import java.util.LinkedList;
+
+import lombok.Data;
 
 /**
  * Created by bajajp on 20 May, 2022
  */
 @Data
 public class BaseGraphAdjacencyList {
-    public int vertexCount;
     public final int totalVertices;
     public final Vertex[] vertexList;
     public final LinkedList<Integer>[] adjList;
+    public int vertexCount;
 
     @SuppressWarnings("unchecked")
     BaseGraphAdjacencyList(int capacity) {
@@ -23,16 +23,6 @@ public class BaseGraphAdjacencyList {
 
         for (int i = 0; i < totalVertices; i++) {
             adjList[i] = new LinkedList<Integer>();
-        }
-    }
-
-    public static class Vertex {
-        String label;
-        boolean isVisited;
-
-        Vertex(String label) {
-            this.label = label;
-            this.isVisited = false;
         }
     }
 
@@ -52,6 +42,16 @@ public class BaseGraphAdjacencyList {
         if (i < vertexCount && j < vertexCount && adjList[i] != null) {
             adjList[i].add(j);
             adjList[j].add(i);
+        }
+    }
+
+    public static class Vertex {
+        String label;
+        boolean isVisited;
+
+        Vertex(String label) {
+            this.label = label;
+            this.isVisited = false;
         }
     }
 }

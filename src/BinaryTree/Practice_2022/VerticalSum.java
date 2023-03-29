@@ -4,6 +4,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class VerticalSum extends CommonUtils {
+    public static void main(String[] args) {
+        VerticalSum vs = new VerticalSum();
+        vs.insertInBT(1);
+        vs.insertInBT(2);
+        vs.insertInBT(3);
+        vs.insertInBT(4);
+        vs.insertInBT(5);
+        vs.insertInBT(6);
+        vs.insertInBT(7);
+        vs.printBinaryTree_levelOrder(vs.root);
+        System.out.println();
+        vs.verticalSum(vs.root);
+    }
+
     public void verticalSum(TreeNode node) {
         // HashMap<Position, Sum>
         HashMap<Integer, Integer> hashMap = new HashMap<>();
@@ -29,19 +43,5 @@ public class VerticalSum extends CommonUtils {
         } else {
             hashMap.put(position, node.data);
         }
-    }
-
-    public static void main(String[] args) {
-        VerticalSum vs = new VerticalSum();
-        vs.insertInBT(1);
-        vs.insertInBT(2);
-        vs.insertInBT(3);
-        vs.insertInBT(4);
-        vs.insertInBT(5);
-        vs.insertInBT(6);
-        vs.insertInBT(7);
-        vs.printBinaryTree_levelOrder(vs.root);
-        System.out.println();
-        vs.verticalSum(vs.root);
     }
 }

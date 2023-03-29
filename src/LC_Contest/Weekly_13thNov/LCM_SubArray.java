@@ -10,6 +10,10 @@ package LC_Contest.Weekly_13thNov;
  */
 public class LCM_SubArray {
 
+    public static void main(String[] args) {
+
+    }
+
     public int subarrayLCM(int[] nums, int k) {
         int n = nums.length;
         boolean[] elementsDivisible = new boolean[n];
@@ -46,9 +50,5 @@ public class LCM_SubArray {
         }
 
         return -1;
-    }
-
-    public static void main(String[] args) {
-
     }
 }

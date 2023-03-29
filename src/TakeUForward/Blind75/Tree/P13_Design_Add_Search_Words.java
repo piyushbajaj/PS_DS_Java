@@ -13,29 +13,28 @@ package TakeUForward.Blind75.Tree;
 public class P13_Design_Add_Search_Words {
     private static Node root;
 
-    static class Node {
-        Node[] links = new Node[26];
-        boolean flag = false;
-
-        public boolean containsKey(char ch) {
-            return links[ch - 'a'] != null;
-        }
-
-        public void put(char ch, Node node) {
-            links[ch - 'a'] = node;
-        }
-
-        public Node get(char ch) {
-            return links[ch - 'a'];
-        }
-
-        public void setFlag() {
-            flag = true;
-        }
-    }
-
     public P13_Design_Add_Search_Words() {
         root = new Node();
+    }
+
+    public static void main(String[] args) {
+        P13_Design_Add_Search_Words p13_design_add_search_words = new P13_Design_Add_Search_Words();
+        p13_design_add_search_words.addWord("bad");
+        p13_design_add_search_words.addWord("dad");
+        p13_design_add_search_words.addWord("mad");
+        System.out.println(p13_design_add_search_words.search("pad"));
+        System.out.println(p13_design_add_search_words.search("bad"));
+        System.out.println(p13_design_add_search_words.search(".ad"));
+        System.out.println(p13_design_add_search_words.search("b.."));
+
+//        p13_design_add_search_words.addWord("a");
+//        p13_design_add_search_words.addWord("a");
+//        System.out.println(p13_design_add_search_words.search("."));
+//        System.out.println(p13_design_add_search_words.search("a"));
+//        System.out.println(p13_design_add_search_words.search("aa"));
+//        System.out.println(p13_design_add_search_words.search("a"));
+//        System.out.println(p13_design_add_search_words.search(".a"));
+//        System.out.println(p13_design_add_search_words.search("a."));
     }
 
     public void addWord(String word) {
@@ -75,23 +74,24 @@ public class P13_Design_Add_Search_Words {
         return currNode.flag;
     }
 
-    public static void main(String[] args) {
-        P13_Design_Add_Search_Words p13_design_add_search_words = new P13_Design_Add_Search_Words();
-        p13_design_add_search_words.addWord("bad");
-        p13_design_add_search_words.addWord("dad");
-        p13_design_add_search_words.addWord("mad");
-        System.out.println(p13_design_add_search_words.search("pad"));
-        System.out.println(p13_design_add_search_words.search("bad"));
-        System.out.println(p13_design_add_search_words.search(".ad"));
-        System.out.println(p13_design_add_search_words.search("b.."));
+    static class Node {
+        Node[] links = new Node[26];
+        boolean flag = false;
 
-//        p13_design_add_search_words.addWord("a");
-//        p13_design_add_search_words.addWord("a");
-//        System.out.println(p13_design_add_search_words.search("."));
-//        System.out.println(p13_design_add_search_words.search("a"));
-//        System.out.println(p13_design_add_search_words.search("aa"));
-//        System.out.println(p13_design_add_search_words.search("a"));
-//        System.out.println(p13_design_add_search_words.search(".a"));
-//        System.out.println(p13_design_add_search_words.search("a."));
+        public boolean containsKey(char ch) {
+            return links[ch - 'a'] != null;
+        }
+
+        public void put(char ch, Node node) {
+            links[ch - 'a'] = node;
+        }
+
+        public Node get(char ch) {
+            return links[ch - 'a'];
+        }
+
+        public void setFlag() {
+            flag = true;
+        }
     }
 }

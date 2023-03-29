@@ -7,15 +7,14 @@ public class GameFactory {
 
     //creates a getGame to get object of type
 
-    public Game getGame(String gameType){
-        if(gameType == null)
+    public Game getGame(String gameType) {
+        if (gameType == null) {
             return null;
-
-        else if(gameType.equalsIgnoreCase("POKER"))
+        } else if (gameType.equalsIgnoreCase("POKER")) {
             return new Poker();
-
-        else if(gameType.equalsIgnoreCase("BLACKJACK"))
+        } else if (gameType.equalsIgnoreCase("BLACKJACK")) {
             return new BlackJack();
+        }
 
         return null;
     }

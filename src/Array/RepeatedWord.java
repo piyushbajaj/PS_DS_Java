@@ -8,37 +8,36 @@ import java.util.HashMap;
 public class RepeatedWord {
     static String firstRepeatedWord(String s) {
         int n = s.length();
-        int count= 1;
+        int count = 1;
         //s = Str
 
-        for(int i = 0; i < n; i++){
-            if(s.charAt(i) == ' ' || s.charAt(i) == '\t' || s.charAt(i) == ',' || s.charAt(i) == ':' ||
-                    s.charAt(i) == ';' || s.charAt(i) == '-' || s.charAt(i) == '.'){
+        for (int i = 0; i < n; i++) {
+            if (s.charAt(i) == ' ' || s.charAt(i) == '\t' || s.charAt(i) == ',' || s.charAt(i) == ':' ||
+                s.charAt(i) == ';' || s.charAt(i) == '-' || s.charAt(i) == '.') {
                 count++;
             }
         }
         String[] str = new String[count + 1];
         int j = 0;
         int start = 0;
-        for(int i = 0; i < n && j <= count; i++){
-            if(s.charAt(i) == ' ' || s.charAt(i) == '\t' || s.charAt(i) == ',' || s.charAt(i) == ':' ||
-                    s.charAt(i) == ';' || s.charAt(i) == '-' || s.charAt(i) == '.'){
+        for (int i = 0; i < n && j <= count; i++) {
+            if (s.charAt(i) == ' ' || s.charAt(i) == '\t' || s.charAt(i) == ',' || s.charAt(i) == ':' ||
+                s.charAt(i) == ';' || s.charAt(i) == '-' || s.charAt(i) == '.') {
                 str[j++] = s.substring(start, i);
-                start = i+1;
+                start = i + 1;
             }
 
-            if(i == n-1){
-                str[j] = s.substring(start, i+1);
+            if (i == n - 1) {
+                str[j] = s.substring(start, i + 1);
             }
 
         }
 
         HashMap<String, Boolean> hash = new HashMap<String, Boolean>();
-        for(int i = 0; i < count; i++){
-            if(hash.containsKey(str[i])){
+        for (int i = 0; i < count; i++) {
+            if (hash.containsKey(str[i])) {
                 return str[i];
-            }
-            else{
+            } else {
                 hash.put(str[i], true);
             }
         }

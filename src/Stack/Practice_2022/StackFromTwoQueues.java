@@ -10,6 +10,23 @@ public class StackFromTwoQueues {
         this.q2 = new QueueFromLL();
     }
 
+    public static void main(String[] args) {
+        StackFromTwoQueues stack = new StackFromTwoQueues();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        stack.push(5);
+
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+
+        System.out.println(stack.pop());
+    }
+
     public void push(int x) {
         if (q1.isEmpty()) {
             q2.enqueue(x);
@@ -40,22 +57,5 @@ public class StackFromTwoQueues {
 
         System.out.println("Stack is empty");
         return -1;
-    }
-
-    public static void main(String[] args) {
-        StackFromTwoQueues stack = new StackFromTwoQueues();
-        stack.push(1);
-        stack.push(2);
-        stack.push(3);
-        stack.push(4);
-        stack.push(5);
-
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-
-        System.out.println(stack.pop());
     }
 }

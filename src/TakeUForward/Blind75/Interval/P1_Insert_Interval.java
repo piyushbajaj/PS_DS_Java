@@ -17,6 +17,12 @@ import java.util.List;
  */
 public class P1_Insert_Interval {
 
+    public static void main(String[] args) {
+        int[][] interval = {{1, 3}, {6, 9}};
+        P1_Insert_Interval p1_insert_interval = new P1_Insert_Interval();
+        System.out.println(Arrays.deepToString(p1_insert_interval.insert(interval, new int[] {2, 5})));
+    }
+
     /**
      * Approach:
      * 1. Add all the intervals if the end of interval is smaller than newInterval start
@@ -56,11 +62,5 @@ public class P1_Insert_Interval {
         }
 
         return list.toArray(new int[list.size()][2]);
-    }
-
-    public static void main(String[] args) {
-        int[][] interval = {{1, 3}, {6, 9}};
-        P1_Insert_Interval p1_insert_interval = new P1_Insert_Interval();
-        System.out.println(Arrays.deepToString(p1_insert_interval.insert(interval, new int[] {2, 5})));
     }
 }

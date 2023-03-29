@@ -6,24 +6,27 @@ import java.util.Queue;
 
 public class BTUpsideDown {
     TreeNode root;
+    TreeNode newRoot = null;
 
-    static class TreeNode {
-        int data;
-        TreeNode left;
-        TreeNode right;
+    public static void main(String[] args) {
+        BTUpsideDown btUpsideDown = new BTUpsideDown();
+        btUpsideDown.root = new TreeNode(1);
+        btUpsideDown.root.left = new TreeNode(2);
+        btUpsideDown.root.right = new TreeNode(3);
+        btUpsideDown.root.left.left = new TreeNode(4);
+        btUpsideDown.root.left.right = new TreeNode(5);
+        btUpsideDown.upsideDownBinaryTree(btUpsideDown.root);
 
-        TreeNode(int data) {
-            this.data = data;
-            this.left = this.right = null;
-        }
+        System.out.println(btUpsideDown.levelOrderTraverse(btUpsideDown.upsideDownBinaryTree(btUpsideDown.root)));
     }
 
     public ArrayList<ArrayList<Integer>> levelOrderTraverse(TreeNode key) {
         ArrayList<ArrayList<Integer>> res = new ArrayList<>();
         ArrayList<Integer> current = new ArrayList<>();
 
-        if (key == null)
+        if (key == null) {
             return res;
+        }
 
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.add(key);
@@ -33,23 +36,23 @@ public class BTUpsideDown {
             TreeNode tmp = queue.poll();
             if (tmp != null) {
                 current.add(tmp.data);
-                if (tmp.left != null)
+                if (tmp.left != null) {
                     queue.add(tmp.left);
-                if (tmp.right != null)
+                }
+                if (tmp.right != null) {
                     queue.add(tmp.right);
+                }
             } else {
                 ArrayList<Integer> c_curr = new ArrayList<Integer>(current);
                 res.add(c_curr);
                 current.clear();
-                if (!queue.isEmpty())
+                if (!queue.isEmpty()) {
                     queue.add(null);
+                }
             }
         }
         return res;
     }
-
-
-    TreeNode newRoot = null;
 
     private TreeNode upsideDownBinaryTreeRecur(TreeNode root) {
         if (root == null) {
@@ -90,15 +93,14 @@ public class BTUpsideDown {
         return newRoot;
     }
 
-    public static void main(String[] args) {
-        BTUpsideDown btUpsideDown = new BTUpsideDown();
-        btUpsideDown.root = new TreeNode(1);
-        btUpsideDown.root.left = new TreeNode(2);
-        btUpsideDown.root.right = new TreeNode(3);
-        btUpsideDown.root.left.left = new TreeNode(4);
-        btUpsideDown.root.left.right = new TreeNode(5);
-        btUpsideDown.upsideDownBinaryTree(btUpsideDown.root);
+    static class TreeNode {
+        int data;
+        TreeNode left;
+        TreeNode right;
 
-        System.out.println(btUpsideDown.levelOrderTraverse(btUpsideDown.upsideDownBinaryTree(btUpsideDown.root)));
+        TreeNode(int data) {
+            this.data = data;
+            this.left = this.right = null;
+        }
     }
 }

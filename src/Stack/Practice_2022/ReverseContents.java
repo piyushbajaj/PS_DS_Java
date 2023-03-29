@@ -30,7 +30,9 @@ public class ReverseContents {
     }
 
     public void reverseStackElements(Stack<Integer> stack) {
-        if (stack.isEmpty()) return;
+        if (stack.isEmpty()) {
+            return;
+        }
 
         int temp = stack.pop();
         reverseStackElements(stack);

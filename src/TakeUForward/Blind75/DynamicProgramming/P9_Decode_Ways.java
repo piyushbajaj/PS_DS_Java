@@ -9,13 +9,13 @@ package TakeUForward.Blind75.DynamicProgramming;
  * Time: 3:39 pm
  */
 public class P9_Decode_Ways {
+    public static void main(String[] args) {
+
+    }
+
     public int numDecodings(String s) {
         int len = s.length();
 
         return -1;
-    }
-
-    public static void main(String[] args) {
-
     }
 }

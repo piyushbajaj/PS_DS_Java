@@ -23,30 +23,34 @@ public class TameOfThrones {
         Scanner s = new Scanner(System.in);
         String str = s.nextLine();
 
-        if(str.equalsIgnoreCase("Who is the ruler of Southeros?"))
+        if (str.equalsIgnoreCase("Who is the ruler of Southeros?")) {
             decidingThrones.whoIsRuler();
+        }
 
         str = s.nextLine();
-        if(str.equalsIgnoreCase("Allies of Ruler?"))
+        if (str.equalsIgnoreCase("Allies of Ruler?")) {
             decidingThrones.allies();
+        }
 
         int input = s.nextInt();
 
-        for(int i = 1; i <= input; i++){
+        for (int i = 1; i <= input; i++) {
             String name = s.next();
             String text = s.nextLine();
 
             decidingThrones.encrypt(name, text, hashMap);
         }
 
-         str = s.nextLine();
+        str = s.nextLine();
 
-        if(str.equalsIgnoreCase("Who is the ruler of Southeros?"))
+        if (str.equalsIgnoreCase("Who is the ruler of Southeros?")) {
             decidingThrones.whoIsRuler();
+        }
 
         str = s.nextLine();
-        if(str.equalsIgnoreCase("Allies of Ruler?"))
+        if (str.equalsIgnoreCase("Allies of Ruler?")) {
             decidingThrones.allies();
+        }
 
     }
 }

@@ -15,6 +15,12 @@ import java.util.List;
  * SC: O(1)
  */
 public class P3_Min_Coins {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 5};
+        P3_Min_Coins p3_min_coins = new P3_Min_Coins();
+        System.out.println(p3_min_coins.coinChange(arr, 11));
+    }
+
     public List<Integer> coinChange(int[] coins, int amount) {
 //        int[] coins = {2000, 500, 200, 100, 50, 20, 10, 5, 2, 1};
         List<Integer> res = new ArrayList<>();
@@ -26,11 +32,5 @@ public class P3_Min_Coins {
             }
         }
         return res;
-    }
-
-    public static void main(String[] args) {
-        int[] arr = {1, 2, 5};
-        P3_Min_Coins p3_min_coins = new P3_Min_Coins();
-        System.out.println(p3_min_coins.coinChange(arr, 11));
     }
 }

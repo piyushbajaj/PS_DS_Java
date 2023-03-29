@@ -17,6 +17,20 @@ import java.util.Map;
  */
 public class P6_Account_Merge {
 
+    public static void main(String[] args) {
+        P6_Account_Merge account_merge = new P6_Account_Merge();
+
+        List<List<String>> accounts =
+            Arrays.asList(
+                Arrays.asList("John", "johnsmith@mail.com", "john_newyork@mail.com"),
+                Arrays.asList("John", "johnsmith@mail.com", "john00@mail.com"),
+                Arrays.asList("Mary", "mary@mail.com"),
+                Arrays.asList("John", "johnnybravo@mail.com")
+            );
+
+        System.out.println(account_merge.accountsMerge(accounts));
+    }
+
     /**
      * TC: O(N*M*logN)
      *
@@ -71,19 +85,5 @@ public class P6_Account_Merge {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        P6_Account_Merge account_merge = new P6_Account_Merge();
-
-        List<List<String>> accounts =
-            Arrays.asList(
-                Arrays.asList("John", "johnsmith@mail.com", "john_newyork@mail.com"),
-                Arrays.asList("John", "johnsmith@mail.com", "john00@mail.com"),
-                Arrays.asList("Mary", "mary@mail.com"),
-                Arrays.asList("John", "johnnybravo@mail.com")
-            );
-
-        System.out.println(account_merge.accountsMerge(accounts));
     }
 }

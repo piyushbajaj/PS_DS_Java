@@ -9,6 +9,14 @@ package TakeUForward.Blind75.LinkedList;
  * Time: 12:22 pm
  */
 public class BaseListNode {
+    public void printList(ListNode head) {
+        while (head != null) {
+            System.out.print(head.val + " -> ");
+            head = head.next;
+        }
+        System.out.print("NULL");
+    }
+
     public static class ListNode {
         int val;
         ListNode next;
@@ -24,13 +32,5 @@ public class BaseListNode {
             this.val = val;
             this.next = next;
         }
-    }
-
-    public void printList(ListNode head) {
-        while (head != null) {
-            System.out.print(head.val + " -> ");
-            head = head.next;
-        }
-        System.out.print("NULL");
     }
 }

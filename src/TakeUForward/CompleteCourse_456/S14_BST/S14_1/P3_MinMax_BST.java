@@ -14,6 +14,21 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  */
 public class P3_MinMax_BST {
 
+    public static void main(String[] args) {
+        P3_MinMax_BST p3_minMax_bst = new P3_MinMax_BST();
+
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        System.out.println("Max Value: " + p3_minMax_bst.maxValueInBST(root));
+        System.out.println("Min Value: " + p3_minMax_bst.minValueInBST(root));
+    }
+
     /**
      * TC: O(logN)
      *
@@ -48,20 +63,5 @@ public class P3_MinMax_BST {
         }
 
         return maxValueInBST(curr.right);
-    }
-
-    public static void main(String[] args) {
-        P3_MinMax_BST p3_minMax_bst = new P3_MinMax_BST();
-
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        System.out.println("Max Value: " + p3_minMax_bst.maxValueInBST(root));
-        System.out.println("Min Value: " + p3_minMax_bst.minValueInBST(root));
     }
 }

@@ -10,10 +10,10 @@ import java.util.TreeMap;
  * Created by piyush.bajaj on 06/04/17.
  */
 public class Depersist {
-    public static void main(String args[])throws Exception{
+    public static void main(String args[]) throws Exception {
 
-        ObjectInputStream in=new ObjectInputStream(new FileInputStream("f.txt"));
-        Student s=(Student)in.readObject();
+        ObjectInputStream in = new ObjectInputStream(new FileInputStream("f.txt"));
+        Student s = (Student) in.readObject();
         System.out.println(s.id + " " + s.name);
 
         in.close();

@@ -27,6 +27,6 @@ public class Grokking1_MaximumSumOfContiguousSubarray {
     }
 
     public static void main(String[] args) {
-        System.out.println(findMaxSumSubArray(3, new int[]{2, 1, 5, 1, 3, 2}));
+        System.out.println(findMaxSumSubArray(3, new int[] {2, 1, 5, 1, 3, 2}));
     }
 }

@@ -4,6 +4,12 @@ package Array.Practice_2022.TwoPointers;
  * Created by bajajp on 10 Sep, 2022
  */
 public class P5_ContainerMostWater {
+    public static void main(String[] args) {
+        P5_ContainerMostWater p5_containerMostWater = new P5_ContainerMostWater();
+        int[] arr = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+        System.out.println(p5_containerMostWater.maxArea_better(arr));
+    }
+
     /**
      * TC: O(N^2)
      *
@@ -43,11 +49,5 @@ public class P5_ContainerMostWater {
             }
         }
         return maxSoFar;
-    }
-
-    public static void main(String[] args) {
-        P5_ContainerMostWater p5_containerMostWater = new P5_ContainerMostWater();
-        int[] arr = {1, 8, 6, 2, 5, 4, 8, 3, 7};
-        System.out.println(p5_containerMostWater.maxArea_better(arr));
     }
 }

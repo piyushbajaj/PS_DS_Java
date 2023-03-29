@@ -1,6 +1,5 @@
 package Array;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -37,8 +36,9 @@ public class test {
         System.out.println(al.toString());
 
         al = null;
-        if (al == Arrays.asList("abc"))
+        if (al == Arrays.asList("abc")) {
             System.out.println("A");
+        }
 
 
 //        TreeSet<String> al = new TreeSet<String>();

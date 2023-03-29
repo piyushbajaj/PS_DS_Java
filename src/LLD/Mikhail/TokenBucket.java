@@ -31,6 +31,16 @@ public class TokenBucket {
         this.lastRefillTimestamp = System.nanoTime();
     }
 
+    public static void main(String[] args) throws InterruptedException {
+        TokenBucket tokenBucket = new TokenBucket(10, 10);
+        TimeUnit.MILLISECONDS.sleep(300);
+        System.out.println(tokenBucket.allowRequest(6));
+        TimeUnit.MILLISECONDS.sleep(200);
+        System.out.println(tokenBucket.allowRequest(5));
+        TimeUnit.MILLISECONDS.sleep(1000);
+        System.out.println(tokenBucket.allowRequest(5));
+    }
+
     // Synchronized, as several threads maybe calling the method concurrently
     public synchronized boolean allowRequest(int tokens) {
         // First, refill bucket with tokens accumulated since the last call
@@ -59,15 +69,5 @@ public class TokenBucket {
         currentBucketSize = Math.min(currentBucketSize + tokensToAdd, maxBucketSize);
         System.out.println("currentBucketSize: " + currentBucketSize);
         lastRefillTimestamp = now;
-    }
-
-    public static void main(String[] args) throws InterruptedException {
-        TokenBucket tokenBucket = new TokenBucket(10, 10);
-        TimeUnit.MILLISECONDS.sleep(300);
-        System.out.println(tokenBucket.allowRequest(6));
-        TimeUnit.MILLISECONDS.sleep(200);
-        System.out.println(tokenBucket.allowRequest(5));
-        TimeUnit.MILLISECONDS.sleep(1000);
-        System.out.println(tokenBucket.allowRequest(5));
     }
 }

@@ -14,6 +14,13 @@ import java.util.Arrays;
  */
 public class P1_Climbing_Stairs {
 
+    public static void main(String[] args) {
+        P1_Climbing_Stairs p1_climbing_stairs = new P1_Climbing_Stairs();
+        System.out.println(p1_climbing_stairs.climbStairs(3));
+        System.out.println(p1_climbing_stairs.climbStairs_mem(3));
+        System.out.println(p1_climbing_stairs.climbStairs_tab(3));
+    }
+
     /**
      * Recursive Approach: Top Down
      * TC: O(2^N)
@@ -127,12 +134,5 @@ public class P1_Climbing_Stairs {
         }
 
         return sum;
-    }
-
-    public static void main(String[] args) {
-        P1_Climbing_Stairs p1_climbing_stairs = new P1_Climbing_Stairs();
-        System.out.println(p1_climbing_stairs.climbStairs(3));
-        System.out.println(p1_climbing_stairs.climbStairs_mem(3));
-        System.out.println(p1_climbing_stairs.climbStairs_tab(3));
     }
 }

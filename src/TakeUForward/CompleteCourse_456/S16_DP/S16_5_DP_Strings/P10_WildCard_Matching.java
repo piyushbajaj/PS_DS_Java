@@ -9,6 +9,15 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_5_DP_Strings;
  * Time: 10:29 pm
  */
 public class P10_WildCard_Matching {
+    public static void main(String[] args) {
+        P10_WildCard_Matching p10_wildCard_matching = new P10_WildCard_Matching();
+        System.out.println(p10_wildCard_matching.isMatch("cb", "?a"));
+        System.out.println(p10_wildCard_matching.isMatch_mem("cb", "?a"));
+        System.out.println(p10_wildCard_matching.isMatch_mem_1_based("cb", "?a"));
+        System.out.println(p10_wildCard_matching.isMatch_tab("cb", "?a"));
+        System.out.println(p10_wildCard_matching.isMatch_tab_improve("aab", "c*a*b"));
+    }
+
     /**
      * Recursion
      *
@@ -257,14 +266,5 @@ public class P10_WildCard_Matching {
         }
 
         return prev[m];
-    }
-
-    public static void main(String[] args) {
-        P10_WildCard_Matching p10_wildCard_matching = new P10_WildCard_Matching();
-        System.out.println(p10_wildCard_matching.isMatch("cb", "?a"));
-        System.out.println(p10_wildCard_matching.isMatch_mem("cb", "?a"));
-        System.out.println(p10_wildCard_matching.isMatch_mem_1_based("cb", "?a"));
-        System.out.println(p10_wildCard_matching.isMatch_tab("cb", "?a"));
-        System.out.println(p10_wildCard_matching.isMatch_tab_improve("aab", "c*a*b"));
     }
 }

@@ -6,35 +6,15 @@ import java.util.HashMap;
  * Created by piyush.bajaj on 15/03/17.
  */
 public class LRUCache_Practice {
+    private final int cache_size;
     private HashMap<Integer, Node> pageMap;
     private DoublyLinkedList pageList;
-    private final int cache_size;
 
 
-    LRUCache_Practice(int size){
+    LRUCache_Practice(int size) {
         this.cache_size = size;
         pageMap = new HashMap<Integer, Node>();
         pageList = new DoublyLinkedList(size);
-    }
-
-    public void accessPage(int pageNum){
-        Node pageNode = null;
-        if (pageMap.containsKey(pageNum)){
-            pageList.movePageToHead(pageNum);
-        }
-        else{
-            if(pageMap.size() == this.cache_size){
-
-                pageMap.remove(pageList.getTail().getPageNum());
-            }
-            pageNode =  pageList.addNewPages(pageNum);
-            pageMap.put(pageNum, pageNode);
-        }
-    }
-
-    public void printCacheState(){
-        pageList.printList();
-
     }
 
     public static void main(String[] args) {
@@ -60,21 +40,40 @@ public class LRUCache_Practice {
 
     }
 
-    class DoublyLinkedList{
+    public void accessPage(int pageNum) {
+        Node pageNode = null;
+        if (pageMap.containsKey(pageNum)) {
+            pageList.movePageToHead(pageNum);
+        } else {
+            if (pageMap.size() == this.cache_size) {
+
+                pageMap.remove(pageList.getTail().getPageNum());
+            }
+            pageNode = pageList.addNewPages(pageNum);
+            pageMap.put(pageNum, pageNode);
+        }
+    }
+
+    public void printCacheState() {
+        pageList.printList();
+
+    }
+
+    class DoublyLinkedList {
         int size = 0;
         int currSize = 0;
         Node head, tail;
 
-        DoublyLinkedList(int dll_size){
+        DoublyLinkedList(int dll_size) {
             this.size = dll_size;
             this.currSize = 0;
 
         }
 
-        public void printList(){
+        public void printList() {
             Node temp = this.head;
 
-            while (temp!=null){
+            while (temp != null) {
                 System.out.print(temp);
                 temp = temp.next;
             }
@@ -83,24 +82,23 @@ public class LRUCache_Practice {
         }
 
 
-
-        public Node getHead(){
+        public Node getHead() {
             return this.head;
         }
 
-        public Node getTail(){
+        public Node getTail() {
             return this.tail;
         }
 
-        public Node movePageToHead(int PageNum){
+        public Node movePageToHead(int PageNum) {
             Node pageNode = new Node(PageNum);
 
             Node temp = this.head;
 
-            if(head.getPageNum() == PageNum){
+            if (head.getPageNum() == PageNum) {
                 return head;
             }
-            if(tail.getPageNum() == PageNum){
+            if (tail.getPageNum() == PageNum) {
                 tail = tail.getPrev();
                 tail.setNext(null);
                 pageNode.setPrev(null);
@@ -112,7 +110,7 @@ public class LRUCache_Practice {
                 return pageNode;
 
             }
-            while (temp.getPageNum() != PageNum){
+            while (temp.getPageNum() != PageNum) {
                 temp = temp.getNext();
             }
 
@@ -120,9 +118,9 @@ public class LRUCache_Practice {
             Node nextNode = temp.getNext();
 
             //if(prevNode!=null)
-                prevNode.setNext(nextNode);
+            prevNode.setNext(nextNode);
             //if(nextNode!=null)
-                nextNode.setPrev(prevNode);
+            nextNode.setPrev(prevNode);
 
             pageNode.setPrev(null);
             pageNode.setNext(head);
@@ -136,10 +134,10 @@ public class LRUCache_Practice {
             return pageNode;
         }
 
-        public Node addNewPages(int PageNum){
+        public Node addNewPages(int PageNum) {
             Node pageNode = new Node(PageNum);
 
-            if(this.size == this.currSize){
+            if (this.size == this.currSize) {
                 //LinkedList.Node temp = this
                 tail = tail.getPrev();
                 tail.setNext(null);
@@ -152,16 +150,14 @@ public class LRUCache_Practice {
 
                 return pageNode;
 
-            }
-            else {
-                if(head == null){
+            } else {
+                if (head == null) {
                     head = pageNode;
                     tail = pageNode;
                     this.currSize++;
 
                     return pageNode;
-                }
-                else {
+                } else {
                     pageNode.setNext(head);
                     head.setPrev(pageNode);
                     head = pageNode;
@@ -177,42 +173,40 @@ public class LRUCache_Practice {
 
     }
 
-    class Node{
+    class Node {
         private int pageNum;
         private Node next, prev;
 
-        Node(int pageNum){
+        Node(int pageNum) {
             this.pageNum = pageNum;
             this.next = null;
             this.prev = null;
         }
 
-        public int getPageNum(){
+        public int getPageNum() {
             return this.pageNum;
         }
 
-        public Node getNext(){
+        public Node getNext() {
             return this.next;
         }
 
-        public void setNext(Node Nd){
+        public void setNext(Node Nd) {
             this.next = Nd;
         }
 
-        public Node getPrev(){
+        public Node getPrev() {
             return this.prev;
         }
 
-        public void setPrev(Node Nd){
+        public void setPrev(Node Nd) {
             this.prev = Nd;
         }
 
         @Override
-        public String toString(){
+        public String toString() {
             return this.pageNum + " ";
         }
-
-
 
 
     }

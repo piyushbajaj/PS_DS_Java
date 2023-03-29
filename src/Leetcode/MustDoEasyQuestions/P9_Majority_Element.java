@@ -19,6 +19,12 @@ package Leetcode.MustDoEasyQuestions;
  */
 public class P9_Majority_Element {
 
+    public static void main(String[] args) {
+        P9_Majority_Element p9_majority_element = new P9_Majority_Element();
+        int[] nums = {2, 2, 1, 1, 1, 2, 2};
+        System.out.println(p9_majority_element.majorityElement(nums));
+    }
+
     /**
      * TC: O(N)
      * SC: O(1)
@@ -43,11 +49,5 @@ public class P9_Majority_Element {
         }
 
         return curr;
-    }
-
-    public static void main(String[] args) {
-        P9_Majority_Element p9_majority_element = new P9_Majority_Element();
-        int[] nums = {2, 2, 1, 1, 1, 2, 2};
-        System.out.println(p9_majority_element.majorityElement(nums));
     }
 }

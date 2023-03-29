@@ -11,6 +11,17 @@ package TakeUForward.Blind75.LinkedList;
  * lc: <a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/">...</a>
  */
 public class P5_Remove_NthNode_From_End_List extends BaseListNode {
+    public static void main(String[] args) {
+        P5_Remove_NthNode_From_End_List p5_remove_nthNode_from_end_list = new P5_Remove_NthNode_From_End_List();
+        ListNode listNode = new ListNode(1);
+        listNode.next = new ListNode(2);
+        listNode.next.next = new ListNode(3);
+        listNode.next.next.next = new ListNode(4);
+        listNode.next.next.next.next = new ListNode(5);
+
+        p5_remove_nthNode_from_end_list.printList(p5_remove_nthNode_from_end_list.removeNthFromEnd_better(listNode, 2));
+    }
+
     public ListNode removeNthFromEnd(ListNode head, int n) {
         int nodeIndexToRemove = countNodes(head) - n + 1;
         if (nodeIndexToRemove < 0) {
@@ -35,7 +46,6 @@ public class P5_Remove_NthNode_From_End_List extends BaseListNode {
 
         return head;
     }
-
 
     public ListNode removeNthFromEnd_better(ListNode head, int n) {
         ListNode prev = new ListNode(-1);
@@ -74,16 +84,5 @@ public class P5_Remove_NthNode_From_End_List extends BaseListNode {
         }
 
         return count;
-    }
-
-    public static void main(String[] args) {
-        P5_Remove_NthNode_From_End_List p5_remove_nthNode_from_end_list = new P5_Remove_NthNode_From_End_List();
-        ListNode listNode = new ListNode(1);
-        listNode.next = new ListNode(2);
-        listNode.next.next = new ListNode(3);
-        listNode.next.next.next = new ListNode(4);
-        listNode.next.next.next.next = new ListNode(5);
-
-        p5_remove_nthNode_from_end_list.printList(p5_remove_nthNode_from_end_list.removeNthFromEnd_better(listNode, 2));
     }
 }

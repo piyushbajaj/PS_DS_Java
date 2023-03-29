@@ -10,6 +10,11 @@ package TakeUForward.Blind75.Array;
  */
 public class P8_Search_Sorted_Array {
 
+    public static void main(String[] args) {
+        P8_Search_Sorted_Array p8_search_sorted_array = new P8_Search_Sorted_Array();
+        System.out.println(p8_search_sorted_array.search(new int[] {4, 5, 6, 7, 0, 1, 2}, 4));
+    }
+
     /**
      * Approach:
      * 1. Initiate the pointer start to 0, and the pointer end to n - 1.
@@ -55,10 +60,5 @@ public class P8_Search_Sorted_Array {
         }
 
         return -1;
-    }
-
-    public static void main(String[] args) {
-        P8_Search_Sorted_Array p8_search_sorted_array = new P8_Search_Sorted_Array();
-        System.out.println(p8_search_sorted_array.search(new int[] {4, 5, 6, 7, 0, 1, 2}, 4));
     }
 }

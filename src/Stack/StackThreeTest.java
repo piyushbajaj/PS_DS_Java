@@ -7,64 +7,61 @@ import java.util.Stack;
  */
 public class StackThreeTest {
 
-    public static boolean checkBalance(char c[]){
+    public static boolean checkBalance(char c[]) {
         Stack<Character> s = new Stack<>();
-        int count =0;
+        int count = 0;
 
 
-        for(char ch: c){
-            if(ch=='(' || ch=='{' || ch== '['){
+        for (char ch : c) {
+            if (ch == '(' || ch == '{' || ch == '[') {
                 s.push(ch);
                 count++;
-            }
-            else if(ch==')'){
-                if (s.peek()=='('){
+            } else if (ch == ')') {
+                if (s.peek() == '(') {
                     s.pop();
                     count--;
-                }
-                else
+                } else {
                     return false;
-            }
-            else if(ch=='}'){
-                if (s.peek()=='{'){
+                }
+            } else if (ch == '}') {
+                if (s.peek() == '{') {
                     s.pop();
                     count--;
-                }
-                else
+                } else {
                     return false;
-            }
-            else if(ch==']'){
-                if (s.peek()=='['){
+                }
+            } else if (ch == ']') {
+                if (s.peek() == '[') {
                     s.pop();
                     count--;
-                }
-                else
+                } else {
                     return false;
-            }
-            else
+                }
+            } else {
                 System.exit(1);
+            }
         }
-        if(count==0)
+        if (count == 0) {
             return true;
-        else
+        } else {
             return false;
+        }
     }
 
-    public static void printNGE(int[] arr){
+    public static void printNGE(int[] arr) {
         int size = arr.length;
         //int[] a = new int[size];
         int a[] = {-1, -1, -1, -1};
 
-        for(int i =0; i < size; i++){
-            for(int j=i+1;j <size; j++){
-                if(arr[i] < arr[j]) {
+        for (int i = 0; i < size; i++) {
+            for (int j = i + 1; j < size; j++) {
+                if (arr[i] < arr[j]) {
                     a[i] = arr[j];
                     break;
                 }
             }
             System.out.println(a[i]);
         }
-
 
 
     }
@@ -75,7 +72,7 @@ public class StackThreeTest {
         char[] i = s.toCharArray();
         System.out.println(checkBalance(i));
 
-        int arr[]= {4, 5, 2, 25};
+        int arr[] = {4, 5, 2, 25};
         printNGE(arr);
 
     }

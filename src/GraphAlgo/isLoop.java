@@ -28,61 +28,6 @@ public class isLoop {
         vertexCount = 0;
     }
 
-    public static class Vertex {
-        public int label;
-        public boolean visited;
-
-        public Vertex(int lab) {
-            label = lab;
-            visited = false;
-        }
-    }
-
-    public void addEdge(int i, int j) {
-        adjList[i].add(j);
-        //adjList[j].add(i); ///Add this in case of Undirected graph
-    }
-
-    public void addVertices(int v) {
-        vertexList[vertexCount++] = new Vertex(v);
-    }
-
-    public void DFS_fun() {
-        //mark all the vertex as FALSE
-
-
-        for (int i = 0; i < V; i++) {
-            if (vertexList[i].visited == false)
-                DFS_Utility(i);
-        }
-
-        //reset flags
-        for (int i = 0; i < V; i++) {
-            vertexList[i].visited = false;
-        }
-    }
-
-    public void DFS_Utility(int v) {
-
-        //mark the first node as visited
-        vertexList[v].visited = true;
-        //System.out.print(vertexList[v].label + " ");
-
-        stk.push(v);
-
-        for(int i: adjList[v]) {
-            //if()
-            if (!vertexList[i].visited) {
-                DFS_Utility(i);
-            } else if (stk.contains(i))
-                flag = 1;
-            if(flag!=1)
-                stk.pop();
-        }
-    }
-
-
-
     public static void main(String[] args) {
         //isLoop g = new isLoop(4);
         isLoop g = new isLoop(3);
@@ -101,7 +46,6 @@ public class isLoop {
         g.addVertices(2);
 
 
-
 //        g.addEdge(0, 1);
 //        g.addEdge(0, 2);
 //        g.addEdge(1, 2);
@@ -115,7 +59,6 @@ public class isLoop {
 
 
         ///for undirected graph
-
 
 
 //        g.addVertices(10);
@@ -141,17 +84,70 @@ public class isLoop {
 
         g.DFS_fun();
 
-        if(g.flag == 1)
+        if (g.flag == 1) {
             System.out.println("Loop is detected");
-        else
+        } else {
             System.out.println("No Loop");
+        }
+    }
+
+    public void addEdge(int i, int j) {
+        adjList[i].add(j);
+        //adjList[j].add(i); ///Add this in case of Undirected graph
+    }
+
+    public void addVertices(int v) {
+        vertexList[vertexCount++] = new Vertex(v);
+    }
+
+    public void DFS_fun() {
+        //mark all the vertex as FALSE
+
+
+        for (int i = 0; i < V; i++) {
+            if (vertexList[i].visited == false) {
+                DFS_Utility(i);
+            }
+        }
+
+        //reset flags
+        for (int i = 0; i < V; i++) {
+            vertexList[i].visited = false;
+        }
+    }
+
+    public void DFS_Utility(int v) {
+
+        //mark the first node as visited
+        vertexList[v].visited = true;
+        //System.out.print(vertexList[v].label + " ");
+
+        stk.push(v);
+
+        for (int i : adjList[v]) {
+            //if()
+            if (!vertexList[i].visited) {
+                DFS_Utility(i);
+            } else if (stk.contains(i)) {
+                flag = 1;
+            }
+            if (flag != 1) {
+                stk.pop();
+            }
+        }
+    }
+
+    public static class Vertex {
+        public int label;
+        public boolean visited;
+
+        public Vertex(int lab) {
+            label = lab;
+            visited = false;
+        }
     }
 
     //static boolean[] visited;
-
-
-
-
 
 
 }

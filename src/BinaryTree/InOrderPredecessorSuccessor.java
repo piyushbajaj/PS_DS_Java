@@ -9,16 +9,7 @@ public class InOrderPredecessorSuccessor {
     static Node root;
     static Node pred;
     static Node succ;
-
-    public static class Node {
-        int data;
-        Node left, right;
-
-        Node(int data) {
-            this.data = data;
-            left = right = null;
-        }
-    }
+    public ArrayList<Integer> res = new ArrayList<>();
 
     public InOrderPredecessorSuccessor() {
         root = null;
@@ -31,52 +22,6 @@ public class InOrderPredecessorSuccessor {
 
     // This function finds predecessor and successor of key in BST.
 // It sets pre and suc as predecessor and successor respectively
-
-    public void findPreSuc(Node key, int data) {
-        if (key == null) {
-            return;
-        }
-
-        if (key.data == data) {
-            if (key.left != null) {
-                Node temp = key.left;
-                while (temp.right != null) {
-                    temp = temp.right;
-                }
-                pred = temp;
-            }
-            if (key.right != null) {
-                Node temp = key.right;
-                while (temp.left != null) {
-                    temp = temp.left;
-                }
-                succ = temp;
-            }
-            return;
-        }
-        if (key.data < data) {
-            pred = key;
-            findPreSuc(key.right, data);
-        } else {
-            succ = key;
-            findPreSuc(key.left, data);
-        }
-    }
-
-    public ArrayList<Integer> res = new ArrayList<>();
-
-    public ArrayList<Integer> InOrderTraversal(Node key) {
-        if (key == null) {
-            return res;
-        } else {
-
-            InOrderTraversal(key.left);
-            res.add(key.data);
-            InOrderTraversal(key.right);
-        }
-        return res;
-
-    }
 
     public static void main(String[] args) {
         InOrderPredecessorSuccessor BT = new InOrderPredecessorSuccessor(40);
@@ -117,6 +62,60 @@ public class InOrderPredecessorSuccessor {
                 System.out.println("InOrder Successor is: " + res.get(i + 1));
                 break;
             }
+        }
+    }
+
+    public void findPreSuc(Node key, int data) {
+        if (key == null) {
+            return;
+        }
+
+        if (key.data == data) {
+            if (key.left != null) {
+                Node temp = key.left;
+                while (temp.right != null) {
+                    temp = temp.right;
+                }
+                pred = temp;
+            }
+            if (key.right != null) {
+                Node temp = key.right;
+                while (temp.left != null) {
+                    temp = temp.left;
+                }
+                succ = temp;
+            }
+            return;
+        }
+        if (key.data < data) {
+            pred = key;
+            findPreSuc(key.right, data);
+        } else {
+            succ = key;
+            findPreSuc(key.left, data);
+        }
+    }
+
+    public ArrayList<Integer> InOrderTraversal(Node key) {
+        if (key == null) {
+            return res;
+        } else {
+
+            InOrderTraversal(key.left);
+            res.add(key.data);
+            InOrderTraversal(key.right);
+        }
+        return res;
+
+    }
+
+    public static class Node {
+        int data;
+        Node left, right;
+
+        Node(int data) {
+            this.data = data;
+            left = right = null;
         }
     }
 }

@@ -1,28 +1,6 @@
 package BinaryTree.Practice_2022;
 
 public class MirrorTree extends CommonUtils {
-    public void createMirrorTree(TreeNode node) {
-        if (node != null) {
-            createMirrorTree(node.left);
-            createMirrorTree(node.right);
-            TreeNode temp = node.left;
-            node.left = node.right;
-            node.right = temp;
-        }
-    }
-
-    public boolean isMirrorTree(TreeNode node1, TreeNode node2) {
-        if (node1 == null && node2 == null) return true;
-
-        if (node1 == null || node2 == null) return false;
-
-        if (node1.data != node2.data) {
-            return false;
-        }
-
-        return isMirrorTree(node1.left, node2.right) && isMirrorTree(node1.right, node2.left);
-    }
-
     public static void main(String[] args) {
         MirrorTree mirrorTree = new MirrorTree();
         mirrorTree.insertInBT(1);
@@ -53,5 +31,31 @@ public class MirrorTree extends CommonUtils {
         System.out.println();
         mirrorTree.createMirrorTree(mirrorTree.root);
         mirrorTree.printBinaryTree_levelOrder(mirrorTree.root);
+    }
+
+    public void createMirrorTree(TreeNode node) {
+        if (node != null) {
+            createMirrorTree(node.left);
+            createMirrorTree(node.right);
+            TreeNode temp = node.left;
+            node.left = node.right;
+            node.right = temp;
+        }
+    }
+
+    public boolean isMirrorTree(TreeNode node1, TreeNode node2) {
+        if (node1 == null && node2 == null) {
+            return true;
+        }
+
+        if (node1 == null || node2 == null) {
+            return false;
+        }
+
+        if (node1.data != node2.data) {
+            return false;
+        }
+
+        return isMirrorTree(node1.left, node2.right) && isMirrorTree(node1.right, node2.left);
     }
 }

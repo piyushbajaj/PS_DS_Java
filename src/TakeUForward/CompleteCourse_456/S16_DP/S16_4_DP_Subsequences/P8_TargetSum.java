@@ -12,6 +12,12 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_4_DP_Subsequences;
  */
 public class P8_TargetSum {
 
+    public static void main(String[] args) {
+        P8_TargetSum p8_targetSum = new P8_TargetSum();
+        int[] arr = {1, 1, 1, 1, 1};
+        System.out.println(p8_targetSum.findTargetSumWays(arr, 3));
+    }
+
     /**
      * Same as Partitions with given diff
      * <p>
@@ -79,11 +85,5 @@ public class P8_TargetSum {
         }
 
         return perfectSum_mem(nums, n, (sum - target) / 2);
-    }
-
-    public static void main(String[] args) {
-        P8_TargetSum p8_targetSum = new P8_TargetSum();
-        int[] arr = {1, 1, 1, 1, 1};
-        System.out.println(p8_targetSum.findTargetSumWays(arr, 3));
     }
 }

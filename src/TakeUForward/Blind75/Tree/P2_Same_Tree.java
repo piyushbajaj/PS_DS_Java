@@ -13,22 +13,6 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  */
 public class P2_Same_Tree {
 
-    public boolean isSameTree(TreeNode p, TreeNode q) {
-        if (p == null && q == null) {
-            return true;
-        }
-
-        if (p == null || q == null) {
-            return false;
-        }
-
-        if (p.data != q.data) {
-            return false;
-        }
-
-        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
-    }
-
     public static void main(String[] args) {
         P2_Same_Tree p2_same_tree = new P2_Same_Tree();
 
@@ -49,5 +33,21 @@ public class P2_Same_Tree {
         secondNode.right.right = new TreeNode(7);
 
         System.out.println(p2_same_tree.isSameTree(firstNode, secondNode));
+    }
+
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        if (p == null && q == null) {
+            return true;
+        }
+
+        if (p == null || q == null) {
+            return false;
+        }
+
+        if (p.data != q.data) {
+            return false;
+        }
+
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
     }
 }

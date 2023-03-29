@@ -4,12 +4,18 @@ package Array;
  * Created by piyush.bajaj on 19/02/17.
  */
 public class minWindow {
-    public String minWindowLength(String input, String chars){
+    public static void main(String[] args) {
+        minWindow mw = new minWindow();
+        System.out.println(mw.minWindowLength("ABBACBAA", "AAB"));
+
+    }
+
+    public String minWindowLength(String input, String chars) {
         int inputLen = input.length();
         int charLen = chars.length();
 
         int[] needToFind = new int[256];
-        for(int i = 0; i < charLen; i++){
+        for (int i = 0; i < charLen; i++) {
             needToFind[chars.charAt(i)]++;
         }
 
@@ -21,18 +27,22 @@ public class minWindow {
         int begin = 0;
         int count = 0;
 
-        for(begin = 0, end = 0; end < inputLen; end++) {
-            if (needToFind[input.charAt(end)] == 0)
+        for (begin = 0, end = 0; end < inputLen; end++) {
+            if (needToFind[input.charAt(end)] == 0) {
                 continue;
+            }
             hasFound[input.charAt(end)]++;
 
-            if (hasFound[input.charAt(end)] <= needToFind[input.charAt(end)])
+            if (hasFound[input.charAt(end)] <= needToFind[input.charAt(end)]) {
                 count++;
+            }
 
             if (count == charLen) {
-                while (needToFind[input.charAt(begin)] == 0 || hasFound[input.charAt(begin)] > needToFind[input.charAt(begin)]) {
-                    if (hasFound[input.charAt(begin)] > needToFind[input.charAt(begin)])
+                while (needToFind[input.charAt(begin)] == 0 ||
+                    hasFound[input.charAt(begin)] > needToFind[input.charAt(begin)]) {
+                    if (hasFound[input.charAt(begin)] > needToFind[input.charAt(begin)]) {
                         hasFound[input.charAt(begin)]--;
+                    }
                     begin++;
                 }
 
@@ -54,12 +64,6 @@ public class minWindow {
             }
         }
 
-        return (count == charLen)?input.substring(minBegin, minEnd + 1):"";
-    }
-
-    public static void main(String[] args) {
-        minWindow mw = new minWindow();
-        System.out.println(mw.minWindowLength("ABBACBAA", "AAB"));
-
+        return (count == charLen) ? input.substring(minBegin, minEnd + 1) : "";
     }
 }

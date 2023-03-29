@@ -12,24 +12,20 @@ package Leetcode.MustDoEasyQuestions;
  * Pattern: Linked List
  */
 public class P3_Merge_Two_Sorted_Lists {
-    /**
-     * Definition for singly-linked list.
-     */
-    public static class ListNode {
-        int val;
-        ListNode next;
+    public static void main(String[] args) {
+        P3_Merge_Two_Sorted_Lists p3_merge_two_sorted_lists = new P3_Merge_Two_Sorted_Lists();
+        ListNode list1 = new ListNode(1);
+        list1.next = new ListNode(2);
+        list1.next.next = new ListNode(4);
 
-        ListNode() {
-        }
+        ListNode list2 = new ListNode(1);
+        list2.next = new ListNode(3);
+        list2.next.next = new ListNode(4);
 
-        ListNode(int val) {
-            this.val = val;
-        }
+        p3_merge_two_sorted_lists.printList(list1);
+        p3_merge_two_sorted_lists.printList(list2);
 
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
+        p3_merge_two_sorted_lists.printList(p3_merge_two_sorted_lists.mergeTwoLists(list1, list2));
     }
 
     /**
@@ -94,19 +90,23 @@ public class P3_Merge_Two_Sorted_Lists {
         System.out.println();
     }
 
-    public static void main(String[] args) {
-        P3_Merge_Two_Sorted_Lists p3_merge_two_sorted_lists = new P3_Merge_Two_Sorted_Lists();
-        ListNode list1 = new ListNode(1);
-        list1.next = new ListNode(2);
-        list1.next.next = new ListNode(4);
+    /**
+     * Definition for singly-linked list.
+     */
+    public static class ListNode {
+        int val;
+        ListNode next;
 
-        ListNode list2 = new ListNode(1);
-        list2.next = new ListNode(3);
-        list2.next.next = new ListNode(4);
+        ListNode() {
+        }
 
-        p3_merge_two_sorted_lists.printList(list1);
-        p3_merge_two_sorted_lists.printList(list2);
+        ListNode(int val) {
+            this.val = val;
+        }
 
-        p3_merge_two_sorted_lists.printList(p3_merge_two_sorted_lists.mergeTwoLists(list1, list2));
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
     }
 }

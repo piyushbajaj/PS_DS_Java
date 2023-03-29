@@ -12,19 +12,6 @@ public class DoublyLinkedList {
 
     Node head, tail;
 
-    static class Node {
-        final int key;
-        int value;
-
-        Node next, prev;
-
-        public Node(int key, int value) {
-            this.key = key;
-            this.value = value;
-            this.next = this.prev = null;
-        }
-    }
-
     public void insert(Node node) {
         node.next = head;
         node.prev = null;
@@ -77,5 +64,18 @@ public class DoublyLinkedList {
             temp = temp.next;
         }
         System.out.println("null");
+    }
+
+    static class Node {
+        final int key;
+        int value;
+
+        Node next, prev;
+
+        public Node(int key, int value) {
+            this.key = key;
+            this.value = value;
+            this.next = this.prev = null;
+        }
     }
 }

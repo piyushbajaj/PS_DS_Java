@@ -12,6 +12,10 @@ import java.util.ArrayList;
  */
 public class P4_Number_Of_Province {
 
+    public static void main(String[] args) {
+
+    }
+
     /**
      * TC: O(N^2)
      *
@@ -38,9 +42,5 @@ public class P4_Number_Of_Province {
         }
 
         return count;
-    }
-
-    public static void main(String[] args) {
-
     }
 }

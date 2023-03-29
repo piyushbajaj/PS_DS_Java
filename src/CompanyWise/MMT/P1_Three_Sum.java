@@ -16,6 +16,13 @@ import java.util.List;
  * lc: <a href="https://leetcode.com/problems/3sum/">...</a>
  */
 public class P1_Three_Sum {
+    public static void main(String[] args) {
+        P1_Three_Sum p3_three_sum = new P1_Three_Sum();
+        System.out.println(p3_three_sum.threeSum(new int[] {-1, 0, 1, 2, -1, -4}));
+        System.out.println(p3_three_sum.threeSum(new int[] {0, 1, 1}));
+        System.out.println(p3_three_sum.threeSum(new int[] {-1, 0, 1, 2, -1, -4, -2, -3, 3, 0, 4}));
+    }
+
     /**
      * Using two pointer approach
      *
@@ -56,12 +63,5 @@ public class P1_Three_Sum {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        P1_Three_Sum p3_three_sum = new P1_Three_Sum();
-        System.out.println(p3_three_sum.threeSum(new int[] {-1, 0, 1, 2, -1, -4}));
-        System.out.println(p3_three_sum.threeSum(new int[] {0, 1, 1}));
-        System.out.println(p3_three_sum.threeSum(new int[] {-1, 0, 1, 2, -1, -4, -2, -3, 3, 0, 4}));
     }
 }

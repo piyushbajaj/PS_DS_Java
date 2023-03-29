@@ -9,6 +9,13 @@ package Blind75.S1_Array;
  * Time: 6:26 pm
  */
 public class P5_MaxSubArray {
+    public static void main(String[] args) {
+        int[] arr = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+
+        P5_MaxSubArray p5_maxSubArray = new P5_MaxSubArray();
+        System.out.println(p5_maxSubArray.maxSubArray(arr));
+    }
+
     public int maxSubArray(int[] nums) {
         int currMax = nums[0];
         int maxSoFar = nums[0];
@@ -19,12 +26,5 @@ public class P5_MaxSubArray {
         }
 
         return maxSoFar;
-    }
-
-    public static void main(String[] args) {
-        int[] arr = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-
-        P5_MaxSubArray p5_maxSubArray = new P5_MaxSubArray();
-        System.out.println(p5_maxSubArray.maxSubArray(arr));
     }
 }

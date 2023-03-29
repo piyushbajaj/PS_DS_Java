@@ -2,6 +2,21 @@ package LinkedList.Practice_2022.SinglyLL;
 
 public class ReversalKBlocks extends P1_ReversalOfLL {
 
+    public static void main(String[] args) {
+        ReversalKBlocks reversalKBlocks = new ReversalKBlocks();
+        reversalKBlocks.insertInEnd(1);
+        reversalKBlocks.insertInEnd(2);
+        reversalKBlocks.insertInEnd(3);
+        reversalKBlocks.insertInEnd(4);
+        reversalKBlocks.insertInEnd(5);
+        reversalKBlocks.insertInEnd(6);
+//        reversalKBlocks.insertInEnd(7);
+        System.out.println("Linked list before: ");
+        reversalKBlocks.printLL();
+
+        reversalKBlocks.printLL(reversalKBlocks.reverseKBlocks(2));
+    }
+
     // TC: O(N)
     /*
     Algorithm:
@@ -49,20 +64,5 @@ public class ReversalKBlocks extends P1_ReversalOfLL {
         }
 
         return newHead;
-    }
-
-    public static void main(String[] args) {
-        ReversalKBlocks reversalKBlocks = new ReversalKBlocks();
-        reversalKBlocks.insertInEnd(1);
-        reversalKBlocks.insertInEnd(2);
-        reversalKBlocks.insertInEnd(3);
-        reversalKBlocks.insertInEnd(4);
-        reversalKBlocks.insertInEnd(5);
-        reversalKBlocks.insertInEnd(6);
-//        reversalKBlocks.insertInEnd(7);
-        System.out.println("Linked list before: ");
-        reversalKBlocks.printLL();
-
-        reversalKBlocks.printLL(reversalKBlocks.reverseKBlocks(2));
     }
 }

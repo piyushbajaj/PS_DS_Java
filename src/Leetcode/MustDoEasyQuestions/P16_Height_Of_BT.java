@@ -12,6 +12,14 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  */
 public class P16_Height_Of_BT {
 
+    public static void main(String[] args) {
+        P16_Height_Of_BT p16_height_of_bt = new P16_Height_Of_BT();
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        System.out.println(p16_height_of_bt.height_recur(root));
+    }
+
     /**
      * Calculating Height recursively
      * TC: O(N)
@@ -29,13 +37,5 @@ public class P16_Height_Of_BT {
         int rHeight = height_recur(curr.right);
 
         return Math.max(lHeight, rHeight) + 1;
-    }
-
-    public static void main(String[] args) {
-        P16_Height_Of_BT p16_height_of_bt = new P16_Height_Of_BT();
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(3);
-        System.out.println(p16_height_of_bt.height_recur(root));
     }
 }

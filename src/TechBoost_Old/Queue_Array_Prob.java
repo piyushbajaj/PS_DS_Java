@@ -9,43 +9,9 @@ public class Queue_Array_Prob {
     int[] A;
     int size = 0;
 
-    Queue_Array_Prob(int size){
+    Queue_Array_Prob(int size) {
         A = new int[size];
         this.size = size;
-    }
-
-    void enqueue(int x){
-        if( r == size-1 ){
-            if(f== -1){
-                System.out.println("Overflow");
-                return;
-            }
-            else if(f == size-1){
-                f = -1;
-                r = -1;
-            }
-            else
-                r = -1;
-        }
-        A[++r] = x;
-    }
-
-    int dequeue(){
-
-        if( f== r){
-            if(f == this.size -1 && r ==this.size-1){
-                f = -1;
-                r = -1;
-            }
-            System.out.println("Array is empty");
-            return -1;
-        }
-        if(f == size-1){
-            f = -1;
-        }
-        int temp = A[++f];
-        //f++;
-        return temp;
     }
 
     public static void main(String[] args) {
@@ -79,6 +45,39 @@ public class Queue_Array_Prob {
         System.out.println(queue_prob.dequeue());
 
 
+    }
+
+    void enqueue(int x) {
+        if (r == size - 1) {
+            if (f == -1) {
+                System.out.println("Overflow");
+                return;
+            } else if (f == size - 1) {
+                f = -1;
+                r = -1;
+            } else {
+                r = -1;
+            }
+        }
+        A[++r] = x;
+    }
+
+    int dequeue() {
+
+        if (f == r) {
+            if (f == this.size - 1 && r == this.size - 1) {
+                f = -1;
+                r = -1;
+            }
+            System.out.println("Array is empty");
+            return -1;
+        }
+        if (f == size - 1) {
+            f = -1;
+        }
+        int temp = A[++f];
+        //f++;
+        return temp;
     }
 
 

@@ -61,7 +61,7 @@ public class ArrayExamples {
 //        double finalVal = (double)df.parse(formate);
 
         //String a = String.format(0.2f, (3/6));
-                //Math.round((3/6)*1000000)/1000000;
+        //Math.round((3/6)*1000000)/1000000;
 
         System.out.println("Enter the number to cross-check the sum: ");
         int z = n.nextInt();
@@ -71,11 +71,12 @@ public class ArrayExamples {
         System.out.println("Is the sum of two numbers in array is equal to " + z + ": " + b);
     }
 
-    public static boolean checkPairSum(int A[], int x, int length){
-        for(int i=0; i < length ; i++){
-            for(int j=i+1; j < length ; j++){
-                if(A[i] + A[j] == x)
+    public static boolean checkPairSum(int[] A, int x, int length) {
+        for (int i = 0; i < length; i++) {
+            for (int j = i + 1; j < length; j++) {
+                if (A[i] + A[j] == x) {
                     return true;
+                }
             }
         }
         return false;

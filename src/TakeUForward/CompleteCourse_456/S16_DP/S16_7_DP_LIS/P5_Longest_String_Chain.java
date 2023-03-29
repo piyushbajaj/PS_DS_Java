@@ -15,17 +15,11 @@ import java.util.Comparator;
  */
 public class P5_Longest_String_Chain {
 
-    static class stringComparator implements Comparator<String> {
+    public static void main(String[] args) {
+        P5_Longest_String_Chain p5_longest_string_chain = new P5_Longest_String_Chain();
 
-        @Override
-        public int compare(String o1, String o2) {
-            if (o1.length() < o2.length()) {
-                return -1;
-            } else if (o1.length() > o2.length()) {
-                return 1;
-            }
-            return 0;
-        }
+        String[] words = {"xbc", "pcxbcf", "xb", "xc", "cxbc", "pcxbc"};
+        System.out.println(p5_longest_string_chain.longestStrChain(words));
     }
 
     public boolean compareStrings(String s1, String s2) {
@@ -82,10 +76,16 @@ public class P5_Longest_String_Chain {
         return maxi;
     }
 
-    public static void main(String[] args) {
-        P5_Longest_String_Chain p5_longest_string_chain = new P5_Longest_String_Chain();
+    static class stringComparator implements Comparator<String> {
 
-        String[] words = {"xbc", "pcxbcf", "xb", "xc", "cxbc", "pcxbc"};
-        System.out.println(p5_longest_string_chain.longestStrChain(words));
+        @Override
+        public int compare(String o1, String o2) {
+            if (o1.length() < o2.length()) {
+                return -1;
+            } else if (o1.length() > o2.length()) {
+                return 1;
+            }
+            return 0;
+        }
     }
 }

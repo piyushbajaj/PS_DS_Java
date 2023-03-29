@@ -10,6 +10,17 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_4_DP_Subsequences;
  */
 public class P9_CoinChange {
 
+    public static void main(String[] args) {
+        P9_CoinChange p9_coinChange = new P9_CoinChange();
+        int[] arr = {1, 2, 5};
+
+        System.out.println(p9_coinChange.change_recur(5, arr));
+
+        System.out.println(p9_coinChange.change_mem(5, arr));
+
+        System.out.println(p9_coinChange.change_tab(5, arr));
+    }
+
     /**
      * Recursive
      * TC: O(2^N)
@@ -117,16 +128,5 @@ public class P9_CoinChange {
         }
 
         return dp[n - 1][amount];
-    }
-
-    public static void main(String[] args) {
-        P9_CoinChange p9_coinChange = new P9_CoinChange();
-        int[] arr = {1, 2, 5};
-
-        System.out.println(p9_coinChange.change_recur(5, arr));
-
-        System.out.println(p9_coinChange.change_mem(5, arr));
-
-        System.out.println(p9_coinChange.change_tab(5, arr));
     }
 }

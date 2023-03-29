@@ -7,40 +7,43 @@ public class EqualStacksProblem {
         int l2 = h2.length;
         int l3 = h3.length;
 
-        if(l1 > 100000 || l2 > 100000 || l3 > 100000)
+        if (l1 > 100000 || l2 > 100000 || l3 > 100000) {
             return 0;
+        }
 
-        int c1=0, c2 = 0, c3 = 0;
+        int c1 = 0, c2 = 0, c3 = 0;
         int sum1 = 0, sum2 = 0, sum3 = 0;
 
-        for(int i = 0; i < l1; i++) {
-            if(h1[i] ==0 || h1[i] > 100)
+        for (int i = 0; i < l1; i++) {
+            if (h1[i] == 0 || h1[i] > 100) {
                 return 0;
-            sum1+= h1[i];
+            }
+            sum1 += h1[i];
         }
 
-        for(int i = 0; i < l2; i++) {
-            if(h2[i] ==0 || h2[i] > 100)
+        for (int i = 0; i < l2; i++) {
+            if (h2[i] == 0 || h2[i] > 100) {
                 return 0;
-            sum2+= h2[i];
+            }
+            sum2 += h2[i];
         }
 
-        for(int i = 0; i < l3; i++) {
-            if(h3[i] ==0 || h3[i] > 100)
+        for (int i = 0; i < l3; i++) {
+            if (h3[i] == 0 || h3[i] > 100) {
                 return 0;
-            sum3+= h3[i];
+            }
+            sum3 += h3[i];
         }
 
         while (c1 < l1 && c2 < l2 && c3 < l3) {
-            if(sum1==sum2 && sum2==sum3)
+            if (sum1 == sum2 && sum2 == sum3) {
                 return sum1;
-            if(sum1 > sum2 && sum1 > sum3) {
+            }
+            if (sum1 > sum2 && sum1 > sum3) {
                 sum1 = sum1 - h1[c1++];
-            }
-            else if (sum2 > sum1 && sum2 > sum3) {
+            } else if (sum2 > sum1 && sum2 > sum3) {
                 sum2 = sum2 - h2[c2++];
-            }
-            else if (sum3 > sum1 && sum3 > sum2) {
+            } else if (sum3 > sum1 && sum3 > sum2) {
                 sum3 = sum3 - h3[c3++];
             }
         }

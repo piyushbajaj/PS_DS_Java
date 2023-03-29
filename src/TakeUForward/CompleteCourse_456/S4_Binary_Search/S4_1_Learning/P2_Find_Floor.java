@@ -10,6 +10,14 @@ package TakeUForward.CompleteCourse_456.S4_Binary_Search.S4_1_Learning;
  * <p>
  */
 public class P2_Find_Floor {
+    public static void main(String[] args) {
+        P2_Find_Floor p2_find_floor = new P2_Find_Floor();
+        long[] arr = {1, 2, 8, 10, 11, 12, 19};
+
+
+        System.out.println(p2_find_floor.findFloor(arr, arr.length, 3));
+    }
+
     public int findFloor(long[] arr, int n, long x) {
         int start = 0;
         int end = n - 1;
@@ -30,13 +38,5 @@ public class P2_Find_Floor {
         }
 
         return floor;
-    }
-
-    public static void main(String[] args) {
-        P2_Find_Floor p2_find_floor = new P2_Find_Floor();
-        long[] arr = {1, 2, 8, 10, 11, 12, 19};
-
-
-        System.out.println(p2_find_floor.findFloor(arr, arr.length, 3));
     }
 }

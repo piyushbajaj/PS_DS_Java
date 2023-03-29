@@ -8,64 +8,73 @@ import java.util.Queue;
  */
 public class numOfLeaf {
     Node root;
-    public static class Node{
-        int data;
-        Node left, right;
 
-        Node(int data){
-            this.data = data;
-            left = right = null;
-        }
-    }
-
-    public numOfLeaf(){
+    public numOfLeaf() {
         root = null;
     }
 
-    public numOfLeaf(int key){
+    public numOfLeaf(int key) {
         root = new Node(key);
-    }
-
-    public int numOfLeafNodes(Node key){
-        if(key == null)
-            return -1;
-        Queue<Node> queue = new LinkedList<>();
-        queue.add(key);
-        int count =0;
-
-        while (!queue.isEmpty()){
-            Node temp = queue.remove();
-            if(temp!=null){
-                if(temp.left==null && temp.right == null)
-                    count++;
-                if(temp.left!=null)
-                    queue.add(temp.left);
-                if(temp.right!=null)
-                    queue.add(temp.right);
-            }
-        }
-        return count;
     }
 
     public static void main(String[] args) {
         numOfLeaf BT = new numOfLeaf(1);
         System.out.println("Root: " + BT.root.data);
         BT.root.left = new Node(2);
-        System.out.println("Root ("+ BT.root.data +") -> Left: " + BT.root.left.data);
+        System.out.println("Root (" + BT.root.data + ") -> Left: " + BT.root.left.data);
         BT.root.right = new Node(3);
-        System.out.println("Root ("+ BT.root.data +") -> Right: " + BT.root.right.data);
+        System.out.println("Root (" + BT.root.data + ") -> Right: " + BT.root.right.data);
         BT.root.left.left = new Node(4);
-        System.out.println("Root ("+ BT.root.data +") -> Left ("+ BT.root.left.data + ") -> Left: " + BT.root.left.left.data);
+        System.out.println(
+            "Root (" + BT.root.data + ") -> Left (" + BT.root.left.data + ") -> Left: " + BT.root.left.left.data);
         BT.root.left.right = new Node(5);
-        System.out.println("Root ("+ BT.root.data +") -> Left ("+ BT.root.left.data + ") -> Right: " + BT.root.left.right.data);
+        System.out.println(
+            "Root (" + BT.root.data + ") -> Left (" + BT.root.left.data + ") -> Right: " + BT.root.left.right.data);
         BT.root.right.left = new Node(6);
-        System.out.println("Root ("+ BT.root.data +") -> Right ("+ BT.root.right.data + ")-> Left: " + BT.root.right.left.data);
+        System.out.println(
+            "Root (" + BT.root.data + ") -> Right (" + BT.root.right.data + ")-> Left: " + BT.root.right.left.data);
         BT.root.right.right = new Node(7);
-        System.out.println("Root ("+ BT.root.data +") -> Right ("+ BT.root.right.data + ") -> Right: " + BT.root.right.right.data);
+        System.out.println(
+            "Root (" + BT.root.data + ") -> Right (" + BT.root.right.data + ") -> Right: " + BT.root.right.right.data);
         BT.root.right.right.left = new Node(8);
         BT.root.right.right.right = new Node(9);
 
         System.out.println("So the number of leaf nodes is: " + BT.numOfLeafNodes(BT.root));
 
+    }
+
+    public int numOfLeafNodes(Node key) {
+        if (key == null) {
+            return -1;
+        }
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(key);
+        int count = 0;
+
+        while (!queue.isEmpty()) {
+            Node temp = queue.remove();
+            if (temp != null) {
+                if (temp.left == null && temp.right == null) {
+                    count++;
+                }
+                if (temp.left != null) {
+                    queue.add(temp.left);
+                }
+                if (temp.right != null) {
+                    queue.add(temp.right);
+                }
+            }
+        }
+        return count;
+    }
+
+    public static class Node {
+        int data;
+        Node left, right;
+
+        Node(int data) {
+            this.data = data;
+            left = right = null;
+        }
     }
 }

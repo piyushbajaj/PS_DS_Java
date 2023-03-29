@@ -9,6 +9,19 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_8_MCM_DP;
  * Time: 1:45 pm
  */
 public class P4_Evaluate_Boolean_Expression_To_True_follow {
+    int mod = 1000000007;
+
+    public static void main(String[] args) {
+        P4_Evaluate_Boolean_Expression_To_True_follow p4_evaluate_boolean_expression_to_true =
+            new P4_Evaluate_Boolean_Expression_To_True_follow();
+        System.out.println(p4_evaluate_boolean_expression_to_true.countWays_recur(7, "T|T&F^T"));
+
+        System.out.println(p4_evaluate_boolean_expression_to_true.countWays_mem(7, "T|T&F^T"));
+
+        System.out.println(
+            p4_evaluate_boolean_expression_to_true.countWays_mem(35, "T|F^F&T|F^F^F^T|T&T^T|F^T^F&F^T|T^F"));
+    }
+
     /**
      * Recursion
      * TC: Exponential
@@ -90,8 +103,6 @@ public class P4_Evaluate_Boolean_Expression_To_True_follow {
         return countWays_mem_util(dp, 0, N - 1, 1, S);
     }
 
-    int mod = 1000000007;
-
     public int countWays_mem_util(int[][][] dp, int i, int j, int isTrue, String S) {
         // base condition
         if (i > j) {
@@ -147,16 +158,5 @@ public class P4_Evaluate_Boolean_Expression_To_True_follow {
             }
         }
         return dp[i][j][isTrue] = ways % mod;
-    }
-
-    public static void main(String[] args) {
-        P4_Evaluate_Boolean_Expression_To_True_follow p4_evaluate_boolean_expression_to_true =
-            new P4_Evaluate_Boolean_Expression_To_True_follow();
-        System.out.println(p4_evaluate_boolean_expression_to_true.countWays_recur(7, "T|T&F^T"));
-
-        System.out.println(p4_evaluate_boolean_expression_to_true.countWays_mem(7, "T|T&F^T"));
-
-        System.out.println(
-            p4_evaluate_boolean_expression_to_true.countWays_mem(35, "T|F^F&T|F^F^F^T|T&T^T|F^T^F&F^T|T^F"));
     }
 }

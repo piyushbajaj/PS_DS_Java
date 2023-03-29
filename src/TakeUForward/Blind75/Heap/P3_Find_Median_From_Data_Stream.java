@@ -36,6 +36,14 @@ public class P3_Find_Median_From_Data_Stream {
         minHeap = new PriorityQueue<>((a, b) -> a - b);
     }
 
+    public static void main(String[] args) {
+        P3_Find_Median_From_Data_Stream p3_find_median_from_data_stream = new P3_Find_Median_From_Data_Stream();
+        p3_find_median_from_data_stream.addNum(1);
+        p3_find_median_from_data_stream.addNum(2);
+        p3_find_median_from_data_stream.addNum(3);
+        System.out.println(p3_find_median_from_data_stream.findMedian());
+    }
+
     public void addNum(int num) {
         if (maxHeap.isEmpty() || num <= maxHeap.peek()) {
             maxHeap.add(num);
@@ -56,14 +64,6 @@ public class P3_Find_Median_From_Data_Stream {
             return (minHeap.peek() + maxHeap.peek()) / 2.0;
         }
         return maxHeap.peek();
-    }
-
-    public static void main(String[] args) {
-        P3_Find_Median_From_Data_Stream p3_find_median_from_data_stream = new P3_Find_Median_From_Data_Stream();
-        p3_find_median_from_data_stream.addNum(1);
-        p3_find_median_from_data_stream.addNum(2);
-        p3_find_median_from_data_stream.addNum(3);
-        System.out.println(p3_find_median_from_data_stream.findMedian());
     }
 
 }

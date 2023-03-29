@@ -11,6 +11,13 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_5_DP_Strings;
  * Link: <a href="https://leetcode.com/problems/shortest-common-supersequence/description/">...</a>
  */
 public class P7_Shortest_Common_Supersequence {
+    public static void main(String[] args) {
+        P7_Shortest_Common_Supersequence p7_shortest_common_supersequence = new P7_Shortest_Common_Supersequence();
+        System.out.println(p7_shortest_common_supersequence.shortestCommonSupersequence("brute", "groot"));
+
+
+    }
+
     public String shortestCommonSupersequence(String str1, String str2) {
         int n = str1.length();
         int m = str2.length();
@@ -81,12 +88,5 @@ public class P7_Shortest_Common_Supersequence {
         }
 
         return new String(charStr);
-    }
-
-    public static void main(String[] args) {
-        P7_Shortest_Common_Supersequence p7_shortest_common_supersequence = new P7_Shortest_Common_Supersequence();
-        System.out.println(p7_shortest_common_supersequence.shortestCommonSupersequence("brute", "groot"));
-
-
     }
 }

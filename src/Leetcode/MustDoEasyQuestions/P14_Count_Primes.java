@@ -13,10 +13,15 @@ package Leetcode.MustDoEasyQuestions;
  * <p>
  * Discussion lc: <a href="https://leetcode.com/problems/count-primes/solutions/473021/Time-Complexity-O">...</a>
  * (log(log(n))-Explained/
- *
+ * <p>
  * better tc: <a href="https://leetcode.com/problems/count-primes/solutions/1157321/count-primes/">...</a>
  */
 public class P14_Count_Primes {
+
+    public static void main(String[] args) {
+        P14_Count_Primes p14_count_primes = new P14_Count_Primes();
+        System.out.println(p14_count_primes.countPrimes(10));
+    }
 
     /**
      * TC: O(N*log(logN))
@@ -39,10 +44,5 @@ public class P14_Count_Primes {
         }
 
         return count;
-    }
-
-    public static void main(String[] args) {
-        P14_Count_Primes p14_count_primes = new P14_Count_Primes();
-        System.out.println(p14_count_primes.countPrimes(10));
     }
 }

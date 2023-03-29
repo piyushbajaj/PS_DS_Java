@@ -7,52 +7,11 @@ package BinaryTree;
 public class NoSibblingNodes {
     Node root;
 
-    static class Node{
-        Node left, right;
-        int data;
-
-        Node(int data){
-            this.data = data;
-            left = right = null;
-        }
-    }
-
-    NoSibblingNodes(int data){
-        if(root == null)
+    NoSibblingNodes(int data) {
+        if (root == null) {
             root = new Node(data);
-    }
-
-
-    //InOrderTraversal
-    public void printTree(Node key){
-        if(key == null)
-            return;
-
-        printTree(key.left);
-        System.out.print(key.data + " ");
-        printTree(key.right);
-    }
-
-    public void print_Sibblings(Node key){
-        if(key == null)
-            return;
-
-        if(key.left!= null && key.right!=null){
-            print_Sibblings(key.left);
-            print_Sibblings(key.right);
-        }
-        else if(key.left==null && key.right!=null) {
-            System.out.print(key.right.data + " ");
-            print_Sibblings(key.right);
-        }
-        else if(key.right==null && key.left!=null) {
-            System.out.print(key.left.data + " ");
-            print_Sibblings(key.left);
         }
     }
-
-
-
 
     public static void main(String[] args) {
         NoSibblingNodes SN = new NoSibblingNodes(0);
@@ -70,5 +29,43 @@ public class NoSibblingNodes {
 
         SN.print_Sibblings(SN.root);
 
+    }
+
+    //InOrderTraversal
+    public void printTree(Node key) {
+        if (key == null) {
+            return;
+        }
+
+        printTree(key.left);
+        System.out.print(key.data + " ");
+        printTree(key.right);
+    }
+
+    public void print_Sibblings(Node key) {
+        if (key == null) {
+            return;
+        }
+
+        if (key.left != null && key.right != null) {
+            print_Sibblings(key.left);
+            print_Sibblings(key.right);
+        } else if (key.left == null && key.right != null) {
+            System.out.print(key.right.data + " ");
+            print_Sibblings(key.right);
+        } else if (key.right == null && key.left != null) {
+            System.out.print(key.left.data + " ");
+            print_Sibblings(key.left);
+        }
+    }
+
+    static class Node {
+        Node left, right;
+        int data;
+
+        Node(int data) {
+            this.data = data;
+            left = right = null;
+        }
     }
 }

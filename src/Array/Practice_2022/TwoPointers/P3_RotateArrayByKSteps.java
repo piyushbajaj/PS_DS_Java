@@ -7,6 +7,13 @@ import java.util.Arrays;
  */
 public class P3_RotateArrayByKSteps {
 
+    public static void main(String[] args) {
+        P3_RotateArrayByKSteps p3_rotateArrayByKSteps = new P3_RotateArrayByKSteps();
+        int[] arr = {1, 2, 3, 4, 5, 6, 7};
+        p3_rotateArrayByKSteps.rotateArrays_reversal(arr, 3);
+        System.out.println(Arrays.toString(arr));
+    }
+
     /**
      * Using reversal algorithm
      * TC: O(N)
@@ -35,12 +42,5 @@ public class P3_RotateArrayByKSteps {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
-    }
-
-    public static void main(String[] args) {
-        P3_RotateArrayByKSteps p3_rotateArrayByKSteps = new P3_RotateArrayByKSteps();
-        int[] arr = {1, 2, 3, 4, 5, 6, 7};
-        p3_rotateArrayByKSteps.rotateArrays_reversal(arr, 3);
-        System.out.println(Arrays.toString(arr));
     }
 }

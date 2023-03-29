@@ -6,14 +6,18 @@ package javatpoint.Binding;
 
 //Dynamic Binding
 public class Animal {
-    void eat(){System.out.println("animal is eating...");}
+    void eat() {
+        System.out.println("animal is eating...");
+    }
 }
 
-class Dogs extends Animal{
-    void eat(){System.out.println("dog is eating...");}
-
-    public static void main(String args[]){
-        Animal a=new Dogs();
+class Dogs extends Animal {
+    public static void main(String args[]) {
+        Animal a = new Dogs();
         a.eat();
+    }
+
+    void eat() {
+        System.out.println("dog is eating...");
     }
 }

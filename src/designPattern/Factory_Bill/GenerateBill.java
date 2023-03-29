@@ -1,8 +1,8 @@
 package designPattern.Factory_Bill;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.*;
 
 /**
  * Created by piyush.bajaj on 27/11/16.
@@ -26,18 +26,11 @@ public class GenerateBill {
         int i = Integer.parseInt(br.readLine());
 
 
-
-
         System.out.println("Hence the total bill is: ");
 
         pl.getRate();
 
         pl.calculateBill(i);
-
-
-
-
-
 
 
     }

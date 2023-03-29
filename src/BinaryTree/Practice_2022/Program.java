@@ -3,10 +3,6 @@ package BinaryTree.Practice_2022;
 public class Program {
     int i;
 
-    void display() {
-        System.out.println(i);
-    }
-
     public static void main(String[] args) {
 
         Program program = new Program();
@@ -15,6 +11,10 @@ public class Program {
 
 //        Program obj = null;
 //        System.out.println(Program.print());
+    }
+
+    void display() {
+        System.out.println(i);
     }
 
 //    private static String print() {

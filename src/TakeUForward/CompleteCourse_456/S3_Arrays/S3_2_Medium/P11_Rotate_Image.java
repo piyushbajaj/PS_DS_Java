@@ -14,6 +14,18 @@ import java.util.Arrays;
  */
 public class P11_Rotate_Image {
 
+    public static void main(String[] args) {
+        P11_Rotate_Image p3_rotate_image = new P11_Rotate_Image();
+//        int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+//
+//        p3_rotate_image.rotate(matrix);
+//        System.out.println(Arrays.deepToString(matrix));
+
+        int[][] matrix1 = {{5, 1, 9, 11}, {2, 4, 8, 10}, {13, 3, 6, 7}, {15, 14, 12, 16}};
+        p3_rotate_image.rotate(matrix1);
+        System.out.println(Arrays.deepToString(matrix1));
+    }
+
     /**
      * Rotate one by one element, first do the outer layer then inner layer
      * TC: O(N*N)
@@ -38,17 +50,5 @@ public class P11_Rotate_Image {
             }
         }
 
-    }
-
-    public static void main(String[] args) {
-        P11_Rotate_Image p3_rotate_image = new P11_Rotate_Image();
-//        int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-//
-//        p3_rotate_image.rotate(matrix);
-//        System.out.println(Arrays.deepToString(matrix));
-
-        int[][] matrix1 = {{5, 1, 9, 11}, {2, 4, 8, 10}, {13, 3, 6, 7}, {15, 14, 12, 16}};
-        p3_rotate_image.rotate(matrix1);
-        System.out.println(Arrays.deepToString(matrix1));
     }
 }

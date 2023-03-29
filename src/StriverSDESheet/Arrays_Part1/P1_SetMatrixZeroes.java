@@ -8,6 +8,14 @@ import java.util.Set;
  * Created by bajajp on 27 Jul, 2022
  */
 public class P1_SetMatrixZeroes {
+    public static void main(String[] args) {
+        P1_SetMatrixZeroes p1SetMatrixZeroes = new P1_SetMatrixZeroes();
+//        int[][] matrix = {{1, 1, 1}, {1, 0, 1}, {1, 1, 1}};
+        int[][] matrix = {{0, 1, 2, 0}, {3, 4, 5, 2}, {1, 3, 1, 5}};
+        p1SetMatrixZeroes.setZeroes_betterSpace(matrix);
+        System.out.println(Arrays.deepToString(matrix));
+    }
+
     /**
      * TC: O(N*M)
      * SC: O(N+M)
@@ -69,24 +77,16 @@ public class P1_SetMatrixZeroes {
 
         // Setting 0 for the 0th col values, if mat[0][0] is 0
         if (matrix[0][0] == 0) {
-            for(int j = 0; j < cols; j++) {
+            for (int j = 0; j < cols; j++) {
                 matrix[0][j] = 0;
             }
         }
 
         // Setting 0 for the 0th col values, if isCol is true
         if (isCol) {
-            for(int i = 0; i < rows; i++) {
+            for (int i = 0; i < rows; i++) {
                 matrix[i][0] = 0;
             }
         }
-    }
-
-    public static void main(String[] args) {
-        P1_SetMatrixZeroes p1SetMatrixZeroes = new P1_SetMatrixZeroes();
-//        int[][] matrix = {{1, 1, 1}, {1, 0, 1}, {1, 1, 1}};
-        int[][] matrix = {{0, 1, 2, 0}, {3, 4, 5, 2}, {1, 3, 1, 5}};
-        p1SetMatrixZeroes.setZeroes_betterSpace(matrix);
-        System.out.println(Arrays.deepToString(matrix));
     }
 }

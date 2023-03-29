@@ -9,20 +9,6 @@ import java.util.Queue;
  * Created by bajajp on 22 May, 2022
  */
 public class TowerOfHanoi {
-    static class MyComparator implements Comparator {
-
-        public int compare(Object obj1, Object obj2) {
-
-            Integer i1 = (Integer) obj1;
-
-            Integer i2 = (Integer) obj2;
-
-            return i2.compareTo(i1);
-
-        }
-
-    }
-
     public static ArrayList<Integer>[] solve(int[] A) {
         ArrayList<Integer> arrayList = new ArrayList<>();
 
@@ -53,5 +39,19 @@ public class TowerOfHanoi {
     public static void main(String[] args) {
         int[] A = {4, 5, 1, 2, 3};
         solve(A);
+    }
+
+    static class MyComparator implements Comparator {
+
+        public int compare(Object obj1, Object obj2) {
+
+            Integer i1 = (Integer) obj1;
+
+            Integer i2 = (Integer) obj2;
+
+            return i2.compareTo(i1);
+
+        }
+
     }
 }

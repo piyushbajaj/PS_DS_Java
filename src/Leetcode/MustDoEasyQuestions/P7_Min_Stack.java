@@ -23,6 +23,22 @@ public class P7_Min_Stack {
         stack = new Stack<>();
     }
 
+    public static void main(String[] args) {
+
+        // Your MinStack object will be instantiated and called as such:
+        P7_Min_Stack obj = new P7_Min_Stack();
+        obj.push(-2);
+        obj.push(-5);
+        obj.push(0);
+        obj.push(-3);
+        obj.pop();
+        int param_3 = obj.top();
+        int param_4 = obj.getMin();
+
+        System.out.println("Top: " + param_3);
+        System.out.println("Get Minimum: " + param_4);
+    }
+
     public void push(int val) {
         if (stack.isEmpty()) {
             stack.push(new int[] {val, val});
@@ -39,10 +55,6 @@ public class P7_Min_Stack {
 
     public int top() {
         return stack.peek()[0];
-    }
-
-    public int getMin() {
-        return stack.peek()[1];
     }
 
 //    public int getMin() {
@@ -62,19 +74,7 @@ public class P7_Min_Stack {
 //        return min[0];
 //    }
 
-    public static void main(String[] args) {
-
-        // Your MinStack object will be instantiated and called as such:
-        P7_Min_Stack obj = new P7_Min_Stack();
-        obj.push(-2);
-        obj.push(-5);
-        obj.push(0);
-        obj.push(-3);
-        obj.pop();
-        int param_3 = obj.top();
-        int param_4 = obj.getMin();
-
-        System.out.println("Top: " + param_3);
-        System.out.println("Get Minimum: " + param_4);
+    public int getMin() {
+        return stack.peek()[1];
     }
 }

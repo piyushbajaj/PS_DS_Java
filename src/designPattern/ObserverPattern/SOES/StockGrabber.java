@@ -13,7 +13,7 @@ public class StockGrabber implements Subject {
 
     private String status;
 
-    public StockGrabber(){
+    public StockGrabber() {
         stock_id = new ArrayList<Observer>();
     }
 
@@ -29,16 +29,17 @@ public class StockGrabber implements Subject {
 
     @Override
     public void notifyObserver() {
-        for(Observer observer: stock_id)
+        for (Observer observer : stock_id) {
             observer.update(leftQuantity, status);
+        }
     }
 
-    public void setLeftQuantity(int newLeftQuantity){
+    public void setLeftQuantity(int newLeftQuantity) {
         this.leftQuantity = newLeftQuantity;
         notifyObserver();
     }
 
-    public void setStatus(String newStatus){
+    public void setStatus(String newStatus) {
         this.status = newStatus;
         notifyObserver();
     }

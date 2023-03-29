@@ -6,8 +6,8 @@ package Array;
 public class maxMoney {
     static int maxMoney(int n, long k) {
         int sum = 1;
-        for(int i = 2; i <= n; i++){
-            if((sum + i) != k){
+        for (int i = 2; i <= n; i++) {
+            if ((sum + i) != k) {
                 sum += i;
             }
         }

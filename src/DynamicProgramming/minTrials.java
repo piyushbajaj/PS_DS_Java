@@ -9,9 +9,9 @@ package DynamicProgramming;
  * minimum number of trials to reach from word "AICC" to "ICC" is 1. Only 1 opeartion of deleting character 'A' is required
  * to reach from word "AICC" to word "ICC". Minimum number of trials to reach from "AICC" to "MCC" is 2(AICC->ICC->MCC) and
  * minimum number of trials to reach from "AICC" to "MCA" is 3(AICC->ICC->MCC->MCA).
-
- Now if you notice, there are no valid trials with source as "AICC" and destination as "BCCI" for above dictionary.
- Hence the output returned by program should be '-1' indicating destination word cannot be reached from source word.
+ * <p>
+ * Now if you notice, there are no valid trials with source as "AICC" and destination as "BCCI" for above dictionary.
+ * Hence the output returned by program should be '-1' indicating destination word cannot be reached from source word.
  */
 public class minTrials {
 

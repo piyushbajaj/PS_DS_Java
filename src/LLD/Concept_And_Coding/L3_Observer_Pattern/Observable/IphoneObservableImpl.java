@@ -36,16 +36,16 @@ public class IphoneObservableImpl implements StocksObservable {
     }
 
     @Override
+    public int getStockCount() {
+        return stockCount;
+    }
+
+    @Override
     public void setStockCount(int newStockAdded) {
         if (newStockAdded > 0 && stockCount == 0) {
             notifySubscribers();
         }
 
         stockCount = getStockCount() + newStockAdded;
-    }
-
-    @Override
-    public int getStockCount() {
-        return stockCount;
     }
 }

@@ -15,6 +15,21 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  */
 public class P2_LCA_BT {
 
+    public static void main(String[] args) {
+        P2_LCA_BT p2_lca_bt = new P2_LCA_BT();
+
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        System.out.println(p2_lca_bt.getLCA(root, root.left.left, root.right.right) == null ? null :
+            p2_lca_bt.getLCA(root, root.left.left, root.right.right).data);
+    }
+
     /**
      * We followed approach of Post Order here:
      * <p>
@@ -49,20 +64,5 @@ public class P2_LCA_BT {
         }
 
         return leftLCA != null ? leftLCA : rightLCA;
-    }
-
-    public static void main(String[] args) {
-        P2_LCA_BT p2_lca_bt = new P2_LCA_BT();
-
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        System.out.println(p2_lca_bt.getLCA(root, root.left.left, root.right.right) == null ? null :
-            p2_lca_bt.getLCA(root, root.left.left, root.right.right).data);
     }
 }

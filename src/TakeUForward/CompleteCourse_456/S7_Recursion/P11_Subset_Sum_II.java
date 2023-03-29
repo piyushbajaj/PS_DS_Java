@@ -17,6 +17,13 @@ import java.util.Set;
  */
 public class P11_Subset_Sum_II {
 
+    public static void main(String[] args) {
+        P11_Subset_Sum_II p11_subset_sum_ii = new P11_Subset_Sum_II();
+        int[] arr = {4, 4, 4, 1, 4};
+        System.out.println(p11_subset_sum_ii.subsetsWithDup(arr));
+        System.out.println(p11_subset_sum_ii.subsetsWithDup_imp(arr));
+    }
+
     /**
      * TC: O(2^N) * O(2^N * log (2^N))
      *
@@ -76,12 +83,5 @@ public class P11_Subset_Sum_II {
             subsetsWithDup_imp_util(result, subResult, nums, i + 1);
             subResult.remove(subResult.size() - 1);
         }
-    }
-
-    public static void main(String[] args) {
-        P11_Subset_Sum_II p11_subset_sum_ii = new P11_Subset_Sum_II();
-        int[] arr = {4, 4, 4, 1, 4};
-        System.out.println(p11_subset_sum_ii.subsetsWithDup(arr));
-        System.out.println(p11_subset_sum_ii.subsetsWithDup_imp(arr));
     }
 }

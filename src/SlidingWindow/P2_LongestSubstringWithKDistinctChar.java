@@ -40,7 +40,9 @@ public class P2_LongestSubstringWithKDistinctChar {
         int maxSoFar = 0;
         Map<Character, Integer> hashMap = new HashMap<>();
 
-        if (k == 0) return 0;
+        if (k == 0) {
+            return 0;
+        }
 
         while (r < n) {
             if (hashMap.containsKey(s.charAt(r))) {

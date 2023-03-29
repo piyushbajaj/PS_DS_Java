@@ -40,27 +40,6 @@ public class MergeSort {
 
     Node head; //head of the list
 
-    /* Linked List Node*/
-    static class Node {
-        int data;
-        Node next;
-
-        //Constructor to create a new node
-        //Next is by default initialized as null
-
-        Node(int d) {
-            data = d;
-            next = null;
-        }
-    }
-
-    void printList(Node node) {
-        while (node != null) {
-            System.out.print(node.data + " ");
-            node = node.next;
-        }
-    }
-
     public static void MergeSortAlgo(int arr[], int left, int right) {
         if (left < right) {
             int mid = (left + right) / 2;
@@ -116,15 +95,6 @@ public class MergeSort {
             k++;
         }
 
-    }
-
-    public int getCount(Node Nd) {
-        int count = 0;
-        while (Nd != null) {
-            count++;
-            Nd = Nd.next;
-        }
-        return count;
     }
 
     public static void main(String[] args) {
@@ -226,5 +196,35 @@ public class MergeSort {
 
     public static void mergeSortPracAlgo(int[] arr, int l, int m, int r) {
 
+    }
+
+    void printList(Node node) {
+        while (node != null) {
+            System.out.print(node.data + " ");
+            node = node.next;
+        }
+    }
+
+    public int getCount(Node Nd) {
+        int count = 0;
+        while (Nd != null) {
+            count++;
+            Nd = Nd.next;
+        }
+        return count;
+    }
+
+    /* Linked List Node*/
+    static class Node {
+        int data;
+        Node next;
+
+        //Constructor to create a new node
+        //Next is by default initialized as null
+
+        Node(int d) {
+            data = d;
+            next = null;
+        }
     }
 }

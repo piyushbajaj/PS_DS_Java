@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * Created by piyush.bajaj on 26/02/17.
- *
+ * <p>
  * This still can be modified, and we don't want so many if else statement.
  * So let see how to overcome all these using Factory Pattern
  */
@@ -14,7 +14,7 @@ public class EnemyShipTesting {
 
         EnemyShipFactory ShipFactory = new EnemyShipFactory();
 
-       // doStuffEnemy(ES); //This is static
+        // doStuffEnemy(ES); //This is static
 
         //Now lets make it dynamic
 
@@ -26,7 +26,7 @@ public class EnemyShipTesting {
 
         System.out.println("What type of ship? (U/R/B)");
 
-        if(userInput.hasNextLine()){
+        if (userInput.hasNextLine()) {
             enemyShipOption = userInput.nextLine();
             EnemyCall = ShipFactory.makeEnemyShip(enemyShipOption);
 
@@ -38,13 +38,14 @@ public class EnemyShipTesting {
 //        else if(enemyShipOption.equalsIgnoreCase("R"))
 //            EnemyCall = new RocketEnemyShip();
 
-        if(EnemyCall!=null)
+        if (EnemyCall != null) {
             doStuffEnemy(EnemyCall);
-        else
+        } else {
             System.out.println("Enter U, R, or B next time");
+        }
     }
 
-    public static void doStuffEnemy(EnemyShip anEnemyShip){
+    public static void doStuffEnemy(EnemyShip anEnemyShip) {
         anEnemyShip.displayEnemyShip();
         anEnemyShip.followHeroShip();
         anEnemyShip.enemyShipShoots();

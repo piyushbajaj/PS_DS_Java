@@ -14,6 +14,14 @@ import java.util.Arrays;
  */
 public class P4_Number_Of_NGEs_Right {
 
+    public static void main(String[] args) {
+        P4_Number_Of_NGEs_Right p4_number_of_ngEs_right = new P4_Number_Of_NGEs_Right();
+        int[] arr = {3, 4, 2, 7, 5, 8, 10, 6};
+        int[] indices = {0, 5};
+
+        System.out.println(Arrays.toString(p4_number_of_ngEs_right.count_NGEs(8, arr, 2, indices)));
+    }
+
     /**
      * TC: O(N*queries)
      * SC: O(queries)
@@ -40,13 +48,5 @@ public class P4_Number_Of_NGEs_Right {
             output[i] = count;
         }
         return output;
-    }
-
-    public static void main(String[] args) {
-        P4_Number_Of_NGEs_Right p4_number_of_ngEs_right = new P4_Number_Of_NGEs_Right();
-        int[] arr = {3, 4, 2, 7, 5, 8, 10, 6};
-        int[] indices = {0, 5};
-
-        System.out.println(Arrays.toString(p4_number_of_ngEs_right.count_NGEs(8, arr, 2, indices)));
     }
 }

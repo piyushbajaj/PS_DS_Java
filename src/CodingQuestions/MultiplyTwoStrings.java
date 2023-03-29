@@ -7,7 +7,7 @@ public class MultiplyTwoStrings {
     public static String multiply(String num1, String num2) {
         int n1 = Integer.parseInt(num1);
         int n2 = Integer.parseInt(num2);
-        int n3 = n1*n2;
+        int n3 = n1 * n2;
         String str = Integer.toString(n3);
 
         return str;
@@ -21,7 +21,7 @@ public class MultiplyTwoStrings {
 
 
         //System.out.println("Number of LinkedList.test case: " + t);
-        for(int i=0; i < t; i++){
+        for (int i = 0; i < t; i++) {
             num1[i] = 33;
             num2[i] = 2;
             System.out.println(multiply(Integer.toString(num1[i]), Integer.toString(num2[i])));

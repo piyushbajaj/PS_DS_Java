@@ -11,50 +11,25 @@ package TakeUForward.CompleteCourse_456.S17_Tries;
 public class P2_Trie_II {
     private static Node root;
 
-    static class Node {
-        Node[] links = new Node[26];
-        int countEndWith = 0;
-        int countPrefix = 0;
-
-        public boolean containsKey(char ch) {
-            return links[ch - 'a'] != null;
-        }
-
-        public void put(char ch, Node node) {
-            links[ch - 'a'] = node;
-        }
-
-        public Node get(char ch) {
-            return links[ch - 'a'];
-        }
-
-        public void increaseEnd() {
-            countEndWith++;
-        }
-
-        public void increasePrefix() {
-            countPrefix++;
-        }
-
-        public void deleteEnd() {
-            countEndWith--;
-        }
-
-        public void reducePrefix() {
-            countPrefix--;
-        }
-
-        public int getEnd() {
-            return countEndWith;
-        }
-
-        public int getPrefix() {
-            return countPrefix;
-        }
-    }
-
     P2_Trie_II() {
         root = new Node();
+    }
+
+    public static void main(String[] args) {
+        P2_Trie_II p2_trie_ii = new P2_Trie_II();
+        p2_trie_ii.insert("apple");
+        p2_trie_ii.insert("apple");
+        p2_trie_ii.insert("apps");
+        p2_trie_ii.insert("apps");
+        System.out.println(p2_trie_ii.countWordsEqualTo("apps"));
+        System.out.println(p2_trie_ii.countWordsEqualTo("abc"));
+
+        System.out.println(p2_trie_ii.countWordsStartingWith("ap"));
+        System.out.println(p2_trie_ii.countWordsStartingWith("appl"));
+
+        System.out.println(p2_trie_ii.countWordsEqualTo("apps"));
+        p2_trie_ii.erase("apps");
+        System.out.println(p2_trie_ii.countWordsEqualTo("apps"));
     }
 
     public void insert(String word) {
@@ -107,20 +82,45 @@ public class P2_Trie_II {
         node.deleteEnd();
     }
 
-    public static void main(String[] args) {
-        P2_Trie_II p2_trie_ii = new P2_Trie_II();
-        p2_trie_ii.insert("apple");
-        p2_trie_ii.insert("apple");
-        p2_trie_ii.insert("apps");
-        p2_trie_ii.insert("apps");
-        System.out.println(p2_trie_ii.countWordsEqualTo("apps"));
-        System.out.println(p2_trie_ii.countWordsEqualTo("abc"));
+    static class Node {
+        Node[] links = new Node[26];
+        int countEndWith = 0;
+        int countPrefix = 0;
 
-        System.out.println(p2_trie_ii.countWordsStartingWith("ap"));
-        System.out.println(p2_trie_ii.countWordsStartingWith("appl"));
+        public boolean containsKey(char ch) {
+            return links[ch - 'a'] != null;
+        }
 
-        System.out.println(p2_trie_ii.countWordsEqualTo("apps"));
-        p2_trie_ii.erase("apps");
-        System.out.println(p2_trie_ii.countWordsEqualTo("apps"));
+        public void put(char ch, Node node) {
+            links[ch - 'a'] = node;
+        }
+
+        public Node get(char ch) {
+            return links[ch - 'a'];
+        }
+
+        public void increaseEnd() {
+            countEndWith++;
+        }
+
+        public void increasePrefix() {
+            countPrefix++;
+        }
+
+        public void deleteEnd() {
+            countEndWith--;
+        }
+
+        public void reducePrefix() {
+            countPrefix--;
+        }
+
+        public int getEnd() {
+            return countEndWith;
+        }
+
+        public int getPrefix() {
+            return countPrefix;
+        }
     }
 }

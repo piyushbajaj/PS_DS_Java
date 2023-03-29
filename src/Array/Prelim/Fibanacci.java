@@ -46,7 +46,9 @@ public class Fibanacci {
     // TC: O(2^N-1)
     // SC: O(N)
     public static int fib_rec_bf(int n) {
-        if (n == 0 || n == 1) return n;
+        if (n == 0 || n == 1) {
+            return n;
+        }
 
         return fib_rec_bf(n - 1) + fib_rec_bf(n - 2);
     }
@@ -55,11 +57,15 @@ public class Fibanacci {
     With Memoization the TC can be brought lower to O(N)
      */
     public static int fib_rec_mem(int n) {
-        if (n == 0 || n == 1) return n;
+        if (n == 0 || n == 1) {
+            return n;
+        }
 
         int[] memArr = new int[1000];
 
-        if (memArr[n] != 0) return memArr[n];
+        if (memArr[n] != 0) {
+            return memArr[n];
+        }
 
         memArr[n] = fib_rec_mem(n - 1) + fib_rec_mem(n - 2);
 

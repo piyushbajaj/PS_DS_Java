@@ -7,7 +7,7 @@ public class HasCard implements ATMState {
 
     ATMMachine atmMachine;
 
-    HasCard(ATMMachine newAtmMachine){
+    HasCard(ATMMachine newAtmMachine) {
         atmMachine = newAtmMachine;
     }
 
@@ -24,12 +24,11 @@ public class HasCard implements ATMState {
 
     @Override
     public void insertPin(int pinEntered) {
-        if(pinEntered == 1234){
+        if (pinEntered == 1234) {
             System.out.println("Correct pin Entered");
             atmMachine.correctPinEntered = true;
             atmMachine.setAtmState(atmMachine.getHasPin());
-        }
-        else {
+        } else {
             System.out.println("Incorrect Pin");
             atmMachine.correctPinEntered = false;
             System.out.println("Card Ejected");

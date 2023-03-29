@@ -12,6 +12,12 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_5_DP_Strings;
  */
 public class P4_Longest_Palindromic_Subsequence {
 
+    public static void main(String[] args) {
+        P4_Longest_Palindromic_Subsequence p4_longest_palindromic_subsequence =
+            new P4_Longest_Palindromic_Subsequence();
+        System.out.println(p4_longest_palindromic_subsequence.longestPalinSubseq("abcd"));
+    }
+
     public int longestCommonSubsequence_tab(String text1, String text2) {
         int n = text1.length();
         int m = text2.length();
@@ -57,11 +63,5 @@ public class P4_Longest_Palindromic_Subsequence {
         }
 
         return new String(charStr);
-    }
-
-    public static void main(String[] args) {
-        P4_Longest_Palindromic_Subsequence p4_longest_palindromic_subsequence =
-            new P4_Longest_Palindromic_Subsequence();
-        System.out.println(p4_longest_palindromic_subsequence.longestPalinSubseq("abcd"));
     }
 }

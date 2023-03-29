@@ -26,6 +26,7 @@ public class P5_NumberIsArmStrongNumber {
      * 2. Then one by one add to the num
      * TC: O(N)
      * SC: O(1)
+     *
      * @param n
      * @return
      */

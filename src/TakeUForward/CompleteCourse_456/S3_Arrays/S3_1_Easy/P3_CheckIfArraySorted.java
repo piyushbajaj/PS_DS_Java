@@ -6,6 +6,7 @@ package TakeUForward.CompleteCourse_456.S3_Arrays.S3_1_Easy;
 public class P3_CheckIfArraySorted {
     /**
      * TC: O(N)
+     *
      * @param arr
      * @return
      */
@@ -22,6 +23,6 @@ public class P3_CheckIfArraySorted {
     }
 
     public static void main(String[] args) {
-        System.out.println(checkIfArraySorted(new int[]{1, 2, 3, 4, 5}));
+        System.out.println(checkIfArraySorted(new int[] {1, 2, 3, 4, 5}));
     }
 }

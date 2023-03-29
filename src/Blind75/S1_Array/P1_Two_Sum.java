@@ -15,6 +15,12 @@ import java.util.Map;
  * Link lc: <a href="https://leetcode.com/problems/two-sum/">...</a>
  */
 public class P1_Two_Sum {
+    public static void main(String[] args) {
+        P1_Two_Sum p1_two_sum = new P1_Two_Sum();
+        int[] arr = {2, 7, 11, 15};
+        System.out.println(Arrays.toString(p1_two_sum.twoSum(arr, 9)));
+    }
+
     /**
      * TC: O (Nlogn)
      *
@@ -37,11 +43,5 @@ public class P1_Two_Sum {
         }
 
         return null;
-    }
-
-    public static void main(String[] args) {
-        P1_Two_Sum p1_two_sum = new P1_Two_Sum();
-        int[] arr = {2, 7, 11, 15};
-        System.out.println(Arrays.toString(p1_two_sum.twoSum(arr, 9)));
     }
 }

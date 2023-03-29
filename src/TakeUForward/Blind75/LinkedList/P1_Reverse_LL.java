@@ -10,6 +10,16 @@ package TakeUForward.Blind75.LinkedList;
  */
 public class P1_Reverse_LL extends BaseListNode {
 
+    public static void main(String[] args) {
+        P1_Reverse_LL p1_reverse_ll = new P1_Reverse_LL();
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        p1_reverse_ll.printList(p1_reverse_ll.reverseList(head));
+
+    }
+
     public ListNode reverseList(ListNode head) {
         ListNode prev = null;
         ListNode curr = head;
@@ -22,17 +32,5 @@ public class P1_Reverse_LL extends BaseListNode {
         }
 
         return prev;
-    }
-
-
-
-    public static void main(String[] args) {
-        P1_Reverse_LL p1_reverse_ll = new P1_Reverse_LL();
-        ListNode head = new ListNode(1);
-        head.next = new ListNode(2);
-        head.next.next = new ListNode(3);
-        head.next.next.next = new ListNode(4);
-        p1_reverse_ll.printList(p1_reverse_ll.reverseList(head));
-
     }
 }

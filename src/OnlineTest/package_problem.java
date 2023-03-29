@@ -12,73 +12,6 @@ import java.util.List;
  */
 public class package_problem {
 
-    public void package_cal(int weight, List<Tuple> tuples){
-        int n = tuples.size();
-        int[] wt = new int[n];
-        int[] val = new int[n];
-
-
-
-        for(int i = 0; i < n; i++){
-            wt[i] = tuples.get(i).getWeight();
-            val[i] = tuples.get(i).getCost();
-        }
-
-        int row_len = wt.length;
-        int[][] mat = new int[row_len][weight+1];
-
-        for(int i = 0; i < row_len; i++){
-            for(int j = 0; j <= weight; j++){
-                if(j==0)
-                    mat[i][j] = 0;
-                else if(j < wt[i]){
-                    if( i == 0){
-                        mat[i][j] = mat[i][j-1];
-                    }
-                    else
-                        mat[i][j] = mat[i-1][j];
-                }else {
-                    if( i == 0){
-                        mat[i][j] = val[i];
-                    }
-                    else
-                        mat[i][j] = Math.max((val[i] + mat[i-1][j-wt[i]]), mat[i-1][j]);
-                }
-
-            }
-        }
-        int result = mat[row_len-1][weight];
-
-        int j = weight, benefit = 0;
-        if(benefit == result) {
-            System.out.println("-");
-            return;
-        }
-        for(int i = row_len -1; i >= 0 & j >=0; i--) {
-            if (i==0 && j==0) {
-                System.out.println("-");
-                break;
-            }
-            else if(i >=1 && (mat[i][j] == mat[i-1][j]))
-                continue;
-            else if(i >=1 && (mat[i][j] > mat[i-1][j])) {
-                System.out.print(i + 1);
-                j = j - wt[i];
-                benefit+=val[i];
-
-            }
-            if(benefit == result) {
-                System.out.println();
-                break;
-            }
-            else System.out.print(",");
-
-        }
-
-
-        return ;
-    }
-
     public static void main(String[] args) throws IOException {
         package_problem kp = new package_problem();
 
@@ -110,22 +43,88 @@ public class package_problem {
                         System.out.println("Individual Weight cannot be more than 100");
                         return;
                     }
-                    if (Integer.valueOf(temp[2].substring(1, temp[2].length())) < 0 || Integer.valueOf(temp[2].substring(1, temp[2].length())) > 100) {
+                    if (Integer.valueOf(temp[2].substring(1, temp[2].length())) < 0 ||
+                        Integer.valueOf(temp[2].substring(1, temp[2].length())) > 100) {
                         System.out.println("Individual Costs cannot be more than 100");
                         return;
                     }
 
                     tuples.add(new Tuple(Integer.valueOf(temp[0]),
-                            Integer.valueOf((int) (Double.valueOf(temp[1]).doubleValue() * 100)),
-                            Integer.valueOf(temp[2].substring(1, temp[2].length()))));
+                        Integer.valueOf((int) (Double.valueOf(temp[1]).doubleValue() * 100)),
+                        Integer.valueOf(temp[2].substring(1, temp[2].length()))));
                 }
                 kp.package_cal(max_weight * 100, tuples);
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
 
+    }
+
+    public void package_cal(int weight, List<Tuple> tuples) {
+        int n = tuples.size();
+        int[] wt = new int[n];
+        int[] val = new int[n];
+
+
+        for (int i = 0; i < n; i++) {
+            wt[i] = tuples.get(i).getWeight();
+            val[i] = tuples.get(i).getCost();
+        }
+
+        int row_len = wt.length;
+        int[][] mat = new int[row_len][weight + 1];
+
+        for (int i = 0; i < row_len; i++) {
+            for (int j = 0; j <= weight; j++) {
+                if (j == 0) {
+                    mat[i][j] = 0;
+                } else if (j < wt[i]) {
+                    if (i == 0) {
+                        mat[i][j] = mat[i][j - 1];
+                    } else {
+                        mat[i][j] = mat[i - 1][j];
+                    }
+                } else {
+                    if (i == 0) {
+                        mat[i][j] = val[i];
+                    } else {
+                        mat[i][j] = Math.max((val[i] + mat[i - 1][j - wt[i]]), mat[i - 1][j]);
+                    }
+                }
+
+            }
+        }
+        int result = mat[row_len - 1][weight];
+
+        int j = weight, benefit = 0;
+        if (benefit == result) {
+            System.out.println("-");
+            return;
+        }
+        for (int i = row_len - 1; i >= 0 & j >= 0; i--) {
+            if (i == 0 && j == 0) {
+                System.out.println("-");
+                break;
+            } else if (i >= 1 && (mat[i][j] == mat[i - 1][j])) {
+                continue;
+            } else if (i >= 1 && (mat[i][j] > mat[i - 1][j])) {
+                System.out.print(i + 1);
+                j = j - wt[i];
+                benefit += val[i];
+
+            }
+            if (benefit == result) {
+                System.out.println();
+                break;
+            } else {
+                System.out.print(",");
+            }
+
+        }
+
+
+        return;
     }
 }

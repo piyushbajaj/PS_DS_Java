@@ -9,8 +9,24 @@ public class MaximumSum extends CommonUtils {
     This is the variation of height calculation from Level order traversal using Queue
      */
 
+    public static void main(String[] args) {
+        MaximumSum maximumSum = new MaximumSum();
+        maximumSum.insertInBT(23);
+        maximumSum.insertInBT(2);
+        maximumSum.insertInBT(3);
+        maximumSum.insertInBT(4);
+        maximumSum.insertInBT(5);
+        maximumSum.insertInBT(6);
+        maximumSum.insertInBT(7);
+        maximumSum.printBinaryTree_levelOrder(maximumSum.root);
+        System.out.println();
+        System.out.println(maximumSum.maximumSumLevel(maximumSum.root));
+    }
+
     public int maximumSumLevel(TreeNode node) {
-        if (node == null) return -1;
+        if (node == null) {
+            return -1;
+        }
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(node);
@@ -41,19 +57,5 @@ public class MaximumSum extends CommonUtils {
         }
 
         return maxSum;
-    }
-
-    public static void main(String[] args) {
-        MaximumSum maximumSum = new MaximumSum();
-        maximumSum.insertInBT(23);
-        maximumSum.insertInBT(2);
-        maximumSum.insertInBT(3);
-        maximumSum.insertInBT(4);
-        maximumSum.insertInBT(5);
-        maximumSum.insertInBT(6);
-        maximumSum.insertInBT(7);
-        maximumSum.printBinaryTree_levelOrder(maximumSum.root);
-        System.out.println();
-        System.out.println(maximumSum.maximumSumLevel(maximumSum.root));
     }
 }

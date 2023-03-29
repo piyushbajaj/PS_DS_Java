@@ -8,6 +8,7 @@ import java.util.Arrays;
 public class P5_LeftRotateArray {
     /**
      * TC: O(N)
+     *
      * @param arr
      * @param d
      */
@@ -29,7 +30,7 @@ public class P5_LeftRotateArray {
     }
 
     public static void main(String[] args) {
-        int[] arr = new int[]{1, 2, 3, 4, 5};
+        int[] arr = new int[] {1, 2, 3, 4, 5};
         reverseArrayByD(arr, 2);
         System.out.println(Arrays.toString(arr));
     }

@@ -12,6 +12,16 @@ public class StackFromArray {
         arr = new int[capacity];
     }
 
+    public static void main(String[] args) {
+        StackFromArray stackFromArray = new StackFromArray(3);
+        stackFromArray.push(1);
+        stackFromArray.push(2);
+        stackFromArray.push(3);
+        stackFromArray.printArray();
+        System.out.println("Peek element in Stack is: " + stackFromArray.peek());
+        stackFromArray.push(4);
+    }
+
     public void push(int data) {
         if (index >= maxCapacity - 1) {
             System.out.println("Stack is overflow");
@@ -36,15 +46,5 @@ public class StackFromArray {
 
     public void printArray() {
         System.out.println(Arrays.toString(arr));
-    }
-
-    public static void main(String[] args) {
-        StackFromArray stackFromArray = new StackFromArray(3);
-        stackFromArray.push(1);
-        stackFromArray.push(2);
-        stackFromArray.push(3);
-        stackFromArray.printArray();
-        System.out.println("Peek element in Stack is: " + stackFromArray.peek());
-        stackFromArray.push(4);
     }
 }

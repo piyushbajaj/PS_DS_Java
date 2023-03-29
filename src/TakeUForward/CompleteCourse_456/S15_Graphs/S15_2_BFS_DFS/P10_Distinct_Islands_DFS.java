@@ -16,13 +16,16 @@ import java.util.Set;
  * Link: <a href="https://practice.geeksforgeeks.org/problems/number-of-distinct-islands/1">...</a>
  */
 public class P10_Distinct_Islands_DFS {
-    static class Pair {
-        int rowIndex, colIndex;
+    public static void main(String[] args) {
+        P10_Distinct_Islands_DFS p10_distinct_islands_dfs = new P10_Distinct_Islands_DFS();
 
-        Pair(int rowIndex, int colIndex) {
-            this.rowIndex = rowIndex;
-            this.colIndex = colIndex;
-        }
+        int[][] grid1 = {
+            {1, 1, 0, 1, 1},
+            {1, 0, 0, 0, 0},
+            {0, 0, 0, 0, 1},
+            {1, 1, 0, 1, 1}};
+
+        System.out.println(p10_distinct_islands_dfs.countDistinctIslands(grid1));
     }
 
     /**
@@ -81,15 +84,12 @@ public class P10_Distinct_Islands_DFS {
         return Integer.toString(i).concat(" ").concat(Integer.toString(i1));
     }
 
-    public static void main(String[] args) {
-        P10_Distinct_Islands_DFS p10_distinct_islands_dfs = new P10_Distinct_Islands_DFS();
+    static class Pair {
+        int rowIndex, colIndex;
 
-        int[][] grid1 = {
-            {1, 1, 0, 1, 1},
-            {1, 0, 0, 0, 0},
-            {0, 0, 0, 0, 1},
-            {1, 1, 0, 1, 1}};
-
-        System.out.println(p10_distinct_islands_dfs.countDistinctIslands(grid1));
+        Pair(int rowIndex, int colIndex) {
+            this.rowIndex = rowIndex;
+            this.colIndex = colIndex;
+        }
     }
 }

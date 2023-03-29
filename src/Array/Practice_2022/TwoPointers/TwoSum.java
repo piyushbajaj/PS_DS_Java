@@ -15,7 +15,7 @@ public class TwoSum {
         while (r > l) {
             int sum = numbers[l] + numbers[r];
             if (sum == target) {
-                return new int[]{l + 1, r + 1};
+                return new int[] {l + 1, r + 1};
             } else if (sum < target) {
                 l++;
             } else {
@@ -23,7 +23,7 @@ public class TwoSum {
             }
         }
 
-        return new int[]{0, 0};
+        return new int[] {0, 0};
     }
 
     public static int[] twoSum(int[] nums, int target) {
@@ -31,20 +31,20 @@ public class TwoSum {
         for (int i = 0; i < nums.length; i++) {
             int comp = target - nums[i];
             if (map.containsKey(comp)) {
-                return new int[]{
-                        map.get(comp), i
+                return new int[] {
+                    map.get(comp), i
                 };
             } else {
                 map.put(nums[i], i);
             }
         }
-        return new int[]{};
+        return new int[] {};
     }
 
     public static void main(String[] args) {
 //        System.out.println(Arrays.toString(twoSum(new int[]{2, 7, 11, 15}, 9)));
 
-        System.out.println(Arrays.toString(twoSum(new int[]{3, 2, 4}, 6)));
+        System.out.println(Arrays.toString(twoSum(new int[] {3, 2, 4}, 6)));
 //        System.out.println(Arrays.toString(twoSum_tried(new int[]{2, 7, 11, 15}, 9)));
     }
 }

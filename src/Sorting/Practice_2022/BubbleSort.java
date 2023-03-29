@@ -4,6 +4,15 @@ import java.util.Arrays;
 
 public class BubbleSort extends BaseClass {
 
+    public static void main(String[] args) {
+        int[] arr = {6, 4, 2, 1, 3, 5};
+        BubbleSort bubbleSort = new BubbleSort();
+        bubbleSort.bubbleSort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    // TC: Best Case -> O(N)
+
     /**
      * It's the simplest algorithm, it will keep swapping sequential elements till the array is completely sorted.
      * TC: O(N^2)
@@ -22,8 +31,6 @@ public class BubbleSort extends BaseClass {
         }
     }
 
-    // TC: Best Case -> O(N)
-
     public void bubbleSort_better(int[] arr) {
         int n = arr.length;
 
@@ -37,12 +44,5 @@ public class BubbleSort extends BaseClass {
                 }
             }
         }
-    }
-
-    public static void main(String[] args) {
-        int[] arr = {6, 4, 2, 1, 3, 5};
-        BubbleSort bubbleSort = new BubbleSort();
-        bubbleSort.bubbleSort(arr);
-        System.out.println(Arrays.toString(arr));
     }
 }

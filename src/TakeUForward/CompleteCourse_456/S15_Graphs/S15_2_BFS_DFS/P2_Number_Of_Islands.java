@@ -19,6 +19,31 @@ import javafx.util.Pair;
  * g4g: <a href="https://practice.geeksforgeeks.org/problems/find-the-number-of-islands/1">...</a>
  */
 public class P2_Number_Of_Islands {
+    public static void main(String[] args) {
+        P2_Number_Of_Islands p2_number_of_islands = new P2_Number_Of_Islands();
+        char[][] grid = {
+            {'1', '1', '1', '1', '0'},
+            {'1', '1', '0', '1', '0'},
+            {'1', '1', '0', '0', '0'},
+            {'0', '0', '0', '0', '0'}};
+
+        char[][] grid1 = {
+            {'0', '1', '1', '0'},
+            {'0', '1', '1', '0'},
+            {'0', '0', '1', '0'},
+            {'0', '0', '0', '0'},
+            {'1', '1', '0', '1'}};
+
+        char[][] grid2 = {
+            {'1', '1', '0', '0', '0'},
+            {'1', '1', '0', '0', '0'},
+            {'0', '0', '1', '0', '0'},
+            {'0', '0', '0', '1', '1'}
+        };
+
+        System.out.println(p2_number_of_islands.numIslands(grid));
+    }
+
     public int numIslands(char[][] grid) {
         int m = grid.length;
         int n = grid[0].length;
@@ -71,30 +96,5 @@ public class P2_Number_Of_Islands {
                 }
             }
         }
-    }
-
-    public static void main(String[] args) {
-        P2_Number_Of_Islands p2_number_of_islands = new P2_Number_Of_Islands();
-        char[][] grid = {
-            {'1', '1', '1', '1', '0'},
-            {'1', '1', '0', '1', '0'},
-            {'1', '1', '0', '0', '0'},
-            {'0', '0', '0', '0', '0'}};
-
-        char[][] grid1 = {
-            {'0', '1', '1', '0'},
-            {'0', '1', '1', '0'},
-            {'0', '0', '1', '0'},
-            {'0', '0', '0', '0'},
-            {'1', '1', '0', '1'}};
-
-        char[][] grid2 = {
-            {'1', '1', '0', '0', '0'},
-            {'1', '1', '0', '0', '0'},
-            {'0', '0', '1', '0', '0'},
-            {'0', '0', '0', '1', '1'}
-        };
-
-        System.out.println(p2_number_of_islands.numIslands(grid));
     }
 }

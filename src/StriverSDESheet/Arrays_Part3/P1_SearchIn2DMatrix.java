@@ -5,6 +5,16 @@ package StriverSDESheet.Arrays_Part3;
  */
 public class P1_SearchIn2DMatrix {
 
+    public static void main(String[] args) {
+        P1_SearchIn2DMatrix p1_searchIn2DMatrix = new P1_SearchIn2DMatrix();
+        System.out.println(p1_searchIn2DMatrix.searchMatrix_better(
+            new int[][] {
+                {1, 3, 5, 7},
+                {10, 11, 16, 20},
+                {23, 30, 34, 60}
+            }, 23));
+    }
+
     /**
      * TC: O(N+M)
      * SC: O(1)
@@ -60,15 +70,5 @@ public class P1_SearchIn2DMatrix {
             }
         }
         return false;
-    }
-
-    public static void main(String[] args) {
-        P1_SearchIn2DMatrix p1_searchIn2DMatrix = new P1_SearchIn2DMatrix();
-        System.out.println(p1_searchIn2DMatrix.searchMatrix_better(
-                new int[][]{
-                        {1, 3, 5, 7},
-                        {10, 11, 16, 20},
-                        {23, 30, 34, 60}
-                }, 23));
     }
 }

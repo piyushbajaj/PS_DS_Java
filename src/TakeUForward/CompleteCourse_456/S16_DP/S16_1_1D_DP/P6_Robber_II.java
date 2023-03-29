@@ -11,6 +11,14 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_1_1D_DP;
  * Link: <a href="https://www.codingninjas.com/codestudio/problems/house-robber_839733">...</a>
  */
 public class P6_Robber_II {
+    public static void main(String[] args) {
+        P6_Robber_II p6_robber_ii = new P6_Robber_II();
+
+        int[] arr = {5, 5, 10, 100, 10, 5};
+
+        System.out.println(p6_robber_ii.houseRobber(arr));
+    }
+
     public int findMaxSum_tab_improve(int[] arr, int n) {
         int prevFirst = arr[0];
         int prevSecond = 0;
@@ -53,13 +61,5 @@ public class P6_Robber_II {
         System.arraycopy(valueInHouse, 1, temp2, 0, valueInHouse.length - 1);
 
         return Math.max(findMaxSum_tab_improve(temp1, temp1.length), findMaxSum_tab_improve(temp2, temp2.length));
-    }
-
-    public static void main(String[] args) {
-        P6_Robber_II p6_robber_ii = new P6_Robber_II();
-
-        int[] arr = {5, 5, 10, 100, 10, 5};
-
-        System.out.println(p6_robber_ii.houseRobber(arr));
     }
 }

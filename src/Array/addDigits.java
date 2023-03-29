@@ -6,11 +6,8 @@ package Array;
 public class addDigits {
     public static int addDigits(int num) {
         int n = 0;
-        n = 1 + ((num-1)%9);
+        n = 1 + ((num - 1) % 9);
         return n;
-
-
-
     }
 
     public static void main(String[] args) {

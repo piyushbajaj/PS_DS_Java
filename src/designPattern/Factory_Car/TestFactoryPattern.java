@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
  */
 public class TestFactoryPattern {
 
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
         CarFactory CF = new CarFactory();
 
         System.out.println("Enter the car type: ");

@@ -5,19 +5,17 @@ package designPattern.Factory_Bill;
  */
 public class GetPlanFactory {
 
-    public Plan getPlan(String plantype){
+    public Plan getPlan(String plantype) {
 
-        if(plantype == null)
+        if (plantype == null) {
             return null;
-
-        else if(plantype.equalsIgnoreCase("DOMESTICPLAN"))
+        } else if (plantype.equalsIgnoreCase("DOMESTICPLAN")) {
             return new Domestic();
-
-        else if(plantype.equalsIgnoreCase("COMMERCIALPLAN"))
+        } else if (plantype.equalsIgnoreCase("COMMERCIALPLAN")) {
             return new Commercial();
-
-        else if(plantype.equalsIgnoreCase("INSTITUTIONALPLAN"))
+        } else if (plantype.equalsIgnoreCase("INSTITUTIONALPLAN")) {
             return new Institutional();
+        }
 
         return null;
 

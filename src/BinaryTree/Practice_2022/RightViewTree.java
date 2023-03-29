@@ -9,9 +9,27 @@ import java.util.Queue;
  * Created by bajajp on 04 Jun, 2022
  */
 public class RightViewTree extends CommonUtils {
+    public static void main(String[] args) {
+        RightViewTree rightViewTree = new RightViewTree();
+        rightViewTree.insertInBT(1);
+        rightViewTree.insertInBT(2);
+        rightViewTree.insertInBT(3);
+        rightViewTree.insertInBT(4);
+        rightViewTree.insertInBT(5);
+        rightViewTree.insertInBT(6);
+        rightViewTree.insertInBT(7);
+        rightViewTree.printBinaryTree_levelOrder(rightViewTree.root);
+        System.out.println();
+        System.out.println(rightViewTree.rightView_iterative(rightViewTree.root));
+        System.out.println(rightViewTree.rightView_recursive(rightViewTree.root));
+
+    }
+
     public List<Integer> rightView_iterative(TreeNode node) {
         List<Integer> result = new ArrayList<Integer>();
-        if (node == null) return null;
+        if (node == null) {
+            return null;
+        }
 
         Queue<TreeNode> queue = new LinkedList<>();
 
@@ -58,21 +76,5 @@ public class RightViewTree extends CommonUtils {
                 rightView_recursive_util(node.left, level + 1, result);
             }
         }
-    }
-
-    public static void main(String[] args) {
-        RightViewTree rightViewTree = new RightViewTree();
-        rightViewTree.insertInBT(1);
-        rightViewTree.insertInBT(2);
-        rightViewTree.insertInBT(3);
-        rightViewTree.insertInBT(4);
-        rightViewTree.insertInBT(5);
-        rightViewTree.insertInBT(6);
-        rightViewTree.insertInBT(7);
-        rightViewTree.printBinaryTree_levelOrder(rightViewTree.root);
-        System.out.println();
-        System.out.println(rightViewTree.rightView_iterative(rightViewTree.root));
-        System.out.println(rightViewTree.rightView_recursive(rightViewTree.root));
-
     }
 }

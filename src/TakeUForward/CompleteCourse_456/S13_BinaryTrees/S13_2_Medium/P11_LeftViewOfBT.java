@@ -19,6 +19,24 @@ import javafx.util.Pair;
  */
 public class P11_LeftViewOfBT {
 
+    public static void main(String[] args) {
+        P11_LeftViewOfBT p11_leftViewOfBT = new P11_LeftViewOfBT();
+
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        System.out.println(p11_leftViewOfBT.leftViewOfBT_iterative(root));
+
+        System.out.println(p11_leftViewOfBT.leftViewOfBT_recursive(root));
+
+        System.out.println(p11_leftViewOfBT.leftView(root));
+    }
+
     /**
      * Left View Iterative way
      * TC: O(N)
@@ -115,23 +133,5 @@ public class P11_LeftViewOfBT {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        P11_LeftViewOfBT p11_leftViewOfBT = new P11_LeftViewOfBT();
-
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        System.out.println(p11_leftViewOfBT.leftViewOfBT_iterative(root));
-
-        System.out.println(p11_leftViewOfBT.leftViewOfBT_recursive(root));
-
-        System.out.println(p11_leftViewOfBT.leftView(root));
     }
 }

@@ -5,35 +5,13 @@ package BinaryTree;
  */
 public class givenRange {
     Node root;
-    public static class Node{
-        int data;
-        Node left, right;
 
-        Node(int data){
-            this.data = data;
-            left = right = null;
-        }
-    }
-
-    public givenRange(){
+    public givenRange() {
         root = null;
     }
 
-    public givenRange(int key){
+    public givenRange(int key) {
         root = new Node(key);
-    }
-
-    public void printGivenRange(Node key, int k1, int k2){
-        if(key == null)
-            return;
-        if(key.data > k1)
-            printGivenRange(key.left, k1, k2);
-        if(key.data >=k1 && key.data <=k2)
-            System.out.print(key.data + " ");
-        if(key.data < k2)
-            printGivenRange(key.right, k1, k2);
-
-        return;
     }
 
     public static void main(String[] args) {
@@ -44,6 +22,33 @@ public class givenRange {
         BT.root.left.right = new Node(12);
         BT.printGivenRange(BT.root, 10, 22);
         System.out.println();
+    }
+
+    public void printGivenRange(Node key, int k1, int k2) {
+        if (key == null) {
+            return;
+        }
+        if (key.data > k1) {
+            printGivenRange(key.left, k1, k2);
+        }
+        if (key.data >= k1 && key.data <= k2) {
+            System.out.print(key.data + " ");
+        }
+        if (key.data < k2) {
+            printGivenRange(key.right, k1, k2);
+        }
+
+        return;
+    }
+
+    public static class Node {
+        int data;
+        Node left, right;
+
+        Node(int data) {
+            this.data = data;
+            left = right = null;
+        }
     }
 
 

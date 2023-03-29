@@ -33,6 +33,6 @@ public class Grokking3_SquaringSortedArray {
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(makeSquares(new int[]{-2, -1, 0, 2, 3})));
+        System.out.println(Arrays.toString(makeSquares(new int[] {-2, -1, 0, 2, 3})));
     }
 }

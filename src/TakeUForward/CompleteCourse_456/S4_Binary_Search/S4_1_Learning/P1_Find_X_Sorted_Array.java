@@ -10,6 +10,12 @@ package TakeUForward.CompleteCourse_456.S4_Binary_Search.S4_1_Learning;
  * <p>
  */
 public class P1_Find_X_Sorted_Array {
+    public static void main(String[] args) {
+        P1_Find_X_Sorted_Array p1_find_x_sorted_array = new P1_Find_X_Sorted_Array();
+        int[] arr = {-1, 0, 3, 5, 9, 12};
+        System.out.println(p1_find_x_sorted_array.search(arr, 9));
+    }
+
     public int search(int[] nums, int target) {
         int n = nums.length;
         int start = 0;
@@ -28,11 +34,5 @@ public class P1_Find_X_Sorted_Array {
             }
         }
         return -1;
-    }
-
-    public static void main(String[] args) {
-        P1_Find_X_Sorted_Array p1_find_x_sorted_array = new P1_Find_X_Sorted_Array();
-        int[] arr = {-1, 0, 3, 5, 9, 12};
-        System.out.println(p1_find_x_sorted_array.search(arr, 9));
     }
 }

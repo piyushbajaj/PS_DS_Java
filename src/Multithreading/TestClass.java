@@ -13,10 +13,10 @@ public class TestClass {
     }
 }
 
-class MyThread extends Thread{
+class MyThread extends Thread {
     public String hel;
 
-    public void run(){
+    public void run() {
         System.out.println(hel);
     }
 }

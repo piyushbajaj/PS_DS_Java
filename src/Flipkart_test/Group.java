@@ -13,20 +13,19 @@ public class Group {
 
     private HashMap<String, ArrayList<String>> hashMapPersontoGroup = new HashMap<>();
 
-    public Group(){
+    public Group() {
 
     }
 
     public Group(String newId, String newName, ArrayList<String> people,
-                 HashMap<String, String> person_group){
+                 HashMap<String, String> person_group) {
         this.id = newId;
         this.name = newName;
 
-        for(String str: people){
-            if(person_group.get(str).isEmpty()){
+        for (String str : people) {
+            if (person_group.get(str).isEmpty()) {
                 return;
-            }
-            else {
+            } else {
                 hashMapPersontoGroup.put(newId, people);
             }
         }
@@ -35,7 +34,7 @@ public class Group {
     }
 
     public HashMap<String, ArrayList<String>> addPersonToGroup(String strGrpId, ArrayList<String>
-            groupPeople){
+        groupPeople) {
 
 
 //        int n = strGrpId.length;

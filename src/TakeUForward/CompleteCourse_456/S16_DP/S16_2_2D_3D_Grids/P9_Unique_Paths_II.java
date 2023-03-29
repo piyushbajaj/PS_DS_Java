@@ -12,10 +12,19 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_2_2D_3D_Grids;
  */
 public class P9_Unique_Paths_II {
 
+    public static void main(String[] args) {
+        P9_Unique_Paths_II p9_unique_paths_ii = new P9_Unique_Paths_II();
+        int[][] mat = {{0, 0, 0}, {0, 1, 0},
+            {0, 0, 0}};
+
+        System.out.println(p9_unique_paths_ii.uniquePathsWithObstacles(mat));
+    }
+
     /**
      * Tabulation with Space Optimization
      * TC: O(M*N)
      * SC: O(N)
+     *
      * @param obstacleGrid
      * @return
      */
@@ -51,13 +60,5 @@ public class P9_Unique_Paths_II {
         }
 
         return prev[m - 1];
-    }
-
-    public static void main(String[] args) {
-        P9_Unique_Paths_II p9_unique_paths_ii = new P9_Unique_Paths_II();
-        int[][] mat = {{0, 0, 0}, {0, 1, 0},
-            {0, 0, 0}};
-
-        System.out.println(p9_unique_paths_ii.uniquePathsWithObstacles(mat));
     }
 }

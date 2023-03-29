@@ -4,8 +4,16 @@ package Array.Practice_2022.TwoPointers;
  * Created by bajajp on 10 Sep, 2022
  */
 public class P2_ReverseWordsInString {
+    public static void main(String[] args) {
+        P2_ReverseWordsInString p2_reverseWordsInString = new P2_ReverseWordsInString();
+        char[] chars = {'t', 'h', 'e', ' ', 's', 'k', 'y', ' ', 'i', 's', ' ', 'b', 'l', 'u', 'e'};
+        p2_reverseWordsInString.reverseString(chars);
+        System.out.println(chars);
+    }
+
     /**
      * TC: O(2N)
+     *
      * @param chars
      */
     public void reverseString(char[] chars) {
@@ -42,12 +50,5 @@ public class P2_ReverseWordsInString {
         char temp = chars[i];
         chars[i] = chars[j];
         chars[j] = temp;
-    }
-
-    public static void main(String[] args) {
-        P2_ReverseWordsInString p2_reverseWordsInString = new P2_ReverseWordsInString();
-        char[] chars = {'t', 'h', 'e', ' ', 's', 'k', 'y', ' ', 'i', 's', ' ', 'b', 'l', 'u', 'e'};
-        p2_reverseWordsInString.reverseString(chars);
-        System.out.println(chars);
     }
 }

@@ -7,70 +7,21 @@ import java.util.ArrayList;
  */
 public class AdjacentList {
     Node head;
-    public static class Node{
-        int data;
-        Node next;
-
-
-        public Node(int data){
-            this.data = data;
-            this.next = null;
-        }
-    }
-
-    public AdjacentList(){
-        this.head = null;
-    }
-
     private ArrayList<Integer> vertices;
     private AdjacentList[] edges;
     private int vertexCount = 0;
-
-    public AdjacentList(int vertexCount){
+    public AdjacentList() {
+        this.head = null;
+    }
+    public AdjacentList(int vertexCount) {
         this.vertexCount = vertexCount;
         this.vertices = new ArrayList<Integer>();
         this.edges = new AdjacentList[vertexCount];
 
-        for(int i = 0; i < this.vertexCount; i++){
+        for (int i = 0; i < this.vertexCount; i++) {
             this.vertices.add(i);
             this.edges[i] = new AdjacentList();
         }
-    }
-
-    public void addAtBeginning(Node key){
-        if(key == null)
-            head = key;
-        else {
-            key.next = head;
-            head = key;
-        }
-    }
-
-    public void printList() {
-        Node node= head;
-
-        while(node != null) {
-            System.out.print(node.data + " ");
-            node = node.next;
-        }
-
-        System.out.println();
-    }
-
-    public void print(){
-        int i=0;
-        for(AdjacentList l: this.edges){
-            System.out.print(this.vertices.get(i++) + ": ");
-            l.printList();
-        }
-    }
-
-    public void addEdge(int source, int dest){
-        int i = this.vertices.get(source);
-        int j = this.vertices.get(dest);
-
-        edges[i].addAtBeginning(new Node(j));
-        edges[j].addAtBeginning(new Node(i));
     }
 
     public static void main(String[] args) {
@@ -88,5 +39,52 @@ public class AdjacentList {
 
         System.out.println("Graph:");
         g.print();
+    }
+
+    public void addAtBeginning(Node key) {
+        if (key == null) {
+            head = key;
+        } else {
+            key.next = head;
+            head = key;
+        }
+    }
+
+    public void printList() {
+        Node node = head;
+
+        while (node != null) {
+            System.out.print(node.data + " ");
+            node = node.next;
+        }
+
+        System.out.println();
+    }
+
+    public void print() {
+        int i = 0;
+        for (AdjacentList l : this.edges) {
+            System.out.print(this.vertices.get(i++) + ": ");
+            l.printList();
+        }
+    }
+
+    public void addEdge(int source, int dest) {
+        int i = this.vertices.get(source);
+        int j = this.vertices.get(dest);
+
+        edges[i].addAtBeginning(new Node(j));
+        edges[j].addAtBeginning(new Node(i));
+    }
+
+    public static class Node {
+        int data;
+        Node next;
+
+
+        public Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
     }
 }

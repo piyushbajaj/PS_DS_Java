@@ -2,16 +2,6 @@ package BinaryTree.Practice_2022;
 
 public class MultipleTrees extends CommonUtils {
 
-    public boolean identicalStructureBT(TreeNode node1, TreeNode node2) {
-        if (node1 == null && node2 == null) return true;
-
-        if (node1 == null || node2 == null) {
-            return false;
-        }
-
-        return identicalStructureBT(node1.left, node2.left) && identicalStructureBT(node1.right, node2.right);
-    }
-
     public static void main(String[] args) {
         MultipleTrees multipleTrees = new MultipleTrees();
 
@@ -40,5 +30,17 @@ public class MultipleTrees extends CommonUtils {
         System.out.println();
         System.out.println(multipleTrees.identicalStructureBT(multipleTrees1.root, multipleTrees2.root));
 
+    }
+
+    public boolean identicalStructureBT(TreeNode node1, TreeNode node2) {
+        if (node1 == null && node2 == null) {
+            return true;
+        }
+
+        if (node1 == null || node2 == null) {
+            return false;
+        }
+
+        return identicalStructureBT(node1.left, node2.left) && identicalStructureBT(node1.right, node2.right);
     }
 }

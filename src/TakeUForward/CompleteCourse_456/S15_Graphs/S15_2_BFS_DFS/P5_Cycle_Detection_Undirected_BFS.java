@@ -18,13 +18,16 @@ import TakeUForward.CompleteCourse_456.S15_Graphs.S15_1_Learning.P1_BFS;
  */
 public class P5_Cycle_Detection_Undirected_BFS {
 
-    static class Pair {
-        int node, parent;
+    public static void main(String[] args) {
+        P1_BFS p1_bfs = new P1_BFS(5);
+        p1_bfs.addEdge(0, 1, P1_BFS.GraphDirection.BiDirectional);
+        p1_bfs.addEdge(1, 4, P1_BFS.GraphDirection.BiDirectional);
+        p1_bfs.addEdge(1, 2, P1_BFS.GraphDirection.BiDirectional);
+        p1_bfs.addEdge(2, 3, P1_BFS.GraphDirection.BiDirectional);
+        p1_bfs.addEdge(3, 4, P1_BFS.GraphDirection.BiDirectional);
 
-        Pair(int node, int parent) {
-            this.node = node;
-            this.parent = parent;
-        }
+        P5_Cycle_Detection_Undirected_BFS p5_cycle_detection_undirected_bfs = new P5_Cycle_Detection_Undirected_BFS();
+        System.out.println(p5_cycle_detection_undirected_bfs.isCycle(5, p1_bfs.adjList));
     }
 
     /**
@@ -76,15 +79,12 @@ public class P5_Cycle_Detection_Undirected_BFS {
         return false;
     }
 
-    public static void main(String[] args) {
-        P1_BFS p1_bfs = new P1_BFS(5);
-        p1_bfs.addEdge(0, 1, P1_BFS.GraphDirection.BiDirectional);
-        p1_bfs.addEdge(1, 4, P1_BFS.GraphDirection.BiDirectional);
-        p1_bfs.addEdge(1, 2, P1_BFS.GraphDirection.BiDirectional);
-        p1_bfs.addEdge(2, 3, P1_BFS.GraphDirection.BiDirectional);
-        p1_bfs.addEdge(3, 4, P1_BFS.GraphDirection.BiDirectional);
+    static class Pair {
+        int node, parent;
 
-        P5_Cycle_Detection_Undirected_BFS p5_cycle_detection_undirected_bfs = new P5_Cycle_Detection_Undirected_BFS();
-        System.out.println(p5_cycle_detection_undirected_bfs.isCycle(5, p1_bfs.adjList));
+        Pair(int node, int parent) {
+            this.node = node;
+            this.parent = parent;
+        }
     }
 }

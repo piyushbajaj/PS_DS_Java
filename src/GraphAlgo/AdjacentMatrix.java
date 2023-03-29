@@ -7,40 +7,9 @@ public class AdjacentMatrix {
     private boolean adjMatrix[][];
     private int vertexCount;
 
-    public AdjacentMatrix(int vertexCount){
+    public AdjacentMatrix(int vertexCount) {
         this.vertexCount = vertexCount;
         this.adjMatrix = new boolean[this.vertexCount][this.vertexCount];
-    }
-
-    public void addEdge(int i, int j){
-        if(i >= 0 && i < vertexCount && j >=0 && j < vertexCount ){
-            adjMatrix[i][j] = true;
-            adjMatrix[j][i] = true;
-        }
-    }
-
-    public void removeEdge(int i, int j){
-        if(i >= 0 && i < vertexCount && j >=0 && j < vertexCount ){
-            adjMatrix[i][j] = false;
-            adjMatrix[j][i] = false;
-        }
-    }
-
-    public boolean isEdge(int i, int j){
-        if(i >= 0 && i < vertexCount && j >=0 && j < vertexCount ){
-            return adjMatrix[i][j];
-        }
-        else
-            return false;
-    }
-
-    public void printGraph(){
-        for(int i = 0; i < this.vertexCount; i++){
-            for(int j = 0; j < this.vertexCount; j++){
-                System.out.print(i + "->" + j + ":" + this.adjMatrix[i][j] + " ");
-            }
-            System.out.println();
-        }
     }
 
     public static void main(String[] args) {
@@ -58,5 +27,36 @@ public class AdjacentMatrix {
 
         System.out.println("Graph:");
         g.printGraph();
+    }
+
+    public void addEdge(int i, int j) {
+        if (i >= 0 && i < vertexCount && j >= 0 && j < vertexCount) {
+            adjMatrix[i][j] = true;
+            adjMatrix[j][i] = true;
+        }
+    }
+
+    public void removeEdge(int i, int j) {
+        if (i >= 0 && i < vertexCount && j >= 0 && j < vertexCount) {
+            adjMatrix[i][j] = false;
+            adjMatrix[j][i] = false;
+        }
+    }
+
+    public boolean isEdge(int i, int j) {
+        if (i >= 0 && i < vertexCount && j >= 0 && j < vertexCount) {
+            return adjMatrix[i][j];
+        } else {
+            return false;
+        }
+    }
+
+    public void printGraph() {
+        for (int i = 0; i < this.vertexCount; i++) {
+            for (int j = 0; j < this.vertexCount; j++) {
+                System.out.print(i + "->" + j + ":" + this.adjMatrix[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }

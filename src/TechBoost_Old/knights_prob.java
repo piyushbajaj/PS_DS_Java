@@ -51,9 +51,9 @@ public class knights_prob {
             colMove = col + colArr[k];
             if (isValid(mat, rowMove, colMove, n)) {
                 mat[rowMove][colMove] = count;
-                if (knight_sol_util(n, rowMove, colMove, rowArr, colArr, count + 1, mat))
+                if (knight_sol_util(n, rowMove, colMove, rowArr, colArr, count + 1, mat)) {
                     return true;
-                else {
+                } else {
                     mat[rowMove][colMove] = -1;
                     //  return false;
                 }

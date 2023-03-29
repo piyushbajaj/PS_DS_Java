@@ -17,6 +17,21 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  */
 public class P6_ZigZag_Traversal {
 
+    public static void main(String[] args) {
+        P6_ZigZag_Traversal p6_zigZag_traversal = new P6_ZigZag_Traversal();
+
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        System.out.println(p6_zigZag_traversal.levelOrderTraversal_spiral_iterative(root));
+        System.out.println(p6_zigZag_traversal.levelOrderTraversal_spiral_iterative_better(root));
+    }
+
     /**
      * Using 2 Stacks for Spiral, one for inserting in the left and right separately
      *
@@ -121,20 +136,5 @@ public class P6_ZigZag_Traversal {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        P6_ZigZag_Traversal p6_zigZag_traversal = new P6_ZigZag_Traversal();
-
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        System.out.println(p6_zigZag_traversal.levelOrderTraversal_spiral_iterative(root));
-        System.out.println(p6_zigZag_traversal.levelOrderTraversal_spiral_iterative_better(root));
     }
 }

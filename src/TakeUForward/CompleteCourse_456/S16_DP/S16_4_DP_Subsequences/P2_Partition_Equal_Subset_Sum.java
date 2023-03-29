@@ -9,6 +9,13 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_4_DP_Subsequences;
  * Time: 4:52 pm
  */
 public class P2_Partition_Equal_Subset_Sum {
+    public static void main(String[] args) {
+        int[] arr = {1, 5, 11, 5};
+
+        P2_Partition_Equal_Subset_Sum p2_partition_equal_subset_sum = new P2_Partition_Equal_Subset_Sum();
+        System.out.println(p2_partition_equal_subset_sum.equalPartition(arr.length, arr));
+    }
+
     public int equalPartition(int N, int[] arr) {
         int sum = 0;
 
@@ -47,12 +54,5 @@ public class P2_Partition_Equal_Subset_Sum {
             prev = curr;
         }
         return prev[sum] ? 1 : 0;
-    }
-
-    public static void main(String[] args) {
-        int[] arr = {1, 5, 11, 5};
-
-        P2_Partition_Equal_Subset_Sum p2_partition_equal_subset_sum = new P2_Partition_Equal_Subset_Sum();
-        System.out.println(p2_partition_equal_subset_sum.equalPartition(arr.length, arr));
     }
 }

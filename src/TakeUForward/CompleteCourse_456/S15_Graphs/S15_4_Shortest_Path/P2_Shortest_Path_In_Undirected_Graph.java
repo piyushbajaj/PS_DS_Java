@@ -13,19 +13,19 @@ import java.util.Queue;
  * User: piyushbajaj
  * Date: 31/10/22
  * Time: 1:11 pm
- *
+ * <p>
  * Link g4g: <a href="https://practice.geeksforgeeks.org/problems/shortest-path-in-weighted-undirected-graph/1">...</a>
  */
 public class P2_Shortest_Path_In_Undirected_Graph {
 
-    static class Pair {
-        int toNode;
-        int distance;
+    public static void main(String[] args) {
+        P2_Shortest_Path_In_Undirected_Graph p2_shortest_path_in_undirected_graph =
+            new P2_Shortest_Path_In_Undirected_Graph();
+        int[][] edges = {{0, 1}, {0, 3}, {3, 4}, {4, 5}
+            , {5, 6}, {1, 2}, {2, 6}, {6, 7}, {7, 8}, {6, 8}};
 
-        Pair(int toNode, int distance) {
-            this.toNode = toNode;
-            this.distance = distance;
-        }
+        System.out.println(Arrays.toString(p2_shortest_path_in_undirected_graph
+            .shortestPath(edges, 9, 10, 0)));
     }
 
     /**
@@ -83,13 +83,13 @@ public class P2_Shortest_Path_In_Undirected_Graph {
         return distanceArray;
     }
 
-    public static void main(String[] args) {
-        P2_Shortest_Path_In_Undirected_Graph p2_shortest_path_in_undirected_graph =
-            new P2_Shortest_Path_In_Undirected_Graph();
-        int[][] edges = {{0, 1}, {0, 3}, {3, 4}, {4, 5}
-            , {5, 6}, {1, 2}, {2, 6}, {6, 7}, {7, 8}, {6, 8}};
+    static class Pair {
+        int toNode;
+        int distance;
 
-        System.out.println(Arrays.toString(p2_shortest_path_in_undirected_graph
-            .shortestPath(edges, 9, 10, 0)));
+        Pair(int toNode, int distance) {
+            this.toNode = toNode;
+            this.distance = distance;
+        }
     }
 }

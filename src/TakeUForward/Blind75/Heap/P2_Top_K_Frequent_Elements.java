@@ -19,19 +19,9 @@ import java.util.PriorityQueue;
  * lc: <a href="https://leetcode.com/problems/top-k-frequent-elements/">...</a>
  */
 public class P2_Top_K_Frequent_Elements {
-    static class Frequency implements Comparable<Frequency> {
-        int element;
-        int count;
-
-        Frequency(int element, int count) {
-            this.element = element;
-            this.count = count;
-        }
-
-        @Override
-        public int compareTo(Frequency o) {
-            return o.count > this.count ? 1 : -1;
-        }
+    public static void main(String[] args) {
+        P2_Top_K_Frequent_Elements p2_top_k_frequent_elements = new P2_Top_K_Frequent_Elements();
+        System.out.println(Arrays.toString(p2_top_k_frequent_elements.topKFrequent(new int[] {1, 1, 1, 2, 2, 3}, 2)));
     }
 
     /**
@@ -63,9 +53,18 @@ public class P2_Top_K_Frequent_Elements {
         return result.stream().filter(Objects::nonNull).mapToInt(Integer::intValue).toArray();
     }
 
+    static class Frequency implements Comparable<Frequency> {
+        int element;
+        int count;
 
-    public static void main(String[] args) {
-        P2_Top_K_Frequent_Elements p2_top_k_frequent_elements = new P2_Top_K_Frequent_Elements();
-        System.out.println(Arrays.toString(p2_top_k_frequent_elements.topKFrequent(new int[] {1, 1, 1, 2, 2, 3}, 2)));
+        Frequency(int element, int count) {
+            this.element = element;
+            this.count = count;
+        }
+
+        @Override
+        public int compareTo(Frequency o) {
+            return o.count > this.count ? 1 : -1;
+        }
     }
 }

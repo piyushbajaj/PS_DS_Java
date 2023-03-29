@@ -1,7 +1,6 @@
 package javatpoint.Comparator;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 
 /**
@@ -11,19 +10,19 @@ public class Student {
     int rollNo;
     String name, address;
 
-    public Student(int rollNo, String name, String address){
+    public Student(int rollNo, String name, String address) {
         this.rollNo = rollNo;
         this.name = name;
         this.address = address;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return this.rollNo + " ," + this.name + " ," + this.address;
     }
 }
 
-class SortByRollNo implements Comparator<Student>{
+class SortByRollNo implements Comparator<Student> {
 
     @Override
     public int compare(Student a, Student b) {
@@ -31,7 +30,7 @@ class SortByRollNo implements Comparator<Student>{
     }
 }
 
-class SortByName implements Comparator<Student>{
+class SortByName implements Comparator<Student> {
 
 
     @Override
@@ -40,7 +39,7 @@ class SortByName implements Comparator<Student>{
     }
 }
 
-class Main{
+class Main {
     public static void main(String[] args) {
         ArrayList<Student> ar = new ArrayList<>();
         ar.add(new Student(111, "bbbb", "london"));
@@ -48,17 +47,20 @@ class Main{
         ar.add(new Student(121, "cccc", "jaipur"));
 
         System.out.println("Unsorted");
-        for (int i=0; i<ar.size(); i++)
+        for (int i = 0; i < ar.size(); i++) {
             System.out.println(ar.get(i));
+        }
 
         ar.sort(new SortByName());
         System.out.println("Sorted by Name");
-        for (int i=0; i<ar.size(); i++)
+        for (int i = 0; i < ar.size(); i++) {
             System.out.println(ar.get(i));
+        }
 
         ar.sort(new SortByRollNo());
         System.out.println("Sorted by Roll No");
-        for (int i=0; i<ar.size(); i++)
+        for (int i = 0; i < ar.size(); i++) {
             System.out.println(ar.get(i));
+        }
     }
 }

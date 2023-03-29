@@ -6,6 +6,7 @@ package designPattern.Basics;
 public class WorkWithAnimals {
 
     int justANum = 10;
+
     public static void main(String[] args) {
         Dog fido = new Dog();
 
@@ -46,7 +47,7 @@ public class WorkWithAnimals {
         speakAnimal(doggy);
 
         //Here digHole is present inside Dog class, so we can cast this to Dog class
-        ((Dog)doggy).digHole();
+        ((Dog) doggy).digHole();
 
 
         //System.out.println(justANum);
@@ -57,11 +58,11 @@ public class WorkWithAnimals {
         System.out.println(giraffe.getName());
     }
 
-    public static void changeObjectName(Dog fido){
+    public static void changeObjectName(Dog fido) {
         fido.setName("Marcus");
     }
 
-    public static void speakAnimal(Animal randAnimal){
+    public static void speakAnimal(Animal randAnimal) {
         System.out.println("Animal says: " + randAnimal.getSound());
     }
 }

@@ -1,57 +1,8 @@
 package TechboostJune2020.Stack;
 
-public class StackLLIml{
+public class StackLLIml {
 
     Node head;
-    static class Node{
-        Node next;
-        int data;
-
-        Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
-
-    //static int count = 0;
-
-    //LL: there is no barrier of capacity
-    public void push(int data) {
-        Node newNode = new Node(data);
-
-        if(head == null){
-            head = newNode;
-        }
-        else {
-            newNode.next = head;
-            head = newNode;
-        }
-    }
-
-    public int pop() {
-        if(head == null) {
-            System.out.println("Stack Underflow");
-            return Integer.MIN_VALUE;
-        }
-
-        int temp = head.data;
-        head = head.next;
-
-        return temp;
-    }
-
-    public int peek() {
-        if(head == null) {
-            System.out.println("Stack Underflow");
-            return Integer.MIN_VALUE;
-        }
-
-        return head.data;
-    }
-
-    public boolean isEmpty() {
-        return (head == null);
-    }
 
     public static void main(String[] args) {
         StackLLIml stackLLIml = new StackLLIml();
@@ -67,6 +18,55 @@ public class StackLLIml{
         System.out.println("The top most element: " + stackLLIml.peek());
         System.out.println("Popping the top most element " + stackLLIml.pop());
         System.out.println("Popping the top most element " + stackLLIml.pop());
+    }
+
+    //static int count = 0;
+
+    //LL: there is no barrier of capacity
+    public void push(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
+        }
+    }
+
+    public int pop() {
+        if (head == null) {
+            System.out.println("Stack Underflow");
+            return Integer.MIN_VALUE;
+        }
+
+        int temp = head.data;
+        head = head.next;
+
+        return temp;
+    }
+
+    public int peek() {
+        if (head == null) {
+            System.out.println("Stack Underflow");
+            return Integer.MIN_VALUE;
+        }
+
+        return head.data;
+    }
+
+    public boolean isEmpty() {
+        return (head == null);
+    }
+
+    static class Node {
+        Node next;
+        int data;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
     }
 
 

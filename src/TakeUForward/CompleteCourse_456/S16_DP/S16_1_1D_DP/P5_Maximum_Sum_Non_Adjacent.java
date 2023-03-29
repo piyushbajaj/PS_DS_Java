@@ -13,6 +13,21 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_1_1D_DP;
  */
 public class P5_Maximum_Sum_Non_Adjacent {
 
+    public static void main(String[] args) {
+        P5_Maximum_Sum_Non_Adjacent p5_maximum_sum_non_adjacent = new P5_Maximum_Sum_Non_Adjacent();
+
+        int[] arr = {5, 5, 10, 100, 10, 5};
+
+        System.out.println(p5_maximum_sum_non_adjacent.findMaxSum(arr, arr.length));
+
+        System.out.println(p5_maximum_sum_non_adjacent.findMaxSum_mem(arr, arr.length));
+
+        System.out.println(p5_maximum_sum_non_adjacent.findMaxSum_tab(arr, arr.length));
+
+        System.out.println(p5_maximum_sum_non_adjacent.findMaxSum_tab_improve(arr, arr.length));
+
+    }
+
     /**
      * Recursive Solution
      * <p>
@@ -144,21 +159,6 @@ public class P5_Maximum_Sum_Non_Adjacent {
         }
 
         return prevFirst;
-    }
-
-    public static void main(String[] args) {
-        P5_Maximum_Sum_Non_Adjacent p5_maximum_sum_non_adjacent = new P5_Maximum_Sum_Non_Adjacent();
-
-        int[] arr = {5, 5, 10, 100, 10, 5};
-
-        System.out.println(p5_maximum_sum_non_adjacent.findMaxSum(arr, arr.length));
-
-        System.out.println(p5_maximum_sum_non_adjacent.findMaxSum_mem(arr, arr.length));
-
-        System.out.println(p5_maximum_sum_non_adjacent.findMaxSum_tab(arr, arr.length));
-
-        System.out.println(p5_maximum_sum_non_adjacent.findMaxSum_tab_improve(arr, arr.length));
-
     }
 
 

@@ -44,7 +44,7 @@ public class Grokking4_FruitsInBasket {
     }
 
     public static void main(String[] args) {
-        System.out.println(maximumFruitsInBasket(new char[]{'A', 'B', 'C', 'A', 'C'}));
-        System.out.println(maximumFruitsInBasket(new char[]{'A', 'B', 'C', 'B', 'B', 'C'}));
+        System.out.println(maximumFruitsInBasket(new char[] {'A', 'B', 'C', 'A', 'C'}));
+        System.out.println(maximumFruitsInBasket(new char[] {'A', 'B', 'C', 'B', 'B', 'C'}));
     }
 }

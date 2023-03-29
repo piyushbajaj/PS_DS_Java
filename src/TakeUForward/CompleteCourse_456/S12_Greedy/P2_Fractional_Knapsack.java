@@ -14,31 +14,12 @@ import java.util.Comparator;
  */
 public class P2_Fractional_Knapsack {
 
-    static class Item {
-        int value, weight;
-
-        Item(int x, int y) {
-            this.value = x;
-            this.weight = y;
-        }
-    }
-
-    // Decreasing order
-    static class ItemComparator implements Comparator<Item> {
-
-        @Override
-        public int compare(Item o1, Item o2) {
-            double r1 = (double) (o1.value) / (double) (o1.weight);
-            double r2 = (double) (o2.value) / (double) (o2.weight);
-
-            if (r1 < r1) {
-                return 1;
-            } else if (r1 > r2) {
-                return -1;
-            } else {
-                return 0;
-            }
-        }
+    public static void main(String[] args) {
+        P2_Fractional_Knapsack p2_fractional_knapsack = new P2_Fractional_Knapsack();
+        int n = 3, weight = 50;
+        Item arr[] = {new Item(100, 20), new Item(60, 10), new Item(120, 30)};
+        double ans = p2_fractional_knapsack.fractionalKnapsack(weight, arr, n);
+        System.out.println("The maximum value is " + ans);
     }
 
     /**
@@ -72,11 +53,30 @@ public class P2_Fractional_Knapsack {
         return maxValue;
     }
 
-    public static void main(String[] args) {
-        P2_Fractional_Knapsack p2_fractional_knapsack = new P2_Fractional_Knapsack();
-        int n = 3, weight = 50;
-        Item arr[] = {new Item(100, 20), new Item(60, 10), new Item(120, 30)};
-        double ans = p2_fractional_knapsack.fractionalKnapsack(weight, arr, n);
-        System.out.println("The maximum value is " + ans);
+    static class Item {
+        int value, weight;
+
+        Item(int x, int y) {
+            this.value = x;
+            this.weight = y;
+        }
+    }
+
+    // Decreasing order
+    static class ItemComparator implements Comparator<Item> {
+
+        @Override
+        public int compare(Item o1, Item o2) {
+            double r1 = (double) (o1.value) / (double) (o1.weight);
+            double r2 = (double) (o2.value) / (double) (o2.weight);
+
+            if (r1 < r1) {
+                return 1;
+            } else if (r1 > r2) {
+                return -1;
+            } else {
+                return 0;
+            }
+        }
     }
 }

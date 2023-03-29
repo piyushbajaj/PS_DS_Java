@@ -16,6 +16,21 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  * <p>
  */
 public class P9_BT_Inorder_Postorder {
+    public static void main(String[] args) {
+        P9_BT_Inorder_Postorder p9_bt_inorder_postorder = new P9_BT_Inorder_Postorder();
+        P5_Levelorder_Itr_Traversal p5_levelorder_itr_traversal = new P5_Levelorder_Itr_Traversal();
+
+        int[] postOrder = {1, 3, 2, 5, 7, 6, 4};
+        int[] inOrder = {1, 2, 3, 4, 5, 6, 7};
+
+//        p8_bt_inorder_preorder.constructBT(preOrder, inOrder);
+//        System.out.println(p5_levelorder_itr_traversal.levelOrderTraversal_iterative(
+//            p8_bt_inorder_preorder.constructBT(preOrder, inOrder)));
+
+        System.out.println(p5_levelorder_itr_traversal.levelOrderTraversal_iterative(
+            p9_bt_inorder_postorder.constructBT(postOrder, inOrder)));
+    }
+
     public TreeNode constructBT(int[] postOrder, int[] inOrder) {
         int n = postOrder.length;
         Map<Integer, Integer> inOrderMap = new HashMap<>();
@@ -43,20 +58,5 @@ public class P9_BT_Inorder_Postorder {
             inOrder, inStart, indexInorder - 1, inOrderMap);
 
         return curr;
-    }
-
-    public static void main(String[] args) {
-        P9_BT_Inorder_Postorder p9_bt_inorder_postorder = new P9_BT_Inorder_Postorder();
-        P5_Levelorder_Itr_Traversal p5_levelorder_itr_traversal = new P5_Levelorder_Itr_Traversal();
-
-        int[] postOrder = {1, 3, 2, 5, 7, 6, 4};
-        int[] inOrder = {1, 2, 3, 4, 5, 6, 7};
-
-//        p8_bt_inorder_preorder.constructBT(preOrder, inOrder);
-//        System.out.println(p5_levelorder_itr_traversal.levelOrderTraversal_iterative(
-//            p8_bt_inorder_preorder.constructBT(preOrder, inOrder)));
-
-        System.out.println(p5_levelorder_itr_traversal.levelOrderTraversal_iterative(
-            p9_bt_inorder_postorder.constructBT(postOrder, inOrder)));
     }
 }

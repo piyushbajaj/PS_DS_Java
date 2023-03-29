@@ -10,6 +10,20 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_2_2D_3D_Grids;
  */
 public class P12_Variable_Starting_Ending_Points {
 
+    public static void main(String[] args) {
+        P12_Variable_Starting_Ending_Points p12_variable_starting_ending_points =
+            new P12_Variable_Starting_Ending_Points();
+
+        int[][] matrix = {{2, 1, 3}, {6, 5, 4}, {7, 8, 9}};
+        System.out.println(p12_variable_starting_ending_points.minFallingPathSum(matrix));
+
+        System.out.println(p12_variable_starting_ending_points.minFallingPathSum_mem(matrix));
+
+        System.out.println(p12_variable_starting_ending_points.minFallingPathSum_tabulation(matrix));
+
+        System.out.println(p12_variable_starting_ending_points.minFallingPathSum_tabulation_better(matrix));
+    }
+
     /**
      * TC: O(m) * O(3^n)
      * SC: O(N)
@@ -186,19 +200,5 @@ public class P12_Variable_Starting_Ending_Points {
         }
 
         return min;
-    }
-
-    public static void main(String[] args) {
-        P12_Variable_Starting_Ending_Points p12_variable_starting_ending_points =
-            new P12_Variable_Starting_Ending_Points();
-
-        int[][] matrix = {{2, 1, 3}, {6, 5, 4}, {7, 8, 9}};
-        System.out.println(p12_variable_starting_ending_points.minFallingPathSum(matrix));
-
-        System.out.println(p12_variable_starting_ending_points.minFallingPathSum_mem(matrix));
-
-        System.out.println(p12_variable_starting_ending_points.minFallingPathSum_tabulation(matrix));
-
-        System.out.println(p12_variable_starting_ending_points.minFallingPathSum_tabulation_better(matrix));
     }
 }

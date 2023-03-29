@@ -10,6 +10,23 @@ import java.util.Queue;
  * Created by bajajp on 06 Jun, 2022
  */
 public class DiagonalBinaryTree extends CommonUtils {
+    public static void main(String[] args) {
+        DiagonalBinaryTree diagonalBinaryTree = new DiagonalBinaryTree();
+        diagonalBinaryTree.root = new TreeNode(1);
+        diagonalBinaryTree.root.left = new TreeNode(2);
+        diagonalBinaryTree.root.right = new TreeNode(3);
+        diagonalBinaryTree.root.left.left = new TreeNode(4);
+        diagonalBinaryTree.root.left.right = new TreeNode(5);
+        diagonalBinaryTree.root.left.right.left = new TreeNode(7);
+        diagonalBinaryTree.root.left.right.right = new TreeNode(8);
+        diagonalBinaryTree.root.right.left = new TreeNode(6);
+        diagonalBinaryTree.root.right.left.left = new TreeNode(9);
+        diagonalBinaryTree.root.right.left.right = new TreeNode(10);
+
+        diagonalBinaryTree.diagonal_preOrder_recursive(diagonalBinaryTree.root);
+        diagonalBinaryTree.diagonal_iterative(diagonalBinaryTree.root);
+    }
+
     public void diagonal_preOrder_recursive(TreeNode node) {
         Map<Integer, ArrayList<Integer>> result = new HashMap<>();
 
@@ -21,6 +38,8 @@ public class DiagonalBinaryTree extends CommonUtils {
             System.out.println(key + " -> " + value);
         });
     }
+
+    // Level Order Traversal Approach
 
     public void diagonal_preOrder_recursive_util(TreeNode node, int diagonal, Map<Integer, ArrayList<Integer>> result) {
         if (node != null) {
@@ -34,8 +53,6 @@ public class DiagonalBinaryTree extends CommonUtils {
 
     }
 
-    // Level Order Traversal Approach
-
     /**
      * Algo:
      * 1. Create Queue for storing nodes in diagonal fashion
@@ -46,7 +63,9 @@ public class DiagonalBinaryTree extends CommonUtils {
      * @param node
      */
     public void diagonal_iterative(TreeNode node) {
-        if (node == null) return;
+        if (node == null) {
+            return;
+        }
 
         Queue<TreeNode> queue = new ArrayDeque<>();
 
@@ -82,22 +101,5 @@ public class DiagonalBinaryTree extends CommonUtils {
         }
 
         //
-    }
-
-    public static void main(String[] args) {
-        DiagonalBinaryTree diagonalBinaryTree = new DiagonalBinaryTree();
-        diagonalBinaryTree.root = new TreeNode(1);
-        diagonalBinaryTree.root.left = new TreeNode(2);
-        diagonalBinaryTree.root.right = new TreeNode(3);
-        diagonalBinaryTree.root.left.left = new TreeNode(4);
-        diagonalBinaryTree.root.left.right = new TreeNode(5);
-        diagonalBinaryTree.root.left.right.left = new TreeNode(7);
-        diagonalBinaryTree.root.left.right.right = new TreeNode(8);
-        diagonalBinaryTree.root.right.left = new TreeNode(6);
-        diagonalBinaryTree.root.right.left.left = new TreeNode(9);
-        diagonalBinaryTree.root.right.left.right = new TreeNode(10);
-
-        diagonalBinaryTree.diagonal_preOrder_recursive(diagonalBinaryTree.root);
-        diagonalBinaryTree.diagonal_iterative(diagonalBinaryTree.root);
     }
 }

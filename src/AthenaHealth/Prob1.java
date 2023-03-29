@@ -10,39 +10,37 @@ public class Prob1 {
 
         int[] result = getMinimumDifference(a, b);
 
-        for(int i = 0; i < result.length; i++)
+        for (int i = 0; i < result.length; i++) {
             System.out.println(result[i]);
+        }
     }
 
     static int[] getMinimumDifference(String[] a, String[] b) {
         int len_a = a.length;
         int len_b = b.length;
 
-        int len_res = (len_a > len_b )? len_a:len_b;
+        int len_res = (len_a > len_b) ? len_a : len_b;
         int[] result = new int[len_res];
 
 
-
-
-        for(int i = 0; i < len_a; i++){
+        for (int i = 0; i < len_a; i++) {
             int count = 0;
             int count_a = 0;
-            if(a[i].length() != b[i].length()){
+            if (a[i].length() != b[i].length()) {
                 result[i] = -1;
-            }
-
-            else{
+            } else {
                 int[] charArr = new int[26];
                 for (int j = 0; j < a[i].length(); j++) {
-                    charArr[Integer.valueOf(a[i].charAt(j))-97]++;
+                    charArr[Integer.valueOf(a[i].charAt(j)) - 97]++;
                     count_a++;
                     //count++;
                 }
 
                 for (int j = 0; j < b[i].length(); j++) {
-                    charArr[Integer.valueOf(b[i].charAt(j))-97]--;
-                    if(charArr[Integer.valueOf(b[i].charAt(j))-97] >= 0)
+                    charArr[Integer.valueOf(b[i].charAt(j)) - 97]--;
+                    if (charArr[Integer.valueOf(b[i].charAt(j)) - 97] >= 0) {
                         count_a--;
+                    }
                 }
 
 //                for(int k = 0; k < 26; k++){
@@ -64,8 +62,6 @@ public class Prob1 {
 
         }
         return result;
-
-
 
 
     }

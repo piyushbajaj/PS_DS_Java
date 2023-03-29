@@ -14,6 +14,21 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  */
 public class P9_Validate_BST {
 
+    public static void main(String[] args) {
+        P9_Validate_BST p9_validate_bst = new P9_Validate_BST();
+
+        // Inserting into tree
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        System.out.println(p9_validate_bst.isValidBST(root));
+    }
+
     /**
      * TC: O(N)
      * SC: O(N)
@@ -39,20 +54,5 @@ public class P9_Validate_BST {
         }
 
         return isValidBST_util(root.left, min, root.data) && isValidBST_util(root.right, root.data, max);
-    }
-
-    public static void main(String[] args) {
-        P9_Validate_BST p9_validate_bst = new P9_Validate_BST();
-
-        // Inserting into tree
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        System.out.println(p9_validate_bst.isValidBST(root));
     }
 }

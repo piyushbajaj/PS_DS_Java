@@ -5,16 +5,7 @@ package BinaryTree;
  */
 public class ConstructTreeFromInOrderPreOrder_Class {
     Node root;
-
-    public static class Node {
-        int data;
-        Node left, right;
-
-        Node(int data) {
-            this.data = data;
-            left = right = null;
-        }
-    }
+    private int index = 0;
 
     public ConstructTreeFromInOrderPreOrder_Class() {
         root = null;
@@ -24,7 +15,24 @@ public class ConstructTreeFromInOrderPreOrder_Class {
         root = new Node(key);
     }
 
-    private int index = 0;
+    public static void main(String[] args) {
+        ConstructTreeFromInOrderPreOrder_Class BT = new ConstructTreeFromInOrderPreOrder_Class();
+        int[] preOrder = {1, 2, 4, 5, 3, 6, 7};
+        int[] inOrder = {4, 2, 5, 1, 6, 3, 7};
+
+        BT.root = BT.createTree(inOrder, preOrder);
+        System.out.println("Root: " + BT.root.data);
+        System.out.println("Root (" + BT.root.data + ") -> Left: " + BT.root.left.data);
+        System.out.println("Root (" + BT.root.data + ") -> Right: " + BT.root.right.data);
+        System.out.println(
+            "Root (" + BT.root.data + ") -> Left (" + BT.root.left.data + ") -> Left: " + BT.root.left.left.data);
+        System.out.println(
+            "Root (" + BT.root.data + ") -> Left (" + BT.root.left.data + ") -> Right: " + BT.root.left.right.data);
+        System.out.println(
+            "Root (" + BT.root.data + ") -> Right (" + BT.root.right.data + ")-> Left: " + BT.root.right.left.data);
+        System.out.println(
+            "Root (" + BT.root.data + ") -> Right (" + BT.root.right.data + ") -> Right: " + BT.root.right.right.data);
+    }
 
     public Node createTree(int[] inorder, int[] preorder) {
         return createTree(inorder, preorder, 0, inorder.length - 1);
@@ -47,18 +55,13 @@ public class ConstructTreeFromInOrderPreOrder_Class {
         return node;
     }
 
-    public static void main(String[] args) {
-        ConstructTreeFromInOrderPreOrder_Class BT = new ConstructTreeFromInOrderPreOrder_Class();
-        int[] preOrder = {1, 2, 4, 5, 3, 6, 7};
-        int[] inOrder = {4, 2, 5, 1, 6, 3, 7};
+    public static class Node {
+        int data;
+        Node left, right;
 
-        BT.root = BT.createTree(inOrder, preOrder);
-        System.out.println("Root: " + BT.root.data);
-        System.out.println("Root (" + BT.root.data + ") -> Left: " + BT.root.left.data);
-        System.out.println("Root (" + BT.root.data + ") -> Right: " + BT.root.right.data);
-        System.out.println("Root (" + BT.root.data + ") -> Left (" + BT.root.left.data + ") -> Left: " + BT.root.left.left.data);
-        System.out.println("Root (" + BT.root.data + ") -> Left (" + BT.root.left.data + ") -> Right: " + BT.root.left.right.data);
-        System.out.println("Root (" + BT.root.data + ") -> Right (" + BT.root.right.data + ")-> Left: " + BT.root.right.left.data);
-        System.out.println("Root (" + BT.root.data + ") -> Right (" + BT.root.right.data + ") -> Right: " + BT.root.right.right.data);
+        Node(int data) {
+            this.data = data;
+            left = right = null;
+        }
     }
 }

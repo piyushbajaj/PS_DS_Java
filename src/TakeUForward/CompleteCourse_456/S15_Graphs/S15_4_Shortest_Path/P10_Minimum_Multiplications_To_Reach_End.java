@@ -15,13 +15,12 @@ import java.util.Queue;
  * Link: <a href="https://practice.geeksforgeeks.org/problems/minimum-multiplications-to-reach-end/1">...</a>
  */
 public class P10_Minimum_Multiplications_To_Reach_End {
-    static class Pair {
-        int steps, num;
+    public static void main(String[] args) {
+        P10_Minimum_Multiplications_To_Reach_End p10_minimum_multiplications_to_reach_end =
+            new P10_Minimum_Multiplications_To_Reach_End();
+        int arr[] = {2, 5, 7};
 
-        Pair(int steps, int num) {
-            this.steps = steps;
-            this.num = num;
-        }
+        System.out.println(p10_minimum_multiplications_to_reach_end.minimumMultiplications(arr, 3, 30));
     }
 
     /**
@@ -70,11 +69,12 @@ public class P10_Minimum_Multiplications_To_Reach_End {
         return -1;
     }
 
-    public static void main(String[] args) {
-        P10_Minimum_Multiplications_To_Reach_End p10_minimum_multiplications_to_reach_end =
-            new P10_Minimum_Multiplications_To_Reach_End();
-        int arr[] = {2, 5, 7};
+    static class Pair {
+        int steps, num;
 
-        System.out.println(p10_minimum_multiplications_to_reach_end.minimumMultiplications(arr, 3, 30));
+        Pair(int steps, int num) {
+            this.steps = steps;
+            this.num = num;
+        }
     }
 }

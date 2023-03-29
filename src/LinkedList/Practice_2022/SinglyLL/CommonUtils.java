@@ -2,6 +2,23 @@ package LinkedList.Practice_2022.SinglyLL;
 
 public class CommonUtils extends BaseNode {
 
+    public static void main(String[] args) {
+        CommonUtils commonUtils = new CommonUtils();
+        commonUtils.insert(10, 0);
+        commonUtils.insert(20, 1);
+        commonUtils.insert(30, 2);
+        commonUtils.insert(40, 3);
+        commonUtils.insert(50, 4);
+
+        commonUtils.printLL();
+
+        commonUtils.delete(0);
+        commonUtils.printLL();
+
+        commonUtils.delete(2);
+        commonUtils.printLL();
+    }
+
     public void insert(int data, int pos) {
         Node toAdd = new Node(data);
         if (head == null) {
@@ -19,7 +36,9 @@ public class CommonUtils extends BaseNode {
 
         Node prev = head;
         for (int i = 0; i < pos - 1; i++) {
-            if (prev == null) return;
+            if (prev == null) {
+                return;
+            }
             prev = prev.next;
         }
 
@@ -28,7 +47,9 @@ public class CommonUtils extends BaseNode {
     }
 
     public void delete(int pos) {
-        if (head == null) return;
+        if (head == null) {
+            return;
+        }
 
         if (pos == 0) {
             head = head.next;
@@ -38,7 +59,9 @@ public class CommonUtils extends BaseNode {
             prev = prev.next;
         }
 
-        if (prev.next == null) return;
+        if (prev.next == null) {
+            return;
+        }
 
         prev.next = prev.next.next;
     }
@@ -89,7 +112,9 @@ public class CommonUtils extends BaseNode {
     }
 
     public int countNodes(Node node) {
-        if (node == null) return 0;
+        if (node == null) {
+            return 0;
+        }
         int count = 0;
 
         while (node != null) {
@@ -112,22 +137,5 @@ public class CommonUtils extends BaseNode {
             curr.next = newNode;
             newNode.next = temp;
         }
-    }
-
-    public static void main(String[] args) {
-        CommonUtils commonUtils = new CommonUtils();
-        commonUtils.insert(10, 0);
-        commonUtils.insert(20, 1);
-        commonUtils.insert(30, 2);
-        commonUtils.insert(40, 3);
-        commonUtils.insert(50, 4);
-
-        commonUtils.printLL();
-
-        commonUtils.delete(0);
-        commonUtils.printLL();
-
-        commonUtils.delete(2);
-        commonUtils.printLL();
     }
 }

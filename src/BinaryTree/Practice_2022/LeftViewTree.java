@@ -9,9 +9,29 @@ import java.util.Queue;
  * Created by bajajp on 04 Jun, 2022
  */
 public class LeftViewTree extends CommonUtils {
+    int maxLevel = 0;
+
+    public static void main(String[] args) {
+        LeftViewTree leftViewTree = new LeftViewTree();
+        leftViewTree.insertInBT(1);
+        leftViewTree.insertInBT(2);
+        leftViewTree.insertInBT(3);
+        leftViewTree.insertInBT(4);
+        leftViewTree.insertInBT(5);
+        leftViewTree.insertInBT(6);
+        leftViewTree.insertInBT(7);
+        leftViewTree.printBinaryTree_inOrder(leftViewTree.root);
+        System.out.println();
+        System.out.println(leftViewTree.leftView_iterative(leftViewTree.root));
+        System.out.println(leftViewTree.leftView_recursive(leftViewTree.root));
+
+    }
+
     public List<Integer> leftView_iterative(TreeNode node) {
         List<Integer> result = new ArrayList<Integer>();
-        if (node == null) return null;
+        if (node == null) {
+            return null;
+        }
 
         Queue<TreeNode> queue = new LinkedList<>();
 
@@ -48,32 +68,17 @@ public class LeftViewTree extends CommonUtils {
         return result;
     }
 
-    int maxLevel = 0;
     public void leftView_recursive_util(TreeNode node, int level, List<Integer> result) {
-        if (node == null) return;
+        if (node == null) {
+            return;
+        }
 
         if (maxLevel < level) {
             result.add(node.data);
             maxLevel = level;
         }
 
-        leftView_recursive_util(node.left, level+1, result);
-        leftView_recursive_util(node.right, level+1, result);
-    }
-
-    public static void main(String[] args) {
-        LeftViewTree leftViewTree = new LeftViewTree();
-        leftViewTree.insertInBT(1);
-        leftViewTree.insertInBT(2);
-        leftViewTree.insertInBT(3);
-        leftViewTree.insertInBT(4);
-        leftViewTree.insertInBT(5);
-        leftViewTree.insertInBT(6);
-        leftViewTree.insertInBT(7);
-        leftViewTree.printBinaryTree_inOrder(leftViewTree.root);
-        System.out.println();
-        System.out.println(leftViewTree.leftView_iterative(leftViewTree.root));
-        System.out.println(leftViewTree.leftView_recursive(leftViewTree.root));
-
+        leftView_recursive_util(node.left, level + 1, result);
+        leftView_recursive_util(node.right, level + 1, result);
     }
 }

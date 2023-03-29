@@ -3,10 +3,10 @@ package designPattern.StatePattern.ATM;
 /**
  * Created by piyush.bajaj on 26/02/17.
  */
-public class NoCash implements  ATMState{
+public class NoCash implements ATMState {
     ATMMachine atmMachine;
 
-    NoCash(ATMMachine newAtmMachine){
+    NoCash(ATMMachine newAtmMachine) {
         atmMachine = newAtmMachine;
 
     }

@@ -11,19 +11,6 @@ public class P2_ConvertMinHeapToMaxHeap extends MaxHeap_PQ {
         super(capacity);
     }
 
-    /**
-     * TC: O(N)
-     *
-     * @param vector
-     */
-    public void buildMaxHeap(Vector<Integer> vector) {
-        int n = vector.size();
-
-        for (int i = (n - 1) / 2; i >= 0; i--) {
-            heapify_down_custom(vector, i, n);
-        }
-    }
-
     public static void main(String[] args) {
         P2_ConvertMinHeapToMaxHeap p2_convertMinHeapToMaxHeap = new P2_ConvertMinHeapToMaxHeap(10);
         Vector<Integer> vectorA = new Vector<>();
@@ -41,5 +28,18 @@ public class P2_ConvertMinHeapToMaxHeap extends MaxHeap_PQ {
 
         System.out.println(vectorA);
 
+    }
+
+    /**
+     * TC: O(N)
+     *
+     * @param vector
+     */
+    public void buildMaxHeap(Vector<Integer> vector) {
+        int n = vector.size();
+
+        for (int i = (n - 1) / 2; i >= 0; i--) {
+            heapify_down_custom(vector, i, n);
+        }
     }
 }

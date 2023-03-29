@@ -11,6 +11,12 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_6_DP_Stocks;
  * Link lc: <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/">...</a>
  */
 public class P5_Best_Time_To_Buy_Sell_Cooldown {
+    public static void main(String[] args) {
+        P5_Best_Time_To_Buy_Sell_Cooldown p5_best_time_to_buy_sell_cooldown = new P5_Best_Time_To_Buy_Sell_Cooldown();
+        int[] prices = {1, 2, 3, 0, 2};
+        System.out.println(p5_best_time_to_buy_sell_cooldown.maxProfit(prices));
+    }
+
     public int maxProfit(int[] prices) {
         int n = prices.length;
         int[][] dp_profits = new int[n + 2][2];
@@ -41,11 +47,5 @@ public class P5_Best_Time_To_Buy_Sell_Cooldown {
         }
 
         return dp_profits[0][1];
-    }
-
-    public static void main(String[] args) {
-        P5_Best_Time_To_Buy_Sell_Cooldown p5_best_time_to_buy_sell_cooldown = new P5_Best_Time_To_Buy_Sell_Cooldown();
-        int[] prices = {1, 2, 3, 0, 2};
-        System.out.println(p5_best_time_to_buy_sell_cooldown.maxProfit(prices));
     }
 }

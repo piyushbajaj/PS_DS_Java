@@ -23,34 +23,34 @@ public class custom_SortedArray_Prob {
         calculate(arr);
     }
 
-    public static void calculate(int[] arr){
+    public static void calculate(int[] arr) {
         int n = arr.length;
 
-        for(int i = 0; i < n; i++){
-            if(arr[i]%2 != 0){
+        for (int i = 0; i < n; i++) {
+            if (arr[i] % 2 != 0) {
 
             }
         }
 
-        int start = 0, end = n-1;
+        int start = 0, end = n - 1;
         int indexStart = -1, indexEnd = -1;
         int count = 0;
-        while (start < end){
-            if(arr[start]%2!=0){
+        while (start < end) {
+            if (arr[start] % 2 != 0) {
                 indexStart = start;
                 start++;
-            }
-            else if(arr[start]%2==0)
+            } else if (arr[start] % 2 == 0) {
                 start++;
+            }
 
-            if(arr[end]%2==0){
+            if (arr[end] % 2 == 0) {
                 indexEnd = end;
                 end--;
-            }
-            else if(arr[end]%2!=0)
+            } else if (arr[end] % 2 != 0) {
                 end--;
+            }
 
-            if(indexStart!= -1 && indexEnd!=-1){
+            if (indexStart != -1 && indexEnd != -1) {
                 swap(arr, indexStart, indexEnd);
                 count++;
                 indexStart = -1;
@@ -62,7 +62,7 @@ public class custom_SortedArray_Prob {
 
     }
 
-    public static void swap(int[] arr, int i, int j){
+    public static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;

@@ -19,14 +19,10 @@ import java.util.Set;
  */
 public class P3_Word_Ladder_1 {
 
-    static class Pair {
-        String word;
-        int length;
-
-        Pair(String word, int length) {
-            this.word = word;
-            this.length = length;
-        }
+    public static void main(String[] args) {
+        P3_Word_Ladder_1 p3_word_ladder_1 = new P3_Word_Ladder_1();
+        String[] wordList = {"des", "der", "dfr", "dgt", "dfs"};
+        System.out.println(p3_word_ladder_1.wordLadderLength("der", "dfs", wordList));
     }
 
     /**
@@ -77,9 +73,13 @@ public class P3_Word_Ladder_1 {
         return 0;
     }
 
-    public static void main(String[] args) {
-        P3_Word_Ladder_1 p3_word_ladder_1 = new P3_Word_Ladder_1();
-        String[] wordList = {"des", "der", "dfr", "dgt", "dfs"};
-        System.out.println(p3_word_ladder_1.wordLadderLength("der", "dfs", wordList));
+    static class Pair {
+        String word;
+        int length;
+
+        Pair(String word, int length) {
+            this.word = word;
+            this.length = length;
+        }
     }
 }

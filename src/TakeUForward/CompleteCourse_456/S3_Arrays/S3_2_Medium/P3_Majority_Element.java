@@ -12,6 +12,11 @@ package TakeUForward.CompleteCourse_456.S3_Arrays.S3_2_Medium;
  */
 public class P3_Majority_Element {
 
+    public static void main(String[] args) {
+        P3_Majority_Element p3_majority_element = new P3_Majority_Element();
+        System.out.println(p3_majority_element.majorityElement(new int[] {2, 2, 1, 1, 1, 2, 2}));
+    }
+
     /**
      * TC: O(N)
      * SC: O(1)
@@ -38,10 +43,5 @@ public class P3_Majority_Element {
         }
 
         return majorityElement;
-    }
-
-    public static void main(String[] args) {
-        P3_Majority_Element p3_majority_element = new P3_Majority_Element();
-        System.out.println(p3_majority_element.majorityElement(new int[] {2, 2, 1, 1, 1, 2, 2}));
     }
 }

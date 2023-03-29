@@ -15,15 +15,17 @@ import java.util.Queue;
  */
 public class P7_Shortest_Distance_In_Binary_Maze {
 
-    static class Tuple {
-        int distance;
-        int row, col;
+    public static void main(String[] args) {
+        int[][] grid = {{1, 1, 1, 1},
+            {1, 1, 0, 1},
+            {1, 1, 1, 1},
+            {1, 1, 0, 0},
+            {1, 0, 0, 1}};
 
-        Tuple(int distance, int row, int col) {
-            this.distance = distance;
-            this.row = row;
-            this.col = col;
-        }
+        P7_Shortest_Distance_In_Binary_Maze p7_shortest_distance_in_binary_maze =
+            new P7_Shortest_Distance_In_Binary_Maze();
+
+        System.out.println(p7_shortest_distance_in_binary_maze.shortestPath(grid, new int[] {0, 1}, new int[] {2, 2}));
     }
 
     /**
@@ -85,16 +87,14 @@ public class P7_Shortest_Distance_In_Binary_Maze {
         return -1;
     }
 
-    public static void main(String[] args) {
-        int[][] grid = {{1, 1, 1, 1},
-            {1, 1, 0, 1},
-            {1, 1, 1, 1},
-            {1, 1, 0, 0},
-            {1, 0, 0, 1}};
+    static class Tuple {
+        int distance;
+        int row, col;
 
-        P7_Shortest_Distance_In_Binary_Maze p7_shortest_distance_in_binary_maze =
-            new P7_Shortest_Distance_In_Binary_Maze();
-
-        System.out.println(p7_shortest_distance_in_binary_maze.shortestPath(grid, new int[] {0, 1}, new int[] {2, 2}));
+        Tuple(int distance, int row, int col) {
+            this.distance = distance;
+            this.row = row;
+            this.col = col;
+        }
     }
 }

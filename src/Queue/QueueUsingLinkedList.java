@@ -13,14 +13,15 @@ public class QueueUsingLinkedList {
         length = 0;
     }
 
-    static class Node {
-        int data;
-        Node next;
+    public static void main(String[] args) {
+        QueueUsingLinkedList QLL = new QueueUsingLinkedList();
+        QLL.enqueue(2);
+        QLL.enqueue(4);
+        QLL.enqueue(5);
+        System.out.println(QLL.displayQueue());
+        //System.out.println("Data which is now removed from the queue: " + QLL.deque());
 
-        Node(int d) {
-            data = d;
-            next = null;
-        }
+        System.out.println(QLL.displayQueue());
     }
 
     public void enqueue(int k) {
@@ -65,14 +66,13 @@ public class QueueUsingLinkedList {
         return result;
     }
 
-    public static void main(String[] args) {
-        QueueUsingLinkedList QLL = new QueueUsingLinkedList();
-        QLL.enqueue(2);
-        QLL.enqueue(4);
-        QLL.enqueue(5);
-        System.out.println(QLL.displayQueue());
-        //System.out.println("Data which is now removed from the queue: " + QLL.deque());
+    static class Node {
+        int data;
+        Node next;
 
-        System.out.println(QLL.displayQueue());
+        Node(int d) {
+            data = d;
+            next = null;
+        }
     }
 }

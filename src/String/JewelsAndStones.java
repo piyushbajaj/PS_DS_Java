@@ -6,7 +6,7 @@ package String;
 public class JewelsAndStones {
     public int numJewelsInStones(String jewels, String stones) {
         int cnt = 0;
-        for(int i = 0; i < stones.length(); i++) {
+        for (int i = 0; i < stones.length(); i++) {
             if (jewels.contains(stones)) {
                 cnt++;
             }

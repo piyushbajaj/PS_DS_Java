@@ -12,6 +12,10 @@ import java.util.List;
  * Time: 8:48 pm
  */
 public class P2_Ones_And_Zeros {
+    public static void main(String[] args) {
+
+    }
+
     public int[][] onesMinusZeros(int[][] grid) {
         int n = grid.length;
         int m = grid[0].length;
@@ -64,9 +68,5 @@ public class P2_Ones_And_Zeros {
         result.add(countZerosInCol);
 
         return result;
-    }
-
-    public static void main(String[] args) {
-
     }
 }

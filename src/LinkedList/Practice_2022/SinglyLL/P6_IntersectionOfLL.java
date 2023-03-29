@@ -1,6 +1,34 @@
 package LinkedList.Practice_2022.SinglyLL;
 
 public class P6_IntersectionOfLL extends CommonUtils {
+    public static void main(String[] args) {
+        P6_IntersectionOfLL firstList = new P6_IntersectionOfLL();
+        firstList.insertInEnd(1);
+        firstList.insertInEnd(2);
+        firstList.insertInEnd(3);
+        firstList.insertInEnd(4);
+        firstList.insertInEnd(5);
+        firstList.insertInEnd(6);
+        firstList.insertInEnd(7);
+        firstList.printLL();
+
+        P6_IntersectionOfLL secondList = new P6_IntersectionOfLL();
+        secondList.insertInEnd(10);
+        secondList.insertInEnd(20);
+        secondList.insertInEnd(30);
+        secondList.insertInEnd(40);
+        secondList.insertInEnd(6);
+        secondList.insertInEnd(7);
+        secondList.printLL();
+
+        System.out.println("Intersection of Linked List");
+        System.out.println(firstList.intersectionOfLL(firstList.head, secondList.head));
+
+        System.out.println(firstList.getIntersectionNode(firstList.head, secondList.head).data);
+
+        System.out.println(firstList.intersectionOfLL_better(firstList.head, secondList.head).data);
+    }
+
     public int intersectionOfLL(Node n1, Node n2) {
         int n1_count = countNodes(n1);
         int n2_count = countNodes(n2);
@@ -69,33 +97,5 @@ public class P6_IntersectionOfLL extends CommonUtils {
         }
 
         return -1;
-    }
-
-    public static void main(String[] args) {
-        P6_IntersectionOfLL firstList = new P6_IntersectionOfLL();
-        firstList.insertInEnd(1);
-        firstList.insertInEnd(2);
-        firstList.insertInEnd(3);
-        firstList.insertInEnd(4);
-        firstList.insertInEnd(5);
-        firstList.insertInEnd(6);
-        firstList.insertInEnd(7);
-        firstList.printLL();
-
-        P6_IntersectionOfLL secondList = new P6_IntersectionOfLL();
-        secondList.insertInEnd(10);
-        secondList.insertInEnd(20);
-        secondList.insertInEnd(30);
-        secondList.insertInEnd(40);
-        secondList.insertInEnd(6);
-        secondList.insertInEnd(7);
-        secondList.printLL();
-
-        System.out.println("Intersection of Linked List");
-        System.out.println(firstList.intersectionOfLL(firstList.head, secondList.head));
-
-        System.out.println(firstList.getIntersectionNode(firstList.head, secondList.head).data);
-
-        System.out.println(firstList.intersectionOfLL_better(firstList.head, secondList.head).data);
     }
 }

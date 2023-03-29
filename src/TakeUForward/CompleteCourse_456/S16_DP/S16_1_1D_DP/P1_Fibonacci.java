@@ -10,6 +10,14 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_1_1D_DP;
  */
 public class P1_Fibonacci {
 
+    public static void main(String[] args) {
+        P1_Fibonacci fibonacci = new P1_Fibonacci();
+
+        System.out.println(fibonacci.fibonacci(11));
+
+        System.out.println(fibonacci.fibonacci_tab(4));
+    }
+
     /**
      * Approach: Memoization (extension of recursion)
      * TC: O(N)
@@ -60,13 +68,5 @@ public class P1_Fibonacci {
         }
 
         return fib;
-    }
-
-    public static void main(String[] args) {
-        P1_Fibonacci fibonacci = new P1_Fibonacci();
-
-        System.out.println(fibonacci.fibonacci(11));
-
-        System.out.println(fibonacci.fibonacci_tab(4));
     }
 }

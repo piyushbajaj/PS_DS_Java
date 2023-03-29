@@ -8,9 +8,25 @@ import java.util.Queue;
  */
 public class CousinNode extends CommonUtils {
 
+    public static void main(String[] args) {
+        CousinNode cousinNode = new CousinNode();
+        cousinNode.insertInBT(1);
+        cousinNode.insertInBT(2);
+        cousinNode.insertInBT(3);
+        cousinNode.insertInBT(4);
+        cousinNode.insertInBT(5);
+        cousinNode.insertInBT(6);
+        cousinNode.insertInBT(7);
+        cousinNode.printBinaryTree_inOrder(cousinNode.root);
+        System.out.println();
+        System.out.println(cousinNode.isCousin(cousinNode.root, 4, 7));
+    }
+
     public boolean isCousin(TreeNode root, int a, int b) {
         Queue<TreeNode> queue = new LinkedList<>();
-        if (root == null) return false;
+        if (root == null) {
+            return false;
+        }
 
         queue.add(root);
 
@@ -46,22 +62,10 @@ public class CousinNode extends CommonUtils {
                 }
             }
 
-            if (isCousin) return false;
+            if (isCousin) {
+                return false;
+            }
         }
         return false;
-    }
-
-    public static void main(String[] args) {
-        CousinNode cousinNode = new CousinNode();
-        cousinNode.insertInBT(1);
-        cousinNode.insertInBT(2);
-        cousinNode.insertInBT(3);
-        cousinNode.insertInBT(4);
-        cousinNode.insertInBT(5);
-        cousinNode.insertInBT(6);
-        cousinNode.insertInBT(7);
-        cousinNode.printBinaryTree_inOrder(cousinNode.root);
-        System.out.println();
-        System.out.println(cousinNode.isCousin(cousinNode.root, 4, 7));
     }
 }

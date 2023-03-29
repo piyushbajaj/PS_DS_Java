@@ -20,6 +20,14 @@ public class P8_Construct_BT_PreOrder_InOrder {
     int preOrderIndex = 0;
     Map<Integer, Integer> inorderHashMap = new HashMap<>();
 
+    public static void main(String[] args) {
+        P8_Construct_BT_PreOrder_InOrder p8_construct_bt_preOrder_inOrder = new P8_Construct_BT_PreOrder_InOrder();
+        int[] preOrder = {3, 9, 20, 15, 7};
+        int[] inOrder = {9, 3, 15, 20, 7};
+
+        Utils.printTree(p8_construct_bt_preOrder_inOrder.buildTree(preOrder, inOrder));
+    }
+
     /**
      * Using HashMap for storing inorder traversal
      * TC: O(N)
@@ -54,13 +62,5 @@ public class P8_Construct_BT_PreOrder_InOrder {
             return root;
         }
         return null;
-    }
-
-    public static void main(String[] args) {
-        P8_Construct_BT_PreOrder_InOrder p8_construct_bt_preOrder_inOrder = new P8_Construct_BT_PreOrder_InOrder();
-        int[] preOrder = {3, 9, 20, 15, 7};
-        int[] inOrder = {9, 3, 15, 20, 7};
-
-        Utils.printTree(p8_construct_bt_preOrder_inOrder.buildTree(preOrder, inOrder));
     }
 }

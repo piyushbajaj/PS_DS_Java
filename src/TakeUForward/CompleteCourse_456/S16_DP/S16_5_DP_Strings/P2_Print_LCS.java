@@ -11,6 +11,12 @@ import java.util.Arrays;
  * Time: 3:08 pm
  */
 public class P2_Print_LCS {
+    public static void main(String[] args) {
+        P2_Print_LCS p2_print_lcs = new P2_Print_LCS();
+        System.out.println(p2_print_lcs.all_longest_common_subsequences("acd", "ced"));
+        System.out.println(p2_print_lcs.all_longest_common_subsequences("abaaa", "baabaca"));
+    }
+
     public String all_longest_common_subsequences(String text1, String text2) {
         // copy the code from LCS tabulation
         int n = text1.length();
@@ -72,11 +78,5 @@ public class P2_Print_LCS {
         }
 
         return Arrays.toString(chAns);
-    }
-
-    public static void main(String[] args) {
-        P2_Print_LCS p2_print_lcs = new P2_Print_LCS();
-        System.out.println(p2_print_lcs.all_longest_common_subsequences("acd", "ced"));
-        System.out.println(p2_print_lcs.all_longest_common_subsequences("abaaa", "baabaca"));
     }
 }

@@ -4,32 +4,10 @@ import java.util.Date;
 
 public class MaximumDepth {
     TreeNode root;
-
-    static class TreeNode {
-        int data;
-        TreeNode left, right;
-
-        TreeNode(int data) {
-            this.data = data;
-            this.left = null;
-            this.right = null;
-        }
-    }
+    private int answer; // don't forget to initialize answer before call maximum_depth
 
     MaximumDepth(int data) {
         this.root = new TreeNode(data);
-    }
-
-    private int answer; // don't forget to initialize answer before call maximum_depth
-    private void maximum_depth(TreeNode root, int depth) {
-        if (root == null) {
-            return;
-        }
-        if (root.left == null && root.right == null) {
-            answer = Math.max(answer, depth);
-        }
-        maximum_depth(root.left, depth + 1);
-        maximum_depth(root.right, depth + 1);
     }
 
     public static void main(String[] args) {
@@ -46,5 +24,27 @@ public class MaximumDepth {
 
         System.out.println(new Date());
 
+    }
+
+    private void maximum_depth(TreeNode root, int depth) {
+        if (root == null) {
+            return;
+        }
+        if (root.left == null && root.right == null) {
+            answer = Math.max(answer, depth);
+        }
+        maximum_depth(root.left, depth + 1);
+        maximum_depth(root.right, depth + 1);
+    }
+
+    static class TreeNode {
+        int data;
+        TreeNode left, right;
+
+        TreeNode(int data) {
+            this.data = data;
+            this.left = null;
+            this.right = null;
+        }
     }
 }

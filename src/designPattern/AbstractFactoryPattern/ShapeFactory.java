@@ -8,15 +8,17 @@ public class ShapeFactory extends AbstractFactory {
 
     @Override
     public Shape getShape(String str) {
-        if (str == null)
+        if (str == null) {
             return null;
+        }
 
-        if (str.equalsIgnoreCase("CIRCLE"))
+        if (str.equalsIgnoreCase("CIRCLE")) {
             return new Circle();
-        else if (str.equalsIgnoreCase("SQUARE"))
+        } else if (str.equalsIgnoreCase("SQUARE")) {
             return new Square();
-        else if (str.equalsIgnoreCase("RECTANGLE"))
+        } else if (str.equalsIgnoreCase("RECTANGLE")) {
             return new Rectangle();
+        }
 
         return null;
 

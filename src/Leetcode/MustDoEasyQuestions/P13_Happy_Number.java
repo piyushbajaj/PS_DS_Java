@@ -17,6 +17,12 @@ import java.util.HashSet;
  */
 public class P13_Happy_Number {
 
+    public static void main(String[] args) {
+        P13_Happy_Number p13_happy_number = new P13_Happy_Number();
+        System.out.println(p13_happy_number.isHappy(19));
+        System.out.println(p13_happy_number.isHappy_better(19));
+    }
+
     /**
      * TC: O(logN)
      * SC: O(N)
@@ -64,11 +70,5 @@ public class P13_Happy_Number {
         }
 
         return sum;
-    }
-
-    public static void main(String[] args) {
-        P13_Happy_Number p13_happy_number = new P13_Happy_Number();
-        System.out.println(p13_happy_number.isHappy(19));
-        System.out.println(p13_happy_number.isHappy_better(19));
     }
 }

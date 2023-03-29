@@ -19,6 +19,14 @@ import java.util.Set;
  */
 public class P4_Word_Ladder_2 {
 
+    public static void main(String[] args) {
+        P4_Word_Ladder_2 p4_word_ladder_2 = new P4_Word_Ladder_2();
+        String[] wordList = {"des", "der", "dfr", "dgt", "dfs"};
+
+        System.out.println(p4_word_ladder_2.findSequences("der", "dfs", wordList));
+
+    }
+
     /**
      * Approach:
      * 1. We will keep usedStrings, tp keep track of the new strings occuring, which gets matched.
@@ -89,13 +97,5 @@ public class P4_Word_Ladder_2 {
             }
         }
         return result;
-    }
-
-    public static void main(String[] args) {
-        P4_Word_Ladder_2 p4_word_ladder_2 = new P4_Word_Ladder_2();
-        String[] wordList = {"des", "der", "dfr", "dgt", "dfs"};
-
-        System.out.println(p4_word_ladder_2.findSequences("der", "dfs", wordList));
-
     }
 }

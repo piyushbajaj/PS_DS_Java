@@ -12,20 +12,9 @@ package TakeUForward.CompleteCourse_456.S17_Tries;
  * Youtube: <a href="https://youtu.be/RV0QeTyHZxo">...</a>
  */
 public class P4_Count_Distinct_Substrings {
-    static class Node {
-        Node[] links = new Node[26];
-
-        public boolean containsKey(char ch) {
-            return links[ch - 'a'] != null;
-        }
-
-        public void put(char ch, Node node) {
-            links[ch - 'a'] = node;
-        }
-
-        public Node get(char ch) {
-            return links[ch - 'a'];
-        }
+    public static void main(String[] args) {
+        P4_Count_Distinct_Substrings p4_count_distinct_substrings = new P4_Count_Distinct_Substrings();
+        System.out.println(p4_count_distinct_substrings.countDistinctSubstring("ababa"));
     }
 
     /**
@@ -53,8 +42,19 @@ public class P4_Count_Distinct_Substrings {
         return count + 1;
     }
 
-    public static void main(String[] args) {
-        P4_Count_Distinct_Substrings p4_count_distinct_substrings = new P4_Count_Distinct_Substrings();
-        System.out.println(p4_count_distinct_substrings.countDistinctSubstring("ababa"));
+    static class Node {
+        Node[] links = new Node[26];
+
+        public boolean containsKey(char ch) {
+            return links[ch - 'a'] != null;
+        }
+
+        public void put(char ch, Node node) {
+            links[ch - 'a'] = node;
+        }
+
+        public Node get(char ch) {
+            return links[ch - 'a'];
+        }
     }
 }

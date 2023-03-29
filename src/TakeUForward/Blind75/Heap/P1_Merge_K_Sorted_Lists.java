@@ -13,21 +13,21 @@ import java.util.PriorityQueue;
  * Link: <a href="https://leetcode.com/problems/merge-k-sorted-lists/">...</a>
  */
 public class P1_Merge_K_Sorted_Lists {
-    static class ListNode {
-        int val;
-        ListNode next;
+    public static void main(String[] args) {
+        P1_Merge_K_Sorted_Lists p1_merge_k_sorted_lists = new P1_Merge_K_Sorted_Lists();
+        ListNode l1 = new ListNode(1);
+        l1.next = new ListNode(4);
+        l1.next.next = new ListNode(5);
 
-        ListNode() {
-        }
+        ListNode l2 = new ListNode(1);
+        l2.next = new ListNode(3);
+        l2.next.next = new ListNode(4);
 
-        ListNode(int val) {
-            this.val = val;
-        }
+        ListNode l3 = new ListNode(2);
+        l3.next = new ListNode(6);
 
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
+        ListNode node = p1_merge_k_sorted_lists.mergeKLists(new ListNode[] {l1, l2, l3});
+        p1_merge_k_sorted_lists.printList(node);
     }
 
     /**
@@ -70,20 +70,20 @@ public class P1_Merge_K_Sorted_Lists {
         }
     }
 
-    public static void main(String[] args) {
-        P1_Merge_K_Sorted_Lists p1_merge_k_sorted_lists = new P1_Merge_K_Sorted_Lists();
-        ListNode l1 = new ListNode(1);
-        l1.next = new ListNode(4);
-        l1.next.next = new ListNode(5);
+    static class ListNode {
+        int val;
+        ListNode next;
 
-        ListNode l2 = new ListNode(1);
-        l2.next = new ListNode(3);
-        l2.next.next = new ListNode(4);
+        ListNode() {
+        }
 
-        ListNode l3 = new ListNode(2);
-        l3.next = new ListNode(6);
+        ListNode(int val) {
+            this.val = val;
+        }
 
-        ListNode node = p1_merge_k_sorted_lists.mergeKLists(new ListNode[] {l1, l2, l3});
-        p1_merge_k_sorted_lists.printList(node);
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
     }
 }

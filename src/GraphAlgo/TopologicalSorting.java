@@ -8,13 +8,13 @@ import java.util.Stack;
  * Created by piyush.bajaj on 10/01/17.
  */
 public class TopologicalSorting {
+    Stack<Integer> stk = new Stack<>();
     //For adding random vertices
     private Vertex vertexList[];
     private int V; //Number of vertices
     //Array of lists for Adjacency list representation
     private LinkedList<Integer> adjList[];
     private int vertexCount;
-    Stack<Integer> stk = new Stack<>();
 
     public TopologicalSorting(int v) {
         this.V = v;
@@ -23,53 +23,6 @@ public class TopologicalSorting {
         vertexList = new Vertex[V];
         for (int i = 0; i < V; i++) {
             adjList[i] = new LinkedList<>();
-        }
-    }
-
-    public class Vertex {
-        private int label;
-        private boolean visited;
-
-        public Vertex(int lab) {
-            label = lab;
-            visited = false;
-        }
-    }
-
-    public void addVertex(int ver) {
-        vertexList[vertexCount++] = new Vertex(ver);
-    }
-
-    public void addEdge(int u, int v) {
-        adjList[u].add(v);
-    }
-
-    public void topologicalSort_Util(int ver) {
-        vertexList[ver].visited = true;
-
-        Iterator<Integer> itr = adjList[ver].iterator();
-        while (itr.hasNext()) {
-            int i = itr.next();
-            if (!vertexList[i].visited)
-                topologicalSort_Util(i);
-        }
-        stk.push(ver);
-
-    }
-
-    public void topologicalSort() {
-
-        for (int i = 0; i < V; i++) {
-            if (!vertexList[i].visited)
-                topologicalSort_Util(i);
-        }
-
-        while (!stk.isEmpty()) {
-            System.out.print(vertexList[stk.pop()].label + " ");
-        }
-
-        for (int i = 0; i < V; i++) {
-            vertexList[i].visited = false;
         }
     }
 
@@ -124,6 +77,55 @@ public class TopologicalSorting {
 
         TS.topologicalSort();
 
+    }
+
+    public void addVertex(int ver) {
+        vertexList[vertexCount++] = new Vertex(ver);
+    }
+
+    public void addEdge(int u, int v) {
+        adjList[u].add(v);
+    }
+
+    public void topologicalSort_Util(int ver) {
+        vertexList[ver].visited = true;
+
+        Iterator<Integer> itr = adjList[ver].iterator();
+        while (itr.hasNext()) {
+            int i = itr.next();
+            if (!vertexList[i].visited) {
+                topologicalSort_Util(i);
+            }
+        }
+        stk.push(ver);
+
+    }
+
+    public void topologicalSort() {
+
+        for (int i = 0; i < V; i++) {
+            if (!vertexList[i].visited) {
+                topologicalSort_Util(i);
+            }
+        }
+
+        while (!stk.isEmpty()) {
+            System.out.print(vertexList[stk.pop()].label + " ");
+        }
+
+        for (int i = 0; i < V; i++) {
+            vertexList[i].visited = false;
+        }
+    }
+
+    public class Vertex {
+        private int label;
+        private boolean visited;
+
+        public Vertex(int lab) {
+            label = lab;
+            visited = false;
+        }
     }
 
 }

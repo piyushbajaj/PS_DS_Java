@@ -14,12 +14,17 @@ import java.util.Map;
  * lc: <a href="https://leetcode.com/problems/max-points-on-a-line/">...</a>
  */
 public class P2_Max_Points_On_A_Line {
+    public static void main(String[] args) {
+        P2_Max_Points_On_A_Line p2_max_points_on_a_line = new P2_Max_Points_On_A_Line();
+        System.out.println(p2_max_points_on_a_line.maxPoints(new int[][] {{1, 1}, {2, 2}, {3, 3}}));
+    }
+
     public int maxPoints(int[][] points) {
         int n = points.length;
         int max = 0;
         for (int i = 0; i < n; i++) {
             Map<Double, Integer> hashMap = new HashMap<>();
-            for (int j = 0; j < n && i!= j; j++) {
+            for (int j = 0; j < n && i != j; j++) {
                 double slope = getSlope(points[i], points[j]);
 
                 hashMap.put(slope, hashMap.getOrDefault(slope, 0) + 1);
@@ -39,10 +44,5 @@ public class P2_Max_Points_On_A_Line {
         }
 
         return (double) yVal / (double) xVal;
-    }
-
-    public static void main(String[] args) {
-        P2_Max_Points_On_A_Line p2_max_points_on_a_line = new P2_Max_Points_On_A_Line();
-        System.out.println(p2_max_points_on_a_line.maxPoints(new int[][] {{1, 1}, {2, 2}, {3, 3}}));
     }
 }

@@ -18,13 +18,13 @@ import java.util.PriorityQueue;
  * ref: <a href="https://youtu.be/kx-XDoPjoHw?t=428">...</a>
  */
 public class TopKHeavyHitter {
-    static class HeavyHitter {
-        private final int frequency;
-        private final String identifier;
+    public static void main(String[] args) {
+        TopKHeavyHitter topKHeavyHitter = new TopKHeavyHitter();
+        List<HeavyHitter> result = topKHeavyHitter.topK(new String[] {"A", "B", "C", "A", "A", "D", "C", "A", "B",
+            "C"}, 2);
 
-        HeavyHitter(int frequency, String identifier) {
-            this.frequency = frequency;
-            this.identifier = identifier;
+        for (HeavyHitter heavyHitter : result) {
+            System.out.println(heavyHitter.identifier + " -> " + heavyHitter.frequency);
         }
     }
 
@@ -71,13 +71,13 @@ public class TopKHeavyHitter {
         return result;
     }
 
-    public static void main(String[] args) {
-        TopKHeavyHitter topKHeavyHitter = new TopKHeavyHitter();
-        List<HeavyHitter> result = topKHeavyHitter.topK(new String[] {"A", "B", "C", "A", "A", "D", "C", "A", "B",
-            "C"}, 2);
+    static class HeavyHitter {
+        private final int frequency;
+        private final String identifier;
 
-        for (HeavyHitter heavyHitter : result) {
-            System.out.println(heavyHitter.identifier + " -> " + heavyHitter.frequency);
+        HeavyHitter(int frequency, String identifier) {
+            this.frequency = frequency;
+            this.identifier = identifier;
         }
     }
 }

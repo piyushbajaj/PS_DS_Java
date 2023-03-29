@@ -7,31 +7,31 @@ public abstract class EnemyShip {
     private String name;
     private double amtDamage;
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public void setName(String newname){
+    public void setName(String newname) {
         name = newname;
     }
 
-    public double getAmtDamage(){
+    public double getAmtDamage() {
         return amtDamage;
     }
 
-    public void setAmtDamage(double newAmtDamage){
+    public void setAmtDamage(double newAmtDamage) {
         amtDamage = newAmtDamage;
     }
 
-    public void followHeroShip(){
+    public void followHeroShip() {
         System.out.println(getName() + " is following the Hero");
     }
 
-    public void displayEnemyShip(){
+    public void displayEnemyShip() {
         System.out.println(getName() + " is on the screen");
     }
 
-    public void enemyShipShoots(){
+    public void enemyShipShoots() {
         System.out.println(getName() + " attacks and does " + getAmtDamage());
     }
 

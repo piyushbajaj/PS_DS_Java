@@ -9,6 +9,17 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_4_DP_Subsequences;
  * Time: 12:09 am
  */
 public class P10_Knapsack_duplicate_items {
+    public static void main(String[] args) {
+        P10_Knapsack_duplicate_items p10_knapsack_duplicate_items = new P10_Knapsack_duplicate_items();
+        int[] val = {1, 4, 5, 7};
+        int[] wt = {1, 3, 4, 5};
+        System.out.println(p10_knapsack_duplicate_items.knapSack_recur(4, 8, val, wt));
+
+        System.out.println(p10_knapsack_duplicate_items.knapSack_mem(4, 8, val, wt));
+
+        System.out.println(p10_knapsack_duplicate_items.knapSack_tab(4, 8, val, wt));
+    }
+
     public int knapSack_recur(int N, int W, int[] val, int[] wt) {
 
         return knapSack_recur_util(N - 1, W, val, wt);
@@ -29,7 +40,6 @@ public class P10_Knapsack_duplicate_items {
 
         return Math.max(notTake, take);
     }
-
 
     /**
      * Memoization
@@ -95,16 +105,5 @@ public class P10_Knapsack_duplicate_items {
         }
 
         return dp[N - 1][W];
-    }
-
-    public static void main(String[] args) {
-        P10_Knapsack_duplicate_items p10_knapsack_duplicate_items = new P10_Knapsack_duplicate_items();
-        int[] val = {1, 4, 5, 7};
-        int[] wt = {1, 3, 4, 5};
-        System.out.println(p10_knapsack_duplicate_items.knapSack_recur(4, 8, val, wt));
-
-        System.out.println(p10_knapsack_duplicate_items.knapSack_mem(4, 8, val, wt));
-
-        System.out.println(p10_knapsack_duplicate_items.knapSack_tab(4, 8, val, wt));
     }
 }

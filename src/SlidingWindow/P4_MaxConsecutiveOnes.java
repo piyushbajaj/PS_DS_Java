@@ -36,9 +36,13 @@ public class P4_MaxConsecutiveOnes {
         int l = 0, r = 0, maxSoFar = 0;
         int[] count = new int[2];
 
-        if (n > 100000 || n <= 0) return -1;
+        if (n > 100000 || n <= 0) {
+            return -1;
+        }
 
-        if (k > n || k < n) return -1;
+        if (k > n || k < n) {
+            return -1;
+        }
 
         while (r < n) {
             if (nums[r] == 1 || (nums[r] == 0 && count[nums[r]] < k)) {
@@ -55,7 +59,7 @@ public class P4_MaxConsecutiveOnes {
     }
 
     public static void main(String[] args) {
-        System.out.println(longestOnes(new int[]{1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0}, 2));
-        System.out.println(longestOnes(new int[]{0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1}, 3));
+        System.out.println(longestOnes(new int[] {1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0}, 2));
+        System.out.println(longestOnes(new int[] {0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1}, 3));
     }
 }

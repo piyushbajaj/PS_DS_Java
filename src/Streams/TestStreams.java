@@ -39,9 +39,9 @@ public class TestStreams {
 //	}
 
 
-	public static void main(String[] args) {
-		List<Integer> number = Arrays.asList(2,3,4,5);
-		System.out.println("Printing number" + number);
+    public static void main(String[] args) {
+        List<Integer> number = Arrays.asList(2, 3, 4, 5);
+        System.out.println("Printing number" + number);
 
 //		List<String> square =
 //			number.stream().map(String::valueOf).collect(Collectors.joining(",")).collect(Collectors.toList());
@@ -49,16 +49,14 @@ public class TestStreams {
 //		System.out.println("Printing Square" + square);
 
 
-
-
-		List<String> strings = Arrays.asList("a", "b", "c", "d");
-		strings.replaceAll(s -> "D"+s);
-		System.out.println(strings);
+        List<String> strings = Arrays.asList("a", "b", "c", "d");
+        strings.replaceAll(s -> "D" + s);
+        System.out.println(strings);
 
 //		Stream<Integer> stream = Stream.of(number)
 
-		number.stream().forEach(p -> System.out.println(p));
+        number.stream().forEach(p -> System.out.println(p));
 
 //		loopFun();
-	}
+    }
 }

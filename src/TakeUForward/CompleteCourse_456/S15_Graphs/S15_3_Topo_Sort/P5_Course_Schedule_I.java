@@ -15,6 +15,25 @@ import java.util.Queue;
  */
 public class P5_Course_Schedule_I {
 
+    public static void main(String[] args) {
+        P5_Course_Schedule_I p5_course_schedule_i = new P5_Course_Schedule_I();
+        int[][] prerequisites = {{1, 0}, {2, 1}, {3, 2}};
+
+        System.out.println(p5_course_schedule_i.isPossible(4, prerequisites));
+
+//        ArrayList<ArrayList<Integer>> prequisiteList = new ArrayList<>();
+//
+//        for (int i = 0; i < 3; i++) {
+//            prequisiteList.add(new ArrayList<>(prerequisites[i]));
+//        }
+//
+//        for (int i = 0; i < prerequisites.length; i++) {
+//            prequisiteList.get(prerequisites[i][0]).add(prerequisites[i][1]);
+//        }
+//
+//        System.out.println(Arrays.toString(p5_course_schedule_i.findOrder(4, 4, prequisiteList)));
+    }
+
     public int[] findOrder(int N, int m, ArrayList<ArrayList<Integer>> prerequisites) {
         Queue<Integer> queue = new LinkedList<>();
         ArrayList<Integer> topo = new ArrayList<>();
@@ -118,24 +137,5 @@ public class P5_Course_Schedule_I {
 
         return topo.size() == N;
 
-    }
-
-    public static void main(String[] args) {
-        P5_Course_Schedule_I p5_course_schedule_i = new P5_Course_Schedule_I();
-        int[][] prerequisites = {{1, 0}, {2, 1}, {3, 2}};
-
-        System.out.println(p5_course_schedule_i.isPossible(4, prerequisites));
-
-//        ArrayList<ArrayList<Integer>> prequisiteList = new ArrayList<>();
-//
-//        for (int i = 0; i < 3; i++) {
-//            prequisiteList.add(new ArrayList<>(prerequisites[i]));
-//        }
-//
-//        for (int i = 0; i < prerequisites.length; i++) {
-//            prequisiteList.get(prerequisites[i][0]).add(prerequisites[i][1]);
-//        }
-//
-//        System.out.println(Arrays.toString(p5_course_schedule_i.findOrder(4, 4, prequisiteList)));
     }
 }

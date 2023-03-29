@@ -7,10 +7,18 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_5_DP_Strings;
  * User: piyushbajaj
  * Date: 17/12/22
  * Time: 5:55 pm
- *
+ * <p>
  * Link: <a href="https://leetcode.com/problems/edit-distance/description/">...</a>
  */
 public class P9_Edit_Distance {
+
+    public static void main(String[] args) {
+        P9_Edit_Distance p9_edit_distance = new P9_Edit_Distance();
+        System.out.println(p9_edit_distance.minDistance("horse", "ros"));
+        System.out.println(p9_edit_distance.minDistance_mem("horse", "ros"));
+        System.out.println(p9_edit_distance.minDistance_tab("horse", "ros"));
+        System.out.println(p9_edit_distance.minDistance_tab_improve("horse", "ros"));
+    }
 
     /**
      * Recursion
@@ -166,13 +174,5 @@ public class P9_Edit_Distance {
         }
 
         return prev[m];
-    }
-
-    public static void main(String[] args) {
-        P9_Edit_Distance p9_edit_distance = new P9_Edit_Distance();
-        System.out.println(p9_edit_distance.minDistance("horse", "ros"));
-        System.out.println(p9_edit_distance.minDistance_mem("horse", "ros"));
-        System.out.println(p9_edit_distance.minDistance_tab("horse", "ros"));
-        System.out.println(p9_edit_distance.minDistance_tab_improve("horse", "ros"));
     }
 }

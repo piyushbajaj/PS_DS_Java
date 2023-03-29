@@ -25,17 +25,13 @@ public class Main_Class {
         group_list2.add("c");
 
         Group group = new Group();
-        group.addPersonToGroup("G1", group_list1 );
-        group.addPersonToGroup("G2", group_list2 );
+        group.addPersonToGroup("G1", group_list1);
+        group.addPersonToGroup("G2", group_list2);
 
         Bill bill = new Bill();
 
 
-
         //bill.addBill("G1", );
-
-
-
 
 
     }

@@ -15,6 +15,12 @@ import java.util.Stack;
  */
 public class P1_Next_Greater_Element {
 
+    public static void main(String[] args) {
+        P1_Next_Greater_Element p1_next_greater_element = new P1_Next_Greater_Element();
+        long[] arr = {6, 8, 0, 1, 3};
+        System.out.println(Arrays.toString(p1_next_greater_element.nextLargerElement(arr, 5)));
+    }
+
     /**
      * Using Stacks
      * <p>
@@ -47,11 +53,5 @@ public class P1_Next_Greater_Element {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        P1_Next_Greater_Element p1_next_greater_element = new P1_Next_Greater_Element();
-        long[] arr = {6, 8, 0, 1, 3};
-        System.out.println(Arrays.toString(p1_next_greater_element.nextLargerElement(arr, 5)));
     }
 }

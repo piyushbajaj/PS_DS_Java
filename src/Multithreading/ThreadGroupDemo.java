@@ -4,10 +4,6 @@ package Multithreading;
  * Created by piyush.bajaj on 22/09/16.
  */
 public class ThreadGroupDemo implements Runnable {
-    public void run(){
-        System.out.println(Thread.currentThread().getName());
-    }
-
     public static void main(String[] args) {
         ThreadGroupDemo run = new ThreadGroupDemo();
 
@@ -21,5 +17,9 @@ public class ThreadGroupDemo implements Runnable {
 
         System.out.println("Thread Group Name: " + tg1.getName());
         tg1.list();
+    }
+
+    public void run() {
+        System.out.println(Thread.currentThread().getName());
     }
 }

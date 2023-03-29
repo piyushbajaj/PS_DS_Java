@@ -14,6 +14,23 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  */
 public class P11_LCA {
 
+    public static void main(String[] args) {
+        P11_LCA p11_lca = new P11_LCA();
+
+        // Inserting into tree
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        TreeNode result = p11_lca.lowestCommonAncestor(root, root.left.left, root.right.right);
+
+        System.out.println(result == null ? null : result.data);
+    }
+
     /**
      * If p and q is less than root, then look left side or else right side
      *
@@ -34,22 +51,5 @@ public class P11_LCA {
         }
 
         return root;
-    }
-
-    public static void main(String[] args) {
-        P11_LCA p11_lca = new P11_LCA();
-
-        // Inserting into tree
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        TreeNode result = p11_lca.lowestCommonAncestor(root, root.left.left, root.right.right);
-
-        System.out.println(result == null ? null : result.data);
     }
 }

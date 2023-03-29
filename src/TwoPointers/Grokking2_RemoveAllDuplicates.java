@@ -7,6 +7,7 @@ public class Grokking2_RemoveAllDuplicates {
 
     /**
      * TC: O(n)
+     *
      * @param arr
      * @return
      */
@@ -27,6 +28,6 @@ public class Grokking2_RemoveAllDuplicates {
     }
 
     public static void main(String[] args) {
-        System.out.println(removeDuplicates(new int[]{2, 3, 3, 3, 6, 9, 9}));
+        System.out.println(removeDuplicates(new int[] {2, 3, 3, 3, 6, 9, 9}));
     }
 }

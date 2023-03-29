@@ -1,6 +1,10 @@
 package Acko_Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by piyush.bajaj on 29/04/18.
@@ -8,50 +12,55 @@ import java.util.*;
 public class nArray_Prob {
 
 
-    public static boolean check_Equal(HashMap<Integer, ArrayList<Integer>> hashMap1, HashMap<Integer, ArrayList<Integer>> hashMap2){
+    public static boolean check_Equal(HashMap<Integer, ArrayList<Integer>> hashMap1,
+                                      HashMap<Integer, ArrayList<Integer>> hashMap2) {
         int n1 = hashMap1.size();
         int n2 = hashMap2.size();
 
-        if(n1 == 0 && n2 == 0)
+        if (n1 == 0 && n2 == 0) {
             return true;
+        }
 
-        if(n1 != n2)
+        if (n1 != n2) {
             return false;
+        }
 
-        for(Map.Entry<Integer, ArrayList<Integer>> entry1: hashMap1.entrySet()){
+        for (Map.Entry<Integer, ArrayList<Integer>> entry1 : hashMap1.entrySet()) {
             int key = entry1.getKey();
             ArrayList<Integer> arrayList1 = entry1.getValue();
             ArrayList<Integer> arrayList2 = hashMap2.get(key);
 
-            if(arrayList1.size() == 0)
+            if (arrayList1.size() == 0) {
                 continue;
+            }
 
-            if(is_lists_equal(arrayList1, arrayList2))
+            if (is_lists_equal(arrayList1, arrayList2)) {
                 continue;
-            else
+            } else {
                 return false;
+            }
         }
 
         return true;
     }
 
-    public static boolean is_lists_equal(ArrayList<Integer> arr1, ArrayList<Integer> arr2){
+    public static boolean is_lists_equal(ArrayList<Integer> arr1, ArrayList<Integer> arr2) {
         Collections.sort(arr1);
         Collections.sort(arr2);
 
         return arr1.equals(arr2);
     }
 
-    public static void printTree(HashMap<Integer, ArrayList<Integer>> hashMap){
-        for(Map.Entry<Integer, ArrayList<Integer>> entry: hashMap.entrySet()){
+    public static void printTree(HashMap<Integer, ArrayList<Integer>> hashMap) {
+        for (Map.Entry<Integer, ArrayList<Integer>> entry : hashMap.entrySet()) {
             System.out.print(entry.getKey() + ": " + entry.getValue());
 
             System.out.println();
         }
     }
 
-    public static void add(HashMap<Integer, ArrayList<Integer>> hashMap, int value, int newValue){
-        if(hashMap.containsKey(value)){
+    public static void add(HashMap<Integer, ArrayList<Integer>> hashMap, int value, int newValue) {
+        if (hashMap.containsKey(value)) {
             ArrayList<Integer> arrayList = hashMap.get(value);
             arrayList.add(newValue);
             hashMap.put(value, arrayList);
@@ -60,15 +69,14 @@ public class nArray_Prob {
 
     public static void delete(HashMap<Integer, ArrayList<Integer>> hashMap, int parent, int child) {
         if (child == -1) {
-            if(hashMap.containsKey(parent)){
+            if (hashMap.containsKey(parent)) {
                 //Deleting Node from inside the main ArrayList
-                for(Map.Entry<Integer, ArrayList<Integer>> entry: hashMap.entrySet()){
-                    if(entry.getValue().contains(parent)){
+                for (Map.Entry<Integer, ArrayList<Integer>> entry : hashMap.entrySet()) {
+                    if (entry.getValue().contains(parent)) {
                         ArrayList<Integer> arrayList = entry.getValue();
                         arrayList.remove(arrayList.indexOf(parent));
                     }
                 }
-
 
 
                 //Deleting Nodes
@@ -77,23 +85,24 @@ public class nArray_Prob {
                 //for(Integer num: arrayList){
                 int j = 0;
                 int n = arrayList.size();
-                while (j < n){
+                while (j < n) {
                     n = arrayList.size();
                     int num = arrayList.get(j);
-                    if(hashMap.containsKey(num)) {
+                    if (hashMap.containsKey(num)) {
                         ArrayList<Integer> arrayList_child = hashMap.get(num);
-                        if (arrayList_child.size() > 0){
-                            for(int i = 0; i < arrayList_child.size(); i++){
-                                if(!arrayList.contains(arrayList_child.get(i)))
+                        if (arrayList_child.size() > 0) {
+                            for (int i = 0; i < arrayList_child.size(); i++) {
+                                if (!arrayList.contains(arrayList_child.get(i))) {
                                     arrayList.add(arrayList_child.get(i));
+                                }
                             }
                         }
-                            //arrayList.addAll(arrayList_child);
+                        //arrayList.addAll(arrayList_child);
                     }
                     j++;
                 }
 
-                for(Integer num: arrayList){
+                for (Integer num : arrayList) {
                     hashMap.remove(num);
                 }
 
@@ -101,8 +110,9 @@ public class nArray_Prob {
         } else {
 
 
-            if (parent == child)
+            if (parent == child) {
                 return;
+            }
             if (hashMap.containsKey(parent) && hashMap.containsKey(child)) {
                 ArrayList<Integer> arrayList = hashMap.get(parent);
                 if (arrayList.contains(child)) {
@@ -114,7 +124,6 @@ public class nArray_Prob {
             }
         }
     }
-
 
 
     public static void main(String[] args) {
@@ -144,7 +153,7 @@ public class nArray_Prob {
         hashMap3.put(6, new ArrayList<>(Arrays.asList()));
 
         System.out.println("Are two trees equal: " +
-                        check_Equal(hashMap1, hashMap2));
+            check_Equal(hashMap1, hashMap2));
 
         System.out.println("Printing N-Array Tree");
         printTree(hashMap3);
@@ -158,7 +167,6 @@ public class nArray_Prob {
 
         delete(hashMap3, 1, -1);
         printTree(hashMap3);
-
 
 
     }

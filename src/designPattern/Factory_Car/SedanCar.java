@@ -5,7 +5,7 @@ package designPattern.Factory_Car;
  */
 public class SedanCar implements Car {
     @Override
-    public void construct(){
+    public void construct() {
         System.out.println("Building Sedan car");
     }
 }

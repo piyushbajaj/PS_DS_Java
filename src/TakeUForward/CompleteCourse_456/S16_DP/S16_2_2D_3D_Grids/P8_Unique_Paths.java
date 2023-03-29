@@ -13,6 +13,17 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_2_2D_3D_Grids;
  */
 public class P8_Unique_Paths {
 
+    public static void main(String[] args) {
+        P8_Unique_Paths p8_unique_paths = new P8_Unique_Paths();
+        System.out.println(p8_unique_paths.uniquePaths(2, 2));
+
+        System.out.println(p8_unique_paths.uniquePaths_mem(2, 2));
+
+        System.out.println(p8_unique_paths.uniquePaths_tab(2, 2));
+
+        System.out.println(p8_unique_paths.uniquePaths_tab_improve(2, 2));
+    }
+
     /**
      * Recursion
      * <p>
@@ -164,16 +175,5 @@ public class P8_Unique_Paths {
 
         return prev[n - 1];
 
-    }
-
-    public static void main(String[] args) {
-        P8_Unique_Paths p8_unique_paths = new P8_Unique_Paths();
-        System.out.println(p8_unique_paths.uniquePaths(2, 2));
-
-        System.out.println(p8_unique_paths.uniquePaths_mem(2, 2));
-
-        System.out.println(p8_unique_paths.uniquePaths_tab(2, 2));
-
-        System.out.println(p8_unique_paths.uniquePaths_tab_improve(2, 2));
     }
 }

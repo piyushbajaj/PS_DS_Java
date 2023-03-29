@@ -13,6 +13,13 @@ import java.util.Arrays;
  * lc: <a href="https://leetcode.com/problems/minimum-cost-to-cut-a-stick/description/">...</a>
  */
 public class P2_Min_Cost_To_Cut_Stick {
+    public static void main(String[] args) {
+        P2_Min_Cost_To_Cut_Stick p2_min_cost_to_cut_stick = new P2_Min_Cost_To_Cut_Stick();
+        System.out.println(p2_min_cost_to_cut_stick.minCost_recur(9, new int[] {5, 6, 1, 4, 2}));
+        System.out.println(p2_min_cost_to_cut_stick.minCost_mem(9, new int[] {5, 6, 1, 4, 2}));
+        System.out.println(p2_min_cost_to_cut_stick.minCost_tab(9, new int[] {5, 6, 1, 4, 2}));
+    }
+
     /**
      * Recursive
      * TC: Exponential
@@ -141,12 +148,5 @@ public class P2_Min_Cost_To_Cut_Stick {
 
         return dp[1][cuts.length];
 
-    }
-
-    public static void main(String[] args) {
-        P2_Min_Cost_To_Cut_Stick p2_min_cost_to_cut_stick = new P2_Min_Cost_To_Cut_Stick();
-        System.out.println(p2_min_cost_to_cut_stick.minCost_recur(9, new int[] {5, 6, 1, 4, 2}));
-        System.out.println(p2_min_cost_to_cut_stick.minCost_mem(9, new int[] {5, 6, 1, 4, 2}));
-        System.out.println(p2_min_cost_to_cut_stick.minCost_tab(9, new int[] {5, 6, 1, 4, 2}));
     }
 }

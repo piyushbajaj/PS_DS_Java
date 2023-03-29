@@ -12,6 +12,14 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_8_MCM_DP;
  */
 public class P3_Burst_Balloons {
 
+    public static void main(String[] args) {
+        P3_Burst_Balloons p3_burst_balloons = new P3_Burst_Balloons();
+        int[] nums = {3, 1, 5, 8};
+        System.out.println(p3_burst_balloons.maxCoins_recur(nums));
+        System.out.println(p3_burst_balloons.maxCoins_mem(nums));
+        System.out.println(p3_burst_balloons.maxCoins_tab(nums));
+    }
+
     /**
      * Using the same approach as Partition MCM
      * TC: Exponential
@@ -133,13 +141,5 @@ public class P3_Burst_Balloons {
 
         return dp[1][n];
 
-    }
-
-    public static void main(String[] args) {
-        P3_Burst_Balloons p3_burst_balloons = new P3_Burst_Balloons();
-        int[] nums = {3, 1, 5, 8};
-        System.out.println(p3_burst_balloons.maxCoins_recur(nums));
-        System.out.println(p3_burst_balloons.maxCoins_mem(nums));
-        System.out.println(p3_burst_balloons.maxCoins_tab(nums));
     }
 }

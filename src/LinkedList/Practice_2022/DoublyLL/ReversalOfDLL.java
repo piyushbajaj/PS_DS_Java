@@ -5,6 +5,27 @@ package LinkedList.Practice_2022.DoublyLL;
  */
 public class ReversalOfDLL extends BaseDLLNode {
 
+    public static void main(String[] args) {
+        ReversalOfDLL reversalOfDLL = new ReversalOfDLL();
+        reversalOfDLL.insert(1);
+        reversalOfDLL.insert(2);
+        reversalOfDLL.insert(3);
+        reversalOfDLL.insert(4);
+        reversalOfDLL.insert(5);
+
+        reversalOfDLL.printDLL();
+
+        System.out.println();
+
+        reversalOfDLL.reverseDLL();
+
+        reversalOfDLL.printDLL();
+
+        System.out.println();
+
+
+    }
+
     public Node insert(int data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -45,26 +66,5 @@ public class ReversalOfDLL extends BaseDLLNode {
             temp = temp.next;
         }
         System.out.print("null");
-    }
-
-    public static void main(String[] args) {
-        ReversalOfDLL reversalOfDLL = new ReversalOfDLL();
-        reversalOfDLL.insert(1);
-        reversalOfDLL.insert(2);
-        reversalOfDLL.insert(3);
-        reversalOfDLL.insert(4);
-        reversalOfDLL.insert(5);
-
-        reversalOfDLL.printDLL();
-
-        System.out.println();
-
-        reversalOfDLL.reverseDLL();
-
-        reversalOfDLL.printDLL();
-
-        System.out.println();
-
-
     }
 }

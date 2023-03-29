@@ -9,11 +9,11 @@ package TakeUForward.Blind75.Matrix;
  * Time: 9:22 pm
  */
 public class P4_Word_Search {
-    public boolean exist(char[][] board, String word) {
-        return false;
-    }
-
     public static void main(String[] args) {
 
+    }
+
+    public boolean exist(char[][] board, String word) {
+        return false;
     }
 }

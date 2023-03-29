@@ -10,15 +10,15 @@ package TakeUForward.CompleteCourse_456.S8_Bit_Manipulation;
  */
 public class P3_PowerOfTwo {
 
+    public static void main(String[] args) {
+        P3_PowerOfTwo p3_powerOfTwo = new P3_PowerOfTwo();
+        System.out.println(p3_powerOfTwo.isPowerOfTwo(256));
+    }
+
     public boolean isPowerOfTwo(long n) {
         while (n % 2 == 0) {
             n = n / 2;
         }
         return n == 1;
-    }
-
-    public static void main(String[] args) {
-        P3_PowerOfTwo p3_powerOfTwo = new P3_PowerOfTwo();
-        System.out.println(p3_powerOfTwo.isPowerOfTwo(256));
     }
 }

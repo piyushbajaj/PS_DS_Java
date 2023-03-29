@@ -17,28 +17,28 @@ public class Encapsulate {
         return geekAge;
     }
 
-    // get method for name to access
-    // private variable geekName
-    public String getName() {
-        return geekName;
-    }
-
-    // get method for roll to access
-    // private variable geekRoll
-    public int getRoll() {
-        return geekRoll;
-    }
-
     // set method for age to access
     // private variable geekage
     public void setAge(int newAge) {
         geekAge = newAge;
     }
 
+    // get method for name to access
+    // private variable geekName
+    public String getName() {
+        return geekName;
+    }
+
     // set method for name to access
     // private variable geekName
     public void setName(String newName) {
         geekName = newName;
+    }
+
+    // get method for roll to access
+    // private variable geekRoll
+    public int getRoll() {
+        return geekRoll;
     }
 
     // set method for roll to access

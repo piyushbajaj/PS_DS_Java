@@ -38,6 +38,7 @@ public class P7_SubArraysWithKDifferentIntegers {
      * - Decrement the value for left pointer value
      * - If the left value become  == 0, then only increment k
      * Result is r - l everytime
+     *
      * @param nums
      * @param k
      * @return

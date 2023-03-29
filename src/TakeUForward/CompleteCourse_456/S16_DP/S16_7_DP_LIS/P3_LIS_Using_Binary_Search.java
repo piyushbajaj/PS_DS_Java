@@ -13,6 +13,13 @@ import java.util.List;
  */
 public class P3_LIS_Using_Binary_Search {
 
+    public static void main(String[] args) {
+        P3_LIS_Using_Binary_Search p3_lis_using_binary_search = new P3_LIS_Using_Binary_Search();
+        System.out.println(
+            p3_lis_using_binary_search.longestSubsequence(16,
+                new int[] {0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15}));
+    }
+
     /**
      * Following the approach for Binary Search
      * TC: O(N* logN)
@@ -59,12 +66,5 @@ public class P3_LIS_Using_Binary_Search {
         }
 
         return high + 1;
-    }
-
-    public static void main(String[] args) {
-        P3_LIS_Using_Binary_Search p3_lis_using_binary_search = new P3_LIS_Using_Binary_Search();
-        System.out.println(
-            p3_lis_using_binary_search.longestSubsequence(16,
-                new int[] {0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15}));
     }
 }

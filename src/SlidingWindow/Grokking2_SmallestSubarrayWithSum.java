@@ -31,6 +31,6 @@ public class Grokking2_SmallestSubarrayWithSum {
     }
 
     public static void main(String[] args) {
-        System.out.println(findMinSubArray(new int[]{2, 1, 5, 2, 3, 2}, 7));
+        System.out.println(findMinSubArray(new int[] {2, 1, 5, 2, 3, 2}, 7));
     }
 }

@@ -12,6 +12,13 @@ import java.util.Stack;
  * Time: 10:47 pm
  */
 public class P3_Next_Smaller_Element {
+    public static void main(String[] args) {
+        P3_Next_Smaller_Element p3_next_smaller_element = new P3_Next_Smaller_Element();
+        int[] arr = {4, 2, 1, 5, 3};
+        p3_next_smaller_element.immediateSmaller(arr, 5);
+        System.out.println(Arrays.toString(arr));
+    }
+
     public void immediateSmaller(int[] arr, int n) {
         Stack<Integer> stack = new Stack<>();
 
@@ -33,12 +40,5 @@ public class P3_Next_Smaller_Element {
                 }
             }
         }
-    }
-
-    public static void main(String[] args) {
-        P3_Next_Smaller_Element p3_next_smaller_element = new P3_Next_Smaller_Element();
-        int[] arr = {4, 2, 1, 5, 3};
-        p3_next_smaller_element.immediateSmaller(arr, 5);
-        System.out.println(Arrays.toString(arr));
     }
 }

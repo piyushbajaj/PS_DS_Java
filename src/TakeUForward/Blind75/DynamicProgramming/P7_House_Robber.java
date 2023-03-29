@@ -12,6 +12,14 @@ package TakeUForward.Blind75.DynamicProgramming;
  */
 public class P7_House_Robber {
 
+    public static void main(String[] args) {
+        P7_House_Robber p7_house_robber = new P7_House_Robber();
+        System.out.println(p7_house_robber.rob(new int[] {2, 7, 9, 3, 1}));
+        System.out.println(p7_house_robber.rob_mem(new int[] {2, 7, 9, 3, 1}));
+
+        System.out.println(p7_house_robber.rob_tab(new int[] {2, 7, 9, 3, 1}));
+    }
+
     /**
      * Recursive Way
      * TC: O(2^N)
@@ -43,7 +51,6 @@ public class P7_House_Robber {
 
         return Math.max(pick, notPick);
     }
-
 
     /**
      * TC: O(N)
@@ -114,13 +121,5 @@ public class P7_House_Robber {
         }
 
         return dp[n - 1];
-    }
-
-    public static void main(String[] args) {
-        P7_House_Robber p7_house_robber = new P7_House_Robber();
-        System.out.println(p7_house_robber.rob(new int[] {2, 7, 9, 3, 1}));
-        System.out.println(p7_house_robber.rob_mem(new int[] {2, 7, 9, 3, 1}));
-
-        System.out.println(p7_house_robber.rob_tab(new int[] {2, 7, 9, 3, 1}));
     }
 }

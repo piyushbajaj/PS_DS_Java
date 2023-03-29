@@ -10,6 +10,12 @@ package TakeUForward.CompleteCourse_456.S3_Arrays.S3_2_Medium;
  */
 public class P4_Maximum_SubArray {
 
+    public static void main(String[] args) {
+        P4_Maximum_SubArray p4_maximum_subArray = new P4_Maximum_SubArray();
+        int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        System.out.println(p4_maximum_subArray.maxSubArray(nums));
+    }
+
     /**
      * Kadanes Algorithm
      * TC: O(N)
@@ -28,11 +34,5 @@ public class P4_Maximum_SubArray {
         }
 
         return maxSoFar;
-    }
-
-    public static void main(String[] args) {
-        P4_Maximum_SubArray p4_maximum_subArray = new P4_Maximum_SubArray();
-        int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-        System.out.println(p4_maximum_subArray.maxSubArray(nums));
     }
 }

@@ -17,14 +17,12 @@ import java.util.Queue;
  * Link g4g: <a href="https://practice.geeksforgeeks.org/problems/cheapest-flights-within-k-stops/1">...</a>
  */
 public class P9_CheapestFlight {
-    static class Tuple {
-        int stops, node, distance;
+    public static void main(String[] args) {
+        P9_CheapestFlight p9_cheapestFlight = new P9_CheapestFlight();
 
-        Tuple(int stops, int node, int distance) {
-            this.stops = stops;
-            this.node = node;
-            this.distance = distance;
-        }
+        int[][] flights = {{0, 1, 100}, {1, 2, 100}, {2, 0, 100}, {1, 3, 600}, {2, 3, 200}};
+
+        System.out.println(p9_cheapestFlight.CheapestFLight(4, flights, 0, 3, 1));
     }
 
     /**
@@ -86,11 +84,13 @@ public class P9_CheapestFlight {
         return distance[dst] == Integer.MAX_VALUE ? -1 : distance[dst];
     }
 
-    public static void main(String[] args) {
-        P9_CheapestFlight p9_cheapestFlight = new P9_CheapestFlight();
+    static class Tuple {
+        int stops, node, distance;
 
-        int[][] flights = {{0, 1, 100}, {1, 2, 100}, {2, 0, 100}, {1, 3, 600}, {2, 3, 200}};
-
-        System.out.println(p9_cheapestFlight.CheapestFLight(4, flights, 0, 3, 1));
+        Tuple(int stops, int node, int distance) {
+            this.stops = stops;
+            this.node = node;
+            this.distance = distance;
+        }
     }
 }

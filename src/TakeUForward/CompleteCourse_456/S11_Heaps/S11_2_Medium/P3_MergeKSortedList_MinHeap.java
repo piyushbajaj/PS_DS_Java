@@ -6,10 +6,61 @@ import java.util.PriorityQueue;
 
 /**
  * Created by bajajp on 28 Sep, 2022
- *
+ * <p>
  * Link: https://www.codingninjas.com/codestudio/problems/merge-k-sorted-arrays_975379?leftPanelTab=2
  */
 public class P3_MergeKSortedList_MinHeap {
+
+    public static void main(String[] args) {
+        P3_MergeKSortedList_MinHeap p3_mergeKSortedList_minHeap = new P3_MergeKSortedList_MinHeap();
+        int k = 3;
+        int[][] arr = {
+            {1, 2, 3, 4},
+            {2, 2, 3, 4},
+            {5, 5, 6, 6},
+            {7, 8, 9, 9}};
+
+        System.out.println(p3_mergeKSortedList_minHeap.mergeKArrays(arr, k));
+    }
+
+    /**
+     * Approach which involves min heap:
+     * 1. Create a class Pair with first, second, third integers
+     * 2. Create a comparator class, which would compare first integer in pairs
+     * 3. Use this comparator as an argument to min heap
+     *
+     * @param arr
+     * @param K
+     * @return
+     */
+    public ArrayList<Integer> mergeKArrays(int[][] arr, int K) {
+        int rows = arr.length;
+        ArrayList<Integer> result = new ArrayList<>();
+
+        PriorityQueue<Pair> pairPriorityQueue = new PriorityQueue<>(new PairComparator());
+
+        // Add all the 0th column values to the min heap for comparison, the one with minimum will be on top
+        for (int i = 0; i < rows; i++) {
+            pairPriorityQueue.add(new Pair(arr[i][0], i, 0));
+        }
+
+        while (!pairPriorityQueue.isEmpty()) {
+            Pair currentElement = pairPriorityQueue.remove();
+            // Extract the minimum element only
+            result.add(currentElement.first);
+
+            int ithIndex = currentElement.second;
+            int jthIndex = currentElement.third;
+
+            // As a next step check if there exists next jth value in the same ith then add that value
+
+            if (jthIndex + 1 < arr[ithIndex].length) {
+                pairPriorityQueue.add(new Pair(arr[ithIndex][jthIndex + 1], ithIndex, jthIndex + 1));
+            }
+        }
+
+        return result;
+    }
 
     static class Pair {
         // to store the value of arr
@@ -70,63 +121,13 @@ public class P3_MergeKSortedList_MinHeap {
          */
         @Override
         public int compare(Pair o1, Pair o2) {
-            if (o1.first < o2.first)
+            if (o1.first < o2.first) {
                 return -1;
-            else if (o1.first > o2.first)
+            } else if (o1.first > o2.first) {
                 return 1;
-            else
+            } else {
                 return 0;
-        }
-    }
-
-    /**
-     * Approach which involves min heap:
-     * 1. Create a class Pair with first, second, third integers
-     * 2. Create a comparator class, which would compare first integer in pairs
-     * 3. Use this comparator as an argument to min heap
-     *
-     * @param arr
-     * @param K
-     * @return
-     */
-    public ArrayList<Integer> mergeKArrays(int[][] arr, int K) {
-        int rows = arr.length;
-        ArrayList<Integer> result = new ArrayList<>();
-
-        PriorityQueue<Pair> pairPriorityQueue = new PriorityQueue<>(new PairComparator());
-
-        // Add all the 0th column values to the min heap for comparison, the one with minimum will be on top
-        for (int i = 0; i < rows; i++) {
-            pairPriorityQueue.add(new Pair(arr[i][0], i, 0));
-        }
-
-        while (!pairPriorityQueue.isEmpty()) {
-            Pair currentElement = pairPriorityQueue.remove();
-            // Extract the minimum element only
-            result.add(currentElement.first);
-
-            int ithIndex = currentElement.second;
-            int jthIndex = currentElement.third;
-
-            // As a next step check if there exists next jth value in the same ith then add that value
-
-            if (jthIndex + 1 < arr[ithIndex].length) {
-                pairPriorityQueue.add(new Pair(arr[ithIndex][jthIndex + 1], ithIndex, jthIndex + 1));
             }
         }
-
-        return result;
-    }
-
-    public static void main(String[] args) {
-        P3_MergeKSortedList_MinHeap p3_mergeKSortedList_minHeap = new P3_MergeKSortedList_MinHeap();
-        int k = 3;
-        int[][] arr = {
-                {1, 2, 3, 4},
-                {2, 2, 3, 4},
-                {5, 5, 6, 6},
-                {7, 8, 9, 9}};
-
-        System.out.println(p3_mergeKSortedList_minHeap.mergeKArrays(arr, k));
     }
 }

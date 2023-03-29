@@ -12,6 +12,17 @@ import java.util.Stack;
  */
 public class P1_Max_Rectangle_Area_With_1s {
 
+    public static void main(String[] args) {
+        P1_Max_Rectangle_Area_With_1s p1_max_rectangle_area_with_1S = new P1_Max_Rectangle_Area_With_1s();
+        char[][] matrix =
+            {{'1', '0', '1', '0', '0'},
+                {'1', '0', '1', '1', '1'},
+                {'1', '1', '1', '1', '1'},
+                {'1', '0', '0', '1', '0'}};
+
+        System.out.println(p1_max_rectangle_area_with_1S.maximalRectangle(matrix));
+    }
+
     /**
      * TC: O(N* (M+N))
      * SC: O(M)
@@ -63,16 +74,5 @@ public class P1_Max_Rectangle_Area_With_1s {
             stack.push(i);
         }
         return maxArea;
-    }
-
-    public static void main(String[] args) {
-        P1_Max_Rectangle_Area_With_1s p1_max_rectangle_area_with_1S = new P1_Max_Rectangle_Area_With_1s();
-        char[][] matrix =
-            {{'1', '0', '1', '0', '0'},
-                {'1', '0', '1', '1', '1'},
-                {'1', '1', '1', '1', '1'},
-                {'1', '0', '0', '1', '0'}};
-
-        System.out.println(p1_max_rectangle_area_with_1S.maximalRectangle(matrix));
     }
 }

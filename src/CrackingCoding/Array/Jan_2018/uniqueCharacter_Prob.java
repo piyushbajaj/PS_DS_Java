@@ -16,17 +16,16 @@ public class uniqueCharacter_Prob {
     Time Complexity: O(N)
     Space Complexity: O(256)
      */
-    public static boolean unique_Char(String str){
+    public static boolean unique_Char(String str) {
         boolean[] flag = new boolean[256];
 
         int n = str.length();
 
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             int val = str.charAt(i);
-            if(flag[val]){
+            if (flag[val]) {
                 return false;
-            }
-            else {
+            } else {
                 flag[val] = true;
             }
         }

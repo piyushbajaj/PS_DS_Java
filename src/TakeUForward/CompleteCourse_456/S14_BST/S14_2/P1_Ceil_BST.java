@@ -18,9 +18,18 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  */
 public class P1_Ceil_BST {
 
-    static class Value {
-        int floor = -1;
-        int ceil = -1;
+    public static void main(String[] args) {
+        P1_Ceil_BST p1_ceil_bst = new P1_Ceil_BST();
+
+        TreeNode root = new TreeNode(40);
+        root.left = new TreeNode(20);
+        root.right = new TreeNode(60);
+        root.left.left = new TreeNode(10);
+        root.left.right = new TreeNode(30);
+        root.right.left = new TreeNode(50);
+        root.right.right = new TreeNode(70);
+
+        System.out.println(Arrays.toString(p1_ceil_bst.findCeilFloor(root, 45)));
     }
 
     /**
@@ -58,17 +67,8 @@ public class P1_Ceil_BST {
         }
     }
 
-    public static void main(String[] args) {
-        P1_Ceil_BST p1_ceil_bst = new P1_Ceil_BST();
-
-        TreeNode root = new TreeNode(40);
-        root.left = new TreeNode(20);
-        root.right = new TreeNode(60);
-        root.left.left = new TreeNode(10);
-        root.left.right = new TreeNode(30);
-        root.right.left = new TreeNode(50);
-        root.right.right = new TreeNode(70);
-
-        System.out.println(Arrays.toString(p1_ceil_bst.findCeilFloor(root, 45)));
+    static class Value {
+        int floor = -1;
+        int ceil = -1;
     }
 }

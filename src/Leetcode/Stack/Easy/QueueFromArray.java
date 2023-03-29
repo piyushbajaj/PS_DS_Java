@@ -11,6 +11,27 @@ public class QueueFromArray {
         arr = new int[capacity];
     }
 
+    public static void main(String[] args) {
+        QueueFromArray queueFromArray = new QueueFromArray(7);
+        queueFromArray.enqueue(1);
+        queueFromArray.enqueue(2);
+        queueFromArray.enqueue(3);
+        queueFromArray.enqueue(4);
+        System.out.println("Arrays are: ");
+        queueFromArray.printList();
+        queueFromArray.enqueue(5);
+        System.out.println("Dequeue element: " + queueFromArray.dequeue());
+        System.out.println("Arrays are: ");
+        queueFromArray.printList();
+        queueFromArray.enqueue(6);
+        System.out.println("Arrays are: ");
+        queueFromArray.printList();
+        System.out.println("Dequeue element: " + queueFromArray.dequeue());
+        System.out.println("Dequeue element: " + queueFromArray.dequeue());
+        System.out.println("Arrays are: ");
+        queueFromArray.printList();
+    }
+
     public void enqueue(int data) {
         if (rear == maxCapacity - 1) {
             if (front == -1) {
@@ -41,26 +62,5 @@ public class QueueFromArray {
             System.out.print(arr[i] + " ");
         }
         System.out.println();
-    }
-
-    public static void main(String[] args) {
-        QueueFromArray queueFromArray = new QueueFromArray(7);
-        queueFromArray.enqueue(1);
-        queueFromArray.enqueue(2);
-        queueFromArray.enqueue(3);
-        queueFromArray.enqueue(4);
-        System.out.println("Arrays are: ");
-        queueFromArray.printList();
-        queueFromArray.enqueue(5);
-        System.out.println("Dequeue element: " + queueFromArray.dequeue());
-        System.out.println("Arrays are: ");
-        queueFromArray.printList();
-        queueFromArray.enqueue(6);
-        System.out.println("Arrays are: ");
-        queueFromArray.printList();
-        System.out.println("Dequeue element: " + queueFromArray.dequeue());
-        System.out.println("Dequeue element: " + queueFromArray.dequeue());
-        System.out.println("Arrays are: ");
-        queueFromArray.printList();
     }
 }

@@ -16,6 +16,20 @@ import java.util.List;
  */
 public class P11_Triangle {
 
+    public static void main(String[] args) {
+        P11_Triangle p11_triangle = new P11_Triangle();
+        List<List<Integer>> triangle = Arrays.asList(
+            Collections.singletonList(2), Arrays.asList(3, 4), Arrays.asList(6, 5, 7),
+            Arrays.asList(4, 1, 8, 3));
+        System.out.println(p11_triangle.minimumTotal(triangle));
+
+        System.out.println(p11_triangle.minimumTotal_mem(triangle));
+
+        System.out.println(p11_triangle.minimumTotal_tab(triangle));
+
+        System.out.println(p11_triangle.minimumTotal_tab_better(triangle));
+    }
+
     /**
      * Recursion
      * TC: O[2^(N*(N+1)/2)]
@@ -140,19 +154,5 @@ public class P11_Triangle {
             prev = curr;
         }
         return prev[0];
-    }
-
-    public static void main(String[] args) {
-        P11_Triangle p11_triangle = new P11_Triangle();
-        List<List<Integer>> triangle = Arrays.asList(
-            Collections.singletonList(2), Arrays.asList(3, 4), Arrays.asList(6, 5, 7),
-            Arrays.asList(4, 1, 8, 3));
-        System.out.println(p11_triangle.minimumTotal(triangle));
-
-        System.out.println(p11_triangle.minimumTotal_mem(triangle));
-
-        System.out.println(p11_triangle.minimumTotal_tab(triangle));
-
-        System.out.println(p11_triangle.minimumTotal_tab_better(triangle));
     }
 }

@@ -4,71 +4,6 @@ package BinaryTree;
  * Created by piyush.bajaj on 25/09/16.
  */
 public class Traversal {
-    static class Node{
-        int data;
-        Node left, right;
-
-        Node(int data){
-            this.data = data;
-            left = right = null;
-        }
-    }
-
-    static class BinaryTree{
-        Node root;
-
-        BinaryTree(int key){
-            root = new Node(key);
-        }
-
-        BinaryTree(){
-            root = null;
-        }
-
-
-        void printPostorder(Node node){
-            if(node == null)
-                return;
-
-            printPostorder(node.left);
-
-            printPostorder(node.right);
-
-            System.out.print(node.data + " ");
-
-        }
-
-        void printPreOrder(Node node){
-            if(node == null)
-                return;
-
-            System.out.print(node.data + " ");
-
-            printPreOrder(node.left);
-
-            printPreOrder(node.right);
-
-        }
-
-        void printInOrder(Node node){
-            if(node == null)
-                return;
-
-            printInOrder(node.left);
-
-            System.out.print(node.data + " ");
-
-            printInOrder(node.right);
-
-        }
-
-    }
-
-//    public void BTreeTraversal(String[] arr){
-//        BinaryTree BTree = new BinaryTree();
-//        BTree.root = new Node(arr[0]);
-//    }
-
     public static void main(String[] args) {
         BinaryTree BT = new BinaryTree();
         BT.root = new Node(1);
@@ -107,6 +42,74 @@ public class Traversal {
         System.out.println("Traversal in In order is: ");
 
         BT.printInOrder(BT.root);
+    }
+
+    static class Node {
+        int data;
+        Node left, right;
+
+        Node(int data) {
+            this.data = data;
+            left = right = null;
+        }
+    }
+
+//    public void BTreeTraversal(String[] arr){
+//        BinaryTree BTree = new BinaryTree();
+//        BTree.root = new Node(arr[0]);
+//    }
+
+    static class BinaryTree {
+        Node root;
+
+        BinaryTree(int key) {
+            root = new Node(key);
+        }
+
+        BinaryTree() {
+            root = null;
+        }
+
+
+        void printPostorder(Node node) {
+            if (node == null) {
+                return;
+            }
+
+            printPostorder(node.left);
+
+            printPostorder(node.right);
+
+            System.out.print(node.data + " ");
+
+        }
+
+        void printPreOrder(Node node) {
+            if (node == null) {
+                return;
+            }
+
+            System.out.print(node.data + " ");
+
+            printPreOrder(node.left);
+
+            printPreOrder(node.right);
+
+        }
+
+        void printInOrder(Node node) {
+            if (node == null) {
+                return;
+            }
+
+            printInOrder(node.left);
+
+            System.out.print(node.data + " ");
+
+            printInOrder(node.right);
+
+        }
+
     }
 
 }

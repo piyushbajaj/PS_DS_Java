@@ -16,6 +16,12 @@ import java.util.ArrayList;
  */
 public class P1_No_Of_Provinces {
 
+    public static void main(String[] args) {
+        P1_No_Of_Provinces p1_no_of_provinces = new P1_No_Of_Provinces();
+        int[][] isConnected = {{1, 1, 0}, {1, 1, 0}, {0, 0, 1}};
+        System.out.println(p1_no_of_provinces.findCircleNum(isConnected));
+    }
+
     /**
      * Approach:
      * TC: O(N) + O(V + 2 * E)
@@ -62,11 +68,5 @@ public class P1_No_Of_Provinces {
                 dfs_recur(it, adjList, visited);
             }
         }
-    }
-
-    public static void main(String[] args) {
-        P1_No_Of_Provinces p1_no_of_provinces = new P1_No_Of_Provinces();
-        int[][] isConnected = {{1, 1, 0}, {1, 1, 0}, {0, 0, 1}};
-        System.out.println(p1_no_of_provinces.findCircleNum(isConnected));
     }
 }

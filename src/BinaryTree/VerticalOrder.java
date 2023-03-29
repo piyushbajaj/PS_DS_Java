@@ -1,75 +1,19 @@
 package BinaryTree;
 
-import java.util.TreeMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Created by piyush.bajaj on 31/07/17.
  */
 public class VerticalOrder {
+    static TreeMap<Integer, String> tree = new TreeMap<>();
     Node root;
 
-    static class Node{
-        Node left, right;
-        int data;
-        int level;
-
-        Node(int data){
-            this.data = data;
-            left = right = null;
-            this.level = 0;
-        }
-    }
-
-    VerticalOrder(int data){
-        if(root == null)
+    VerticalOrder(int data) {
+        if (root == null) {
             root = new Node(data);
-    }
-
-    public Node getLeft(Node key){
-        if(key == null || key.left == null)
-            return null;
-        key.left.level = key.level -1;
-        return key.left;
-    }
-
-    public Node getRight(Node key){
-        if(key == null || key.right == null)
-            return null;
-        key.right.level = key.level +1;
-        return key.right;
-    }
-
-    public int getHeight(Node key){
-        if(key == null)
-            return 0;
-
-        int lCount = getHeight(key.left);
-        int rCount = getHeight(key.right);
-
-        if(lCount > rCount)
-            return lCount+1;
-        else
-            return rCount+1;
-    }
-
-    static TreeMap<Integer, String> tree = new TreeMap<>();
-    public void vertical_Order_Recur(Node key){
-        if(key == null)
-            return;
-
-        vertical_Order_Recur(getLeft(key));
-        vertical_Order_Recur(getRight(key));
-
-        if(tree.containsKey(key.level)){
-            if(!tree.get(key.level).contains(" ") && getHeight(key) ==  getHeight(new Node(Integer.valueOf(tree.get(key.level)))))
-                tree.put(key.level, tree.get(key.level) + " " + key.data + " " );
-            else
-                tree.put(key.level, key.data + " " + tree.get(key.level) + " ");
         }
-        else
-            tree.put(key.level, String.valueOf(key.data));
-
     }
 
     public static void main(String[] args) {
@@ -99,12 +43,75 @@ public class VerticalOrder {
         BT.root.right.right = new Node(9);
 
 
-
         BT.vertical_Order_Recur(BT.root);
 
 
-        for(Map.Entry entry: tree.entrySet()){
+        for (Map.Entry entry : tree.entrySet()) {
             System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+    }
+
+    public Node getLeft(Node key) {
+        if (key == null || key.left == null) {
+            return null;
+        }
+        key.left.level = key.level - 1;
+        return key.left;
+    }
+
+    public Node getRight(Node key) {
+        if (key == null || key.right == null) {
+            return null;
+        }
+        key.right.level = key.level + 1;
+        return key.right;
+    }
+
+    public int getHeight(Node key) {
+        if (key == null) {
+            return 0;
+        }
+
+        int lCount = getHeight(key.left);
+        int rCount = getHeight(key.right);
+
+        if (lCount > rCount) {
+            return lCount + 1;
+        } else {
+            return rCount + 1;
+        }
+    }
+
+    public void vertical_Order_Recur(Node key) {
+        if (key == null) {
+            return;
+        }
+
+        vertical_Order_Recur(getLeft(key));
+        vertical_Order_Recur(getRight(key));
+
+        if (tree.containsKey(key.level)) {
+            if (!tree.get(key.level).contains(" ") &&
+                getHeight(key) == getHeight(new Node(Integer.valueOf(tree.get(key.level))))) {
+                tree.put(key.level, tree.get(key.level) + " " + key.data + " ");
+            } else {
+                tree.put(key.level, key.data + " " + tree.get(key.level) + " ");
+            }
+        } else {
+            tree.put(key.level, String.valueOf(key.data));
+        }
+
+    }
+
+    static class Node {
+        Node left, right;
+        int data;
+        int level;
+
+        Node(int data) {
+            this.data = data;
+            left = right = null;
+            this.level = 0;
         }
     }
 

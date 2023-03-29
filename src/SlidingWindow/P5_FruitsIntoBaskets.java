@@ -71,12 +71,12 @@ public class P5_FruitsIntoBaskets {
     }
 
     public static void main(String[] args) {
-        System.out.println(totalFruit(new int[]{1, 2, 3, 2, 2}));
+        System.out.println(totalFruit(new int[] {1, 2, 3, 2, 2}));
 
-        System.out.println(totalFruit(new int[]{3, 3, 3, 1, 2, 1, 1, 2, 3, 3, 4}));
+        System.out.println(totalFruit(new int[] {3, 3, 3, 1, 2, 1, 1, 2, 3, 3, 4}));
 
-        System.out.println(totalFruit1(new int[]{1, 2, 3, 2, 2}));
+        System.out.println(totalFruit1(new int[] {1, 2, 3, 2, 2}));
 
-        System.out.println(totalFruit1(new int[]{3, 3, 3, 1, 2, 1, 1, 2, 3, 3, 4}));
+        System.out.println(totalFruit1(new int[] {3, 3, 3, 1, 2, 1, 1, 2, 3, 3, 4}));
     }
 }

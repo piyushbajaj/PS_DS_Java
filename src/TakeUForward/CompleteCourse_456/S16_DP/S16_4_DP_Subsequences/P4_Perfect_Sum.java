@@ -12,6 +12,22 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_4_DP_Subsequences;
  */
 public class P4_Perfect_Sum {
 
+    public static void main(String[] args) {
+        P4_Perfect_Sum p4_perfect_sum = new P4_Perfect_Sum();
+
+        int[] arr = {2, 3, 5, 6, 8, 10};
+
+        int[] arr1 = {9, 7, 0, 3, 9, 8, 6, 5, 7, 6};
+
+        System.out.println(p4_perfect_sum.perfectSum(arr1, arr1.length, 31));
+
+        System.out.println(p4_perfect_sum.perfectSum_mem(arr1, arr1.length, 31));
+
+        System.out.println(p4_perfect_sum.perfectSum_tab(arr1, arr1.length, 31));
+
+        System.out.println(p4_perfect_sum.perfectSum_tab_better(arr1, arr1.length, 31));
+    }
+
     /**
      * Recursive Approach
      * <p>
@@ -157,21 +173,5 @@ public class P4_Perfect_Sum {
         }
 
         return prevRow[sum];
-    }
-
-    public static void main(String[] args) {
-        P4_Perfect_Sum p4_perfect_sum = new P4_Perfect_Sum();
-
-        int[] arr = {2, 3, 5, 6, 8, 10};
-
-        int[] arr1 = {9, 7, 0, 3, 9, 8, 6, 5, 7, 6};
-
-        System.out.println(p4_perfect_sum.perfectSum(arr1, arr1.length, 31));
-
-        System.out.println(p4_perfect_sum.perfectSum_mem(arr1, arr1.length, 31));
-
-        System.out.println(p4_perfect_sum.perfectSum_tab(arr1, arr1.length, 31));
-
-        System.out.println(p4_perfect_sum.perfectSum_tab_better(arr1, arr1.length, 31));
     }
 }

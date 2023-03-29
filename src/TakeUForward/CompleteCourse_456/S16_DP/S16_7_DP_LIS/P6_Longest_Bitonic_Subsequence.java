@@ -14,6 +14,13 @@ import java.util.Arrays;
  */
 public class P6_Longest_Bitonic_Subsequence {
 
+    public static void main(String[] args) {
+        P6_Longest_Bitonic_Subsequence p6_longest_bitonic_subsequence = new P6_Longest_Bitonic_Subsequence();
+
+        int[] nums = {1, 11, 2, 10, 4, 5, 2, 1};
+        System.out.println(p6_longest_bitonic_subsequence.longestBitonicSequence(nums));
+    }
+
     /**
      * TC: O(N*N) + O(N*N) + O(N)
      * SC: 2*O(N)
@@ -51,12 +58,5 @@ public class P6_Longest_Bitonic_Subsequence {
         }
 
         return maxi;
-    }
-
-    public static void main(String[] args) {
-        P6_Longest_Bitonic_Subsequence p6_longest_bitonic_subsequence = new P6_Longest_Bitonic_Subsequence();
-
-        int[] nums = {1, 11, 2, 10, 4, 5, 2, 1};
-        System.out.println(p6_longest_bitonic_subsequence.longestBitonicSequence(nums));
     }
 }

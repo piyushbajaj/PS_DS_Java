@@ -17,6 +17,22 @@ import TakeUForward.CompleteCourse_456.S15_Graphs.S15_1_Learning.P2_DFS;
 
 public class P1_Find_Eventual_Safe_States_DFS {
 
+    public static void main(String[] args) {
+        P1_Find_Eventual_Safe_States_DFS p1_find_eventual_safe_states = new P1_Find_Eventual_Safe_States_DFS();
+
+        P2_DFS p2_dfs = new P2_DFS(7);
+        p2_dfs.addEdge(0, 1, P2_DFS.GraphDirection.Directional);
+        p2_dfs.addEdge(0, 2, P2_DFS.GraphDirection.Directional);
+        p2_dfs.addEdge(1, 2, P2_DFS.GraphDirection.Directional);
+        p2_dfs.addEdge(1, 3, P2_DFS.GraphDirection.Directional);
+        p2_dfs.addEdge(2, 5, P2_DFS.GraphDirection.Directional);
+        p2_dfs.addEdge(3, 0, P2_DFS.GraphDirection.Directional);
+        p2_dfs.addEdge(4, 5, P2_DFS.GraphDirection.Directional);
+
+        System.out.println(p1_find_eventual_safe_states.eventualSafeNodes(7, p2_dfs.adjList));
+
+    }
+
     /**
      * Extension of Cycle Detection in DFS
      * TC: O(V+E)
@@ -68,21 +84,5 @@ public class P1_Find_Eventual_Safe_States_DFS {
         isSafeNodeCheck[vertex] = true;
         isPathVisited[vertex] = false;
         return false;
-    }
-
-    public static void main(String[] args) {
-        P1_Find_Eventual_Safe_States_DFS p1_find_eventual_safe_states = new P1_Find_Eventual_Safe_States_DFS();
-
-        P2_DFS p2_dfs = new P2_DFS(7);
-        p2_dfs.addEdge(0, 1, P2_DFS.GraphDirection.Directional);
-        p2_dfs.addEdge(0, 2, P2_DFS.GraphDirection.Directional);
-        p2_dfs.addEdge(1, 2, P2_DFS.GraphDirection.Directional);
-        p2_dfs.addEdge(1, 3, P2_DFS.GraphDirection.Directional);
-        p2_dfs.addEdge(2, 5, P2_DFS.GraphDirection.Directional);
-        p2_dfs.addEdge(3, 0, P2_DFS.GraphDirection.Directional);
-        p2_dfs.addEdge(4, 5, P2_DFS.GraphDirection.Directional);
-
-        System.out.println(p1_find_eventual_safe_states.eventualSafeNodes(7, p2_dfs.adjList));
-
     }
 }

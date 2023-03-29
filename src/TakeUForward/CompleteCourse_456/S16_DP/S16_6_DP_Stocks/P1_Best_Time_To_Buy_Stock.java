@@ -11,6 +11,12 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_6_DP_Stocks;
  * Link: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
  */
 public class P1_Best_Time_To_Buy_Stock {
+    public static void main(String[] args) {
+        P1_Best_Time_To_Buy_Stock p1_best_time_to_buy_stock = new P1_Best_Time_To_Buy_Stock();
+        int[] prices = {7, 1, 5, 3, 6, 4};
+        System.out.println(p1_best_time_to_buy_stock.maxProfit(prices));
+    }
+
     /**
      * 1. Get the Current cost by current element cost - minimum element
      * 2. Maximize profit by comparing cost
@@ -32,11 +38,5 @@ public class P1_Best_Time_To_Buy_Stock {
         }
 
         return profit;
-    }
-
-    public static void main(String[] args) {
-        P1_Best_Time_To_Buy_Stock p1_best_time_to_buy_stock = new P1_Best_Time_To_Buy_Stock();
-        int[] prices = {7, 1, 5, 3, 6, 4};
-        System.out.println(p1_best_time_to_buy_stock.maxProfit(prices));
     }
 }

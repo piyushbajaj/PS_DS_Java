@@ -51,6 +51,20 @@ public class HeapSort {
 //        this.arr = arr;
 //    }
 
+    public static void main(String[] args) {
+
+        //arr = new int[5];
+        //int[] intArr= {12, 11, 13, 5, 6, 7};
+
+        int[] intArr = {5, 2, 1, 10, 6, 4, 3};
+
+        HeapSort BT = new HeapSort();
+
+        BT.sort(intArr);
+
+        BT.printHeap(intArr);
+    }
+
     public void swap(int i, int j, int[] arr) {
 
         int temp = arr[i];
@@ -66,18 +80,19 @@ public class HeapSort {
         return 2 * i + 2;
     }
 
-
     // T.C.: o(logN)
     public void heapify(int i, int n, int[] arr) {
         int l = left(i);
         int r = right(i);
         int large = i;
 
-        if (l < n && arr[l] > arr[large])
+        if (l < n && arr[l] > arr[large]) {
             large = l;
+        }
 
-        if (r < n && arr[r] > arr[large])
+        if (r < n && arr[r] > arr[large]) {
             large = r;
+        }
 
         if (large != i) {
             swap(i, large, arr);
@@ -107,22 +122,9 @@ public class HeapSort {
     }
 
     public void printHeap(int[] arr) {
-        for (int i = 0; i < arr.length; i++)
+        for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
+        }
         System.out.println();
-    }
-
-    public static void main(String[] args) {
-
-        //arr = new int[5];
-        //int[] intArr= {12, 11, 13, 5, 6, 7};
-
-        int[] intArr = {5, 2, 1, 10, 6, 4, 3};
-
-        HeapSort BT = new HeapSort();
-
-        BT.sort(intArr);
-
-        BT.printHeap(intArr);
     }
 }

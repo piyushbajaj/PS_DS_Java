@@ -5,54 +5,55 @@ package BinaryTree;
  */
 public class ConstructBSTPreOrder {
     Node root;
-    public static class Node{
-        int data;
-        Node left, right;
 
-        Node(int data){
-            this.data = data;
-            left = right = null;
-        }
-    }
-
-    public ConstructBSTPreOrder(){
+    public ConstructBSTPreOrder() {
         root = null;
     }
 
-    public ConstructBSTPreOrder(int key){
+    public ConstructBSTPreOrder(int key) {
         root = new Node(key);
     }
 
-    public Node constructBST(int[] arr){
+    public static void main(String[] args) {
+        ConstructBSTPreOrder BT = new ConstructBSTPreOrder();
+        int[] preOrder = {10, 5, 1, 7, 40, 50};
+
+
+        //BT.inOrderTraversal(BT.constructBST(preOrder));
+
+
+        BT.inOrderTraversal(BT.constructBST_Improved(preOrder));
+    }
+
+    public Node constructBST(int[] arr) {
         int n = arr.length;
         //Index ind = new Index();
-        return constructBSTUtil(arr, new Index(), 0, n-1, n);
+        return constructBSTUtil(arr, new Index(), 0, n - 1, n);
 
     }
 
-    public static class Index{
-        int index =0;
-    }
     //This takes O(n^2)
-    public Node constructBSTUtil(int[] arr, Index pre, int low, int high, int size){
+    public Node constructBSTUtil(int[] arr, Index pre, int low, int high, int size) {
         //base case
-        if(pre.index >= size || low > high)
+        if (pre.index >= size || low > high) {
             return null;
+        }
 
         Node key = new Node(arr[pre.index]);
-        pre.index = pre.index +1;
+        pre.index = pre.index + 1;
 
-        if(low == high){
+        if (low == high) {
             return key;
         }
 
         int i;
-        for(i = low; i <= high; ++i){
-            if(arr[i] > key.data)
+        for (i = low; i <= high; ++i) {
+            if (arr[i] > key.data) {
                 break;
+            }
         }
 
-        key.left = constructBSTUtil(arr, pre, pre.index, i-1, size);
+        key.left = constructBSTUtil(arr, pre, pre.index, i - 1, size);
         key.right = constructBSTUtil(arr, pre, i, high, size);
 
         return key;
@@ -60,44 +61,24 @@ public class ConstructBSTPreOrder {
     }
 
     //With Improved Time Complexity
-    public Node constructBSTUtil_Improved(int[] arr, Index pre,int key, int min, int max, int size){
-        if(pre.index >= size)
+    public Node constructBSTUtil_Improved(int[] arr, Index pre, int key, int min, int max, int size) {
+        if (pre.index >= size) {
             return null;
+        }
 
         Node root = null;
 
-        if(key > min && key < max){
+        if (key > min && key < max) {
             root = new Node(key);
             pre.index += 1;
 
-            if(pre.index < size){
+            if (pre.index < size) {
                 root.left = constructBSTUtil_Improved(arr, pre, arr[pre.index], min, key, size);
                 root.right = constructBSTUtil_Improved(arr, pre, arr[pre.index], key, max, size);
             }
         }
 
         return root;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //        if (pre.index >= size) {
@@ -132,30 +113,31 @@ public class ConstructBSTPreOrder {
 //        return root;
     }
 
-    public Node constructBST_Improved(int[] arr){
+    public Node constructBST_Improved(int[] arr) {
         return constructBSTUtil_Improved(arr, new Index(), arr[0], Integer.MIN_VALUE, Integer.MAX_VALUE, arr.length);
     }
 
-
-    public void inOrderTraversal(Node key){
-        if(key == null)
+    public void inOrderTraversal(Node key) {
+        if (key == null) {
             return;
+        }
         inOrderTraversal(key.left);
         System.out.print(key.data + " ");
         inOrderTraversal(key.right);
     }
 
-    public static void main(String[] args) {
-        ConstructBSTPreOrder BT = new ConstructBSTPreOrder();
-        int[] preOrder = {10, 5, 1, 7, 40, 50};
+    public static class Node {
+        int data;
+        Node left, right;
 
+        Node(int data) {
+            this.data = data;
+            left = right = null;
+        }
+    }
 
-
-
-        //BT.inOrderTraversal(BT.constructBST(preOrder));
-
-
-        BT.inOrderTraversal(BT.constructBST_Improved(preOrder));
+    public static class Index {
+        int index = 0;
     }
 
 }

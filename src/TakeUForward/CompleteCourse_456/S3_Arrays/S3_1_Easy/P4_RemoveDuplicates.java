@@ -26,6 +26,6 @@ public class P4_RemoveDuplicates {
     }
 
     public static void main(String[] args) {
-        System.out.println(removeDuplicates(new int[]{1, 1, 2, 2, 2, 3, 3}));
+        System.out.println(removeDuplicates(new int[] {1, 1, 2, 2, 2, 3, 3}));
     }
 }

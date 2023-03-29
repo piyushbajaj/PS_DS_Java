@@ -9,47 +9,34 @@ import java.util.Queue;
  * 1. Create Vertex class.
  * 2. Create addEdge and addVertex function.
  * 3. Create a function ShotestPath(int s){
- *     a. Initialize every distance to be -1, and the source to be 0
- *     b. Initialize every path to be -.
- *     c. This will be done using Queue, where first will add that element in queue
- *
- *     queue.add(s)
- *     while(!queue.isEmpty){
- *         int v = queue.remove;
- *
- *         for(int i: adjList[v]){
- *             if(Distance[i] == -1){
- *                 Distance[i] = Distance[v] + 1;
- *                 Path[i] = vertexList[i].label;
- *                 queue.add(i);
- *             }
- *         }
- *     }
+ * a. Initialize every distance to be -1, and the source to be 0
+ * b. Initialize every path to be -.
+ * c. This will be done using Queue, where first will add that element in queue
+ * <p>
+ * queue.add(s)
+ * while(!queue.isEmpty){
+ * int v = queue.remove;
+ * <p>
+ * for(int i: adjList[v]){
+ * if(Distance[i] == -1){
+ * Distance[i] = Distance[v] + 1;
+ * Path[i] = vertexList[i].label;
+ * queue.add(i);
+ * }
+ * }
+ * }
  * }
  */
 public class ShortestPathUnweight {
-    public class Vertex{
-        public char label;
-        public boolean visited;
-
-        public Vertex(char lab){
-            label = lab;
-            visited = false;
-        }
-    }
-
+    static int[] Distance;
+    static char[] Path;
     //For adding random vertices
     public Vertex vertexList[];
     private int V; //Number of vertices
     //Array of lists for Adjacency list representation
     private LinkedList<Integer> adjList[];
     private int vertexCount;
-    static int[] Distance;
-    static char[] Path;
-
-
-
-    public ShortestPathUnweight(int v){
+    public ShortestPathUnweight(int v) {
         this.V = v;
         vertexCount = 0;
         adjList = new LinkedList[V];
@@ -58,68 +45,8 @@ public class ShortestPathUnweight {
         Distance = new int[V];
         Path = new char[V];
 
-        for(int i = 0; i < V; i++){
+        for (int i = 0; i < V; i++) {
             adjList[i] = new LinkedList<>();
-        }
-    }
-
-    public void addVertex(char ver){
-        vertexList[vertexCount++] = new Vertex(ver);
-    }
-
-    // Directional
-    public void addEdge(int u, int v){
-        adjList[u].add(v);
-    }
-
-    // Bi-Directional
-    public void addEdge_bidirectional(int u, int v){
-        adjList[u].add(v);
-        adjList[v].add(u);
-    }
-
-
-
-    public void UnweightedShortest(int s, int d){
-        Queue<Integer> queue = new LinkedList<>();
-        int v;
-        queue.add(s);
-
-        for(int i = 0; i < V; i++){
-            Distance[i] = -1;
-        }
-        Distance[s] = 0;
-
-        for(int i = 0; i < V; i++){
-            Path[i] = '-';
-        }
-
-        while (!queue.isEmpty()){
-            v = queue.remove();
-
-            for(int i: adjList[v]){
-                if(Distance[i] == -1){
-                    Distance[i] = Distance[v] + 1;
-                    Path[i] = vertexList[v].label;
-                    queue.add(i);
-                }
-            }
-        }
-
-//        int k = d;
-//        System.out.print(vertexList[d].label + " -> ");
-//        while (Path[k] != '-') {
-//            System.out.print(Path[k] + " -> ");
-//            k = Path[Path[k]];
-//        }
-
-
-    }
-
-    public void printGraph(){
-        for(int i=0; i < V; i++){
-            System.out.println("Vertex: " + vertexList[i].label + "  Distance from source: " + Distance[i] + "  Previous vertex which gave the distance: " +
-                    Path[i]);
         }
     }
 
@@ -147,5 +74,75 @@ public class ShortestPathUnweight {
         SW.UnweightedShortest(0, 6);
 
         SW.printGraph();
+    }
+
+    public void addVertex(char ver) {
+        vertexList[vertexCount++] = new Vertex(ver);
+    }
+
+    // Directional
+    public void addEdge(int u, int v) {
+        adjList[u].add(v);
+    }
+
+    // Bi-Directional
+    public void addEdge_bidirectional(int u, int v) {
+        adjList[u].add(v);
+        adjList[v].add(u);
+    }
+
+
+    public void UnweightedShortest(int s, int d) {
+        Queue<Integer> queue = new LinkedList<>();
+        int v;
+        queue.add(s);
+
+        for (int i = 0; i < V; i++) {
+            Distance[i] = -1;
+        }
+        Distance[s] = 0;
+
+        for (int i = 0; i < V; i++) {
+            Path[i] = '-';
+        }
+
+        while (!queue.isEmpty()) {
+            v = queue.remove();
+
+            for (int i : adjList[v]) {
+                if (Distance[i] == -1) {
+                    Distance[i] = Distance[v] + 1;
+                    Path[i] = vertexList[v].label;
+                    queue.add(i);
+                }
+            }
+        }
+
+//        int k = d;
+//        System.out.print(vertexList[d].label + " -> ");
+//        while (Path[k] != '-') {
+//            System.out.print(Path[k] + " -> ");
+//            k = Path[Path[k]];
+//        }
+
+
+    }
+
+    public void printGraph() {
+        for (int i = 0; i < V; i++) {
+            System.out.println("Vertex: " + vertexList[i].label + "  Distance from source: " + Distance[i] +
+                "  Previous vertex which gave the distance: " +
+                Path[i]);
+        }
+    }
+
+    public class Vertex {
+        public char label;
+        public boolean visited;
+
+        public Vertex(char lab) {
+            label = lab;
+            visited = false;
+        }
     }
 }

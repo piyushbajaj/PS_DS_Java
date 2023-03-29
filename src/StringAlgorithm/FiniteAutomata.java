@@ -9,45 +9,37 @@ package StringAlgorithm;
  * Time Complexity: O(m*(m-1))
  */
 public class FiniteAutomata {
-    private final int  No_Of_Chars = 256;
+    private final int No_Of_Chars = 256;
 
-    public int getNextState(char[] pat, int M, int state, int x){
+    public static void main(String[] args) {
+        FiniteAutomata FA = new FiniteAutomata();
+        String text = "ACACAGA";
+        String pat = "A";
+
+        FA.search(pat.toCharArray(), text.toCharArray());
+    }
+
+    public int getNextState(char[] pat, int M, int state, int x) {
 
         // If the character c is same as next character in pattern,
         // then simply increment state
-        if(state < M && x == pat[state])
-            return state+1;
-
-        int i, ns;
-        for(ns = state; ns > 0; ns--){
-            if(pat[ns-1] == x){
-                for( i = 0; i < ns-1; i++){
-                    if(pat[i] != pat[state - (ns-1) + i])
-                        break;
-                }
-                if(i == ns-1)
-                    return ns;
-            }
+        if (state < M && x == pat[state]) {
+            return state + 1;
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        int i, ns;
+        for (ns = state; ns > 0; ns--) {
+            if (pat[ns - 1] == x) {
+                for (i = 0; i < ns - 1; i++) {
+                    if (pat[i] != pat[state - (ns - 1) + i]) {
+                        break;
+                    }
+                }
+                if (i == ns - 1) {
+                    return ns;
+                }
+            }
+        }
 
 
 //        if(state < M && x == pat[state])
@@ -77,10 +69,12 @@ public class FiniteAutomata {
         return 0;
     }
 
-    public void computeTF(char[] pat, int M, int TF[][]){
-        for(int state = 0; state <= M; state++)
-            for(int x = 0; x < No_Of_Chars; x++)
+    public void computeTF(char[] pat, int M, int TF[][]) {
+        for (int state = 0; state <= M; state++) {
+            for (int x = 0; x < No_Of_Chars; x++) {
                 TF[state][x] = getNextState(pat, M, state, x);
+            }
+        }
 
 
 //        int state, x;
@@ -89,12 +83,12 @@ public class FiniteAutomata {
 //                TF[state][x] = getNextState(pat, M, state, x);
     }
 
-    public void search(char[] pat, char[] text){
+    public void search(char[] pat, char[] text) {
 
         int M = pat.length;
         int N = text.length;
 
-        int[][] TF = new int[M+1][No_Of_Chars];
+        int[][] TF = new int[M + 1][No_Of_Chars];
 
         computeTF(pat, M, TF);
 
@@ -102,25 +96,12 @@ public class FiniteAutomata {
         //Process text over FA
         int i, state = 0;
 
-        for(i = 0; i < N; i++){
+        for (i = 0; i < N; i++) {
             state = TF[state][text[i]];
-            if(state == M)
-                System.out.println("Found the pattern at: " + (i - M +1));
+            if (state == M) {
+                System.out.println("Found the pattern at: " + (i - M + 1));
+            }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //        int M = pat.length;
@@ -139,14 +120,6 @@ public class FiniteAutomata {
 //                System.out.println("Pattern found at index: " + (i - M + 1));
 //            }
 //        }
-    }
-
-    public static void main(String[] args) {
-        FiniteAutomata FA = new FiniteAutomata();
-        String text = "ACACAGA";
-        String pat = "A";
-
-        FA.search(pat.toCharArray(), text.toCharArray());
     }
 
 }

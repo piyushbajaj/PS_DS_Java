@@ -5,29 +5,21 @@ package CrackingCoding.LinkedList.Jan_2018;
  */
 public class sumOfLinkedList_Prob {
     static Node head1, head2, head3;
-    static class Node{
-        Node next;
-        int data;
 
-        Node(int data){
-            this.data = data;
-            this.next = null;
-        }
-    }
-
-    public static Node createLL1(String s){
+    public static Node createLL1(String s) {
         int n = s.length();
-        if(n == 0) return null;
+        if (n == 0) {
+            return null;
+        }
 
         Node Nd = head1;
         int temp = 0;
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             temp = Integer.parseInt(String.valueOf(s.charAt(i)));
-            if(Nd == null){
+            if (Nd == null) {
                 Nd = new Node(temp);
                 head1 = Nd;
-            }
-            else {
+            } else {
                 Nd.next = new Node(temp);
                 Nd = Nd.next;
             }
@@ -36,19 +28,20 @@ public class sumOfLinkedList_Prob {
         return head1;
     }
 
-    public static Node createLL2(String s){
+    public static Node createLL2(String s) {
         int n = s.length();
-        if(n == 0) return null;
+        if (n == 0) {
+            return null;
+        }
 
         Node Nd = head2;
         int temp = 0;
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             temp = Integer.parseInt(String.valueOf(s.charAt(i)));
-            if(Nd == null){
+            if (Nd == null) {
                 Nd = new Node(temp);
                 head2 = Nd;
-            }
-            else {
+            } else {
                 Nd.next = new Node(temp);
                 Nd = Nd.next;
             }
@@ -57,11 +50,12 @@ public class sumOfLinkedList_Prob {
         return head2;
     }
 
-    public static void printList(Node Nd){
-        if(Nd == null)
+    public static void printList(Node Nd) {
+        if (Nd == null) {
             return;
+        }
 
-        while (Nd!=null){
+        while (Nd != null) {
             System.out.print(Nd.data + " -> ");
             Nd = Nd.next;
         }
@@ -70,11 +64,12 @@ public class sumOfLinkedList_Prob {
         System.out.println();
     }
 
-    public static int getCount(Node Nd){
-        if(Nd==null)
+    public static int getCount(Node Nd) {
+        if (Nd == null) {
             return 0;
+        }
         int count = 0;
-        while (Nd!=null){
+        while (Nd != null) {
             Nd = Nd.next;
             count++;
         }
@@ -82,24 +77,27 @@ public class sumOfLinkedList_Prob {
         return count;
     }
 
-    public static Node additionTwoLinkedList(Node Nd1, Node Nd2){
-        if(head1 == null) return Nd2;
+    public static Node additionTwoLinkedList(Node Nd1, Node Nd2) {
+        if (head1 == null) {
+            return Nd2;
+        }
 
-        if(head2 == null) return Nd1;
+        if (head2 == null) {
+            return Nd1;
+        }
 
         Node p = head3;
 
         int sum = 0, carry = 0;
 
-        while (Nd1!=null && Nd2!=null){
+        while (Nd1 != null && Nd2 != null) {
             sum = Nd1.data + Nd2.data + carry;
-            carry = sum/10;
-            sum = sum%10;
-            if(head3 == null){
+            carry = sum / 10;
+            sum = sum % 10;
+            if (head3 == null) {
                 p = new Node(sum);
                 head3 = p;
-            }
-            else {
+            } else {
                 p.next = new Node(sum);
                 p = p.next;
             }
@@ -107,28 +105,26 @@ public class sumOfLinkedList_Prob {
             Nd2 = Nd2.next;
         }
 
-        while (Nd1!=null && Nd2==null){
+        while (Nd1 != null && Nd2 == null) {
             sum = Nd1.data + carry;
-            carry = sum/10;
-            sum = sum%10;
-            if(p == null){
+            carry = sum / 10;
+            sum = sum % 10;
+            if (p == null) {
                 p = new Node(sum);
-            }
-            else {
+            } else {
                 p.next = new Node(sum);
                 p = p.next;
             }
             Nd1 = Nd1.next;
         }
 
-        while (Nd1==null && Nd2!=null){
+        while (Nd1 == null && Nd2 != null) {
             sum = Nd2.data + carry;
-            carry = sum/10;
-            sum = sum%10;
-            if(p == null){
+            carry = sum / 10;
+            sum = sum % 10;
+            if (p == null) {
                 p = new Node(sum);
-            }
-            else {
+            } else {
                 p.next = new Node(sum);
                 p = p.next;
             }
@@ -151,6 +147,16 @@ public class sumOfLinkedList_Prob {
         printList(additionTwoLinkedList(Nd1, Nd2));
 
 
+    }
+
+    static class Node {
+        Node next;
+        int data;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
     }
 
 

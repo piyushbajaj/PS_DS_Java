@@ -25,6 +25,14 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  */
 public class P7_ConstructBST_Preorder {
 
+    public static void main(String[] args) {
+        P7_ConstructBST_Preorder p7_constructBST_preorder = new P7_ConstructBST_Preorder();
+        int[] preorder = {4, 2, 1, 3, 6, 5, 7};
+
+        System.out.println(
+            P1_BT_Recur_Traversals.levelOrderTraversal_recur(p7_constructBST_preorder.constructBST_from_BST(preorder)));
+    }
+
     public void insertInBST(TreeNode root, int key) {
         if (root == null) {
             root = new TreeNode(key);
@@ -58,13 +66,5 @@ public class P7_ConstructBST_Preorder {
         curr.right = constructBST_from_BST_util(preOrder, max, index);
 
         return curr;
-    }
-
-    public static void main(String[] args) {
-        P7_ConstructBST_Preorder p7_constructBST_preorder = new P7_ConstructBST_Preorder();
-        int[] preorder = {4, 2, 1, 3, 6, 5, 7};
-
-        System.out.println(
-            P1_BT_Recur_Traversals.levelOrderTraversal_recur(p7_constructBST_preorder.constructBST_from_BST(preorder)));
     }
 }

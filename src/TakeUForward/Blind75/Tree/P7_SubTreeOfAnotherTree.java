@@ -13,6 +13,23 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  * lc: <a href="https://leetcode.com/problems/subtree-of-another-tree/description/">...</a>
  */
 public class P7_SubTreeOfAnotherTree {
+    public static void main(String[] args) {
+        P7_SubTreeOfAnotherTree p7_subTreeOfAnotherTree = new P7_SubTreeOfAnotherTree();
+
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(4);
+        root.right = new TreeNode(5);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(2);
+
+        TreeNode subRoot = new TreeNode(4);
+        subRoot.left = new TreeNode(1);
+        subRoot.right = new TreeNode(2);
+
+        System.out.println(p7_subTreeOfAnotherTree.isSubtree(root, subRoot));
+
+    }
+
     /**
      * TC: O(N*M)
      * SC: O(N+M)
@@ -51,22 +68,5 @@ public class P7_SubTreeOfAnotherTree {
         }
 
         return isIdentical(node1.left, node2.left) && isIdentical(node1.right, node2.right);
-    }
-
-    public static void main(String[] args) {
-        P7_SubTreeOfAnotherTree p7_subTreeOfAnotherTree = new P7_SubTreeOfAnotherTree();
-
-        TreeNode root = new TreeNode(3);
-        root.left = new TreeNode(4);
-        root.right = new TreeNode(5);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(2);
-
-        TreeNode subRoot = new TreeNode(4);
-        subRoot.left = new TreeNode(1);
-        subRoot.right = new TreeNode(2);
-
-        System.out.println(p7_subTreeOfAnotherTree.isSubtree(root, subRoot));
-
     }
 }

@@ -21,21 +21,21 @@ public class ListNode {
         this.next = next;
     }
 
-    public void setData(int data) {
-        this.data = data;
-    }
-
     public int getData() {
         return data;
     }
 
-    public void setNext(ListNode next) {
-        this.next = next;
+    public void setData(int data) {
+        this.data = data;
     }
 
     public ListNode getNext() {
 //        this.next = null;
         return this.next;
+    }
+
+    public void setNext(ListNode next) {
+        this.next = next;
     }
 
     //ListLength takes linked list as an input and counts the number of nodes in the list

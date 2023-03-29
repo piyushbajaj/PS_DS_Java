@@ -15,6 +15,11 @@ package Leetcode.MustDoEasyQuestions;
  */
 public class P15_Isomorphic_Strings {
 
+    public static void main(String[] args) {
+        P15_Isomorphic_Strings p15_isomorphic_strings = new P15_Isomorphic_Strings();
+        System.out.println(p15_isomorphic_strings.isIsomorphic("egg", "add"));
+    }
+
     /**
      * TC: O(N)
      * SC: O(1)
@@ -53,10 +58,5 @@ public class P15_Isomorphic_Strings {
         }
 
         return true;
-    }
-
-    public static void main(String[] args) {
-        P15_Isomorphic_Strings p15_isomorphic_strings = new P15_Isomorphic_Strings();
-        System.out.println(p15_isomorphic_strings.isIsomorphic("egg", "add"));
     }
 }

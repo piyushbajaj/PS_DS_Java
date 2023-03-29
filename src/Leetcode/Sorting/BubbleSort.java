@@ -4,6 +4,12 @@ import java.util.Arrays;
 
 public class BubbleSort {
 
+    public static void main(String[] args) {
+        BubbleSort bubbleSort = new BubbleSort();
+        int[] a = {6, 4, 2, 1, 3, 5};
+        System.out.println(Arrays.toString(bubbleSort.bubble(a)));
+    }
+
     // Sorting 2 elements at a time
     public int[] bubble(int[] arr) {
         int n = arr.length;
@@ -21,11 +27,5 @@ public class BubbleSort {
         int temp = arr[p];
         arr[p] = arr[q];
         arr[q] = temp;
-    }
-
-    public static void main(String[] args) {
-        BubbleSort bubbleSort = new BubbleSort();
-        int[] a = {6, 4, 2, 1, 3, 5};
-        System.out.println(Arrays.toString(bubbleSort.bubble(a)));
     }
 }

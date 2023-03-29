@@ -16,6 +16,11 @@ import java.util.List;
  */
 public class P2_Majority_Element_N_3 {
 
+    public static void main(String[] args) {
+        P2_Majority_Element_N_3 p2_majority_element_n_3 = new P2_Majority_Element_N_3();
+        System.out.println(p2_majority_element_n_3.majorityElement(new int[] {2, 1, 5, 5, 5, 5, 6, 6, 6, 6, 6}));
+    }
+
     /**
      * Appear more than n/3 times
      * TC: O(NlogN)
@@ -49,10 +54,5 @@ public class P2_Majority_Element_N_3 {
 
     public boolean isMajority(int val, int n) {
         return val > Math.floor((double) n / 3);
-    }
-
-    public static void main(String[] args) {
-        P2_Majority_Element_N_3 p2_majority_element_n_3 = new P2_Majority_Element_N_3();
-        System.out.println(p2_majority_element_n_3.majorityElement(new int[] {2, 1, 5, 5, 5, 5, 6, 6, 6, 6, 6}));
     }
 }

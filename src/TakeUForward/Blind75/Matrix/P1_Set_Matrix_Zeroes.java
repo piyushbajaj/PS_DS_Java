@@ -18,6 +18,13 @@ import javafx.util.Pair;
  */
 public class P1_Set_Matrix_Zeroes {
 
+    public static void main(String[] args) {
+        P1_Set_Matrix_Zeroes p1_set_matrix_zeroes = new P1_Set_Matrix_Zeroes();
+        int[][] matrix = {{1, 1, 1}, {1, 0, 1}, {1, 1, 1}};
+        p1_set_matrix_zeroes.setZeroes(matrix);
+        System.out.println(Arrays.deepToString(matrix));
+    }
+
     /**
      * Approach:
      * 1. Capture indexes, which contains zeros in the map
@@ -58,12 +65,5 @@ public class P1_Set_Matrix_Zeroes {
             }
         }
 
-    }
-
-    public static void main(String[] args) {
-        P1_Set_Matrix_Zeroes p1_set_matrix_zeroes = new P1_Set_Matrix_Zeroes();
-        int[][] matrix = {{1, 1, 1}, {1, 0, 1}, {1, 1, 1}};
-        p1_set_matrix_zeroes.setZeroes(matrix);
-        System.out.println(Arrays.deepToString(matrix));
     }
 }

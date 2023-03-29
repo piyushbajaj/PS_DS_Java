@@ -14,6 +14,11 @@ package Leetcode.MustDoEasyQuestions;
  */
 public class P4_Max_SubArray {
 
+    public static void main(String[] args) {
+        P4_Max_SubArray p4_max_subArray = new P4_Max_SubArray();
+        System.out.println(p4_max_subArray.maxSubArray(new int[] {-2, 1, -3, 4, -1, 2, 1, -5, 4}));
+    }
+
     /**
      * TC: O(N)
      * SC: O(1)
@@ -31,10 +36,5 @@ public class P4_Max_SubArray {
         }
 
         return maxSoFar;
-    }
-
-    public static void main(String[] args) {
-        P4_Max_SubArray p4_max_subArray = new P4_Max_SubArray();
-        System.out.println(p4_max_subArray.maxSubArray(new int[] {-2, 1, -3, 4, -1, 2, 1, -5, 4}));
     }
 }

@@ -18,6 +18,23 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  */
 public class P6_Serialize_Deserialize_BT {
 
+    public static void main(String[] args) {
+        P6_Serialize_Deserialize_BT p6_serialize_deserialize_bt = new P6_Serialize_Deserialize_BT();
+
+        TreeNode node = new TreeNode(4);
+        node.left = new TreeNode(2);
+        node.right = new TreeNode(6);
+        node.left.left = new TreeNode(1);
+        node.left.right = new TreeNode(3);
+        node.right.left = new TreeNode(5);
+        node.right.right = new TreeNode(7);
+
+        String serialize = p6_serialize_deserialize_bt.serialize(node);
+        System.out.println(serialize);
+        Utils.printTree(node);
+        Utils.printTree(p6_serialize_deserialize_bt.deserialize(serialize));
+    }
+
     /**
      * Serialization: Encodes a tree to a single string.
      * Followed Level Order Traversal to store the elements in the format like
@@ -88,22 +105,5 @@ public class P6_Serialize_Deserialize_BT {
         }
 
         return root;
-    }
-
-    public static void main(String[] args) {
-        P6_Serialize_Deserialize_BT p6_serialize_deserialize_bt = new P6_Serialize_Deserialize_BT();
-
-        TreeNode node = new TreeNode(4);
-        node.left = new TreeNode(2);
-        node.right = new TreeNode(6);
-        node.left.left = new TreeNode(1);
-        node.left.right = new TreeNode(3);
-        node.right.left = new TreeNode(5);
-        node.right.right = new TreeNode(7);
-
-        String serialize = p6_serialize_deserialize_bt.serialize(node);
-        System.out.println(serialize);
-        Utils.printTree(node);
-        Utils.printTree(p6_serialize_deserialize_bt.deserialize(serialize));
     }
 }

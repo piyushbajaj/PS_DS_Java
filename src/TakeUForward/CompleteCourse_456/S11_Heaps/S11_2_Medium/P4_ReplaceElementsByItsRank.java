@@ -36,6 +36,6 @@ public class P4_ReplaceElementsByItsRank {
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(replaceElementsByItsRank(new int[]{20, 15, 26, 2, 98, 6})));
+        System.out.println(Arrays.toString(replaceElementsByItsRank(new int[] {20, 15, 26, 2, 98, 6})));
     }
 }

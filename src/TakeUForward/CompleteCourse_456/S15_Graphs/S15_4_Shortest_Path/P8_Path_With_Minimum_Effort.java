@@ -16,14 +16,12 @@ import java.util.PriorityQueue;
  */
 public class P8_Path_With_Minimum_Effort {
 
-    static class Tuple {
-        int difference, row, col;
+    public static void main(String[] args) {
+        P8_Path_With_Minimum_Effort p8_path_with_minimum_effort = new P8_Path_With_Minimum_Effort();
 
-        Tuple(int difference, int row, int col) {
-            this.difference = difference;
-            this.row = row;
-            this.col = col;
-        }
+        int[][] heights = {{1, 2, 2}, {3, 8, 2}, {5, 3, 5}};
+
+        System.out.println(p8_path_with_minimum_effort.minimumEffortPath(heights));
     }
 
     /**
@@ -82,11 +80,13 @@ public class P8_Path_With_Minimum_Effort {
         return 0;
     }
 
-    public static void main(String[] args) {
-        P8_Path_With_Minimum_Effort p8_path_with_minimum_effort = new P8_Path_With_Minimum_Effort();
+    static class Tuple {
+        int difference, row, col;
 
-        int[][] heights = {{1, 2, 2}, {3, 8, 2}, {5, 3, 5}};
-
-        System.out.println(p8_path_with_minimum_effort.minimumEffortPath(heights));
+        Tuple(int difference, int row, int col) {
+            this.difference = difference;
+            this.row = row;
+            this.col = col;
+        }
     }
 }

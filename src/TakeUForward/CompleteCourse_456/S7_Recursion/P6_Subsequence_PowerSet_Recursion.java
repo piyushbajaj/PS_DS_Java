@@ -15,6 +15,16 @@ import java.util.List;
  */
 public class P6_Subsequence_PowerSet_Recursion {
 
+    public static void main(String[] args) {
+        P6_Subsequence_PowerSet_Recursion p6_subsequence_recursion = new P6_Subsequence_PowerSet_Recursion();
+        int[] arr = {3, 1, 2};
+        int n = 3;
+        ArrayList<Integer> arrayList = new ArrayList<>();
+//        p6_subsequence_recursion.subsequence(arr, arrayList, 0, n);
+
+        System.out.println(p6_subsequence_recursion.AllPossibleStrings("abc"));
+    }
+
     /**
      * Approach:
      * TC: O(2^N)
@@ -42,7 +52,6 @@ public class P6_Subsequence_PowerSet_Recursion {
         arrayList.remove(arrayList.size() - 1);
         subsequence(originalArray, arrayList, index + 1, n); // not pick an element
     }
-
 
     /**
      * Power Set
@@ -72,15 +81,5 @@ public class P6_Subsequence_PowerSet_Recursion {
         }
         Collections.sort(result);
         return result;
-    }
-
-    public static void main(String[] args) {
-        P6_Subsequence_PowerSet_Recursion p6_subsequence_recursion = new P6_Subsequence_PowerSet_Recursion();
-        int[] arr = {3, 1, 2};
-        int n = 3;
-        ArrayList<Integer> arrayList = new ArrayList<>();
-//        p6_subsequence_recursion.subsequence(arr, arrayList, 0, n);
-
-        System.out.println(p6_subsequence_recursion.AllPossibleStrings("abc"));
     }
 }

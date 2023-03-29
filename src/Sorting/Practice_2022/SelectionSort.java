@@ -5,6 +5,13 @@ import java.util.Arrays;
 // Means select minimum and put in the start of the array in the every first loop
 public class SelectionSort extends BaseClass {
 
+    public static void main(String[] args) {
+        SelectionSort selectionSort = new SelectionSort();
+        int[] inputArr = {1, 3, 6, 2, 9, 5, 6};
+        selectionSort.selectionSort(inputArr);
+        System.out.println(Arrays.toString(inputArr));
+    }
+
     /*
     TC: O(N^2)
     SC: O(1)
@@ -21,13 +28,6 @@ public class SelectionSort extends BaseClass {
             }
             swap(arr, minIndex, firstPtr);
         }
-    }
-
-    public static void main(String[] args) {
-        SelectionSort selectionSort = new SelectionSort();
-        int[] inputArr = {1, 3, 6, 2, 9, 5, 6};
-        selectionSort.selectionSort(inputArr);
-        System.out.println(Arrays.toString(inputArr));
     }
 
 }

@@ -37,7 +37,9 @@ public class Grokking8_FindPermutation {
             }
             r++;
 
-            if (matched == hashPattern.size()) return true;
+            if (matched == hashPattern.size()) {
+                return true;
+            }
 
             // shrink the window if its gets greater than pattern length
             if (r - l >= m) {

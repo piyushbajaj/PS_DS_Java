@@ -9,6 +9,21 @@ import java.util.Stack;
  */
 public class P3_Inorder_Itr_Traversal {
 
+    public static void main(String[] args) {
+        P3_Inorder_Itr_Traversal p3_inorder_itr_traversal = new P3_Inorder_Itr_Traversal();
+
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        System.out.println(p3_inorder_itr_traversal.inOrder_iterative(root));
+
+    }
+
     /**
      * Left - Root - Right
      * TC: O(N)
@@ -41,20 +56,5 @@ public class P3_Inorder_Itr_Traversal {
             }
         }
         return result;
-    }
-
-    public static void main(String[] args) {
-        P3_Inorder_Itr_Traversal p3_inorder_itr_traversal = new P3_Inorder_Itr_Traversal();
-
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        System.out.println(p3_inorder_itr_traversal.inOrder_iterative(root));
-
     }
 }

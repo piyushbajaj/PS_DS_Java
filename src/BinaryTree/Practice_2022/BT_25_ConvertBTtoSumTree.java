@@ -8,8 +8,18 @@ import java.util.Set;
  * Created by bajajp on 10 Jun, 2022
  */
 public class BT_25_ConvertBTtoSumTree extends CommonUtils {
+    public static void main(String[] args) {
+        BT_25_ConvertBTtoSumTree convertBTtoSumTree = new BT_25_ConvertBTtoSumTree();
+        convertBTtoSumTree.insertDummyNodes();
+        System.out.println(convertBTtoSumTree.printBinaryTree_levelOrder(convertBTtoSumTree.root));
+        convertBTtoSumTree.convertBTSumTree(convertBTtoSumTree.root);
+        System.out.println(convertBTtoSumTree.printBinaryTree_levelOrder(convertBTtoSumTree.root));
+    }
+
     public int convertBTSumTree(TreeNode root) {
-        if (root == null) return 0;
+        if (root == null) {
+            return 0;
+        }
         String[] words = {"foo", "bar"};
         Set<String> set = new HashSet<>(Arrays.asList(words));
 
@@ -21,13 +31,5 @@ public class BT_25_ConvertBTtoSumTree extends CommonUtils {
         root.data = leftSum + rightSum;
 
         return root.data + old;
-    }
-
-    public static void main(String[] args) {
-        BT_25_ConvertBTtoSumTree convertBTtoSumTree = new BT_25_ConvertBTtoSumTree();
-        convertBTtoSumTree.insertDummyNodes();
-        System.out.println(convertBTtoSumTree.printBinaryTree_levelOrder(convertBTtoSumTree.root));
-        convertBTtoSumTree.convertBTSumTree(convertBTtoSumTree.root);
-        System.out.println(convertBTtoSumTree.printBinaryTree_levelOrder(convertBTtoSumTree.root));
     }
 }

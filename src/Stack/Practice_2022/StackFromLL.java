@@ -5,14 +5,20 @@ import java.util.ArrayList;
 public class StackFromLL {
     Node head;
 
-    static class Node {
-        Node next;
-        int data;
+    public static void main(String[] args) {
+        StackFromLL stackFromLL = new StackFromLL();
+        stackFromLL.push(1);
+        stackFromLL.push(2);
+        stackFromLL.push(3);
+        stackFromLL.push(4);
+        stackFromLL.push(5);
 
-        public Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
+        System.out.println(stackFromLL);
+
+        System.out.println(stackFromLL.pop());
+
+        System.out.println(stackFromLL.peek());
+
     }
 
     public void push(int x) {
@@ -64,19 +70,13 @@ public class StackFromLL {
         return arrayList.toString();
     }
 
-    public static void main(String[] args) {
-        StackFromLL stackFromLL = new StackFromLL();
-        stackFromLL.push(1);
-        stackFromLL.push(2);
-        stackFromLL.push(3);
-        stackFromLL.push(4);
-        stackFromLL.push(5);
+    static class Node {
+        Node next;
+        int data;
 
-        System.out.println(stackFromLL);
-
-        System.out.println(stackFromLL.pop());
-
-        System.out.println(stackFromLL.peek());
-
+        public Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
     }
 }

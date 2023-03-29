@@ -27,6 +27,24 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  * SC: O(1)
  */
 public class P8_Inorder_Successor_Predecessor {
+    public static void main(String[] args) {
+        P8_Inorder_Successor_Predecessor p8_inorder_successor_predecessor = new P8_Inorder_Successor_Predecessor();
+
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        System.out.println(p8_inorder_successor_predecessor.inorderSuccessor(root, root).data);
+
+        System.out.println(p8_inorder_successor_predecessor.inorderSuccessor_improved(root, root).data);
+
+        System.out.println(p8_inorder_successor_predecessor.inorderPredecessor_improved(root, root).data);
+    }
+
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
         if (root == null || p == null) {
             return null;
@@ -111,24 +129,5 @@ public class P8_Inorder_Successor_Predecessor {
         }
 
         return predecessor;
-    }
-
-
-    public static void main(String[] args) {
-        P8_Inorder_Successor_Predecessor p8_inorder_successor_predecessor = new P8_Inorder_Successor_Predecessor();
-
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        System.out.println(p8_inorder_successor_predecessor.inorderSuccessor(root, root).data);
-
-        System.out.println(p8_inorder_successor_predecessor.inorderSuccessor_improved(root, root).data);
-
-        System.out.println(p8_inorder_successor_predecessor.inorderPredecessor_improved(root, root).data);
     }
 }

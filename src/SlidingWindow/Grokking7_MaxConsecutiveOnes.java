@@ -9,9 +9,13 @@ public class Grokking7_MaxConsecutiveOnes {
         int maxLen = 0;
         int countZeroes = 0;
 
-        if (n > 100000 || n <= 0) return -1;
+        if (n > 100000 || n <= 0) {
+            return -1;
+        }
 
-        if (k > n || k < 0) return -1;
+        if (k > n || k < 0) {
+            return -1;
+        }
 
         while (r < n) {
             if (arr[r] == 0) {
@@ -37,6 +41,6 @@ public class Grokking7_MaxConsecutiveOnes {
     }
 
     public static void main(String[] args) {
-        System.out.println(maxConsecutiveOnes(new int[]{0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1}, 3));
+        System.out.println(maxConsecutiveOnes(new int[] {0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1}, 3));
     }
 }

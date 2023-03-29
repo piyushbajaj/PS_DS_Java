@@ -7,10 +7,24 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_2_2D_3D_Grids;
  * User: piyushbajaj
  * Date: 12/11/22
  * Time: 5:47 pm
- *
+ * <p>
  * Link codingNinja: <a href="https://www.codingninjas.com/codestudio/problems/ninja-s-training_3621003">...</a>
  */
 public class P7_Ninja_Training {
+
+    public static void main(String[] args) {
+        P7_Ninja_Training p7_ninja_training = new P7_Ninja_Training();
+        int[][] points = new int[][] {{1, 2, 5},
+            {3, 1, 1},
+            {3, 3, 3}};
+        System.out.println(p7_ninja_training.ninjaTraining(points.length, points));
+
+        System.out.println(p7_ninja_training.ninjaTraining_mem(points.length, points));
+
+        System.out.println(p7_ninja_training.ninjaTraining_tab(points.length, points));
+
+        System.out.println(p7_ninja_training.ninjaTraining_tab_improve_space(points.length, points));
+    }
 
     /**
      * Recursion
@@ -161,20 +175,6 @@ public class P7_Ninja_Training {
 
         return prev[3];
 
-    }
-
-    public static void main(String[] args) {
-        P7_Ninja_Training p7_ninja_training = new P7_Ninja_Training();
-        int[][] points = new int[][] {{1, 2, 5},
-            {3, 1, 1},
-            {3, 3, 3}};
-        System.out.println(p7_ninja_training.ninjaTraining(points.length, points));
-
-        System.out.println(p7_ninja_training.ninjaTraining_mem(points.length, points));
-
-        System.out.println(p7_ninja_training.ninjaTraining_tab(points.length, points));
-
-        System.out.println(p7_ninja_training.ninjaTraining_tab_improve_space(points.length, points));
     }
 
 }

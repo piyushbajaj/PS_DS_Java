@@ -14,6 +14,11 @@ import java.util.Arrays;
  */
 public class P5_Meeting_Rooms {
 
+    public static void main(String[] args) {
+        P5_Meeting_Rooms p5_meeting_rooms = new P5_Meeting_Rooms();
+        System.out.println(p5_meeting_rooms.canAttendMeetings(new int[][] {{0, 30}, {5, 10}, {15, 20}}));
+    }
+
     /**
      * Approach:
      * 1.
@@ -36,10 +41,5 @@ public class P5_Meeting_Rooms {
             }
         }
         return true;
-    }
-
-    public static void main(String[] args) {
-        P5_Meeting_Rooms p5_meeting_rooms = new P5_Meeting_Rooms();
-        System.out.println(p5_meeting_rooms.canAttendMeetings(new int[][] {{0, 30}, {5, 10}, {15, 20}}));
     }
 }

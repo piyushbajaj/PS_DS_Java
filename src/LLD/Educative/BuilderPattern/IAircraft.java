@@ -8,5 +8,5 @@ package LLD.Educative.BuilderPattern;
  * Date: 14/12/22
  * Time: 7:20 pm
  */
-public interface IAircraft{
+public interface IAircraft {
 }

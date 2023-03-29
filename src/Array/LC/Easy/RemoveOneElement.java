@@ -4,6 +4,11 @@ package Array.LC.Easy;
  * Created by bajajp on 31 Jul, 2022
  */
 public class RemoveOneElement {
+    public static void main(String[] args) {
+        RemoveOneElement removeOneElement = new RemoveOneElement();
+        System.out.println(removeOneElement.removeOneElement(new int[] {1, 2, 10, 5, 7}));
+    }
+
     public boolean removeOneElement(int[] nums) {
         int len = nums.length;
         int[] cal = new int[len - 1];
@@ -24,14 +29,11 @@ public class RemoveOneElement {
     public boolean isSorted(int[] arr) {
 
         for (int i = 0; i < arr.length - 1; i++) {
-            if (arr[i + 1] < arr[i]) return false;
+            if (arr[i + 1] < arr[i]) {
+                return false;
+            }
         }
 
         return true;
-    }
-
-    public static void main(String[] args) {
-        RemoveOneElement removeOneElement = new RemoveOneElement();
-        System.out.println(removeOneElement.removeOneElement(new int[]{1, 2, 10, 5, 7}));
     }
 }

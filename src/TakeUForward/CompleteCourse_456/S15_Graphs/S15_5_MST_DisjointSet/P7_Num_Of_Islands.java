@@ -12,6 +12,10 @@ import java.util.List;
  */
 public class P7_Num_Of_Islands {
 
+    public static void main(String[] args) {
+
+    }
+
     /**
      * Approach:
      * 1.
@@ -27,9 +31,5 @@ public class P7_Num_Of_Islands {
         P2_Disjoint_Set disjoint_set = new P2_Disjoint_Set(rows * cols);
 
         return null;
-    }
-
-    public static void main(String[] args) {
-
     }
 }

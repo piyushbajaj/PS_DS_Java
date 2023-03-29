@@ -29,10 +29,10 @@ public class FindPairWithSum {
 
     public static void cal() {
         final List<Long> longs = Arrays
-                .stream(SEGMENT_ID.split(","))
-                .map(String::trim)
-                .map(Long::parseLong)
-                .collect(Collectors.toList());
+            .stream(SEGMENT_ID.split(","))
+            .map(String::trim)
+            .map(Long::parseLong)
+            .collect(Collectors.toList());
 
         System.out.println(longs);
         LocalDate todaydate = LocalDate.now();

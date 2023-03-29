@@ -7,14 +7,25 @@ public class BinaryNumberTOInt {
     Node head;
     Reversal reversal;
 
-    static class Node {
-        int data;
-        Node next;
-
-        Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
+    public static void main(String[] args) {
+        BinaryNumberTOInt binaryNumberTOInt = new BinaryNumberTOInt();
+        binaryNumberTOInt.insertNodeInEnd(1);
+        binaryNumberTOInt.insertNodeInEnd(0);
+        binaryNumberTOInt.insertNodeInEnd(0);
+        binaryNumberTOInt.insertNodeInEnd(1);
+        binaryNumberTOInt.insertNodeInEnd(0);
+        binaryNumberTOInt.insertNodeInEnd(0);
+        binaryNumberTOInt.insertNodeInEnd(1);
+        binaryNumberTOInt.insertNodeInEnd(1);
+        binaryNumberTOInt.insertNodeInEnd(1);
+        binaryNumberTOInt.insertNodeInEnd(0);
+        binaryNumberTOInt.insertNodeInEnd(0);
+        binaryNumberTOInt.insertNodeInEnd(0);
+        binaryNumberTOInt.insertNodeInEnd(0);
+        binaryNumberTOInt.insertNodeInEnd(0);
+        binaryNumberTOInt.insertNodeInEnd(0);
+        binaryNumberTOInt.printList(binaryNumberTOInt.head);
+        System.out.println(binaryNumberTOInt.getDecimalValue(binaryNumberTOInt.head));
     }
 
     public Node printList(Node start) {
@@ -80,24 +91,13 @@ public class BinaryNumberTOInt {
         return sum;
     }
 
-    public static void main(String[] args) {
-        BinaryNumberTOInt binaryNumberTOInt = new BinaryNumberTOInt();
-        binaryNumberTOInt.insertNodeInEnd(1);
-        binaryNumberTOInt.insertNodeInEnd(0);
-        binaryNumberTOInt.insertNodeInEnd(0);
-        binaryNumberTOInt.insertNodeInEnd(1);
-        binaryNumberTOInt.insertNodeInEnd(0);
-        binaryNumberTOInt.insertNodeInEnd(0);
-        binaryNumberTOInt.insertNodeInEnd(1);
-        binaryNumberTOInt.insertNodeInEnd(1);
-        binaryNumberTOInt.insertNodeInEnd(1);
-        binaryNumberTOInt.insertNodeInEnd(0);
-        binaryNumberTOInt.insertNodeInEnd(0);
-        binaryNumberTOInt.insertNodeInEnd(0);
-        binaryNumberTOInt.insertNodeInEnd(0);
-        binaryNumberTOInt.insertNodeInEnd(0);
-        binaryNumberTOInt.insertNodeInEnd(0);
-        binaryNumberTOInt.printList(binaryNumberTOInt.head);
-        System.out.println(binaryNumberTOInt.getDecimalValue(binaryNumberTOInt.head));
+    static class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
     }
 }

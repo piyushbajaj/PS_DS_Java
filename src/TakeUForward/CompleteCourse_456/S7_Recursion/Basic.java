@@ -24,6 +24,21 @@ public class Basic {
         fun();
     }
 
+    public static void main(String[] args) {
+        Basic basic = new Basic();
+        basic.printNameNTimes(0, 5);
+
+        basic.print1ToN(1, 4);
+
+        basic.printNTo1(4, 4);
+
+        basic.addingSum1toN(3, 0);
+
+        System.out.println(basic.addingSum1toN(3));
+
+        System.out.println(basic.fact(3));
+    }
+
     /**
      * TC: O(N)
      * SC: O(N)
@@ -94,20 +109,5 @@ public class Basic {
         }
 
         return i * fact(i - 1);
-    }
-
-    public static void main(String[] args) {
-        Basic basic = new Basic();
-        basic.printNameNTimes(0, 5);
-
-        basic.print1ToN(1, 4);
-
-        basic.printNTo1(4, 4);
-
-        basic.addingSum1toN(3, 0);
-
-        System.out.println(basic.addingSum1toN(3));
-
-        System.out.println(basic.fact(3));
     }
 }

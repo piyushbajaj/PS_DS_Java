@@ -9,6 +9,20 @@ import java.util.Stack;
  */
 public class P2_Preorder_Itr_Traversal {
 
+    public static void main(String[] args) {
+        P2_Preorder_Itr_Traversal p2_preorder_traversal = new P2_Preorder_Itr_Traversal();
+
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        System.out.println(p2_preorder_traversal.preOrder_iterative(root));
+    }
+
     /**
      * Iterative way of solving DFS problem using Stack
      * TC: O(N)
@@ -18,7 +32,9 @@ public class P2_Preorder_Itr_Traversal {
      * @return
      */
     public List<Integer> preOrder_iterative(TreeNode curr) {
-        if (curr == null) return null;
+        if (curr == null) {
+            return null;
+        }
 
         Stack<TreeNode> preOrderStack = new Stack<>();
         List<Integer> result = new ArrayList<>();
@@ -38,19 +54,5 @@ public class P2_Preorder_Itr_Traversal {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        P2_Preorder_Itr_Traversal p2_preorder_traversal = new P2_Preorder_Itr_Traversal();
-
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        System.out.println(p2_preorder_traversal.preOrder_iterative(root));
     }
 }

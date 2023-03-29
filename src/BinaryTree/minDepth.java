@@ -4,35 +4,11 @@ package BinaryTree;
  * Created by piyush.bajaj on 23/07/17.
  */
 public class minDepth {
+    static int count = Integer.MAX_VALUE;
     Node root;
 
-    static class Node {
-        Node left, right;
-        int data;
-
-        Node(int data) {
-            this.data = data;
-            left = right = null;
-        }
-    }
-
-    minDepth(int data){
+    minDepth(int data) {
         root = new Node(data);
-    }
-
-    static int count = Integer.MAX_VALUE;
-    public void countMinDepth(Node key, int depth){
-        if(key == null)
-            return;
-
-        if(key.left == null && key.right == null) {
-            if (depth < count) {
-                count = depth;
-            }
-        }
-        countMinDepth(key.left, depth+1);
-        countMinDepth(key.right, depth+1);
-
     }
 
     public static void main(String[] args) {
@@ -48,5 +24,30 @@ public class minDepth {
 
         SN.countMinDepth(SN.root, 1);
         System.out.println(count);
+    }
+
+    public void countMinDepth(Node key, int depth) {
+        if (key == null) {
+            return;
+        }
+
+        if (key.left == null && key.right == null) {
+            if (depth < count) {
+                count = depth;
+            }
+        }
+        countMinDepth(key.left, depth + 1);
+        countMinDepth(key.right, depth + 1);
+
+    }
+
+    static class Node {
+        Node left, right;
+        int data;
+
+        Node(int data) {
+            this.data = data;
+            left = right = null;
+        }
     }
 }

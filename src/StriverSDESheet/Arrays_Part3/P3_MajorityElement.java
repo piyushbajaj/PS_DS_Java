@@ -8,8 +8,13 @@ import java.util.Map;
  */
 public class P3_MajorityElement {
 
+    public static void main(String[] args) {
+        P3_MajorityElement p3_majorityElement = new P3_MajorityElement();
+        System.out.println(p3_majorityElement.majorityElement(new int[] {2, 2, 1, 1, 1, 2, 2}));
+        System.out.println(p3_majorityElement.majorityElement_better(new int[] {2, 2, 1, 1, 1, 2, 2}));
+    }
+
     /**
-     *
      * @param arr
      * @return
      */
@@ -34,6 +39,7 @@ public class P3_MajorityElement {
      * Moore’s Voting Algorithm
      * TC: O(N)
      * SC: o(N)
+     *
      * @param arr
      * @return
      */
@@ -45,18 +51,12 @@ public class P3_MajorityElement {
             if (count == 0) {
                 candidate = num;
             }
-            if (num == candidate)
+            if (num == candidate) {
                 count++;
-            else
+            } else {
                 count--;
+            }
         }
         return candidate;
-    }
-
-
-    public static void main(String[] args) {
-        P3_MajorityElement p3_majorityElement = new P3_MajorityElement();
-        System.out.println(p3_majorityElement.majorityElement(new int[]{2, 2, 1, 1, 1, 2, 2}));
-        System.out.println(p3_majorityElement.majorityElement_better(new int[]{2, 2, 1, 1, 1, 2, 2}));
     }
 }

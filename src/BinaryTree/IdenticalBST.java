@@ -7,38 +7,50 @@ import java.util.ArrayList;
  */
 public class IdenticalBST {
     Node root;
-    public static class Node{
-        int data;
-        Node left, right;
+    ArrayList<Integer> res = new ArrayList<>();
+    ArrayList<Integer> res1 = new ArrayList<>();
 
-        Node(int data){
-            this.data = data;
-            left = right = null;
-        }
-    }
-
-    public IdenticalBST(){
+    public IdenticalBST() {
         root = null;
     }
 
-    public IdenticalBST(int key){
+    public IdenticalBST(int key) {
         root = new Node(key);
     }
 
-    public boolean isIdenticalBST(ArrayList<Integer> res1, ArrayList<Integer> res2){
-        if(res1 == res2)
+    public static void main(String[] args) {
+        IdenticalBST IT = new IdenticalBST();
+        int[] arr1 = {2, 4, 1, 3};
+        int[] arr2 = {2, 4, 3, 1};
+
+//        ArrayList<Integer> res1 = IT.inOrderTraverse(arr1, 0, arr1.length - 1);
+//        System.out.println(res1);
+//
+//        ArrayList<Integer> res2 = IT.inOrderTraverse1(arr2, 0, arr2.length - 1);
+//
+//        System.out.println(res2);
+//
+//        System.out.println(IT.isIdenticalBST(res1, res2));
+
+
+        System.out.println(IT.isSameBST(arr1, arr2, arr1.length));
+
+    }
+
+    public boolean isIdenticalBST(ArrayList<Integer> res1, ArrayList<Integer> res2) {
+        if (res1 == res2) {
             return true;
-        else
+        } else {
             return false;
+        }
 
 
     }
 
-    ArrayList<Integer>  res = new ArrayList<>();
-    public ArrayList<Integer> inOrderTraverse(int[] arr1 , int start, int end){
-        if(start > end)
+    public ArrayList<Integer> inOrderTraverse(int[] arr1, int start, int end) {
+        if (start > end) {
             return res;
-        else {
+        } else {
             inOrderTraverse(arr1, 2 * start + 1, end);
             res.add(arr1[start]);
             inOrderTraverse(arr1, 2 * start + 2, end);
@@ -46,18 +58,16 @@ public class IdenticalBST {
         return res;
     }
 
-    ArrayList<Integer>  res1 = new ArrayList<>();
-    public ArrayList<Integer> inOrderTraverse1(int[] arr2 , int start, int end){
-        if(start > end)
+    public ArrayList<Integer> inOrderTraverse1(int[] arr2, int start, int end) {
+        if (start > end) {
             return res1;
-        else {
+        } else {
             inOrderTraverse1(arr2, 2 * start + 1, end);
             res1.add(arr2[start]);
             inOrderTraverse1(arr2, 2 * start + 2, end);
         }
         return res1;
     }
-
 
 
     // A C program to check for Identical BSTs without building the trees
@@ -69,33 +79,32 @@ public class IdenticalBST {
       Initially, the call is made for INT_MIN and INT_MAX as 'min' and 'max'
       respectively, because root has no parent.
       i1 and i2 are just after the indexes of the parent element in a[] and b[]. */
-    boolean isSameBSTUtil(int a[], int b[], int n, int i1, int i2, int min, int max)
-    {
+    boolean isSameBSTUtil(int a[], int b[], int n, int i1, int i2, int min, int max) {
         int j, k;
 
-        for(j = i1; j< n; j++ ){
-            if(a[j] > min && a[j] < max)
+        for (j = i1; j < n; j++) {
+            if (a[j] > min && a[j] < max) {
                 break;
+            }
         }
 
-        for(k = i2; k< n; k++ ){
-            if(b[k] > min && b[k] < max)
+        for (k = i2; k < n; k++) {
+            if (b[k] > min && b[k] < max) {
                 break;
+            }
         }
 
-        if(j==n && k==n)
+        if (j == n && k == n) {
             return true;
+        }
 
-        if(((j==n)^(k==n)) || (a[j]!= b[k])){
+        if (((j == n) ^ (k == n)) || (a[j] != b[k])) {
             return false;
         }
 
 
-        return isSameBSTUtil(a, b, n, j+1, k+1, a[j], max) &&  //Right Subtree
-                isSameBSTUtil(a, b, n, j+1, k+1, min, a[j]);
-
-
-
+        return isSameBSTUtil(a, b, n, j + 1, k + 1, a[j], max) &&  //Right Subtree
+            isSameBSTUtil(a, b, n, j + 1, k + 1, min, a[j]);
 
 
 //        int j, k;
@@ -130,28 +139,17 @@ public class IdenticalBST {
     }
 
     // A wrapper over isSameBSTUtil()
-    boolean isSameBST(int a[], int b[], int n)
-    {
+    boolean isSameBST(int a[], int b[], int n) {
         return isSameBSTUtil(a, b, n, 0, 0, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
-    public static void main(String[] args) {
-        IdenticalBST IT = new IdenticalBST();
-        int[] arr1 = {2, 4, 1, 3};
-        int[] arr2 = {2, 4, 3, 1};
+    public static class Node {
+        int data;
+        Node left, right;
 
-//        ArrayList<Integer> res1 = IT.inOrderTraverse(arr1, 0, arr1.length - 1);
-//        System.out.println(res1);
-//
-//        ArrayList<Integer> res2 = IT.inOrderTraverse1(arr2, 0, arr2.length - 1);
-//
-//        System.out.println(res2);
-//
-//        System.out.println(IT.isIdenticalBST(res1, res2));
-
-
-
-        System.out.println(IT.isSameBST(arr1, arr2, arr1.length));
-
+        Node(int data) {
+            this.data = data;
+            left = right = null;
+        }
     }
 }

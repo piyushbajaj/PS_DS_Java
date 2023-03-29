@@ -10,6 +10,18 @@ package TakeUForward.CompleteCourse_456.S16_DP.S16_6_DP_Stocks;
  */
 public class P2_Best_Time_II {
 
+    public static void main(String[] args) {
+        P2_Best_Time_II p2_best_time_ii = new P2_Best_Time_II();
+        int[] prices = {7, 1, 5, 3, 6, 4};
+        System.out.println(p2_best_time_ii.maxProfit(prices));
+
+        System.out.println(p2_best_time_ii.maxProfit_mem(prices));
+
+        System.out.println(p2_best_time_ii.maxProfit_tab(prices));
+
+        System.out.println(p2_best_time_ii.maxProfit_tab_improve(prices));
+    }
+
     /**
      * Recursion
      * TC: O(2^N)
@@ -165,17 +177,5 @@ public class P2_Best_Time_II {
         }
 
         return ahead[1];
-    }
-
-    public static void main(String[] args) {
-        P2_Best_Time_II p2_best_time_ii = new P2_Best_Time_II();
-        int[] prices = {7, 1, 5, 3, 6, 4};
-        System.out.println(p2_best_time_ii.maxProfit(prices));
-
-        System.out.println(p2_best_time_ii.maxProfit_mem(prices));
-
-        System.out.println(p2_best_time_ii.maxProfit_tab(prices));
-
-        System.out.println(p2_best_time_ii.maxProfit_tab_improve(prices));
     }
 }

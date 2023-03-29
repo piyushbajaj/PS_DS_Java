@@ -7,8 +7,14 @@ import java.util.Arrays;
  */
 public class CountingSort extends BaseClass {
 
+    public static void main(String[] args) {
+        int[] arr = {3, 10, 1, 5, 0, 20};
+        CountingSort countingSort = new CountingSort();
+        countingSort.countingSort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+
     /**
-     *
      * @param arr
      */
     public void countingSort(int[] arr) {
@@ -29,12 +35,5 @@ public class CountingSort extends BaseClass {
         }
 
         System.arraycopy(output, 0, arr, 0, n);
-    }
-
-    public static void main(String[] args) {
-        int[] arr = {3, 10, 1, 5, 0, 20};
-        CountingSort countingSort = new CountingSort();
-        countingSort.countingSort(arr);
-        System.out.println(Arrays.toString(arr));
     }
 }

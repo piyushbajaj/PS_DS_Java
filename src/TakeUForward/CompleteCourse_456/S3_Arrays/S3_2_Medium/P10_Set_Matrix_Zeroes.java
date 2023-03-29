@@ -17,6 +17,13 @@ import javafx.util.Pair;
  * lc: <a href="https://leetcode.com/problems/set-matrix-zeroes/description/">...</a>
  */
 public class P10_Set_Matrix_Zeroes {
+    public static void main(String[] args) {
+        P10_Set_Matrix_Zeroes p10_set_matrix_zeroes = new P10_Set_Matrix_Zeroes();
+        int[][] matrix = {{0, 1, 2, 0}, {3, 4, 5, 2}, {1, 3, 1, 5}};
+        p10_set_matrix_zeroes.setZeroes(matrix);
+        System.out.println(Arrays.deepToString(matrix));
+    }
+
     /**
      * TC: O(N * M) + O(k * (N + M))
      * SC: O(k)
@@ -49,12 +56,5 @@ public class P10_Set_Matrix_Zeroes {
                 matrix[ith][j] = 0;
             }
         }
-    }
-
-    public static void main(String[] args) {
-        P10_Set_Matrix_Zeroes p10_set_matrix_zeroes = new P10_Set_Matrix_Zeroes();
-        int[][] matrix = {{0, 1, 2, 0}, {3, 4, 5, 2}, {1, 3, 1, 5}};
-        p10_set_matrix_zeroes.setZeroes(matrix);
-        System.out.println(Arrays.deepToString(matrix));
     }
 }

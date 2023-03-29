@@ -7,27 +7,19 @@ import java.util.HashSet;
  */
 public class removeDuplicates {
     static Node head;
-    static class Node{
-        Node next;
-        char data;
 
-        Node(char data){
-            this.data = data;
-            this.next = null;
-        }
-    }
-
-    public static Node createLL(String s){
+    public static Node createLL(String s) {
         int n = s.length();
-        if(n == 0) return null;
+        if (n == 0) {
+            return null;
+        }
 
         Node Nd = head;
-        for(int i = 0; i < n; i++){
-            if(Nd == null){
+        for (int i = 0; i < n; i++) {
+            if (Nd == null) {
                 Nd = new Node(s.charAt(i));
                 head = Nd;
-            }
-            else {
+            } else {
                 Nd.next = new Node(s.charAt(i));
                 Nd = Nd.next;
             }
@@ -36,11 +28,12 @@ public class removeDuplicates {
         return head;
     }
 
-    public static void printList(Node Nd){
-        if(head == null)
+    public static void printList(Node Nd) {
+        if (head == null) {
             return;
+        }
 
-        while (Nd!=null){
+        while (Nd != null) {
             System.out.print(Nd.data + " -> ");
             Nd = Nd.next;
         }
@@ -69,18 +62,18 @@ public class removeDuplicates {
     Space COmplexity: O(N)
 
      */
-    public static Node removeDuplicates(Node head){
+    public static Node removeDuplicates(Node head) {
         HashSet<Character> hashSet = new HashSet<>();
 
         Node Nd = head;
-        if(Nd == null)
+        if (Nd == null) {
             return Nd;
+        }
 
-        while (Nd.next!=null){
-            if(hashSet.contains(Nd.next.data)){
+        while (Nd.next != null) {
+            if (hashSet.contains(Nd.next.data)) {
                 Nd.next = Nd.next.next;
-            }
-            else{
+            } else {
                 hashSet.add(Nd.next.data);
                 Nd = Nd.next;
             }
@@ -94,27 +87,38 @@ public class removeDuplicates {
     Compromising Time Complexity: O(N*N)
     Space: O(1)
      */
-    public static Node removeDuplicates_1(Node head){
+    public static Node removeDuplicates_1(Node head) {
         //HashSet<Character> hashSet = new HashSet<>();
 
         Node Nd = head;
-        if(Nd == null)
+        if (Nd == null) {
             return Nd;
+        }
 
-        while (Nd!=null){
+        while (Nd != null) {
             Node temp = Nd;
-            while (temp!=null && temp.next!=null){
-                if(Nd.data == temp.next.data){
+            while (temp != null && temp.next != null) {
+                if (Nd.data == temp.next.data) {
                     temp.next = temp.next.next;
-                }
-                else
+                } else {
                     temp = temp.next;
+                }
             }
             Nd = Nd.next;
 
         }
 
         return head;
+    }
+
+    static class Node {
+        Node next;
+        char data;
+
+        Node(char data) {
+            this.data = data;
+            this.next = null;
+        }
     }
 
 }

@@ -18,6 +18,23 @@ import TakeUForward.CompleteCourse_456.S15_Graphs.S15_1_Learning.P1_BFS;
  */
 public class P11_Bipartite_Graph_BFS {
 
+    public static void main(String[] args) {
+        P1_BFS p1_bfs = new P1_BFS(8);
+        p1_bfs.addEdge(1, 2, P1_BFS.GraphDirection.BiDirectional);
+        p1_bfs.addEdge(2, 3, P1_BFS.GraphDirection.BiDirectional);
+        p1_bfs.addEdge(2, 6, P1_BFS.GraphDirection.BiDirectional);
+        p1_bfs.addEdge(3, 4, P1_BFS.GraphDirection.BiDirectional);
+        p1_bfs.addEdge(6, 5, P1_BFS.GraphDirection.BiDirectional);
+        p1_bfs.addEdge(5, 4, P1_BFS.GraphDirection.BiDirectional);
+        p1_bfs.addEdge(4, 7, P1_BFS.GraphDirection.BiDirectional);
+        p1_bfs.addEdge(7, 8, P1_BFS.GraphDirection.BiDirectional);
+
+        P11_Bipartite_Graph_BFS p11_bipartite_graph = new P11_Bipartite_Graph_BFS();
+        p1_bfs.printAllEdges(P1_BFS.GraphType.OneBasedIndexing);
+        System.out.println(p11_bipartite_graph.isBipartite(8, p1_bfs.adjList));
+
+    }
+
     /**
      * TC: O(N + 2*E)
      * SC: O(N)
@@ -66,22 +83,5 @@ public class P11_Bipartite_Graph_BFS {
             }
         }
         return true;
-    }
-
-    public static void main(String[] args) {
-        P1_BFS p1_bfs = new P1_BFS(8);
-        p1_bfs.addEdge(1, 2, P1_BFS.GraphDirection.BiDirectional);
-        p1_bfs.addEdge(2, 3, P1_BFS.GraphDirection.BiDirectional);
-        p1_bfs.addEdge(2, 6, P1_BFS.GraphDirection.BiDirectional);
-        p1_bfs.addEdge(3, 4, P1_BFS.GraphDirection.BiDirectional);
-        p1_bfs.addEdge(6, 5, P1_BFS.GraphDirection.BiDirectional);
-        p1_bfs.addEdge(5, 4, P1_BFS.GraphDirection.BiDirectional);
-        p1_bfs.addEdge(4, 7, P1_BFS.GraphDirection.BiDirectional);
-        p1_bfs.addEdge(7, 8, P1_BFS.GraphDirection.BiDirectional);
-
-        P11_Bipartite_Graph_BFS p11_bipartite_graph = new P11_Bipartite_Graph_BFS();
-        p1_bfs.printAllEdges(P1_BFS.GraphType.OneBasedIndexing);
-        System.out.println(p11_bipartite_graph.isBipartite(8, p1_bfs.adjList));
-
     }
 }

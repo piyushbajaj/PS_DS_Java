@@ -9,22 +9,24 @@ public class compressed_prob {
         System.out.println(compress(str));
     }
 
-    public static String compress(String str){
+    public static String compress(String str) {
         int n = str.length();
 
         int count = 1, max = 1;
 
-        for(int i = 1; i < n; i++){
-            if(str.charAt(i) == str.charAt(i-1)) {
+        for (int i = 1; i < n; i++) {
+            if (str.charAt(i) == str.charAt(i - 1)) {
                 count++;
-                if(count > max)
+                if (count > max) {
                     max = count;
-            }
-            else {
+                }
+            } else {
                 count = 1;
             }
         }
-        if(max <=2) return str;
+        if (max <= 2) {
+            return str;
+        }
 
 
         boolean flag = false;
@@ -46,18 +48,17 @@ public class compressed_prob {
 //        }
 
         count = 1;
-        for(int i = 1; i < n; i++){
-            if(str.charAt(i) == str.charAt(i-1)){
+        for (int i = 1; i < n; i++) {
+            if (str.charAt(i) == str.charAt(i - 1)) {
                 count++;
-            }
-            else {
-                sb.append(str.charAt(i-1));
+            } else {
+                sb.append(str.charAt(i - 1));
                 sb.append(count);
                 count = 1;
             }
         }
 
-        sb.append(str.charAt(n-1));
+        sb.append(str.charAt(n - 1));
         sb.append(count);
 
         return sb.toString();

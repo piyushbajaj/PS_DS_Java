@@ -16,22 +16,25 @@ public class permutation_prob {
     Time Complexity: O(N)
     Space Complexity: O(256)
      */
-    public static boolean permutation(String str1, String str2){
+    public static boolean permutation(String str1, String str2) {
         int n1 = str1.length();
         int n2 = str2.length();
 
-        if(n1!= n2) return false;
+        if (n1 != n2) {
+            return false;
+        }
 
         int[] arr = new int[256];
 
-        for(int i = 0; i < n1; i++){
+        for (int i = 0; i < n1; i++) {
             arr[str1.charAt(i)]++;
         }
 
-        for(int i = 0; i < n1; i++){
+        for (int i = 0; i < n1; i++) {
             arr[str2.charAt(i)]--;
-            if(arr[str2.charAt(i)] < 0)
+            if (arr[str2.charAt(i)] < 0) {
                 return false;
+            }
         }
 
         return true;

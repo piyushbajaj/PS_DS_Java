@@ -16,6 +16,14 @@ import java.util.Stack;
  */
 public class P11_Largest_Rectangle_In_Histogram {
 
+    public static void main(String[] args) {
+        P11_Largest_Rectangle_In_Histogram p11_largest_rectangle_in_histogram =
+            new P11_Largest_Rectangle_In_Histogram();
+        System.out.println(p11_largest_rectangle_in_histogram.getMaxArea(new long[] {7, 2, 8, 9, 1, 3, 6, 5}, 8));
+        System.out.println(
+            p11_largest_rectangle_in_histogram.getMaxArea_better(new long[] {7, 2, 8, 9, 1, 3, 6, 5}, 8));
+    }
+
     /**
      * Approach:
      * 1. LeftArray -> Stores the first left index from the element, which is less than or equal to the element
@@ -114,13 +122,5 @@ public class P11_Largest_Rectangle_In_Histogram {
             stack.push(i);
         }
         return maxArea;
-    }
-
-    public static void main(String[] args) {
-        P11_Largest_Rectangle_In_Histogram p11_largest_rectangle_in_histogram =
-            new P11_Largest_Rectangle_In_Histogram();
-        System.out.println(p11_largest_rectangle_in_histogram.getMaxArea(new long[] {7, 2, 8, 9, 1, 3, 6, 5}, 8));
-        System.out.println(
-            p11_largest_rectangle_in_histogram.getMaxArea_better(new long[] {7, 2, 8, 9, 1, 3, 6, 5}, 8));
     }
 }

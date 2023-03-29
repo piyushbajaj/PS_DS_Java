@@ -11,6 +11,11 @@ import java.util.Arrays;
  * Time: 8:15 am
  */
 public class Convert_Temperature {
+    public static void main(String[] args) {
+        Convert_Temperature convert_temperature = new Convert_Temperature();
+        System.out.println(Arrays.toString(convert_temperature.convertTemperature(36.50)));
+    }
+
     public double[] convertTemperature(double celsius) {
         double kelvin = celsius + 273.15;
 
@@ -21,10 +26,5 @@ public class Convert_Temperature {
         kelvin = Double.parseDouble(String.format("%.5f", celsius + 273.15));
 
         return new double[] {kelvin, fahrenheit};
-    }
-
-    public static void main(String[] args) {
-        Convert_Temperature convert_temperature = new Convert_Temperature();
-        System.out.println(Arrays.toString(convert_temperature.convertTemperature(36.50)));
     }
 }

@@ -14,6 +14,13 @@ import java.util.Arrays;
  */
 public class P3_Immediate_Smaller_Element {
 
+    public static void main(String[] args) {
+        P3_Immediate_Smaller_Element p3_immediate_smaller_element = new P3_Immediate_Smaller_Element();
+        int[] arr = {4, 2, 1, 5, 3};
+        p3_immediate_smaller_element.immediateSmaller(arr, 5);
+        System.out.println(Arrays.toString(arr));
+    }
+
     /**
      * TC: O(N)
      * SC: O(1)
@@ -34,12 +41,5 @@ public class P3_Immediate_Smaller_Element {
                 arr[i] = -1;
             }
         }
-    }
-
-    public static void main(String[] args) {
-        P3_Immediate_Smaller_Element p3_immediate_smaller_element = new P3_Immediate_Smaller_Element();
-        int[] arr = {4, 2, 1, 5, 3};
-        p3_immediate_smaller_element.immediateSmaller(arr, 5);
-        System.out.println(Arrays.toString(arr));
     }
 }

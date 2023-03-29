@@ -28,7 +28,7 @@ public class P1_RunningSum {
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(runningSum(new int[]{1, 2, 3, 4})));
-        System.out.println(Arrays.toString(runningSum1(new int[]{1, 2, 3, 4})));
+        System.out.println(Arrays.toString(runningSum(new int[] {1, 2, 3, 4})));
+        System.out.println(Arrays.toString(runningSum1(new int[] {1, 2, 3, 4})));
     }
 }

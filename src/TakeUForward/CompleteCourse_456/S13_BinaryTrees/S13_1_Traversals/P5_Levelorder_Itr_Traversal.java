@@ -11,6 +11,26 @@ import java.util.Stack;
  */
 public class P5_Levelorder_Itr_Traversal {
 
+    public static void main(String[] args) {
+        P5_Levelorder_Itr_Traversal p5_levelorder_itr_traversal = new P5_Levelorder_Itr_Traversal();
+
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        System.out.println("Level Order Traversal: " + p5_levelorder_itr_traversal.levelOrderTraversal_iterative(root));
+
+        System.out.println(
+            "Spiral Level Order Traversal: " + p5_levelorder_itr_traversal.levelOrderTraversal_spiral_iterative(root));
+
+        System.out.println("Reversal Level Order Traversal: " +
+            p5_levelorder_itr_traversal.levelOrderTraversal_reverse_iterative(root));
+    }
+
     /**
      * Level by level print from root to leaf
      * <p>
@@ -21,7 +41,9 @@ public class P5_Levelorder_Itr_Traversal {
      * @return
      */
     public List<Integer> levelOrderTraversal_iterative(TreeNode curr) {
-        if (curr == null) return null;
+        if (curr == null) {
+            return null;
+        }
 
         List<Integer> result = new ArrayList<>();
 
@@ -49,7 +71,9 @@ public class P5_Levelorder_Itr_Traversal {
      * @return
      */
     public List<Integer> levelOrderTraversal_spiral_iterative(TreeNode curr) {
-        if (curr == null) return null;
+        if (curr == null) {
+            return null;
+        }
 
         List<Integer> result = new ArrayList<>();
 
@@ -95,7 +119,9 @@ public class P5_Levelorder_Itr_Traversal {
      * @return
      */
     public List<List<Integer>> levelOrderTraversal_reverse_iterative(TreeNode curr) {
-        if (curr == null) return null;
+        if (curr == null) {
+            return null;
+        }
 
         List<List<Integer>> result = new ArrayList<>();
 
@@ -129,23 +155,5 @@ public class P5_Levelorder_Itr_Traversal {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        P5_Levelorder_Itr_Traversal p5_levelorder_itr_traversal = new P5_Levelorder_Itr_Traversal();
-
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        System.out.println("Level Order Traversal: " + p5_levelorder_itr_traversal.levelOrderTraversal_iterative(root));
-
-        System.out.println("Spiral Level Order Traversal: " + p5_levelorder_itr_traversal.levelOrderTraversal_spiral_iterative(root));
-
-        System.out.println("Reversal Level Order Traversal: " + p5_levelorder_itr_traversal.levelOrderTraversal_reverse_iterative(root));
     }
 }

@@ -18,6 +18,12 @@ import java.util.List;
  */
 public class P4_Largest_Divisible_Subsequence {
 
+    public static void main(String[] args) {
+        P4_Largest_Divisible_Subsequence p4_largest_divisible_subsequence = new P4_Largest_Divisible_Subsequence();
+        int[] nums = {1, 2, 4, 8};
+        System.out.println(p4_largest_divisible_subsequence.largestDivisibleSubset(nums));
+    }
+
     /**
      * TC: O(N*N)
      * SC: O(N*N)
@@ -63,11 +69,5 @@ public class P4_Largest_Divisible_Subsequence {
         }
         Collections.reverse(temp);
         return temp;
-    }
-
-    public static void main(String[] args) {
-        P4_Largest_Divisible_Subsequence p4_largest_divisible_subsequence = new P4_Largest_Divisible_Subsequence();
-        int[] nums = {1, 2, 4, 8};
-        System.out.println(p4_largest_divisible_subsequence.largestDivisibleSubset(nums));
     }
 }

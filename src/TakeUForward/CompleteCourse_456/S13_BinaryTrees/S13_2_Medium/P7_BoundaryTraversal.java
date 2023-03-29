@@ -12,6 +12,20 @@ import TakeUForward.CompleteCourse_456.S13_BinaryTrees.S13_1_Traversals.TreeNode
  * lc: <a href="https://leetcode.com/problems/boundary-of-binary-tree/">...</a>
  */
 public class P7_BoundaryTraversal {
+    public static void main(String[] args) {
+        P7_BoundaryTraversal p7_boundaryTraversal = new P7_BoundaryTraversal();
+
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(6);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(5);
+        root.right.right = new TreeNode(7);
+
+        System.out.println(p7_boundaryTraversal.boundaryTraversal(root));
+    }
+
     /**
      * Approach:
      * 1. Boundary traversal of left side without root and leaf
@@ -79,20 +93,5 @@ public class P7_BoundaryTraversal {
                 arrList.add(curr.data);
             }
         }
-    }
-
-
-    public static void main(String[] args) {
-        P7_BoundaryTraversal p7_boundaryTraversal = new P7_BoundaryTraversal();
-
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(6);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(5);
-        root.right.right = new TreeNode(7);
-
-        System.out.println(p7_boundaryTraversal.boundaryTraversal(root));
     }
 }

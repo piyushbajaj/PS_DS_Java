@@ -1,6 +1,27 @@
 package LinkedList.Practice_2022.SinglyLL;
 
 public class P7_FindLoop extends CommonUtils {
+    public static void main(String[] args) {
+        P7_FindLoop findLoop = new P7_FindLoop();
+        findLoop.insertInEnd(1);
+        findLoop.insertInEnd(2);
+        findLoop.insertInEnd(3);
+        findLoop.insertInEnd(4);
+        findLoop.insertInEnd(5);
+        findLoop.insertInEnd(7);
+        findLoop.insertNodeInSortedLL(6);
+        findLoop.printLL();
+        System.out.println("Find loop in the linked list");
+        findLoop.settingLoop(10);
+        System.out.println(findLoop.findLoop());
+
+        System.out.println(findLoop.findLoopNode());
+
+        System.out.println(findLoop.findLoopNode());
+
+        System.out.println(findLoop.countNodesInALoop());
+    }
+
     public void settingLoop(int data) {
         Node newNode = new Node(data);
         Node temp = head;
@@ -81,26 +102,5 @@ public class P7_FindLoop extends CommonUtils {
             }
         }
         return count;
-    }
-
-    public static void main(String[] args) {
-        P7_FindLoop findLoop = new P7_FindLoop();
-        findLoop.insertInEnd(1);
-        findLoop.insertInEnd(2);
-        findLoop.insertInEnd(3);
-        findLoop.insertInEnd(4);
-        findLoop.insertInEnd(5);
-        findLoop.insertInEnd(7);
-        findLoop.insertNodeInSortedLL(6);
-        findLoop.printLL();
-        System.out.println("Find loop in the linked list");
-        findLoop.settingLoop(10);
-        System.out.println(findLoop.findLoop());
-
-        System.out.println(findLoop.findLoopNode());
-
-        System.out.println(findLoop.findLoopNode());
-
-        System.out.println(findLoop.countNodesInALoop());
     }
 }

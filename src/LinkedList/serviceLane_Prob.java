@@ -15,21 +15,21 @@ public class serviceLane_Prob {
         int[] res = new int[row];
         int m = 0, k = 0;
 
-        for(int i = 0; i < row; i++){
+        for (int i = 0; i < row; i++) {
             res[i] = (width_col(width, cases[i][0], cases[i][1]));
         }
-
 
 
         return res;
     }
 
-    public static int width_col(int[] width, int i, int j){
+    public static int width_col(int[] width, int i, int j) {
         int min = Integer.MAX_VALUE;
 
-        for(int k = i; k <= j; k++){
-            if(width[k] < min)
+        for (int k = i; k <= j; k++) {
+            if (width[k] < min) {
                 min = width[k];
+            }
         }
 
         return min;
@@ -40,12 +40,12 @@ public class serviceLane_Prob {
         int n = in.nextInt();
         int t = in.nextInt();
         int[] width = new int[n];
-        for(int width_i = 0; width_i < n; width_i++){
+        for (int width_i = 0; width_i < n; width_i++) {
             width[width_i] = in.nextInt();
         }
         int[][] cases = new int[t][2];
-        for(int cases_i = 0; cases_i < t; cases_i++){
-            for(int cases_j = 0; cases_j < 2; cases_j++){
+        for (int cases_i = 0; cases_i < t; cases_i++) {
+            for (int cases_j = 0; cases_j < 2; cases_j++) {
                 cases[cases_i][cases_j] = in.nextInt();
             }
         }

@@ -10,17 +10,15 @@ public class UsingTwoStack {
     private Stack<Integer> stack1 = new Stack<>();
     private Stack<Integer> stack2 = new Stack<>();
 
-    public void enqueue(int data){
-        stack1.push(data);
+    public static void main(String[] args) {
+        UsingTwoStack US = new UsingTwoStack();
+        US.enqueue(5);
+        US.enqueue(10);
+        System.out.println("Removing one item from Queue is: " + US.dequeue());
     }
 
-    public int dequeue(){
-        if(stack2.empty()){
-            while (!stack1.empty()){
-                stack2.push(stack1.pop());
-            }
-        }
-        return stack2.pop();
+    public void enqueue(int data) {
+        stack1.push(data);
     }
 
 //    public int display_QueueList(){
@@ -30,10 +28,12 @@ public class UsingTwoStack {
 //        }
 //    }
 
-    public static void main(String[] args) {
-        UsingTwoStack US = new UsingTwoStack();
-        US.enqueue(5);
-        US.enqueue(10);
-        System.out.println("Removing one item from Queue is: " + US.dequeue());
+    public int dequeue() {
+        if (stack2.empty()) {
+            while (!stack1.empty()) {
+                stack2.push(stack1.pop());
+            }
+        }
+        return stack2.pop();
     }
 }

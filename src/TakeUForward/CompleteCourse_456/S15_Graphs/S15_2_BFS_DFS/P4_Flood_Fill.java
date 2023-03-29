@@ -18,6 +18,21 @@ import javafx.util.Pair;
  */
 public class P4_Flood_Fill {
 
+    public static void main(String[] args) {
+        P4_Flood_Fill p4_flood_fill = new P4_Flood_Fill();
+        int[][] image = {{1, 1, 1}, {1, 1, 0}, {1, 0, 1}};
+        System.out.println(Arrays.deepToString(p4_flood_fill.floodFill_bfs(image, 1, 1, 2)));
+        System.out.println(Arrays.deepToString(p4_flood_fill.floodFill_dfs(image, 1, 1, 2)));
+
+        int[][] image1 = {{0, 0, 0}, {0, 0, 0}};
+        System.out.println(Arrays.deepToString(p4_flood_fill.floodFill_bfs(image1, 0, 0, 0)));
+
+        int[][] image2 = {{0, 0, 0}, {0, 0, 0}};
+        System.out.println(Arrays.deepToString(p4_flood_fill.floodFill_bfs(image2, 1, 0, 2)));
+
+        System.out.println(Arrays.deepToString(p4_flood_fill.floodFill_dfs(image2, 1, 0, 2)));
+    }
+
     /**
      * Followed BFS Approach
      * TC: O(N*M)
@@ -83,7 +98,6 @@ public class P4_Flood_Fill {
         return result;
     }
 
-
     public void floodFill_dfs_util(int[][] image, int[][] result, int ithIndex, int jthIndex, int color, int key) {
         int[] rowDelta = {-1, 0, 1, 0};
         int[] colDelta = {0, 1, 0, -1};
@@ -98,20 +112,5 @@ public class P4_Flood_Fill {
                 floodFill_dfs_util(image, result, nRow, nCol, color, key);
             }
         }
-    }
-
-    public static void main(String[] args) {
-        P4_Flood_Fill p4_flood_fill = new P4_Flood_Fill();
-        int[][] image = {{1, 1, 1}, {1, 1, 0}, {1, 0, 1}};
-        System.out.println(Arrays.deepToString(p4_flood_fill.floodFill_bfs(image, 1, 1, 2)));
-        System.out.println(Arrays.deepToString(p4_flood_fill.floodFill_dfs(image, 1, 1, 2)));
-
-        int[][] image1 = {{0, 0, 0}, {0, 0, 0}};
-        System.out.println(Arrays.deepToString(p4_flood_fill.floodFill_bfs(image1, 0, 0, 0)));
-
-        int[][] image2 = {{0, 0, 0}, {0, 0, 0}};
-        System.out.println(Arrays.deepToString(p4_flood_fill.floodFill_bfs(image2, 1, 0, 2)));
-
-        System.out.println(Arrays.deepToString(p4_flood_fill.floodFill_dfs(image2, 1, 0, 2)));
     }
 }

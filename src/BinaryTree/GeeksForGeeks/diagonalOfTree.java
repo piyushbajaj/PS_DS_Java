@@ -9,70 +9,19 @@ import java.util.Map;
  */
 public class diagonalOfTree {
     Node root;
+    ArrayList<Node> inArr = new ArrayList<>();
 
-    static class Node{
-        Node left, right;
-        int data;
-        Node(int data){
-            this.data = data;
-            this.left = this.right = null;
-        }
-    }
-
-    diagonalOfTree(){
+    diagonalOfTree() {
         root = null;
     }
 
 
-
-    diagonalOfTree(int data){
-        if(root == null)
+    diagonalOfTree(int data) {
+        if (root == null) {
             root = new Node(data);
-        else
+        } else {
             new Node(data);
-    }
-
-
-    ArrayList<Node> inArr = new ArrayList<>();
-    //int n = 1;
-
-    public void printDiagonal(Node key){
-        if(key == null)
-            return;
-
-        HashMap<Integer, ArrayList<Integer>> hashMap = new HashMap<>();
-        printDiagonal_util(hashMap, key, 0);
-
-        for (Map.Entry entry: hashMap.entrySet()){
-            System.out.println(entry.getKey() + " " + entry.getValue());
         }
-
-
-
-    }
-    public HashMap<Integer, ArrayList<Integer>> printDiagonal_util(HashMap<Integer, ArrayList<Integer>> hashMap, Node key, int n){
-        if(key == null)
-            return null;
-
-        ArrayList<Integer> arr = hashMap.get(n);
-
-        if(arr == null){
-            arr = new ArrayList<>();
-            arr.add(key.data);
-        }
-        else {
-            arr.add(key.data);
-        }
-
-        hashMap.put(n, arr);
-
-        printDiagonal_util(hashMap, key.left, n + 1);
-
-        printDiagonal_util(hashMap, key.right, n);
-
-
-        return hashMap;
-
     }
 
     public static void main(String[] args) {
@@ -88,5 +37,57 @@ public class diagonalOfTree {
 
         dt.printDiagonal(dt.root);
 
+    }
+    //int n = 1;
+
+    public void printDiagonal(Node key) {
+        if (key == null) {
+            return;
+        }
+
+        HashMap<Integer, ArrayList<Integer>> hashMap = new HashMap<>();
+        printDiagonal_util(hashMap, key, 0);
+
+        for (Map.Entry entry : hashMap.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+
+
+    }
+
+    public HashMap<Integer, ArrayList<Integer>> printDiagonal_util(HashMap<Integer, ArrayList<Integer>> hashMap,
+                                                                   Node key, int n) {
+        if (key == null) {
+            return null;
+        }
+
+        ArrayList<Integer> arr = hashMap.get(n);
+
+        if (arr == null) {
+            arr = new ArrayList<>();
+            arr.add(key.data);
+        } else {
+            arr.add(key.data);
+        }
+
+        hashMap.put(n, arr);
+
+        printDiagonal_util(hashMap, key.left, n + 1);
+
+        printDiagonal_util(hashMap, key.right, n);
+
+
+        return hashMap;
+
+    }
+
+    static class Node {
+        Node left, right;
+        int data;
+
+        Node(int data) {
+            this.data = data;
+            this.left = this.right = null;
+        }
     }
 }
