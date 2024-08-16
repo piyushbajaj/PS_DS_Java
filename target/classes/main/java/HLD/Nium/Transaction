@@ -1,0 +1,51 @@
+Background
+The lifecycle of a payout transaction at Nium involves the following stages:
+Transaction requested
+Fraud detection check
+Anti-Money Laundering (AML) check
+Source currency received
+Destination currency ready
+Transaction completed, i.e., beneficiary receive fund
+Objectives
+Inform customers about the current stage of their transactions.
+Provide accurate estimates of when the receiver will receive the funds.
+
+
+NFR:
+Highly Available
+Reliability
+Fault Tolerance
+Eventual Consistent
+APIs:
+GET /v1/getCurrentStage: Params: List<transactionId>, customerId,
+response: {
+{ transactionId: “”,
+Stage: “”},
+{
+}
+}
+GET /v1/getETATransaction: Params: List<transactionId>, receiverId, response {
+{ transactionId: “”,
+eta: “”},
+{
+}
+}
+
+
+}
+
+
+High Level:
+
+
+
+Data Model:
+
+Relational Database (MySQL)
+
+Table: TrackStages
+TransactionId (Pk)
+CurrentStage
+ETA
+CreatedAT
+UpdatedAt
