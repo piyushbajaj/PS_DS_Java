@@ -1,1 +1,1 @@
-This repo contains DS\Algo, LLD, Solid principal stuffs.
+All data structure and algorithm implementation can be done in one place!!
