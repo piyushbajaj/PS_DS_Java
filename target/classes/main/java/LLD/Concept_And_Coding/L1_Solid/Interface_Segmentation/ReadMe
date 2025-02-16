@@ -1,3 +1,0 @@
-Interfaces should be such that client should not implement unnecessary functions they do not need
-
-Break interfaces in such small parts that client dont have to do unnecessary implementations

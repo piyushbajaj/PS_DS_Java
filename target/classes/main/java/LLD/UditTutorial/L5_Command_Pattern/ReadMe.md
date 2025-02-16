@@ -1,1 +1,0 @@
-`This pattern is used to avoid if-else condition in the code.`
