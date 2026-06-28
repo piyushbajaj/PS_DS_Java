@@ -31,49 +31,6 @@ public class P2_Disjoint_Set {
         }
     }
 
-    public static void main(String[] args) {
-        P2_Disjoint_Set p2_disjoint_set = new P2_Disjoint_Set(7);
-//        p2_disjoint_set.unionByRank(1, 2);
-//        p2_disjoint_set.unionByRank(2, 3);
-//        p2_disjoint_set.unionByRank(4, 5);
-//        p2_disjoint_set.unionByRank(6, 7);
-//        p2_disjoint_set.unionByRank(5, 6);
-
-//        if (p2_disjoint_set.findUParent(3) == p2_disjoint_set.findUParent(7)) {
-//            System.out.println("Same");
-//        } else {
-//            System.out.println("Not Same");
-//        }
-//
-//        p2_disjoint_set.unionByRank(3, 7);
-//
-//        if (p2_disjoint_set.findUParent(3) == p2_disjoint_set.findUParent(7)) {
-//            System.out.println("Same");
-//        } else {
-//            System.out.println("Not Same");
-//        }
-
-        p2_disjoint_set.unionBySize(1, 2);
-        p2_disjoint_set.unionBySize(2, 3);
-        p2_disjoint_set.unionBySize(4, 5);
-        p2_disjoint_set.unionBySize(6, 7);
-        p2_disjoint_set.unionBySize(5, 6);
-
-        if (p2_disjoint_set.findUParent(3) == p2_disjoint_set.findUParent(7)) {
-            System.out.println("Same");
-        } else {
-            System.out.println("Not Same");
-        }
-
-        p2_disjoint_set.unionBySize(3, 7);
-
-        if (p2_disjoint_set.findUParent(3) == p2_disjoint_set.findUParent(7)) {
-            System.out.println("Same");
-        } else {
-            System.out.println("Not Same");
-        }
-    }
-
     public int findUParent(int node) {
         if (node == parent.get(node)) {
             return node;
@@ -112,10 +69,53 @@ public class P2_Disjoint_Set {
 
         if (size.get(ultParentX) < size.get(ultParentY)) {
             parent.set(ultParentX, ultParentY);
-            size.set(ultParentY, size.get(ultParentY) + 1);
+            size.set(ultParentY, size.get(ultParentY) + size.get(ultParentX));
         } else {
             parent.set(ultParentY, ultParentX);
-            size.set(ultParentX, size.get(ultParentX) + 1);
+            size.set(ultParentX, size.get(ultParentX) + size.get(ultParentY));
+        }
+    }
+
+    public static void main(String[] args) {
+        P2_Disjoint_Set p2_disjoint_set = new P2_Disjoint_Set(7);
+//        p2_disjoint_set.unionByRank(1, 2);
+//        p2_disjoint_set.unionByRank(2, 3);
+//        p2_disjoint_set.unionByRank(4, 5);
+//        p2_disjoint_set.unionByRank(6, 7);
+//        p2_disjoint_set.unionByRank(5, 6);
+//
+//        if (p2_disjoint_set.findUParent(3) == p2_disjoint_set.findUParent(7)) {
+//            System.out.println("Same");
+//        } else {
+//            System.out.println("Not Same");
+//        }
+//
+//        p2_disjoint_set.unionByRank(3, 7);
+//
+//        if (p2_disjoint_set.findUParent(3) == p2_disjoint_set.findUParent(7)) {
+//            System.out.println("Same");
+//        } else {
+//            System.out.println("Not Same");
+//        }
+
+        p2_disjoint_set.unionBySize(1, 2);
+        p2_disjoint_set.unionBySize(2, 3);
+        p2_disjoint_set.unionBySize(4, 5);
+        p2_disjoint_set.unionBySize(6, 7);
+        p2_disjoint_set.unionBySize(5, 6);
+
+        if (p2_disjoint_set.findUParent(3) == p2_disjoint_set.findUParent(7)) {
+            System.out.println("Same");
+        } else {
+            System.out.println("Not Same");
+        }
+
+        p2_disjoint_set.unionBySize(3, 7);
+
+        if (p2_disjoint_set.findUParent(3) == p2_disjoint_set.findUParent(7)) {
+            System.out.println("Same");
+        } else {
+            System.out.println("Not Same");
         }
     }
 }

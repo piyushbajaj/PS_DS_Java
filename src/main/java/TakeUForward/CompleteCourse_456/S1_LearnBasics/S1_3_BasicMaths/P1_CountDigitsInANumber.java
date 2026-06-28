@@ -25,7 +25,7 @@ public class P1_CountDigitsInANumber {
      * @param n
      * @return
      */
-    static int count_digits(int n) {
+    public int count_digits(int n) {
         int count = 0;
         while (n != 0) {
             n = n / 10;
@@ -42,7 +42,7 @@ public class P1_CountDigitsInANumber {
      * @param n
      * @return
      */
-    static int count_digits1(int n) {
+    public int count_digits1(int n) {
         String str = String.valueOf(n);
         return str.length();
     }
@@ -55,13 +55,37 @@ public class P1_CountDigitsInANumber {
      * @param n
      * @return
      */
-    static int count_digits2(int n) {
+    public int count_digits2(int n) {
         return (int) Math.floor(Math.log10(n)) + 1;
     }
 
+
+    /**
+     * TC: O(N), Length of Digit
+     * @param n
+     * @return
+     */
+    public int countDigitsEvenlyDivides(int n) {
+        int count = 0;
+        int div = n;
+        int mod = 0;
+        do {
+            mod = div % 10;
+            div = div / 10;
+
+            if (mod != 0 && n % mod == 0) {
+                count++;
+            }
+        } while (div != 0);
+
+        return count;
+    }
+
     public static void main(String[] args) {
-        System.out.println(count_digits(1234567));
-        System.out.println(count_digits1(1234567));
-        System.out.println(count_digits2(1234567));
+        P1_CountDigitsInANumber countDigitsInANumber = new P1_CountDigitsInANumber();
+        System.out.println(countDigitsInANumber.count_digits(1234567));
+        System.out.println(countDigitsInANumber.count_digits1(1234567));
+        System.out.println(countDigitsInANumber.count_digits2(1234567));
+        System.out.println(countDigitsInANumber.countDigitsEvenlyDivides(123456));
     }
 }

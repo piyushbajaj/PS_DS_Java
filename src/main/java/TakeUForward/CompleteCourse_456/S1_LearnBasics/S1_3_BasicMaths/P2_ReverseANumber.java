@@ -19,6 +19,27 @@ package TakeUForward.CompleteCourse_456.S1_LearnBasics.S1_3_BasicMaths;
  */
 public class P2_ReverseANumber {
 
+    public int reverse(int x) {
+        boolean negative = false;
+        if (x < 0) {
+            negative = true;
+            x = x * (-1);
+        }
+
+        int len = (int) Math.floor(Math.log10(x));
+        int tmp = x;
+        int reverse = 0;
+        int cnt = len;
+        while (tmp != 0) {
+            int mod = tmp % 10;
+            tmp = tmp / 10;
+            reverse += mod * Math.pow(10, cnt--);
+        }
+
+        return negative ? reverse * -1 : reverse;
+    }
+
+
     /**
      * TC: O(n)
      * SC: O(1)
@@ -26,7 +47,7 @@ public class P2_ReverseANumber {
      * @param n
      * @return
      */
-    static int reverseNumber(int n) {
+    public int reverseNumber(int n) {
         int num = 0;
 
         while (n != 0) {
@@ -40,6 +61,9 @@ public class P2_ReverseANumber {
 
 
     public static void main(String[] args) {
-        System.out.println(reverseNumber(123456));
+        P2_ReverseANumber reverseANumber = new P2_ReverseANumber();
+
+        System.out.println(reverseANumber.reverseNumber(123456));
+        System.out.println(reverseANumber.reverse(123456));
     }
 }

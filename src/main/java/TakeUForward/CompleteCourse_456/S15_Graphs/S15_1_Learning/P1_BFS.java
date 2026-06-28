@@ -112,6 +112,7 @@ public class P1_BFS {
         p1_bfs.addEdge(2, 3, GraphDirection.BiDirectional);
         p1_bfs.addEdge(2, 4, GraphDirection.BiDirectional);
         p1_bfs.addEdge(4, 5, GraphDirection.BiDirectional);
+        p1_bfs.addEdge(5, 8, GraphDirection.BiDirectional);
         p1_bfs.addEdge(6, 7, GraphDirection.BiDirectional);
         p1_bfs.addEdge(6, 9, GraphDirection.BiDirectional);
         p1_bfs.addEdge(7, 8, GraphDirection.BiDirectional);
